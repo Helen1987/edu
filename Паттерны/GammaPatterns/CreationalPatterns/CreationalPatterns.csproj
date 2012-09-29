@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B0C972E-852C-42C1-8841-337FFBEF4947}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>CreationalPatterns</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Exe</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\AbstractFactory\BombedFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\AbstractFactory\EnchantedMazeFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\AbstractFactory\MazeFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Builder\CountingMazeBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Builder\IMazeBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Builder\StandartMazeBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\FactoryMethod\BombedMazeGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\FactoryMethod\EnchantedMazeGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\FactoryMethod\MazeGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazeGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\BombedWall.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\Direction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\Door.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\DoorNeedingSpell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\EnchantedRoom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\MapSite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\Maze.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\Room.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\RoomWithABomb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\Spell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\MazePart\Wall.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Program.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Prototype\BombedWallP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Prototype\DoorP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Prototype\MazeP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Prototype\MazePrototypeFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Prototype\RoomP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreationalPatterns\Prototype\WallP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>
