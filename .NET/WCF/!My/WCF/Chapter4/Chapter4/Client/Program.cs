@@ -15,6 +15,12 @@ namespace Client
 				proxy.MyMethod();
 			}
 
+			using (var proxy = new MySessionContractClient())
+			{
+				proxy.MyMethod();
+				proxy.MyMethod();
+			}
+
 			Console.ReadLine();
 		}
 	}

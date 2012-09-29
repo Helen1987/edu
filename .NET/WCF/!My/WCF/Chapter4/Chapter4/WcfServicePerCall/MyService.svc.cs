@@ -11,7 +11,7 @@ using System.Diagnostics;
 namespace WcfServicePerCall
 {
 	[ServiceBehavior(InstanceContextMode=InstanceContextMode.PerCall)]
-	public class MyService : IMyContract
+	public class MyService : IMyContract, IDisposable
 	{
 		int counter = 0;
 
@@ -30,6 +30,7 @@ namespace WcfServicePerCall
 			SaveState(stateIdentifier);
 		}
 
+		// only if service implement IDisposable interface
 		public void Dispose()
 		{
 			Trace.WriteLine("MyService.Dispose()");

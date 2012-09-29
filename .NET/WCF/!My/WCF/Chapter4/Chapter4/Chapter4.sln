@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServicePerCall", "WcfSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{1799E6EE-0933-4072-9EB0-0BE3AA536A27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceSession", "WcfServicePerSession\WcfServiceSession.csproj", "{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{1799E6EE-0933-4072-9EB0-0BE3AA536A27}.Release|Mixed Platforms.Build.0 = Release|x86
 		{1799E6EE-0933-4072-9EB0-0BE3AA536A27}.Release|x86.ActiveCfg = Release|x86
 		{1799E6EE-0933-4072-9EB0-0BE3AA536A27}.Release|x86.Build.0 = Release|x86
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ECF91898-00BF-4B8E-B1EC-CACD1A04A584}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
