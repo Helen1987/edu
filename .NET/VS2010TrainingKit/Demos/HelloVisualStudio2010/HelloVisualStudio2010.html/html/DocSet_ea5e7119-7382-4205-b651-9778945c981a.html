@@ -1,0 +1,471 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+        Hello Visual Studio 2010
+  </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ul>
+          <li>Launching Visual Studio 2010</li>
+          <li>New code editing and navigation features</li>
+          <li>One-Click web deployment</li>
+          <li>Visual Studio’s platform improvements</li>
+        </ul>
+        <a name="_Toc281309843" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Launching Visual Studio 2010</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Start Visual Studio 2010.</li>
+              </ol>
+            </td>
+            <td>
+              <p>Let’s launch Visual Studio 2010</p>
+              <p>One of the first things you may or may not notice is that the VS shell is now written in WPF. This is a very powerful decision and brings forth a lot of potential for very cool features that could not be implemented previously.</p>
+              <p>You will also notice a new start page. Once again, this new start page leverages WPF and, hence, is XAML itself. This makes it easily customizable so you can customize it to your own specific needs (perhaps a custom team start page with links to internal coding practices, build servers, etc.)</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\40c56ba5-cf00-4530-be7b-c7ee975202ea.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight project(s) in Recent Projects list.</li>
+              </ol>
+            </td>
+            <td>
+              <p>One of the features afforded to us by the adoption of WPF is easier management of our <b>Recent Projects</b> list for instance.</p>
+              <p>Not only can we easily remove projects that we do not wish to be on the list anymore, but I can also pin any projects that I may work on a lot or view as important and wish to keep on the top of my list.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\a009a053-4b18-4bee-b398-f87e2878a8b0.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Create a new project by clicking <b>New Project</b> on the start page.</li>
+                <li>Expand .NET Framework version drop-down.</li>
+              </ol>
+            </td>
+            <td>
+              <p>First, let’s go ahead and create a new web project.</p>
+              <p>One feature we want to draw your attention to is multi-targeting. Similar to previous releases of Visual Studio, you have the choice of targeting different versions of the .NET Framework when developing projects in Visual Studio 2010.</p>
+              <p>Multi-targeting allows us to use the latest and greatest tools at our disposal, like Visual Studio 2010, while continuing to be able to develop our current applications against their currently targeted version of the framework.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\d5b92a94-81ca-48cd-84d5-1e9af1236586.png" />
+                <img src="images\0accd6c2-d9ac-4310-94f6-266f97551ddf.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Create web project by choose Visual Basic or C# -&gt; Web -&gt; ASP.NET Empty Web Application.</li>
+              </ol>
+            </td>
+            <td>
+              <p>We are going to go ahead and create a new ASP.NET Empty Web Application.</p>
+              <p>Let’s just name the project “HelloWeb” for right now.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\47331d85-d48c-4609-ab1a-191bec9097a4.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281309844" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">New Code Editing and Navigation Features</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right Click in the Project-&gt; Add New Item.</li>
+                <li>Write Web Form in the search box and name it Page Default.aspx.</li>
+                <li>Open Default.aspx, and choose the Design surface if not chosen already.</li>
+                <li>Open <b>Toolbox</b>, expand “<b>Standard</b>”.</li>
+                <li>Drop a <b>Button</b> and <b>Label</b> onto our page from the <b>Toolbox</b>.</li>
+                <li>Rename <b>Button</b> -&gt; btnSend. Change <b>Button.Text</b> -&gt; “Press Me”.</li>
+                <li>Rename <b>Label -&gt; lblMessage</b>. Remove value from Label.Text.</li>
+              </ol>
+            </td>
+            <td>
+              <p>So you’ve seen some simple features that are coming that improve Visual Studio’s launch-time experience, let’s take a look at some of the new features that will make a developer’s life easier with what we do most: deal with code.</p>
+              <p>Another useful feature is the ability to search when inserting a new item.</p>
+              <p>For the sake of this demo, we will just create a simple Button and Label on a clean default aspx page.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\d91c415e-8f6f-469c-b5f7-1e813162248d.png" />
+              </p>
+              <p>
+                <img src="images\11b18080-21f0-4bfe-ac43-535de2cc00e0.png" />
+              </p>
+              <p>
+                <img src="images\dc2ae224-4a28-4bad-8264-6b6e39a57881.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li><b>Double-Click</b> our <b>Button</b> in the designer to create a click event handler in code-behind.</li>
+                <li>In the event handler, type “Mes”.</li>
+                <li>Choose lblMessage from Intellisense and set its Text property to “Clicked!”</li>
+              </ol>
+            </td>
+            <td>
+              <p>We are going to go ahead and create an event handler for our Button’s click event.</p>
+              <p>In the event handler, we are going to simply change the text in our Label.</p>
+              <p>You will notice that even though I typed “Mes”, our Label is still found in IntelliSense even though it does not start with “Mes.” This is because in Visual Studio 2010, Intellisense is much smarter and will search for “sub-string” occurrences for the text as well, rather than just “begins with” occurrences.</p>
+              <p>Let’s go ahead and change the text to “Clicked!”</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\1473759b-375b-4cc9-a315-0625acd4ddce.png" />
+              </p>
+              <p>
+                <img src="images\fc727693-3306-4608-9b72-99cbf88e393b.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the line of code we just wrote.</li>
+                <li>Extract Method: Right Click -&gt; Refactor -&gt; Extract Method.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>Refactor</b> Menu is not available in Visual Basic.</td></tr></table><p /></div></li>
+                <li>Call the method ChangeText.</li>
+                <li>Add a string parameter named <b>message</b> to the ChangeText method, and pass in “Clicked!” from the Button’s click event handler.</li>
+              </ol>
+            </td>
+            <td>
+              <p>We are going to go ahead and use this code again, so we will just refactor this code into a common method called ChangeText.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\1edc5332-37e9-4a64-9cb5-f9fe826d0ff5.png" />
+              </p>
+              <p>
+                <img src="images\494d5b2b-5eda-4e64-9848-1aa80eff6fdf.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li><b>Press “ctrl+,”</b> (hold down control and press comma) to bring up <b>Quick Search</b> dialog.</li>
+                <li>Enter “Page” as search item.</li>
+                <li>Delete “Page” search item and type “PL” instead.</li>
+                <li>Press enter to “OK” and accept dialog.</li>
+              </ol>
+            </td>
+            <td>
+              <p>Another challenge for developers is to be able to navigate around a large code base easily. This becomes much easier in Visual Studio 2010 with the introduction of Quick Search.</p>
+              <p>In this case, let’s use it to navigate to our Page_Load method (though this feature is really useful when searching cross-project or cross-file within a solution).</p>
+              <p>As you can see, when we enter “Page”, our method is found as expected.</p>
+              <p>What is really cool though, is that Quick Search uses a smart search algorithm that isn’t just substring search. It is fully aware of Pascal Casing for instance.</p>
+              <p>Let’s search for “PL” (for <b>P</b>age_<b>L</b>oad) instead. As you can see, our method is still found. When searching for other classes in your project, this becomes a very powerful feature to use for navigation around your codebase.</p>
+              <p>Let’s go ahead and accept in order to open our Page_Load method.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\87fdf701-6bf2-4e84-a10e-40f60632bf4f.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In the <b>Page_Load</b> method, call our <b>ChangeText</b> to set text to <i>“Not Clicked”.</i></li>
+              </ol>
+            </td>
+            <td>
+              <p>To add a new default value, we will simply call our new ChangeText method with the value “Not Clicked”.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\da1b1847-7a33-4355-b31d-8aee3774429a.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Click the cursor on the name of our <b>ChangeText</b> method.</li>
+              </ol>
+            </td>
+            <td>
+              <p>Easy visualization of where all references to a method or variable are within a single code file is possible now with the introduction of Highlight References in the editor.</p>
+              <p>We are just going to click the ChangeText method, and you can see all references to that method are automatically highlighted for us.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\c16ca87f-d5ac-442c-8e51-74aa888d4dc3.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right Click on the name of the ChangeText method -&gt; View Call Hierarchy.</li>
+              </ol>
+            </td>
+            <td>
+              <p>Another feature that makes it easy to really dig into the relationships between various methods and lines of code is the new Call Hierarchy feature.</p>
+              <p>The problem is that trying to understand external and internal relationships of a method today requires a lot of digging around the results from “Find All References.”</p>
+              <p>Now, by right-clicking on our ChangeText method, we can select “View Call Hierarchy” from the context menu.</p>
+              <p>As you can see, we can easily dive into all the various calls that are made to ChangeText as well as all the calls that are made from ChangeText.</p>
+              <p>By selecting one of the calls either to or from ChangeText, we can also see the specific line of code where the call is made.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\0f6f5254-0f5a-405e-aa84-4ca89c36dcda.png" />
+              </p>
+              <p>
+                <img src="images\a72c5b28-c8a0-4f64-a9a0-14a4632b47a4.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281309845" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">One-Click Web Deployment</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In the <b>Publish bar</b>, pull down the drop down and click “<b>&lt;New...&gt;</b>”.</li>
+              </ol>
+            </td>
+            <td>
+              <p>For web developers, a fairly common task is deploying your website to a specific environment (QA, Staging, Live, etc.).</p>
+              <p>Unfortunately, robust deployment tools like MS Deploy are only available outside of Visual Studio today.</p>
+              <p>With Visual Studio 2010, MSDeploy is integrated directly into Visual Studio. Once you have your profiles configured, you can easily deploy to a given environment with a single click.</p>
+              <p>This isn’t limited to just MSDeploy either. It also supports other modes of deployment, like via FTP.</p>
+              <p>Let’s go ahead and create a new profile for our QA environment.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\546339a8-2cc9-493c-8fac-8f452e1458dc.png" />
+              </p>
+              <p>
+                <img src="images\158abb41-0c0c-4b40-900c-8c11ddf91a2a.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Name profile <b>QA</b> by typing “QA” into the <b>Publish Profile</b> drop down.</li>
+                <li>Add <b>http://qa.contoso.com/HelloWeb</b> to the <b>Site/Application</b>.</li>
+                <li>Add <b>http://qa-web:8172/MsDeploy.axd</b> to the <b>Service Url</b>.</li>
+                <li>Click <b>Save</b> button, and then click <b>Close</b>.</li>
+                <li>Choose <b>QA</b> from <b>Publish bar</b> drop down, and hover over “<b>Publish Web</b>” button.</li>
+              </ol>
+            </td>
+            <td>
+              <p>You can see that not only can we specify the method of publishing, we can also specify the site/application, and even mark it as an IIS application on the destination.</p>
+              <p>Let’s add some information on our environment to our profile.</p>
+              <p>We are going to go ahead and save this.</p>
+              <p>We can know have our QA profile chosen and with one click easily deploy to the designated profile.</p>
+              <p>Combining this tool with other new features in Visual Studio 2010 (like web.config transformations) makes for a much more powerful web publishing experience than before.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\5368c42d-f5f9-46bb-9ea8-c3c3f11c1ece.png" />
+              </p>
+              <p>
+                <img src="images\d123cc3d-09e3-4c3f-9668-cba24bdfbfa7.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281309846" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Visual Studio as a Platform </h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Windows Explorer</li>
+                <li>Navigate to “C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions” or C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\CommonExtensions”.</li>
+              </ol>
+            </td>
+            <td>
+              <p>A lot of work is going into making Visual Studio a first-class platform, which third parties can “embrace and extend.”</p>
+              <p>Part of this effort is making it easier for developers to extend Visual Studio.</p>
+              <p>With Visual Studio 2010, creating an editor extension for example is as easy as compiling an assembly and simply dropping it into a specific directory in the Visual Studio installation.</p>
+              <p>Next time Visual Studio 2010 is started, it will automatically pick up the new extension.</p>
+              <p>While this is simple for developers, it is not the best experience for end-users.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\8d4b9fb1-85df-4b65-bf7f-ce372e5efe23.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Re-Open Visual Studio.</li>
+                <li>Open<b> Tools -&gt; Extension Manager</b>.</li>
+                <li>Browse the<b> Online Gallery </b>and select an extension not currently installed.</li>
+                <li>Show the <b>Download</b> button.</li>
+              </ol>
+            </td>
+            <td>
+              <p>To help make the 3rd party ecosystem of Visual Studio much easier to digest, there is a new Extension Manager built into Visual Studio that automatically plugs into the online VS Gallery.</p>
+              <p>Using Extension Manager, a Visual Studio user can easily find all sorts of extensions that have been written for Visual Studio, and easily install or uninstall them directly from the Extension Manager itself.</p>
+              <p>Browsing, searching, downloading and installing an extension is very simple and straightforward.</p>
+              <p>This gives users the power to customize Visual Studio to best suit their own development needs.</p>
+              <p>The extensions are installed under \Users\{UserName}\AppData\Local\Microsoft\VisualStudio\10.0\Extensions.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\d54fa5c7-7815-4d4b-bf6e-3068d6da017b.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

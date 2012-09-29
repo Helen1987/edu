@@ -1,0 +1,93 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Verification" />
+      <MSHelp:RLTitle Title="Exercise 1: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Visual Studio 2010: Office Programmability</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this verification, you will run the console application and observe that an Excel worksheet is opened and your account data is populated in a worksheet.</p>
+        <ol>
+          <li>In Visual Studio, press the F5 key to run the application in debug mode.</li>
+          <li>Observe that the application starts an instance of Microsoft Excel and inserts your data into the first worksheet:<p><img src="images\1ecba3e9-de60-4c1a-a022-97d677d6d1a6.png" /></p><p><b>Figure 1</b><br /><i>Account data in an Excel worksheet</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Notice that the column widths have been adjusted to be sized based on the contents. Also notice per the logic in the <b>for each</b> loop of the <b>delegate</b> passed to the <b>DisplayInExcel</b> function, the account with a negative balance has a red background.</td></tr></table><p /></div><br /></li>
+          <li>Close Excel. Do not save any changes.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_265436aa-3660-4878-a937-2b08d68b4894.html">Exercise 2: Embedding an Excel Worksheet in Microsoft Word</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

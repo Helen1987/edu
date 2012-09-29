@@ -1,0 +1,96 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 8: Verification" />
+      <MSHelp:RLTitle Title="Exercise 8: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 8: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 8: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this verification, you will test the <b>CalculatorClient</b> application to see if it can route requests over HTTP as well as over TCP connections.</p>
+        <ol>
+          <li>Right-click the <b>Ex-8ProtocolBriding </b>solution, and select <b>Set Startup Projects</b>.</li>
+          <li>Select the <b>Multiple startup projects</b> radio button, and set all three projects to Start.<p><img src="images\73d70b89-f36a-4174-8d02-0fa13e8d396e.png" /></p><p><b>Figure 30</b><br /><i>Set Multiple Startup projects</i></p><br /></li>
+          <li>Click <b>OK</b> to dismiss the solution properties dialog.</li>
+          <li>Press <b>F5</b> to debug the solution. All three projects should now start.</li>
+          <li>Select <b>Routed HTTP Connection</b> in the <b>CalculatorClient</b> toolbar dropdown.<p><img src="images\e20dc9b8-d02c-4523-a939-abba851b9001.png" /></p><p><b>Figure 31</b><br /><i>Select the Routed HTTP Connection option</i></p><br /></li>
+          <li>Click <b>Invoke Service</b> to test the routed connection, it should invoke the service successfully.<p><img src="images\0a3bb3b9-e4f0-4e6a-b4c9-7b35c3032dbe.png" /></p><p><b>Figure 32</b><br /><i>The CalculatorClient invoking the service using routed HTTP</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_c442515a-da92-4f61-b74e-8503fcca646c.html">Exercise 9: Content Based Routing</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

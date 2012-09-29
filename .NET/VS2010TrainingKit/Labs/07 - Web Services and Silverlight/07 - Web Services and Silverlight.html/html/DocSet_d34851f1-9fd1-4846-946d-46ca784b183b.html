@@ -1,0 +1,128 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a Silverlight-Enabled WCF Service" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a Silverlight-Enabled WCF Service" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a Silverlight-Enabled WCF Service</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Services and Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a Silverlight-Enabled WCF Service</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll create a new Silverlight Navigation Application and add a Silverlight-Enabled WCF Service to the Web project. You'll then add code into the service's operations to make calls to repository objects responsible for communicating with a database using Entity Framework 4.</p>
+        <a name="_Toc275958399" href="#">
+          <span />
+        </a>
+        <a name="_Toc276335820" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Create a new Silverlight Navigation Application</b>
+        </p>
+        <ol>
+          <li>Create a new <b>Silverlight Navigation Application</b> in Visual Studio 2010 named <b>UsingWCFServices</b>.</li>
+          <li>Right-click on the <b>UsingWCFService.Web</b> project and select <b>Add  Add ASP.NET Folder  App_Data</b>.</li>
+          <li>Right-click on the <b>App_Data</b> folder and select <b>Add  Existing Item</b> from the menu. Add the following file:</li>
+          <li>     WCFServices/Starting Point/AdventureWorksLT_Data.mdf</li>
+          <li>Add two new folders into <b>UsingWCFServices.Web</b> named <b>Models</b> and <b>Services</b>.</li>
+          <li>Add a new <b>ADO.NET Entity Data Model</b> into the <b>Models</b> folder named <b>AdventureWorksLT.edmx</b>. <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The ADO.NET Entity Data Model template can be found in the Data section of the Add New Item dialog. Alternatively, you can use Visual Studio 2010's <i>Search Installed Templates</i> feature in the upper-right corner of the dialog window to search for the template as well.</td></tr></table><p /></div></li>
+          <li>Select <b>Generate from database</b> from the options and click the <b>Next </b>button.<p><img src="images\da126664-0f5a-43bf-ace5-e824530e6959.png" /></p><p><b>Figure 1</b><br /><i>Entity Framework Wizard</i></p></li>
+          <li>Ensure that <b>AdventureWorksLT_Data.mdf</b> is selected in the drop-down list and click <b>Next.</b></li>
+          <li>Expand the <b>Tables</b> node and select the <b>Customer </b>and <b>SalesOrderHeader</b> tables and click <b>Finish.</b><p><img src="images\20bf0b45-8fca-4192-b8f9-0f70ee981b3c.png" /></p><p><b>Figure 2</b><br /><i>Select tables</i></p></li>
+          <li>Right-click on the <b>Services</b> folder and add a new <b>Silverlight-enabled WCF Service</b> into it. Name the service <b>CustomersService.svc</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <i>Silverlight-enabled WCF Service</i> template is located in the Silverlight templates section that's available when adding new items into a project.</td></tr></table><p /></div></li>
+          <li />
+          <li>Take a moment to examine the existing <b>DoWork</b> method and notice the <b>OperationContract</b> attribute above it. This attribute is used to mark the method as a service operation that can be called from distributed applications. Delete the <b>DoWork</b> method as well as its <b>OperationContract</b> attribute from the class.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Although you can add code logic directly into WCF service methods (often referred to as "operations"), it's recommended that you rely on external classes to handle business rules, interact with data access frameworks, etc. Rather than adding data access code into the service operations you'll rely on a set of data classes named CustomerRepository and SalesOrderHeaderRepository to perform the work in this lab.</td></tr></table><p /></div></li>
+          <li>Open <b>web.config</b> and locate the <b>system.serviceModel</b> element. Notice that a custom binding has been added (locate the <b>customBinding</b> element) that uses HTTP and binary message encoding. This combination provides excellent performance when exchanging data between a client and a service.</li>
+          <li>Right-click on the <b>UsingWCFServices.Web</b>/<b>Models</b> folder and select <b>Add  Existing Item</b>. Add all of the code files found in the folder shown next into the <b>Models</b> folder:<table style=""><tr valign="top"><th><p>Language</p></th><th><p>File Location</p></th></tr><tr valign="top"><td><p>C#</p></td><td><p>WCFServices/Starting Point/C#</p></td></tr><tr valign="top"><td><p>VB</p></td><td><p>WCFServices/Starting Point/VB</p><br /></td></tr></table></li>
+          <li />
+          <li>Open the <b>CustomerRepository</b> and <b>SalesOrderHeaderRepository</b> classes in the <b>Models</b> folder and take a moment to look through their code <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>  These classes derive from a custom RepositoryBase class and contain functionality to perform different database operations.</td></tr></table><p /></div></li>
+          <li>Open the <b>OperationStatus</b> class and note that it's used to return status information about different operations that occur in the repository classes.</li>
+          <li>Add the following code into the <b>CustomersService</b> class and resolve any missing namespaces:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>ICustomerRepository _CustomerRepository = new CustomerRepository();ISalesOrderHeaderRepository _OrderRepository =   new SalesOrderHeaderRepository();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Dim _CustomerRepository As ICustomerRepository = New CustomerRepository()Dim _OrderRepository As ISalesOrderHeaderRepository = _  New SalesOrderHeaderRepository()</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>  Although this code defines the repository class type to use in the CustomersService class, because each repository class implements an interface the type could be injected into the service at runtime. This is useful in situations where more loosely coupled code is needed.</td></tr></table><p /></div></li>
+          <li>Add the following public methods and associated parameters into the <b>CustomersService</b> class and resolve any missing namespaces:<table style=""><tr valign="top"><th><p>Method</p></th><th><p>Return Type</p></th><th><p>Parameters</p></th></tr><tr valign="top"><td><p>GetCustomers</p></td><td><p>List of Customer</p></td><td><p>None</p></td></tr><tr valign="top"><td><p>GetOrdersByCustomerID</p></td><td><p>List of SalesOrderHeader</p></td><td><p>Integer named customerID</p></td></tr><tr valign="top"><td><p>UpdateSalesOrderHeader</p></td><td><p>OperationStatus</p></td><td><p>SalesOrderHeader named order</p></td></tr></table></li>
+          <li />
+          <li>Add the <b>OperationContract</b> attribute above each of the methods.</li>
+          <li>Add code into <b>GetCustomers</b> to call the <b>_CustomerRepository.GetCustomers</b> method:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>return _CustomerRepository.GetCustomers();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>return _CustomerRepository.GetCustomers()</pre></td></tr></table></span></div></li>
+          <li />
+          <li>Add code into <b>GetOrdersByCustomerID</b> to call the _<b>OrderRepository</b>.<b>GetOrdersByCustomerID</b> method and return a collection.  Pass the service operation's <b>customerID</b> parameter to the repository object's method.</li>
+          <li>Add code into <b>UpdateSalesOrderHeader</b> to call the _<b>OrderRepository</b>.<b>UpdateSalesOrderHeader</b> method and return an <b>OperationStatus</b> object. Pass the service operation's <b>order</b> parameter to the repository object's method.</li>
+          <li>Build the solution and resolve any compilation issues before continuing.</li>
+          <li>Right-click the <b>CustomersService.svc</b> file in the Solution Explorer and select <b>View in Browser</b>. You should see a service test page appear.</li>
+        </ol>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

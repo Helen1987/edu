@@ -1,0 +1,154 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Migrating a Windows Forms Application to Silverlight" />
+      <MSHelp:RLTitle Title="Exercise 2: Migrating a Windows Forms Application to Silverlight" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Migrating a Windows Forms Application to Silverlight</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating a Windows Forms Application to Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Migrating a Windows Forms Application to Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <br />
+        <p>Now that you've examined the functionality provided by the existing Windows Forms application you'll migrate the application to Silverlight. In this exercise you'll create a new Silverlight project, work with eXtensible Application Markup Language (XAML), create a WCF service proxy to interact with the service and design a user interface that mirrors the existing Windows Forms user interface.</p>
+        <p>What benefits does XAML offer to an experienced Windows Forms developer?  In a nutshell, XAML provides a declarative way to create user interfaces and provides a productive and flexible way to layout controls. XAML allows you define the overall layout of controls used in an application without having to use a programming language such as C# or VB which simplifies development reduces maintenance costs, allows for better re-use of styles, and leads to greater overall productivity. You can also animate, scale, rotate and even skew objects using XAML which opens up many new avenues for presenting data to end users. You can even completely re-design the look and feel of controls using XAML through the use of styles and templates. Finally, data bindings between controls and object properties can be defined declaratively in XAML providing a simple yet robust way to bind data in applications.</p>
+        <ol>
+          <li>Add a new <b>Silverlight Application</b> into the solution by right-clicking the <b>CustomerViewer </b>solution and selecting <b>Add  New Project</b> from the menu.</li>
+          <li>From the Installed Templates area on the left of the dialog, pick your desired language (Visual Basic or C#) and select <b>Silverlight</b>. Select <b>Silverlight Application</b> from the available templates:</li>
+          <br />
+          <p>
+            <img src="images\797b8541-08fa-4fe2-97d2-50254856d919.png" />
+          </p>
+          <p>
+            <b>Figure 3</b>
+            <br />
+            <i>New project dialog box</i>
+          </p>
+          <li>Name the project <b>SilverlightCustomerViewer</b> and save it within the existing <b>CustomerViewer</b> solution folder.</li>
+          <li>In the dialog window that appears ensure that <b>&lt;New Web Project&gt;</b> is selected from the drop-down options and ensure that the project is named <b>SilverlightCustomerViewer.Web</b> as shown next. This project will be used to host the Silverlight application in a web page.<p><img src="images\57a32b7c-bdb3-4a98-bbd5-8c9f48f4f9d5.png" /></p><p><b>Figure 4</b><br /><i>New SilverLight Application dialog box</i></p></li>
+          <li>Once the project loads you'll see the Visual Studio editor open in split-view mode with a designer on top and a XAML code editor window on the bottom. </li>
+          <li>Locate the XAML code editor window and change the <b>UserControl</b> element's <b>d:DesignHeight</b> and <b>d:DesignWidth</b> attributes and add <b>Width</b> and <b>Height</b> attributes as shown next:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;UserControlx:Class="SilverlightCustomerViewer.MainPage"xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"xmlns:d="http://schemas.microsoft.com/expression/blend/2008"xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"mc:Ignorable="d"d:DesignHeight="545"d:DesignWidth="550"Width="545"Height="550"&gt;&lt;Gridx:Name="LayoutRoot"Background="White"&gt;&lt;/Grid&gt;&lt;/UserControl&gt;</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> The d:DesignHeight and d:DesignWidth attributes control the size of the design surface while in design mode. However, they don't have any effect at runtime.  The Height and Width attributes constrain the size of the Silverlight screen at runtime. If you don't supply a Height and Width attribute Silverlight will automatically fill the entire area of its container.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <li>Now that the designer has been resized, drag 9 <b>TextBlock</b>controls, 1 <b>ComboBox </b>control, 5 <b>TextBox</b> controls and 2 <b>Button</b> controls from the Toolbox onto the designer and arrange them as shown next.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The TextBlock control is analogous to the Label control in Windows Forms. The Silverlight Toolkit (available from http://silverlight.codeplex.com) also provides a Label control that can be used in Silverlight applications. <br /> Once you've added a control onto the design surface you can select it and then copy and paste it onto the design surface to add another control of the same type quickly and easily.</td></tr></table><p /></div><p><img src="images\e549708e-034c-43c5-bd5d-cd01e045ec57.png" /></p><p><b>Figure 5</b><br /><i>Silverlight Customer UI</i></p></li>
+          <br />
+          <li>Modify the <b>Text</b> property of each <b>TextBlock</b> control to match the user interface shown previously (right-click on the control and select <b>Properties</b> from the menu).</li>
+          <li>Modify the <b>Content</b> property of each <b>Button</b> control to match the user interface shown earlier.</li>
+          <li>Right-click on the <b>ComboBox</b> control, select <b>Properties</b> and change the name of the control to a value of <b>CustomersComboBox</b> (you can change the name using the text box at the top of the Properties window as shown next):<p><img src="images\ce5ff8f7-bb0f-4498-999d-7bac9a01238e.png" /></p><p><b>Figure 6</b><br /><i>ComboBox Properties</i></p></li>
+          <li>Change the <b>DisplayMemberPath</b> property of the <b>ComboBox</b> to a value of <b>FullName</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b> </b>DisplayMemberPath is used to define the property that will be displayed as the ComboBox binds to a collection of objects such as Customer objects.</td></tr></table><p /></div></li>
+          <li>Give the following names to the update and delete buttons in the interface using the Properties window:<table style=""><tr valign="top"><th><p>Button Content</p></th><th><p>Button Name</p></th></tr><tr valign="top"><td><p>Update</p></td><td><p>UpdateButton</p></td></tr><tr valign="top"><td><p>Delete</p></td><td><p>DeleteButton</p></td></tr></table></li>
+          <li>To simulate an HTML frameset tag or a Windows Forms GroupBox container control, drag a <b>Rectangle</b> from the Toolbox and drop it on the designer surface.</li>
+          <li>Right-click on the <b>Rectangle</b> and select <b>Order  Send to Back</b> from the menu.</li>
+          <li>Resize and arrange the Rectangle so that it encompasses the controls as shown next:</li>
+          <br />
+          <p>
+            <img src="images\85276fc7-3d1e-4bb9-ae92-f138131405ec.png" />
+          </p>
+          <p>
+            <b>Figure 7</b>
+            <br />
+            <i>Silverlight Application UI</i>
+          </p>
+          <li>Drag a <b>Border</b> control onto the design surface and place it as shown next:</li>
+          <br />
+          <p>
+            <img src="images\5b1219f9-b197-413e-a8ff-241964d48d7a.png" />
+          </p>
+          <p>
+            <b>Figure 8</b>
+            <br />
+            <i>Silverlight Application UI</i>
+          </p>
+          <li>Right-click on the <b>Border</b> control in the designer and select <b>Properties</b> from the menu.</li>
+          <br />
+          <li>Change the following properties on the <b>Border</b> control:<table style=""><tr valign="top"><th><p>Property</p></th><th><p>Value</p></th></tr><tr valign="top"><td><p>Background</p></td><td><p>White</p></td></tr><tr valign="top"><td><p>BorderBrush</p></td><td><p>White</p></td></tr></table></li>
+          <li>Drag a <b>TextBlock</b> control from the Toolbox and drop it <b>into</b> the <b>Border</b> control (ensure that it's dropped inside of the Border control).</li>
+          <li>Change the <b>TextBlock's Text</b> property to a value of <b>Customer Details</b>. </li>
+          <li>Right-click on the Customer Details <b>TextBlock</b> and select <b>Reset Layout  Size</b> from the menu.</li>
+          <li>The user interface should look like the following once completed:<p><img src="images\e88c3596-d126-4ffc-b441-624e911e4c27.png" /></p><p><b>Figure 9</b><br /><i>Finished Silverlight Application UI</i></p></li>
+          <br />
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

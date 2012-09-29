@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="ContosoWebParts.HelloWebPart.HelloWebPart, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">The "Hello" Web Part</property>
+        <property name="Description" type="string">A most compelling Web Part</property>
+        <property name="ChromeType" type="chrometype">TitleAndBorder</property>
+        <property name="CatalogIconImageUrl" type="string">_layouts/images/ContosoWebParts/WebPartIcon.gif</property>
+        <property name="TitleIconImageUrl" type="string">_layouts/images/ContosoWebParts/WebPartIcon.gif</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

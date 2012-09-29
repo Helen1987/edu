@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ServiceConfiguration serviceName="MyTodo" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
+  <Role name="MyTodo.WebUx">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[YOUR_ACCOUNT_NAME];AccountKey=[YOUR_ACCOUNT_KEY]" />
+      <Setting name="DiagnosticsConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[YOUR_ACCOUNT_NAME];AccountKey=[YOUR_ACCOUNT_KEY]" />
+      <Setting name="InitialListsBlobUrl" value="" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

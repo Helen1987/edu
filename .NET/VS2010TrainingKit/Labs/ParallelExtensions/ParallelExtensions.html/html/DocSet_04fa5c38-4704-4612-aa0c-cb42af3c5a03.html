@@ -1,0 +1,330 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Parallelize an Existing Algorithm using the Static Parallel Helper Class" />
+      <MSHelp:RLTitle Title="Exercise 1: Parallelize an Existing Algorithm using the Static Parallel Helper Class" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Parallelize an Existing Algorithm using the Static Parallel Helper Class</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Parallel Extensions: Building Multicore Applications with .NET</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Parallelize an Existing Algorithm using the Static Parallel Helper Class</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to parallelize and existing algorithm by using the static <b>Parallel</b> helper class. This allows you to do things like replacing <b>for()</b> with <b>Parallel.For()</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To verify that each step is correctly performed, it is recommended to build the solution at the end of each task.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141331" href="#">
+          <span />
+        </a>
+        <br />
+        <a name="_Toc281933627" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Parallelizing a Long Running Service</b>
+        </p>
+        <p>In this task, you will write some simple sample code that will simulate a long running service call.</p>
+        <p>You are going to use the <b>PayrollServices.GetPayrollDeduction()</b> method which is provided with the begin solution of this exercise. This is the type of long running code that you would ultimately like to run in parallel.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ParallelExtLab.sln</b> located under<b><i>Source\Ex01-UsingStaticParallelHelper\begin</i></b>. <b>(Choosing the folder that matches the language of your preference.)</b><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This solution contains a starting point for your work, and includes a helper class <b>EmployeeList</b> which holds the data you’ll be working with.</td></tr></table><p /></div><br /></li>
+          <li>In Visual Studio, open the <b>Program.cs (C#) </b>or<b> Module1.vb (Visual Basic)</b> file and navigate to its <b>Main()</b> method. First, you will need to create a list of employees to work on, so add a class variable and initialize it in the <b>Main()</b> method:<br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Create employee list CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>class Program{<b>    private static EmployeeList employeeData;</b><b></b><b>    static void Main(string[] args)</b><b>    {</b><b>       employeeData = new EmployeeList();</b><b>       Console.WriteLine("Payroll process started at {0}", DateTime.Now);</b><b>       var sw = Stopwatch.StartNew();</b><b>       // Methods to call</b><b>       Console.WriteLine("Payroll finished at {0} and took {1}", </b><b>                             DateTime.Now, sw.Elapsed.TotalSeconds);</b><b>       Console.WriteLine();</b><b>       Console.ReadLine();</b><b>    }</b>}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Create employee list VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Module Module1<b>    Private employeeData As EmployeeList</b><b>    Sub Main(ByVal args() As String)</b><b>        employeeData = New EmployeeList()</b><b>        Console.WriteLine("Payroll process started at {0}", DateTime.Now)</b><b>        Dim sw = Stopwatch.StartNew()</b><b>        ' Methods to call</b><b>        Console.WriteLine("Payroll finished at {0} and took {1}", DateTime.Now, sw.Elapsed.TotalSeconds)</b><b>        Console.WriteLine()</b><b>        Console.ReadLine()</b><b>    End Sub</b>End Module</pre></td></tr></table></span></div><br /></li>
+          <li>Now add the following method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic). This method will use a standard <b>for</b> loop to iterate through a list of <b>Employees</b>, as provided by the pre-built code and call the long-running <b>PayrollServices.GetPayrollDeduction()</b> method. The code should look like:<p>(Code Snippet – <i>Intro to Parallel Extensions Lab –Ex1 Ex1Task1_ParallelizeLongRunningService CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex1Task1_ParallelizeLongRunningService()</b><b>{</b><b>    Console.WriteLine("Non-parallelized for loop");</b><b>    for (int i = 0; i &lt; employeeData.Count; i++)</b><b>    {</b><b>        Console.WriteLine("Starting process for employee id {0}", </b><b>            employeeData[i].EmployeeID);</b><b>        decimal span =           </b><b>            PayrollServices.GetPayrollDeduction(employeeData[i]);</b><b>        Console.WriteLine("Completed process for employee id {0}" +         </b><b>            "process took {1} seconds", </b><b>            employeeData[i].EmployeeID, span);</b><b>        Console.WriteLine();</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_ParallelizeLongRunningService Visual Basic</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex1Task1_ParallelizeLongRunningService()</b><b>    Console.WriteLine("Non-parallelized for loop")</b><b>    For i = 0 To employeeData.Count - 1</b><b>        Console.WriteLine("Starting process for employee id {0}", employeeData(i).EmployeeID)</b><b>        Dim span As Decimal = PayrollServices.GetPayrollDeduction(employeeData(i))</b><b>        Console.WriteLine("Completed process for employee id {0}" &amp; "process took {1} seconds", employeeData(i).EmployeeID, span)</b><b>        Console.WriteLine()</b><b>    Next i</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Call the method <b>Ex1Task1_ParallelizeLongRunningService</b> from <b>Main()</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call <b>    Ex1Task1_ParallelizeLongRunningService();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex1Task1_ParallelizeLongRunningService()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should see that the employees are all processed in order of their IDs, similar to the following (the exact time to complete will vary):<p><img src="images\ec37fd85-9945-4367-83fd-cdfb9929ea56.png" /></p><p><b>Figure 1</b><br /><i>Output from non-parallel calls to a long running service</i></p><br /></li>
+          <li>To work with the parallelization features, add the following method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic). This code uses the <b>For()</b> method from the static <b>Parallel</b> object:<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_UseParallelForMethod CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex1Task1_UseParallelForMethod()</b><b>{</b><b>    Parallel.For(0, employeeData.Count, i =&gt;</b><b>    {</b><b>        Console.WriteLine("Starting process for employee id {0}", </b><b>                           employeeData[i].EmployeeID);</b><b>        decimal span =</b><b>            PayrollServices.GetPayrollDeduction(employeeData[i]);</b><b>        Console.WriteLine("Completed process for employee id {0}",</b><b>                          employeeData[i].EmployeeID);</b><b>        Console.WriteLine();</b><b>    });</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_UseParallelForMethod VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private Sub Ex1Task1_UseParallelForMethod()</b><b>    Parallel.For(0, employeeData.Count,</b><b>                 Sub(i)</b><b>                     Console.WriteLine("Starting process for employee id {0}", employeeData(i).EmployeeID)</b><b>                     Dim span As Decimal = PayrollServices.GetPayrollDeduction(employeeData(i))</b><b>                     Console.WriteLine("Completed process for employee id {0}", employeeData(i).EmployeeID)</b><b>                     Console.WriteLine()</b><b>                 End Sub)</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Replace the current method calls from <b>Main() </b>with a call to <b>Ex1Task1_UseParallelForMethod()</b> method.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call <b>    Ex1Task1_UseParallelForMethod();</b>    ...}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex1Task1_UseParallelForMethod()</b>    ... End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Build and run the application.</li>
+          <li>You should observe that the employees are not necessarily processed in the order of their IDs. You’ll also notice that multiple calls to the <b>GetPayrollDeduction()</b> method are made before the first call returns. And finally, you should observe that by running the calls in parallel, the entire job completed much faster than when run in serial.<p><img src="images\0050d9ec-f0e7-476a-be81-c81c39d71e4b.png" /></p><p><b>Figure 2</b><br /><i>Output from parallel calls to a long running service</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Because the loop is run in parallel, each iteration is scheduled and run individually on whatever core is available. This means that the list is not necessarily processed in order, which can drastically affect your code. You should design your code in a way that each iteration of the loop is completely independent from the others. Any single iteration should not rely on another in order to complete correctly.</td></tr></table><p /></div><br /></li>
+          <li>The Parallel Extensions library also provides a parallel version of the <b>foreach</b> structure. The following code demonstrates the non-parallel way to implement this structure. Add the following method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic).<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_StandardForEach CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex1Task1_StandardForEach()</b><b>{</b><b>    foreach (Employee employee in employeeData)</b><b>    {</b><b>        Console.WriteLine("Starting process for employee id {0}", </b><b>            employee.EmployeeID);</b><b>        decimal span = </b><b>            PayrollServices.GetPayrollDeduction(employee);</b><b>        Console.WriteLine("Completed process for employee id {0}", </b><b>            employee.EmployeeID);</b><b>        Console.WriteLine();</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_StandardForEach VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex1Task1_StandardForEach()</b><b>    For Each employee As Employee In employeeData</b><b>        Console.WriteLine("Starting process for employee id {0}", employee.EmployeeID)</b><b>        Dim span As Decimal = PayrollServices.GetPayrollDeduction(employee)</b><b>        Console.WriteLine("Completed process for employee id {0}", employee.EmployeeID)</b><b>        Console.WriteLine()</b><b>    Next employee</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>In the <b>Main()</b> method, replace the <b>Parallel.For(…)</b> loop with the following code:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    // Methods to call <b>    Ex1Task1_StandardForEach();</b>}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Sub Main(ByVal args() As String)    ' Methods to call<b>    Ex1Task1_StandardForEach()</b>End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Build and run the application.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You should observe that the employees are once again processed in the order of the IDs. Also take note of the total amount of time required to complete this job (the exact time required will vary)</td></tr></table><p /></div><br /><p><img src="images\c71d8954-160b-468f-b88f-fc0e686b9eed.png" /></p><p><b>Figure 3</b><br /><i>Output from non-parallel for…each implementation</i></p><br /></li>
+          <li>To utilize the Parallel Extensions implementation of the <b>for…each</b> structure you’ll need to change the code to use the <b>ForEach()</b> method. In <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic)add the following method:<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_ParallelForEach CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex1Task1_ParallelForEach()</b><b>{</b><b>    Parallel.ForEach(employeeData, ed =&gt;</b><b>    {</b><b>        Console.WriteLine("Starting process for employee id {0}", </b><b>            ed.EmployeeID);</b><b>        decimal span = PayrollServices.GetPayrollDeduction(ed);</b><b>        Console.WriteLine("Completed process for employee id {0}",</b><b>            ed.EmployeeID);</b><b>        Console.WriteLine();</b><b>    });</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_ParallelForEach VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private Sub Ex1Task1_ParallelForEach()</b><b>    Parallel.ForEach(employeeData,</b><b>                     Sub(ed)</b><b>                         Console.WriteLine("Starting process for employee id {0}", ed.EmployeeID)</b><b>                         Dim span As Decimal = PayrollServices.GetPayrollDeduction(ed)</b><b>                         Console.WriteLine("Completed process for employee id {0}", ed.EmployeeID)</b><b>                         Console.WriteLine()</b><b>                     End Sub)</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex1Task1_ParallelForEach</b> method.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call <b>    Ex1Task1_ParallelForEach();</b>    ...}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex1Task1_ParallelForEach()</b>    ... End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Build and run the application.</li>
+          <li>You will again observe that the employees are not necessarily processed in order of their ID and because each loop is run in parallel, each iteration of the loop is run individually on whatever core is available. Also, since the application is utilizing all available cores the job is able to complete faster than when run in a serial manner.<p><img src="images\280bd863-799f-46b0-b508-ce87d3191d98.png" /></p><p><b>Figure 4</b><br /><i>Output from parallel for…each implementation</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Parallel Extensions Library also provides a useful <b>Invoke()</b> method, that allows parallel execution of anonymous methods or lambda expressions. To help illustrate how to use the Invoke method you will examine a common tree-walking algorithm and then see how it can be parallelized to reduce the total time needed to walk the entire tree.<br />In this example you will walk an employee hierarchy and call the <b>GetPayrollDeduction()</b> method for each employee you encounter.</td></tr></table><p /></div><br /></li>
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex1Task1_WalkTree()</b> method. This code instantiate the employee hierarchy and call the tree walker method.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call <b>    Ex1Task1_WalkTree();</b>    ...}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex1Task1_WalkTree()</b>    ... End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_WalkTree CSharp</i>)</p>
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>private static void Ex1Task1_WalkTree()</b><b>{</b><b>    EmployeeHierarchy employeeHierarchy = new EmployeeHierarchy();</b><b>    WalkTree(employeeHierarchy);</b><b>}</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 Ex1Task1_WalkTree VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private Sub Ex1Task1_WalkTree()</b><b>    Dim employeeHierarchy As New EmployeeHierarchy()</b><b>    WalkTree(employeeHierarchy)</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Add the following method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 WalkTree CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void WalkTree(Tree&lt;Employee&gt; node)</b><b>{</b><b>    if (node == null)</b><b>        return;</b><b>    if (node.Data != null)</b><b>    {</b><b>        Employee emp = node.Data;</b><b>        Console.WriteLine("Starting process for employee id {0}", </b><b>            emp.EmployeeID);</b><b>        decimal span = PayrollServices.GetPayrollDeduction(emp);</b><b>        Console.WriteLine("Completed process for employee id {0}", </b><b>            emp.EmployeeID);</b><b>        Console.WriteLine();</b><b>    }</b><b>    WalkTree(node.Left);</b><b>    WalkTree(node.Right);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex1 WalkTree VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub WalkTree(ByVal node As Tree(Of Employee))</b><b>    If node Is Nothing Then</b><b>        Return</b><b>    End If</b><b>    If node.Data IsNot Nothing Then</b><b>        Dim emp As Employee = node.Data</b><b>        Console.WriteLine("Starting process for employee id {0}", emp.EmployeeID)</b><b>        Dim span As Decimal = PayrollServices.GetPayrollDeduction(emp)</b><b>        Console.WriteLine("Completed process for employee id {0}", emp.EmployeeID)</b><b>        Console.WriteLine()</b><b>    End If</b><b>    WalkTree(node.Left)</b><b>    WalkTree(node.Right)</b><b>End Sub</b></pre></td></tr></table></span></div><p /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe the employees are processed in order of their IDs. Also note the total amount of time required to walk the tree (the exact time required will vary):<p><img src="images\1e15fdea-8113-47b6-a512-297fadf4fd8e.png" /></p><p><b>Figure 5</b><br /><i>Output from a non-parallel tree walker</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The tree has been structured so that the data will be written out in ID order when the tree is walked using the non-parallel algorithm provided above.</td></tr></table><p /></div><br /></li>
+          <li>To walk the tree in a parallel manner remove the two calls to <b>WalkTree()</b> at the end of the <b>WalkTree()</b> method and replace them with a call to the <b>Invoke()</b> Method of the static Parallel class:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private static void WalkTree(Tree&lt;Employee&gt; node){    if (node == null)        return;    if (node.Data != null)    {        Employee emp = node.Data;        Console.WriteLine("Starting process for employee id {0}",             emp.EmployeeID);        decimal span = PayrollServices.GetPayrollDeduction(emp);        Console.WriteLine("Completed process for employee id {0}",             emp.EmployeeID);        Console.WriteLine();    }<b>    Parallel.Invoke(delegate { WalkTree(node.Left); }, delegate { WalkTree(node.Right); });</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub WalkTree(ByVal node As Tree(Of Employee))    If node Is Nothing Then        Return    End If    If node.Data IsNot Nothing Then        Dim emp As Employee = node.Data        Console.WriteLine("Starting process for employee id {0}", emp.EmployeeID)        Dim span As Decimal = PayrollServices.GetPayrollDeduction(emp)        Console.WriteLine("Completed process for employee id {0}", emp.EmployeeID)        Console.WriteLine()    End If<b>Parallel.Invoke(Sub() WalkTree(node.Left), Sub() WalkTree(node.Right))</b>End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that the employees in the tree are no longer processed in the same order and that several nodes start processing before others have completed. Also note that it took less time to walk the entire tree.<p><img src="images\25dc880d-c8de-48cb-9b88-723eef36dfed.png" /></p><p><b>Figure 6</b><br /><i>Output from a parallel tree walker</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>Invoke()</b> method schedules each call to <b>WalkTree()</b> individually, based on core availability. This means that the tree will not necessarily be walked in a predictable manner. Again, keep this in mind as you design your code.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_63b1d124-35f6-4b25-90b8-248c636559d3.html">Exercise 2: Create and Run Parallelized Tasks</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="CustomBinding_CustomersService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:37156/Services/CustomersService.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_CustomersService"
+                contract="WebServiceProxies.CustomersService" name="CustomBinding_CustomersService" />
+        </client>
+    </system.serviceModel>
+</configuration>

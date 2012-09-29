@@ -1,0 +1,103 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Verification" />
+      <MSHelp:RLTitle Title="Exercise 2: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <ol>
+          <li>Right-click <b>EchoService.svc</b>, and select View in Browser, to open the service in a new browser instance.</li>
+          <li>You should now see a service page with a link to the WSDL because of the enabled <b>serviceMetaData</b> behavior.<p><img src="images\7ba83fb7-3d13-464a-a164-1eb4da0260e7.png" /></p><p><b>Figure 6</b><br /><i>EchoService now has metadata enabled</i></p><br /></li>
+          <li>Copy the URL of the service from the browser address bar.</li>
+          <li>Start the WCF Test Client. To do this, open a Visual Studio Command Prompt (2010), type the following command, and press Enter.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Studio Command Prompt (2010)</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>C:\&gt;WCFTestClient</b></pre></td></tr></table></span></div><br /></li>
+          <li>In the WCF Test Client, select <b>File / Add Service</b>, paste the URL from the browser into the endpoint address and click <b>OK</b>.<p><img src="images\9e553ca2-fa80-4d25-8b50-2b56b8ad1237.png" /></p><p><b>Figure 7</b><br /><i>Add the service to the WCF Test Client</i></p><br /></li>
+          <li>After the service has been loaded, double-click the <b>Echo()</b> method, set the value of the message parameter to <i>Test</i>, and click <b>Invoke</b>. The service will echo back <b>“Echo: Test”</b>.</li>
+          <li>Invoke the service again –  clear the value <b>Test</b>, and click <b>Invoke </b>with an empty value.<p><img src="images\341b4f51-776c-4473-8ff1-45640e77767f.png" /></p><p><b>Figure 8</b><br /><i>The server reports an internal error</i></p><br /></li>
+          <li>When debugging your service it can be helpful to see the exception details. Switch back to Visual Studio 2010, open the Web.config file and change the serviceDebug behavior to set the <b>includeExceptionDetailInFaults</b> attribute to <b>true</b>.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;serviceDebug includeExceptionDetailInFaults="true" /&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Save <b>Web.config</b> this will cause the app domain to recycle.</li>
+          <li>Switch back to the WCF Test Client.</li>
+          <li>Invoke the service again with an empty value – check the <b>Start a new proxy</b> checkbox, and click <b>Invoke</b>.</li>
+          <li>This time you will see the exception message in the WCF Test Client because the serviceDebug behavior.<p><img src="images\8174fbb3-091e-49c9-b60b-cefb3998c1ee.png" /></p><p><b>Figure 9</b><br /><i>The serviceDebug behavior including exception details</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_1521d8d7-8e32-4e4d-b05e-372f8f8fc0ea.html">Exercise 3: Default Binding</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="DataBinding.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:data="clr-namespace:DataBinding"
+    xmlns:converters="clr-namespace:DataBinding.Converters"
+    d:DesignHeight="500" d:DesignWidth="500" Height="500" Width="500">
+    <UserControl.Resources>
+        <data:CustomerContainer x:Key="CustomerContainerObject" />
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </UserControl.Resources>
+        <Grid x:Name="LayoutRoot" Background="White" Margin="0,10,0,0"
+              DataContext="{Binding Source={StaticResource CustomerContainerObject}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51*" />
+            <RowDefinition Height="158*" />
+            <RowDefinition Height="57*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="58*" />
+            <RowDefinition Height="121*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107*" />
+            <ColumnDefinition Width="393*" />
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Column="1" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding Path=States}" DisplayMemberPath="Name" SelectedItem="{Binding Path=CurrentState, Mode=TwoWay}" />
+        <TextBlock Name="textBlock1" Text="States" HorizontalAlignment="Left" Margin="10,0,0,0" />
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Name="textBlock2" Text="Customers" Grid.Row="1" Height="130" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Name="textBlock3" Text="Name" Grid.Row="2" />
+        <TextBlock Grid.RowSpan="2" HorizontalAlignment="Left" Margin="10,0,0,58" Name="textBlock4" Text="City" Grid.Row="3" />
+        <Button Content="Submit" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="10,16,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <ListBox Grid.Column="1" Grid.Row="1" Height="130" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="381" 
+                 SelectedItem="{Binding Path=CurrentCustomer, Mode=TwoWay}" 
+                 ItemsSource="{Binding Path=FilteredCustomers}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="350">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".20*" />
+                                <ColumnDefinition Width=".30*" />
+                                <ColumnDefinition Width=".20*" />
+                                <ColumnDefinition Width=".30*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <Image Grid.Column="0" Source="{Binding Path=ImageUrl}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Path=Name}"  FontSize="12" Foreground="Navy" />
+                            <TextBlock Grid.Column="2" Text="{Binding Path=City}" FontSize="12" Foreground="Red" />
+                            <TextBlock Grid.Column="3" Text="{Binding Path=State}" FontSize="12" Foreground="Green" />                       
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Text="{Binding Path=CurrentCustomer.Name, Mode=TwoWay}" />
+        <TextBox Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Grid.Column="1" Grid.Row="3" Text="{Binding Path=CurrentCustomer.City, Mode=TwoWay}" />
+        <TextBlock HorizontalAlignment="Left" Margin="12,0,0,0" Name="textBlock5" Text="Birthday" Grid.Row="4" />
+        <TextBox Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Grid.Column="1" Grid.Row="4" Text="{Binding Path=CurrentCustomer.Birthday, Mode=TwoWay, StringFormat=\{0:d\}}" />
+        <TextBlock Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="0,16,0,0" Name="OutputTextBlock" Text="" VerticalAlignment="Top" Width="183" />
+        <Image
+            Visibility="{Binding CurrentCustomer.IsGold,Converter={StaticResource BoolToVisibilityConverter},FallbackValue=Collapsed}"
+            Grid.Column="1" Grid.Row="2" Height="56" HorizontalAlignment="Left" Margin="246,0,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="82" Source="Images/GoldStar.png" />
+    </Grid>
+</UserControl>

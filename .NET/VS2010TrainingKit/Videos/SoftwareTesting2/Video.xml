@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Author>
+    <Name>BrianKel</Name>
+  </Author>
+  <Id>SoftwareTesting2</Id>
+  <Version>1.0</Version>
+  <Title>Software Testing with Microsoft Visual Studio 2010: Part 2, Making it Real</Title>
+  <Description>
+    This session is part 2 of 2; it is recommended, though not required, that you view part 1 of this session in order to benefit most. In this demo-rich session we examine the end-to-end software testing capabilities of Visual Studio 2010. This includes a deep look at manual testing, lab management, data diagnostics adapters, the "actionable bug", functional UI testing, test impact analysis, test automation, and much more which will help you more easily find and eliminate defects from your software. This session is presented by Brian Keller during Microsoft DevDays 2010 in The Hague in The Netherlands.
+  </Description>
+  <Abstract>
+    This session is part 2 of 2; it is recommended, though not required, that you view part 1 of this session in order to benefit most. In this demo-rich session we examine the end-to-end software testing capabilities of Visual Studio 2010. This includes a deep look at manual testing, lab management, data diagnostics adapters, the "actionable bug", functional UI testing, test impact analysis, test automation, and much more which will help you more easily find and eliminate defects from your software. This session is presented by Brian Keller during Microsoft DevDays 2010 in The Hague in The Netherlands.
+  </Abstract>
+  <Url>
+    http://ecn.channel9.msdn.com/o9/ch9/5/7/5/2/4/5/dd201060_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/posts/matthijs/Software-Testing-with-Microsoft-Visual-Studio-2010-Part-2-Making-it-Real/Player/" />
+  </CustomProperties>
+</Video>

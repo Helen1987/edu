@@ -1,0 +1,166 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Adding Validation at Client Side" />
+      <MSHelp:RLTitle Title="Exercise 2: Adding Validation at Client Side" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Adding Validation at Client Side</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Custom Validation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Adding Validation at Client Side</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In the previous exercise you added a custom range validation method for the album price in the server side.</p>
+        <p>In this exercise, you will learn how to add validation at client side. For that purpose you will implement MVC3 <b>IClientValidatable</b> Interface at client side. This will improve the user experience, as the error message will appear before saving the album.</p>
+        <a name="_Toc282145882" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a ModelClientValidationRule for price ranges</b>
+        </p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>ModelClientValidationRule</b> is an ASP.NET MVC class that provides a base class container for client validation rules sent to the browser. In order to achieve that, any generic rule should inherit from this class.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>In this task, you will create a new ModelClientValidationRule called <b>ModelClientPriceRangeValidationRule</b>. This derived class will provide a custom validation rule.</p>
+        <ol>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at Source\Ex02- Client Side Custom Validation\Begin.</li>
+          <li>Create a new C# class file into <b>Validations</b> folder, and rename it <b>ModelClientPriceRangeValidationRule.cs</b>.</li>
+          <li>Open <b>ModelClientPriceRangeValidationRule.cs</b>. and add a reference to the <b>System.Web.Mvc </b> namespace:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;<b>using System.Web.Mvc;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Inherit the <b>ModelClientPriceRangeValidationRule </b>class<b> </b>from <b>ModelClientValidationRule</b>:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;namespace MvcMusicStore.Validations{    public class ModelClientPriceRangeValidationRule: ModelClientValidationRule    {    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Create a new class constructor for <b>ModelClientPriceRangeValidationRule</b> to set the base class properties with your custom parameters: <p>(Code Snippet – ASP.NET MVC 3 Adding validation at client side – Ex2 Constructor - CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System.Web.Mvc;namespace MvcMusicStore.Validations{    public class ModelClientPriceRangeValidationRule : ModelClientValidationRule    {<b>        public ModelClientPriceRangeValidationRule(string errorMessage, decimal minPrice, decimal maxPrice)</b><b>        {</b><b>            ErrorMessage = errorMessage;</b><b>            ValidationType = "priceOnRange";</b><b>            ValidationParameters.Add("minPrice", minPrice);</b><b>            ValidationParameters.Add("maxPrice", maxPrice);</b><b>        }</b>    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In the following steps you will see how this piece is connected with the general solution.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282145883" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding attribute validation at client side</b>
+        </p>
+        <p>In this task, you will add a method to <b>PriceValidationAttribute </b>class to perform validation at client-side.</p>
+        <ol>
+          <li>Open <b>PriceValidationAttribute.cs</b> from<b> \MvcMusicStore\Validations</b>.</li>
+          <li>Make the <b>PriceValidationAttribute</b> class implement the <b>IClientValidatable</b> interface<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    public class PriceValidationAttribute : ValidationAttribute, IClientValidatable</pre></td></tr></table></span></div><br /></li>
+          <li>Make the <b>PriceValidationAttribute</b> override the method <b>GetClientValidationRules</b><p>(Code Snippet – ASP.NET MVC 3 Adding validation at client side – Ex2 GetClientValidationRules override - CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...    public class PriceValidationAttribute : ValidationAttribute, IClientValidatable    {        ...        public override bool IsValid(object value)        {            ...        }<b>       // Client-Side validation</b><b>        public IEnumerable&lt;ModelClientValidationRule&gt; GetClientValidationRules(ModelMetadata metadata, ControllerContext context)</b><b>        {</b><b>            var rule = new ModelClientPriceRangeValidationRule("The price is not in a valid range.", this.minPrice, this.maxPrice);</b><b>            yield return rule;</b><b>        }</b>...</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282145884" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a JavaScript Function to Perform Client-Side Validation</b>
+        </p>
+        <ol>
+          <li>Create a new JavaScript file at <b>\MvcMusicStore\Scripts</b> and rename it to <b>PriceValidation.js</b>.</li>
+          <li>Open <b>PriceValidation.js</b> and insert the following client side code that will validate the price range. You will note that it has the same logic as the <b>IsValid </b>method of <b>PriceValidationAttribute </b>class created in the previous exercise:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sys.Mvc.ValidatorRegistry.validators["priceOnRange"] = function(rule) {    var minPrice = rule.ValidationParameters.minPrice;    var maxPrice = rule.ValidationParameters.maxPrice;    var message = rule.ErrorMessage;    return function (value, context) {        if (value &gt; maxPrice || value &lt; minPrice) {            return false;        }        return true;    };};</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282145885" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Modifying the Create View to Execute Client-Side Validation</b>
+        </p>
+        <ol>
+          <li>Open <b>Create.aspx</b> view from <b>\Views\StoreManager</b>.</li>
+          <li>Add references to the following three JavaScript files that will take care of Ajax features, MVC validation and the custom price validation. Next, enable HTML client validation:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…    &lt;h2&gt;Create&lt;/h2&gt;<b>&lt;script src="/Scripts/MicrosoftAjax.js" type="text/javascript"&gt;&lt;/script&gt;</b><b>    &lt;script src="/Scripts/MicrosoftMvcValidation.js" type="text/javascript"&gt;&lt;/script&gt;</b><b>    &lt;script src="/Scripts/PriceValidation.js" type="text/javascript"&gt;&lt;/script&gt;</b><b>    &lt;% Html.EnableClientValidation(); %&gt;</b>    &lt;% using (Html.BeginForm()) {%&gt;…</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282145886" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b> create view template performs a range validation at client side when the user enters an album price.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Browse <b>/StoreManager/Create</b> and in the <b>Price</b> field enter a value outside of the validation range [0.01, 100]. You will see the following error message:<p><img src="images\6b138518-7ab7-46af-954b-23be49184919.png" /></p><p><b>Figure 1</b><br /><i>Validating an album price at client side</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_bb197744-92b6-4196-98bc-59db04119043.html">Exercise 3: Using IValidatableObject custom validation</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

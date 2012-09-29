@@ -1,0 +1,5632 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td
+{
+    margin: 0;
+    padding: 0;
+}
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img
+{
+    border: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var
+{
+    font-style: normal;
+    font-weight: 400;
+}
+ol, ul
+{
+    list-style: none;
+}
+caption, th
+{
+    text-align: left;
+}
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 100%;
+    font-weight: 400;
+}
+q:before, q:after
+{
+    content: '';
+}
+abbr, acronym
+{
+    border: 0;
+}
+h1
+{
+    font-size: 138.5%;
+}
+h2
+{
+    font-size: 123.099998%;
+}
+h3
+{
+    font-size: 108%;
+}
+h1, h2, h3
+{
+    margin: 1em 0;
+}
+h1, h2, h3, h4, h5, h6, strong
+{
+    font-weight: 700;
+}
+abbr, acronym
+{
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+em
+{
+    font-style: italic;
+}
+ol, ul, dl
+{
+    margin-left: 2em;
+}
+ol li
+{
+    list-style: decimal outside;
+}
+ul li
+{
+    list-style: disc outside;
+}
+dl dd
+{
+    margin-left: 1em;
+}
+th
+{
+    font-weight: 700;
+    text-align: center;
+}
+caption
+{
+    margin-bottom: .5em;
+    text-align: center;
+}
+p, fieldset, table
+{
+    margin-bottom: 1em;
+}
+h1, h2, h3, h4, h5, h6
+{
+    margin-top: 0;
+}
+h1, h2
+{
+    margin-bottom: 0;
+}
+a
+{
+    text-decoration: none;
+    font-weight: 400;
+}
+a:hover
+{
+    text-decoration: none;
+}
+a img
+{
+    border: 0;
+}
+.posted, .status, .tags, .resources, .date, .downloads, .sharethis, .showlink, .details, .userInfo
+{
+    padding-top: 2px;
+}
+.resources
+{
+    margin-top: 1.3em;
+}
+.block
+{
+    display: block;
+}
+.thin
+{
+    margin: 0;
+    padding: 0;
+}
+.clear
+{
+    clear: both;
+    line-height: 1px;
+    font-size: 1px;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+div.hidden
+{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-family: 'Segoe UI' , Verdana, Arial, Helvetica, Sans-Serif;
+    font-size: 77%;
+}
+.posted, .status, .tags, .resources, .date, .downloads, .sharethis, .showlink, .details, .userInfo
+{
+    font-size: 93%;
+}
+#logo
+{
+    display: block;
+}
+#sideBar li
+{
+    padding-top: 10px;
+    list-style: none;
+}
+#sideBar li.first
+{
+    padding-top: 0;
+}
+#userNav .profileLink.banned
+{
+    color: red;
+}
+.filler
+{
+    clear: both;
+}
+.fillerLeft
+{
+    clear: left;
+}
+.shareInfo
+{
+    background-attachment: scroll;
+    background-color: #FFF;
+    background-image: none;
+    background-repeat: repeat;
+    border: solid 1px #000;
+    width: 280px;
+    margin-left: 10px;
+    margin-top: -251px;
+    position: absolute;
+    z-index: 5000;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    display: none;
+    padding: 10px;
+}
+.shareInfo .embedField, .shareInfo .linkField
+{
+    width: 276px;
+}
+.shareClose
+{
+    margin-top: 10px;
+    float: right;
+    cursor: pointer;
+}
+.tagCloud
+{
+    text-align: center;
+}
+.tagCloud a
+{
+    padding: 0 6px;
+}
+.tagCloud a:hover
+{
+    text-decoration: underline;
+}
+.tagCloud .t1
+{
+    font-weight: 100;
+    font-size: .8em;
+}
+.tagCloud .t2
+{
+    font-weight: 200;
+    font-size: 1em;
+}
+.tagCloud .t3
+{
+    font-weight: 300;
+    font-size: 1.1em;
+}
+.tagCloud .t4
+{
+    font-weight: 600;
+    font-size: 1.3em;
+}
+.tagCloud .t5
+{
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.tagCloud .t6
+{
+    font-weight: 800;
+    font-size: 1.7em;
+}
+.tagCloud .t7
+{
+    font-weight: 900;
+    font-size: 1.9em;
+}
+#footer
+{
+    clear: both;
+    line-height: 174%;
+}
+#footerLeft
+{
+    float: left;
+}
+#footerRight
+{
+    float: right;
+    height: 43px;
+    margin: 0;
+}
+#footerRight .evNetSite
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/EvNetSites.png) no-repeat;
+    float: left;
+    height: 43px;
+    display: block;
+}
+#footerRight li
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/EvNetSitesSeperator.png) no-repeat;
+    float: left;
+    height: 43px;
+    padding-left: 19px;
+    padding-right: 15px;
+    list-style: none;
+}
+#footerRight li.first
+{
+    background: none;
+    padding-left: 0;
+}
+#footerRight li.last
+{
+    padding-right: 0;
+}
+#footerRight .C8
+{
+    width: 64px;
+}
+#footerRight .C9
+{
+    background-position: -64px 0;
+    width: 30px;
+}
+#footerRight .C10
+{
+    background-position: -94px 0;
+    width: 42px;
+}
+#footerRight .Mix
+{
+    background-position: -136px 0;
+    width: 75px;
+}
+#footerRight .Edge
+{
+    background-position: -211px 0;
+    width: 65px;
+}
+.fileUploader .uploadFrame
+{
+    height: 250px;
+    width: 460px;
+}
+.fileUploader .fileLabel
+{
+    min-width: 310px;
+    float: left;
+}
+.fileUploader .fileLabel .fileName
+{
+    font-weight: 700;
+}
+.fileUploader a
+{
+    margin: 2px;
+}
+.metadataControls
+{
+    border: 1px solid #999;
+    margin-top: -1px;
+    padding: 8px;
+}
+.tagEditor
+{
+    width: 735px;
+}
+.yui-ac
+{
+    position: relative;
+    font-family: arial;
+    font-size: 100%;
+}
+.yui-ac-input
+{
+    position: absolute;
+    width: 100%;
+}
+.yui-ac-container
+{
+    position: absolute;
+    top: 1.6em;
+    width: 100%;
+}
+.yui-ac-content
+{
+    position: absolute;
+    width: 250px;
+    border: 1px solid gray;
+    background: #fff;
+    overflow: hidden;
+    z-index: 9050;
+}
+.yui-ac-shadow
+{
+    position: absolute;
+    width: 100%;
+    background: #000;
+    -moz-opacity: .1;
+    opacity: .10;
+    filter: alpha(opacity=10);
+    z-index: 9049;
+    margin: .3em;
+}
+.yui-ac-content ul
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.yui-ac-content li
+{
+    cursor: default;
+    white-space: nowrap;
+    margin: 0;
+    padding: 2px 5px;
+}
+.yui-ac-content li.yui-ac-prehighlight
+{
+    background: #B3D4FF;
+}
+.yui-ac-content li.yui-ac-highlight
+{
+    background: #426FD9;
+    color: #FFF;
+}
+.seeAllTags
+{
+    font-size: 90%;
+    text-align: right;
+    padding: 5px;
+}
+.subscriptionLinkList li
+{
+    display: inline;
+    padding: 2px;
+}
+ul.subscriptionLinkList
+{
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+}
+.breadcrumb
+{
+    font-size: 85%;
+}
+.breadcrumb.top
+{
+    margin-bottom: 8px;
+}
+.breadcrumb.bottom
+{
+    margin-top: 8px;
+}
+.button
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/button-background-center.jpg) repeat-x;
+    height: 29px;
+    float: right;
+    cursor: pointer;
+}
+.button, .button span
+{
+    display: block;
+}
+.disabled .button
+{
+    cursor: default;
+}
+.disabled .button .inner
+{
+    color: Silver;
+}
+.button a
+{
+    height: 29px;
+    font-weight: inherit;
+    text-decoration: none;
+}
+.button .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/button-background-left.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.button .inner
+{
+    height: 22px;
+    float: left;
+    font-size: 77%;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #451802;
+    margin: 0;
+    padding: 7px 3px 0;
+}
+.button .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/button-background-right.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+body.dyn .comboList *
+{
+    cursor: pointer;
+}
+body.dyn .comboList .title, body.dyn .comboList ul.initialized
+{
+    cursor: default;
+}
+body.dyn .comboList
+{
+    display: inline;
+    float: left;
+    clear: both;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/multiarrow.gif) no-repeat 100% 4px;
+    padding: 0 14px 0 0;
+}
+body.dyn .comboList, body.dyn .comboList ul, body.dyn .comboList ul li.selected, body.dyn .comboList ul.drop li
+{
+    height: 1.4em;
+}
+body.dyn .comboList ul.drop
+{
+    top: 1.4em;
+    border: 1px solid #DAD5D4;
+    border-top: none;
+    background-color: #EEEBEA;
+    display: none;
+    height: auto;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    padding: 1px .2em;
+}
+body.dyn .comboList.active, body.dyn .comboList.open
+{
+    background-position: 100% -10px;
+}
+body.dyn .comboList div.title
+{
+    display: inline;
+    float: left;
+    padding: 0 5px 2px 0;
+}
+body.dyn .comboList.active div.title
+{
+    background-position: 100% -10px;
+}
+body.dyn .comboList ul
+{
+    background-color: #EEEBEA;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 3px 0 0;
+}
+body.dyn .comboList ul li
+{
+    list-style-type: none;
+    visibility: hidden;
+    background-color: #EEEBEA;
+}
+body.dyn .blogPage .comboList ul, body.dyn .blogPage .comboList ul li, body.dyn .featured .comboList ul, body.dyn .featured .comboList ul li, body.dyn .searchPage .comboList ul, body.dyn .searchPage .comboList ul li
+{
+    background-color: #F7F2F0;
+}
+body.dyn .comboList ul.initialized
+{
+    margin-left: 1px;
+}
+body.dyn .comboList ul.initialized li
+{
+    display: none;
+    visibility: visible;
+}
+body.dyn .comboList ul.initialized li.selected
+{
+    display: block;
+    width: 100%;
+    padding: 0 3px 0 2px;
+}
+body.dyn .comboList.open ul.drop li
+{
+    background-color: #EEEBEA;
+    display: block;
+    position: relative;
+    visibility: visible;
+}
+body.dyn .comboList.open ul.drop li.selected
+{
+    display: none;
+}
+body.dyn .comboList div.listCorral
+{
+    display: inline;
+    float: left;
+    position: relative;
+}
+body.dyn .comboList.open ul.drop
+{
+    display: block;
+}
+body.dyn .comboList ul.drop li a
+{
+    height: 1.5em;
+    width: 100%;
+}
+body.dyn .comboList ul.drop li.selected a
+{
+    color: green;
+}
+body.dyn .comboList ul li a
+{
+    display: block;
+    margin-bottom: 0;
+}
+.comboList ul li a
+{
+    color: #000;
+    padding: 1px 3px;
+}
+body.dyn .comboList ul li a:hover
+{
+    color: #A13C10;
+}
+body.dyn .comboList ul li.active
+{
+    background-color: #ECE6E5;
+    font-weight: 400;
+}
+.component
+{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+.editor
+{
+    color: #333;
+    margin-top: 15px;
+    text-align: left;
+}
+.editor .noComments
+{
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.editor .editorRow
+{
+    margin-bottom: 10px;
+}
+.editor .editorRow.replyTo input
+{
+    margin: 3px 3px 0 5px;
+}
+.editor .editorRow.replyTo .choice
+{
+    margin-bottom: 8px;
+}
+.editor .editorRow .subject
+{
+    width: 350px;
+}
+.editor .body textarea
+{
+    width: 755px;
+}
+.editor .controls
+{
+    margin: 5px 0 0;
+}
+.editor .controls li
+{
+    float: right;
+    margin-left: 5px;
+    list-style-type: none;
+}
+.editor .controls li .button
+{
+    float: none;
+}
+.editor .controls .containerButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_center.jpg) repeat-x;
+    height: 29px;
+    float: right;
+}
+.editor .controls .containerButton a
+{
+    height: 29px;
+}
+.editor .controls .containerButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_left.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.editor .controls .containerButton .inner
+{
+    height: 22px;
+    float: left;
+    margin: 0;
+    padding: 7px 3px 0;
+}
+.editor .controls .containerButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_right.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.editor .controls .containerButton .inner a
+{
+    color: #451802;
+    font-weight: inherit;
+    text-decoration: none;
+}
+.entryCom .by
+{
+    margin-bottom: 17px;
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/separator.gif);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    padding: 12px;
+}
+.entryCom .by a
+{
+    font-weight: 700;
+}
+.entryCom .controls
+{
+    float: right;
+}
+.entryCom .boxYellow
+{
+    float: none;
+}
+.entryCom .boxYellow .content .avatar img
+{
+    max-width: 120px;
+}
+.entryCom .boxYellow .content .avatar
+{
+    float: left;
+    width: 110px;
+    text-align: center;
+}
+.entryCom .boxYellow .content .avatarCaption
+{
+    font-size: 84%;
+    margin-bottom: 5px;
+}
+.entryCom.trackback .boxYellow .content .avatar
+{
+    visibility: hidden;
+}
+.entryCom.trackback .boxYellow .content .avatar img
+{
+    display: none;
+}
+.entryCom .boxYellow .content
+{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.entryCom.trackback .boxYellow .content
+{
+    min-height: 0;
+}
+.entryCom .boxYellow .content .content
+{
+    float: left;
+    width: 635px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/entrySum-separator.gif);
+    background-repeat: repeat-y;
+    margin: 0;
+}
+.entryCom .boxYellow .content .body ul li
+{
+    list-style-type: disc;
+}
+.entryCom .boxYellow .content .body ol li
+{
+    list-style-type: decimal;
+}
+.entryCom .boxYellow .content .body p
+{
+    margin-bottom: .2em;
+    margin-top: .2em;
+}
+.entryCom .boxYellow .content .body
+{
+    line-height: 153.899994%;
+}
+.entryCom .boxYellow .content blockquote
+{
+    background-color: #f9f9f9;
+    border: solid 1px #ccc;
+    padding: 10px;
+}
+.entryCom .attachment
+{
+    border: solid 1px #999;
+    padding: 3px;
+}
+.entryCom .attachment .downloadLabel
+{
+    font-weight: 700;
+    margin-right: 5px;
+}
+.entryCom .attachment .sizeLabel
+{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #8E7C74;
+}
+.entryCom .attachment .pendingLabel
+{
+    color: #8E7C74;
+}
+.entryInfo
+{
+    color: #898C72;
+    font-size: 93%;
+    min-height: 52px;
+}
+.entryInfo .infoItemMenu
+{
+    border-bottom: none;
+    padding: 20px 0 10px;
+}
+.entryInfo .hasSelection
+{
+    border-bottom: solid 1px #898C72;
+}
+.entryInfo .infoItem
+{
+    float: left;
+    margin-right: 5px;
+}
+.entryInfo .infoItem a
+{
+    font-weight: 400;
+}
+.entryInfo .infoItemSelected a
+{
+    font-weight: 700;
+    color: #31455A;
+}
+.formats ul, .share ul
+{
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+}
+.formats li, .share li
+{
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    white-space: nowrap;
+    list-style-type: none;
+}
+body.dyn .comboList.formats ul li, body.dyn .comboList.share ul li
+{
+    float: none;
+    margin-left: 0;
+}
+.comboList.formats ul li a, .comboList.share ul li a
+{
+    padding-left: 24px;
+}
+.formats
+{
+    margin-top: 1.4em;
+    color: #8E7C74;
+}
+body.dyn .formats .listCorral ul
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/formatsPeek.1.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+body.dyn .formats .listCorral ul.drop
+{
+    background-image: none;
+    z-index: 9999;
+}
+body.dyn .formats.active .listCorral ul, body.dyn .formats.open .listCorral ul
+{
+    background-position: 0 -32px;
+}
+.formats a
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/formats.png);
+    background-repeat: no-repeat;
+}
+.formats a.iPod
+{
+    padding-left: 14px;
+    background-position: 2px -49px;
+}
+.formats a.psp
+{
+    padding-left: 18px;
+    background-position: 2px -149px;
+}
+.formats a.wmv, .formats a.wmvh, .formats a.wma, .formats a.screencast
+{
+    padding-left: 18px;
+    background-position: 2px 1px;
+}
+.formats a.mp3
+{
+    padding-left: 15px;
+    background-position: 2px -99px;
+}
+.formats a.zune
+{
+    padding-left: 15px;
+    background-position: 2px -199px;
+}
+.share
+{
+    margin-top: 1.3em;
+    color: #8E7C74;
+}
+body.dyn .share .listCorral ul
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/sharePeek.1.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+body.dyn .share .listCorral ul.drop
+{
+    background-image: none;
+}
+body.dyn .share.active .listCorral ul, body.dyn .share.open .listCorral ul
+{
+    background-position: 0 -32px;
+}
+.share a
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/share.gif);
+    background-repeat: no-repeat;
+}
+.share a.delicious
+{
+    padding-left: 18px;
+}
+.share a.digg
+{
+    padding-left: 18px;
+    background-position: 0 -50px;
+}
+.share a.email
+{
+    padding-left: 16px;
+    background-position: 0 -100px;
+}
+.share a.facebook
+{
+    padding-left: 16px;
+    background-position: 0 -150px;
+}
+.share a.friendFeed
+{
+    padding-left: 18px;
+    background-position: 0 -200px;
+}
+.share a.techNet
+{
+    padding-left: 18px;
+    background-position: 0 -250px;
+}
+.share a.mSDN
+{
+    padding-left: 18px;
+    background-position: 0 -300px;
+}
+.share a.twitter
+{
+    padding-left: 18px;
+    background-position: 0 -350px;
+}
+.share a.dotNetShoutout
+{
+    padding-left: 18px;
+    background-position: 0 -400px;
+}
+.downloadFiles
+{
+    clear: both;
+    color: #8E7C74;
+    display: inline;
+    float: left;
+    margin-top: 1.3em;
+}
+.entryInfo2
+{
+    clear: left;
+    float: left;
+    margin-top: 1.3em;
+}
+.entryList .refreshButton
+{
+    display: block;
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/refresh.png);
+    width: 21px;
+    height: 21px;
+    float: right;
+    margin-right: 4px;
+    margin-top: 3px;
+}
+.entryList .refreshButton.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/refresh-disabled.png);
+}
+.entryList .pager
+{
+    float: right;
+}
+.entryList .newButton
+{
+    float: right;
+    margin-right: 6px;
+    margin-top: 3px;
+}
+.entryList .contents
+{
+    min-height: 100px;
+}
+.entryList .separator
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/separator.gif);
+    background-position: left center;
+    background-repeat: repeat-x;
+}
+.entryList .innerContainer
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.entryList .loadStatus
+{
+    float: left;
+    z-index: 100;
+    background-color: #F9F9F8;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    position: absolute;
+    text-align: center;
+}
+.entryList .loadArea
+{
+    margin-top: 20px;
+}
+
+.player .entryMedia .headerImage
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    display: block;
+    padding: 0;
+}
+.entryMedia .media
+{
+    width: 320px;
+    height: 301px;
+}
+.entryMedia .audio
+{
+    width: 320px;
+    height: 301px;
+}
+.entryMedia .video
+{
+    width: 320px;
+    height: 301px;
+}
+.entryMedia .screencast
+{
+    height: 301px;
+    width: 320px;
+    margin-top: 0;
+    margin-left: 0;
+}
+.entryMedia .playerHost
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/player/background.png);
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 301px;
+}
+.player
+{
+    background-repeat: no-repeat;
+}
+.player .mediaduration
+{
+    font-size: 80%;
+    text-align: center;
+    display: block;
+    margin-top: -10px;
+}
+.entryMedia .imageHost img
+{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.entryMedia .headerImage
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    display: none;
+}
+#player .entryMedia .media
+{
+    width: 320px;
+    height: 301px;
+}
+.entryMedia .preview, .entryMedia .playerCase
+{
+    width: 320px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.entryMedia .playerCase
+{
+    display: none;
+}
+.entryMedia .preview img
+{
+    width: 320px;
+    height: 240px;
+    margin: 0;
+    padding: 0;
+}
+.entryMedia .screencast img
+{
+    width: 320px;
+    height: 240px;
+}
+.entryMedia .controls
+{
+    margin: 7px 0 0 12px;
+}
+.entryMedia .timeLeft
+{
+    float: right;
+    margin-top: 1px;
+    margin-right: 18px;
+}
+.entryMedia .timePlayed
+{
+    float: right;
+    margin-top: 1px;
+    margin-right: 18px;
+}
+.entryMedia .widgetWrap
+{
+    position: relative;
+    top: 4px;
+    left: 13px;
+}
+.entryMedia .widget
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/player/progress-background.jpg);
+    background-repeat: repeat-x;
+    width: 0;
+}
+.entryMedia .enabled
+{
+    float: left;
+}
+.entryMedia .downloads
+{
+    clear: left;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.entryMedia .downloads h5
+{
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 93%;
+}
+.entryMedia .imageHost table img
+{
+    margin: 0;
+}
+.player a
+{
+    display: block;
+    position: relative;
+    text-align: center;
+}
+.player a span.length
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/bg_0_0_0_102.png) repeat 50% 50%;
+    bottom: 10px;
+    color: #FFF;
+    padding-bottom: .1em;
+    padding-top: .1em;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+.inlinePreviewImage
+{
+    float: left;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    max-width: 320px;
+}
+.preview
+{
+    float: left;
+    min-width: 70px;
+}
+.case
+{
+    float: left;
+}
+.details
+{
+    padding: 0;
+}
+.description
+{
+    margin-right: 30px;
+    /*margin-left: 36px;*/ /*with images*/
+    padding: 0;
+}
+.moreLink
+{
+    padding-left: 5px;
+}
+.box .content li
+{
+    list-style-type: none;
+}
+.summaryRight .body
+{
+    line-height: 153.899994%;
+    margin-bottom: 20px;
+}
+.entrySmall
+{
+    float: left;
+    line-height: 123.099998%;
+}
+.entrySmall .tags
+{
+    float: left;
+    width: 16px;
+    height: 16px;
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/tag.gif);
+}
+.entrySmall .previewSmall
+{
+    min-height: 60px;
+    min-width: 80px;
+}
+.entrySmall .title
+{
+    margin-bottom: 5px;
+}
+.smallleft
+{
+    float: left;
+    width: 80px;
+    text-align: center;
+}
+.smallright
+{
+    margin-left: 80px;
+    padding-left: 10px;
+}
+.entrySum .authorPic
+{
+    display: none;
+}
+.entrySum .posted
+{
+    margin-bottom: 8px;
+}
+.entrySum .summaryLeft
+{
+    float: left;
+}
+.entrySum .summaryRight
+{
+    /* float: left; */
+    padding-left: 15px;
+    /* width: 315px; */
+}
+.entrySum .summaryRight .downloads, .entrySum .summaryRightNoMedia .downloads
+{
+    border-top: none;
+    margin-top: 1.3em;
+}
+.entrySum .summaryLeftNoMedia
+{
+    float: left;
+    display: none;
+}
+.entrySum .summaryRightNoMedia
+{
+    float: left;
+    padding-left: 0;
+    margin-top: 18px;
+    width: 100%;
+}
+.entrySum a.more
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #9f3b10;
+}
+.entrySum a.more:hover
+{
+    color: #c45728;
+}
+.bodyLabel
+{
+    margin-bottom: 1.3em;
+}
+.entrySum .bodyLabel img
+{
+    max-width: 100%;
+}
+.entrySum .rate .rateText
+{
+    float: left;
+    margin: 16px 4px 0 0;
+}
+.entrySum .rate .rating
+{
+    float: left;
+}
+.entryTiny
+{
+    width: 100%;
+    margin: 0;
+}
+.entryTiny .entryTinyHeaderRow th
+{
+    padding-bottom: 0;
+}
+.entryTiny .column1
+{
+    text-align: center;
+    vertical-align: top;
+    width: 16px;
+}
+.entryTiny .column2
+{
+    text-align: center;
+    vertical-align: top;
+    width: 16px;
+}
+.entryTiny .column3
+{
+    text-align: left;
+}
+.entryTiny .column4
+{
+    text-align: center;
+    width: 65px;
+}
+.entryTiny .column5
+{
+    text-align: center;
+    width: 65px;
+}
+.entryTiny .column6
+{
+    text-align: left;
+    width: 185px;
+}
+.entryTiny .entryTinyRow .readState, .entryTiny .entryTinyRow .otherState
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+.entryTiny .entryTinyRow.unread .readState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/unread.png);
+}
+.entryTiny .entryTinyRow.readPartial .readState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/read-partial.png);
+}
+.entryTiny .entryTinyRow.read .readState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/read.png);
+}
+.entryTiny .entryTinyRow.unread .column3 .title a, .entryTiny .entryTinyRow.readPartial .column3 .title a
+{
+    font-weight: 700;
+}
+.entryTiny .entryTinyRow.read .column3 .title a
+{
+    font-weight: 400;
+}
+.entryTiny .entryTinyRow.sticky .otherState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/sticky.png);
+}
+.entryTiny .entryTinyRow.sticky
+{
+    background-color: #FFFFD0;
+}
+.entryTiny .entryTinyRow.locked .otherState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/locked.png);
+}
+.entryTiny th, .entryTiny td
+{
+    padding: 5px 0;
+}
+.entryTiny .column3 .title a
+{
+    color: #9f3b10;
+}
+.entryTiny .title a:hover
+{
+    color: #c45728;
+}
+.entryTinyWithTime
+{
+    width: 100%;
+    margin: 0;
+}
+.entryTinyWithTime .entryTinyWithTimeHeaderRow th
+{
+    padding-bottom: 0;
+}
+.entryTinyWithTime .column1
+{
+    text-align: center;
+    vertical-align: top;
+    width: 16px;
+}
+.entryTinyWithTime .column2
+{
+    text-align: left;
+    vertical-align: top;
+}
+.entryTinyWithTime .column3
+{
+    text-align: center;
+    width: 65px;
+    vertical-align: top;
+}
+.entryTinyWithTime .column4
+{
+    text-align: center;
+    width: 65px;
+    vertical-align: top;
+}
+.entryTinyWithTime .column5
+{
+    text-align: center;
+    width: 65px;
+    vertical-align: top;
+}
+.entryTinyWithTime .column6
+{
+    text-align: left;
+    width: 185px;
+}
+.entryTinyWithTime .entryTinyWithTimeRow .readState
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+.entryTinyWithTime .entryTinyWithTimeRow.unread .readState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/unread.png);
+}
+.entryTinyWithTime .entryTinyWithTimeRow.readPartial .readState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/read-partial.png);
+}
+.entryTinyWithTime .entryTinyWithTimeRow.read .readState
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/read.png);
+}
+.entryTinyWithTime .entryTinyWithTimeRow.unread .column2 .title a, .entryTinyWithTime .entryTinyWithTimeRow.readPartial .column2 .title a
+{
+    font-weight: 700;
+}
+.entryTinyWithTime .entryTinyWithTimeRow.read .column2 .title a
+{
+    font-weight: 400;
+}
+.entryTinyWithTime th, .entryTinyWithTime td
+{
+    padding: 5px 0;
+}
+.entryTinyWithTime .column2 .title a
+{
+    color: #9f3b10;
+}
+.entryTinyWithTime .title a:hover
+{
+    color: #c45728;
+}
+.fullList .leftColumn, .fullList .columns .leftColumnHeader
+{
+    float: left;
+    width: 486px;
+}
+.fullList .rightColumn, .fullList .columns .rightColumnHeader
+{
+    float: left;
+    width: 352px;
+}
+.fullList .row
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/separator.gif);
+    background-repeat: repeat-x;
+    clear: both;
+    padding: 15px 0;
+}
+.HTMLEditor
+{
+    display: none;
+    width: 930px;
+    padding: 16px 0 0;
+}
+.HTMLEditor .locale
+{
+    display: none;
+    margin: 0 0 6px;
+}
+.HTMLEditor .controls
+{
+    margin: 6px 0 0;
+}
+.HTMLEditor .controls .button
+{
+    margin: 0 0 0 5px;
+}
+.subMenu
+{
+    display: none;
+}
+.messageBox
+{
+    border: solid 1px #E2C822;
+    background-color: #FFF9D7;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+.messageBox h2
+{
+    margin-bottom: 4px;
+}
+.pager .pagerTitle
+{
+    float: left;
+    margin: 5px 6px 0;
+}
+.pager .pagerButton
+{
+    display: block;
+    float: left;
+    width: 28px;
+    height: 29px;
+}
+.pager .pagerButton.pagerFirst
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-first.jpg);
+}
+.pager .pagerButton.pagerFirst.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-first-disabled.jpg);
+}
+.pager .pagerButton.pagerBack
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-back.jpg);
+}
+.pager .pagerButton.pagerBack.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-back-disabled.jpg);
+}
+.pager .pagerButton.pagerNext
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-next.jpg);
+}
+.pager .pagerButton.pagerNext.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-next-disabled.jpg);
+}
+.pager .pagerButton.pagerLast
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-last.jpg);
+}
+.pager .pagerButton.pagerLast.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/pager-last-disabled.jpg);
+}
+body.dyn .pickList ul
+{
+    display: none;
+}
+body.dyn .pickList.language ul
+{
+    height: 1px;
+}
+body.dyn .pickList.active
+{
+    color: #2A0F01;
+}
+body.dyn .pickList.active ul
+{
+    display: block;
+}
+body.dyn .pickList
+{
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+body.dyn .pickList.language.active ul
+{
+    height: 24.799999em;
+}
+.pickList
+{
+    display: inline;
+    padding: 1px 5px 1px 1px;
+}
+.pickList span
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/arrow.gif) no-repeat 100% .3em;
+    padding: 0 11px .2em 3px;
+}
+h1 .pickList ul, h1 .pickList span
+{
+    font-size: 81%;
+}
+.pickList ul
+{
+    position: absolute;
+    left: 0;
+    top: 1.35em;
+    background-color: #FAF9F9;
+    border: 1px solid #DAD5D4;
+    min-width: 16ex;
+    margin: 0;
+}
+h1 .pickList ul
+{
+    top: 1.75em;
+}
+.pickList.language ul
+{
+    width: 36ex;
+    overflow: scroll;
+}
+.pickList li
+{
+    list-style-type: none;
+}
+.pickList li a
+{
+    color: #000;
+    display: block;
+    margin: 1px 1px 0;
+    padding: .15em .2em .25em;
+}
+.pickList li.first a
+{
+    padding-top: .3em;
+}
+.pickList li.last a
+{
+    padding-bottom: .3em;
+    margin-bottom: 1px;
+}
+.pickList li a:hover, .pickList li a.selected
+{
+    background-color: #DAD5D4;
+    font-weight: 400;
+}
+.postUserTag .postToText, .postUserTag .postAsText
+{
+    float: left;
+}
+.postUserTag .settings
+{
+    display: block;
+    float: right;
+    font-size: 85%;
+}
+.rating
+{
+    padding-top: 16px;
+}
+.rating .uiControl
+{
+    width: 80px;
+    height: 12px;
+    position: relative;
+    z-index: 2;
+}
+.rating .aggregate
+{
+    float: left;
+    width: 16px;
+    height: 16px;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/rating.png);
+    background-position: -41px 0;
+}
+.rating .aggregate.good
+{
+    background-position: -41px -16px;
+}
+.rating .aggregate.neutral
+{
+    background-position: -41px -32px;
+}
+.rating .aggregate.notGood
+{
+    background-position: -41px -48px;
+}
+.rating .buttons
+{
+    float: right;
+    width: 41px;
+    height: 14px;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/rating.png);
+    background-position: 0 0;
+    margin: 0 20px 0 0;
+}
+.rating .buttons.upHover
+{
+    background-position: 0 -16px;
+}
+.rating .buttons.upSelected
+{
+    background-position: 0 -32px;
+}
+.rating .buttons.downHover
+{
+    background-position: 0 -48px;
+}
+.rating .buttons.downSelected
+{
+    background-position: 0 -64px;
+}
+.rating .buttons.downHoverUp
+{
+    background-position: 0 -80px;
+}
+.rating .buttons.upHoverDown
+{
+    background-position: 0 -96px;
+}
+.rating .buttons a
+{
+    display: block;
+    float: left;
+    width: 19px;
+    height: 16px;
+}
+.rating .buttons.upSelected .good, .rating .buttons.downSelected .notGood
+{
+    cursor: default;
+}
+.rating .state
+{
+    display: none;
+    position: absolute;
+    height: 14px;
+    width: 80px;
+    top: 14px;
+    left: 0;
+}
+.rating .uiControl:hover .state
+{
+    display: block;
+}
+.rating .goodCount
+{
+    width: 34px;
+    color: #597F61;
+    text-align: right;
+    float: left;
+}
+.rating .notGoodCount
+{
+    width: 36px;
+    color: #8A3131;
+    text-align: left;
+    float: right;
+}
+.registration
+{
+    margin-top: 16px;
+}
+.registration input
+{
+    width: 225px;
+}
+.registration .avatarColumn
+{
+    float: left;
+    width: 64px;
+    height: 64px;
+}
+.registration .inputColumn
+{
+    float: left;
+    margin-left: 8px;
+    width: 233px;
+}
+.registration .inputColumn .disabled
+{
+    color: #898C72;
+}
+.registration .inputColumn .subUsername
+{
+    font-size: 85%;
+}
+.registration .inputColumn .postUsername
+{
+    margin-top: 16px;
+}
+.registration .inputColumn .passwordField
+{
+    margin-top: 2px;
+}
+.registration .inputColumn .submitButton
+{
+    margin-top: 16px;
+}
+.registration .inputColumn .containerButton.submitButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_center.jpg) repeat-x;
+    height: 29px;
+    float: left;
+}
+.registration .inputColumn .containerButton.submitButton a
+{
+    height: 29px;
+}
+.registration .inputColumn .containerButton.submitButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_left.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.registration .inputColumn .containerButton.submitButton .inner
+{
+    height: 22px;
+    float: left;
+    margin: 0;
+    padding: 7px 3px 0;
+}
+.registration .inputColumn .containerButton.submitButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_right.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.registration .inputColumn .containerButton.submitButton .inner a
+{
+    color: #451802;
+    font-weight: inherit;
+    text-decoration: none;
+}
+.inReplyTo
+{
+    border: solid 1px #999;
+    margin-bottom: 8px;
+}
+.inReplyTo .inReplyToControls
+{
+    padding: 2px;
+}
+.inReplyTo .inReplyToLink
+{
+    float: left;
+    width: 50%;
+}
+.inReplyTo .inReplyToLink a
+{
+    display: block;
+    float: left;
+    line-height: 1.7em;
+    padding-left: 18px;
+}
+.inReplyTo .inReplyToLink .expand
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/expand.png) no-repeat 0 2px;
+}
+.inReplyTo .inReplyToLink .collapse
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/collapse.png) no-repeat 0 2px;
+}
+.inReplyTo .inReplyToGoToLink
+{
+    float: left;
+    width: 50%;
+}
+.inReplyTo .inReplyToGoToLink a
+{
+    display: block;
+    float: right;
+    margin-right: 4px;
+    line-height: 1.7em;
+}
+.inReplyTo .inReplyToBody
+{
+    padding: 2px 2px 2px 24px;
+}
+.inReplyTo .inReplyToBody img
+{
+    max-width: 580px;
+}
+.entryList .contents .highlighted, .entryList .contents .highlighted .content, .editor .highlighted
+{
+    background-color: #F9F9F8;
+}
+.RoleEditor
+{
+    width: 930px;
+    padding: 18px 6px 6px;
+}
+.RoleEditor input
+{
+    width: 100%;
+    margin: 3px 0 6px;
+}
+.RoleEditor .button
+{
+    margin: 0 0 0 5px;
+}
+.searchBox
+{
+    height: 29px;
+    position: relative;
+    margin: 0 0 3px;
+}
+.searchBox input
+{
+    background: #FFF url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/sites/all.png) no-repeat 2px -86px;
+    border: 1px solid #c4b4b0;
+    display: none;
+    float: left;
+    margin: 1px 0 0;
+    padding: 4px 4px 4px 20px;
+}
+body.dyn .searchBox input
+{
+    display: inline;
+}
+.searchBox a.searchButton
+{
+    display: inline;
+    float: right;
+    height: 29px;
+    outline: none;
+    width: 28px;
+    margin: 0 1px 2px;
+}
+.searchBox a.searchButton:focus
+{
+    border: 1px dotted #1155A8;
+    margin: -1px 0 1px;
+}
+#sideBar .searchBox input
+{
+    width: 181px;
+}
+#sideBar .searchBox a.searchButton, #sideBar .searchBox .button
+{
+    width: 255px;
+}
+#sideBar .searchBox .button .inner
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/search.png) no-repeat 50% 50%;
+    text-indent: -9999px;
+    width: 239px;
+}
+body.dyn #sideBar .searchBox .button .inner
+{
+    width: 12px;
+}
+body.dyn #sideBar .searchBox a.searchButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/arrows.gif) no-repeat 100% -29px;
+    cursor: default;
+    width: 43px;
+}
+body.dyn #sideBar .searchBox a.searchButton.active
+{
+    background-position: 100% -87px;
+}
+body.dyn #sideBar .searchBox a.searchButton.opening, body.dyn #sideBar .searchBox a.searchButton.open
+{
+    background-position: 100% -145px;
+}
+body.dyn #sideBar .searchBox .button
+{
+    cursor: pointer;
+    float: left;
+    width: 28px;
+}
+.searchBox .drop
+{
+    background: #EEEBEA;
+    border: 1px solid #DAD5D4;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 23px;
+    padding: 2px;
+}
+.searchBox .drop li
+{
+    white-space: nowrap;
+    padding: 0;
+}
+#sideBar .searchBox .drop li
+{
+    margin: 0;
+    padding: 0;
+}
+.searchBox .drop li a
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/sites/all.png) no-repeat 0 -86px;
+    color: #000;
+    display: block;
+    padding: 4px 4px 2px 24px;
+}
+.searchBox .drop li.highlight a
+{
+    color: #A13C10;
+}
+.searchBox .drop li.first a
+{
+    padding-top: 4px;
+}
+.searchBox input.ch8, .searchBox .drop li a.ch8
+{
+    background-position: 2px -56px;
+}
+.searchBox input.ch9, .searchBox .drop li a.ch9
+{
+    background-position: 2px -86px;
+}
+.searchBox input.on10, .searchBox .drop li a.on10
+{
+    background-position: 2px 5px;
+}
+.searchBox input.edge, .searchBox .drop li a.edge
+{
+    background-position: 2px -266px;
+}
+.searchBox input.mix, .searchBox .drop li a.mix
+{
+    background-position: 2px -176px;
+}
+.searchBox input.live, .searchBox .drop li a.live
+{
+    background-position: 2px -145px;
+}
+.tagEditor
+{
+    height: 1.4em;
+    width: 930px;
+    padding: 6px;
+}
+.tagEditor .loading
+{
+    display: none;
+}
+.tagEditor input
+{
+    width: 100%;
+    margin: 3px 0 6px;
+}
+.tagHelpText
+{
+    display: block;
+    margin-top: .2em;
+}
+.forumPage .tagEditor input
+{
+    width: 726px;
+}
+.tagEditor .button
+{
+    margin: 0 0 0 5px;
+}
+.tagEditor span.fade
+{
+    padding-left: 6px;
+}
+.tagAutoComplete .display
+{
+    width: 100ex;
+}
+.tagAutoComplete .tags
+{
+    float: left;
+    margin: .5em 0 0 .5em;
+}
+.tagAutoComplete .button
+{
+    float: left;
+    margin-left: 6px;
+}
+.adminPage #sideBar select
+{
+    width: 100%;
+}
+.adminPage #postTo, .adminPage #viewLabel, .adminPage #sortLabel
+{
+    margin-top: 8px;
+}
+.adminPage #viewTypes, .adminPage #sortTypes
+{
+    margin-left: 12px;
+}
+.adminPage .postAsLabel, .adminPage .postToLabel
+{
+    font-style: italic;
+}
+.adminPage .entryList .viewDescription
+{
+    display: block;
+    float: left;
+}
+.adminWritePage h2
+{
+    margin-bottom: 1.33em;
+}
+.adminWritePage #sideBar select
+{
+    width: 100%;
+}
+.adminWritePage #sideBar #postTo
+{
+    margin-top: 8px;
+}
+.adminWritePage #sideBar #language
+{
+    margin-top: 8px;
+}
+.adminWritePage #sideBar .homePageSettings
+{
+    margin-top: 8px;
+}
+.adminWritePage #sideBar input
+{
+    margin-right: 4px;
+}
+.adminWritePage #sideBar .button
+{
+    float: left;
+}
+.adminWritePage #sideBar ul.postControls li
+{
+    float: left;
+    margin-right: 8px;
+    padding-top: 0;
+}
+.adminWritePage #sideBar ul.postControls li.last
+{
+    margin-right: 0;
+}
+.adminWritePage .editor
+{
+    margin-top: 0;
+}
+.adminWritePage .editor .tagEditor
+{
+    width: 100%;
+    padding: 0;
+}
+.adminWritePage .editor ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.adminWritePage .editor ul li
+{
+    list-style: none;
+    margin-bottom: 8px;
+    padding: 0;
+}
+.adminWritePage .editor ul li.last
+{
+    margin-bottom: 0;
+    color: inherit;
+}
+.adminWritePage .editor input, .adminWritePage .editor textarea
+{
+    width: 100%;
+}
+.adminWritePage .editor textarea
+{
+    height: 150px;
+}
+.adminWritePage .editor .title
+{
+    font-size: 120%;
+    font-weight: 700;
+}
+.adminWritePage .mediaEditorRow
+{
+    margin-left: 25px;
+    margin-top: 8px;
+}
+.adminWritePage .mediaEditorRow .title
+{
+    font-size: 100%;
+}
+.adminWritePage .editor .previewImage, .adminWritePage .editor .previewImageSmall
+{
+    float: left;
+    cursor: pointer;
+    padding: 5px;
+}
+.adminWritePage .editor .tagEditor input
+{
+    margin: 0;
+}
+.adminWritePage ul.buttonBar
+{
+    list-style: none;
+    margin: 8px 0;
+    padding: 0;
+}
+.adminWritePage ul.buttonBar li
+{
+    float: left;
+    list-style: none;
+    margin: 0 8px 0 0;
+    padding: 0;
+}
+.adminWritePage ul.buttonBar li .button
+{
+    float: left;
+}
+.adminWritePage ul.buttonBar li.last
+{
+    margin-right: 0;
+}
+.adminWritePage .mediaEditorRow.first
+{
+    margin-top: 0;
+}
+.adminWritePage .mediaEditorRow.mediaType
+{
+    float: left;
+    margin-left: 0;
+}
+.adminWritePage .mediaEditorRow.mediaType .title
+{
+    display: inline;
+    font-size: 130%;
+}
+.adminWritePage .soapboxButton .button
+{
+    margin-top: -4px;
+    margin-left: 8px;
+    float: left;
+}
+.adminWritePage .magicfolderButton .button
+{
+    margin-top: -4px;
+    margin-left: 8px;
+    float: left;
+}
+.LB
+{
+    padding: 18px 6px 6px;
+}
+.soapboxEditor
+{
+    width: 930px;
+}
+.soapboxEditor input
+{
+    margin: 3px 0 6px;
+}
+.previewImageUpload
+{
+    width: 600px;
+}
+.previewImageUpload .previewImageUploadButton .button
+{
+    float: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.previewImageUpload iframe
+{
+    display: none;
+    clear: both;
+    width: 99.5%;
+    height: 50px;
+}
+.transcriptsEditor
+{
+    width: 500px;
+}
+.previewImageUpload ul.buttonBar, .transcriptsEditor ul.buttonBar
+{
+    list-style: none;
+    float: right;
+    margin: 8px 0;
+    padding: 0;
+}
+.previewImageUpload ul.buttonBar li, .transcriptsEditor ul.buttonBar li
+{
+    float: right;
+    list-style: none;
+    margin: 0 0 0 8px;
+    padding: 0;
+}
+.previewImageUpload ul.buttonBar li .button, .transcriptsEditor ul.buttonBar li .button
+{
+    float: right;
+}
+.previewImageUpload ul.buttonBar li.last, .transcriptsEditor ul.buttonBar li.last
+{
+    margin-left: 0;
+}
+.blogEntryPage #sideBar .pingbacks li
+{
+    margin-bottom: 10px;
+    padding-left: 2em;
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/icons/icon_transmit_go.png);
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+}
+.blogEntryPage .spacer
+{
+    width: 100%;
+    height: 20px;
+}
+.blogEntryPage .entryList .innerContainer
+{
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+.changePasswordPage #main .case
+{
+    float: none;
+}
+.changePasswordPage #main .description
+{
+    display: none;
+}
+.codeOfConductPage #main .case
+{
+    float: none;
+}
+.codeOfConductPage #main .description
+{
+    display: none;
+}
+.contactPage #main .case
+{
+    float: none;
+    margin-bottom: 8px;
+}
+.contactPage #main .case .description
+{
+    margin-right: 0;
+}
+.forumPage .entryList .innerContainer
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.forumPage .entryList .alternatingItem
+{
+    background-color: #F9F9F8;
+}
+.forumPage .entryList .forumDetails
+{
+    float: left;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+.forumPage .case
+{
+    float: none;
+    margin-bottom: 10px;
+}
+.forumEntryPage #main .entrySum
+{
+    float: none;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+.forumEntryPage #main .entrySum .posted
+{
+    margin-bottom: 0;
+}
+.forumEntryPage .entryList .innerContainer
+{
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+.forumsPage .fullList .rightColumn .separator
+{
+    float: left;
+    width: 100%;
+    height: 10px;
+}
+.homePage .entryList .innerContainer
+{
+    padding-top: 0;
+}
+.homePage #sideBar .network .content
+{
+    background-color: Transparent;
+    border: none;
+    padding: 0;
+}
+.homePage #sideBar .network .content .mscList
+{
+    margin: 0;
+}
+.homePage #sideBar .network .content .mscList li
+{
+    background-color: #F7F2F0;
+    border: 1px solid #EAE4E3;
+    margin-top: 3px;
+    padding: 7px;
+}
+.homePage #sideBar .network .content .mscList li.C8
+{
+    margin-top: 0;
+}
+.homePage #sideBar .network .content .mscList li a
+{
+    float: right;
+    width: 159px;
+    margin-left: 5px;
+}
+.homePage #sideBar .network .content .mscList li .evNetSite
+{
+    background: transparent url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/EvNetSites.png) no-repeat;
+    display: block;
+    height: 43px;
+    float: left;
+}
+.homePage #sideBar .network .content .mscList li.C8 .evNetSite
+{
+    margin-left: 4px;
+    margin-right: 5px;
+    width: 64px;
+}
+.homePage #sideBar .network .content .mscList li.C9 .evNetSite
+{
+    background-position: -64px 0;
+    margin-left: 17px;
+    margin-right: 17px;
+    width: 30px;
+}
+.homePage #sideBar .network .content .mscList li.C10 .evNetSite
+{
+    background-position: -94px 0;
+    margin-left: 12px;
+    margin-right: 11px;
+    width: 42px;
+}
+.homePage #sideBar .network .content .mscList li.Mix .evNetSite
+{
+    background-position: -136px 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 75px;
+}
+.homePage #sideBar .network .content .mscList li.Edge .evNetSite
+{
+    background-position: -211px 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 65px;
+}
+.mediaPage #main .case
+{
+    float: none;
+    margin-bottom: 15px;
+}
+.mediaPage .entryList .innerContainer
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.mediaPage .entryList .cell
+{
+    float: left;
+    width: 368px;
+    min-height: 80px;
+    margin-left: 10px;
+}
+.title .selected
+{
+    font-weight: 700;
+}
+.notFoundLeft
+{
+    float: left;
+    width: 445px;
+    margin-right: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.notFoundRight
+{
+    float: left;
+    width: 470px;
+    margin-top: 10px;
+}
+.privacyPage #main .case
+{
+    float: none;
+}
+.privacyPage #main .description
+{
+    display: none;
+}
+.profilePage .xboxGameTile
+{
+    width: 32px;
+    height: 32px;
+}
+.profilePage .profileImage
+{
+    text-align: center;
+    padding-top: 10px;
+}
+.profilePage #avatarCaption
+{
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+.profilePage .blogPosts li
+{
+    padding-bottom: 5px;
+    line-height: 153.899994%;
+}
+.profilePage #userLinks h3
+{
+    font-size: 93%;
+    color: #451802;
+    margin: 0;
+}
+.profilePage #xboxlivestatus
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.profilePage td
+{
+    border-style: none;
+    border-width: 0;
+}
+.profilePage .gamertag
+{
+    font-size: 153.899994%;
+    text-transform: lowercase;
+    font-weight: 700;
+}
+.profilePage .participantLink
+{
+    overflow: hidden;
+}
+.profilePage #profileDetails
+{
+    padding: 5px;
+}
+.profilePage .subNav
+{
+    float: right;
+    width: 50%;
+}
+.profilePage .buttonSeparator
+{
+    float: right;
+    margin: 5px;
+}
+.profilePage #userLinks
+{
+    margin-top: 10px;
+}
+.profilePage .aboutText
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.profilePage .entryList
+{
+    clear: both;
+}
+.profilePage #sideBar .box
+{
+    margin-top: 10px;
+}
+.profileEditPage .case
+{
+    float: none;
+}
+.profileEditPage .edit
+{
+    width: 500px;
+}
+.profileEditPage .edit .editRow
+{
+    margin-bottom: 10px;
+}
+.profileEditPage .edit .editField
+{
+    width: 100%;
+}
+.profileEditPage .edit .avatarTypeList
+{
+    margin: 5px;
+}
+.profileEditPage .edit .editControls
+{
+    text-align: right;
+}
+.profileEditPage .edit .editControls .buttonSeparator
+{
+    float: right;
+    margin: 5px;
+}
+.profileEditPage .containerButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_center.jpg) repeat-x;
+    height: 29px;
+    float: right;
+}
+.profileEditPage .containerButton a
+{
+    height: 29px;
+}
+.profileEditPage .containerButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_left.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.profileEditPage .containerButton .inner
+{
+    height: 22px;
+    float: left;
+    margin: 0;
+    padding: 7px 3px 0;
+}
+.profileEditPage .containerButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/whitebannerbutton_right.jpg);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.profileEditPage .containerButton .inner a
+{
+    color: #451802;
+    font-weight: inherit;
+    text-decoration: none;
+}
+.registerPage #main .case
+{
+    float: none;
+}
+.resetPasswordPage #main .case
+{
+    float: none;
+}
+.resetPasswordPage #main .description
+{
+    display: none;
+}
+.searchPage .entryList .innerContainer
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.searchPage .entryList .innerContainer .item
+{
+    margin-top: 20px;
+}
+.searchPage .entryList .cell
+{
+    min-height: 80px;
+}
+.searchPage .searchParams
+{
+    padding: 10px;
+}
+.searchPage .searchFeeds
+{
+    text-align: right;
+}
+.searchPage .searchButton
+{
+    margin-left: 4px;
+    margin-top: 0;
+}
+.searchPage .searchParamsContainer label, .searchPage .searchParamsContainer .dateRange, .searchPage .searchParamsContainer .contentType
+{
+    display: block;
+}
+.searchPage .searchParamsContainer .dateRange label, .searchPage .searchParamsContainer .contentType label
+{
+    display: inline;
+}
+.searchPage .searchParamsContainer .contentType
+{
+    margin: .3em 0;
+}
+.searchPage .searchParamsContainer .contentType label
+{
+    padding: 0 .6em 0 .2em;
+}
+.searchPage .searchParamsContainer .contentType input
+{
+    vertical-align: -.25em;
+}
+.searchPage .searchParamsContainer br
+{
+    line-height: 1px;
+}
+.searchPage .searchParamsContainer input
+{
+    margin: .3em 0 0;
+}
+.searchPage fieldset#searchTerm input
+{
+    width: 45%;
+}
+.searchPage fieldset#user, .searchPage fieldset#dateRange, .searchPage fieldset#contentType
+{
+    display: inline;
+    float: left;
+    width: 27%;
+}
+.searchPage fieldset#contentType
+{
+    width: 42%;
+}
+.searchPage fieldset#buttons
+{
+    clear: both;
+}
+.searchPage .containerButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/linkbanner3_center.png) repeat-x;
+    height: 29px;
+    float: left;
+    margin-left: 10px;
+}
+.searchPage .containerButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/linkbanner3_left.png);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.searchPage .containerButton .inner
+{
+    height: 22px;
+    float: left;
+    margin: 0;
+    padding: 7px 3px 0;
+}
+.searchPage .containerButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/linkbanner3_right.png);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.searchPage .containerButton .inner a
+{
+    font-weight: inherit;
+    text-decoration: none;
+}
+.searchPage .tagCloud
+{
+    background-color: #F7F2F0;
+}
+.searchPage #sideBar li.first
+{
+    margin-top: 17px;
+}
+.searchPage #suggestedTags .box
+{
+    width: 315px;
+}
+.searchPage #suggestedTags .box .header .inner
+{
+    padding: 5px 5px 5px 0;
+}
+.windowsSearch
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/3-pages/images/windows_search.png) no-repeat 0 0;
+    margin-left: 14px;
+    padding: 0 0 0 20px;
+}
+.signInPage td
+{
+    border-style: none;
+    border-width: 0;
+}
+.signInPage #main .case
+{
+    float: none;
+}
+.signInPage #main .description
+{
+    display: none;
+}
+.signInPage .loginContainer
+{
+    margin-top: 10px;
+    width: 250px;
+}
+.signInPage .loginContainer .signInRow
+{
+    margin-bottom: 10px;
+}
+.signInPage .loginContainer .signInField
+{
+    width: 100%;
+}
+.signInPage .loginContainer .controls
+{
+    text-align: right;
+    margin-bottom: 10px;
+}
+.tagPage .box .content
+{
+    padding: 5px;
+}
+.tagPage #main .case
+{
+    float: none;
+    margin-bottom: 15px;
+}
+.tagPage .entryList .innerContainer
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tagPage .entryList .cell
+{
+    float: left;
+    width: 378px;
+    min-height: 80px;
+}
+.tagsPage .case
+{
+    float: none;
+}
+.tagsPage .case .description
+{
+    margin-right: 0;
+}
+.tagsPage .tagCloud
+{
+    margin-top: 8px;
+}
+.tagsPage .tagCloud .t1
+{
+    font-weight: 100;
+    font-size: .8em;
+}
+.tagsPage .tagCloud .t2
+{
+    font-weight: 200;
+    font-size: 1.1em;
+}
+.tagsPage .tagCloud .t3
+{
+    font-weight: 300;
+    font-size: 1.3em;
+}
+.tagsPage .tagCloud .t4
+{
+    font-weight: 600;
+    font-size: 1.5em;
+}
+.tagsPage .tagCloud .t5
+{
+    font-weight: 700;
+    font-size: 1.9em;
+}
+.tagsPage .tagCloud .t6
+{
+    font-weight: 800;
+    font-size: 2.2em;
+}
+.tagsPage .tagCloud .t7
+{
+    font-weight: 900;
+    font-size: 2.5em;
+}
+.tagCloud li
+{
+    list-style-image: none;
+    list-style-type: none;
+    float: left;
+}
+.termsPage #main .case
+{
+    float: none;
+}
+.termsPage #main .description
+{
+    display: none;
+}
+.topicPage .ownerLinks
+{
+    /* background: #F7F2F0 url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/ownerLinksBG.gif) repeat-y; */
+    margin-bottom: -7px;
+    padding: 0;
+}
+.topicPage #main .ownerLinks .box
+{
+    padding: 0;
+}
+.topicPage .ownerLinks .header
+{
+    padding-top: 6px;
+    background-color: #EEEBEA;
+    border: 1px solid #EEEBEA;
+}
+.topicPage .ownerLinks .content
+{
+    background-color: #F7F2F0;
+    border: none;
+    border-top: 1px solid #EAE4E3;
+    margin: 0 1px;
+}
+.topicPage .ownerLinks .bottom
+{
+    background: #EEEBEA url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/images/ownerLinksBottom.gif) no-repeat;
+    height: 8px;
+    line-height: 8px;
+}
+.topicPage .owners
+{
+    width: 297px;
+    float: left;
+    position: relative;
+}
+.topicPage .ContentOwnerInfo, .topicPage .ContentOwnerInfoAlt
+{
+    margin-bottom: 10px;
+}
+.topicPage .externalLinks .last
+{
+    position: relative;
+    color: #2A0F01;
+}
+.topicPage .externalLinks li
+{
+    position: relative;
+}
+.topicPage .externalLinks
+{
+    width: 450px;
+    float: right;
+    position: relative;
+}
+.topicPage .seeAll
+{
+    position: relative;
+    float: right;
+}
+.topicPage .externalLinks .description
+{
+    position: relative;
+    padding-bottom: 12px;
+}
+.topicPage #sideBar
+{
+    margin-top: 23px;
+}
+.topicPage #sideBar img
+{
+    max-width: 100%;
+}
+.topicPage #sideBar .first .header
+{
+    line-height: 1.2em;
+}
+.topicPage .box .thin, .topicPage .box .ContentOwners
+{
+    position: relative;
+}
+.topicPage #main .box
+{
+    padding-top: 6px;
+}
+.topicPage #main .entryList .box
+{
+    padding-top: 0;
+}
+.topicPage .relatedContent
+{
+    float: left;
+    width: 757px;
+}
+.topicPage .relatedContent .innerContainer
+{
+    margin: auto 3px;
+}
+.topicPage .relatedContent .entrySmall
+{
+    width: 365px;
+    min-height: 80px;
+    float: left;
+}
+.ContentOwners .miContainer
+{
+    padding-bottom: 5px;
+}
+.ContentOwners .miContainerLeft img
+{
+    border: solid 2px #000;
+}
+.ContentOwners .miContainerLeft
+{
+    float: left;
+}
+.ContentOwners .miContainerRight
+{
+    margin-left: 75px;
+}
+.ContentOwners .userName
+{
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+.ContentOwners .quote
+{
+    font-style: italic;
+}
+.ContentOwners .userInfo div
+{
+    line-height: 1.4em;
+    margin: 0;
+    padding: 0;
+}
+.ContentOwners a.e
+{
+    color: #9f3b10;
+}
+body.isEditMode .topicPage .title h1:hover .inlineEditingOut, body.isEditMode .topicPage .title h1:hover .inlineEditingOver, body.isEditMode .topicPage .box:hover .inlineEditingOut, body.isEditMode .topicPage .box:hover .inlineEditingOver
+{
+    background-color: #FFF0C1;
+}
+.topicPage .uriEditor
+{
+    font-size: 82%;
+    font-style: italic;
+}
+.topicPage .title .control
+{
+    float: right;
+    width: 49%;
+    text-align: right;
+}
+.topicPage .title .control *
+{
+    text-align: left;
+}
+.topicPage h1
+{
+    width: 49%;
+}
+.topicPage .tagAutoComplete .display
+{
+    width: 83ex;
+}
+.topicPage .tagAutoComplete .display .button
+{
+    float: left;
+}
+.allContent .entryList
+{
+    padding-top: 6px;
+}
+.allContent .entryList .cell
+{
+    float: left;
+    width: 368px;
+    min-height: 80px;
+}
+/* toolbar buttons */
+.rade_toolbar.Vista .rade_tool span.InsertImage, .rade_toolbar.WebBlue .rade_tool span.InsertImage
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/editorcustomtools.gif);
+    background-position: 0 -1px;
+}
+.rade_toolbar.Vista .rade_tool span.EmbedVideo, .rade_toolbar.WebBlue .rade_tool span.EmbedVideo
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/editorcustomtools.gif);
+    background-position: 0 -26px;
+}
+.rade_toolbar.Vista .rade_tool span.HTMLView, .rade_toolbar.WebBlue .rade_tool span.HTMLView
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/ModesSprites.gif);
+    background-position: 0 -16px;
+}
+.rade_toolbar.Vista .rade_tool span.DesignView, .rade_toolbar.WebBlue .rade_tool span.DesignView
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/ModesSprites.gif);
+    background-position: 0 0;
+}
+.radedialog
+{
+    width: 540px;
+    margin: 28px auto auto;
+}
+.radedialog br.clear
+{
+    display: block;
+    clear: both;
+    font-size: 1px;
+    line-height: 0;
+}
+.radedialog input, .radedialog .OK, .radedialog .Cancel
+{
+    display: block;
+    float: left;
+}
+.radedialog input.Text
+{
+    width: 335px;
+    padding: 2px 1px;
+}
+.radedialog .OK, .radedialog .Cancel
+{
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: .6ex;
+    border: 1px solid #191919;
+    padding: .2em .6em;
+}
+.radedialog.Vista input.Text
+{
+    margin-top: 3px;
+}
+.radedialog.Vista .OK, .radedialog.Vista .Cancel
+{
+    color: #FFF;
+    line-height: 20px;
+    width: 10.8ex;
+    background: #528AA5 url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/twoblue.gif) repeat-x;
+    padding: .2em .6em;
+}
+.radedialog.WebBlue .OK, .radedialog.WebBlue .Cancel
+{
+    color: #FFF;
+    line-height: 20px;
+    width: 85px;
+    background: #C0CAD4 url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/webblue.gif) repeat-x;
+    background-position: 2px 0;
+    border-color: #191919;
+    padding: 0 0 1px;
+}
+a.lightbox img
+{
+    border: none;
+}
+#theLightbox
+{
+    background-color: #eee;
+    border-bottom: 2px solid #666;
+    border-right: 2px solid #666;
+    padding: 10px;
+}
+#closeButton
+{
+    top: 5px;
+    right: 5px;
+}
+#lightboxDetails
+{
+    font-size: .8em;
+    padding-top: .4em;
+}
+#lightboxCaption
+{
+    float: left;
+}
+#theLightbox img
+{
+    border: none;
+}
+#lightboxOverlay img
+{
+    border: none;
+}
+#lightboxOverlay
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/lightbox/overlay.png);
+}
+* html #lightboxOverlay
+{
+    background-color: transparent;
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/lightbox/blank.gif);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/lightbox/overlay.png",sizingMethod="scale");
+}
+
+.cbMain
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/background.jpg) repeat-x;
+    height: 25px;
+    width: 100%;
+    font-family: Tahoma,Verdana,Sans-Serif;
+    font-size: 11px;
+}
+.cbLink
+{
+    display: none;
+    float: right;
+    margin-top: 4px;
+    margin-right: 8px;
+}
+.cbLink a
+{
+    color: #0451C5;
+    text-decoration: none;
+    font-weight: 400;
+}
+.cbLink a:hover
+{
+    text-decoration: underline;
+}
+.cbLinkImg
+{
+    float: left;
+}
+.cbLinkText
+{
+    float: left;
+    margin-left: 3px;
+    margin-top: 1px;
+}
+.cbMore
+{
+    cursor: pointer;
+    float: left;
+    padding-top: 5px;
+    padding-left: 8px;
+}
+.cbMoreText
+{
+    float: left;
+}
+.cbMoreImg
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/arrow.gif);
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 2px;
+    margin-left: 3px;
+    width: 7px;
+    height: 7px;
+}
+.cbMenu
+{
+    border: 1px solid #666;
+    background: #F3F3F3 none repeat;
+    position: absolute;
+    top: 18px;
+    left: 8px;
+    z-index: 50;
+    display: none;
+    padding: 12px 12px 6px;
+}
+.cbMenu ul
+{
+    margin: 0;
+    padding: 0;
+}
+.cbMenu li
+{
+    list-style-type: none;
+    margin-bottom: 6px;
+}
+.cbMenu a
+{
+    color: #0451C5;
+    text-decoration: none;
+    font-weight: 400;
+}
+.cbMenu a:hover
+{
+    text-decoration: underline;
+}
+.cbMenu img
+{
+    vertical-align: middle;
+}
+#wideLayout .pds-box
+{
+    width: 150px;
+}
+.pds-answer input
+{
+    margin-right: 2px;
+    padding-right: 2px;
+}
+.homePage #sideBar .searchContextBox
+{
+    margin-top: 17px;
+}
+.searchContextBox .localSearch
+{
+    margin-bottom: 10px;
+}
+#sideBar .searchContextBox ul
+{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.searchContextBox li
+{
+    padding-top: 0;
+}
+.sourcecode, .sourcecode pre
+{
+    display: block;
+    font-size: small;
+    color: #000;
+    font-family: Consolas, "Courier New" , Courier, Monospace;
+    background-color: #FFF;
+}
+.sourcecode pre
+{
+    margin: 0;
+}
+.sourcecode .rem
+{
+    color: green;
+}
+.sourcecode .kwrd
+{
+    color: #00F;
+}
+.sourcecode .str
+{
+    color: #006080;
+}
+.sourcecode .op
+{
+    color: #0000c0;
+}
+.sourcecode .preproc
+{
+    color: #C63;
+}
+.sourcecode .asp
+{
+    background-color: #FF0;
+}
+.sourcecode .html
+{
+    color: maroon;
+}
+.sourcecode .attr
+{
+    color: red;
+}
+.sourcecode .alt
+{
+    background-color: #f4f4f4;
+    width: 100%;
+    margin: 0;
+}
+.sourcecode .lnum
+{
+    color: #606060;
+}
+pre.code
+{
+    display: block;
+    font-size: small;
+    color: #000;
+    font-family: Consolas, "Courier New" , Courier, Monospace;
+    background-color: #FFF;
+    white-space: 0;
+}
+pre.code .keyword, pre.code .preprocessor
+{
+    color: #00F;
+}
+pre.code .operator
+{
+    color: #C63;
+}
+pre.code .comment
+{
+    color: green;
+}
+pre.code .xmlLiteral .comment
+{
+    color: #629755;
+}
+pre.code .string
+{
+    color: #A31515;
+}
+pre.code .entity
+{
+    color: red;
+}
+pre.code .tagDelimiter, pre.code .attributeDelimiter
+{
+    color: #00F;
+}
+pre.code .xmlLiteral .tagDelimiter, pre.code .xmlLiteral .attributeDelimiter, pre.code .xmlDelimiter, pre.code .xmlImportAttributeDelimiter
+{
+    color: #6464B9;
+}
+pre.code .tagName
+{
+    color: #A31515;
+}
+pre.code .xmlLiteral .tagName
+{
+    color: #844646;
+}
+pre.code .attributeName
+{
+    color: red;
+}
+pre.code .xmlLiteral .attributeName, pre.code .xmlImportAttributeName
+{
+    color: #B96464;
+}
+pre.code .attributeValue
+{
+    color: #00F;
+}
+pre.code .xmlLiteral .attributeValue, pre.code .xmlImportAttributeValue
+{
+    color: #6464B9;
+}
+pre.code .cdata
+{
+    color: gray;
+}
+pre.code .xmlLiteral .cdata
+{
+    color: silver;
+}
+pre.code .type
+{
+    color: #2B91AF;
+}
+pre.code .xmlLiteral .embeddedExpressionDelimiter
+{
+    color: #555;
+    background-color: #FFFEBF;
+}
+pre.code .sqlString
+{
+    color: red;
+}
+pre.code .sqlSystemFunction
+{
+    color: #F0F;
+}
+pre.code .sqlOperator, pre.code .psOperator
+{
+    color: gray;
+}
+pre.code .lineNumber
+{
+    color: gray;
+}
+pre
+{
+    white-space: 0;
+}
+.reduced
+{
+    font-size: smaller;
+    font-weight: 400;
+}
+.error
+{
+    color: Red;
+}
+.fade
+{
+    color: #999;
+}
+ul.rade_toolbar li
+{
+    list-style-type: none;
+}
+body
+{
+    font-family: 'Segoe UI' ,Verdana,Arial,Helvetica,Sans-Serif;
+    font-size: 77%;
+}
+body
+{
+    color: #2A0F01;
+}
+a
+{
+    color: #1155a8;
+}
+a:hover
+{
+    color: #A13C10;
+}
+h1
+{
+    font-family: 'Segoe UI' , 'Trebuchet MS' , Verdana, Arial, Helvetica, Sans-Serif;
+    font-size: 123.099998%;
+}
+h1 a
+{
+    color: #751D02;
+    font-weight: 700;
+}
+h2
+{
+    font-size: 108%;
+}
+h2 a
+{
+    color: #451802;
+    font-weight: bolder;
+}
+h3
+{
+    font-family: 'Trebuchet MS' , 'Segoe UI' , Verdana, Arial, Helvetica, Sans-Serif;
+    font-size: 93%;
+}
+h4, h5
+{
+    font-size: 93%;
+    text-transform: uppercase;
+}
+h4
+{
+    color: #451802;
+}
+h5
+{
+    color: #707674;
+}
+.posted, .status, .tags, .resources, .date, .downloads, .sharethis, .showlink, .last, .userInfo, .rate
+{
+    color: #8E7C74;
+}
+body.light
+{
+    background-image: none;
+    padding-top: 0;
+}
+#background
+{
+    min-height: 870px;
+}
+#contents
+{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+#contentTop
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/content-top.png) no-repeat;
+    padding-top: 13px;
+}
+#contentBottom
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/content-bottom.png) no-repeat;
+    height: 13px;
+}
+#logos
+{
+    float: left;
+    margin-top: 12px;
+    margin-left: -13px;
+    position: relative;
+}
+#logo
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/logo.png) no-repeat;
+    width: 98px;
+    height: 114px;
+    display: block;
+}
+#nineGuySays
+{
+    display: none;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/bubble_win7.png) no-repeat 0 0;
+    width: 97px;
+    height: 44px;
+    position: absolute;
+    top: -4px;
+    left: 90px;
+}
+a:hover#nineGuySays
+{
+    background-position: 0 -44px;
+}
+#rss
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/rss.png) no-repeat;
+    font-size: 12px;
+    color: #FFF;
+    height: 47px;
+    padding-top: 15px;
+    padding-left: 67px;
+    float: right;
+    display: block;
+    margin: -30px 12px -32px 0;
+}
+#wideLayout, #stdLayout, #fullLayout
+{
+    padding: 6px 15px 4px 18px;
+}
+#main
+{
+    float: left;
+    margin-right: 10px;
+    width: 757px;
+    min-height: 340px;
+}
+#fullLayout #main
+{
+    float: none;
+    width: auto;
+    clear: both;
+    margin-right: 0;
+}
+#main .contentHeader
+{
+    margin-bottom: 8px;
+}
+.details
+{
+    color: #8E7C74;
+}
+.box .header .left
+{
+    display: none;
+}
+.box .header .inner
+{
+    color: #451802;
+    font-size: 85%;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0 5px 5px 8px;
+}
+.box .header .right
+{
+    display: none;
+}
+.box .content
+{
+    background-color: #F7F2F0;
+    border: solid 1px #EAE4E3;
+    padding: 7px;
+}
+.box2
+{
+    border: solid 1px #DAD5D4;
+    background-color: #FAF9F9;
+    height: 29px;
+}
+.box2 .header
+{
+    background-color: #DED5D3;
+    height: 27px;
+    margin: 1px;
+}
+.box2 .header .left
+{
+    display: none;
+}
+.box2 .header .inner
+{
+    margin-top: 4px;
+    float: left;
+    font-size: 77%;
+    padding: 3px 0 0 3px;
+}
+.box2 .header .right
+{
+    display: none;
+}
+.box2 .header .info
+{
+    float: left;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+.box2 .content
+{
+    padding: 3px;
+}
+.box2 .header .button
+{
+    height: 21px;
+    float: right;
+    margin-top: 3px;
+    margin-right: 4px;
+}
+.box2 .header .button .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/button01-left.gif);
+    width: 3px;
+    height: 21px;
+    display: block;
+}
+.box2 .header .button .inner
+{
+    font-size: 85%;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/button01-center.gif) repeat-x;
+    height: 17px;
+    margin: 0;
+    padding: 4px 2px 0;
+}
+.box2 .header .button .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/button01-right.gif);
+    width: 3px;
+    height: 21px;
+    display: block;
+}
+.boxYellow
+{
+    float: left;
+}
+.boxYellow .header
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/yellowbanner_center.gif) repeat-x;
+    height: 29px;
+}
+.boxYellow .header .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/yellowbanner_left.gif);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.boxYellow .header .info
+{
+    float: left;
+    margin-top: 4px;
+    margin-left: 7px;
+}
+.boxYellow .header .inner
+{
+    margin-top: 4px;
+    float: left;
+    padding: 3px 0 0 3px;
+}
+.boxYellow .header .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/yellowbanner_right.gif);
+    width: 5px;
+    height: 29px;
+    float: right;
+}
+.boxYellow .header .button
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/linkbanner3_center.png) repeat-x;
+    height: 29px;
+    float: right;
+}
+.boxYellow .header .button .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/linkbanner3_left.png);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.boxYellow .header .button .inner
+{
+    height: 22px;
+    float: left;
+    margin: 0;
+    padding: 7px 3px 0;
+}
+.boxYellow .header .button .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/linkbanner3_right.png);
+    width: 5px;
+    height: 29px;
+    float: left;
+}
+.boxYellow .header .button .inner a
+{
+    color: #451802;
+    font-weight: inherit;
+    text-decoration: none;
+}
+.enabled
+{
+    cursor: pointer;
+}
+#betaLogo
+{
+    float: right;
+    margin: 10px;
+}
+#betaNote
+{
+    font-size: .85em;
+    height: 12px;
+    background: #fdf68c url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/betanote_bgd.jpg) repeat-x;
+    padding: 8px 10px 12px;
+}
+#betaNote a
+{
+    color: #205684;
+    font-weight: 700;
+}
+.blogEntrySmall
+{
+    line-height: 1.2em;
+}
+.blogEntrySmall .posted
+{
+    float: none;
+}
+.resourceListEditor
+{
+    border: solid 1px #000;
+    background-color: #FFF;
+    padding: 8px;
+}
+.resourceListEditor .row
+{
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    padding-top: 2px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+}
+.resourceListEditor .rowSelected
+{
+    width: 100%;
+    margin-top: 10px;
+    border: solid 1px #000;
+    padding-top: 1px;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+.textBox
+{
+    width: 450px;
+}
+.profileLink
+{
+    font-weight: 700;
+}
+.sharethis textarea
+{
+    width: 100%;
+}
+#mainWide
+{
+    margin: 0;
+    padding: 20px;
+}
+#pageBanner
+{
+    margin-bottom: 10px;
+}
+#pageBanner .wrap
+{
+    border: solid 1px #fff;
+    background-color: #f9f9f8;
+    padding: 10px;
+}
+#pageBanner .cap
+{
+    background-color: Green;
+    clear: left;
+}
+.contentHeader
+{
+    line-height: 1.5em;
+}
+.contentHeader h1
+{
+    font-size: 1.2em;
+    margin-bottom: 3px;
+}
+.contentHeader .photo
+{
+    float: left;
+    margin-right: 16px;
+}
+.inlineEditingOver
+{
+    margin-top: -1px;
+    margin-left: -1px;
+    margin-bottom: -1px;
+    border: solid 1px #000;
+    cursor: pointer;
+    width: 100%;
+}
+.inlineEditingOut
+{
+    margin-top: auto;
+    margin-left: auto;
+    border: inherit;
+    cursor: inherit;
+    clip: auto;
+    width: 100%;
+}
+#overlay
+{
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    background-color: #000;
+    -moz-opacity: .6;
+    opacity: .60;
+    filter: alpha(opacity=60);
+    position: fixed;
+}
+.richText
+{
+    border: solid 1px #999;
+    margin: 10px 0;
+}
+.richText .buttonBar
+{
+    background-color: #ededed;
+    border-bottom: solid 1px #999;
+}
+.richText iframe
+{
+    background-color: #FFF;
+    width: 100%;
+    height: 250px;
+}
+.richText textarea
+{
+    width: 100%;
+    height: 250px;
+}
+#sideBar
+{
+    float: right;
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#sideBar li
+{
+    padding-top: 5px;
+    list-style: none;
+}
+#sideBar li.first
+{
+    padding-top: 0;
+}
+#sideBar li.last
+{
+    color: inherit;
+}
+#sideBar ul
+{
+    margin: 0;
+}
+#wideLayout #sideBar
+{
+    float: right;
+}
+#sideBar .grid
+{
+    margin: 0;
+}
+#sideBar .grid .q
+{
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin: 7px;
+}
+#sideBar .grid .q:hover
+{
+    border-color: #998174;
+}
+#sideBar ul.relatedEntryList li
+{
+    padding-top: 10px;
+}
+#sideBar ul.relatedEntryList li.first
+{
+    padding-top: 0;
+}
+#sideBar ul.relatedEntryList li .relatedRight
+{
+    float: left;
+    width: 89px;
+    margin-top: -3px;
+}
+#sideBar ul.relatedEntryList li .relatedLeft
+{
+    float: left;
+    padding-right: 8px;
+}
+#sideBar ul.relatedEntryList li .title
+{
+    color: #892102;
+}
+#sideBar ul.sidebarEntryList li
+{
+    padding-top: 10px;
+}
+#sideBar ul.sidebarEntryList li.first
+{
+    margin-top: -3px;
+    padding-top: 0;
+}
+#sideBar ul.sidebarEntryList li .title
+{
+    color: #892102;
+}
+.showList
+{
+    margin: 5px;
+}
+.showListSep
+{
+    height: 5px;
+}
+#MemberInfoContainer
+{
+    font-size: .8em;
+    text-align: left;
+}
+.MemberInfoContainerA, .MemberInfoContainerB, .MemberInfoContainerC
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/popup_a.png);
+    background-repeat: no-repeat;
+    width: 335px;
+    height: 131px;
+    margin: 0;
+    padding: 5px;
+}
+.MemberInfoContainerB
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/popup_b.png);
+}
+.MemberInfoContainerC
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/popup_c.png);
+}
+#MemberInfoContainer .miContainerLeft
+{
+    float: left;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+#MemberInfoContainer .miContainerRight
+{
+    margin-top: 10px;
+    margin-left: 85px;
+}
+#MemberInfoContainer .userName
+{
+    font-weight: 700;
+    font-size: 1.2em;
+}
+#MemberInfoContainer .quote
+{
+    font-style: italic;
+}
+#MemberInfoContainer .userInfo div
+{
+    line-height: 1.4em;
+    margin: 0;
+    padding: 0;
+}
+#MemberInfoContainer a.e
+{
+    color: #9f3b10;
+}
+#userNav a
+{
+    color: #fff;
+}
+#userNav a:hover
+{
+    color: #F2D9AD;
+}
+#userNav
+{
+    float: right;
+    margin-top: 52px;
+    margin-right: 7px;
+    color: #F2D9AD;
+}
+.subNav
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: none;
+    margin: 0;
+}
+.subNav a
+{
+    color: #451802;
+}
+.subNav a:hover
+{
+    color: #9f3b10;
+}
+.subNav li
+{
+    display: inline;
+    border-right: solid 1px #a07966;
+    padding: 0 15px;
+}
+.subNav li.last
+{
+    border-right: none;
+}
+.subNav li.selected a, .subNav li.selected a:hover
+{
+    font-weight: 700;
+}
+#subNavTagCenter
+{
+    background: #edeae9;
+    border-top: solid 1px #9C9591;
+    margin: 0;
+}
+#footer
+{
+    clear: none;
+    padding: 15px 10px 10px;
+}
+#footer a
+{
+    color: #9f3b10;
+}
+#footer a:hover
+{
+    color: #c45728;
+}
+.sidebartitle a
+{
+    line-height: 1.2em;
+    color: #751D02;
+}
+.sidebartitle a:hover
+{
+    color: #A13C10;
+}
+.previewSmall img
+{
+    border: 1px solid #666;
+}
+#sideBar .activityLog
+{
+    margin: 0;
+}
+#sideBar .activityLog li
+{
+    padding-top: .5em;
+}
+#sideBar .activityLog li.first
+{
+    padding-top: 0;
+}
+#sideBar .activityLog li .activityType
+{
+    display: none;
+    float: left;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+#sideBar .activityLog li .activityTime
+{
+    color: #777;
+    white-space: nowrap;
+}
+.blogEntryPage .entryList .innerContainer
+{
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+.button
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_center.jpg) repeat-x;
+}
+.button .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_left.jpg);
+}
+.button .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_right.jpg);
+}
+.editor .controls .containerButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_center.jpg) repeat-x;
+}
+.editor .controls .containerButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_left.jpg);
+}
+.editor .controls .containerButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_right.jpg);
+}
+.radeditor.WebBlue div.rade_editorModes a
+{
+    width: 27px;
+    height: 21px;
+    margin: 0 1px 1px;
+}
+.radeditor.WebBlue div.rade_editorModes .rade_mode_selected
+{
+    background-color: #FFF;
+    border: solid 1px #c7dbe6;
+    border-top: 0;
+    margin: 0;
+}
+.radeditor.WebBlue div.rade_editorModes a span
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/2-layout/http://channel9.msdn.com/RadControls/Editor/Skins/WebBlue/Editor/ModesSprites.gif);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 16px;
+    width: 16px;
+    margin: 2px 0 0 6px;
+}
+.radeditor.WebBlue div.rade_editorModes .rade_mode_design span, .radeditor.WebBlue div.rade_editorModes .rade_mode_selected.rade_mode_design span
+{
+    background-position: 0 0;
+}
+.radeditor.WebBlue div.rade_editorModes .rade_mode_html span, .radeditor.WebBlue div.rade_editorModes .rade_mode_selected.rade_mode_html span
+{
+    background-position: -16px 0;
+}
+.radeditor.WebBlue div.rade_editorModes .rade_mode_preview span, .radeditor.WebBlue div.rade_editorModes .rade_mode_selected.rade_mode_preview span
+{
+    background-position: -32px 0;
+}
+
+.entryCom
+{
+    margin-top: 3px;
+    border: solid 1px #DAD5D4;
+    background-color: #FBF8F7;
+}
+.entryCom .box
+{
+    background-color: transparent;
+    border: none;
+}
+.entryCom .header
+{
+    background-image: none;
+    background-color: #FDDE63;
+    border-bottom: solid 1px #EAE4E3;
+    height: 25px;
+    margin: 1px;
+}
+.entryCom .header .left
+{
+    display: none;
+}
+.entryCom .header .right
+{
+    display: none;
+}
+.entryCom .boxYellow .content .content
+{
+    width: 604px;
+    padding-left: 0;
+    padding-right: 0;
+    background-image: none;
+    border: none;
+}
+.entryCom .boxYellow .content .avatar
+{
+    width: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.entryCom .boxYellow .content
+{
+    padding-left: 0;
+}
+.entryCom .body img
+{
+    max-width: 604px;
+}
+.entryCom .boxYellow .header .toolBar
+{
+    margin-right: 2px;
+    padding-top: 2px;
+}
+.entryCom .boxYellow .header .toolBar .button
+{
+    height: 21px;
+}
+.entryCom .boxYellow .header .toolBar .button .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/button01-left.gif);
+    width: 3px;
+    height: 21px;
+    display: block;
+}
+.entryCom .boxYellow .header .toolBar .button .inner
+{
+    font-size: 85%;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/button01-center.gif) repeat-x;
+    height: 21px;
+    padding: 4px 2px 0;
+}
+.entryCom .boxYellow .header .toolBar .button .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/button01-right.gif);
+    width: 3px;
+    height: 21px;
+    display: block;
+}
+.blogEntryPage .postauthor .content
+{
+    background-color: #DFE3EC;
+}
+.microsoft .content
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/microsoft.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+.microsoft .content .content
+{
+    background-image: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+}
+.staff .content
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/staff.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+.staff .content .content
+{
+    background-image: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+}
+.pdc .content
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/pdc.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+.pdc .content .content
+{
+    background-image: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+}
+.entryList .refreshButton
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/refresh.gif);
+}
+.entryList .refreshButton.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/refresh-disabled.gif);
+}
+.entrySum .summaryRightNoMedia
+{
+    margin-top: .7em;
+}
+.entrySum .summaryRight
+{
+    width: 422px;
+}
+.entrySum.noMedia .bodyLabel
+{
+    margin-bottom: 7px;
+    min-height: 65px;
+}
+.entrySum.noMedia .bodyLabel .inlinePreviewImage
+{
+    border: 1px solid #666;
+    max-width: 85px;
+    padding: 0;
+}
+.entrySum.noMedia .bodyLabel .bodyText
+{
+    padding-left: 100px;
+}
+.entrySum.noMedia .tags
+{
+    padding-top: 14px;
+    padding-left: 100px;
+}
+.entryTinyWithTime .entryTinyWithTimeRow.alternatingItem
+{
+    background-color: #F9F9F8;
+}
+.featured
+{
+    margin-bottom: 10px;
+}
+.featured .featuredItem .entrySum
+{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.featured .featuredItem .entrySum .inlinePreviewImage
+{
+    max-width: 320px;
+    max-height: 240px;
+}
+.featured .homePageList
+{
+    margin-top: 10px;
+}
+.featured ul.homePageList
+{
+    list-style: none;
+    height: 64px;
+    margin: 5px 0 0;
+}
+.featured ul.homePageList li
+{
+    list-style: none;
+    float: left;
+    margin-left: 23px;
+    width: 64px;
+    height: 64px;
+}
+.featured ul.homePageList li.first
+{
+    margin-left: 0;
+}
+.featured ul.homePageList li a
+{
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#menu
+{
+    padding-top: 52px;
+    text-align: center;
+}
+#menu a
+{
+    color: #451802;
+}
+#menu a:hover
+{
+    color: #9f3b10;
+}
+#menu .menu
+{
+    list-style: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #FFF;
+    height: 16px;
+    margin: 0 0 0 175px;
+}
+#menu .menu li
+{
+    float: left;
+    display: block;
+    position: relative;
+    border: solid 1px #FFF;
+    border-top: none;
+    border-bottom: none;
+    height: 16px;
+    margin-left: -1px;
+}
+#menu .menu li a
+{
+    float: left;
+    display: block;
+    color: #FFF;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#menu .menu li.first, #menu .menu li.first:hover
+{
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+}
+#menu .menu li.last, #menu .menu li.last:hover
+{
+    padding-right: 0;
+    border-right: none;
+}
+#menu .menu li.selected a
+{
+    font-weight: 700;
+    text-decoration: none;
+}
+#menu .menu li:hover a, #menu .menu li a:hover, #menu .menu li a:active
+{
+    text-decoration: underline;
+    padding-bottom: 3px;
+}
+#menu .menu li:hover ul.subMenu
+{
+    background-color: #F7F2F0;
+    border: 1px solid #DAD5D4;
+    font-size: 85%;
+    display: block;
+    text-align: left;
+    position: absolute;
+    z-index: 50;
+    top: 19px;
+    left: -1px;
+    margin: 0;
+    padding: 0;
+}
+#menu .menu .subMenu li, #menu .menu .subMenu li a
+{
+    float: none;
+}
+#menu .menu li:hover ul.subMenu li
+{
+    color: #8E7C74;
+    font-weight: 400;
+    border: none;
+    height: auto;
+    margin-left: 0;
+    padding: 0;
+}
+#menu .menu li:hover ul.subMenu li a
+{
+    color: #8E7C74;
+    font-weight: 400;
+    border: none;
+    background-color: Transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    text-transform: none;
+    white-space: nowrap;
+}
+#menu .menu li:hover ul.subMenu li.first a
+{
+    padding-top: 10px;
+}
+#menu .menu li:hover ul.subMenu li a:hover
+{
+    color: #751D02;
+}
+.pager
+{
+    padding-top: 3px;
+}
+.pager .pagerTitle
+{
+    color: gray;
+    margin: 3px 6px 0;
+}
+.pager .pagerButton
+{
+    width: 21px;
+    height: 21px;
+    margin-right: 4px;
+}
+.pager .pagerButton.pagerFirst
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-first.gif);
+}
+.pager .pagerButton.pagerFirst.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-first-disabled.gif);
+}
+.pager .pagerButton.pagerBack
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-back.gif);
+}
+.pager .pagerButton.pagerBack.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-back-disabled.gif);
+}
+.pager .pagerButton.pagerNext
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-next.gif);
+}
+.pager .pagerButton.pagerNext.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-next-disabled.gif);
+}
+.pager .pagerButton.pagerLast
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-last.gif);
+}
+.pager .pagerButton.pagerLast.disabled
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/icons/pager-last-disabled.gif);
+}
+.registration .inputColumn .containerButton.submitButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_center.jpg) repeat-x;
+}
+.registration .inputColumn .containerButton.submitButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_left.jpg);
+}
+.registration .inputColumn .containerButton.submitButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_right.jpg);
+}
+#sideBar .siteStats
+{
+    margin: 0;
+}
+#sideBar .siteStats li
+{
+    padding-top: .5em;
+}
+.adminPage h1
+{
+    margin-bottom: 8px;
+}
+.adminPage #sideBar
+{
+    margin-top: 0;
+}
+.adminPage .entryList .viewDescription
+{
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 7px;
+}
+.adminWritePage .buttonBar
+{
+    height: 29px;
+}
+.adminWritePage .hasChanges
+{
+    background-color: #FFF9D7;
+}
+body.hasChanges
+{
+    background-color: #FFF9D7;
+}
+.adminWritePage .previewImageSmall
+{
+    margin-left: 12px;
+}
+.adminWritePage .title
+{
+    color: #451802;
+    font-size: 100%;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+}
+.blogPage .blogHeader
+{
+    background-color: #F7F2F0;
+    border: 1px solid #EAE4E3;
+    margin-bottom: 7px;
+    padding: 7px;
+}
+.blogPage .blogHeader .case
+{
+    width: 671px;
+}
+.blogPage .entryList .innerContainer
+{
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+.blogPage .entryList .item
+{
+    background-color: #FBF8F7;
+    border: 1px solid #DAD5D4;
+    margin-top: 3px;
+}
+.blogPage .entryList .item .entrySum
+{
+    background-color: #F7F2F0;
+    border: 1px solid #EAE4E3;
+    padding: 7px;
+}
+.blogPage .entrySum .summaryRight
+{
+    width: 404px;
+}
+.blogEntryPage #sideBar
+{
+    margin-top: 39px;
+}
+.blogEntryPage .pdcLogo img
+{
+    width: 200px;
+}
+.errorPage .messageBox
+{
+    margin-bottom: 30px;
+}
+.forumPage .entryList .forumDetails
+{
+    margin-top: 6px;
+    margin-left: 6px;
+    color: gray;
+}
+.forumPage .pdcLogo img
+{
+    width: 200px;
+}
+.forumEntryPage .entryList .innerContainer
+{
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+.forumEntryPage .pdcLogo img
+{
+    width: 200px;
+}
+.homePage .entryList .info
+{
+    float: left;
+    text-transform: uppercase;
+    font-size: 85%;
+    font-weight: 700;
+    margin-top: 7px;
+    margin-left: 8px;
+}
+.homePage .cell
+{
+    width: 350px;
+    float: left;
+}
+.homePage .entryList .innerContainer
+{
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+.homePage .featured .content, .homePage .entryList .item
+{
+    background-color: #FBF8F7;
+    border: 1px solid #DAD5D4;
+    margin-top: 3px;
+}
+.homePage .featured .content
+{
+    margin-top: 0;
+    padding: 0;
+}
+.homePage .featured .entrySum, .homePage .entryList .item .entrySum
+{
+    background-color: #F7F2F0;
+    border: 1px solid #EAE4E3;
+    padding: 7px;
+}
+.homePage .entrySum .summaryRight
+{
+    width: 349px;
+}
+.homePage #main
+{
+    width: 702px;
+}
+.homePage #sideBar
+{
+    float: right;
+    width: 255px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.homePage #sideBar .first
+{
+    margin-top: 17px;
+}
+.homePage #sideBar .network .content .mscList li.C9
+{
+    display: none;
+}
+.managedTagCenterPage .headerSection
+{
+    margin-left: 4px;
+    margin-bottom: 10px;
+}
+.managedTagCenterPage .leftColumn
+{
+    float: left;
+    width: 270px;
+    margin-right: 15px;
+}
+.managedTagCenterPage .centerColumn
+{
+    float: left;
+    width: 410px;
+    margin-right: 15px;
+}
+.managedTagCenterPage .rightColumn
+{
+    float: left;
+    width: 250px;
+}
+.managedTagCenterPage .box .content
+{
+    padding: 5px;
+}
+.managedTagCenterPage .entryList .item
+{
+    padding: 5px 4px;
+}
+.managedTagCenterPage .entryList .alternatingItem
+{
+    background-color: #F9F9F8;
+    padding: 5px 4px;
+}
+.managedTagCenterCommunityPage .case
+{
+    float: none;
+    margin-bottom: 15px;
+}
+.managedTagCenterCommunityPage .box .content
+{
+    padding: 5px;
+}
+.managedTagCenterCommunityPage .entryList .item
+{
+    padding: 5px 4px;
+}
+.managedTagCenterCommunityPage .entryList .alternatingItem
+{
+    background-color: #F9F9F8;
+    padding: 5px 4px;
+}
+.mediaPage .case
+{
+    float: none;
+    margin-bottom: 10px;
+}
+#stdLayout.pdc2008Page
+{
+    padding-top: 24px;
+}
+.pdc2008Page #main
+{
+    margin-top: 24px;
+}
+.pdc2008Page #sideBar, .pdc2008Page #recentSessions
+{
+    margin-top: 7px;
+}
+.dyn .pdc2008Page .slideshow
+{
+    position: relative;
+    border: 3px solid #C5C4C4;
+    width: 928px;
+    margin: 0 auto;
+    padding: 0;
+}
+.dyn .pdc2008Page .slideshow li.slide
+{
+    list-style-type: none;
+}
+.dyn .pdc2008Page .slideshow .slides
+{
+    height: 236px;
+    margin: 0;
+}
+.dyn .pdc2008Page .slideshow .slides li.slide
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+}
+.pdc2008Page .slideshow .buttons
+{
+    display: none;
+}
+.dyn .pdc2008Page .slideshow .buttons
+{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    right: 18px;
+    bottom: 12px;
+    margin: 0;
+}
+.dyn .pdc2008Page .slideshow .buttons li
+{
+    float: left;
+    display: inline;
+    width: 29px;
+    height: 29px;
+    text-align: center;
+    line-height: 29px;
+    font: 12px/29px "Lucida Sans" , "Lucida Sans Unicode" ,Arial,Helvetica,sans-serif,Verdana;
+    margin: 0 3px 0 0;
+}
+.dyn .pdc2008Page .slideshow .buttons li a
+{
+    float: left;
+    width: 29px;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/bg-slider2.png) no-repeat 0 0;
+    height: 29px;
+    color: #fff;
+    outline: 0;
+}
+.dyn .pdc2008Page .slideshow ul.buttons li a:hover
+{
+    text-decoration: none;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/bg-slider3.png) no-repeat 0 0;
+    color: #0a0a0a;
+}
+.dyn .pdc2008Page .slideshow ul.buttons li.active a:hover, .dyn .pdc2008Page .slideshow ul.buttons li.active a
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/bg-slider1.png) no-repeat 0 0;
+    color: #0a0a0a;
+}
+.dyn .pdc2008Page .slides li.slide .details
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 390px;
+    height: 236px;
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitelite.png) repeat-y 0 0;
+}
+.dyn .pdc2008Page .slides li.slide .details h2
+{
+    font-size: 180%;
+    margin: 12px 0 0 12px;
+}
+.dyn .pdc2008Page .slides li.slide .details ul
+{
+    margin-left: 48px;
+}
+.dyn .pdc2008Page .slides li.slide .details li
+{
+    color: #fff;
+    font-size: 120%;
+}
+.dyn .pdc2008Page .slides li.slide .details li a
+{
+    color: #fff;
+}
+.dyn .pdc2008Page .slides li.slide .details li a:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.dyn .pdc2008Page .keyTags
+{
+    text-align: center;
+}
+.dyn .pdc2008Page .keyTags li
+{
+    float: left;
+    list-style-type: none;
+    list-style-image: none;
+    margin-right: 10px;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+.profilePage .button
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_center.jpg) repeat-x;
+}
+.profilePage .button .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_left.jpg);
+}
+.profilePage .button .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_right.jpg);
+}
+.profilePage ul.pdcBadges li
+{
+    float: left;
+    list-style-type: none;
+    margin: 10px;
+}
+.profileEditPage .containerButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_center.jpg) repeat-x;
+}
+.profileEditPage .containerButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_left.jpg);
+}
+.profileEditPage .containerButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/whitebannerbutton_right.jpg);
+}
+.profileEditPage .badge
+{
+    margin-top: 20px;
+}
+.profileEditPage .basicFields
+{
+    width: 500px;
+    float: left;
+}
+.profileEditPage .pdcBadges
+{
+    float: left;
+    width: 412px;
+    margin-left: 20px;
+}
+.profileEditPage .edit .editControls
+{
+    width: 500px;
+}
+.profileEditPage .edit .badgeCheckBox
+{
+    margin-right: 5px;
+}
+.profileEditPage .edit
+{
+    width: 100%;
+}
+.profileEditPage .pdcBadges ul
+{
+    overflow: auto;
+    overflow-y: scroll;
+    height: 400px;
+    margin-left: 0;
+}
+.profileEditPage .pdcBadges ul li
+{
+    list-style-type: none;
+}
+.profileEditPage .badge img
+{
+    vertical-align: top;
+    margin-right: 13px;
+}
+.profileEditPage .badgeCheckBox input
+{
+    vertical-align: middle;
+}
+.searchPage .searchParams .searchParamsContainer
+{
+    color: #8E7C74;
+}
+.searchPage .searchParams .searchParamsContainer .dateRange label, .searchPage .searchParams .searchParamsContainer .contentType label
+{
+    color: #000;
+}
+.searchPage .containerButton
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/linkbanner3_center.png) repeat-x;
+}
+.searchPage .containerButton .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/linkbanner3_left.png);
+}
+.searchPage .containerButton .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/linkbanner3_right.png);
+}
+.searchPage .entryList .innerContainer
+{
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+.searchPage .entryList .item
+{
+    background-color: #FBF8F7;
+    border: 1px solid #DAD5D4;
+    margin-top: 3px;
+}
+.searchPage .entryList .item .entrySum
+{
+    background-color: #F7F2F0;
+    border: 1px solid #EAE4E3;
+    padding: 7px;
+}
+.searchPage .entrySum .summaryRight
+{
+    width: 404px;
+}
+.blogEntryPage.session #sideBar
+{
+    margin-top: 0;
+}
+.blogEntryPage.session .entrySum .summaryRight
+{
+    padding-left: 0;
+    width: 100%;
+}
+.blogEntryPage.session .intro .title
+{
+    margin-bottom: .9em;
+}
+.blogEntryPage.session .intro
+{
+    margin-bottom: 1em;
+}
+.blogEntryPage.session .intro object
+{
+    margin: 0 0 0 -7px;
+}
+.blogEntryPage.session .intro .noplayer
+{
+    width: 320px;
+    height: 240px;
+    position: relative;
+    margin: 0 0 1em 9px;
+}
+.blogEntryPage.session .intro .noplayer .overlay
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/default/4-other/images/lightbox/overlay.png);
+    background-repeat: repeat;
+    width: 320px;
+    height: 240px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.blogEntryPage.session .intro .noplayer .install
+{
+    position: absolute;
+    left: 49px;
+    top: 88px;
+}
+.showPage .case
+{
+    float: none;
+}
+.showsPage #main .case
+{
+    width: 416px;
+}
+.tagPage .case
+{
+    float: none;
+    margin-bottom: 10px;
+}
+.tagGroupPage .entryList .info
+{
+    float: left;
+    text-transform: uppercase;
+    font-size: 85%;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.tagGroupPage .cell
+{
+    width: 350px;
+    float: left;
+}
+.tagGroupPage .entryList .innerContainer
+{
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+.tagGroupPage .entryList .item
+{
+    background-color: #FBF8F7;
+    border: 1px solid #DAD5D4;
+    margin-top: 3px;
+}
+.tagGroupPage .entryList .item .entrySum
+{
+    background-color: #F7F2F0;
+    border: 1px solid #EAE4E3;
+    padding: 7px;
+}
+.tagGroupPage .entrySum .summaryRight
+{
+    width: 349px;
+}
+.tagGroupPage #sideBar li
+{
+    padding-top: 10px;
+    list-style: none;
+}
+.tagGroupPage #sideBar li.first
+{
+    padding-top: 0;
+}
+.wikiPage .wikiEditor textarea, #wikiPreview
+{
+    width: 755px;
+}
+.wikiPage .wikiMainContent
+{
+    float: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.wikiMainContent .loadStatus
+{
+    background-color: #F9F9F8;
+    float: left;
+    opacity: .8;
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+}
+.wikiPage .historyText
+{
+    text-align: center;
+}
+.wikiPage .posted
+{
+    clear: left;
+}
+.wikiPage .entryList
+{
+    margin-top: 14px;
+}
+.wikiPage .entryList .innerContainer
+{
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+.wikiPage #sideBar .sharethis
+{
+    border-top: none;
+}
+.wikiPage #sideBar .sharethis li
+{
+    float: none;
+    padding-top: 0;
+}
+.wikiPage #sideBar .sharethis li.first
+{
+    margin-top: 0;
+}
+.wikiPage #sideBar ul
+{
+    margin: 0;
+}
+.wikidoc ul, .wikidoc ol
+{
+    margin: 0 0 0 10px;
+    padding: 0 0 0 10px;
+}
+.wikidoc ul li
+{
+    margin-left: 15px;
+    list-style-type: disc;
+}
+.wikidoc ul li ul li
+{
+    list-style-type: circle;
+}
+.wikidoc ol li
+{
+    margin-left: 15px;
+    list-style-type: decimal;
+}
+.wikidoc ol li ol li
+{
+    list-style-type: lower-alpha;
+}
+.wikidoc h2
+{
+    font-size: 19px;
+}
+.wikidoc h3
+{
+    font-size: 16px;
+    color: #2A0F01;
+}
+h2
+{
+    color: #000 !important;
+}
+#WikiVersions td
+{
+    padding: .25em 2em .25em 0;
+}
+#WikiVersions th
+{
+    padding: 0 2em 0 0;
+}
+.CommentsHeader
+{
+    background-color: #ECECEC;
+    font-weight: bolder;
+    padding: .2em;
+}
+.WikiMarkup
+{
+    color: gray;
+    font-family: Consolas,Courier New,Courier,monospace;
+}
+.commentTextBox
+{
+    color: #333;
+    border: solid .1em #A5ACB2;
+    width: 400px;
+    height: 10em;
+    vertical-align: bottom;
+    padding: .13em;
+}
+#wikiTop td
+{
+    background-color: #ECECEC;
+    padding: .63em;
+}
+.wikiSource
+{
+    width: 100%;
+    padding: 1em;
+}
+.breadcrumbs
+{
+    font-size: .8em;
+    padding-left: .63em;
+    padding-top: .13em;
+    text-align: left;
+    color: #7f7f7f;
+}
+.breadcrumbs a
+{
+    padding: 0 .5em;
+}
+table.StandardPaddingRight th
+{
+    background-color: #E2F6CC;
+    text-align: left;
+}
+.IE .WikiContent
+{
+    padding-bottom: 1.5em;
+}
+.FF .WikiContent table
+{
+    margin-left: 1px;
+    margin-top: 1px;
+}
+div.QuickWikiGuide .Link
+{
+    font-size: .8em;
+    margin-top: .31em;
+}
+div.QuickWikiGuide .Markup
+{
+    color: #777;
+    margin: .1em;
+}
+div.wikidoc h1, div.wikidoc h2, div.wikidoc h3, div.wikidoc h4, div.wikidoc h5, div.wikidoc h6
+{
+    margin-bottom: .13em;
+}
+div.wikidoc h1
+{
+    font-size: 2em;
+}
+div.wikidoc h2
+{
+    font-size: 1.6em;
+}
+div.wikidoc h3
+{
+    font-size: 1.4em;
+}
+div.wikidoc h4
+{
+    font-size: 1.2em;
+}
+html.FF div.wikidoc .externalLink, html.IE6 div.wikidoc .externalLink, html.Opera div.wikidoc .externalLink, html.Safari div.wikidoc .externalLink
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/3-pages//images/icons_weblink_sm.gif);
+    background-repeat: no-repeat;
+    background-position: right 0;
+    padding-right: 1.5em;
+    padding-bottom: .5em;
+}
+html.IE6 div.wikidoc .externalLink
+{
+    vertical-align: bottom;
+    display: inline-block;
+}
+html.IE7 div.wikidoc .externalLinkIcon
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/3-pages//images/icons_weblink_sm.gif);
+    background-repeat: no-repeat;
+    background-position: right 0;
+    display: inline-block;
+    height: 1em;
+    margin-left: .13em;
+    width: .81em;
+    padding-top: .5em;
+    padding-left: .5em;
+}
+div.wikidoc pre
+{
+    background-color: #ECECEC;
+    border: dashed .1em #3E62A6;
+    font-family: Consolas,Courier New,Courier,Monospace;
+    font-size: 1em;
+    margin-top: 0;
+    height: auto;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: .5em;
+}
+.IE6 .wikidoc pre
+{
+    width: 96%;
+}
+div.wikidoc span.codeInline
+{
+    font-family: Consolas,Courier New,Courier,Monospace;
+}
+div.wikidoc table
+{
+    border: solid .1em #BBB;
+    border-collapse: collapse;
+}
+div.wikidoc th
+{
+    font-weight: 700;
+}
+div.wikidoc td, div.wikidoc th
+{
+    padding: .25em;
+}
+div.wikidoc td, div.wikidoc th, div.wikidoc tr
+{
+    border: solid .1em #BBB;
+}
+div.wikidoc span.unresolved, div.wikidoc div.error, div.wikidoc span.error
+{
+    color: red;
+    font-style: italic;
+    font-size: .9em;
+}
+div.wikidoc div.error
+{
+    white-space: pre;
+}
+div.wikidoc div.quote
+{
+    border: dotted .1em #aaa;
+    border-left: none;
+    border-right: none;
+    font-style: italic;
+    margin: 1em 0 2.5em 3em;
+    padding: .2em;
+}
+div.wikidoc div.rss .date
+{
+    color: #777;
+    font-size: .8em;
+    margin: 0;
+    padding: 0;
+}
+div.wikidoc div.rss .entry
+{
+    margin: 1.25em .63em;
+}
+div.wikidoc div.rss .moreinfo
+{
+    color: #777;
+    font-size: .8em;
+}
+div.wikidoc div.rss .moreinfo a:active, div.wikidoc div.rss .moreinfo a:link, div.wikidoc div.rss .moreinfo a:visited
+{
+    color: #999;
+}
+div.wikidoc div.rss .moreinfo a:hover
+{
+    color: #CE8B10;
+}
+div.wikidoc div.rss p
+{
+    margin: .38em 0 .13em;
+}
+div.wikidoc div.rss .title
+{
+    font-size: 1.25em;
+    font-weight: 700;
+    margin-bottom: .1em;
+}
+div.wikidoc div.accentbar
+{
+    color: #777;
+    font-size: .75em;
+    letter-spacing: .13em;
+    text-align: center;
+}
+div.wikidoc div.accentbar .left
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/3-pages//images/wiki-accentbar-left.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    margin-right: -.25em;
+    padding-left: 12.5em;
+}
+div.wikidoc div.accentbar .right
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/3-pages//images/wiki-accentbar-right.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    margin-left: -.5em;
+    padding-right: 12.5em;
+}
+div.wikidoc div.video span.player
+{
+    background-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/3-pages//images/video-error.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    vertical-align: middle;
+}
+div.wikidoc div.video .external
+{
+    font-size: .8em;
+}
+div.wikidoc ul
+{
+    list-style-image: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/3-pages//images/doublearrow.gif);
+    list-style-type: none;
+}
+div.wikidoc li
+{
+    margin-bottom: .3em;
+    margin-top: .3em;
+    vertical-align: middle;
+}
+.liveIDCobranding
+{
+    background-image: none;
+    margin: 0;
+    padding: 0;
+}
+.liveIDCobranding a
+{
+    color: #751D02;
+}
+.liveIDCobranding h5
+{
+    margin-top: 0;
+}
+#loginHeader
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/liveid/header.png) no-repeat;
+    height: 165px;
+}
+#loginLeft
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/liveid/left.png) no-repeat;
+    height: 500px;
+}
+#loginRight
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/liveid/right.png) no-repeat;
+    height: 504px;
+}
+#loginRight .box
+{
+    width: 335px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+#loginRight .box.first
+{
+    margin-top: 0;
+}
+#loginRight .box .header .inner
+{
+    font-size: 95%;
+    text-transform: none;
+}
+#loginFooter
+{
+    background: url(http://mschnlnine.vo.llnwd.net/d1/Dev/App_Themes/C9/images/liveid/footer.png) no-repeat;
+    height: 155px;
+    text-align: center;
+    margin-left: -1px;
+}

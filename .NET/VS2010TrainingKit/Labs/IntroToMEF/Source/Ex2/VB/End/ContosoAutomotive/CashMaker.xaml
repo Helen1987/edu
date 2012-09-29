@@ -1,0 +1,138 @@
+﻿<Window x:Class="CashMaker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ContosoAutomotive"
+        Title="Cash Maker"
+        Width="900"
+        Height="650"
+        Background="#FF76A0B0"
+        ResizeMode="CanResize" >
+    <Window.Resources>
+        <Style TargetType="ListBoxItem">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+            </Style.Resources>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="Opacity" Value="1" />
+                </Trigger>
+
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                  Duration="0:0:0.2"
+                  Storyboard.TargetProperty="Opacity"
+                  To="0.9"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                  Duration="0:0:1"
+                  Storyboard.TargetProperty="Opacity"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                
+            </Style.Triggers>
+            <Setter Property="Opacity" Value="0.6" />
+        </Style>
+        <ControlTemplate x:Key="SaveButton" TargetType="{x:Type Button}">
+            <Grid Margin="15">
+                <Image Width="50" Source="Images/save.png" />
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="RoundedBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="CornerRadius" Value="10,0,0,10" />
+        </Style>
+        <Style x:Key="RoundedBorderRight" TargetType="Border">
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="CornerRadius" Value="0,10,10,0" />
+        </Style>
+        <DataTemplate x:Key="QueryItem">
+            <Border Style="{StaticResource RoundedBorder}" Width="350" Height="60" Margin="0" Padding="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="45" Height="45" Source="{Binding Path=Metadata.ImagePath}"></Image>
+                    <Grid Grid.Column="1"  Background="#E8ECED" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Margin="5 5 5 0" FontWeight="Bold" Text="{Binding Path=Metadata.Name}" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="1" Margin="5 0 5 5" Text="{Binding Path=Metadata.Description}" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Border>
+        </DataTemplate>
+        <Style x:Key="InfoLabel">
+            <Setter Property="Label.FontWeight" Value="Bold" />
+            <Setter Property="Label.FontSize" Value="32" />
+            <Setter Property="Label.FontFamily" Value="Corbel" />
+            <Setter Property="Label.Foreground" Value="White" />
+            <Setter Property="Label.Margin" Value="20" />
+            <Setter Property="Label.VerticalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+    <ScrollViewer BorderThickness="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Padding="0" Margin="0">
+        <Grid Background="#FF76A0B0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid VerticalAlignment="Top" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2* "/>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Contoso Automotive Resellers" Style="{StaticResource InfoLabel}" HorizontalAlignment="Left" />
+                <Button Name="saveButton" Grid.Column="1" Template="{StaticResource SaveButton}" HorizontalAlignment="Right" Click="saveButton_Click" />
+            </Grid>
+            <StackPanel Name="commandGrid" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal" Height="420">
+                <ListBox Name="commandList" ItemsSource="{Binding}"
+                     ItemTemplate="{StaticResource QueryItem}" 
+                     IsSynchronizedWithCurrentItem="True"
+                     SelectionChanged="commandList_SelectionChanged" 
+                     Background="Transparent" BorderThickness="0" Margin="0" Padding="3" VerticalContentAlignment="Top">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="356" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+                <ContentControl Width="700" Margin="1 1 5 1" VerticalAlignment="Top">
+                    <Border Padding="1 1 5 1" Style="{StaticResource RoundedBorderRight}" Grid.Row="0" >
+                        <DataGrid Name="Results" ItemsSource="{Binding Path=Value.Results}" AutoGenerateColumns="True" ColumnWidth="*" BorderThickness="0" Width="667" Height="381" />
+                    </Border>
+                </ContentControl>
+            </StackPanel>
+            <ProgressBar VerticalAlignment="Bottom" Grid.Row="2" Name="progressBar" Visibility="Visible" Height="20"></ProgressBar>
+        </Grid>
+    </ScrollViewer>
+</Window>

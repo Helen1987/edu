@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Author>
+    <Name>BrianKel</Name>
+  </Author>
+  <Id>SoftwareTesting1</Id>
+  <Version>1.0</Version>
+  <Title>Software Testing with Microsoft Visual Studio 2010: Part 1, an Introduction</Title>
+  <Description>
+    Are you tired of spending hours trying to reproduce and diagnose bugs? Do you have a hard time getting testers and developers to talk to each other? Is it difficult to determine which tests are most important to run after you produce a new build? If so, then this session is for you! Software testing is perhaps the #1 area of investment for the application lifecycle management capabilities of Visual Studio 2010. During this introductory session we explore the new software testing architecture offered by Visual Studio 2010. We examine the various testing roles played by members of the development and testing teams and show how they will interact with Visual Studio 2010 to more effectively test software and eliminate bugs. During part 1 we cover a lot of key testing concepts so that we can hit the ground running with a demo-rich session during part 2 of this presentation. This session was presented by Brian Keller during Microsoft DevDays 2010 in The Hague in The Netherlands.
+  </Description>
+  <Abstract>
+    Are you tired of spending hours trying to reproduce and diagnose bugs? Do you have a hard time getting testers and developers to talk to each other? Is it difficult to determine which tests are most important to run after you produce a new build? If so, then this session is for you! Software testing is perhaps the #1 area of investment for the application lifecycle management capabilities of Visual Studio 2010. During this introductory session we explore the new software testing architecture offered by Visual Studio 2010. We examine the various testing roles played by members of the development and testing teams and show how they will interact with Visual Studio 2010 to more effectively test software and eliminate bugs. During part 1 we cover a lot of key testing concepts so that we can hit the ground running with a demo-rich session during part 2 of this presentation. This session was presented by Brian Keller during Microsoft DevDays 2010 in The Hague in The Netherlands.
+  </Abstract>
+  <Url>
+    http://ecn.channel9.msdn.com/o9/ch9/1/1/3/2/4/5/DD201041_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/posts/matthijs/Software-Testing-with-Microsoft-Visual-Studio-2010-Part-1-an-Introduction/Player/" />
+  </CustomProperties>
+</Video>

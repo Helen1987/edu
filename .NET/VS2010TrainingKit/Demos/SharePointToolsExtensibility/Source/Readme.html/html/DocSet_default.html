@@ -1,0 +1,130 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Index" />
+      <MSHelp:RLTitle Title="Index" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+        Extending SharePoint 2010 Tools in Visual Studio 2010
+      </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Index</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <h4 class="subheading">Demo outline</h4>
+        <p>In this demo, you see how the SharePoint 2010 Tools can be extended in Visual Studio 2010, with a Custom Project Item Template.</p>
+        <p>This demo and the provided sample code are based on the walkthrough: Defining a SharePoint Project Item with an Item Template and can be found here (<a href="http://msdn.microsoft.com/en-us/library/ee256697(VS.100).aspx">http://msdn.microsoft.com/en-us/library/ee256697%28VS.100%29.aspx</a> .)</p>
+        <p>This Demo requires Visual Studio 2010 SDK, to download it, visit: <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=47305cf4-2bea-43c0-91cd-1b853602dcc5&amp;displaylang=en">http://www.microsoft.com/downloads/en/details.aspx?FamilyID=47305cf4-2bea-43c0-91cd-1b853602dcc5&amp;displaylang=en</a></p>
+        <p>You can extend the SharePoint project system in Visual Studio 2010 by creating your own project item types. This demo demonstrates the following features:</p>
+        <p>A Visual Studio Extension (VSIX) package to deploy a project item template and the extension assembly.</p>
+        <p>A Visual Studio item template for the project item</p>
+        <p>A Visual Studio Extension that implements features like:</p>
+        <p>Adding a custom shortcut menu that serves as a starting point for additional tasks</p>
+        <p>Custom properties that appears in the Properties window</p>
+        <p>Code that runs when a developer changes certain properties</p>
+        <p>Debugging and testing the project item</p>
+        <p><b>Run Source\Setup\Setup.bat to create the required SharePoint site for this demo.</b></p>
+        <h3 class="subheading">Steps:</h3>
+        <p>Review the solution projects and inspect the configuration of the Extension and the VSIX Package projects.</p>
+        <p>On the extension project review the classes and the code required to implement the features described.</p>
+        <p>On the VSIX Package open the source.extension.vsixmanifest file designer and review its properties and the Content configured for deployment.</p>
+        <p>Open the ContosoCustomAction.zip file and review the files contained in this compressed folder.</p>
+        <p>Debug the project item by pressing F5 in Visual Studio</p>
+        <p>You should set the CustomActionVSIX project as the StartUp project.</p>
+        <p>Place several breakpoints in the code to follow the execution flow.</p>
+        <p>Place a breakpoint at the CustomAction.InitializeType to check the extension is being loaded.</p>
+        <p>An experimental instance of Visual Studio will start and the Extension will be installed.</p>
+        <p>Create a new SharePoint project and add a new item.</p>
+        <p>The new Custom Action project item will be available under SharePoint-2010 item types.</p>
+        <p>Create a new Custom Action and inspect the create element in Solution Explorer</p>
+        <p>Test the PropertyItemNameChaged event by changing the name of the element in Solution Explorer, the output is logged in the Output Window</p>
+        <p>Test the ProjectPropertyChanged event by changing a property inside the Properties window, the output is loggedin the Output Window</p>
+        <p>Test the menu extension by right-clicking on the item recently created and check the View Custom Action Designer context menu appears.</p>
+        <p>Modify the elements.xml file in the Custom Action element and modify the Title, Description and Url properties.</p>
+        <p>Deploy and test the custom action in SharePoint by starting a new instance of the project by pressing the F5 button.</p>
+        <p>In the configured SharePoint site you can use the Site actions menu to check how the deployed Custom Action works.</p>
+        <p>Close the Experimental instance of Visual Studio.</p>
+        <a name="_GoBack" href="#">
+          <span />
+        </a>
+        <p>Browse the Visual Studio Extension Package output folder (by default bin\Debug) and install the extension by double-clicking on the .vsix file. This will install the extension in the %UserProfile%\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\Microsoft\CustomActionVSIX\1.0 folder.</p>
+        <p>You may need administrator privilege to do this.</p>
+        <p>Start a new Visual Studio instance and open Tool menu | Options | Environment | Extensions Manager. Check that the “Load per user extensions when running as administrator” option and restart Visual Studio as administrator.</p>
+        <p>Verify the Custom Action extension is loaded by following the Testing steps again.</p>
+        <p>Clean up the environment</p>
+        <p>Retract the SharePoint solution using the SharePoint project’s “Retract” context menu.</p>
+        <p>Clean up the experimental Visual Studio instance by executing from the Start menu | Microsoft visual Studio 2010 Beta2 SDK | Tools | Reset the Microsoft Visual Studio 2010 Experimental instance.</p>
+        <p>Start Visual Studio as administrator and use Tools menu | Extensions Manager to uninstall the Custom Action extension.</p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

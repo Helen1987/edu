@@ -1,0 +1,179 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ADO.NET Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>The WCF Data Services (formerly known as ADO.NET Data Services) framework consists of a combination of patterns and libraries that enable the creation and consumption of data services for the web.</p>
+        <p>Its goal is to enable applications to expose data as a <i>data service</i> that can be consumed by web clients within corporate networks and across the internet. WCF Data Services uses URIs to point to pieces of data and simple, well-known formats to represent that data, such as ATOM and JSON.</p>
+        <p>Also, the use of web-friendly technologies make it ideal as a data back-end for AJAX-style applications, Rich Interactive Applications and other applications that need to operate against data that is across the web.</p>
+        <p>The new WCF Data Services release is a standalone release that represents a work in progress towards the next version of the WCF Data Service technology. This release targets the .NET Framework 3.5 SP1 and Silverlight 2 platforms providing new Client and Server side features for data service developers. However, in this lab you will see how to adapt it to Visual Studio 2010. The following is a brief description of the enhancements and new features included:</p>
+        <ul>
+          <li><b>Data Binding</b>: Support two-way data binding for WPF and Silverlight. It is possible to generate client side types that implement the <b>INotifyPropertyChanged</b> and <b>INotifyCollectionChanged</b> interfaces.</li>
+          <li><b>Row Count</b>: Support for determine the total number of entities in a set without retrieving them all.</li>
+          <li><b>Feed Customization (aka "Web Friendly Feeds")</b>: Ability to customize how entities are mapped into the various elements of an Atom feed.</li>
+          <li><b>Server Driven Paging</b>: Allows setting, per collection, limits on the total number of entities returned for each request and providing a "next link" specifying how to continue retrieving the rest of the entities.</li>
+          <li><b>Enhanced BLOB Support</b>: Enables data services to stream large blobs, store binary content separate from its metadata, etc.</li>
+          <li><b>New "Data Service Provider" Interface for Custom Provider Writers</b>: Introduces a way to write a "custom" provider for cases when the supported provider models don't meet your needs.</li>
+        </ul>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Create a WCF data service and consume it using the .NET Client API</li>
+          <li>Consume a WCF data service using ASP.NET Ajax Library Beta</li>
+          <li>Add Service Operations and Interceptors to the Data Service</li>
+          <li>Add Client-Side Paging with Row Count</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>Microsoft  SQL Server 2005 or Microsoft  SQL Server 2008 (Express edition or above)</li>
+          <li>Adventure Works sample database<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>the Dependency Checker will copy the Adventure Works sample database file on each exercise solution folder. If you wish you can copy it manually from the Assets folder.</td></tr></table><p /></div><br /></li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To perform the setup steps you need to run the scripts in a command window with administrator privileges.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br />For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. The <b>Dependencies.dep</b> file launches the Visual Studio installer file that installs the code snippets.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ul>
+          <li>Creating and consuming WCF data services </li>
+          <li>Consuming WCF data services using ASP.NET Ajax Library Beta</li>
+          <li>Extending Data Services with Service Operations and Interceptors</li>
+          <li>Adding Client-Side Paging with Row Count</li>
+        </ul>
+        <p>Estimated time to complete this lab: <b>90 minutes</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Each exercise is accompanied by a starting solution. Some code sections are missing from these solutions, which will be completed through each exercise. Therefore the starting solutions will not work if you run them directly.<br />Inside each exercise you will also find an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>Note</b>: Each exercise contains a Visual Basic and a C# version; Inside the End/Begin solution folder you will find two folders: VB, containing the Visual Basic version of the exercise, and C#, containing the C# version of it.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc236650877" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284146" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_05dd0d97-f34f-4623-8def-ba8df2044669.html">Exercise 1: Creating and Consuming WCF Data Services</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

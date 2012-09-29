@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Author>
+    <Name>JonCart</Name>
+  </Author>
+  <Id>ServerDrivenPagingADONETDataServices</Id>
+  <Version>1.0</Version>
+  <Title>Server-Driven Paging with ADO.NET Data Services</Title>
+  <Description>
+    In this episode of 10-4, we discuss a new feature coming in the next release of ADO.NET Data Services: server-driven paging. This allows you to constrain the size of result sets that can be requested by clients, eliminating potentially problematic scenarios. In addition, clients can also now request the total count of an entity set, without having to retrieve its data in entirety.
+  </Description>
+  <Abstract>
+    In this episode of 10-4, we discuss a new feature coming in the next release of ADO.NET Data Services: server-driven paging. This allows you to constrain the size of result sets that can be requested by clients, eliminating potentially problematic scenarios. In addition, clients can also now request the total count of an entity set, without having to retrieve its data in entirety.
+  </Abstract>
+  <Url>
+    http://mschnlnine.vo.llnwd.net/d1/ch9/6/4/8/8/7/4/104Episode27ServerDrivenPagingWithAdoNetDataServices_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/10-4/10-4-Episode-27-Server-Driven-Paging-with-ADONET-Data-Services/Player/" />
+  </CustomProperties>
+</Video>

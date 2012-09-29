@@ -1,0 +1,132 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Creating a Controller" />
+      <MSHelp:RLTitle Title="Exercise 2: Creating a Controller" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Creating a Controller</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Fundamentals</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Creating a Controller</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to create a Controller to implement simple functionality of the Music Store. That controller will define action methods to handle each specific request:</p>
+        <ul>
+          <li>A listing page of the music genres in the Music Store</li>
+          <li>A browse page that lists all of the music albums for a particular genre</li>
+          <li>A details page that shows information about a specific music album</li>
+        </ul>
+        <p>For the scope of this exercise, you will have those actions to simply return a string by now.</p>
+        <a name="_Toc282507910" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a New StoreController Class</b>
+        </p>
+        <p>In this task, you will add a new Controller.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex02-CreatingAController\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>. Alternatively, you may continue with the solution that you obtained after completing the previous exercise.</li>
+          <li>Add the new controller. To do this, right-click the <b>Controllers</b> folder within the Solution Explorer, select <b>Add</b> and then the <b>Controller</b> command. Change the <b>Controller</b><b>Name</b> to <b>StoreController</b>, and click <b>Add</b>.<p><img src="images\87232683-8137-40f8-979e-e69e783c1db1.png" /></p><p><b>Figure 17</b><br /><i>Add Controller Dialog</i></p><br /></li>
+        </ol>
+        <a name="_Toc282507911" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Modifying the StoreController’s Actions</b>
+        </p>
+        <p>In this task, you will modify Controller methods that are called <b>actions</b>. These actions are responsible for responding to URL requests and determine the content that should be sent back to the browser or user that invoked the URL.</p>
+        <ol>
+          <li>The <b>StoreController</b> class already has an <b>Index</b> method. You will use it later in this Lab to implement the page that lists all genres of the music store. For now, just replace the <b>Index </b>method with the following code that returns a string “Hello from Store.Index()”:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex2 StoreController Index – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public string Index()</b><b>{</b><b>  return "Hello from Store.Index()";</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Add the <b>Browse</b> and <b>Details</b> methods. To do this, add the following code to the <b>StoreController</b>:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex2 StoreController BrowseAndDetails – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>//</b><b>// GET: /Store/Browse</b><b>public string Browse()</b><b>{</b><b>  return "Hello from Store.Browse()";</b><b>}</b><b>//</b><b>// GET: /Store/Details</b><b>public string Details()</b><b>{</b><b>  return "Hello from Store.Details()";</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282507912" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Running the Application</b>
+        </p>
+        <p>In this task, you will try out the Application in a web browser.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to verify each action’s implementation.<ol><li><b>/Store</b>. You will see <b>“Hello from Store.Index()”</b>.</li><li><b>/Store/Browse</b>. You will see <b>"Hello from Store.Browse()"</b>.</li><li><b>/Store/Details</b>. You will see <b>“Hello from Store.Details()”</b>.<p><img src="images\62fd309a-fc5f-4245-844c-587651c52355.png" /></p><p><b>Figure 18</b><br /><i>Browsing /Store/Browse</i></p><br /></li></ol></li>
+          <li>Close the browser.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_152b4e22-e800-4457-9c98-185f360c2e20.html">Exercise 3: Passing parameters to a Controller</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

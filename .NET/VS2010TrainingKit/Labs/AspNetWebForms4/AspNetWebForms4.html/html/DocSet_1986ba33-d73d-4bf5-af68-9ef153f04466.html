@@ -1,0 +1,177 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ASP.NET Web Forms 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>ASP.NET 4 Web Forms provides enhancements in targeted areas and includes some new features. This Lab is also available online at <a href="http://msdn.microsoft.com/trainingcourses">http://msdn.microsoft.com/trainingcourses</a> and covers the following features:</p>
+        <ul>
+          <li><b>New ASP.NET Project Templates</b>: ASP.NET 4 Web Forms includes updated templates for creating new web applications and web sites. These templates include common functionality already implemented, which helps reducing the development time and provides guidance on best practices for building ASP.NET 4 Web applications.</li>
+          <li><b>Client IDs</b>: Developers can now manage control IDs that affect rendered client IDs. The <b>Control</b> class now provides a new property called <b>ClientIDMode</b> that allows you to specify what behavior you want the runtime to take when determining whether or not to refactor the client ID upon rendering. This removes the previous bloat in the client ID.</li>
+          <li><b>URL Routing</b>: ASP.NET 4 Web Forms introduces the new <b>PageRouteHandler</b> class that integrates URL Routing with Web Form Pages. URL routing in ASP.NET enables you to use URLs that do not have to map to specific files in a Web site. Because the URL does not have to map to a file, you can use URLs in a Web application that are descriptive of the user's action and are more easily understood by users and search engines. In URL routing, you define URL patterns that contain placeholders for values that are used when you handle URL requests. At run time, the pieces of the URL that follow the application name are parsed into discrete values, based on a URL pattern that you have defined.</li>
+          <li><b>View State</b>: ASP.NET 4 Web Forms provides a more granular control over the View State. Developers can now disable the View State on a Page and enable it on specific server controls, and also disable it on a control an enable it on its childs.</li>
+        </ul>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Take advantage of the new ASP.NET Project Templates</li>
+          <li>Control server control ClientIds</li>
+          <li>Enable bi-directional routing support</li>
+          <li>Control the View State at application and page level</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>.NET Framework 4</li>
+          <li>Microsoft  SQL Server 2008 (Express edition or above)</li>
+          <li>Adventure Works sample database<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>the Dependency Checker will copy the Adventure Works sample database file on each exercise solution folder. If you wish you can copy it manually from the Assets folder.</td></tr></table><p /></div><br /></li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps:</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To perform the setup steps you need to run the scripts in a command window with administrator privileges.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><a name="_GoBack" href="#"><span /></a> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br />For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. The <b>Dependencies.dep</b> file launches the Visual Studio installer file that installs the code snippets. </td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ol>
+          <li>
+            <a href="docSet_13bffeec-876a-4a60-8e5d-a590f6a67d83.html">Discovering the New ASP.NET Project Templates</a>
+          </li>
+          <li>
+            <a href="docSet_8e0d400a-1835-4792-9980-9d4a40f1a70d.html">Controlling Server Control ClientIds</a>
+          </li>
+          <li>
+            <a href="docSet_f60b939e-3c69-4f30-b802-7308420b76d6.html">Enabling Bi-Directional Routing Support</a>
+          </li>
+          <li>
+            <a href="docSet_1c38029d-4ef1-4f11-a89c-b7f6230bae93.html">Controlling the View State at Application and Page Levels</a>
+          </li>
+        </ol>
+        <p>Estimated time to complete this lab: <b>90 minutes</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Each exercise is accompanied by an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Each exercise contains a Visual Basic and a C# version; Inside the <b>End/Begin</b> solution folder you will find two folders: <b>VB</b>, containing the Visual Basic version of the exercise, and <b>C#</b>, containing the C# version of it.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_13bffeec-876a-4a60-8e5d-a590f6a67d83.html">Exercise 1: New ASP.NET Project Templates</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

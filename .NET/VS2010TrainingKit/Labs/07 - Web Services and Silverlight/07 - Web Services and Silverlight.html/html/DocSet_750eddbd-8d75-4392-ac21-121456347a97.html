@@ -1,0 +1,141 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4 (Optional): Debugging WCF Service Calls" />
+      <MSHelp:RLTitle Title="Exercise 4 (Optional): Debugging WCF Service Calls" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4 (Optional): Debugging WCF Service Calls</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Services and Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4 (Optional): Debugging WCF Service Calls</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <br />
+        <p>WCF services provide an excellent way to exchange data between a server and a Silverlight client. However, when using a Silverlight-Enabled WCF Service data is exchanged over the wire in a binary format making it difficult to debug when there's a problem with the messages being sent or received.  In addition to issues associated with viewing binary data, how do you view messages sent over the wire in the first place to ensure they're being sent/received correctly? In this exercise you'll learn how to use a tool named Fiddler in conjunction with a WCF binary-encoded message inspector to debug Silverlight service calls.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> WCF also provides built-in tracing capabilities that allow messages going into and out of a service to be logged and traced. Additional details about configuring WCF tracing can be found at http://msdn.microsoft.com/en-us/library/ms733025.aspx.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <a name="_Toc275958403" href="#">
+          <span />
+        </a>
+        <a name="_Toc276335826" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Debugging with Fiddler</b>
+        </p>
+        <ol>
+          <li>Download and install <b>Fiddler</b> from <b>http://www.fiddler2.com/Fiddler2/version.asp</b>. Click on the <b>Install Fiddler2</b> link to download the executable.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Fiddler is a free HTTP proxy tool that can be used to view request and response messages.</td></tr></table><p /></div></li>
+          <li>Once Fiddler is installed, download the <b>WCF Binary-encoded Message Inspector for Fiddler </b>located at the following URL:</li>
+          <li>http://code.msdn.microsoft.com/wcfbinaryinspector/Release/ProjectReleases.aspx?ReleaseId=4252.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The WCF Binary-encoded Message Inspector is an extension to Fiddler that automatically deserializes binary-encoded messages into SOAP so that you can view them while using Fiddler.</td></tr></table><p /></div></li>
+          <li>Open the .zip file you downloaded and extract the <b>BinaryMessageFiddlerExtension.dll</b> file to the <b>[Program Files]\Fiddler2\Inspectors</b> folder to make it available in Fiddler.</li>
+          <li>Perform the following tasks:<ol><li>Start Fiddler </li><li>Run the <b>UsingWCFServices </b>solution in Visual Studio (press F5)</li><li>Select a customer from the ComboBox control once the browser appears.</li><li>Switch back to Fiddler and notice that no request or response messages appear. Fiddler doesn't detect request or response messages sent through localhost by default.</li></ol></li>
+          <li>Open the <b>ServiceReferences.ClientConfig</b> file within the <b>UsingWCFServices</b> project in the code editor. </li>
+          <li>Add a <b>period</b> immediately after <b>localhost</b> in the <b>address</b> attribute to allow Fiddler to view localhost traffic. An example of adding a period immediately after localhost is shown next (note that your port will probably be different): http://localhost<b>.</b>:37156/Services/CustomersService.svc</li>
+          <li>Save the <b>ServiceReferences.ClientConfig</b> file.</li>
+          <li>Right-click on the <b>UsingWCFServices.Web</b> project, select <b>Add  Existing Item</b> and add the following file: </li>
+          <li>WCFServices/Starter Code/clientaccesspolicy.xml<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Ensure the file is added into the root of the UsingWCFServices.Web project. Because the Silverlight application is served from localhost and you're now trying to call the WCF service using "localhost." (note the period after localhost), a cross-domain policy file is required for the service calls to work properly.</td></tr></table><p /></div></li>
+          <li>Run the application again and then select a customer followed by an order. </li>
+          <li>Perform the following tasks:<ol><li>Switch back to Fiddler and notice that requests to the WCF service now show</li><li>Select the WCF Binary tab in the right-side of the Fiddler tool (it appears in the upper-right of the request message section and in the lower-right of the response message section) and notice that the request and response binary-encoded messages are converted to text and viewable:</li></ol></li>
+          <p>
+            <img src="images\419fc487-6ea3-4657-8515-ea13b2fb2525.png" />
+          </p>
+          <p>
+            <b>Figure 9</b>
+            <br />
+            <i>Fiddler tool </i>
+          </p>
+          <li>By using Fiddler and the WCF binary-encoded message inspector you can view data sent between a Silverlight client and a server and more quickly debug problems.</li>
+        </ol>
+        <a name="_GoBack" href="#">
+          <span />
+        </a>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

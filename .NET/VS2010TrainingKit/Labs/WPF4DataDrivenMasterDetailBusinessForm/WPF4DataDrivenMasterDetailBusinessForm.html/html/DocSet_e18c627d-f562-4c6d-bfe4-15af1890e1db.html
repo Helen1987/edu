@@ -1,0 +1,115 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Creating and Using Resources" />
+      <MSHelp:RLTitle Title="Exercise 3: Creating and Using Resources" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Creating and Using Resources</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Building a Data-Driven Master/Detail Business Form in WPF using Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Creating and Using Resources</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <a name="_Toc280782398" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Resource from the Background Property of a Button</b>
+        </p>
+        <ol>
+          <li>For this exercise, you can continue to use the solution from Exercise 2 or open the begin solution located at<b><i>\Ex03-CreatedAndUsingResources\begin\</i>(Choosing the folder that matches the language of your preference.)</b><i> </i>You will need to build the solution (click <b>Build</b> | <b>Build Solution</b>) before the designer will show the WPF work we did in Exercise 2.</li>
+          <li>Open Window1.xaml and select the <b>forwardButton</b> created in Exercise 2.</li>
+          <li>In the Properties window, use the Search tool to find the <b>Background</b> property.<p><img src="images\7e4a85c8-3ee2-44c9-892c-303e77126f50.png" /></p><p><b>Figure 19</b><br /><i>Setting Background Property</i></p><br /></li>
+          <li>Click the Background property and the Brush editor will appear. Click the eyedropper tool and select a color from anywhere on your screen. You will see the background of the button has changed.</li>
+          <li>Now click the black square next to background label in the property browser to pick the “Extract to Resource” option.<p><img src="images\ba4a008b-243f-4bff-afa2-2c0e37df506e.png" /></p><p><b>Figure 20</b><br /><i>Extract Value to Resource</i></p><br /></li>
+          <li>Click <b>OK</b> in the Create Resource dialogue, accepting the default values. This window lets you extract the property’s value into a resource that you can re-use. In this case, the resource will be created in Window1.xaml.</li>
+          <li>Look in the XAML code editor and you’ll find a <b>SolidColorBrush</b> element inside the <b>Window.Resources</b> node.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;Window.Resources&gt;    &lt;!-- Additional Resources Omitted --&gt;    &lt;SolidColorBrush x:Key="LightOrangeBrushKey"&gt;#FFFFF0D0&lt;/SolidColorBrush&gt;&lt;/Window.Resources&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc280782399" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Using the Resource to Update Background Property of Another Button</b>
+        </p>
+        <ol>
+          <li>Select the <b>backButton</b> and locate the Background property in the properties windows.</li>
+          <li>Click the black square in the properties window next to the Background property label and select <b>Apply Resource</b>.<p><img src="images\359e4922-99d8-45b9-b7c7-681e7fa5755a.png" /></p><p><b>Figure 21</b><br /><i>Apply Resource</i></p><br /></li>
+          <li>Select the resource from the <b>Local</b> expander.<p><img src="images\6a921898-8ac7-4aea-b2ae-3dff25b3e3f1.png" /></p><p><b>Figure 22</b><br /><i>Apply Resource</i></p><br /></li>
+          <li>The <b>forwardButton</b> and <b>backButton</b> now share the same resource, defining the Background.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_8c682c56-7cdb-4497-aa31-c4f49d04eaa4.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

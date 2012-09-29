@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+
+  <ribbon>
+    <tabs>
+      <tab id="TabParts" label="Contoso Parts" insertAfterMso="TabDeveloper" getVisible="GetProcessToolsVisibility">
+        <group id="GroupDrive" label="Drive" autoScale="true">
+          <toggleButton id="ButtonDriveDirect" label="Direct" size="large" imageMso="RightArrow2"/>
+          <toggleButton id="ButtonDriveHarmonic" label="Harmonic" size="large" imageMso="RecurringTaskInsert" getPressed="GetHarmonicPressedState"/>
+        </group>
+        <group id="GroupShaft" label="Shaft" autoScale="true">
+          <editBox id="BoxRadius" label="Radius:" maxLength="5" imageMso="ShapeDonut" sizeString="WWWW" getText="GetShaftRadiusText"/>
+          <editBox id="BoxStress" label="Stress:" maxLength="5" imageMso="Baseline" sizeString="WWWW" getText="GetShaftStressText"/>
+          <editBox id="BoxAngle" label="Angle:" maxLength="5" imageMso="ShapeIsoscelesTriangle" sizeString="WWWW" getText="GetShaftAngleText"/>
+        </group>
+        <group id="GroupWheel" label="Wheel" imageMso="FilePackageForCD" autoScale="true">
+          <editBox id="BoxRadiusWheel" label="Radius:" maxLength="5" imageMso="ShapeDonut" sizeString="WWWW" getText="GetWheelRadiusText"/>
+          <editBox id="BoxHorizontal" label="Horizontal:" maxLength="5" imageMso="SizeToControlWidth" sizeString="WWWW" getText="GetWheelHorizontalText"/>
+          <editBox id="BoxVertical" label="Vertical:" maxLength="5" imageMso="SizeToControlHeight" sizeString="WWWW" getText="GetWheelVerticalText"/>
+          <button id="ButtonFriction" label="Friction" size="large" imageMso="Baseline"/>
+          <button id="ButtonDistance" label="Distance" size="large" imageMso="TimelineConfigure"/>
+          <button id="ButtonForce" label="Force" size="large" imageMso="ManageLayers"/>
+        </group>
+        <group id="GroupCog" label="Cog" autoScale="true" imageMso="_3DExtrusionDepthInfinityClassic">
+          <menu id="MenuDepth" label="Depth" size="normal" imageMso="_3DExtrusionDepthInfinityClassic">
+            <button id="ButtonDepthOne" label="Depth"/>
+          </menu>
+          <menu id="MenuAddendum" label="Addendum" size="normal" imageMso="CitationMark">
+            <button id="ButtonAddendumOne" label="Addendun"/>
+          </menu>
+        </group>
+        <group id="GroupGear" label="Gear" imageMso="ShapeFillTextureGallery" autoScale="true">
+          <dropDown id="DropDownType" label="Type: " imageMso="ShapeFillTextureGallery" getSelectedItemID="GetTypeID" sizeString="WWWWW">
+            <item id="ItemHelical" label="Helical"/>
+            <item id="ItemSpur" label="Spur"/>
+            <item id="ItemBevel" label="Bevel"/>
+          </dropDown>
+          <dropDown id="DropDownMaterial" label="Material:" imageMso="ShapeFillTextureGallery" getSelectedItemID="GetMaterialID" sizeString="WWWWW">
+            <item id="ItemSteel" label="Steel"/>
+            <item id="ItemAlloy" label="Alloy"/>
+            <item id="ItemPlastics" label="Plastics"/>
+          </dropDown>
+          <dropDown id="DropDownPitch" label="Pitch:" imageMso="SizeToControlWidth" getSelectedItemID="GetPitchID" sizeString="WWWWW">
+            <item id="ItemDiametral" label="Diametral"/>
+            <item id="ItemCircular" label="Circular"/>
+            <item id="ItemAxial" label="Axial"/>
+          </dropDown>
+          <button id="ButtonPath" label="Path" imageMso="ShowTimeZones"/>
+          <button id="ButtonZone" label="Zone" imageMso="ShowTimeZones"/>
+          <button id="ButtonArc" label="Arc" imageMso="ShapeArc"/>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+
+  <backstage>
+    <tab id="Process" label="Contoso Process" insertAfterMso="TabInfo" getVisible="GetPlaceVisibility">
+      <firstColumn>
+        <group id="SpecBasics" getLabel="GetSpecBasicsLabel"  helperText="Please be sure that the following information is kept up to date. Many processes rely on this information.">
+          <primaryItem>
+            <button id="ExitHeroButton" getLabel="GetExitPhaseButtonLabel" getImage="GetExitPhaseButtonImage" getEnabled="GetExitPhaseButtonEnabledState" onAction="SwitchPhase"/>
+          </primaryItem>
+          <topItems>
+
+            <layoutContainer id="TitleContainer">
+              <editBox id="TitleEditBox" label="Title:         " getText="GetStaticText" />
+            </layoutContainer>
+            <layoutContainer id="DesignerContainer" layoutChildren="horizontal">
+              <editBox id="DesignerEditBox" label="Designer: " getText="GetStaticText" />
+            </layoutContainer>
+            <layoutContainer id="EngineerContainer" layoutChildren="horizontal">
+              <editBox id="EngineerEditBox" label="Engineer: " getText="GetStaticText" />
+            </layoutContainer>
+            <layoutContainer id="TeamContainer" layoutChildren="horizontal">
+              <editBox id="TeamEditBox" label="Team:      " getText="GetStaticText" />
+            </layoutContainer>
+            <layoutContainer id="CostContainer" layoutChildren="horizontal">
+              <editBox id="CostEditBox" label="Cost:        " getText="GetStaticText" />
+            </layoutContainer>
+
+            <imageControl id="Stretch" getImage="GetStretcherImage"/>
+
+          </topItems>
+        </group>
+
+        <group id="ScheduleForDesignPhase" getVisible="GetScheduleForDesignPhaseVisibitliy" label="Schedule For Design Phase" getStyle="GetScheduleForDesignPhaseLoudness" getHelperText="GetScheduleForDesignPhaseHelperText">
+          <primaryItem>
+            <button id="RequestExtentionButton" label="Request Extension" imageMso="DelayDeliveryOutlook" onAction="ExtendDesignDueDate"/>
+          </primaryItem>
+          <topItems>
+
+            <layoutContainer id="DesignContainer" layoutChildren="horizontal">
+              <imageControl id="DesignImage" getImage="GetDesignDateImage"/>
+              <editBox id="DesignEditBox" label="Design Due:" getText="GetDesignDueDate" onChange="UpdateDesignDate"/>
+            </layoutContainer>
+            <layoutContainer id="ProductionContainer" layoutChildren="horizontal">
+              <imageControl id="ProductionImage" imageMso="NewAppointment"/>
+              <editBox id="ProductionEditBox" label="Production:" getText="GetProductionDateDue"/>
+            </layoutContainer>
+
+          </topItems>
+        </group>
+
+        <group id="OpenDesignIssues" getVisible="GetOpenDesignIssuesVisibility" label="Open Design Issues" getStyle="GetOpenDesignIssuesLoudness" getHelperText="GetOpenDesignIssuesHelperText">
+          <primaryItem>
+            <menu id ="MangeIssuesMenu" label="Manage Issues" imageMso="ReviewEditComment">
+              <menuGroup id="DealWithIssues">
+                <button id="AddIssueButton" label="Add Issue"/>
+                <button id="RemoveIssueButton" label="Remove Issue"/>
+                <button id="ResolveAllOpenIssuesButton" label="Resolve All Open Issues" onAction="ResolveOpenIssues"/>
+              </menuGroup>
+            </menu>
+          </primaryItem>
+          <topItems>
+
+            <labelControl id="IssuesFoundLabel" label="There are 3 remaining issues to resolve:" getVisible="GetVisibleIssues"/>
+            <layoutContainer id="SpeedContainer" layoutChildren="horizontal">
+              <imageControl id="SpeedImage" imageMso="HighImportance" getVisible="GetVisibleIssues"/>
+              <labelControl id="SpeedLabel" label="Need to add revised speed improvement data." getVisible="GetVisibleIssues"/>
+            </layoutContainer>
+            <layoutContainer id="CostAnalysisContainer" layoutChildren="horizontal">
+              <imageControl id="CostAnalysisImage" imageMso="HighImportance" getVisible="GetVisibleIssues"/>
+              <labelControl id="CostAnalysisLabel" label="Alter the cost analysis section to account for increased time." getVisible="GetVisibleIssues"/>
+            </layoutContainer>
+            <layoutContainer id="CreditContainer" layoutChildren="horizontal">
+              <imageControl id="CreditImage" imageMso="HighImportance" getVisible="GetVisibleIssues"/>
+              <labelControl id="CreditLabel" label="Credit Mary Ann for her work with customer data." getVisible="GetVisibleIssues"/>
+            </layoutContainer>
+
+          </topItems>
+        </group>
+
+        <group id="ScheduleForLegalReview" getVisible="GetScheduleForLegalReviewVisibitliy" label="Schedule For Legal Review">
+          <primaryItem>
+            <button id="ContactLawyersButton" label="Contact Lawyers" imageMso="MeetingsWorkspace"/>
+          </primaryItem>
+          <topItems>
+
+            <layoutContainer id="ReviewContainer" layoutChildren="horizontal">
+              <imageControl id="ReviewImage" imageMso="NewAppointment"/>
+              <editBox id="ReviewEditBox" label="Review:       " getText="GetStaticText"/>
+            </layoutContainer>
+            <layoutContainer id="CourtDateContainer" layoutChildren="horizontal">
+              <imageControl id="CourtDateImage" imageMso="NewAppointment"/>
+              <editBox id="CourtDateEditBox" label="Court Date:" getText="GetStaticText"/>
+            </layoutContainer>
+            <layoutContainer id="ProductionLegalContainer" layoutChildren="horizontal">
+              <imageControl id="ProductionLegalImage" imageMso="NewAppointment"/>
+              <editBox id="ProductionLegalEditBox" label="Production:" getText="GetStaticText"/>
+            </layoutContainer>
+
+          </topItems>
+        </group>
+
+        <group id="AccessibilityIssues" getVisible="GetAccessibilityIssuesVisibility" label="Accessibility" helperText="In order to pass review, a thorough Accessibility process must be carried out. The Accessibility Review Document will be linked here when it has been created.">
+          <primaryItem>
+            <button id="ReviewAccessibilityButton" label="Review Accessibility" imageMso="FileDocumentInspect"/>
+          </primaryItem>
+          <topItems>
+
+            <hyperlink id="AccessibilityLink" label="Create Accessibility Review Document"/>
+
+          </topItems>
+        </group>
+
+        <group id="Worldwide" getVisible="GetWorldwideVisibility" label="Worldwide Readiness" helperText="In order to pass review, a thorough Worldwide Readiness process must be carried out. The Worldwide Readiness Review Document will be linked here when it has been created.">
+          <primaryItem>
+            <button id="WorldwideReadinessButton" label="Review Readiness" imageMso="ViewWebLayoutView"/>
+          </primaryItem>
+          <topItems>
+
+            <hyperlink id="WorldwideReadinessLink" label="Create Worldwide Readiness Review Document"/>
+
+          </topItems>
+        </group>
+
+        <group id="Patents" getVisible="GetPatentsVisibility" label="Patent Documentation" helperText="In order to pass review, a thorough Patent Documentation process must be carried out. The Patent Documentation will be linked here when it has been created.">
+          <primaryItem>
+            <button id="PatentButton" label="Review Patents" imageMso="PageMenu"/>
+          </primaryItem>
+          <topItems>
+
+            <hyperlink id="PatentLink" label="Create Patent Documentation"/>
+
+          </topItems>
+        </group>
+
+      </firstColumn>
+
+      <secondColumn>
+        <group id="SpecGraphs" label="Contoso Team Specification Status ">
+          <topItems>
+
+            <imageControl id="ImageTeamSpecs" getImage="GetTeamSpecsImage"/>
+
+          </topItems>
+        </group>
+      </secondColumn>
+
+    </tab>
+
+  </backstage>
+
+  <contextMenus>
+    <contextMenu idMso="ContextMenuCell">
+      <gallery id="GalleryMarkRisk"
+						   insertAfterMso="PasteSpecialAlt"
+						   label="Assess Risk" getImage="GetRiskImage" columns="3"
+						   getItemCount="GetRiskItemCount" getItemImage="GetRiskItemImage" getVisible="GetProcessToolsVisibility" showItemLabel="false">
+      </gallery>
+      <splitButton id="SplitButtonRecalculate" insertAfterMso="PasteSpecialAlt" showLabel="true" getVisible="GetProcessToolsVisibility">
+        <menu id="MenuRecalculate">
+          <button id="ButtonRecalculate" label="Recalculate" imageMso="Refresh"/>
+          <button id="ButtonRecalculateAll" label="Recalculate All"/>
+        </menu>
+      </splitButton>
+      <menuSeparator id="SeparatorRefresh" insertAfterMso="PasteSpecialAlt"/>
+      <button idMso="FormatCellsDialog" getVisible="GetNegatedProcessToolsVisibility"/>
+      <button idMso="HyperlinkInsert" getVisible="GetNegatedProcessToolsVisibility"/>
+    </contextMenu>
+  </contextMenus>
+
+</customUI>

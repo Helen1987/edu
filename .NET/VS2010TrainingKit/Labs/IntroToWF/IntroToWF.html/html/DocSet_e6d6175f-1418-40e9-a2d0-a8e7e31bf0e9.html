@@ -1,0 +1,207 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 9: Verification" />
+      <MSHelp:RLTitle Title="Exercise 9: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 9: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 9: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <a name="_Toc281935142" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Prepare the test projects</b>
+        </p>
+        <ol>
+          <li>Press <b>CTRL</b>+<b>SHIFT</b>+<b>B</b> to build the solution.</li>
+          <li>Add the existing <b>HellowWorkflow.Activities.Tests</b> project to your solution.  To do this, right click on the Solution and select <b>Add/Existing Project… </b>browse to <b>Source\Assets</b> folder of this lab (choosing the folder that matches the language of your preference) and select the <b>HellowWorkflow.Activities.Tests </b>project</li>
+          <li>Right click on the <b>HellowWorkflow.Activities.Tests </b>project and select <b>Add Reference…</b> and add a project reference to <b>HelloWorkflow.Activities</b></li>
+          <li>The <b>HelloWorkflow.Tests</b> project will also need a reference to the custom activity project.  Right click on <b>HelloWorkflow.Tests</b> and select <b>Add Reference. </b>From the project tab select <b>HelloWorkflow.Activities.</b></li>
+          <li>Press <b>Ctrl+R, A</b> to run all tests. All the tests should pass.</li>
+        </ol>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\38c352cb-a737-4d4d-851a-330ffe3dc136.png" />
+                <b>  How do these Activity tests work?</b>
+                <br />Take a moment to explore the unit tests from <b>HelloWorkflow.Activities.Tests</b>.  These tests create workflows using code instead of XAML.  This is another option for testing workflows if you prefer to use it.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc281935143" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Create DiagnosticTrace Test</b>
+        </p>
+        <p>You need to create a test that verifies the runtime behavior of the <b>DiagnosticTrace</b> activity.  There are two elements of the behavior you want to test for.  The activity should emit a trace via <b>System.Diagnostics.Trace</b> and also a tracking record via the workflow tracking.  You will use the classes provided in <b>HelloWorkflow.Activities.Tests</b> to provide a means for testing this behavior.</p>
+        <ol>
+          <li>Right click on <b>HelloWorkflow.Tests</b> and select Add Reference… and add a project reference to <b>HelloWorkflow.Activities.Tests</b></li>
+          <li>We will first write the test and then update the workflow. Add the following namespace directives to  <b>SayHelloFixture.cs</b> (C#) or <b>SayHelloFixture.vb</b> (VB) file as shown.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.Activities.Tracking;</b><b>using HelloWorkflow.Activities.Tests;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System.Activities.Tracking</b><b>Imports HelloWorkflow.Activities.Tests</b></pre></td></tr></table></span></div><br /></li>
+          <li>Add a new test to the <b>SayHelloFixture.cs</b> (C#) or <b>SayHelloFixture.vb</b> (VB) file as shown.<p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>ShouldOutputVerboseTrace Test CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod()]</b><b>public void ShouldOutputVerboseTrace()</b><b>{</b><b>    // Arrange</b><b>    string testCategory = "Test";</b><b>    string expectedData = "From SayHello";</b><b>    string expectedTrace = string.Format("{0}: {1}", testCategory, expectedData);</b><b>    var listener = new TestTraceListener();</b><b>    var tracker = new TestTrackingParticipant();</b><b>    var profile = new TrackingProfile()</b><b>    {</b><b>        Name = "TestTrackingProfile",</b><b>        Queries = </b><b>        {</b><b>           new CustomTrackingQuery()</b><b>           {</b><b>              Name="Test",</b><b>              ActivityName = "*"</b><b>           }</b><b>        }</b><b>    };</b><b>    tracker.TrackingProfile = profile;</b><b>    Trace.Listeners.Add(listener);</b><b>    var target = new SayHello()</b><b>        {</b><b>            UserName = "Test"</b><b>        };</b><b>    var workflow = new WorkflowInvoker(target);</b><b>    workflow.Extensions.Add(tracker);</b><b>    // Act</b><b>    workflow.Invoke();</b><b>    // Assert System.Diagnostics.Trace</b><b>    Assert.AreEqual(1, listener.Traces.Count);</b><b>    Assert.AreEqual(expectedTrace, listener.Traces[0]);</b><b>    // Assert Tracking Records</b><b>    Assert.AreEqual(1, tracker.Records.Count);</b><b>    var customRecord = tracker.Records[0] as CustomTrackingRecord;</b><b>    Assert.AreEqual(expectedData, customRecord.Data["Text"]);</b><b>    Assert.AreEqual(testCategory, customRecord.Data["Category"]);</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>ShouldOutputVerboseTrace Test VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestMethod()&gt;</b><b>Public Sub ShouldOutputVerboseTrace()</b><b>    ' Arrange</b><b>    Dim testCategory As String = "Test"</b><b>    Dim expectedData As String = "From SayHello"</b><b>    Dim expectedTrace As String = String.Format("{0}: {1}", testCategory, expectedData)</b><b>    Dim listener = New TestTraceListener()</b><b>    Dim tracker = New TestTrackingParticipant()</b><b>    Dim profile = New TrackingProfile() With {.Name = "TestTrackingProfile"}</b><b>    profile.Queries.Add(New CustomTrackingQuery() With {.Name = testCategory, .ActivityName = "*"})</b><b>    tracker.TrackingProfile = profile</b><b>    Trace.Listeners.Add(listener)</b><b>    Dim target = New SayHello() With {.UserName = "Test"}</b><b>    Dim workflow = New WorkflowInvoker(target)</b><b>    workflow.Extensions.Add(tracker)</b><b>    ' Act</b><b>    workflow.Invoke()</b><b>    ' Assert System.Diagnostics.Trace</b><b>    Assert.AreEqual(1, listener.Traces.Count)</b><b>    Assert.AreEqual(expectedTrace, listener.Traces(0))</b><b>    ' Assert Tracking Records</b><b>    Assert.AreEqual(1, tracker.Records.Count)</b><b>    Dim customRecord = TryCast(tracker.Records(0), CustomTrackingRecord)</b><b>    Assert.AreEqual(expectedData, customRecord.Data("Text"))</b><b>    Assert.AreEqual(testCategory, customRecord.Data("Category"))</b><b>End Sub</b></pre></td></tr></table></span></div></li>
+          <li>Run the new test by right clicking on the test name <b>ShouldOutputVerboseTrace</b> and clicking on <b>Run Tests</b>.  The test will fail because you have not added the <b>DiagnosticTrace</b> activity to the <b>SayHello</b> workflow yet.</li>
+        </ol>
+        <a name="_Toc281935144" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Add a DiagnosticTrace activity to the SayHello Workflow</b>
+        </p>
+        <ol>
+          <li>Open <b>HelloWorkflow /</b><b>SayHello.xaml</b> in the workflow designer</li>
+          <li>Drop a <b>DiagnosticTrace</b> activity at the bottom of the sequence and set the properties<ol><li>Text: <b>"From SayHello"</b></li><li>Category: <b>Test</b></li><li>Trace Level: <b>Verbose</b></li></ol></li>
+          <p>
+            <img src="images\6c06c147-06c8-440a-a1fe-9e5c22e298a1.png" />
+          </p>
+          <p>
+            <b>Figure 67</b>
+            <br />
+            <i>Add the DiagnosticTrace activity</i>
+          </p>
+          <br />
+          <li>Press <b>Ctrl+R, A</b> to run all tests. All the tests should now pass.  If the debugger breaks on exceptions during the test this is expected – press F5 to continue.</li>
+        </ol>
+        <a name="_Toc281935145" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Add the PrePostSequence Test</b>
+        </p>
+        <ol>
+          <li>Next you will add a test to verify your <b>PrePostSequence</b> behavior. Once again you will write the test first and then update the workflow. Add a new test to the <b>SayHelloFixture.cs</b> (C#) or <b>SayHelloFixture.vb</b> (VB) file as shown.<p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>ShouldreturnPrePostMessages Test CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod]</b><b>public void ShouldReturnPrePostMessages()</b><b>{</b><b>    IDictionary&lt;string, object&gt; output;</b><b>    output = WorkflowInvoker.Invoke(new SayHello()</b><b>    {</b><b>        UserName = "Test"</b><b>    });</b><b>    Assert.AreEqual("This is Pre-Sequence Ordinal:1", output["PreMessage"]);</b><b>    Assert.AreEqual("PrePost is Cool Ordinal:2", output["PrePostBody"]);</b><b>    Assert.AreEqual("This is Post-Sequence Ordinal:3", output["PostMessage"]);</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>ShouldreturnPrePostMessages Test VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>&lt;TestMethod()&gt;</b><b>Public Sub ShouldReturnPrePostMessages()</b><b>    Dim output As IDictionary(Of String, Object)</b><b>    output = WorkflowInvoker.Invoke(New SayHello() With {.UserName = "Test"})</b><b>    Assert.AreEqual("This is Pre-Sequence Ordinal:1", output("PreMessage"))</b><b>    Assert.AreEqual("PrePost is Cool Ordinal:2", output("PrePostBody"))</b><b>    Assert.AreEqual("This is Post-Sequence Ordinal:3", output("PostMessage"))</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Run the new test by right clicking on the test name <b>ShouldReturnPrePostMessages</b> and clicking on <b>Run Tests</b>.  The test will fail because you have not added the <b>PrePostSequence</b> to <b>SayHello</b> yet.</li>
+          <li>Open <b>HelloWorkflow  / SayHello.xaml</b></li>
+          <li>Drop a <b>PrePostSequence</b> after the last activity, you should see the new <b>PrePostSequence</b> Activity Designer</li>
+          <li>To test that your activity is working you will add 3 new out arguments to hold a message from the Pre and Post areas of the <b>PrePostSequence</b>.  Add <b>PreMessage</b>, <b>PrePostBody</b> and <b>PostMessage</b> as shown.<p><img src="images\e31cbfa7-4995-4948-bc94-4da9983f6c4e.png" /></p><p><b>Figure 68</b><br /><i>Add the PreMessage, PrePostBody and PostMessage out arguments</i></p><br /></li>
+          <li>To test that the activities are invoked in the correct order you will need a variable to store the ordinal.  Add the <b>Ordinal</b> variable with a <b>default value of 1</b> to the <b>PrePostSequence</b> scope as shown.<p><img src="images\cc803586-36d3-486b-87d4-6d2ecea15fed.png" /></p><p><b>Figure 69</b><br /><i>Add the Ordinal variable</i></p></li>
+          <li>Now you will store some values in the arguments you created that can be evaluated by the unit tests.  Drop an <b>Assign</b> activity from the <b>Primitives</b> group  on the <b>Pre-Activities</b> area and set the properties<ol><li>DisplayName: <b>Set the PreMessage</b></li><li>To: <b>PreMessage</b></li><li>Value: <b>"This is Pre-Sequence Ordinal:" &amp; Ordinal</b></li></ol></li>
+          <li>Increment the <b>Ordinal</b> variable by dropping an <b>Assign</b> activity in the <b>Activities</b> area of the <b>PrePostSequence</b>.<ol><li>DisplayName: <b>Increment the Ordinal</b></li><li>To: <b>Ordinal</b></li><li>Value:<b> Ordinal + 1</b></li></ol></li>
+          <li>Drop another <b>Assign</b> activity on the <b>Activities</b> area and set the properties<ol><li>DisplayName: <b>Set the PrePostBody</b></li><li>To: <b>PrePostBody</b></li><li>Value: <b>"PrePost is Cool Ordinal:" &amp; Ordinal</b></li></ol></li>
+          <li>Copy the <b>Increment the Ordinal</b> activity by right clicking on it and select copy</li>
+          <li>Paste the activity below the <b>Set the PrePostBody</b> activity.  You must right click on the Red arrow to paste the activity.<p><img src="images\81a2dbe9-35fd-42ef-9447-92db9de53d3c.png" /></p><p><b>Figure 70</b><br /><i>Copy then Paste the Increment Ordinal activity</i></p><br /></li>
+          <li>Drop another <b>Assign</b> activity on the Post-Activities area and set the properties<ol><li>DisplayName: <b>Set the PostMessage</b></li><li>To: <b>PostMessage</b></li><li>Value: <b>"This is Post-Sequence Ordinal:" &amp; Ordinal</b></li></ol></li>
+          <p>
+            <img src="images\8d98102c-66d2-4714-8315-ef6b31ffd31d.png" />
+          </p>
+          <p>
+            <b>Figure 71</b>
+            <br />
+            <i>The Completed PrePostSequence.</i>
+          </p>
+          <br />
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution</li>
+          <li>Press <b>Ctrl+R, A</b> to run all tests. All the tests should now pass.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_810832d4-c8f3-402f-8770-dfc6ee5f2f21.html">Exercise 10: Hosted Designer</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

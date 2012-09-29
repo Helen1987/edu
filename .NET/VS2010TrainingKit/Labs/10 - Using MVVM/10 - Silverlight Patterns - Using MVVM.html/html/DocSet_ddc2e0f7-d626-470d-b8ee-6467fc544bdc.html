@@ -1,0 +1,138 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a Service Agent Class" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a Service Agent Class" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a Service Agent Class</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using the MVVM Pattern in Silverlight Applications</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a Service Agent Class</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll remove existing code in a code-beside file and create a service agent class. The service agent class will be used to make calls to a WCF service from within a ViewModel class created later in the lab. </p>
+        <ol>
+          <li>Open the following Visual Studio 2010 solution file based upon your chosen language.<table style=""><tr valign="top"><th><p>Language</p></th><th><p>Lab Files Location</p></th></tr><tr valign="top"><td><p>C#</p></td><td><p>/MVVMPattern/Starting Point/C#/CustomerViewer.sln</p></td></tr><tr valign="top"><td><p>Visual Basic</p></td><td><p>/MVVMPattern/Starting Point/VB/CustomerViewer.sln</p></td></tr></table></li>
+          <li>The following projects are available in the solution:<ul><li><b>CustomerService.Model</b> – Contains entities and data repository classes used to access an AdventureWorks LT database.</li><li><b>CustomersService</b> – A WCF service application that exposes entities to various applications.</li><li><b>SilverlightCustomerViewer </b>– A Silverlight project that consumes data from a WCF service.</li><li><b>SilverlightCustomerViewer.Web</b> – A website project used to host the SilverlightCustomerViewer application.</li></ul></li>
+          <p>
+            <img src="images\740a76b5-e619-4278-ad00-e2be6df071d3.png" />
+          </p>
+          <p>
+            <b>Figure 1</b>
+            <br />
+            <i>Projects in the Solution</i>
+          </p>
+          <li>Right-click <b>CustomerService.svc</b> in the <b>CustomersService</b> project and select <b>View in Browser</b> from the menu. This will start a local WCF server and show details about the service.</li>
+          <li>Back in Visual Studio, right-click <b>SilverlightCustomerViewerTestPage.html</b> in the <b>SilverlightCustomerViewer.Web</b> project and select <b>View in Browser</b> from the menu.  Select customers from the ComboBox control (note that you may have to wait a moment for the customers to load the first time the application is run) and notice that the data for each customer displays in the details area.</li>
+          <li>Back in Visual Studio, open <b>MainPage.xaml.cs</b> located in the <b>SilverlightCustomerViewer</b> project in the code editor and remove all of the existing code within the <b>MainPage</b> class except the constructor and the call to <b>InitializeComponent</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> All of the functionality in the code-beside file will be moved into a ViewModel class that you'll create later in this lab.</td></tr></table><p /></div></li>
+          <li>Open <b>MainPage.xaml</b> and remove the <b>Click</b> event handlers defined on the two <b>Button</b> controls.</li>
+          <li>Right-click on the <b>SilverlightCustomerViewer</b> project and select <b>Add  New Folder</b>. Give the folder a name of <b>ServiceAgents</b>.</li>
+          <li>Add a new class into the <b>ServiceAgents</b> folder named <b>CustomersServiceAgent</b>.</li>
+          <li>Add the following interface immediately above the class and resolve any missing namespaces:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Resolve any missing namespaces by right-clicking on an unknown type and then selecting Resolve in the menu.</td></tr></table><p /></div><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public interface ICustomersServiceAgent{   void GetCustomers(EventHandler&lt;GetCustomersCompletedEventArgs&gt; callback);   void SaveCustomer(Customer cust,     EventHandler&lt;SaveCustomerCompletedEventArgs&gt; callback);}</pre></td></tr></table></span></div></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>Public InterfaceICustomersServiceAgent    SubGetCustomers(ByValcallback As_      EventHandler(OfGetCustomersCompletedEventArgs))    SubSaveCustomer(ByValcustAs Customer,_      ByVal callback As EventHandler(Of SaveCustomerCompletedEventArgs))End Interface</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <ol>
+          <li />
+          <li>Implement the <b>ICustomerService</b> interface on the <b>CustomersServiceAgent</b> class.</li>
+          <li>Add the following field into the <b>CustomersServiceAgent</b> class:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CustomerServiceClient _Proxy = new CustomerServiceClient();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Dim _Proxy as New CustomerServiceClient()</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: The CustomerServiceClient class is a WCF service proxy class that will be used to communicate with the remote service to retrieve customer data and perform update and delete operations.</td></tr></table><p /></div></li>
+          <li>Add the following code in the <b>GetCustomers</b> method to handle calling the WCF service operation:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>_Proxy.GetCustomersCompleted += callback;_Proxy.GetCustomersAsync();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>AddHandler _Proxy.GetCustomersCompleted, callback_Proxy.GetCustomersAsync()</pre></td></tr></table></span></div></li>
+          <li>Add the following code in the <b>SaveCustomer</b> method to handle communicating delete and update data operations to the WCF service:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>_Proxy.SaveCustomerCompleted += callback;_Proxy.SaveCustomerAsync(cust);</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>AddHandler _Proxy.SaveCustomerCompleted, callback_Proxy.SaveCustomerAsync(cust)</pre></td></tr></table></span></div></li>
+        </ol>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

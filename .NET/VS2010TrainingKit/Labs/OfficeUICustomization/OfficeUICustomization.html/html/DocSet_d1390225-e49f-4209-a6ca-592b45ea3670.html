@@ -1,0 +1,138 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Create a Custom Task Pane" />
+      <MSHelp:RLTitle Title="Exercise 2: Create a Custom Task Pane" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Create a Custom Task Pane</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Microsoft Office 2010 UI Customization</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Create a Custom Task Pane</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will create a custom task pane that can be used to insert snippets of text into the active document. A ribbon button will toggle visibility of a custom task pane that hosts a WPF User Control.</p>
+        <a name="_Toc281230124" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Custom Task Pane</b>
+        </p>
+        <p>In this first task, you will use a pre-created WPF user control as a task pane.</p>
+        <ol>
+          <li>Open <b>Microsoft Visual Studio 2010</b> and open the <b>WPFTaskPane.sln</b> solution located at <b>\Source\Ex2-WPFTaskPane\Begin\</b> (Choosing the folder that matches the language of your preference.)</li>
+          <li>Open <b>ThisAddIn.cs</b> (C#) or <b>ThisAddIn.vb </b>(VB) by double clicking it in the <b>Solution Explorer</b></li>
+          <li>Locate the <b>ThisAddIn_Startup</b> method and add the following code to create a new <b>UserControl</b><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>UserControl taskPane = new UserControl();</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Dim taskPane = new UserControl()</b></pre></td></tr></table></span></div><br /></li>
+          <li>Below, in the same method, create a new <b>ElementHost</b> control to contain the WPF user control and add it to the Windows Forms <b>UserControl</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>taskPane.Controls.Add(</b><b>    new ElementHost { </b><b>        Child = new TaskPane(), </b><b>        Dock = DockStyle.Fill });</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>taskPane.Controls.Add(</b><b>    New ElementHost With {</b><b>        .Child = New TaskPane(),</b><b>        .Dock = DockStyle.Fill</b><b>    })</b></pre></td></tr></table></span></div><br /></li>
+          <li>Next to the previous code, add the Windows forms user control to the add-in as a task pane, to do this:<ol><li>Create a new CustomTaskPane object wrapping the user control from the previous step.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Microsoft.Office.Tools.CustomTaskPane formulaTaskPane = CustomTaskPanes.Add(taskPane, "Custom Snippets");</b></pre></td></tr></table></span></div></li><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Dim formulaTaskPane = CustomTaskPanes.Add(taskPane, "Custom Snippets")</b></pre></td></tr></table></span></div><br /><li>Set the visibility and size of the new task pane.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>formulaTaskPane.Visible = true;</b><b>formulaTaskPane.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;</b><b>formulaTaskPane.Width = 300;</b></pre></td></tr></table></span></div></li><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>formulaTaskPane.Visible = True</b><b>formulaTaskPane.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight</b><b>formulaTaskPane.Width = 300</b></pre></td></tr></table></span></div><br /></ol></li>
+        </ol>
+        <a name="_Toc281230125" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding Snippets Ribbon Button</b>
+        </p>
+        <ol>
+          <li>In this second task, you will add a ribbon button that will toggle the visibility of the snippets task pane.</li>
+          <li>Open <b>Ribbon.xml</b> by double clicking it in the <b>Solution Explorer</b>.</li>
+          <li>Add the tab element referencing the standard <b>View</b> ribbon tab.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;ribbon&gt;  &lt;tabs&gt;<b>    &lt;tab idMso="TabView"&gt;</b><b>    &lt;/tab&gt;  </b>  &lt;/tabs&gt;&lt;/ribbon&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Add a snippets group and toggle button to the <b>&lt;tab&gt;</b> element.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;group id="GroupSnippets" label="Snippets"&gt;</b><b>  &lt;toggleButton id="Snippets" label="Pane" size="large" </b><b>                imageMso="PageMenu" getPressed="IsSnippetsPressed" </b><b>                onAction="SnippetsToggle" /&gt;</b><b>&lt;/group&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Add the code behind to process the button toggle changes, to do this:<ol><li>Open <b>Ribbon.cs</b> (C#) or <b>Ribbon.vb</b> (VB) by double clicking it in the <b>Solution Explorer</b></li><li>Add an <b>IsSnippetPressed</b> method to the <b>Ribbon</b> class<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public bool IsSnippetsPressed(Office.IRibbonControl control)</b><b>{</b><b>    return Globals.ThisAddIn.CustomTaskPanes[0].Visible;</b><b>}</b></pre></td></tr></table></span></div></li><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Function IsSnippetsPressed(ByVal control As Office.IRibbonControl) As Boolean</b><b>    Return Globals.ThisAddIn.CustomTaskPanes(0).Visible</b><b>End Function</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The status is set using the Visible property of the CustomTaskPane object.</td></tr></table><p /></div><br /><li>Below, in the same class, add a <b>SnippetsToggle</b> method to the <b>Ribbon</b> class.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public void SnippetsToggle(Office.IRibbonControl control, bool value)</b><b>{</b><b>    Globals.ThisAddIn.CustomTaskPanes[0].Visible = value;</b><b>}</b></pre></td></tr></table></span></div></li><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Sub SnippetsToggle(ByVal control As Office.IRibbonControl, ByVal value As Boolean)</b><b>    Globals.ThisAddIn.CustomTaskPanes(0).Visible = value</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The value of the button is stored directly in the CustomTaskPane object.</td></tr></table><p /></div><br /></ol></li>
+        </ol>
+        <a name="_Toc281230126" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Exercise 2 Verification</b>
+        </p>
+        <p>In order to verify that you have correctly performed all steps in the above exercise, proceed as follows:</p>
+        <h4 class="subheading">Test the Add-in</h4>
+        <p>Test your add-in to confirm that the export ribbon and backstage buttons work as expected.</p>
+        <ol>
+          <li>Run the add-in and verify the enable checkboxes work.<ol><li>In the <b>Debug</b> menu, click <b>Start Without Debugging</b>.</li><li>Once <b>Word 2010</b> loads, switch to the Views ribbon tab.</li><li>On the <b>View</b> tab, click the <b>Pane</b> button in the <b>Snippets</b> group and verify the task pane is shown and hidden.</li><li>Double click one of the items in the task pane and verify the content is added to the document.<p><img src="images\eff643f0-7691-4204-a774-cadb0e6b0cef.png" /></p><p><b>Figure 7</b><br /><i>Custom Task Pane</i></p><br /></li></ol></li>
+          <li>When you are done cleanup and remove the add-in.<ol><li>Close <b>Word 2010</b>.</li><li>In the <b>Solution Explorer</b>, right-click <b>WPFTaskPane</b> and click <b>Clean</b>.</li></ol></li>
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

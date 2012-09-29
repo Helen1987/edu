@@ -1,0 +1,216 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Deploy the Solution" />
+      <MSHelp:RLTitle Title="Exercise 4: Deploy the Solution" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Deploy the Solution</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow Services using .NET Framework 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Deploy the Solution</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will deploy, configure and monitor the solution using Windows Server AppFabric; a set of extensions to the Windows Application Server and the Windows Process Activation Service (WAS). The goal of Windows Server AppFabric is to simplify the deployment, configuration, management, and monitoring of Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) services built on .NET Framework 4.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\d227ee8e-41b2-4455-a637-05fa4aaa2048.png" />
+                <b>Is AppFabric installed?</b>
+                <br />AppFabric is <b>not installed</b> as a part of the .NET Framework 4 installation. It comes as a separate install delivered through a Windows Update package for Windows that you can install it using the <a href="http://www.microsoft.com/web">Microsoft Web Platform Installer</a> (recommended) or download <a href="http://go.microsoft.com/fwlink/?LinkID=169435">Windows Server App Fabric</a> from the Download Center<br /><a name="_GoBack" href="#"><span /></a>To determine if AppFabric is installed open IIS Manager. If AppFabric is installed when you open the Default Web Site you will see <b>AppFabric</b> at the top of the features window.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc246389212" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310997" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002950" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 3. Alternatively, you can follow the following steps to begin with Exercise 4.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for <b>Exercise 4</b> located under the <b>\Source\Ex4\Begin</b> folder (choosing the folder that matches the language of your preference.) Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc246389213" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310998" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002951" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating Configuration Transformations</b>
+        </p>
+        <p>Your application has several service references that were created in your development environment. When you deploy the application you need to transform the Web.config file so that it uses the correct URIs from the production environment.</p>
+        <ol>
+          <li>To create the configuration transformations in the <b>HRApplicationServices</b> project right-click the <b>Web.config</b> file, and select <b>Add Config Transforms</b>.<p><img src="images\7781d3d3-dd7b-4d78-8c71-07db6ffaee91.png" /></p><p><b>Figure 38</b><br /><i>Right-click Web.config, and select Add Config Transforms in C#</i></p><br /><p><img src="images\a8ed1aa7-2c4f-43b3-aa0f-949b16c02360.png" /></p><p><b>Figure 39</b><br /><i>Right-click Web.config, and select Add Config Transforms in Visual Basic</i></p><br /></li>
+          <li>You should now see two additional config files under the original Web.config file.<p><img src="images\7ead366e-6653-4520-a2eb-54b04a9809d3.png" /></p><p><b>Figure 40</b><br /><i>You should now have config transforms</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In Visual Basic these files are hidden by default. You must make them visible by enabling the “<b>Show All Files”</b> button in the Solution Explorer.</td></tr></table><p /></div><br /></li>
+          <li>Open the Web.Release.config file. In this file, you will add transformation instructions for how you want the Web.config file to look after deployment. Modify it as shown.<p><i>(Code Snippet – Introduction to WF Services Lab – WF4 web.Release.Config XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;?xml version="1.0"?&gt;</b><b>&lt;!-- For more information on using web.config transformation visit http://go.microsoft.com/fwlink/?LinkId=125889 --&gt;</b><b>&lt;configuration xmlns:xdt=</b><b> "http://schemas.microsoft.com/XML-Document-Transform"&gt;</b><b> &lt;!--Modify the BaseURI key --&gt;</b><b> &lt;appSettings&gt;</b><b> &lt;add key="BaseURI"</b><b> value="http://localhost/HRApplicationServices"</b><b> xdt:Transform="SetAttributes(value)"</b><b> xdt:Locator="Match(key)"/&gt;</b><b> &lt;/appSettings&gt;</b><b> &lt;system.serviceModel&gt;</b><b> &lt;client&gt;</b><b> &lt;!--Modify the endpoint addresses for production --&gt;</b><b> &lt;endpoint</b><b> address="http://localhost/HRApplicationServices/SubmitApplication.xamlx"</b><b> binding="basicHttpBinding"</b><b> bindingConfiguration="BasicHttpBinding_IApplicationService"</b><b> contract="IApplicationService"</b><b> name="BasicHttpBinding_IApplicationService"</b><b> xdt:Transform="SetAttributes(address)" xdt:Locator="Match(name)"/&gt;</b><b> &lt;/client&gt;</b><b> &lt;/system.serviceModel&gt;</b><b> &lt;system.web&gt;</b><b> &lt;compilation xdt:Transform="RemoveAttributes(debug)" /&gt;</b><b> &lt;/system.web&gt;</b><b>&lt;/configuration&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Switch the current configuration to <b>Release</b> to do a release build by selecting it from the toolbar.<p><img src="images\8a7427e3-08d0-449f-abc3-5caf7192bec1.png" /></p><p><b>Figure 41</b><br /><i>Switch to Release build</i></p><br /></li>
+        </ol>
+        <a name="_Toc246389214" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310999" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002952" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating the Deployment Package</b>
+        </p>
+        <p>In this task, you will use the Web Deployment feature inside Visual Studio to create a deployment package.</p>
+        <ol>
+          <li>In the Solution Explorer, right-click the <b>HRApplicationServices</b> project, select <b>Package/Publish Settings</b> and set the options as follows.</li>
+          <li><b>Items to deploy (applies to all deployment methods)</b> section<ol><li><b>Only files needed to run this application</b><p><img src="images\719c3bd5-5538-46f8-b63b-ff4aaf84c9a1.png" /></p><p><b>Figure 42</b><br /><i>Items to deploy</i></p><br /></li></ol></li>
+          <li><b>Web Deployment Package Settings</b> section<ol><li>Create deployment package as a zip file</li><li>Location where package will be created: <b>obj\Release\Package\HRApplicationServices.zip</b></li><li>IIS Web site/application name to use on the destination server: <b>Default Web Site/HRApplicationServices</b><p><img src="images\567c6e4c-599d-4e7f-b923-5bdd7c0a7a89.png" /></p><p><b>Figure 43</b><br /><i>Web Deployment Package Settings</i></p><br /></li></ol></li>
+          <li>Press <b>CTRL+SHIFT+S</b> to save all files – this will save your changes.</li>
+          <li>In the <b>Solution Explorer</b> right-click the <b>HRApplicationServices</b> project, and select <b>Build Deployment Package</b>. You should see <b>Publish succeeded</b> as the status in the bottom left corner when the action has completed.</li>
+        </ol>
+        <a name="_Toc246389215" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002953" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Deploying the Package</b>
+        </p>
+        <ol>
+          <li>In this task, you will use the Web Deployment feature inside IIS Manager to deploy the package to the local web server.</li>
+          <li>Open <b>Internet Information Services (IIS) Manager</b> using the Start menu.</li>
+          <li>Expand the <b>Server</b> node, expand <b>Sites</b> and right-click the <b>Default Web Site</b>. Point to <b>Deploy</b> and select <b>Import Application</b>.<p><img src="images\0af26e60-eb82-4d59-9108-de1862391456.png" /></p><p><b>Figure 44</b><br /><i>Import Application in the IIS Manager</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>If you don't see a Deploy menu option it could mean that IIS Web Deployment Tool is not installed or may need to be reconfigured. To fix this you should do the following<br />Download the IIS Web Deployment tool from <a href="http://www.iis.net/extensions/WebDeploymentTool">http://www.iis.net/extensions/WebDeploymentTool</a><br />Start the setup<br />If setup shows you the Change / Repair / Remove screen select Change and install the IIS Manager UI module.</td></tr></table><p /></div><br /></li>
+          <li>For <b>Package path</b> browse to the location where the package was created. By default this was in the <b>obj\Release\Package</b> folder for the <b>HRApplicationServices</b> project. Select <b>HRApplicationServices.zip</b>.<p><img src="images\c0a76cb6-f785-4db9-9c6b-9aaf49339d85.png" /></p><p><b>Figure 45</b><br /><i>Select the package</i></p><br /></li>
+          <li>Click <b>Next</b> 3 times to use the defaults on the rest of the Import Application Package wizard pages. When asked if you want to run this application in the default .NET 4 application pool click <b>Yes</b>.</li>
+          <li>Click <b>Finish</b> when the wizard has finished.</li>
+        </ol>
+        <a name="_Toc246389216" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002954" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Enabling the net.pipe Protocol on the Application</b>
+        </p>
+        <p>AppFabric installs a Workflow Management Service (WMS) that works with the workflow persistence store to provide reliability and instance control. WMS communicates with the workflow service via the net.pipe protocol. Therefore, this protocol must be enabled on the application.</p>
+        <ol>
+          <li>In <b>IIS Manager</b>, right-click on the <b>Default Web Site</b> and select the <b>Edit Bindings</b> option.</li>
+          <li>Ensure that <b>net.pipe</b> is added with <b>*</b> for its <b>Binding information</b>. If it is not, add it using the <b>Add…</b> button.<p><img src="images\538b389d-51e8-4339-a7f7-fe893c50b5e7.png" /></p><p><b>Figure 46</b><br /><i>Enable the net.pipe site binding</i></p><br /></li>
+          <li>Click the <b>Close</b> button.</li>
+          <li>Expand the Default Web Site and right-click the <b>HRApplicationServices</b> application in the tree. Point to <b>Manage Application</b> and select<b> Advanced Settings</b>.</li>
+          <li>In the <b>Enabled Protocols</b> section add <b>net.pipe</b> after <b>http</b> as shown in the following figure.<p><img src="images\e602b744-f38e-4aa1-8913-9168906d8ebd.png" /></p><p><b>Figure 47</b><br /><i>Enable the net.pipe protocol</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\a3f81ac1-feba-4f11-a039-935fe2357756.png" /><b>Why enable the net.pipe protocol?</b><br />The net.pipe protocol must be enabled so that the Workflow Management Service can communicate with the Workflow Control standard endpoint of workflow services. This is how it can manage workflow services.</td></tr></table><p /></div><br /></li>
+          <li>Click <b>OK</b>.</li>
+        </ol>
+        <a name="_Toc246389217" href="#">
+          <span />
+        </a>
+        <a name="_Toc244311000" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002955" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Changing the Application Configuration</b>
+        </p>
+        <p>While you were developing the solution you were using the WF4Persistence database for persistence. In the IIS environment you are going to use a different persistence database. You also want to configure AppFabric to suspend workflows with unhandled exceptions.</p>
+        <ol>
+          <li>In IIS Manager, expand the Default Web Site, right-click the <b>HRApplicationServices</b> application, point to <b>Manage WCF and WF Services</b> and select <b>Configure</b>.</li>
+          <li>Click the <b>Workflow Persistence</b> category.</li>
+          <li>Under SQL Server Workflow Persistence select <b>defaultSqlPersistenceStore</b>.<p><img src="images\5b19130b-31c0-47dd-81e9-82ee847aa043.png" /></p><p><b>Figure 48</b><br /><i>Configure persistence to use DefaultPersistenceConnectionString</i></p><br /></li>
+          <li>Click <b>OK</b> to dismiss the dialog. Click <b>Yes</b> when you are warned about recycling the application.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_83f5db29-babb-4e14-a1b6-cdda1174bc28.html">Exercise 4: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

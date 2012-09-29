@@ -1,0 +1,626 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+        WCF Data Services 10-in-1
+  </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Exploring Row Count API</li>
+          <li>Setting Server-Driven Paging</li>
+          <li>Configuring Friendly-Feeds</li>
+          <li>Surfacing Containment Entities</li>
+          <li>Implementing the Enhanced BLOB Support</li>
+        </ol>
+        <a name="_Toc281482445" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Exploring Row Count API</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>AdoNetDataServices1510In1.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>Right click on the <b>01 - Row Count\RowCountService.svc </b>file and click <b>View in Brower</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The row count feature is enabled automatically, so from a server perspective, there is nothing you have to do to your data service to begin using it. There also is no distinction between using row count with either a CLR or EF provider.</li>
+                <li>There are, however, two new query parameters that you will need to take advantage of this feature: $count, and $inlinecount.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\200d5c5f-e35c-4942-85e4-33c70c8a833d.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/RowCountService.svc/Products/$count</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>$count is actually a pseudo-member (like $value) that allows you to request the record count of a specific entity set. You use it by appending it after an entity set in your request URI.</li>
+                <li>The previous example would return the number of products that exist in your data model.</li>
+                <li>This option works great if all you want is the record count, but chances are you will likely want both the count and the actual data.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\7757e3d3-a3bd-413c-b885-4642f3584863.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/RowCountService.svc/Products?$inlinecount=allpages</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>This is where the $inlinecount parameter comes in.</li>
+                <li>You can add the $inlinecount query parameter to a query and it will include the count of the targeted entity set along with the response.</li>
+                <li>The previous example would return both product data as well as the total count of products.</li>
+                <li>This becomes useful when used in conjunction with server-driven paging (as is used in the RowCountService.svc file) because you might only get back 20 products but you want to know how many products exist on the server.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\19fa8ed0-d76b-4ebd-8fed-fd1ef989ee17.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right click on the <b>01 - Row Count\Client.aspx</b> file and click <b>View Code</b>.</li>
+                <li>Point to the <b>context.Products.IncludeTotalCount()</b> call in the LINQ query.</li>
+                <li>Highlight the code below the query to show the use of the <b>TotalCount </b>property of the QueryOperationResponse.</li>
+                <li>Edit the service <b>Uri</b> in the creation of <b>RowCountContext</b> with the correct port number.</li>
+                <li>Right click on the <b>01 - Row Count\Client.aspx</b> file and click <b>View in Browser</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>There are client APIs for the row count feature that abstract the need to manually use either $count or $inlinecount when requesting data from a data service.</li>
+                <li>The DataServiceQuery class includes the new IncludeTotalCount, which will be equivalent to add the $inlinecount=allpages in the query.</li>
+                <li>In addition, the QueryOperationResponse class has a new TotalCount method that allows you to retrieve the count that was returned from a request with an $inlinecount appended.</li>
+                <li>Count and LongCount are the client API equivalent to $count, and allow you to immediately execute a query that is requesting the record count of an entity set.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\d0c95a29-6ca5-4bbd-b40d-2c4fb024c358.png" />
+              </p>
+              <p>
+                <img src="images\2a194d77-bb1d-42d1-a90d-aa2d3a52b4ac.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281482446" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – Setting Server-Driven Paging</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>AdoNetDataServices1510In1.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>Right click on <b>02 - Server-Driven Paging\ServerDrivenPagingService.svc</b> file and click <b>View Code</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The server-driven paging feature revolves around a new method that was added to the DataServiceConfiguration class. In order to "configure" server-driven paging on a specific entity set, you simply call the SetEntitySetPageSize of the DataServiceConfiguration class, within the InitializeService method.</li>
+                <li>You can see this in use in the ServerDrivenPagingService.svc.cs file.</li>
+                <li>There are no distinctions between how you configure server-driven paging for a CLR or EF provider. From a server perspective, once you've called SetEntitySetPageSize for every entity set you wish to page, you are done</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\a5ad4380-7729-4c8e-b305-2521e94f4055.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right click on the <b>02 - Server-Driven Paging\ServerDrivenPagingService.svc </b>file and click <b>View in Brower</b>.</li>
+                <li>Edit the browser address textbox to browse to <b>/ServerDrivenPagingService.svc/Products</b>.</li>
+                <li>Collapse all the <b>&lt;entry&gt;</b> elements and highlight the <b>&lt;link&gt;</b> element at the bottom of the page.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>If you open a browser and request an entity set that has been page-restricted, you will only be able to get back at most the number of records specified in the server-side page.</li>
+                <li>In this case, the limit is 20 entries per page.</li>
+                <li>If more pages of data exist then a &lt;link&gt; element (named "next") will be included in the AtomPub that provides a link to the next page</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\79185b76-9836-4966-93b5-0b0a0196826c.png" />
+              </p>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the <b>$skiptoken</b> parameter.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The <b>$skiptoken</b> parameter is simply specifying the key values used to skip ahead to the requested page.</li>
+                <li>In the above example, it is requesting all products whose id is higher than <b>724</b>.</li>
+                <li>The generation of the next links is done automatically for us by the data service. There is no automatic generation of "previous links", so the server-driven paging is forward only.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\a6aa1d0e-aa8a-461c-8a2a-5ad84024805e.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281482447" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #3 – Configuring Friendly Feeds</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>AdoNetDataServices1510In1.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>Right click on <b>03 - Friendly Feeds/CLR/</b><b>FriendlyFeedObjectModel.cs (C#) </b>or<b> FriendlyFeedObjectModel.vb (Visual Basic)</b> file and click <b>View Code</b>.</li>
+                <li>Highlight the <b>EntityPropertyMapping</b> attributes decorating the <b>Products</b> class definition.</li>
+                <li>Highlight the <b>Name</b> and <b>Author</b> property mappings.</li>
+                <li>Highlight the <b>Price</b> property mapping.</li>
+                <li>Highlight the <b>Category/Name</b> property mapping.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>By default, when WCF Data Services exposes an instance of an entity type, it serializes the data using the Atom Publishing Protocol (AtomPub/APP) format. Every public property on the entity type is mapped to an element within the content of the respective entry element.</li>
+                <li>While this default behavior works just fine for many situations, there are some oddities when using APP. For instance, the APP format requires that every entry include a <b>title</b> and an <b>author</b>. WCF Data Services will render these elements, but never actually fill them with content. This could confuse consumers of the service that are APP aware and would expect to be provided with a title and/or author.</li>
+                <li>WCF Data Services introduces a feature called “friendly feeds” that allows you to map an entity property to an element within the APP entry. </li>
+                <li>This can be either a pre-defined atom element such a title or author, or a custom element, like the price element in this example.</li>
+                <li>It can also be a complex object property as well, like the Category example in the following code.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\cc0bff6c-8aed-4731-9ac9-b57108610a19.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right click on the <b>03 - Friendly Feeds/CLR/FriendlyFeeds.svc </b>file and click <b>View in Brower</b>.</li>
+                <li>Edit the browser address textbox to browse to <b>/FriendlyFeeds.svc/Products</b>.</li>
+                <li>Highlight the <b>&lt;title&gt;</b> and <b>&lt;author&gt;</b> elements in the beginning of the first product entry.</li>
+                <li>Highlight the two custom elements <b>&lt;money:price&gt;</b> and <b>&lt;category:category&gt;</b> at the bottom of the first product entry.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The ability to map properties to custom elements allows you to add additional information to your data feeds, such as microformats (i.e. GeoRSS), that can be interpreted by understanding clients.</li>
+                <li>If you open and request the list of Product entities, you will notice that the <b>&lt;title&gt;</b> element is mapped to the <b>Name</b> property of the Product class.</li>
+                <li>In addition, the <b>&lt;name&gt;</b> element inside the <b>&lt;author&gt;</b> element is mapped to the Author property of the Product class.</li>
+                <li>Custom elements can be generated in the entry payload by using the EntityPropertyMapping attribute and complex type properties.</li>
+                <li>You can achieve this by simply decorating the entity class with the EntityPropertyMapping attribute with no changes to the model or the service itself.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\8b7526fc-0599-4a0f-980e-6920fab46762.png" />
+              </p>
+              <p>
+                <img src="images\6ee1bd29-bd21-4b6a-8791-4d97f3f0a42f.png" />
+              </p>
+              <p>
+                <img src="images\97a128e6-22e4-4207-8038-0f0df23cec62.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281482448" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #4 – Surfacing Containment Entities</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>AdoNetDataServices1510In1.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>Right click on the <b>04 - Containment\CLR\ContainmentService.svc</b> file and click <b>View in Brower</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>WCF Data Services provides a RESTful interface that makes it possible to surface different types of data from different types of clients.</li>
+                <li>In this case, we will use a browser as a client and we prepared a WCF Data Service exposing various entity sets based on plain CLR classes related to each other.</li>
+                <li>By using WCF Data Services, we are able to publish data in AtomPub Protocol that is a way of exposing a collection of feeds.</li>
+                <li>In this example, each entity set is shown as part of the collection.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\45548d21-0b4f-4568-bc8e-9054dace95ce.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Products</b>.</li>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>We can query those feeds like <b>Products</b> or <b>Customers</b> by editing the Uri in the browser and navigate those Products and Authors.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\a6a96587-ae29-4eb2-bb6e-21c4b544cfc2.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>In addition, we can navigate by primary key, so if we want to look for a given <b>Customer</b>, we can navigate into that record by adding the Id to the Uri.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\c121bc7b-9878-4bbc-9ee2-3a118fb7f919.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)/LastName</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Moreover, we can go deeper and query a single Customer property, for instance the <b>LastName</b> property.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\2763d1e4-bf0b-4e67-bddf-c2f84c3397fa.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)</b>.</li>
+                <li>Highlight the <b>Customers(1)/Orders</b> link in the XML output.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, going back to the <b>Customer</b> instance you will notice the <b>Orders</b> property has a link to the Orders collection.</li>
+                <li>Therefore, we can navigate across that relationship to the <b>Orders</b>.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\f280ac0e-816d-4ee3-b9f3-289c17ed4cfc.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)/Orders</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now there we will see the collection of <b>Orders</b> related to the Customer.</li>
+                <li>The Framework has done that navigation possible for us.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\8322195e-50ff-4c78-8572-41cb4933f08d.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)/Orders(2)</b></li>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)/Orders(2)/OrderDetails</b>.</li>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)/Orders(2)/OrderDetails(1)</b>.</li>
+                <li>Edit the browser address textbox to browse to <b>/ContainmentService.svc/Customers(1)/Orders(2)/OrderDetails(1)/Product</b>.</li>
+                <li>Highlight the <b>Name</b> and <b>Price</b> properties of the Product entity.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The fact that the containment relationship is being exposed by the service means we can navigate even deeper in the model by using the RESTful interface of WCF Data Services.</li>
+                <li>We can query a <b>single</b><b>Order</b> inside the Orders collection contained in the Customer entity.</li>
+                <li>Then we can query the <b>OrderDetails</b> inside it and the <b>Product</b> entity inside the details.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\156eb369-5e81-4b8a-9179-36dd372e2f63.png" />
+              </p>
+              <br />
+              <p>
+                <img src="images\f69da094-dbd0-4220-bdff-e1c97a90f396.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281482449" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #5 – Implementing the Enhanced BLOB Support</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>AdoNetDataServices1510In1.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>Right click on the <b>05 - BLOB Streams\EF\BLOBStreamService.svc</b> file and click <b>View Code</b>.</li>
+                <li>Highlight the <b>BLOBStreamService</b> class definition implementing <b>IServiceProvider</b> interface.</li>
+                <li>Highlight the <b>GetService</b> implementation, which returns an instance of <b>ProductStreamProvider</b> class.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>WCF Data Services enables you to access binary large object (BLOB) data as a data stream. Streaming defers the loading of binary data until it is needed, and the client is able to more efficiently process this data.</li>
+                <li>In order to take advantage of this functionality, the data service must implement the <b>IDataServiceStreamProvider</b> provider.</li>
+                <li>The BLOBStreamService implements GetService method of the IServiceProvider interface to return a custom implementation of the IDataServiceStreamProvider: the <b>ProductStreamProvider</b> class.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\5fb5723b-c39a-449b-9083-5a9bd9c5a05f.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll down in the <b>BLOBStreamService.svc.cs file (C#) or BLOBStreamService.svc.vb (Visual Basic) </b>and expand the ProductStreamProvider class definition, if collapsed.</li>
+                <li>Highlight the <b>GetReadStream</b> method definition.</li>
+                <li>Highlight the portion of code that creates a <b>MemoryStream</b> instance and returns it.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>When the client explicitly requests for the binary value, the GetReadStream method will be executed and will be responsible for obtaining the binary data.</li>
+                <li>The method will receive an instance of the entity being request that can be used to retrieve new data from a different storage.</li>
+                <li>In this case, the Product instance Id is used to retrieve binary data from an Entity Framework entity set, wrap it with a MemoryStream, and return it to the Data Service layer to be streamed back to the client.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\f498b35e-55c6-4384-afa0-1ddb7596d5c0.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right click on the <b>05 - BLOB Streams\EF\BLOBStreamService.svc</b> file and click <b>View in Browser.</b></li>
+                <li>Edit the browser address textbox to browse to <b>/BLOBStreamService.svc/Products</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, we will use the browser as a client to show how this works from a client perspective.</li>
+                <li>If we browse the Products entity set, we will find an ordinary Atom Pub output from the service.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\1768f765-084a-4ec4-baf7-37dd4d191662.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/BLOBStreamService.svc/Products(715)</b>.</li>
+                <li>Highlight the <b>edit-media</b><b>&lt;link&gt;</b> element.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>We will navigate to a single Product entity to check that no binary data is still being returned.</li>
+                <li>But you should notice a &lt;link&gt; element that refers to a Product(#)/$value link. This element links to the binary data that will be streamed if the client requests it.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\6d0c84a0-4759-412f-9d6d-25e8ad56ede5.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Edit the browser address textbox to browse to <b>/BLOBStreamService.svc/Products(715)/$value</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>If we wanted to retrieve the media resource for the photo (the binary content) we could simply append “$value” to the request.</li>
+                <li>As we already saw, at this point it is up to the service to determine where to actually retrieve this media resource and to return it back to the client.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\0221ab5b-4f50-4634-9420-4e44e9008eb7.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

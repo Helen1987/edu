@@ -1,0 +1,343 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-By-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-By-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-By-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Deploying Windows Azure Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-By-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ul>
+          <li>Deploying the application</li>
+          <br />
+        </ul>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> It is better to let the customer go through this demo, while the speaker guides him.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc285034267" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Deploying the Application</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Open the Web Browser and navigate to the Windows Azure Portal at <a href="http://windows.azure.com/">http://windows.azure.com</a></p>
+              <p>Sign in with the customers live id.</p>
+            </td>
+            <td>
+              <p>Let us first navigate to the Windows Azure portal and get you signed in.</p>
+              <p>We use live id for authentication on the portal – so let’s get you logged in</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\8c2129ff-c3af-4990-aacb-2840a5a17f9f.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Click on the <b>New Storage Account </b>button from the Common Tasks ribbon.</p>
+            </td>
+            <td>
+              <p>The application we will deploy requires both compute and storage.</p>
+              <p>First, we will create the storage account.</p>
+              <p>The storage account will give the application access to queues, blobs and tables. These are not SQL Azure tables, but Windows Azure Tables.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\28faf4b7-8fb8-40f7-b364-1617b90310f4.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Choose a subscription.</p>
+              <p>Enter a service label (such as jonitododb) and click <b>Next</b>.</p>
+              <p>Make sure the name is available.</p>
+              <p>Select the region.</p>
+              <p>Click <b>Create</b>.</p>
+            </td>
+            <td>
+              <p>We need to select our subscription where we want to create the hosted service.</p>
+              <p>We have to give the storage account a name that will be used as the URL prefix.</p>
+              <p>It is good to make the project and DNS names for storage the same. However if the name is already taken you will need to think of another name.</p>
+              <p>In this sample we choose the Anywhere USA affinity group region </p>
+            </td>
+            <td>
+              <p>
+                <img src="images\16308b12-3cc8-428f-8af7-1b95d6e4f76c.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Once the storage account is created, select it from the items list.</p>
+              <p>On the properties pane click <b>View</b> on the <b>Primary access key</b> field.</p>
+              <p>Click <b>Copy to Clipboard</b> for the <b>Primary Access Key</b> and click <b>OK</b>.</p>
+              <p>Paste the key in a notepad.</p>
+            </td>
+            <td>
+              <p>The DNS name and the primary access key are the 2 pieces of information used when accessing storage. Without the access key, you cannot access storage.</p>
+              <p>We need these values when we deploy the application. We can find them in the properties pane after selecting the storage account from the items list.</p>
+              <p>To retrieve the access key we have to click the View button. If you want to store it, click copy to clipboard and then paste it on a notepad.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\e13af3b8-b5c3-435b-85ca-ea2b6b4f7d80.png" />
+              </p>
+              <p>
+                <img src="images\6254611c-1c04-48ae-952f-f19bcbfc2ad3.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Use Notepad to edit the <b>ServiceConfiguration.csfg</b> file.</p>
+              <p>Replace the prompts with the key you copied to notepad earlier and the name of the storage account you created earlier.</p>
+              <p>Click Save</p>
+            </td>
+            <td>
+              <p>Before deploying the hosted service, we have to update the settings for the package to use the storage we have just created.</p>
+              <p>The configuration file contains three things we need to set up.</p>
+              <p>First, we copy the account DNS name.</p>
+              <p>Second, we copy the shared key. There are placeholders in the configuration file for these values.</p>
+              <p>Three, we change the Count attribute at &lt;instances&gt; tag from 1 to 2. (Use a higher count like 5 or more if you needed).</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\b6056ab7-14a7-479d-b3ef-fb7feb038c9f.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Click the <b>New Hosted Service</b> button from the <b>Common Tasks</b> ribbon.</p>
+            </td>
+            <td>
+              <p>Now that we have the storage project, we can create the Hosted Service project and deploy the application.</p>
+              <p>To create the hosted service we click on the New Hosted Service button from the Common Tasks ribbon.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\671e402f-f79f-424e-b8d9-0b43c0dd798e.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Choose a subscription.</p>
+              <p>Enter the service name.</p>
+              <p>Enter the URL prefix.</p>
+              <p>Choose a region.</p>
+            </td>
+            <td>
+              <p>We need to select the subscription where we want to create the hosted service.</p>
+              <p>Next, we give our service a name.</p>
+              <p>Now we pick a URL prefix and the dialog will check the availability.</p>
+              <p>For this demo, we will just choose any region for the deployments, but in practice we can choose the geography for our app as well or use an affinity group.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\77b0dc20-a70e-4715-b969-56553d534317.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Leave the “Deploy to stage environment” option selected and the “Start after successful deployment” check enabled.</p>
+              <p>Set a name for the deployment.</p>
+              <p>For the package location use the Browse Locally button and browse for the <b>MyToDo.cspkg</b> file generated by Visual Studio.</p>
+              <p>For the configuration file use the Browse Locally button and browse for the <b>ServiceConfiguration.cscfg</b> file generated by Visual Studio.</p>
+              <p>Click <b>OK</b>.</p>
+            </td>
+            <td>
+              <p>We’ll leave the deployment options by default to let our service deploy to stage environment and start after the deployment.</p>
+              <p>Now, let’s give the deployment a name and select the package and configuration files location.</p>
+              <p>To specify the package from our local filesystem we use the Browse Locally button and browse to the service package that we published from Visual Studio.</p>
+              <p>We also need to browse to the ServiceConfiguration file that was also published from Visual Studio.   You might recall that this file defines the roles and number of instances per role.</p>
+              <p>In this case, we don’t need to add any certificate for our service, so we click OK to start creating and deploying the hosted service.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\853bec24-9b2e-48ae-8c00-a3f609d267f7.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Wait for the package to upload and initialize.</p>
+            </td>
+            <td>
+              <p>Now, we have to wait a few minutes to upload the package.</p>
+              <p>Then, the web role will be initialized.</p>
+              <p>At this point Windows Azure will start up virtual machine instances for each of the roles.</p>
+              <p>Once the instances started, our application – the assemblies, ASPX pages, etc. that we uploaded earlier – will be deployed into each of the instances. We need to wait a while until the service becomes ready.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\8101c406-2a47-4866-b3e0-27c916611cc2.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Click the <b>Swap VIP</b> button in the Deployments ribbon.</p>
+              <p>You will be prompted to confirm that you want to switch to the production environment.   Press the <b>OK</b> button when prompted.</p>
+              <p><b>NOTE:</b>  It can take a few minutes to start the production environment.</p>
+            </td>
+            <td>
+              <p>Now the service is running in “Staging” this is actually a virtual place as there is no physical difference between staging and production – it simply depends on where the load balancer is connected.</p>
+              <p>How many partners can really spin up test &amp; QA environments in minutes?</p>
+              <p>We can swap from staging to production with a mouse click.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\837f8cc1-b683-43cd-b353-d5090de68163.png" />
+              </p>
+              <p>
+                <img src="images\6621cfe5-4865-4650-ba2a-8d15fb2829cb.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Once it’s swapped wait a minute before clicking on the URL.</p>
+              <p>Select the node with the deployment name.</p>
+              <p>On the properties pane click on the DNS name link.</p>
+            </td>
+            <td>
+              <p>Once the service is in production, give it a few seconds for the DNS to propagate. Then you can click the link and be taken to the deployed application.</p>
+              <p>By selecting the deployment in the items list we can see its properties in the right pane, clicking the DNS name we can navigate to our myToDo application.</p>
+              <p>If you get a 404 error, simply try again in a minute.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\301df905-7b4f-4bce-a843-5f36b7522e31.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Click Start</p>
+            </td>
+            <td>
+              <p>When the service runs for the first time, you have to create an account.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\941cd7cb-917e-450f-a372-beb292c538b6.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Have the customer enter their details</p>
+            </td>
+            <td>
+              <p>Complete the account details. These are stored in the storage account created earlier. Data is not shared between to do lists.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\ee9c5eb7-98f4-45f7-ba40-c6895e31c1c3.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

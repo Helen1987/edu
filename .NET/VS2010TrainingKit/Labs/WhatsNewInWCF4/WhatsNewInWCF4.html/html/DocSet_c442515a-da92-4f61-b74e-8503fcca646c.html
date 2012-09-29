@@ -1,0 +1,148 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 9: Content Based Routing" />
+      <MSHelp:RLTitle Title="Exercise 9: Content Based Routing" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 9: Content Based Routing</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 9: Content Based Routing</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In the previous exercise, you routed all requests bound for your service bridging the protocol from HTTP to TCP. However, there are many cases where you want to route requests based on the content of the message. While you can route based on content from the message body for performance it is recommended that you route based on content in the message headers.</p>
+        <p>In this exercise, you will add a variation of the calculator service that uses rounding. You will then route to this service messages that contain a special header while other messages that do not have the header will use the regular calculator service.</p>
+        <p>
+          <img src="images\19049eb4-7840-4916-9447-c577ab0ceff6.png" />
+        </p>
+        <p>
+          <b>Figure 33</b>
+          <br />
+          <i>The routing service routing based on message header content</i>
+        </p>
+        <br />
+        <a name="_Toc249317770" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957342" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>This exercise uses a new begin solution which contains a new service, the RoundingCalculatorService project and some updates to the CalculatorClient application.</p>
+        <ol>
+          <li>Open the starting solution for Exercise 9 located under the <b>Source\Ex9-ContentRouting\Begin</b><b>(choosing the folder that matches the language of your preference.) </b>Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc249317771" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957343" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Modifying the CalculatorClient to Add a Custom Header</b>
+        </p>
+        <p>The CalculatorClient application now has a button on the toolbar to indicate if you want to use the Rounding calculator. Even though this is a different service, you will send the message to the same routing service. In this task, you will write the code to add a custom header that the router will use to route the message.</p>
+        <ol>
+          <li>In the <b>CalculatorClient</b> project open <b>MainWindow.xaml.cs (C#) </b>or<b> MainWindow.xaml.vb (Visual Basic)</b>.</li>
+          <li>Locate the <b>AddOptionalRoundingHeader</b> method and modify it as shown to add a custom header to outgoing messages that will use the RoundingCalculator.<p>(Code Snippet - What is new in WCF4 Lab –<i>AddOptionalRoundingHeader method CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void AddOptionalRoundingHeader(    CalculatorServiceClient proxy){<b>    if (this.checkRounding.IsChecked.Value == true)</b><b>    {</b><b>        OperationContext ctx = OperationContext.Current;</b><b>        MessageHeaders messageHeadersElement = ctx.OutgoingMessageHeaders;</b><b>        ctx.OutgoingMessageHeaders.Add(</b><b>            MessageHeader.CreateHeader(</b><b>            "RoundingCalculator",</b><b>            "http://my.custom.namespace/",</b><b>            "1"));</b><b>    }</b>}</pre></td></tr></table></span></div><br /><p>(Code Snippet - What is new in WCF4 Lab –<i>AddOptionalRoundingHeader method VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub AddOptionalRoundingHeader(ByVal proxy As CalculatorServiceClient)<b>    If (Me.checkRounding.IsChecked.Value = True) Then</b><b>        Dim ctx = OperationContext.Current</b><b>        Dim messageHeadersElement = ctx.OutgoingMessageHeaders</b><b>        ctx.OutgoingMessageHeaders.Add(</b><b>            MessageHeader.CreateHeader(</b><b>            "RoundingCalculator",</b><b>            "http://my.custom.namespace/",</b><b>            "1"))</b><b>    End If</b>End Sub</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc249317772" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957344" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding a New Entry to the Filter Table</b>
+        </p>
+        <p>In this task, you will modify the router to detect this new header and route the message to the rounding calculator.</p>
+        <ol>
+          <li>Because your header uses a custom namespace, you will need to create a namespace table. In the <b>RouterService</b> project open the <b>Web.config</b> file and add the following configuration to the <b>routing</b> section.<p><i>(Code Snippet - What is new in WCF4 Lab –Namespace Table XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;routing&gt;<b>  &lt;namespaceTable&gt;</b><b>    &lt;add prefix="custom" namespace="http://my.custom.namespace/"/&gt;</b><b>  &lt;/namespaceTable&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Now you can define a new kind of filter that will match using an XPath expression. Add the following filter definition to the <b>Web.config</b> file. This filter will match on messages with the custom RoundingCalculatorHeader with a value of 1.<p><i>(Code Snippet - What is new in WCF4 Lab –XPathFilter XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;filters&gt;        <b>  &lt;filter name="XPathFilter" </b><b>          filterType="XPath" </b><b>          filterData="sm:header()/custom:RoundingCalculator = 1"/&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>You need to add a new endpoint address for the <i>RoundingCalculatorService</i> so that you can route to it. Modify the <b>Web.config</b> file in the <b>RouterService</b> project, and add the new endpoint definition to the <b>client</b> section as shown.<p><i>(Code Snippet - What is new in WCF4 Lab – roundingCalculatorEndpoint XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;client&gt;<b>  &lt;endpoint name="roundingCalculatorEndpoint"</b><b>            address="net.tcp://localhost:8080/RoundingCalculatorService"</b><b>            binding="netTcpBinding"</b><b>                bindingConfiguration="CalculatorService"</b><b>            contract="*" /&gt;      </b></pre></td></tr></table></span></div><br /></li>
+          <li>Finally, you need to add the new filter to the filter table. The filter table evaluates matches based on the order of priority in the filters with higher numbers having higher priority. Because you want the <b>XPathFilter</b> to match messages before the MatchAll filter you need to give it a higher priority. Open the <b>Web.config</b> of the RouterService, and modify the <b>filterTable</b> configuration as shown.<p><i>(Code Snippet - What is new in WCF4 Lab – filterTable1 XPathFilter XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;filterTable name="filterTable1"&gt;<b>  &lt;add filterName="XPathFilter" </b><b>       endpointName="roundingCalculatorEndpoint" </b><b>       priority="1"/&gt;</b>  &lt;add filterName="MatchAllFilter"       endpointName="regularCalculatorEndpoint"       priority="0"/&gt;&lt;/filterTable&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e2c978ec-bbdf-4487-81ee-5984a2c1e0d5.html">Exercise 9: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

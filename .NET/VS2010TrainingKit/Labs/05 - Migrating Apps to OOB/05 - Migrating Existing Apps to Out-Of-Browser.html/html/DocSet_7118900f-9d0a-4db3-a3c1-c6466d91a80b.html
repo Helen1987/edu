@@ -1,0 +1,104 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Customizing the Window and enabling Elevated Privileges" />
+      <MSHelp:RLTitle Title="Exercise 3: Customizing the Window and enabling Elevated Privileges" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Customizing the Window and enabling Elevated Privileges</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating Existing Apps to Out-Of-Browser</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Customizing the Window and enabling Elevated Privileges</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Silverlight out of Browser enables you to ask the user to install your application with Elevated Privileges (EP).  By running Silverlight in an EP mode you have a number of power pieces of functionality at your fingertips: Clipboard access, relaxed cross domain, direct access to the user folder, COM interop, and custom chrome.  This exercise covers how to enable Elevated Privileges and then how to create a custom Chrome (a feature that’s crucial for kiosks or brand driving applications).</p>
+        <ol>
+          <li>To enable Elevated Privileges, bring up the Out-of-Browser Settings dialog (Right click the Silverlight project, click Properties, find the Out-of-Browser Settings button towards the bottom.)</li>
+          <li>Check the Check box labeled “Require elevated trust when running outside the browser”.<p><img src="images\7ae2d8d3-e339-41ee-ad5e-721bcc9e8a1b.png" /></p><p><b>Figure  1</b><br /><i>Enable Check box </i></p></li>
+          <li>Click OK and run the project.  If you get to the Install Prompt and it indicates you already have the application installed, Right click, select Remove this application, then refreshes the page.  Click the Install button when prompted.  Notice the Install prompt looks different than the previous step.  This is asking the user for Elevated Privileges.<p><img src="images\85ba583b-7d08-46eb-b379-4af94a58b6f6.png" /></p><p><b>Figure  2</b><br /><i>New Install window</i></p></li>
+          <li>Now that Elevated Privileges are enabled, we can have custom chrome on our window. Go back to the Out-of-Browser Settings dialog box and choose No Border from the drop down list labeled Window Style.<p><img src="images\120846b2-17fa-4492-8ae5-8071828dec36.png" /></p><p><b>Figure  3</b><br /><i> Out-of-Browser Settings</i></p></li>
+          <li>Run the project to show the chrome is gone.  This is the desired effect; however we don’t have a way to close the window.  For now, go back to Visual Studio and stop the debugger.</li>
+          <li>Open up MainPage.xaml and uncomment lines 210-231.  This is the WindowControlsPanel that contains buttons that control our window: always on top, minimize, maximize, and close.  Below is the XAML uncommented followed by what you should see in Visual Studio.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;StackPanel x:Name="WindowControlsPanel" Grid.Column="1" HorizontalAlignment="Right" Margin="0,2,4,0" Orientation="Horizontal" VerticalAlignment="Top"&gt;        &lt;Button x:Name="OnTopButton" Margin="0,0,1,0" Style="{StaticResource          TopButtonStyle}" Width="16" Height="16" ToolTipService.ToolTip="Pin to the  topmost window"&gt;                &lt;Path Data="F1 M477.23441,395.96191 L473.29312,399.9386 L463.59912,                392.70959 L466.6774,389.59689 C467.56339,388.7099467.67639,387.38589                466.93039,386.63989C466.18439,385.89389464.86139,386.0069463.9744,                386.89389 L450.7294,400.13989C449.84241,401.02591 449.7294,402.34891                450.4754,403.09491C451.22141,403.84091 452.54639,403.72791453.4314,                402.8429L455.93942,400.3111 L463.16742,410.00711 L459.79639,413.3999                  C458.9104,414.28589 458.79639,415.60791 459.5434,416.35489C460.29041,                417.10089 461.6134,416.98691 462.49939,416.10089L469.23541,409.36591                L480.4234,420.55591 C481.17041,421.2999482.49341,421.18689483.3804,                420.30191 C484.26541,419.41489484.37939,418.09091 483.63339,417.34491                L472.4444,406.15689L479.9364,398.66489 C480.82339,397.77789 480.9364,                396.45389480.18939,395.70789 C479.4444,394.96191 478.1214,395.07489                477.23441,395.96191"Fill="White"Stretch="Fill"UseLayoutRounding="False"                 d:LayoutOverrides="GridBox" RenderTransformOrigin="0.5,0.5"                 Margin="1,0,1,2"&gt;                        &lt;Path.RenderTransform&gt;                                &lt;CompositeTransform Rotation="45" TranslateY="1.8068817553285044E-09"/&gt;                        &lt;/Path.RenderTransform&gt;                &lt;/Path&gt;        &lt;/Button&gt;        &lt;Button x:Name="MinimizeButton" Width="16" Height="16" Margin="0,0,1,0"         Style="{StaticResource TopButtonStyle}" ToolTipService.ToolTip="Minimize" Padding="0"&gt;                &lt;Path Data="F1M229.417,216.229L208.354,237.292C207.544,238.103,207.544,239.416,208.3                54,240.227C209.165,241.037,210.479,241.037,211.289,240.227L232.352,                219.165C233.162,218.354,233.162,217.04,232.352,216.229C231.541,215.419,                230.227,215.419,229.417,216.229"Fill="White" Stretch="Fill"                 UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Height="6"                 Width="6" Margin="0,6,0,0"&gt;                &lt;Path.RenderTransform&gt;                        &lt;CompositeTransform Rotation="45"/&gt;                &lt;/Path.RenderTransform&gt;        &lt;/Path&gt;&lt;/Button&gt;&lt;Button x:Name="MaximizeButton" Width="16" Height="16" Margin="0,0,1,0" Style="{StaticResource TopButtonStyle}"ToolTipService.ToolTip="Maximize"&gt;                &lt;Path Data="F1M74.313,328.7861C74.313,329.5261,73.713,330.1281,72.973,330.1281L53.03                3,330.1281C52.292,330.1281,51.692,329.5261,51.692,328.7861L51.692,                308.4751C51.692,307.7351,52.292,307.1361,53.033,307.1361L72.973,                307.1361C73.713,307.1361, 74.313,307.7351,74.313,308.4751zM74.806,                305.0221L51.199,305.0221C50.323,305.0221,49.612,305.7311,49.612,                306.6081L49.612,330.6551C49.612,331.5321,50.323,332.2411,51.199,                332.2411L74.806,332.2411C75.683,332.2411,76.393,331.5321,                76.393,330.6551L76.393,306.6081C76.393,305.7311,75.683,305.0221,                74.806,305.0221" Fill="White" Stretch="Fill"UseLayoutRounding="False"/&gt;&lt;/Button&gt;&lt;Button x:Name="CloseButton" Width="16" Height="16" Margin="0" Style="{StaticResource TopButtonStyle}" ToolTipService.ToolTip="Close"&gt;                &lt;Path Data="M0.54881889,0 C0.68929577,0 0.82977271,0.053546324                 0.93699646,0.16063902 L3.3335769,2.5573325 L5.730268,0.1606418                C5.9444532,0.053543516 6.2919092,-0.053543516 6.506361,0.1606418                C6.7205462,0.37508935 6.7205462,0.72254932 6.506361,0.93699688                 L4.1097264,3.3335183 L6.5063634,5.730268 C6.7205486,5.9444532                 6.7205486,6.291913 6.5063634,6.5063605 C6.2919116,6.7205458                 5.9447179,6.7205458 5.7302704,6.5063605 L3.3335588,4.1096492                 L0.93673187,6.5063634 C0.72254658,6.7205486 0.37508655,6.7205486                 0.16063894,6.5063634 C-0.053546317,6.2919121 -0.053546317,5.9447184                 0.16063894,5.7302704 L2.5574095,3.3334999 L0.16064122,0.93673182 C                0.053544026,0.72254652 –0.053544026,0.3750906 0.16064122,0.16063902                C0.26786506,0.053546324 0.40834194,0 0.54881889,0 z" Fill="White"                Stretch="Fill" UseLayoutRounding="False" Margin="2" /&gt;        &lt;/Button&gt;&lt;/StackPanel&gt;</pre></td></tr></table></span></div><p><img src="images\36257bfa-8915-4cdb-802c-6efac6b28831.png" /></p><p><b>Figure  4</b><br /><i>WindowControlsPanel </i></p></li>
+          <li>We now need to add functionality to each button.  The four buttons are pin to top, minimize, maximize, and close.  We’ll walk through each event handler, but first we need to register the Click events for each button.  Do this in the constructor of MainPage.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public MainPage(){        InitializeComponent();        // Register Click events for the buttons in the WindowControlsPanel        this.OnTopButton.Click += new RoutedEventHandler(OnTopButton_Click);        this.MinimizeButton.Click += new RoutedEventHandler(MinimizeButton_Click);        this.MaximizeButton.Click += new RoutedEventHandler(MaximizeButton_Click);        this.CloseButton.Click += new RoutedEventHandler(CloseButton_Click);}        //Pin to Top – Setting the value of Application.Current.MainWindow.TopMost enables        //you to pin your application on top of every other app.        void OnTopButton_Click(object sender, RoutedEventArgs e)        {        // Toggle between being on top and not        Application.Current.MainWindow.TopMost = !Application.Current.MainWindow.TopMost;}        //Minimize – To minimize an out of browser application set the value of         //Application.Current.MainWindow.WindowState to WindowState.Minimized.        void MinimizeButton_Click(object sender, RoutedEventArgs e)        {        // Minimize the application        Application.Current.MainWindow.WindowState = WindowState.Minimized;}        //Maximize– To maximize the window, set the value of          //Application.Current.MainWindow.WindowState to WindowState.Maximized.  In this event        //handler we’re toggling between the Normal WindowState and Maximized.        void MaximizeButton_Click(object sender, RoutedEventArgs e)        {        // Toggle between the Normal and Maximized state        if (Application.Current.MainWindow.WindowState != WindowState.Maximized)        {                Application.Current.MainWindow.WindowState = WindowState.Maximized;        }        else        {                Application.Current.MainWindow.WindowState = WindowState.Normal;        }        }        //Close – To close, simply call the Close method of Application.Current.MainWindow.        void CloseButton_Click(object sender, RoutedEventArgs e)        {        // Close the application                Application.Current.MainWindow.Close();        }</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Partial Public Class MainPage                Inherits UserControl        Public Sub New()                InitializeComponent()                ' Register Click events for the buttons in the WindowControlsPanel                AddHandler OnTopButton.Click, AddressOf OnTopButton_Click                AddHandler MinimizeButton.Click, AddressOf MinimizeButton_Click                AddHandler MaximizeButton.Click, AddressOf MaximizeButton_Click                AddHandler CloseButton.Click, AddressOf CloseButton_Click        End Sub        Private Sub OnTopButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        ' Toggle between being on top and not                Application.Current.MainWindow.TopMost = Not  Application.Current.MainWindow.TopMost        End Sub        Private Sub MinimizeButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        ' Minimize the application                Application.Current.MainWindow.WindowState = WindowState.Minimized        End Sub        Private Sub MaximizeButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        ' Toggle between the Normal and Maximized state                If Application.Current.MainWindow.WindowState &lt;&gt; WindowState.Maximized Then                        Application.Current.MainWindow.WindowState = WindowState.Maximized                Else                        Application.Current.MainWindow.WindowState = WindowState.Normal                End If        End Sub        Private Sub CloseButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)' Close the application                Application.Current.MainWindow.Close()        End SubEnd Class</pre></td></tr></table></span></div></li>
+          <li>Now run you application. Make sure to run it out of the browser (either set the Silverlight project to the Startup project or by reinstalling it).  You have now regained control of the Window.<p><img src="images\43fb366d-1aef-492f-ae11-f029a40b5a26.png" /></p><p><b>Figure  5</b><br /><i>Running application </i></p></li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

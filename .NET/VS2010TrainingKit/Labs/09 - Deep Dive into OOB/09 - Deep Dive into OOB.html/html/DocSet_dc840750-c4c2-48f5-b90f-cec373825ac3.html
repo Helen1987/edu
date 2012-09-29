@@ -1,0 +1,151 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Importing Excel data" />
+      <MSHelp:RLTitle Title="Exercise 2: Importing Excel data" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Importing Excel data</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Deep Dive into Out of Browser</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Importing Excel data</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>As a developer it’s imperative to know how to work with tools that businesses rely on.  Microsoft Excel is a tool frequently requested to have applications integrated with.  With the out-of-browser feature in Silverlight, you’re able to call Excel methods, which include working with data contained inside.</p>
+        <p>In this exercise you’ll use the AutomationFactory to open an instance of Excel, open the first Worksheet, and loop through the content. The starter solution is already configured to make use of the AutomationFactory, however if you’re working on your own solution, you must first ensure the application has elevated trusted enabled.  You can toggle this setting from the Out-of-browser settings in the Project’s Properties panel.</p>
+        <ol>
+          <li>Add the below code to the Drop event handler in DataWidget.xaml.cs or DataWidget.xaml.vb The code:<ol><li>gets a handle on the first file, files[0], </li><li>opens Excel using AutomationFactory,</li><li>loads the Excel document from MyDocuments (notice the use of Environment.SpecialFolder.MyDocuments),</li><li>And loads the active sheet.</li></ol></li>
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>// Get the first dropped filevar fi = files[0];// Create the Excel objectdynamic excel = AutomationFactory.CreateObject("Excel.Application");// Open the excel document. Must be located in "My Documents"dynamic excelWorkBook = excel.Workbooks.Open(string.Format("{0}\\{1}",         Environment.GetFolderPath(        Environment.SpecialFolder.MyDocuments),fi.Name));// Read the Worksheetdynamic activeWorkSheet = excelWorkBook.ActiveSheet();</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Dim fi = files(0)Dim excel As ObjectTry        ' Check to see if Excel is already running        excel = AutomationFactory.GetObject("Excel.Application")Catch        excel = AutomationFactory.CreateObject("Excel.Application")End Try' Open the excel documentDim excelWorkBook As Object = excel.Workbooks.Open(String.Format("{0}\\{1}",        Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fi.Name))' Read the WorksheetDim activeWorkSheet As Object = excelWorkBook.ActiveSheet()</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <li>At this point the active worksheet is open and you can access the data. Add the below code immediately following the above block to loop through content of the worksheet.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Cells to Readdynamic cell1, cell2;// Iterate through Cellsfor (int count = 3; count &lt; 30; count++){        cell1 = activeWorkSheet.Cells[count, 1];        cell2 = activeWorkSheet.Cells[count, 2];        Data.Add(new YearValueData()        {                Year = cell1.Value,                Value = cell2.Value        });}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>' Cells to ReadDim cell1, cell2 As Object' Iterate through CellsFor count As Integer = 3 To 29        cell1 = activeWorkSheet.Cells(count, 1)        cell2 = activeWorkSheet.Cells(count, 2)        Data.Add(New YearValueData() With {.Year = cell1.Value, .Value = cell2.Value})Next count</pre></td></tr></table></span></div></li>
+          <li>In the Excel sheet, at position A1 (as seen in Figure 2), is the name of the Worksheet.  The following code gets that value (Cells[1,1]) and assigns the value to the Text property of Title TextBlock.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Title is a TextBlock in XAML, this sets the valueTitle.Text = activeWorkSheet.Cells[1, 1].Value;</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>'Title is a TextBlock in XAML, this sets the valueTitle.Text = activeWorkSheet.Cells(1, 1).Value</pre></td></tr></table></span></div><p><img src="images\b6d438b0-b283-4098-9a26-23ac804a9526.png" /></p><p><b>Figure 1</b><br /></p></li>
+          <li>Add the below code to clean up the Excel object.  This will close the Excel process and prevent any potential file locks<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Close the workbookexcelWorkBook.Close();// Close the Excel processexcel.Quit();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>' Close the workbookexcelWorkBook.Close()' Close the Excel processexcel.Quit()</pre></td></tr></table></span></div></li>
+          <li>Finally, now the data is loaded into the local variable Data, existing DataGrid and Chart’s ItemsSource can be set.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Populate the DataGridExcelDataGrid.ItemsSource = this.Data;// Create LineSeriesLineSeries lineSeries = new LineSeries();lineSeries.ItemsSource = this.Data;lineSeries.IndependentValueBinding = new Binding("Year");lineSeries.DependentValueBinding = new Binding("Value");this.Chart.Series.Add(lineSeries);</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>' Populate the DataGridExcelDataGrid.ItemsSource = Me.Data' Create LineSeriesDim lineSeries As New LineSeries()        lineSeries.ItemsSource = Me.Data        lineSeries.IndependentValueBinding = New Binding("Year")        lineSeries.DependentValueBinding = New Binding("Value")Me.Chart.Series.Add(lineSeries)</pre></td></tr></table></span></div></li>
+          <li>Putting this all together, here is what the ImportPanel’s Dropped event handler should look like.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void ImportPanel_Drop(object sender, DragEventArgs e){        if (e.Data != null)        {                FileInfo[] files = e.Data.GetData(DataFormats.FileDrop) as FileInfo[];                if (AutomationFactory.IsAvailable)                {                // Get the first file                        var fi = files[0];                // Create the Excel object                dynamic excel = AutomationFactory.CreateObject("Excel.Application");                // Open the excel document. Must be located in "My Documents"                dynamic excelWorkBook = excel.Workbooks.Open(string.Format("{0}\\{1}",                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),fi.Name));                // Read the Worksheet                dynamic activeWorkSheet = excelWorkBook.ActiveSheet();                // Cells to Read                dynamic cell1, cell2;                // Iterate through Cells                for (int count = 3; count &lt; 30; count++)                {                        cell1 = activeWorkSheet.Cells[count, 1];                        cell2 = activeWorkSheet.Cells[count, 2];                        Data.Add(new YearValueData()                        {                                Year = cell1.Value,                                Value = cell2.Value                        });                }                // Title is a TextBlock in XAML, this sets the value                Title.Text = activeWorkSheet.Cells[1, 1].Value;                // Close the workbook                excelWorkBook.Close();                // Close the Excel process                excel.Quit();                // Populate the DataGrid                ExcelDataGrid.ItemsSource = this.Data;                // Create LineSeries                LineSeries lineSeries = new LineSeries();                lineSeries.ItemsSource = this.Data;                lineSeries.IndependentValueBinding = new Binding("Year");                lineSeries.DependentValueBinding = new Binding("Value");                this.Chart.Series.Add(lineSeries);                }        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub ImportPanel_Drop(ByVal sender As Object, ByVal e As DragEventArgs)        If e.Data IsNot Nothing Then                Dim files() As FileInfo = TryCast(e.Data.GetData(DataFormats.FileDrop), FileInfo())                Dim fi = files(0)                Dim excel As Object                Try                ' Check to see if Excel is already running                        excel = AutomationFactory.GetObject("Excel.Application")                Catch                        excel = AutomationFactory.CreateObject("Excel.Application")                End Try' Open the excel document        Dim excelWorkBook As Object = excel.Workbooks.Open(String.Format("{0}\\{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fi.Name))        ' Read the Worksheet        Dim activeWorkSheet As Object = excelWorkBook.ActiveSheet()        ' Cells to Read        Dim cell1, cell2 As Object        ' Iterate through Cells                For count As Integer = 3 To 29                        cell1 = activeWorkSheet.Cells(count, 1)                        cell2 = activeWorkSheet.Cells(count, 2)                        Data.Add(New YearValueData() With {.Year = cell1.Value, .Value = cell2.Value})                Next count                'Title is a TextBlock in XAML, this sets the value                Title.Text = activeWorkSheet.Cells(1, 1).Value                ' Close the workbook                excelWorkBook.Close()                ' Close the Excel process                excel.Quit()                ' Populate the DataGrid                ExcelDataGrid.ItemsSource = Me.Data                ' Create LineSeries                Dim lineSeries As New LineSeries()                lineSeries.ItemsSource = Me.Data                lineSeries.IndependentValueBinding = New Binding("Year")                lineSeries.DependentValueBinding = New Binding("Value")                Me.Chart.Series.Add(lineSeries)        End IfEnd Sub</pre></td></tr></table></span></div><p><img src="images\720cac41-0ff9-4919-a995-1a638abd599d.png" /></p><p><b>Figure 2</b><br /></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Working with object via AutomationFactory, can be challenging.  Unfortunately there is no intellisence helping out, so you must rely on documentation.  Here are the coding documents that will help when working with Excel.<br />Excel 2007 Developer Reference <a href="http://msdn.microsoft.com/en-us/library/bb149067(v=office.12).aspx">http://msdn.microsoft.com/en-us/library/bb149067(v=office.12).aspx</a><br />Excel 2010 Developer Reference <a href="http://msdn.microsoft.com/en-us/library/ff846370.aspx">http://msdn.microsoft.com/en-us/library/ff846370.aspx</a></td></tr></table><p /></div></li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

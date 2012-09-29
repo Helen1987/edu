@@ -1,0 +1,259 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 6: Using Parameters in View" />
+      <MSHelp:RLTitle Title="Exercise 6: Using Parameters in View" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 6: Using Parameters in View</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Fundamentals</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 6: Using Parameters in View</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In <a href="docSet_152b4e22-e800-4457-9c98-185f360c2e20.html">Exercise 3</a> you learned how to pass parameters to the Controller. In this exercise, you will learn how to use those parameters in the View template. For that purpose, you will be introduced first to Model classes that will help you to manage your data and domain logic. Additionally, you will learn how to create links to pages inside the ASP.NET MVC application without worrying of things like URL paths encoding.</p>
+        <a name="_Toc269320710" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507930" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding Model Classes</b>
+        </p>
+        <p>Unlike ViewModels, which are created just to pass information from the Controller to the View, Model classes are built to contain and manage data and domain logic. In this task you will add two model classes to represent these concepts: <b>Genre</b> and <b>Album</b>. In the next Hands-on Lab, these classes will be hooked to a database, mapping each one of them to a table.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start | All Programs | Microsoft Visual Studio 2010 Express | Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex06-UsingParametersInView\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>. Alternatively, you may continue with the solution that you obtained after completing the previous exercise.</li>
+          <li>Add a <b>Genre</b> Model class. To do this, right-click the <b>Models</b> folder in the <b>Solution Explorer</b>, select <b>Add </b>and then the <b>Class</b> option. Name the file <b>Genre.cs </b>and click <b>Add</b>.<p><img src="images\b8113f2c-e57d-4530-9698-165c6e966d8d.png" /></p><p><b>Figure 40</b><br /><i>Add Genre Model Class</i></p><br /></li>
+          <li>Add a <b>Name</b> property to the Genre class. To do this, add the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex6 Genre – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;namespace MvcMusicStore.Models{    public class Genre    {<b>        public string Name { get; set; }</b>    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Following the same procedure as before, add an <b>Album</b> class. To do this, right-click the <b>Models</b> folder in the <b>Solution Explorer</b>, select <b>Add </b>and then the <b>Class</b> option. Name the file <b>Album.cs</b> and click <b>Add</b>.</li>
+          <li>Add two properties to the Album class<b>: Genre</b> and <b>Title</b>. To do this, add the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex6 Album – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;namespace MvcMusicStore.Models{    public class Album    {<b>        public string Title { get; set; }</b><b>        public Genre Genre { get; set; }</b>    }}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269320711" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507931" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding a StoreBrowseViewModel</b>
+        </p>
+        <p>A <b>StoreBrowseViewModel</b> will be used in this task to show the Albums that match a selected Genre.  In this task, you will create this class and then add two properties to handle the <b>Genre</b> and its <b>Album</b>’s List.</p>
+        <ol>
+          <li>Add a <b>StoreBrowseViewModel</b> class. To do this, right-click the <b>ViewModels</b> folder in the <b>Solution Explorer</b>, choose <b>Add</b> and then <b>Class</b>. Name the file <b>StoreBrowseViewModel.cs</b>.<p><img src="images\8c1fd689-ddcb-4d19-9387-c8ce3a8290ee.png" /></p><p><b>Figure 41</b><br /><i>Adding StoreBrowseViewModel Class</i></p><br /></li>
+          <li>Add a reference to the Models in <b>StoreBrowseViewModel</b> class. To do this, add the following using namespace:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex6 UsingModel – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;<b>using MvcMusicStore.Models;</b>namespace MvcMusicStore.ViewModels{    public class StoreBrowseViewModel    {    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Add two properties to <b>StoreBrowseViewModel</b> class:  <b>Genre </b>and <b>Albums.</b> To do this, add the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex6 ModelProperties – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using MvcMusicStore.Models;namespace MvcMusicStore.ViewModels{    public class StoreBrowseViewModel    {<b>        public Genre Genre { get; set; }</b><b>        public List&lt;Album&gt; Albums { get; set; }</b>    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> What is<b> List&lt;Album&gt; </b>?: This definition is using the <b>List&lt;T&gt; </b>type, where <b>T</b> constrains the type to which elements of this <b>List</b> belong to, in this case <b>Album</b> (or any of its descendants).<br />This ability to design classes and methods that defer the specification of one or more types until the class or method is declared and instantiated by client code is a feature of the C# language called <b>Generics</b>.<br /><b>List&lt;T&gt;</b> is the generic equivalent of the <b>ArrayList</b> type and is available in the <b>System.Collections.Generic</b> namespace<b>. </b>One of the benefits of using <b>generics</b> is that since the type is specified, you do not need to take care of type checking operations such as casting the elements into <b>Album</b> as you would do with an <b>ArrayList</b>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269320712" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507932" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Using the New ViewModel in the StoreController</b>
+        </p>
+        <p>In this task, you will modify the<b> StoreController</b>’s <b>Browse</b> and <b>Details</b> action methods to use the new <b>StoreBrowseViewModel</b>.</p>
+        <ol>
+          <li>Add a reference to the Models folder in <b>StoreController</b> class. To do this, expand the <b>Controllers</b> folder in the <b>Solution Explorer</b> and open the <b>StoreController </b>class. Then add the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex6 UsingModelInController – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using MvcMusicStore.ViewModels;<b>using MvcMusicStore.Models;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Replace the <b>Browse </b>action method to use the <b>StoreViewBrowseController</b> class<b>. </b>You will create a Genre and two new Albums objects with dummy data (in the next Hands-on Lab you will consume real data from a database). To do this, replace the <b>Browse </b>method with the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex6 BrowseMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>//</b><b>// GET: /Store/Browse?genre=Disco</b><b>public ActionResult Browse(string genre)</b><b>{</b><b>    var genreModel = new Genre()</b><b>    {</b><b>        Name = genre</b><b>    };</b><b>    var albums = new List&lt;Album&gt;()</b><b>    {</b><b>        new Album() { Title = genre + " Album 1" },</b><b>        new Album() { Title = genre + " Album 2" }</b><b>    };</b><b>    var viewModel = new StoreBrowseViewModel()</b><b>    {</b><b>        Genre = genreModel,</b><b>        Albums = albums</b><b>    };</b><b>    return View(viewModel);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Replace the <b>Details </b>action method to use the <b>StoreViewBrowseController </b>class<b>. </b>You will create a new <b>Album</b> object to be returned to the <b>View</b>. To do this, replace the <b>Details </b>method with the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex6 DetailsMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>//</b><b>// GET: /Store/Details/5</b><b>public ActionResult Details(int id)</b><b>{</b><b>  var album = new Album { Title = "Sample Album" };</b><b>  return View(album);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269320713" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507933" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Adding a Browse View Template</b>
+        </p>
+        <p>In this task, you will add a <b>Browse </b>View to show the Albums found for a specific Genre.</p>
+        <ol>
+          <li>Before creating the new View template, you should build the project so that the <b>Add View Dialog</b> knows about the <b>ViewModel</b> class to use. Build the project by selecting the <b>Debug</b> menu item and then <b>Build MvcMusicStore</b>.<p><img src="images\c5eb61e7-807f-4320-ba29-4a4e6e7992ee.png" /></p><p><b>Figure 42</b><br /><i>Building the project in Visual Web Developer 2010</i></p><br /><p><img src="images\13d030c7-4540-43d2-ba8b-ab652c744ccf.png" /></p><p><b>Figure 43</b><br /><i>Building the project in Visual Studio 2010</i></p><br /></li>
+          <li>Add a <b>Browse</b> View. To do this, right-click in the <b>Browse</b> action method of the <b>StoreController</b> and click <b>Add View</b>.</li>
+          <li>In the <b>Add View</b> dialog box, verify that the View Name is <b>Browse</b>. Check the <b>Create a strongly-typed view</b> checkbox and select <b>StoreBrowseViewModel</b> from the<b> Model class</b> dropdown. Leave the other fields with their default value. Then click <b>Add</b>.<p><img src="images\e41be4d0-8f63-47bf-a038-ab9ef8c775a1.png" /></p><p><b>Figure 44</b><br /><i>Adding a Browse View</i></p><br /></li>
+          <li>Modify the <b>Browse.aspx </b>to display the Genre’s information, accessing the <b>StoreBrowseViewModel</b> object that is passed to the view template. To do this, replace the <b>Title Content</b> and the <b>Main Content</b> with the following content:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage&lt;MvcMusicStore.ViewModels.StoreBrowseViewModel&gt;" %&gt;&lt;asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server"&gt;<b>    Browse Albums</b>&lt;/asp:Content&gt;&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;<b>&lt;h2&gt;Browsing Genre: &lt;%: Model.Genre.Name %&gt;&lt;/h2&gt;</b><b>    &lt;ul&gt;</b><b>    &lt;% foreach (var album in Model.Albums)</b><b>       { %&gt;</b><b>       &lt;li&gt;&lt;%: album.Title %&gt;&lt;/li&gt;</b><b>    &lt;% } %&gt;</b><b>    &lt;/ul&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269320714" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507934" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>Browse</b> method retrieves Albums from the <b>Browse</b> method action.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store/Browse?Genre=Disco</b> to verify that the action returns two Albums.<p><img src="images\3bd81137-55ce-42e8-a3d7-cac54cc0b2ed.png" /></p><p><b>Figure 45</b><br /><i>Browsing Store Disco Albums</i></p><br /></li>
+        </ol>
+        <a name="_Toc269320715" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507935" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Displaying information About a Specific Album</b>
+        </p>
+        <p>In this task, you will implement the <b>Store/Details</b> view to display information about a specific album. In this Hands-on Lab, everything you will display about the album is already contained in the View template. So, instead of creating a <b>StoreDetailsViewModel</b> class you will use the current <b>StoreBrowseViewModel</b> template passing the Album to it.</p>
+        <ol>
+          <li>Close the browser if needed, to return to the Visual Studio window. Add a new <b>Details </b>view for the <b>StoreController</b>’s<b> Details </b>action method. To do this, right-click the <b>Details</b> method in the <b>StoreController</b> class and click <b>Add View</b>.</li>
+          <li>In the <b>Add View</b> dialog view, verify that the <b>View Name</b> is <b>Details</b>. Check the <b>Create a strongly-typed view</b> checkbox and select <b>Album</b> from the<b> Model class</b> drop-down. Leave the other fields with their default value. Then click <b>Add</b>. This will create and open a <b>\Views\Store\Details.aspx</b> file.<p><img src="images\c8b484af-5039-4902-b147-ab359552f08c.png" /></p><p><b>Figure 46</b><br /><i>Adding a Details View</i></p><br /></li>
+          <li>Modify the <b>Details.aspx </b>file<b> </b>to display the Album’s information, accessing the <b>Album</b> object that is passed to the view template.  To do this, replace the <b>Main Content</b> with the following content:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage&lt;MvcMusicStore.Models.Album&gt;" %&gt;&lt;asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server"&gt;    Details&lt;/asp:Content&gt;&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;    &lt;h2&gt;Album: &lt;%: Model.Title %&gt;&lt;/h2&gt;&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269320716" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507936" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 7 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>Details </b>View retrieves Album’s information from the <b>Details action </b>method.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store/Details/5</b> to verify the album’s information.<p><img src="images\3cda8fa5-8b3b-4620-bd53-7eb22cbf3e71.png" /></p><p><b>Figure 47</b><br /><i>Browsing Album’s Detail</i></p><br /></li>
+        </ol>
+        <a name="_Toc269320717" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507937" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 8 – Adding Links Between Pages</b>
+        </p>
+        <p>In this task, you will add a link in the Store View to have a link in every Genre name to the appropriate <b>/Store/Browse</b> URL. This way, when you click on a Genre, for instance <b>Disco</b>, it will navigate to <b>/Store/Browse?genre=Disco </b>URL.</p>
+        <ol>
+          <li>Close the browser if needed, to return to the Visual Studio window. Update the <b>Index</b> page to add a link to the <b>Browse </b>page. To do this, in the <b>Solution Explorer</b> expand the <b>Views</b> folder, then the <b>Store </b>folder and double-click the <b>Index.aspx</b> page.</li>
+          <li>Add a link to the Browse view indicating the genre selected. To do this, replace the following  code in the <b>Index.aspx</b>:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage&lt;MvcMusicStore.ViewModels.StoreIndexViewModel&gt;" %&gt;&lt;asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server"&gt;    Browse Genres&lt;/asp:Content&gt;&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;    &lt;h2&gt;Browse Genres&lt;/h2&gt;    &lt;p&gt;Select from &lt;%: Model.NumberOfGenres %&gt;&lt;/p&gt;    &lt;ul&gt;        &lt;% foreach (string genreName in Model.Genres)           { %&gt;           &lt;li&gt;<b>           &lt;%: Html.ActionLink(genreName, "Browse", new { genre = genreName }, null) %&gt;</b>           &lt;/li&gt;        &lt;% } %&gt;    &lt;/ul&gt;&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: another approach would be linking directly to the page, with a code like the following:<br />&lt;a href="/Store/Browse?genre=&lt;%: genreName %&gt;"&gt;&lt;%: genreName %&gt;&lt;/a&gt;<br />Although this approach works, it depends on a hardcoded string. If you later rename the Controller, you will have to change this instruction manually. A better alternative is to use an <b>HTML Helper</b> method. ASP.NET MVC includes an HTML Helper method which is available for such tasks. The <b>Html.ActionLink()</b> helper method makes it easy to build HTML <b>&lt;a&gt;</b> links, making sure URL paths are properly URL encoded.<br />Htlm.ActionLink has several overloads. In this exercise you will use one that takes three parameters:<br />1. Link text, which will display the Genre name<br />2. Controller action name (<b>Browse</b>)<br />3. Route parameter values, specifying both the name (<b>Genre</b>) and the value (<b>Genre name</b>)</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269320718" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507938" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 9 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that each Genre is displayed with a link to the appropriate <b>/Store/Browse</b> URL.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store</b> to verify that each Genre links to the appropriate <b>/Store/Browse</b> URL.<p><img src="images\8d13b348-a4f7-4691-a8e3-a5d46bb05c1c.png" /></p><p><b>Figure 48</b><br /><i>Browsing Genres with links to Browse page</i></p><br /></li>
+        </ol>
+        <a name="_Toc282507939" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 10 – Using Dynamic ViewModel Collection to Pass Values</b>
+        </p>
+        <p>In this task, you will learn a simple and powerfull method to pass values between the Controller and the View without making any changes in the Model. MVC 3 provides the collection “ViewModel” than can be assigned to any dynamic value and accessed inside controllers and views as well.</p>
+        <p>You will now use ViewBag dynamic collection to pass from the controller to the view a list of “<b>Starred genres</b>”. The Store Index view will access to <b>ViewModel</b> and display the information.</p>
+        <ol>
+          <li>Close the browser if needed, to return to the Visual Studio window. Open <b>StoreController.cs</b> and modify <b>Index </b>method<b> </b>to create a list of starred genres into ViewModel collection :<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public ActionResult Index(){    // Create list of genres    var genres = new List&lt;string&gt; { "Rock", "Jazz", "Country", "Pop", "Disco" };    // Create your view model    var viewModel = new StoreIndexViewModel    {        NumberOfGenres = genres.Count,        Genres = genres    };<b>    ViewBag.Starred = new List&lt;string&gt; { "Rock", "Jazz" };</b>    return View(viewModel);}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You could also use the syntax <b>ViewBag[“Starred”] </b>to access the properties.</td></tr></table><p /></div><br /></li>
+          <li>The star icon <b>“starred.png”</b> is included in the <b>Source\Assets\Images</b> folder of this lab. In order to add them to the application, drag their content from a <b>Windows Explorer</b> window into the <b>Solution Explorer</b> in Visual Web Developer Express, as shown below:<p><img src="images\1ee67847-5193-49b5-bd9d-6fc678c31d44.png" /></p><p><b>Figure 49</b><br /><i>Adding star image to the solution</i></p><br /></li>
+          <li>Open the view <b>Store/Index.aspx </b>and modify the content. You will read the “starred” property in the <b>ViewBag</b> collection, and ask if the current genre name is in the list. In that case you will show a star icon right to the genre link.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage&lt;MvcMusicStore.ViewModels.StoreIndexViewModel&gt;" %&gt;&lt;asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server"&gt;    Browse Genres&lt;/asp:Content&gt;&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;    &lt;h2&gt;Browse Genres&lt;/h2&gt;    &lt;p&gt;Select from &lt;%: Model.NumberOfGenres %&gt;&lt;/p&gt;    &lt;ul&gt;        &lt;% foreach (string genreName in Model.Genres)           { %&gt;           &lt;li&gt;           &lt;%: Html.ActionLink(genreName, "Browse", new { genre = genreName }, null) %&gt; <b>           &lt;% if (ViewBag.Starred.Contains(genreName))  {  %&gt;</b><b>                &lt;img src="../../Content/Images/starred.png" alt="Starred element" /&gt;</b><b>           &lt;% } %&gt;</b>           &lt;/li&gt;        &lt;% } %&gt;    &lt;/ul&gt;<b>    &lt;br/&gt;</b><b>    &lt;h5&gt; &lt;img src="../../Content/Images/starred.png" alt="Starred element" /&gt; Starred genres 20% Off! &lt;/h5&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282507940" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 11 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the starred genres display a star icon.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store</b> to verify that each featured genre has the respecting label:<p><img src="images\f153adf3-e08c-454a-b856-5acfb160d472.png" /></p><p><b>Figure 50</b><br /><i>Browsing Genres with starred elements</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_d1ece27f-92eb-4812-9a49-1ea98594542e.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

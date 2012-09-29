@@ -1,0 +1,71 @@
+﻿<WorkflowService mc:Ignorable="sap" ConfigurationName="SubmitApplication" sap:VirtualizedContainerService.HintSize="355,867" Name="p:SubmitApplication" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:ha="clr-namespace:HRApplicationServices.Activities;assembly=HRApplicationServices.Activities" xmlns:hc="clr-namespace:HRApplicationServices.Contracts;assembly=HRApplicationServices.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://contoso.com/hr/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:ssa="clr-namespace:System.ServiceModel.Activities;assembly=System.ServiceModel.Activities" xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <p1:Sequence DisplayName="Application Service" sad:XamlDebuggerXmlReader.FileName="I:\Desktop\Begin\VB\HRApplicationServices\SubmitApplication.xamlx" sap:VirtualizedContainerService.HintSize="325,837" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+    <p1:Sequence.Variables>
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="handle" />
+      <p1:Variable x:TypeArguments="hc:SubmitJobApplicationRequest" Name="ApplicationRequest" />
+      <p1:Variable x:TypeArguments="hc:SubmitJobApplicationResponse" Default="[New SubmitJobApplicationResponse()]" Name="ApplicationResponse" />
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="ApplicationIDHandle" />
+    </p1:Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TransactedReceiveScope Request="{x:Reference __ReferenceID0}" DisplayName="Receive Application" sap:VirtualizedContainerService.HintSize="303,483">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <p1:Sequence DisplayName="Save and Respond" sap:VirtualizedContainerService.HintSize="277,276">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ha:SaveJobApplication AppRequest="[ApplicationRequest]" sap:VirtualizedContainerService.HintSize="255,22" Result="[ApplicationResponse]" />
+        <SendReply DisplayName="SendResponse" sap:VirtualizedContainerService.HintSize="255,90">
+          <SendReply.CorrelationInitializers>
+            <QueryCorrelationInitializer CorrelationHandle="[ApplicationIDHandle]">
+              <XPathMessageQuery x:Key="key1">
+                <XPathMessageQuery.Namespaces>
+                  <ssx:XPathMessageContextMarkup>
+                    <x:String x:Key="xg0">http://contoso.com/contracts/hr</x:String>
+                  </ssx:XPathMessageContextMarkup>
+                </XPathMessageQuery.Namespaces>sm:body()/xg0:SubmitJobApplicationResponse/xg0:ApplicationID</XPathMessageQuery>
+            </QueryCorrelationInitializer>
+          </SendReply.CorrelationInitializers>
+          <SendReply.Request>
+            <Receive x:Name="__ReferenceID0" CanCreateInstance="True" DisplayName="ReceiveRequest" sap:VirtualizedContainerService.HintSize="277,90" OperationName="SubmitJobApplication" ServiceContractName="p:IApplicationService">
+              <Receive.CorrelationInitializers>
+                <RequestReplyCorrelationInitializer CorrelationHandle="[handle]" />
+              </Receive.CorrelationInitializers>
+              <ReceiveMessageContent>
+                <p1:OutArgument x:TypeArguments="hc:SubmitJobApplicationRequest">[ApplicationRequest]</p1:OutArgument>
+              </ReceiveMessageContent>
+            </Receive>
+          </SendReply.Request>
+          <SendMessageContent>
+            <p1:InArgument x:TypeArguments="hc:SubmitJobApplicationResponse">[ApplicationResponse]</p1:InArgument>
+          </SendMessageContent>
+        </SendReply>
+      </p1:Sequence>
+    </TransactedReceiveScope>
+    <p1:Sequence DisplayName="Screen Applicant" sap:VirtualizedContainerService.HintSize="303,51">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p1:Sequence>
+    <p1:Sequence DisplayName="Notify Applicant" sap:VirtualizedContainerService.HintSize="303,99">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p1:Sequence>
+  </p1:Sequence>
+</WorkflowService>

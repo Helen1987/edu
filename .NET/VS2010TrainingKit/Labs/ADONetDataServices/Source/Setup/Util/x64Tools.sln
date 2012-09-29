@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual C# Express 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliasDatabaseServer", "AliasDatabaseServer\AliasDatabaseServer.csproj", "{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Debug|x64.ActiveCfg = Debug|x64
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Debug|x64.Build.0 = Debug|x64
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Release|x64.ActiveCfg = Release|x64
+		{AA6D15B5-4317-48D5-8393-7C4D9C7A9044}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+EndGlobal

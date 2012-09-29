@@ -1,0 +1,318 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+	  System.Threading.Barrier Demo
+  </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Exploring the Barrier class</li>
+          <li>Canceling the threads execution</li>
+        </ol>
+        <a name="_Toc281385289" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Exploring the Barrier Class</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>BarrierDemo.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>In the <b>View</b> menu, click <b>Object Browser</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>First, we will explore the Barrier class to see its methods and properties. To do this, we will open the Object Browser and search for this class.</li>
+                <li>A Barrier enforces the stopping of execution between a number of threads preventing further execution until all threads have reached the given point.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\54d0469c-cefd-40ce-960f-f2496fc129be.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Enter <b>System.Threading.Barrier</b> (<i>C#</i>) or just <b>Barrier</b> (<i>VB</i>) in the Search box and press <b>Enter</b>.</li>
+                <li>Show the following constructors, methods and properties of the class.<ul><li>Barrier (<i>C#</i>) / New (<i>VB</i>)</li><li>AddParticipants</li><li>RemoveParticipants</li><li>SignalAndWait</li><li>ParticipantCount</li><li>ParticipantsRemaining</li></ul></li>
+                <li>Close the <b>Object Browser</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s see some members of the Barrier class.</li>
+                <li>The AddParticipant/s methods add one or more threads to the barrier.</li>
+                <li>The Barrier constructor allows specifying the number of participating threads. Additionally, an overload of the method lets you specify the action that will be performed after the barrier. Keep in mind that the barrier can be used several times. Each time it is used, it is called a phase.</li>
+                <li>RemoveParticipant/s eliminates participant threads.</li>
+                <li>The SignalAndWait method is an important one. It signals that one participant thread has arrived at the barrier and waits for all the other participants to reach the barrier as well. The method has several overloads for specifying the timeout, and the cancellation token.</li>
+                <li>Finally, it has some properties, for getting the phase number, the participant count, and the number of remaining participants to reach the current phase.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b19e37db-c380-4503-aaa0-fb316d2aef42.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, open the Program.cs file by double-clicking it.</li>
+                <li>Show the static Variables and the <b>Main</b> method.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The scenario of this demo is a group of friends that want to travel to Boston, but before starting the trip, they decided to meet at a gas station. Therefore, the gas station will act as the barrier.</li>
+                <li>Looking at the code, notice the two static variables, the Barrier and a CancellationToken.</li>
+                <li>In the main method, we initialize the barrier with three participant threads.</li>
+                <li>After that, we create one thread for each friend. Each thread executes the <b>DriveToBoston</b> method.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b7274c00-5895-4fb0-9d95-5d90a40bf020.png" />
+              </p>
+              <p>
+                <img src="images\c867b5ac-0472-48e6-aab6-5496f114a1fb.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll down, and show the <b>DriveToBoston</b> method.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>This method simulates processing by using the sleep method. After this, it sends the signal, notifying that it has arrived to the barrier. The method also echoes the status of the process.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\8e2d91f6-5481-4803-aab5-4ed8190aa839.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the Main method and show that each thread has a different time to get to the gas station.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Notice that each thread has a different amount of time to arrive to the gas station. As we saw in the DriveToBoston method, under the hoods this is a call to the Thread.Sleep method.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\1762c088-2cb7-4771-b41d-0fbfbdaca120.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Press F5 to run the application.</li>
+                <li>Press any key to close the application when it finishes.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s run the application.</li>
+                <li>Notice that when the three threads reach the barrier, the execution of them continues.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\e98d6241-cba1-4dda-ad16-cdb53fe21976.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281385290" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – Canceling the Threads Execution</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll up to the definition of the Static variables and show the <b>Main</b> method where the cancellation token is initialized.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>You may have noticed that we have a static variable that holds a cancellation token. This variable is initialized below in the <b>Main</b> method with a new instance.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\7550b2ec-8716-40b2-aa24-51080918fb44.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the <b>DriveToBoston</b> method and show the line where the <b>SignalAndWait</b> method is used.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s go to the <b>DriveToBoston</b> method to see that the <b>SignalAndWait</b> method is called passing the cancellation token as a parameter.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\16e317d8-170a-484d-90f5-220f912bedfc.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Go to the Main method.</li>
+                <li>Uncomment the commented line.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, we will use the Cancellation Token to cancel the tread execution. To do this, in the <b>Main</b> method, we will uncomment the commented line, so the <b>Cancel</b> method of the token is executed. The <b>Cancel</b> method communicates the request for cancellation to the threads.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\14a2ba46-7635-46ba-b216-6bf2b2517d7f.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Press F5 to run the application.</li>
+                <li>Press any key to close the application when it finishes.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s run the application to see how this works.</li>
+                <li>When the each thread signals with the cancellation token active, the tread terminates with an <b>OperationCanceledException</b>.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\40a88c3a-d95a-4265-9c10-629531535042.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

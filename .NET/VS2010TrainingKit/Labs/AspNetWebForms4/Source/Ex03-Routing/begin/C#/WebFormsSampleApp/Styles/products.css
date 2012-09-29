@@ -1,0 +1,160 @@
+﻿/* body */
+div.products {
+    width: 934px;
+    min-height: 350px;
+    border: 3px solid #727272;
+    margin: 0 auto;
+    text-align: left;
+    background: #fff url(../Images/products_body_bg.gif) no-repeat top left;
+}
+
+/* tabs */
+div.products div.categories {
+    width: 900px;
+    position: absolute;
+    margin-top: -31px;
+    margin-left: -3px;   
+    font-family: Trebuchet MS, Arial, Verdana;
+    font-size: 18px;
+}
+
+div.products h3 {
+    font-family: Trebuchet MS, Arial, Verdana;
+    font-size: 18px;
+    color: #727272;
+    font-size: 18px;
+    padding-left: 9px;
+    text-transform: uppercase;
+    float: left;
+    margin-top: 10px;
+}   
+
+div.products div.categories h3 {
+    margin: 0; padding: 0;
+    float: left;
+    background-color: #727272; color: #dcdcdc; text-transform: uppercase;
+    border-top: 3px solid #727272;
+    height: 28px;
+    line-height: 28px;
+    padding: 0px 12px;
+}
+div.products div.categories ul {
+    list-style: none;
+    margin: 0; padding: 0;
+}
+div.products div.categories ul li {
+    margin: 0; padding: 0;
+    display: block; float: left;
+    background-color: #727272;
+}
+
+div.products div.categories ul li a {
+    display: block; float: left;
+    height: 28px;
+    background-color: #acacac;
+    text-decoration: none;
+    color: #fff;
+    border-top: 3px solid #727272;
+    line-height: 28px;
+    padding: 0px 12px;
+}
+div.products div.categories ul li a:hover {
+    color: #c83f03;
+}
+div.products div.categories ul li a.selected {
+    color: #c83f03;
+    background-color: #fff;
+}
+    /* separators */
+    div.categories span.sep {
+        display: block; float: left;
+        width: 17px; height: 31px;
+    }
+
+/* list */
+div.products div.productList {
+    clear: both;
+    min-height: 350px;
+}
+div.products div.productItem {
+    float: left;
+    width: 165px; height: 242px;
+    margin: 0 14px;
+    background: url(../Images/products_item_bg.gif) no-repeat top left;
+    padding: 20px;
+    position: relative;
+    top: 20px;
+}
+div.products div.productItem p {
+    margin: 10px 0;
+    padding: 0;
+}
+div.products div.productItem p.productImage {
+    text-align: center;
+    height: 70px;
+}
+div.products div.productItem p.productImage img {
+    border: 3px solid #838893;
+}
+div.products div.productItem p.productPrize {
+    color: #c83f03;
+    font-size: 16px; font-weight: bold;
+}
+div.products div.productItem p.addToCart a {
+    position: absolute;
+    width: 63px; height: 63px;
+    left: 151px; top: 191px;
+    background: url(../Images/products_addtocart_1.gif) no-repeat bottom right;
+}
+div.products div.productItem p.addToCart a span { display: none; }
+div.products div.productItem p.addToCart a:hover {
+    background: url(../Images/products_addtocart_2.gif) no-repeat bottom right;
+}
+div.products div.productItem p.addToCart a:hover span {
+    position: absolute;
+    margin-top: 45px; margin-left: -65px;
+    display: block; width: 73px; height: 18px;
+    line-height: 18px;
+    padding-left: 10px;
+    background: url(../Images/products_addtocart_2_legend.gif) no-repeat top left;
+    color: #fff; text-decoration: underline; font-size: 10px; font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* pager */
+div.products div.productPager {
+    position: absolute; 
+    right: 15px;
+    height: 42px;
+    background: #727272 url(../Images/pager_corner_r.gif) no-repeat bottom right;
+    padding-right: 8px;
+}
+
+div.products div.productPager a {
+	position: relative;
+	top: +8px;
+    font-size: 20px;
+    color: #fff;
+    padding: 0 5px 0 12px; 
+    margin: 8px 3px;
+    border-left: 2px solid #fff;
+    text-decoration: none
+}
+
+div.products div.productPager a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+div.products div.productPager div.productPagerLeftBorder {
+	height: 42px;
+	width:auto;
+	padding-left: 8px;
+    background: url(../Images/pager_corner_l.gif) no-repeat bottom left;
+}
+
+div.products div.productPager a.currentPage {
+    text-decoration: underline;
+    color: #000;
+}

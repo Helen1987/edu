@@ -1,0 +1,44 @@
+﻿<navigation:Page
+  x:Class="UsingRIAServices.Home" 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+  mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="580"  
+  Style="{StaticResource PageStyle}" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit">
+
+  <Grid x:Name="LayoutRoot">
+    <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}" >
+
+      <StackPanel x:Name="ContentStackPanel" Style="{StaticResource ContentStackPanelStyle}">
+
+        <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" Text="Customer Orders" />
+                <ComboBox Height="23" Name="CustomersComboBox" Width="171" HorizontalAlignment="Left" SelectionChanged="CustomersComboBox_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding FirstName}" />
+                                <TextBlock Text="{Binding LastName}" Margin="5,0,0,0" />
+                            </StackPanel>                            
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <sdk:DataGrid AutoGenerateColumns="False" Height="100" Name="OrdersDataGrid" Width="548" HorizontalAlignment="Left" Margin="0,15,0,0" IsReadOnly="True">
+                    <sdk:DataGrid.Columns>
+                        <sdk:DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate,StringFormat=d}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="Ship Method" Binding="{Binding ShipMethod}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="Sub Total" Binding="{Binding SubTotal,StringFormat=C}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                        <sdk:DataGridTextColumn Header="Total Due" Binding="{Binding TotalDue,StringFormat=C}" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                    </sdk:DataGrid.Columns>
+                </sdk:DataGrid>
+                <toolkit:DataForm Name="dataForm1" HorizontalAlignment="Left" 
+                                  CurrentItem="{Binding Path=SelectedItem,ElementName=OrdersDataGrid}"
+                                  AutoEdit="False" AutoCommit="false"
+                                  Margin="0,15,0,0" Height="323" Width="549" />
+                <Button Content="Save" Height="23" Name="button1" Width="75" HorizontalAlignment="Left" Margin="0,15,0,0" Click="button1_Click" />
+            </StackPanel>
+            
+    </ScrollViewer>
+  </Grid>
+
+</navigation:Page>

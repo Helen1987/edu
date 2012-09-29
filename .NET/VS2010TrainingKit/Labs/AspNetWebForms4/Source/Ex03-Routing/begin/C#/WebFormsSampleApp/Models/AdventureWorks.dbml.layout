@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AdventureWorks">
+  <DataContextMoniker Name="/AdventureWorksDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7b6710c6-0221-4205-8015-10c91590c8eb" absoluteBounds="1, 2.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AdventureWorksDataContext/ProductCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13644fb1-2c57-4a1d-af00-ecb8f3ed7cc7" absoluteBounds="1.0150000000000001, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.70552987154447 : 4.64589680989583); (1.70552987154447 : 4.89589680989583); (2.30849251552484 : 4.89589680989583); (2.30849251552484 : 4.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdventureWorksDataContext/ProductCategory/ProductCategory_ProductCategory" />
+      <nodes>
+        <classShapeMoniker Id="7b6710c6-0221-4205-8015-10c91590c8eb" />
+        <classShapeMoniker Id="7b6710c6-0221-4205-8015-10c91590c8eb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7c0cb7a7-73e5-43bf-8fee-3436184b5dbc" absoluteBounds="4, 1.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/AdventureWorksDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95d42e02-f0ca-4845-bcf9-2e54753d3de4" absoluteBounds="4.015, 2.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 3.76044840494792); (4 : 3.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdventureWorksDataContext/ProductCategory/ProductCategory_Product" />
+      <nodes>
+        <classShapeMoniker Id="7b6710c6-0221-4205-8015-10c91590c8eb" />
+        <classShapeMoniker Id="7c0cb7a7-73e5-43bf-8fee-3436184b5dbc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

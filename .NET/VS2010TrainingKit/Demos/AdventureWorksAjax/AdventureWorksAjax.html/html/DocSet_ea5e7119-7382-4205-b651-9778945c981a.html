@@ -1,0 +1,455 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+          AdventureWorks using AJAX
+      </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Exploring DataGrid class</li>
+          <li>Using client-templates, dataContext and dataView</li>
+          <li>Using ASP.NET Ajax Library Declarative Syntax</li>
+        </ol>
+        <a name="_Toc256779641" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Exploring the DataGrid class</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>AdventureWorksAjax.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>In <b>Solution Explorer</b>, open the DataGrid.htm file by double-clicking it.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>First, we will explore a possible implementation of a DataGrid based on the DataView template using the ASP.NET Ajax library components. To do this, we will open a prebuilt DataGrid page to show the approach used in this sample.</li>
+                <li>The DataGrid.htm page consists only on a template table that will be populated by the DataGrid class.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\4d858bbf-49d8-41a5-9c03-be3c05a23fcf.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Show the &lt;script&gt; tags including some basic <b>ASP.NET AJAX Library</b> script files.</li>
+                <li>Show that the DataGrid.js and Test.js files are being referenced.</li>
+                <li />
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The DataGrid.htm page, as well as all the demo pages, includes the required ASP.NET Ajax libraries script files. In this case, the core, the templates components, ADO.NET and Data Context scripts.</li>
+                <li>The DataGrid.js script file contains the definition of the DataGrid class used during this part of the demo</li>
+                <li>The Test.js is simply the starting point of the demo and creates the required ADO.NET data context as well as the DataGrid itself.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\4daddd76-89ae-4294-974c-551c4a63594a.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, open the Content\Scripts\DataGrid.js file by double-clicking it.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The DataGrid class inherits from the Ajax DataView component and adds the possibility of using a table tag to wrap the data.</li>
+                <li>By inspecting the initialize method, you will find that it just creates headers and the columns for each field in the data context, and lets the DataView class to populate cells with the actual data.</li>
+                <li>In addition, it sets the template attributes used by the template to perform some actions. For example, it attaches the select command on each row.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\4995a0a4-0b9a-4364-a12f-ce36aa2c4630.png" />
+              </p>
+              <p>
+                <img src="images\26466655-455f-4c3b-8a50-5cf8188c5754.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, open the Content\Scripts\Test.js file by double-clicking it.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, we will open and explore the Test.js script file, which contains the initialization code.</li>
+                <li>First, it creates an ADO.NET data context using a prebuilt WCF Data Service named AdventureWorks.svc.</li>
+                <li>Next, it uses the data context when creating the Datagrid component, as well as the fetchOperation and fetchParameters parameters.</li>
+                <li>You should notice the alternateRowClass and the columns/fields definition parameters.</li>
+                <li>Also, we used the table template and the customer placeholder in the DataGrid’s initialization.</li>
+                <li />
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\69927334-a53d-438e-87a6-51b082330565.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Set the DataGrid.htm file as the start up page by right-clicking it, and selecting <b>Set as Start Page</b>.</li>
+                <li>Press F5 to run the application.</li>
+                <li>Wait for the grid to be populated with data and select different rows by clicking them.</li>
+                <li>Close the browser.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s run the application.</li>
+                <li>Notice that at first, a loading message is visible until the data is automatically populated in the table element. This is achieved by using client templates inside the DataGrid class.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b822b580-8427-46e1-aac1-0ee0da53e1bd.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc256779642" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – Using client-templates, dataContext and dataView</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, open the Default.htm file by double-clicking it.</li>
+                <li>Show the table element inside the body tags.</li>
+                <li>Show the <b>thead</b> element with five header columns inside the table.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>We will check another implementation of the same scenario. This uses only DataView templates. To do this, we will open the Default.htm page, which contains the customer list as a client template.</li>
+                <li>Inside the body HTML element, you will find a table element including a table header for the list of customers. This has the same effect as shown in the previous DataGrid sample.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\1955a120-ce2e-424f-84f7-0fc75383edc3.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Show the tbody client-template below the thead element.</li>
+                <li>Show the binding syntax.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Below the headers we included a template that is equivalent to the one used in the previous sample. Notice that the tbody element with the class attribute is set to sys-template.</li>
+                <li>You should notice the row attributes used to attach the select command and the alternating row class.</li>
+                <li>You may notice the binding syntax used on each cell. This is the same syntax used in the DataGrid class in the previous sample.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\6f142c4c-8a95-42cb-8be0-f0dd41c6bb46.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Show the div element at the bottom of the page body.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Additionally, in this sample we create a right panel where the user will be able to edit items as they are selected.</li>
+                <li>This is simply another client template that will help us show an explicit binding.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\fdee1b8d-b5ef-4884-b169-39eb91e21ba8.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In the <b>Solution Explorer</b>, open the Content\Scripts\Default.js file by double-clicking it.</li>
+                <li>Show the code to create a DataContext and the first DataView components.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now we will explore the code that populates the client template with the data context data. To do this, we will open the Default.js script file.</li>
+                <li>In this file, we will find the same data context creation we saw in the previous sample but in this case, it is used in conjunction with a DataView component.</li>
+                <li>Up to this point, the outcome will be the same that in the DataGrid sample.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\89c8deb1-8c72-4e89-81c2-340733021a37.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Show the code to create the second DataView component and the binding between the two templates.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The second DataView component is used to show the item details and let the user edit the data.</li>
+                <li>The way it is being populated is through a Binding component that ties both the customers list and the customer details. </li>
+                <li>Notice the source and target properties of the Binding component reference the client templates created above.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\2ed57f69-623f-4477-a550-a234d1c24ecc.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Set the Default.htm file as the start up page by right-clicking it select <b>Set as Start Page</b>.</li>
+                <li>Press <b>F5</b> to run the application.</li>
+                <li>Wait for the grid to be populated with data and select different rows by clicking on them.</li>
+                <li>Edit some items in the right side pane and click the <b>Update</b> button.</li>
+                <li>Close the browser.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s run the application to see how this works.</li>
+                <li>We will obtain the customers list with the alternating row style and the ability to select items.</li>
+                <li>In addition, when selecting a new item the data will be available on the right panel for in-memory edition.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\c3baf6c5-b27b-4fbb-9215-cd87f23eedd5.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc256779643" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #3 – Using ASP.NET Ajax Library Declarative Syntax</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, open the Declarative.htm file by double-clicking it.</li>
+                <li>Show the provided creation of an adoNetDataContext in the existing file.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>We have walked through two different implementations of the same scenario using ASP.NET Ajax library using explicit syntax. This means you need to include script files in order to achieve the required result.</li>
+                <li>Now, we will check the possibility of using a declarative syntax to obtain the same outcome without including any script file except the ASP.NET Ajax library files. To do this, we will open the Declarative.htm file.</li>
+                <li>Notice that you still have to create the ADO.NET data context in order to retrieve data. However, there are no other custom script files needed.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b3f181b2-e978-40b9-b3c7-d1c3a58a8fc6.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll down to the tbody element of the main table.</li>
+                <li>Highlight the sys:attach attribute.</li>
+                <li>Highlight the dataview:dataprovider attribute.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Below, we will check the client template to see that all the required initialization is placed directly in the HTML markup as <b>sys</b> and <b>dataview</b> attributes.</li>
+                <li>The sys:attach attribute converts this simple tbody element into a client template using the DataView component.</li>
+                <li>The dataprovider attribute uses the created ADO.NET data context to gather data on execution time.</li>
+                <li>You can check the rest of the attributes having a correspondence with the previous samples.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\bc965001-d9b8-4b0b-b8c3-200bf80b16d6.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll down to the div element, located at the bottom of the page.</li>
+                <li>Highlight the <b>dataview:data</b> attribute.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The right panel, used for editing items, is initialized as a client template in the same way we did before.</li>
+                <li>Notice the dataview:data attribute. This replaces the Binding component we created by hand in the previous sample. We used the id of the previous template to tie both templates declaratively.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\7c2d1d79-e816-43cb-aa84-702f97537635.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Set the Declarative.htm file as the start up page by right-clicking it and selecting <b>Set as Start Page</b>.</li>
+                <li>Press <b>F5</b> to run the application.</li>
+                <li>Wait for the grid to be populated with data and select different rows by clicking on them.</li>
+                <li>Edit some items in the right side pane and click the Update button.</li>
+                <li>Close the browser.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s run the application to see how this works.</li>
+                <li>We will obtain the same customers list with the alternating row style and when selecting an item, the right panel will be populated with that data for editing.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\7bd539ec-7c02-4219-937d-0e8acd88285f.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

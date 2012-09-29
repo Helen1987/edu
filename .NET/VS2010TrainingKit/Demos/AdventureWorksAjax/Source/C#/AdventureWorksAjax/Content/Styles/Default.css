@@ -1,0 +1,69 @@
+﻿body
+{
+    font: 12px Verdana;
+}
+
+.sys-template
+{
+    display: none;
+}
+
+table
+{
+    border: 1px solid #000;
+    margin-right: 10px;
+}
+
+td,
+th
+{
+    
+    padding: 4px;
+}
+
+th
+{
+    background-color: #3e423a;
+    color: #fff;
+    text-align: left;
+}
+
+
+th:first-child,
+td:first-child
+{
+    border-left: none;
+}
+
+tr.odd
+{
+    background-color: #a4cfbe;
+}
+
+tr.selected
+{
+    background-color: #417378;
+    color: #fff;
+}
+
+label
+{
+    display: block;
+}
+
+input[type="text"]
+{
+    background-color: #6c6e58;
+    color: #f4f7d9;
+}
+
+input[type="button"]
+{
+    margin-top: 10px;
+}
+
+table,
+div
+{
+    float: left;
+}

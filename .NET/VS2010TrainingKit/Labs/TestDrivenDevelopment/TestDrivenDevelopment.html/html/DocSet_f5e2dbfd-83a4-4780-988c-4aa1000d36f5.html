@@ -1,0 +1,185 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Red, Green…" />
+      <MSHelp:RLTitle Title="Exercise 1: Red, Green…" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Red, Green…</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Visual Studio 2010: Test Driven Development</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Red, Green…</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141331" href="#">
+          <span />
+        </a>
+        <p>In this exercise, you will use the new features of Visual Studio 2010, which help support a TDD workflow.  You will walk through Smart Tag actions, test runner enhancements, and navigation features.</p>
+        <br />
+        <a name="_Toc281931460" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a New Project</b>
+        </p>
+        <p>In this task, you will create a C# or VB Class Library and Test Project that will be used to explore the TDD features added to Visual Studio.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>From the Visual Studio Start Page click <b>Projects</b> and then click the <b>New Project</b> button.<p><img src="images\c5284f6d-9224-4966-84ae-09906a50f6b4.png" /></p><p><b>Figure 1</b><br /><i>Creating the project</i></p><br /></li>
+          <li>In the <b>New Project</b> dialog, select the <b>Visual C#</b> or <b>VB</b> project type.  Make sure that <b>.NET Framework 4.0</b> is selected, and then select the <b>Class Library</b> template.</li>
+          <li>Change the name of the project to <b>SimpleDataStructures</b>, make sure the Create directory for solution checkbox is checked, and click <b>OK</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The default target version of the .NET Framework in test projects is the .NET Framework 4. However, Visual Studio 2010 SP1 Beta adds basic support for unit tests that target the .NET Framework 3.5. For more information, see <a href="http://msdn.microsoft.com/library/gg442059.aspx">http://msdn.microsoft.com/library/gg442059.aspx</a>.</td></tr></table><p /></div><br /></li>
+          <li>Delete the default Class1.cs file (or Class1.vb) that the New Project Wizard created.<p><img src="images\a1645649-bc87-4b30-90d7-d4e6f987d84c.png" /></p><p><b>Figure 2</b><br /><i>Deleting the default file created by the New Project Wizard</i></p><br /></li>
+          <li>In the Solution Explorer, right-click on the <b>SimpleDataStructures</b> solution and click <b>Add | New Project… </b>and select the <b>Visual C# | Test </b>or<b> Visual Basic | Test</b> project type. Make sure that <b>.NET Framework 4.0</b> is selected, and then select <b>Test Project</b>.</li>
+          <li>Change the project’s name to <b>SimpleDataStructures.Tests</b> and click <b>OK</b>.</li>
+          <li>Delete UnitTest1.cs file (or UnitTest1.vb) that the New Project Wizard created.<p><img src="images\569659e6-e6a2-4ca6-9c3c-0b99248813b9.png" /></p><p><b>Figure 3</b><br /><i>Deleting the default test file generated by the New Project Wizard (C#)</i></p><br /><p><img src="images\91de59ac-9fe7-41ca-af74-045711a11313.png" /></p><p><b>Figure 4</b><br /><i>Deleting the default test file generated by the New Project Wizard (VB)</i></p><br /></li>
+        </ol>
+        <a name="_Toc281931461" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Defining a Context for the Tests.</b>
+        </p>
+        <p>In this task, you will write a couple of tests to start driving out the design of your <b>SimpleStack</b> class.</p>
+        <p>You will start by creating a new file to hold some tests for your <b>SimpleStack</b> class and then jump into writing out the first test. Along the way, you will use the new <b>Smart Tag</b> actions to help us wire up some of the necessary import statements, do some micro-code generation, and more.</p>
+        <ol>
+          <li>From the <b>Solution Explorer</b>, right-click on the <b>SimpleDataStructures.Tests</b> project and select <b>Add | Class</b>. Be sure <b>Visual C# Items | Code</b> (or <b>Common Items | Code</b> for VB.NET) is selected and then choose the <b>Class</b> Template.</li>
+          <li>Change the name to <b>SimpleStackTests</b> and click the <b>Add</b> button.</li>
+          <li>Visual Studio will open the new SimpleStackTests.cs file (or SimpleStackTests.vb). Your solution should look like <b>Error! Reference source not found.</b>5<p><img src="images\d64f1a02-ad16-4fd4-bba9-8397b115c49a.png" /></p><p><b>Figure 5</b><br /><i>The new SimpleStackTests.cs file(C#)</i></p><br /><p><img src="images\400e3e5c-991a-4e67-9073-30b78278533a.png" /></p><p><b>Figure 6</b><br /><i>The new SimpleStackTests.vb file(VB)</i></p><br /></li>
+          <li>Visual Studio automatically makes newly generated classes internal by default, but the class must be public in order for the Test Runner to find and run the tests. Add the <b>public</b> keyword as seen in the following code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>namespace SimpleDataStructures.Tests{<b>    public class SimpleStackTests</b>    {    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Visual Basic creates classes with public scope by default, and class files do not include namespaces unless you need to manually alter them from the default.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Class SimpleStackTests</b>End Class</pre></td></tr></table></span></div><br /></li>
+          <li>Next, you need to decorate this class with the <b>TestClass </b>Attribute so the Visual Studio Test Runner will recognize this class as a test fixture. Add the <b>TestClass</b> attribute to the <b>SimpleStackTests</b> class.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>namespace SimpleDataStructures.Tests{<b>    [TestClass]</b>    public class SimpleStackTests    {    }}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestClass()&gt; Public Class SimpleStackTests</b>End Class</pre></td></tr></table></span></div><br /></li>
+          <li>Notice there is a problem – Visual Studio does not know what the <b>TestClass</b> attribute is because the file is missing a using statement.</li>
+          <li>You can use a new Smart Tag action, added in Visual Studio 2010, to automatically add the correct <b>using</b> (<b>Imports</b> if using VB.Net) statement. Press  <b>CTRL + .</b> to trigger the Smart Tag context menu, and select the first option.<p><img src="images\9feaa1cf-8268-4f56-aceb-c717e1dfbbe3.png" /></p><p><b>Figure 7</b><br /><i>Using the Smart Tag to add a missing using statement</i></p><br /></li>
+          <li>You have a test fixture defined, but before you start writing tests, you need to get some context around what you will be writing the tests for.  <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>  “Context” in TDD is used for describing the current conditions and state of the <b>SimpleStack</b>.  “Context” enables us to clearly describe what the test is meant to check.  This is a great benefit in having the tests read like regular descriptive text instead of like software code.<br />In addition, you are using longer and more descriptive names for the test fixtures and test methods. The goal is to communicate the essence of the requirement in the naming of tests, and let the test body (code) communicate the mechanics.<br />While this may seem odd and go against some pre-conceived notions about writing code, it is common practice amongst many <a href="http://en.wikipedia.org/wiki/Test_Driven_Development">TDD</a> &amp; <a href="http://en.wikipedia.org/wiki/Behavior_driven_development">BDD</a> practitioners.</td></tr></table><p /></div><br /></li>
+          <li>Begin by assuming the stack has just been created, meaning it is in a default state. To set this context, rename the <b>SimpleStackTests</b> class to something more descriptive, like so:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public class WhenAStackIsCreated</b>{}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestClass()&gt; Public Class WhenAStackIsCreated</b>End Class</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc281931462" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Writing the First Test: Designing and Defining the SimpleStack</b>
+        </p>
+        <p>In this task, you will start designing and building the <b>SimpleStack</b> class by writing a test using the context defined in Task 2. Along the way, you will use the new Smart Tag actions to help wire up some of the necessary using statements, do some micro-code generation, and more.</p>
+        <ol>
+          <li>Begin by creating a new test method that specifies that a newly created stack should be empty. Decorate the method with the <b>TestMethodAttribute</b>. Note the relationship of the test class and test method names: <b>WhenAStackIsCreated.ThenItShouldBeEmpty()</b>. This naming convention helps us keep a clear understanding of what each test is checking.<p>(Code Snippet – <i>TDD Lab - Ex1 ThenItShouldBeEmpty C#</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod]</b><b>public void ThenItShouldBeEmpty()</b><b>{</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>TDD Lab - Ex1 ThenItShouldBeEmpty VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestMethod()&gt; Public Sub ThenItShouldBeEmpty()</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Next, you need to declare and initialize a new <b>SimpleStack</b>, and then verify that its <b>IsEmpty</b> property returns true. To begin, just declare and initialize a new <b>SimpleStack</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[TestMethod]public void ThenItShouldBeEmpty(){<b>    SimpleStack theStack = new SimpleStack();</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;TestMethod()&gt; Public Sub ThenItShouldBeEmpty()<b>    Dim theStack As New SimpleStack</b>End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Notice that Visual Studio will again give you a Smart Tag, but for a different reason than before. In this case, Visual Studio does not know what the <b>SimpleStack</b> class is, so it will offer to generate a stub for you.<p><img src="images\03b726bd-d50a-4d66-88f4-49873e411f0c.png" /></p><p><b>Figure 8</b><br /><i>Smart Tag options for an as-yet-undefined class (C#)</i></p><br /><p><img src="images\5459092b-db42-4a5f-82ae-c1e4fe67c685.png" /></p><p><b>Figure 9</b><br /><i>Smart Tag options for an as-yet-undefined class (VB)</i></p><br /></li>
+          <li>Select Generate class for “<b>SimpleStack</b>” from the list (or Generate ‘Class <b>SimpleStack</b>’ if using VB.Net). A new window will open with a stub of the new class generated for you. Open the file called SimpleStack.cs or SimpleStack.vb from Solution Explorer.<p><img src="images\08e58734-8af6-475a-9549-d5919f444b89.png" /></p><p><b>Figure 10</b><br /><i>The generated stub of SimpleStack class(C#)</i></p><br /><p><img src="images\2c09a944-01ef-451f-949f-e8aedf007790.png" /></p><p><b>Figure 11</b><br /><i>The generated stub of SimpleStack class(VB)</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Smart Tag above has a second option, “Generate other…” which will open a dialog, allowing you to customize the to-be-generated code. Had you chosen that option you would have seen the following:<br /><img src="images\40142729-ff9a-417d-ae90-764d8cb5dbdd.png" /><br />Take special note of the Project location option. By default, the Smart Tag will generate the stub code in the current project, but that may not be the behavior you desire. The Project location field gives you the ability to create the generated code in a completely different location.<br />As an important side note, TDD purists will use the Smart Tag approach, generating the code directly in the same location where they are currently working. This subtle design approach encourages you the developer to make your fundamental design choices as late in the process as possible.  In your small solution it is obvious where the generated code should live; however, in larger projects you might have 20 or 30 different components.  Your code might need to be accessible by a number of different components. How can you know this early in the development cycle exactly which components may need access to the code you are developing?<br />Leaving the decision of where to move the code until late in the cycle means you have gotten a much clearer picture of potential dependencies in the system, and are better able to make smart choices about where to place code you have written.  All this falls back to the fundamental tenet: Do the simplest thing possible to make the test pass.<br />(For more on the concept of making critical decisions at the last responsible moment, you highly recommend Tom and Mary Poppendeick’s <i>Lean Software Development</i>.)<br />In this case, you triggered the Smart Tag from within your <b>SimpleDataStructures.Tests</b> project, but you likely want the <b>SimpleStack</b> implementation to live in the <b>SimpleDataStructures</b> project and namespace. You could have done that by selecting the corresponding Project Location in this dialog.</td></tr></table><p /></div><br /></li>
+          <li>Going back to the test, you will verify that the stack is empty by asserting its <b>IsEmpty</b> property is true.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[TestMethod]public void ThenItShouldBeEmpty(){    SimpleStack theStack = new SimpleStack();<b>    Assert.IsTrue(theStack.IsEmpty);</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;TestMethod()&gt; Public Sub ThenItShouldBeEmpty()    Dim theStack As New SimpleStack<b>    Assert.IsTrue(theStack.IsEmpty)</b> End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Again, you will see a Smart Tag, this time offering to Generate property stub for <b>IsEmpty</b> in <b>SimpleDataStructures.Tests.SimpleStack</b>. Selecting this option will generate a public auto-Property in the <b>SimpleStack</b> class.<p><img src="images\149673b8-eb9c-4eae-b693-6e6590996b05.png" /></p><p><b>Figure 12</b><br /><i>The Smart Tag showing the option to create a method stub(C#)</i></p><br /><p><img src="images\db20bf6a-0634-476c-97fc-5adbcf53f7e0.png" /></p><p><b>Figure 13</b><br /><i>The Smart Tag showing the option to create a method stub (VB)</i></p><br /></li>
+          <li>Move to the SimpleStack.cs file (or SimpleStack.vb) and you will see the stubbed property.<p><img src="images\7e06cd45-a752-4d45-946c-8b6b417f8901.png" /></p><p><b>Figure 14</b><br /><i>The stubbed IsEmpty property (C#)</i></p><br /><p><img src="images\3407222d-05f2-4511-a30f-5c8f569889f6.png" /></p><p><b>Figure 15</b><br /><i>The stubbed IsEmpty property (VB)</i></p><br /></li>
+          <li>Now run the test by right-clicking the test method and selecting <b>Run Tests </b>(or type Ctrl+R, T). You should observe the assertion that <b>IsEmpty</b> returns true fails, and therefore, the test fails too.</li>
+          <li>In TDD fashion, you will now do the simplest thing possible to get the test to pass, you will simply return true for the getter! <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>  This may seem a silly, non-sensical step; however, it is critical for a number of reasons. First, you are checking the test you just wrote. If your test does not pass, then you have created an error in your test – checking for false when you may have meant to check for true, for example. Secondly, this enforces the concept of doing the simplest thing possible to make the test pass.<br />As part of doing the simplest thing possible, you also changed this from an auto-Property, which is both read and write, to a read-only Property. You did this because it is the minimum functionality, and code, required to pass the test. The test does not specify having to write to the stack, so you are not going to allow your code to have that functionality. You are keeping the code lean, which improves legibility and decreases your exposure to bugs. (Less code == less chance for bugs!)</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>class SimpleStack{    public bool IsEmpty     {<b>        get { return true; }</b>    }}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>TDD Lab - Ex1 IsEmpty Returns True VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Class SimpleStack<b>    Public ReadOnly Property IsEmpty() As Boolean</b><b>        Get</b><b>            Return True</b><b>        End Get</b><b>    End Property</b>End Class</pre></td></tr></table></span></div><br /></li>
+          <li>The next step is to go back to the test; however, you do not need to move your hands off the keyboard and reach for the mouse.  Instead, use the new Quick Search features to navigate the code base in just a few key strokes. Hit <b>CTRL + ,</b> (that is Control and a comma) to trigger the Quick Search dialog, and then start typing the name of a File, Class, or Method.  Quick Search will filter the list of available locations in the code base for you. When you have filtered enough and located the spot in the code you want to go, use the <b>Up</b> and <b>Down</b> arrow keys to highlight the option, and hit the <b>Enter</b> key.<p><img src="images\f577ee7d-6b46-4443-bdc1-6f9ae0a3df8e.png" /></p><p><b>Figure 16</b><br /><i>Use Quick Search to navigate directly to a particular method</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Visual Studio will navigate to that location in the code base, place the cursor at the start of the Class or method name, and you are ready to go!</td></tr></table><p /></div><br /></li>
+          <li>Now that you are back in the test method, go ahead and re-run the test. This time it should pass!<p><img src="images\296b08b3-b8b8-4c3e-9dc3-4f009e62b50e.png" /></p><p><b>Figure 17</b><br /><i>The test passes!</i></p><br /></li>
+        </ol>
+        <a name="_Toc281931463" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Adding More Functionality Driven by Tests</b>
+        </p>
+        <p>At this point, you have a nearly empty shell of a <b>SimpleStack</b> implementation. There is only one working member: a read-only property. You can continue adding functionality by driving out the design with tests.  Now, look to add the ability to put items onto, and take items off the <b>SimpleStack</b>.</p>
+        <ol>
+          <li>Add a new test that specifies a new method on <b>SimpleStack</b>, the <b>Push</b> method, which takes in an integer:<p>(Code Snippet – <i>TDD Lab - Ex1 ThenShouldBeAbleToPushAnItemOntoTheStack C#</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod]</b><b>public void ThenShouldBeAbleToPushAnItemOntoTheStack()</b><b>{</b><b>    var theStack = new SimpleStack();</b><b>    theStack.Push(1);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>TDD Lab - Ex1 ThenShouldBeAbleToPushAnItemOntoTheStack VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestMethod()&gt; Public Sub ThenShouldBeAbleToPushAnItemOntoTheStack()</b><b>    Dim theStack As New SimpleStack</b><b>    theStack.Push(1)</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Under the <b>Push</b> method call, you should notice a Smart Tag. Trigger the Smart Tag by hitting CTRL + . and you will see it is offering to generate a method stub for the <b>Push</b> method. Hit <b>Enter</b> and let Visual Studio generate the stub.<p><img src="images\ca3648c8-7585-4f14-b5a1-05eef428fe13.png" /></p><p><b>Figure 18</b><br /><i>Use the Smart Tag to generate method stubs(C#)</i></p><br /><p><img src="images\e663979a-06c2-4791-8eaf-72b8c75afff6.png" /></p><p><b>Figure 19</b><br /><i>Use the Smart Tag to generate method stubs(VB)</i></p><br /></li>
+          <li>Now run the test and make sure it fails.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> It may seem odd to run the test at this point because you know the code that Visual Studio stubbed in for us should cause the test to fail. However, an important part of TDD is the cadence of Red – Green – Refactor, and a key step in that cadence is making sure the test actually does fail, as you expect.<br />Why is this key? Because there will inevitably be cases where a test passes by coincidence, despite what you know should happen. In those cases, you need to make sure your tests are specifying the correct behaviors and fix them if not.</td></tr></table><p /></div><br /></li>
+          <li>Your new goal is to get this test to pass. Being true to TDD, you will do the absolute simplest thing you can to get the test to go green: you will get rid of the <b>NotImplementedException</b> in the <b>Push</b> method!  At this point, you are not going to add any implementation in the method – the test you have only checks that you can successfully push something on to the stack.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>internal void Push(int p){}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Push(ByVal p As Integer)End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Navigate back to the test using Quick Search (CTRL + ,) by entering “TSBA” into the search box.</li>
+          <li>Notice that Quick Search will filter the results by matching the capital letters TSBA to the capital letters in the test name you are looking for – <b>ThenShouldBeAbleToPushAnItemOntoTheStack</b>. <p><img src="images\7701b3ad-4029-4d38-ada7-d372e0e7ffd0.png" /></p><p><b>Figure 20</b><br /><i>Use Quick Search to filter and navigate using just the capital letters of a class, method, or file name</i></p><br /></li>
+          <li>Re-run the test and it should pass. Green!  Unfortunately, the push method is not very useful at this point, so you will work on that next.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_1feac038-95bc-491a-9c1d-9df87ef2d397.html">Exercise 2: Refactor!</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

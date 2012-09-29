@@ -1,0 +1,157 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Adding a Database" />
+      <MSHelp:RLTitle Title="Exercise 1: Adding a Database" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Adding a Database</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Models and Data Access</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Adding a Database</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to add a database with the tables of the MusicStore application to the solution in order to consume its data. Once adding the database and generating the Model it will represent, you will make the proper adjustments in the StoreController class to provide the View template with the data taken from the database instead of hard-coded one.</p>
+        <br />
+        <a name="_Toc282594784" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a Database</b>
+        </p>
+        <p>In this task, you will add an already created database with the main tables of the MusicStore application to the solution.</p>
+        <ol>
+          <li>Start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex01-AddingADatabaseDBFirst\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>Add an <b>App_Data</b> folder to the project to hold the SQL Server Express database files. <b>App_Data</b> is a special folder in ASP.NET which already has the correct security access permissions for database access. To add the folder, right-click <b>MvcMusicStore</b> project, point to <b>Add</b> then to <b>Add ASP.NET Folder</b> and finally click <b>App_Data</b>.<p><img src="images\af29a080-250f-4cce-a695-af3fd5a33395.png" /></p><p><b>Figure 1</b><br /><i>Adding an App_Data folder</i></p><br /></li>
+          <li>Add <b>MvcMusicStore</b> database file. In this hands-On Lab, you will use an already created database called <b>MvcMusicStore.mdf</b>. To do that, right-click the new <b>App_Data</b> folder, point to <b>Add </b>and then click <b>Existing Item</b>. Browse to <b>\Source\Assets\</b> and select the <b>MvcMusicStore.mdf</b> file.<p><img src="images\2f41f0c5-1bf0-4b46-a109-b111e28df665.png" /></p><p><b>Figure 2</b><br /><i>Adding an Existing Item</i></p><br /><p><img src="images\f5f205d4-99bf-4271-814f-2da3ddd3ce99.png" /></p><p><b>Figure 3</b><br /><i>MvcMusicStore.mdf database file</i></p><br /></li>
+          <li>The database has been added to the project. Even when the database is located inside the solution, you can query and update it as it was hosted in a different database server.<p><img src="images\a4638e6a-eb3d-41c3-9c9e-780efd413baa.png" /></p><p><b>Figure 4</b><br /><i>MvcMusicStore database in Solution Explorer</i></p><br /></li>
+          <li>Verify the connection to the database. To do this, open the <b>Database Explorer</b> (CTRL+ALT+S), and then double-click the <b>MvcMusicStore.mdf</b>. The connection is established.<p><img src="images\5376a443-1418-4ec1-b85a-f64b63bdc3fd.png" /></p><p><b>Figure 5</b><br /><i>Connecting to MvcMusicStore.mdf</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you get<b> </b>an<b> </b>error like the following, please follow the steps below.<br /><img src="images\70592b63-da11-4ad3-94e6-b28d1afbfa43.png" /><br /><br />1. Open the Windows Services console. To do that, open the Run command from <b>Start</b> | <b>All Programs</b> | <b>Accessories</b> | <b>Run</b>, type <b>services.msc </b>and then click<b> OK.</b><br /><img src="images\e1a8a2d3-14f8-440b-b074-451ae71ccf7c.png" /><br /><b>Figure 7</b><br /><i>Running services.msc</i><br /><br />2. Right-click the <b>SQL Server (SQLEXPRESS)</b> service and select <b>Properties</b>.<br /><img src="images\e92bf0da-63f5-4544-8822-86ee9f23402e.png" /><br /><b>Figure 8</b><br /><i>SQL Server (SQLEXPRESS) service</i><br /><br />3. Open the <b>Log On</b> tab, select <b>Local System account</b> as the account to log on with and click <b>OK</b>. Accept the dialog by clicking <b>OK</b> again.<br /><img src="images\16e6a6f0-6ac8-431a-a7fb-2e6d70e4d82c.png" /><br /><b>Figure 9</b><br /><i>Changing the log on account</i><br /><br />4. Restart the SQL Server (SQLEXPRESS) service.<br /><img src="images\f91d5b70-a0c3-4e34-a59e-6d367828ee48.png" /><br /><b>Figure 10</b><br /><i>Restarting SQL Server (SQLEXPRESS) service</i><br /><br />5. Once the service is restarted, close the <b>Services</b> console and verify the connection to the database. To do this, select the <b>Database Explorer</b>, and then double-click the <b>MvcMusicStore.mdf</b>. The connection is established.<br /><img src="images\9b12a723-c91c-4406-81e5-06ccb81e2d8c.png" /><br /><b>Figure 11</b><br /><i>Connecting to MvcMusicStore.mdf</i></td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282594785" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating a Data Model</b>
+        </p>
+        <p>In this task, you will create a data model to interact with the database added in the previous task.</p>
+        <ol>
+          <li>Create a data model that will represent the added database. To do this, in Solution Explorer right-click the <b>Models</b> folder, point to <b>Add</b> and then click <b>New Item</b>. In the <b>Add New Item</b> dialog, select the <b>Data</b> template and then the <b>ADO.NET Entity Data Model</b> item. Change the data model name to <b>StoreDB.edmx</b> and click <b>Add</b>.<p><img src="images\4e77f16f-4e15-44e5-a993-99d181d05fac.png" /></p><p><b>Figure 6</b><br /><i>Adding the StoreDB ADO.NET Entity Data Model</i></p><br /></li>
+          <li>The <b>Entity Data Model Wizard</b> appears. This wizard will guide you through the creation of the model layer. Since the model should be created based on the existing database added in the last task, select <b>Generate from database</b> and click <b>Next</b>.<p><img src="images\ef9adae0-b3bd-4427-9333-f936712307b0.png" /></p><p><b>Figure 7</b><br /><i>Choosing the model content</i></p><br /></li>
+          <li>Since you are generating a model from a database, you will need to specify which database to use. The wizard detects the database in the App_Data folder, so it fills in the correct connection information for that database. The generated class will have the same name as the entity connection string, so change it to <b>MusicStoreEntities</b> and click <b>Next</b>.<p><img src="images\cadb2a3b-b497-4414-b5c8-f3b232aec431.png" /></p><p><b>Figure 8</b><br /><i>Choosing the data connection</i></p><br /></li>
+          <li>Choose the database objects to use. Since the Entity Model will use just the database’s tables, check the <b>Tables</b> checkbox and make sure that the <b>Include foreign key columns in the model</b> checkbox is also checked. Change the Model Namespace to <b>MvcMusicStoreModel</b> and click <b>Finish</b>.<p><img src="images\89e3943f-f6cb-4f1e-adab-b2e438cba49e.png" /></p><p><b>Figure 9</b><br /><i>Choosing the database objects</i></p><br /></li>
+          <li>An entity diagram for the database appears. A separate class that maps to each table within the database will be created. For example, the <b>Albums</b> table will be represented by an <b>Album</b> class with each column in the table mapping to a property on the class. This will allow you to query and work with objects that represent rows within the database. You will see other classes that you might not use in the Hands-on Lab but belong to the Music Store application.<p><img src="images\e53af76d-9d87-44a3-9fde-d5c714dcc484.png" /></p><p><b>Figure 10</b><br /><i>Entity diagram</i></p><br /></li>
+        </ol>
+        <a name="_Toc282594786" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Building the Application</b>
+        </p>
+        <p>In this task, you will check that although you have removed the <b>Album</b> and <b>Genre</b> model classes, the project gets built successfully, by using the classes in the data model.</p>
+        <ol>
+          <li>Delete the placeholder <b>Album </b>and <b>Genre</b> classes. To do this, in the <b>Solution Explorer</b>, expand the <b>Models </b>folder, right-click <b>Album</b> and select <b>Delete</b>. Repeat this procedure with the <b>Genre </b>class.<p><img src="images\d7a6a3a3-8b66-4b6f-8b2c-e62596ce6820.png" /></p><p><b>Figure 11</b><br /><i>Deleting placeholder classes</i></p><br /></li>
+          <li>Build the project by selecting the <b>Debug</b> menu item and then <b>Build MvcMusicStore</b>.<p><img src="images\66360b95-4653-430f-90e1-00aee6bebc83.png" /></p><p><b>Figure 12</b><br /><i>Building the project</i></p><br /></li>
+          <li>The project builds successfully. Why does still work? It works because the database tables have fields which include the properties you were using in the earlier <b>Album</b> and <b>Genre</b> classes manually removed. Data model classes are a drop-in replacement.<p><img src="images\3e7028e3-625a-4134-b38c-b0f193e9300b.png" /></p><p><b>Figure 13</b><br /><i>Builds succeeded</i></p><br /></li>
+          <li>While the designer displays the entities in a diagram format, they are really C# classes. Expand the <b>StoreDB.edmx</b> node in the Solution Explorer, and you will see a file called <b>StoreDB.Designer.cs.</b><p><img src="images\54c9366a-6472-4cc3-b9ce-678dc3f0ca1d.png" /></p><p><b>Figure 14</b><br /><i>StoreDB.Designer.cs file</i></p><br /></li>
+        </ol>
+        <a name="_Toc282594787" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Querying the Database</b>
+        </p>
+        <p>In this task, you will update the StoreController class so that instead of using hard-coded data, it queries the database to retrieve all its information.</p>
+        <ol>
+          <li>Open <b>Controllers\StoreController.cs</b> and add the following field to the class to hold an instance of the <b>MusicStoreEntities</b> class, named <b>storeDB</b>:<p><i>(Code Snippet – ASP.NET MVC Models and Data Access – Ex1 storeDB – CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public class StoreController : Controller{<b>    MusicStoreEntities storeDB = new MusicStoreEntities();</b></pre></td></tr></table></span></div><br /></li>
+          <li>The <b>MusicStoreEntities</b> class exposes a collection property for each table in the database. Update <b>StoreController</b>’s <b>Index</b> action method to retrieve all <b>Genre</b> names in the database. This was done previously by hard-coding string data. Now you can instead write a LINQ query expression like below which retrieves the <b>Name</b> property of each Genre within the database:<p><i>(Code Snippet – ASP.NET MVC Models and Data Access – Ex1 Store Index – CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>//// GET: /Store/public ActionResult Index(){<b>    // Retrieve the list of genres</b><b>    var genres = from genre in storeDB.Genres</b><b>                 select genre.Name;</b>    // Create your view model}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You are using a capability of .NET called <b>LINQ</b> (language-integrated query) to write strongly-typed query expressions against these collections – which will execute code against the database and return objects that you can program against.<br />For more information about LINQ, please visit the <a href="http://msdn.microsoft.com/en-us/netframework/aa904594.aspx">msdn site</a>.</td></tr></table><p /></div><br /></li>
+          <li>Transform the collection of genres to a list. To do this, replace the following code:<p><i>(Code Snippet – ASP.NET MVC Models and Data Access – Ex1 Store Index ToList – CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public ActionResult Index(){    // Retrieve the list of genres    var genres = from genre in storeDB.Genres                 select genre.Name;    // Create your view model    var viewModel = new StoreIndexViewModel    {<b>        Genres = genres.ToList(),</b><b>        NumberOfGenres = genres.Count()</b>    };    return View(viewModel);}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282594788" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <p>In this task, you will check that the Store Index page will now display the Genres stored in the database instead of the hard-coded ones. There is no need of changing the View template because the <b>StoreController</b> is returning the same <b>StoreIndexViewModel</b> as before, although this time the data will come from the database.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store</b> to verify that the list of <b>Genres</b> is no longer the hard-coded list, else the ones taken from the database.<p><img src="images\1c397077-7501-4d14-b48b-9870d8addf70.png" /></p><p><b>Figure 15</b><br /><i>Browsing Genres from the database</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_42b6fae0-8a74-48a3-9bca-7e2ed94c1912.html">Exercise 2: Adding a Database Using Code First</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Transforming a Web.Config File for Deployment" />
+      <MSHelp:RLTitle Title="Exercise 2: Transforming a Web.Config File for Deployment" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Transforming a Web.Config File for Deployment</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Development in Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Transforming a Web.Config File for Deployment</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Generally, a web application goes through a chain of environments before it makes it into a Production environment. Some of these environments are Development (the developer’s local machine), Quality Assurance (QA), and User Acceptance Testing (UAT) / Staging / Pre-Production. As applications transition through these environments, various settings in the configuration files must change. In addition to database connection strings, many Enterprise scale applications also rely on configuration settings for logging destinations, file drop shares and addresses for service endpoints.</p>
+        <p>Visual Studio 2010 adds a new Web.config transformation model that you can use to automate changes to the Web.config file during the deployment of the application when you use MSDeploy to promote your code.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To complete the tasks in this exercise, you must have completed all the tasks in Exercise 1, or use the solution from the <b><i>%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex02-TransformingWebConfig\begin\C#\HTMLLab</i></b> folder.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc282089421" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Staging Configuration in Visual Studio 2010</b>
+        </p>
+        <ol>
+          <li>Open the <b>HTMLLab</b> Web Application completed at the end of the previous exercise.</li>
+          <li>Select <b>Build</b> | <b>Configuration Manager</b> from the menu. The <b>Configuration Manager</b> dialog appears:<p><img src="images\05c38fbd-3570-49e0-8ca0-311423fe62c7.png" /></p><p><b>Figure 13</b><br /><i>Configuration Manager</i></p><br /></li>
+          <li>Select <b>&lt;New…&gt;</b> from the <b>Active solution configuration</b> dropdown list to bring up the <b>New Solution Configuration</b> dialog.<p><img src="images\ee2f9873-055e-40cd-8a1a-774fabace28d.png" /></p><p><b>Figure 14</b><br /><i>New Solution Configuration</i></p><br /></li>
+          <li>In the <b>Name</b> field type “Staging” and from the <b>Copy setting from</b> dropdown list select <b>Release</b>. Leave the <b>Create new project configurations</b> checkbox checked. Your dialog should look similar to the figure below:<p><img src="images\e18f411b-9145-467d-aab9-d47430fb616a.png" /></p><p><b>Figure 15</b><br /><i>New Solution Configuration for the new Staging configuration</i></p><br /></li>
+          <li>Click the <b>OK</b> button. Click the <b>Close</b> button to close the <b>Configuration Manager</b>.</li>
+          <li>In the <b>Solution Explorer</b>, notice that there is an expandable node next to the Web.config file. Click the node to expand the tree view. Notice that there are two files under Web.config that follow a <i>Web.&lt;configuration&gt;.config</i> naming convention.<p><img src="images\27b2c0b9-8c43-4b2a-9281-173f4f9b068e.png" /></p><p><b>Figure 16</b><br /><i>Debug and Release configuration files</i></p><br /><p>The changes between the environments are stored in these delta files. By default, all web applications start with a Debug and Release configuration file. Visual Studio can add a new transformation for new configurations that developers create.</p></li>
+          <li>Add a new Web.config transformation. To do this, right-click on the Web.config file and from the menu select <b>Add Config Transforms</b>. Notice that new Staging configuration file is automatically added:<p><img src="images\952cc0cd-73df-4f05-97f0-18e41497a630.png" /></p><p><b>Figure 17</b><br /><i>Staging configuration added</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If from the right-click menu the <b>Add Config Transforms</b> is disabled, do a full rebuild of the application.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282089422" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding Code to Populate Text Value of EnvName from a Value in the Web.config</b>
+        </p>
+        <p>Before we start this task, you will need to add a label to the Default.aspx page to contain an environment variable. Here’s what the label should look like when you are done.</p>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>ASP.NET</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>Current Environment: &lt;asp:Label ID="EnvName" Text="Environment Name" runat="server" /&gt;</b></pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <p>
+          <img src="images\f74b3a16-0198-46c7-ae05-8b2702b5f959.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Label in Default.aspx</i>
+        </p>
+        <br />
+        <p>In this task, you will add functionality to take the environment name from the Web.config file and populate the text attribute of the label.</p>
+        <ol>
+          <li>In the <b>HTMLLab</b> Web Application, open the <b>Web.config</b> file.</li>
+          <li>Add the <b>&lt;appSettings &gt;</b> XML element with the following value:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;configuration&gt;    ...<b>    &lt;appSettings&gt;</b><b>        &lt;add key="EnvironmentName" value="Development" /&gt;</b><b>    &lt;/appSettings&gt;</b>    ...&lt;/configuration&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>In the <b>Solution Explorer</b>, right-click Default.aspx and select <b>View Code</b> from the menu.</li>
+          <li>Locate the <b>Page_Load</b> method. Add the following code to get the value for key <b>EnvironmentName</b> and assign it to the <b>Text</b> property of the <b>EnvName</b> Label:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Page_Load(object sender, EventArgs e){    Products.DataSource = Repository.GetProductsList();    Products.DataBind();<b>    EnvName.Text = ConfigurationManager.AppSettings["EnvironmentName"];</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Run the application and verify that the word <b>Development</b> appears as the text in the <b>EnvName</b> Label.<p><img src="images\ee550010-e642-4959-8b3f-516c9a4696b9.png" /></p><p><b>Figure 19</b><br /><i>Staging configuration added</i></p><br /></li>
+          <li>Close the web browser.</li>
+        </ol>
+        <a name="_Toc282089423" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a Logging Database Connection String to the Web.config File</b>
+        </p>
+        <p>In this task, you will add a connection string to logging application messages to the database.</p>
+        <ol>
+          <li>In the <b>HTMLLab</b> Web Application, open the Web.config file.</li>
+          <li>Add the <b>connectionStrings</b> XML element with the following value added:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;configuration&gt;    ...<b>    &lt;connectionStrings&gt;</b><b>        &lt;add name="LoggingConnectionString" connectionString="server=(local);database=Logger;Integrated Security=SSPI;" providerName="System.Data.SqlClient"/&gt;</b><b>    &lt;/connectionStrings&gt;</b>    ...&lt;/configuration&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Save Web.config file changes.</li>
+        </ol>
+        <a name="_Toc282089424" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Writing a Transform to Change the Environment and Logging Connection Strings in the Staging Web.config</b>
+        </p>
+        <p>In this task, you will create a transformation to update Web.config sections when the application is deployed with MSDeploy. In the Web.config file you will update the value of the Environment to “Staging” and change the server name value in the connection string to reflect QA server.</p>
+        <ol>
+          <li>To display the configuration specific transformation files, expand the Web.config node and open the <b>Web.Staging.config</b> file.</li>
+          <li>The transform file is an XML file that you use to specify the actions (add, delete, update) which Visual Studio should perform on nodes, sections, and attributes. The file contains a reference to the XML Document Transform namespace (http://schemas.microsoft.com/XML-Document-Transform). There are two attributes in this schema: <b>Transform</b> and <b>Locator</b>. <b>Transform</b> will make changes to nodes and attributes, while the <b>Locator</b> provides methods to find the specific transformation node and attributes in the Web.config.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Check MSDN for the complete reference for the <b>Transform</b> and <b>Locator</b> attributes.</td></tr></table><p /></div><br /></li>
+          <li>The Staging configuration transform file will already have a node indicating changes to the system.web section of the Web.config file, specifically removing the debug attribute.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;?xml version="1.0"?&gt;&lt;configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transfrom"&gt;...   &lt;system.web&gt;      &lt;compilation xdt:Transform="RemoveAttributes(debug)" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Below the <b>system.web</b> node, add the following code.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;appSettings&gt;</b><b>   &lt;add key="EnvironmentName" value="Staging" xdt:Transform="SetAttributes(value)" xdt:Locator="Match(key)" /&gt;</b><b>&lt;/appSettings&gt;</b></pre></td></tr></table></span></div><br /><p>When deployed, the transform above will instruct MSBuild process to locate the <b>EnvironmentName</b> node in the <b>appSettings</b> XML node and replace the value attribute with the one defined here: “Staging.”</p></li>
+          <li>Transform <b>connectionString</b> XML in a similar matter by adding the following code:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;connectionStrings&gt;</b><b>   &lt;add name="LoggingConnectionString" connectionString="Server=QADatabaseServer;Database=Logging;Integrated Security=SSPI" providerName="System.Data.SqlClient” xdt:Transform="Replace" xdt:Locator="Match(name)" /&gt;</b><b>&lt;/connectionStrings&gt;</b></pre></td></tr></table></span></div><br /><p>In this code, <b>connectionString</b> is transformed from using (local) server to the QADatabaseServer for logging.</p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><br />xdt:Transform=”Replace” replaces the first matched node.<br />xdt:Transform=”SetAttribute(attributeName)” creates or changes values of the existing attributes.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282089425" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Generating a Transformed Web.config File from the Command Line</b>
+        </p>
+        <p>In this task, you will use the MSBuild command line tool to create a build and transform the Web.config file based on the Staging configuration as part of the build process.</p>
+        <ol>
+          <li>Navigate to <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Visual Studio Tools</b>. To open the <b>Visual Studio Command Prompt</b>, click on <b>Visual Studio Command Prompt (2010)</b>.</li>
+          <li>Change directory to the HTMLLab project directory. For example, if you are still using the begin solution for Exercise 1, type:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>cd %TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab</b></pre></td></tr></table></span></div><br /></li>
+          <li>At the command prompt, invoke MSBuild by typing the following command and hitting <b>ENTER</b>:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>MSBuild HTMLLab.csproj /t:TransformWebConfig /p:Configuration=Staging</b></pre></td></tr></table></span></div><br /><p>MSBuild builds the application and transforms the Web.config file according to the Staging transform rules. The output files placed in the HTMLLab\obj\Staging\TransformWebConfig\transformed folder.</p><p><img src="images\d5f99e7d-83a7-44b6-be6b-18bd676f8cef.png" /></p><p><b>Figure 20</b><br /><i>MSBuild output</i></p><br /></li>
+          <li>In Visual Studio, select the <b>File</b> | <b>Open</b> | <b>File</b> menu command and navigate to the project directory and then to obj\Staging\TransformWebConfig\transformed folder. Select the <b>Web.config</b> file and click <b>Open</b>.<p>Notice that in the Web.config file the value for key <b>EnvironmentName</b> has changed to <b>Staging</b> and the connection string has been updated from <b>(local)</b> to <b>QADatabaseServer</b>.</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;appSettings&gt;   &lt;add key="EnvironmentName" value="Staging" /&gt;&lt;/appSettings&gt;&lt;connectionStrings&gt;   &lt;add name="LoggingConnectionString"       connectionString="Server=QADatabaseServer;Database=Logger;Integrated Security=SSPI;" providerName="System.Data.SqlClient"/&gt;&lt;/connectionStrings&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Close the Web.config file.</li>
+        </ol>
+        <a name="_Toc282089426" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Generating a Transformed Web.config File from Visual Studio</b>
+        </p>
+        <p>In this task, you will use Visual Studio to create a build to transform the Web.config file as part of that build.</p>
+        <ol>
+          <li>In the Solution Explorer, right-click the <b>HTMLLab</b> project and select <b>Properties</b>.</li>
+          <li>On the project properties page, click the <b>Package/Publish Web</b> tab.</li>
+          <li>At the top of the properties page, make sure that the active configuration is set to <b>Staging</b>:<p><img src="images\6ed66359-4e08-4de5-8f02-d86bca2c8eaf.png" /></p><p><b>Figure 21</b><br /><i>Verify that the Staging configuration selected.</i></p><br /></li>
+          <li>At the bottom of the properties page, uncheck the <b>Create deployment package as a zip file</b> checkbox.<p><img src="images\ab4551b5-ef83-4ca2-bf5b-f8b6296cc16f.png" /></p><p><b>Figure 22</b><br /><i>Uncheck the deploy as a ZIP file box</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If <b>Create deployment package as a zip file</b> checkbox is left checked, the same build will occur but in addition, Visual Studio will create a ZIP file.</td></tr></table><p /></div><br /></li>
+          <li>Note the package location.<p><img src="images\cba17328-854d-44c2-9fd3-f208a5fc21f0.png" /></p><p><b>Figure 23</b><br /><i>Package location</i></p><br /><p>This is the directory where Visual Studio will create the package that contains the deployable image for the Web application, including the modified Web.config file.</p></li>
+          <li>Save all the changes by pressing CTRL+SHIFT+S.</li>
+          <li>Using Windows Explorer, navigate to the HTMLLab\obj\Staging\TransformWebConfig\transformed folder. Delete the Web.config file located there, if exists.</li>
+          <li>In Visual Studio, select the <b>Project</b> menu and click <b>Build Deployment Package</b>. Visual Studio will re-build and create a deployment package for the web application.<p><img src="images\cd20f31a-c383-4680-ae4d-067a2f75affb.png" /></p><p><b>Figure 24</b><br /><i>Build Deployment Package</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_45cef7bb-17bd-4fef-9a8d-01663c0f3381.html">Exercise 2: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

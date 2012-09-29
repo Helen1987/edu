@@ -1,0 +1,122 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction To F#</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>F# is a new functional programming language from Microsoft. While it is primarily a functional programming language, it is known as a multi-paradigm language because it also supports object-oriented programming. F#’s tight integration with the entire .NET system of libraries and development environment enables developers to bring the power of Functional Programming to the .NET platform.</p>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Use F# Types</li>
+          <li>Leverage the <b>let</b> keyword to bind values to identifiers</li>
+          <li>Use functions in F#</li>
+          <li>Use lists in F#</li>
+          <li>Leverage Pattern Matching and Recursion</li>
+          <li>Create your own types and consume discriminated unions</li>
+        </ul>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps.</p>
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br />For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. The <b>Dependencies.dep</b> file launches the Visual Studio installer file that installs the code snippets.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised of the following exercises:</p>
+        <ul>
+          <li>Examine the basic F# types including tuples and functions</li>
+          <li>Discover how the <b>let</b> keyword allows values to be bound to identifiers</li>
+          <li>See that in F# functions are the same as any other value and are handled the same way. Demonstrate how this allows advanced language features such as partially-applied functions (also known as “curried” functions).</li>
+          <li>Discover how F# lists are built and explore the power that can be achieved by F#’s “Head + Tail” approach</li>
+          <li>Demonstrate the powerful pattern matching and recursion capabilities of F#</li>
+          <li>Demonstrate the usefulness of discriminated unions in F#</li>
+        </ul>
+        <p>Estimated time to complete this lab: <b>60 minutes</b>.</p>
+        <h1 class="heading">Next Steps</h1>
+        <p>
+          <a href="docSet_6da406f1-bc5f-4f8f-8efd-e64c6c3c2c14.html">Exercise 1: Types in F#</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

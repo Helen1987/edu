@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorkflow", "HelloWorkflow\HelloWorkflow.vbproj", "{C467AB56-026B-4A11-A5F3-FC8C6B101AD0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorkflow.Tests", "HelloWorkflow.Tests\HelloWorkflow.Tests.vbproj", "{7398BD49-152C-4748-A88F-4A442216B952}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A863108E-50C9-4DF7-8130-BA572B61B065}"
+	ProjectSection(SolutionItems) = preProject
+		HelloWorkflow.vsmdi = HelloWorkflow.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = HelloWorkflow.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C467AB56-026B-4A11-A5F3-FC8C6B101AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C467AB56-026B-4A11-A5F3-FC8C6B101AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C467AB56-026B-4A11-A5F3-FC8C6B101AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C467AB56-026B-4A11-A5F3-FC8C6B101AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7398BD49-152C-4748-A88F-4A442216B952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7398BD49-152C-4748-A88F-4A442216B952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7398BD49-152C-4748-A88F-4A442216B952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7398BD49-152C-4748-A88F-4A442216B952}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

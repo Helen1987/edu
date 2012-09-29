@@ -1,0 +1,103 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Introduction to Code Analysis" />
+      <MSHelp:RLTitle Title="Exercise 1: Introduction to Code Analysis" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Introduction to Code Analysis</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using Code Analysis with Visual Studio 2010 to Improve Code Quality</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Introduction to Code Analysis</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn about new Code Analysis features in Visual Studio 2010 by configuring the rule set used, performing code analysis on a sample project, and addressing some of the warnings that are raised.</p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Visual Studio from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>In Source Control Explorer (<b>View | Other Windows | Source Control Explorer</b>), navigate to <b>Tailspin Toys | Development | Iteration 2</b> and double-click on the <b>TailspinToys.sln</b> file to open the Tailspin Toys solution.</li>
+          <li>Rebuild the solution (<b>Build | Rebuild Solution</b> from the main menu). This step may take a few minutes to complete.</li>
+          <li>In Solution Explorer, left-click on the <b>Tailspin.Model </b>project node and select <b>Analyze | Configure Code Analysis for Tailspin.Model </b>from the main menu, which will load the project properties and go to the <b>Code Analysis</b> tab. <p><img src="images\50ec9267-b1a1-4588-98d4-da89cbcaf5c5.png" /></p><p><b>Figure 1</b><br /><i>Configuring Code Analysis for a project</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The Code Analysis tab is new to Visual Studio 2010, and it allows you to choose from sets of rules rather than picking and choosing from one flat list of rules, as was the case in previous versions.</td></tr></table><p /></div></li>
+          <li>Select the “<b>Microsoft All Rules</b>” option for the <b>Rule Set</b> to select the comprehensive set of rules. <p><img src="images\1f23b69e-d6fd-443b-a922-655de96f777a.png" /></p><p><b>Figure 2</b><br /><i>Configuring Code Analysis rule set to use</i></p></li>
+          <li>In Solution Explorer, right-click on the <b>Tailspin.Model</b> project node and select <b>Run Code Analysis</b> from the context menu that appears.<p><img src="images\0a8d1bea-7ef9-40cf-b487-7b7d24a328d8.png" /></p><p><b>Figure 3</b><br /><i>Location of contextual Run Code Analysis command</i></p></li>
+          <li>The Code Analysis feature runs through static code analysis rules as defined by Microsoft and displays the results as warnings. Scroll through the list of warnings and read a few of them.<p><img src="images\5347acb7-d823-414a-a9d8-d743e77f8e1d.png" /></p><p><b>Figure 4</b><br /><i>Code Analysis warnings</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Depending on the version of Tailspin Toys that you are running, you may see more or less warnings than depicted in screenshots.<br />Code Analysis rules can also be configured to show up as errors if desired.</td></tr></table><p /></div></li>
+          <li>The warnings produced by Code Analysis provide a wealth of information including a unique category ID (such as CA1062 in screenshot above), a group name (Microsoft.Design in screenshot above), and a brief description of the problem or suggested fix, and the file location of the offending code.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Pressing F1 while selecting one of the warnings will take you more descriptive help online. This may not be available to you within the virtual environment.</td></tr></table><p /></div></li>
+          <li>Find a warning that looks like it will be easy to fix quickly, such as the warning for <b>CA1062</b> in the screenshot above, and double-click on it to load the location in code.<p><img src="images\fcc96a22-bd56-4ef4-81b5-8d5f5ea98c4b.png" /></p><p><b>Figure 5</b><br /><i>Code Analysis errors are linked to source code</i></p></li>
+          <li>Perform the code fix necessary to resolve the warning. For CA1062, we are told that we should validate parameter ‘item’ before using it. One potential fix can be seen in the following screenshot.<p><img src="images\dc9d5959-95af-45be-9eeb-6bbbca704bf1.png" /></p><p><b>Figure 6</b><br /><i>Validating input parameter before use resolves CA1062</i></p></li>
+          <li>Select <b>Analyze | Run Code Analysis on Tailspin.Model </b>from the main menu and verify that the warning disappears. There should be one less warning than before.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_4265fb8b-7436-4c96-8f06-47a2fdfa47f3.html">Exercise 2: Suppressing Code Analysis Warnings</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

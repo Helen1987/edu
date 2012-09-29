@@ -1,0 +1,351 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 9: Custom Activities and Designers" />
+      <MSHelp:RLTitle Title="Exercise 9: Custom Activities and Designers" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 9: Custom Activities and Designers</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 9: Custom Activities and Designers</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>As you have already seen, Windows Workflow allows you to build custom activities in code.  Depending on your need, there are several base classes you can use.</p>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Base Class</p>
+            </th>
+            <th>
+              <p>Used For</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Activity</p>
+            </td>
+            <td>
+              <p>Activities that are composed of other activities</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>CodeActivity</p>
+            </td>
+            <td>
+              <p>Activities that want to control execution</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>AsyncCodeActivity</p>
+            </td>
+            <td>
+              <p>Activities that want to do async work during execution</p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>NativeActivity</p>
+            </td>
+            <td>
+              <p>Activities that contain other activities or need advanced services from the workflow runtime</p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc244412419" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935134" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 8. Alternatively, you can follow the following steps to begin with Exercise 9.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 9 located under \<b>Source\Ex9-ActivityDesigner\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc243388977" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412420" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935135" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Add Activity Designer Library</b>
+        </p>
+        <ol>
+          <li>Right click on the <b>HelloWorkflow</b> solution file and select <b>Add / New Project…</b></li>
+          <li>Select the <b>Workflow</b> templates and choose<b> Activity Designer Library</b>. Name the project <b>HelloWorkflow.Activities</b>.<p><img src="images\578c1dd6-8b8d-45c8-98ce-349c3db9ad95.png" /></p><p><b>Figure 56</b><br /><i>Add a new Activity Designer Library project named HelloWorkflow.Activities (C#)</i></p><br /><p><img src="images\f7696e37-af9c-470c-85d6-f4887a583522.png" /></p><p><b>Figure 57</b><br /><i>Add a new Activity Designer Library project named HelloWorkflow.Activities (VB)</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\d89d5ae6-6c5a-45d9-b1ce-49ea007b533a.png" /><b>Why add an Activity Designer Library instead of an Activity Library?</b><br />If you intend to create designers using the Activity Designer Library project template is a better choice because it includes the necessary references to the WPF libraries in addition to the <b>System.Activities</b> and related libraries.</td></tr></table><p /></div><br /></li>
+          <li>Delete <b>ActivityDesigner1.xaml</b>, you will not need it for this lab.</li>
+        </ol>
+        <a name="_Toc281935136" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Create Composite Activity in XAML</b>
+        </p>
+        <p>Activities can be created by composing other activities.  In this task, you will create a XAML activity that consists of other activities.</p>
+        <ol>
+          <li>Right click on the <b>HelloWorkflow.Activities</b> project and select Add/New Item… and add a new activity using the following values<table style=""><tr valign="top"><th><p>Item</p></th><th><p>Value</p></th></tr><tr valign="top"><td><p>Installed Templates</p></td><td><p><b>Workflow</b></p></td></tr><tr valign="top"><td><p>Template</p></td><td><p><b>Activity</b></p></td></tr><tr valign="top"><td><p>Name</p></td><td><p><b>WriteTwoLines.xaml</b></p></td></tr></table></li>
+          <br />
+          <p>
+            <img src="images\f0437c04-c00f-4b42-87a7-ba5d8f020954.png" />
+          </p>
+          <p>
+            <b>Figure 58</b>
+            <br />
+            <i>Add a the WriteTwoLines activity (C#)</i>
+          </p>
+          <br />
+          <p>
+            <img src="images\0d00f88e-864f-4e61-9645-37679d0753cc.png" />
+          </p>
+          <p>
+            <b>Figure 59</b>
+            <br />
+            <i>Add a the WriteTwoLines activity (VB)</i>
+          </p>
+          <br />
+          <li><b>WriteTwoLines.xaml</b> will be opened in the designer.  To complete it do the following<ol><li>From the Control Flow toolbox category drop a <b>Sequence</b> activity</li><li>Add two In arguments of type string named <b>Line1</b> and <b>Line2</b></li><li>From the primitives group, drop two <b>WriteLine</b> activities</li><li>Set the first activity Text to <b>Line1</b> and the second to <b>Line2</b></li></ol></li>
+          <p>
+            <img src="images\ff125955-af6e-45c9-a2fc-5997efb1d707.png" />
+          </p>
+          <p>
+            <b>Figure 60</b>
+            <br />
+            <i>The completed WriteTwoLines activity</i>
+          </p>
+          <br />
+        </ol>
+        <a name="_Toc281935137" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Add Existing Activities</b>
+        </p>
+        <p>In this task you will add some pre-built code activities</p>
+        <ol>
+          <li>Add the existing <b>PrePostSequence</b> and <b>DiagnosticTrace</b> files. To do this, in Solution Explorer right-click the <b>HelloWorkflow.Activities</b> project, and select <b>Add / Existing Item..</b>. browse to <b>Source\Assets</b> folder of this lab (choosing the folder that matches the language of your preference) and select both the <b>PrePostSequence </b>and<b> DiagnosticTrace </b>files.</li>
+        </ol>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\b35ff04c-fbbb-4d33-8191-2df27162d655.png" />
+                <b>  What do these activities do?</b>
+                <br />The <b>PrePostSequence</b> activity is like a Sequence activity but also includes a Pre activity that will execute before the body and a Post activity that will execute after the body.<br />The <b>DiagnosticTrace</b> activity outputs a message to <b>System.Diagnostics.Trace</b> as well as a <b>CustomTracking</b> record</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <ol>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution</li>
+          <li>The <b>HelloWorkflow</b> project will need a reference to the <b>HelloWorkflow.Activities</b> project.  To add the reference, right click on the <b>HelloWorkflow</b> project and select Add Reference… in the projects tab select <b>HelloWorkflow.Activities</b> and click <b>OK</b> to add the reference. Then repeat and add another reference to the WPF library <b>PresentationFramework</b></li>
+          <li>Open <b>HelloWorkflow /</b><b>SayHello.xaml</b> in the designer and notice that the toolbox now contains the new activities. </li>
+        </ol>
+        <a name="_Toc244412422" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935138" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Observe Custom Activities without Designers</b>
+        </p>
+        <p>In this task you will see how custom activities behave without a designer.  Some can be used without a designer while others may benefit from one or may require one for intended functionality.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>You won't be saving <b>SayHello.xaml</b> in this task – we will close it without saving at the end.  The point is just to observe the behavior.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <ol>
+          <li>Drop the <b>WriteTwoLines</b> activity on the design surface after the last activity.  Note that you can initialize the arguments for Line1 and Line2 using the property grid.<p><img src="images\7bd0c4b6-5d6e-478e-b285-bc2b0d0868f3.png" /></p><p><b>Figure 61</b><br /><i>Initializing the arguments for WriteTwoLines using the property grid.</i></p><br /></li>
+        </ol>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\ac14cf74-c556-4b90-b470-cca58fe7a0c7.png" />
+                <b>  Do I have to create an activity designer?</b>
+                <br />No, you don’t.  For many activities, the property grid will be sufficient allowing developers to initialize arguments to your activity. However, adding a designer can improve the experience of using your custom activity making it easier to understand and use.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Drop the <b>DiagnosticTrace</b> activity on to the design surface after the last Assign activity.  This activity is a little more complex with an enumerated value but you can still set the properties using the property grid.   You will notice that this activity also provides some validation of the required argument "Text". This type of activity could benefit from a designer.<p><img src="images\8fa93003-c206-41dd-b4a8-31e1e0e33102.png" /></p><p><b>Figure 62</b><br /><i>The property grid for the DiagnosticTrace activity</i></p></li>
+          <li>Drop the <b>PrePostSequence</b> activity on to the surface after the last <b>Assign</b> activity. The activity will work but there is no way to set the body Activities it will execute. You need to create a custom designer to make this activity fully functional.<br /><p><img src="images\0c5bf65c-4942-4081-9673-ad8609520a38.png" /></p><p><b>Figure 63</b><br /><i>The PrePostSequence activity without a custom designer</i></p><br /></li>
+          <li>Close <b>SayHello.xaml </b>without saving it.  </li>
+        </ol>
+        <a name="_Toc243388978" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412423" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935139" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Explore Activity Designers</b>
+        </p>
+        <p>In this task, you will add existing custom activity designers for the <b>DiagnosticTrace</b> and <b>PrePostSequence</b> activity to your project and explore how they work.</p>
+        <ol>
+          <li>Add the existing <b>DiagnosticTraceDesigner.xaml</b> and <b>PrePostSequenceDesigner.xaml</b> files. To do this, <ol><li>Right click on the <b>HelloWorkflow.Activities</b> project and select <b>Add/New Folder</b></li><li>Name the folder <b>Designers</b></li><li>Right-click the <b>Designers </b>folder, and select <b>Add / Existing Item..</b>. browse to <b>Source\Assets</b> folder of this lab (choosing the folder that matches the language of your preference) and select both XAML files.  Be sure to select the file type <b>XAML Files</b> in the dialog as shown.<p><img src="images\ec43bc29-dd68-40c9-9e0d-26ba6651dc16.png" /></p><p>Figure 64</p><p class="label"><i>Add the existing XAML Designer files</i></p></li><br /></ol></li>
+          <li>The <b>HelloWorld.Activities</b> project Designers folder should have the two designers added.<p><img src="images\1ac404d3-7b1d-42e5-8168-03b85ef1d4b0.png" /></p><p><b>Figure 65</b><br /><i>The HelloWorkflow.Activities folder with two activity designers</i></p></li>
+          <li>Next let’s take a tour of these designers and learn about how they work.  Open <b>DiagnosticTraceDesigner.xaml</b></li>
+          <li>Notice the <b>DataTemplates</b> – there is one for an <b>Expanded</b> view and one for a <b>Collapsed</b> view.  The templates contain the body of your controls<p><img src="images\a535689d-db0e-4300-8f56-52b04e91aff4.png" /></p><p><b>Figure 66</b><br /><i>The DataTemplates contain the body of the controls for the designer</i></p><br /></li>
+          <li>There is a lot to see in this designer but let’s focus on two things.  The first is the <b>ExpressionTextBox</b>.  This control allows the user to edit an InArgument&lt;T&gt; value with design time support for Intellisense (when used within Visual Studio) and compile checking of the expression.  The DiagnosticTrace activity uses an InArgument&lt;string&gt; type for the Text property.  Below you can see the Collapsed data template using the ExpressionTextBox<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;DataTemplate x:Key="Collapsed"&gt;    &lt;StackPanel Orientation="Horizontal"&gt;        &lt;!--Show only the text when collapsed--&gt;        &lt;TextBlock             VerticalAlignment="Center"             Margin="5"            &gt;            Text        &lt;/TextBlock&gt;<b>        &lt;sapv:ExpressionTextBox </b><b>            HintText="Text"</b><b>            Expression="{Binding Path=ModelItem.Text, Mode=TwoWay, </b><b>                Converter={StaticResource ArgumentToExpressionConverter}, </b><b>                ConverterParameter=In }"</b><b>            ExpressionType="s:String"</b><b>            OwnerActivity="{Binding Path=ModelItem}"</b><b>            Width="300"</b><b>            Margin="0,5"</b><b>            MaxLines="1" </b><b>        /&gt;</b>    &lt;/StackPanel&gt;&lt;/DataTemplate&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>The next thing to note is found in the <b>Expanded</b> data template.  It contains a ComboBox that will display the list of trace values.  The DiagnosticTrace activity uses a CLR property named “Level” for this trace value.  To bind to a CLR property you need to use <b>ModelItem.</b>(property name) and the <b>ModelToObjectValueConverter</b> as you see below.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;ComboBox     ItemsSource="{Binding Source={StaticResource TraceLevelValues}}"    SelectedValue="{Binding Path=ModelItem.Level, Mode=TwoWay, Converter={StaticResource ModelToObjectValueConverter}}"    VerticalAlignment="Center"     Grid.Row="2"    Grid.Column="1"    Margin="0,5"&gt;&lt;/ComboBox&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>The <b>PrePostSequence</b> designer is more complex.  Because it is a composite activity, it supports dropping other activities on the design surface.  Open <b>PrePostDesigner.XAML</b></li>
+          <li>This activity designer uses data binding to bind to the properties of the <b>PrePostSequence</b> class.  The <b>Pre</b> and <b>Post</b> properties are a single activity so the designer uses <b>WorkflowItemPresenter</b> to enable a design surface for them which allows the user to drop a single activity.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;sap:WorkflowItemPresenter     Margin="3"     Item="{Binding Path=ModelItem.Pre, Mode=TwoWay}"     HintText="Drop activity here"/&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>The <b>Activities</b> collection uses the <b>WorkflowItemsPresenter</b> to create a design surface that can hold a collection of activities. In the XAML below you see how you can create a design surface that looks similar to the Sequence.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;sap:WorkflowItemsPresenter     Margin="3"     Items="{Binding Path=ModelItem.Activities}"     HintText="Drop activities here"&gt;    &lt;sap:WorkflowItemsPresenter.SpacerTemplate&gt;        &lt;DataTemplate&gt;            &lt;Grid&gt;                &lt;Path                     Fill="Red"                     Width="20"                     Height="30"                     HorizontalAlignment="Center"                     Data="M 0,10 l 20,0 l -10,10 Z" /&gt;            &lt;/Grid&gt;        &lt;/DataTemplate&gt;    &lt;/sap:WorkflowItemsPresenter.SpacerTemplate&gt;    &lt;sap:WorkflowItemsPresenter.ItemsPanel&gt;        &lt;ItemsPanelTemplate&gt;            &lt;StackPanel Orientation="Vertical"/&gt;        &lt;/ItemsPanelTemplate&gt;    &lt;/sap:WorkflowItemsPresenter.ItemsPanel&gt;&lt;/sap:WorkflowItemsPresenter&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution</li>
+        </ol>
+        <a name="_Toc243388979" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412424" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935140" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Linking the Activity Designers to the Activity</b>
+        </p>
+        <p>Now you have designers for your activities but they will not be used until you link the designers to your custom activities.  There are two ways to do this, a declarative way and an imperative way.  We will use the declarative approach.</p>
+        <ol>
+          <li>Open <b>DiagnosticTrace.cs (C#)</b> and add the following namespace directives<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using HelloWorkflow.Activities.Designers;</b></pre></td></tr></table></span></div></li>
+          <li>Add the <b>Designer</b> attribute to the class as shown<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[Designer(typeof(DiagnosticTraceDesigner))]</b>public sealed class DiagnosticTrace : CodeActivity{</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;Designer(GetType(DiagnosticTraceDesigner))&gt;</b>Public NotInheritable Class DiagnosticTrace</pre></td></tr></table></span></div><br /></li>
+          <li>Open <b>PrePostSequence.cs</b> (C#) and add the following namespace directives<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using HelloWorkflow.Activities.Designers;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Add the <b>Designer</b> attribute to the <b>PrePostSequence</b> class.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[ContentProperty("Activities")]<b>[Designer(typeof(PrePostSequenceDesigner))]</b>public sealed class PrePostSequence : NativeActivity</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>&lt;ContentProperty("Activities")&gt;</b><b>&lt;Designer(GetType(PrePostSequenceDesigner))&gt;</b>Public NotInheritable Class PrePostSequence</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e6d6175f-1418-40e9-a2d0-a8e7e31bf0e9.html">Exercise 9: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

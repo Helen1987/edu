@@ -1,0 +1,133 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 5: Metadata Extensions" />
+      <MSHelp:RLTitle Title="Exercise 5: Metadata Extensions" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 5: Metadata Extensions</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 5: Metadata Extensions</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>The chat application works OK, but you may have noticed an issue. When Wilma discovered other chat instances all you knew about them was the Uri of the service endpoint. Therefore, her chat window shows a chat with the host machine name. Fred, on the other hand, knew that the chat message came from Wilma because the chat message included her name. If you could add the name along with the discovery messages, it would be possible to display the names in the user box instead of the endpoints. In this exercise, you will learn how you can extend the metadata used in WS-Discovery to supply additional information (such as the username used for the chat session).</p>
+        <a name="_Toc244159124" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317755" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957323" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 4. Alternatively, you can follow the following steps to begin with Exercise 5.</p>
+        <ol>
+          <li>Open the starting solution for Exercise 5 located under the <b>Source\Ex5-MetadataExtensions\Begin (choosing the folder that matches the language of your preference.) </b>Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc232490434" href="#">
+          <span />
+        </a>
+        <a name="_Toc244159125" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317756" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957324" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding an EndpointDiscoveryBehavior with Extensions</b>
+        </p>
+        <ol>
+          <li>Open the <b>SimpleChat </b>class in code view from the <b>DiscoveryChat</b> project. You can open the code view by selecting the file, and pressing <b>F7</b>.</li>
+          <li>You can add XML to the endpoint metadata when responding to a discovery probe. To do this, you will need to add namespaces directives.<p><i>(Code Snippet - What is new in WCF4 Lab – ServiceModel.Description CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.ServiceModel.Description;</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – ServiceModel.Description VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System.ServiceModel.Description</b></pre></td></tr></table></span></div><br /></li>
+          <li>Locate the <b>OpenServices</b> method, and modify it as shown in the following code. Here you are creating an EndpointDiscoveryBehavior instance, and as part of that behavior you are a adding an XML element, in this case the user name to the extension collection. This extension is sent along with the responses to clients looking for that endpoint. Lastly, you are applying that behavior to your service endpoint.<p><i>(Code Snippet - What is new in WCF4 Lab – OpenServices Method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void OpenServices(){    // Create a singleton instance for the host    ChatService chatService = new ChatService(this);    chatServiceHost = new ServiceHost(chatService, this.localAddress);<b>    // Create a discovery behavior</b><b>    EndpointDiscoveryBehavior endpointDiscoveryBehavior = new EndpointDiscoveryBehavior();</b><b>    // Add an extension element with the username</b><b>    endpointDiscoveryBehavior.Extensions.Add(</b><b>        new XElement(</b><b>            "root",</b><b>            new XElement("Name", this.userName)));</b><b>    // Find the endpoint</b><b>    ServiceEndpoint simpleEndpoint =</b><b>        this.chatServiceHost.Description.Endpoints.Find(typeof(ISimpleChatService));</b><b>    // Add your behavior to the endpoint before opening it</b><b>    simpleEndpoint.Behaviors.Add(endpointDiscoveryBehavior);</b>    ShowStatus("Opening chat service...");    chatServiceHost.BeginOpen(        (result) =&gt;        {            chatServiceHost.EndOpen(result);            ShowStatus("Chat service ready");        },        null);}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – OpenServices Method VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub OpenServices()    ' Create a singleton instance for the host    Dim chatService As New ChatService(Me)    Me.chatServiceHost = New ServiceHost(chatService, Me._localAddress)<b>    ' Create a discovery behavior</b><b>    Dim endpointDiscoveryBehavior = New EndpointDiscoveryBehavior()</b><b>    ' Add an extension element with the username</b><b>    endpointDiscoveryBehavior.Extensions.Add(</b><b>        New XElement(</b><b>            "root",</b><b>            New XElement("Name", Me._userName)))</b><b>    ' Find the endpoint</b><b>    Dim simpleEndpoint = Me.chatServiceHost.Description.Endpoints.Find(GetType(ISimpleChatService))</b><b>    ' Add your behavior to the endpoint before opening it</b><b>    simpleEndpoint.Behaviors.Add(endpointDiscoveryBehavior)</b>    Me.ShowStatus("Opening chat service...")    Me.chatServiceHost.BeginOpen(Sub(result)                                     chatServiceHost.EndOpen(result)                                     Me.ShowStatus("Chat service ready")                                 End Sub, Nothing)End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Now that the name is sent along with service endpoint information, you need to modify the <b>PopulateUserList</b> method to invoke the <b>GetPeerName </b>method. The <b>GetPeerName</b> method returns the first node named “Name” from the extension metadata. The <b>PeerUser</b> class will use it as the display name in the list box. To do this, replace the current call to the <b>AddUser</b> method with the following one.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void PopulateUserList(    EndpointDiscoveryMetadata endpointDiscoveryMetadata){    if (!EndpointIsSelf(endpointDiscoveryMetadata.Address.Uri))    {<b>        this.AddUser(new PeerUser(GetPeerName(endpointDiscoveryMetadata), endpointDiscoveryMetadata.Address));</b>    }}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub PopulateUserList(ByVal endpointDiscoveryMetadata As EndpointDiscoveryMetadata)    If Not (Me.EndpointIsSelf(endpointDiscoveryMetadata.Address.Uri)) Then<b>        Me.AddUser(New PeerUser(GetPeerName(endpointDiscoveryMetadata), endpointDiscoveryMetadata.Address))</b>    End IfEnd Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b21d82b0-9cde-47bb-a73d-a7ca14b2192e.html">Exercise 5: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

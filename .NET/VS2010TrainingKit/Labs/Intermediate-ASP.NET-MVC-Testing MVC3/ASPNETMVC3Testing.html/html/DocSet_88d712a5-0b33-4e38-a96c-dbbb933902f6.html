@@ -1,0 +1,161 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Testing Cart Actions" />
+      <MSHelp:RLTitle Title="Exercise 3: Testing Cart Actions" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Testing Cart Actions</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Testing</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Testing Cart Actions</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to test the main functionality of the ShoppingCartController: adding items to the cart, removing items and displaying the cart’s content. In order to simulate those actions, the tests you will implement will use a TestCartIdProvider instance that will return a new Guid object to simulate the ID of the cart to handle for the test. The MvcMusicStore project, the one used for the application itself, behaves differently: another provider works with the user’s session to store and retrieve the cart ID.</p>
+        <br />
+        <a name="_Toc271631908" href="#">
+          <span />
+        </a>
+        <a name="_Toc282180608" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Running ShoppingCartController Tests</b>
+        </p>
+        <p>In this task you will run the 3 tests you will be implementing later during this Exercise. Since they are not implemented with the correct content yet, they will fail.</p>
+        <ol>
+          <li>Start Microsoft Visual Studio 2010 Professional from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 </b>| <b>Microsoft Visual Studio 2010</b>. </li>
+          <li>In the <b>File</b> menu, choose Open<b> Project</b>. In the Open Project dialog, browse to Source\Ex03-Testing Cart actions\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>In the <b>Solution Explorer</b> expand the <b>MvcMusicStore.Tests</b> project and double-click the <b>ShoppingCartControllerTest.cs </b>class to open that file.</li>
+          <li>You will find 3 test methods included as part of the Begin solution of this exercise: <b>IndexTest</b>, <b>AddToCartTest</b> and <b>RemoveFromCartTest</b>. Run all tests in the solution to verify that those 3 are failing. To do this, click on the following button in the Test toolbar or press <i>CTRL+R, A</i>.<p><img src="images\1a50e704-9081-4a12-aa47-01cfab37fb7c.png" /></p><p><b>Figure 22</b><br /><i>Running all tests in the solution</i></p><br /></li>
+          <li>The 3 test methods mentioned run and fail.<br /><p><img src="images\2be8a0dc-388c-49e1-ae7e-7aedcb01d27f.png" /></p><p><b>Figure 23</b><br /><i>Tests failing</i></p></li>
+        </ol>
+        <br />
+        <a name="_Toc271631909" href="#">
+          <span />
+        </a>
+        <a name="_Toc282180609" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Implementing the test for the AddToCart action method</b>
+        </p>
+        <p>In this task you will implement the test for the AddToCart action method of the ShoppingCart Controller. The AddToCart method receives an album ID that is used to retrieve the album from the database, add it to the shopping cart and then returns the Index View template that will display that album as part of the cart.</p>
+        <ol>
+          <li>Open the ShoppingCartControllerTest.cs file and replace the using directives with the following, needed to run the tests of this Exercise:<p> (Code Snippet – ASP.NET MVC 3.0 Testing – Ex3 using directives – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using MvcMusicStore.Controllers;</b><b>using Microsoft.VisualStudio.TestTools.UnitTesting;</b><b>using System;</b><b>using System.Linq;</b><b>using Microsoft.VisualStudio.TestTools.UnitTesting.Web;</b><b>using System.Web.Mvc;</b><b>using MvcMusicStore.Models;</b><b>using System.Collections.Generic;</b><b>using System.Transactions;</b><b>using MvcMusicStore.ViewModels;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Replace the <b>AddToCartTest</b> method. Note that the <b>Assert.Inconclusive</b> method was removed with the real implementation for the test.<p> (Code Snippet – ASP.NET MVC 3.0 Testing – Ex3 AddToCartTest – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;///A test for AddToCart///&lt;/summary&gt;[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void AddToCartTest(){<b>    using (TransactionScope ts = new TransactionScope())</b><b>    {</b><b>        ICartIdProvider provider = new TestCartIdProvider();</b><b>        ShoppingCartController target = new ShoppingCartController(provider);</b><b>        int id = 669;</b><b>        ActionResult actual;</b><b>        actual = target.AddToCart(id);</b><b>        Assert.IsNotNull(actual);</b><b>        ShoppingCart cart = ShoppingCart.GetCart(provider);</b><b>        List&lt;Cart&gt; items = cart.GetCartItems();</b><b>        Assert.IsNotNull(items);</b><b>        Assert.AreEqual(1, items.Count);</b><b>        Assert.AreEqual(id, items[0].AlbumId);</b><b>        Assert.AreEqual(1, items[0].Count);</b><b>    }</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In order to simulate the addition of an album to the shopping cart, this test will need to invoke the <b>ShoppingCartController</b>’s <b>AddToCart</b> action. You will find that when creating the <b>ShoppingCartController</b> object, a <b>TestCartIdProvider </b>instance is passed as parameter.<br /><b>TestCartIdProvider </b>implements <b>ICartIdProvider</b> and will return a new <b>Guid</b> object to simulate the ID of the cart where you will add a new album. In the <b>MvcMusicStore</b> project, the one used for the application itself, the provider used is the <b>CartIdProvider</b>, which also implements <b>ICartIdProvider </b>but instead uses the user’s session to store and retrieve the cart ID. So, if you run the web application, its default behavior is to use the session id provider, as in previous exercise.<br />Once the <b>ShoppingCartController</b> object is created, a well-known album id (669) is used to invoke the <b>AddToCart</b> action. Afterwards, the cart items are retrieved and the test asserts that:<br />1. Result of <b>AddToCart</b> invocation is not null<br />2. The cart’s items list is not null<br />3. There is only one cart<br />4. The cart’s first item’s ID is the same used on the <b>AddtoCart</b> action<br />5. The cart contains only one item (the album recently added)</td></tr></table><p /></div><br /></li>
+          <li>Run exclusively this test to verify the results. To do this, right-click inside the <b>AddToCartTest</b> method and then select <b>Run Tests</b>.</li>
+          <li>The <b>Test Result </b>window should show that the test passes.<p><img src="images\9a4a604b-40db-47d4-8347-e07537ebba2f.png" /></p><p><b>Figure 24</b><br /><i>Running test AddToCartTest</i></p></li>
+        </ol>
+        <br />
+        <a name="_Toc271631910" href="#">
+          <span />
+        </a>
+        <a name="_Toc282180610" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Implementing the test for the Index action method</b>
+        </p>
+        <p>In this task you will implement the test for the Index action method of the ShoppingCart Controller. The Index method populates a <b>ShoppingCartViewModel</b> object with the cart items and its total cost in order to display them with the corresponding View template.</p>
+        <ol>
+          <li>In the ShoppingCartControllerTest.cs file, add the <b>GetAlbum</b> private method, needed to test the Index action method.<p> (Code Snippet – ASP.NET MVC 3.0 Testing – Ex3 GetAlbum method – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private Album GetAlbum(int id)</b><b>{</b><b>    MusicStoreEntities storeDB = new MusicStoreEntities();</b><b>    return storeDB.Albums.Single(a =&gt; a.AlbumId == id);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Replace the <b>IndexTest</b> method. Note that the <b>Assert.Inconclusive</b> method was removed with the real implementation for the test.<p> (Code Snippet – ASP.NET MVC 3.0 Testing – Ex3 IndexTest – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;///A test for Index///&lt;/summary&gt;[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void IndexTest(){<b>    using (TransactionScope ts = new TransactionScope())</b><b>    {</b><b>        Album album1 = this.GetAlbum(669);</b><b>        Album album2 = this.GetAlbum(668);</b><b>        ICartIdProvider provider = new TestCartIdProvider();</b><b>        ShoppingCart cart = ShoppingCart.GetCart(provider);</b><b>        cart.AddToCart(album1);</b><b>        cart.AddToCart(album2);</b><b>        cart.AddToCart(album2);</b><b>        ShoppingCartController target = new ShoppingCartController(provider);</b><b>        ActionResult actual;</b><b>        actual = target.Index();</b><b>        Assert.IsNotNull(actual);</b><b>        Assert.IsInstanceOfType(actual, typeof(ViewResult));</b><b>        ViewResult viewResult = (ViewResult)actual;</b><b>        Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(ShoppingCartViewModel));</b><b>        ShoppingCartViewModel model = (ShoppingCartViewModel)viewResult.ViewData.Model;</b><b>        Assert.AreEqual(2, model.CartItems.Count);</b><b>        Assert.AreEqual(3, model.CartItems.Sum(it =&gt; it.Count));</b><b>    }</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In order to simulate the correct display of the shopping cart content, this test will:<br />1. Retrieve from the database 2 well-known albums<br />2. Add them to a new shopping cart: the first album once and the second album twice; hence making the cart to hold 3 items.<br />3. Invoke the <b>Index</b> action method of the <b>ShoppingCartController.</b><br />4. Assert that:<br />  - Result of that invocation is not null<br />  - Result of that invocation is actually a View<br />  - The view’s model is of type <b>ShoppingCartViewModel</b><br />  - The view’s model holds 2 cart items which are different<br />  - The view’s model holds 3 cart items in total</td></tr></table><p /></div><br /></li>
+          <li>Run exclusively this test to verify the results. To do this, right-click inside the <b>IndexTest</b> method and then select <b>Run Tests</b>.</li>
+          <li>The <b>Test Result </b>window should show that the test passes.<p><img src="images\04407fd4-7797-4dcc-80b8-8e4a9b3211da.png" /></p><p><b>Figure 25</b><br /><i>Running test IndexTest</i></p></li>
+        </ol>
+        <br />
+        <a name="_Toc271631911" href="#">
+          <span />
+        </a>
+        <a name="_Toc282180611" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Implementing the test for the RemoveFromCart action method</b>
+        </p>
+        <p>In this task you will implement the test for the RemoveFromCart action method of the ShoppingCart Controller. The RemoveFromCart receives the ID of the album to remove, used for invoking the RemoveFromCart method of the ShoppingCart Model class and then it displays a confirmation message.</p>
+        <ol>
+          <li>In the ShoppingCartControllerTest.cs file, replace the <b>RemoveFromCartTest</b> method. Note that the <b>Assert.Inconclusive</b> method was removed with the real implementation for the test.<p> (Code Snippet – ASP.NET MVC 3.0 Testing – Ex3 RemoveFromCartTest – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;///A test for RemoveFromCart///&lt;/summary&gt;[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void RemoveFromCartTest(){<b>    using (TransactionScope ts = new TransactionScope())</b><b>    {</b><b>        Album album1 = this.GetAlbum(669);</b><b>        Album album2 = this.GetAlbum(668);</b><b>        ICartIdProvider provider = new TestCartIdProvider();</b><b>        ShoppingCart cart = ShoppingCart.GetCart(provider);</b><b>        cart.AddToCart(album1);</b><b>        cart.AddToCart(album2);</b><b>        cart.AddToCart(album2);</b><b>        ShoppingCartController target = new ShoppingCartController(provider);</b><b>        int id = cart.GetCartItems().First().RecordId;</b><b>        ActionResult actual;</b><b>        actual = target.RemoveFromCart(id);</b><b>        Assert.IsNotNull(actual);</b><b>        Assert.IsInstanceOfType(actual, typeof(JsonResult));</b><b>        JsonResult jsonResult = (JsonResult)actual;</b><b>        Assert.IsInstanceOfType(jsonResult.Data, typeof(ShoppingCartRemoveViewModel));</b><b>        ShoppingCartRemoveViewModel model = (ShoppingCartRemoveViewModel)jsonResult.Data;</b><b>        Assert.AreEqual(2, model.CartCount);</b><b>        Assert.AreEqual(id, model.DeleteId);</b><b>    }</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In order to simulate the correct removal of an album from the shopping cart, this test will:<br />1. Retrieve from the database 2 well-known albums<br />2. Add them to a new shopping cart: the first album once and the second album twice; hence making the cart to hold 3 items.<br />3. Retrieve the ID of the first album added to the cart<br />4. Invoke the <b>RemoveFromCart</b> action method of the <b>ShoppingCartController</b>, passing the ID retrieved in the last step.<br />5. Assert that:<br />  - Result of that invocation is not null<br />  - Result of that invocation is actually Json<br />  - Json’s result data is of type <b>ShoppingCartRemoveViewModel</b><br />  - Json’s result data now holds 2 cart items in total (instead of 3)<br />  - Json’s result data’s ID of the removed item matches the ID of the first album added to the cart, which was removed from the cart later.</td></tr></table><p /></div><br /></li>
+          <li>Run exclusively this test to verify the results. To do this, right-click inside the <b>RemoveFromCartTest</b> method and then select <b>Run Tests</b>.</li>
+          <li>The <b>Test Result </b>window should show that the test passes.<p><img src="images\c5c8afcb-3520-4a57-86db-4a4baa7eba6c.png" /></p><p><b>Figure 26</b><br /><i>Running test RemoveFromCartTest</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_3f68beca-ece2-4dc8-ac58-dfca46cad5d4.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

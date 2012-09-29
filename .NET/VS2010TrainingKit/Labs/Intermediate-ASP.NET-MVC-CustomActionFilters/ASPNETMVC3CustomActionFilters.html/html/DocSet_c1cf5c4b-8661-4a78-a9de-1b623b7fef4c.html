@@ -1,0 +1,193 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Logging Actions" />
+      <MSHelp:RLTitle Title="Exercise 1: Logging Actions" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Logging Actions</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Custom Action Filters</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Logging Actions</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to create a custom action log filter by using MVC3 Filter Providers.  For that purpose you will apply a logging filter to the MusicStore site that will record all the activities in the selected controllers.</p>
+        <p>The filter will extend <b>ActionFilterAttributeClass</b> and override <b>OnActionExecuting</b> method to catch each request and then perform the logging actions. The context information about HTTP requests, executing methods, results and parameters will be provided by MVC <b>ActionExecutingContext </b>class<b>. </b></p>
+        <h1 class="heading">About MVC Music Store Application logging feature</h1>
+        <p>This Music Store solution has a new data model table for site logging, <b>ActionLog</b>, with the following fields: Name of the controller that received a request, Called action, Client IP and Time stamp.</p>
+        <p>
+          <img src="images\69e21fd3-9cda-41d0-8c6d-4fda51c2ea75.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Data model. ActionLog table.</i>
+        </p>
+        <br />
+        <p>The solution provides an MVC View for the Action log that can be found at <b>MvcMusicStores/Views/ActionLog</b>:</p>
+        <p>
+          <img src="images\7d5190ff-51c7-4672-91f0-f2403d9afa55.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Action Log view</i>
+        </p>
+        <br />
+        <p>With this given structure, all the work will be focused on interrupting controller’s request and performing the logging by using custom filtering.</p>
+        <br />
+        <a name="_Toc269992844" href="#">
+          <span />
+        </a>
+        <a name="_Toc282066975" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Custom Filter to Catch a Controller’s Request</b>
+        </p>
+        <p>In this task you will create a custom filter attribute class that will contain the logging logic. For that purpose you will extend MVC <b>ActionFilterAttribute</b> Class and implement the interface <b>IActionFilter</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>ActionFilterAttribute </b>is the base class for all the attribute filters. It provides the following methods to execute a specific logic after and before controller action’s execution:<br /><b>- OnActionExecuting(ActionExecutedContext </b>filterContext<b>)</b><br />Just before the action method is called<br /><b>- OnActionExecuted(ActionExecutingContext </b>filterContext<b>): </b><br />After the action method is called and before the result is executed (before view render).<br /><b>- OnResultExecuting(ResultExecutingContext </b>filterContext<b>):  </b><br />Just before the result is executed (before view render).<br /><b>- OnResultExecuted(ResultExecutedContext </b>filterContext<b>):  </b><br />After the result is executed (after the view is rendered).<br /><br />By overriding any of these methods into a derived class, you can execute your own filtering code.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at <b>Source\Ex01-Logging Actions\Begin</b></li>
+          <li>Create a new folder <b>Filters</b> at project root, which will include all the custom filters. </li>
+          <li>Add a new C# class into the <b>Filters</b> folder and rename it to <b>ActionLogFilterAttribute.cs</b></li>
+          <li>Open <b>ActionLogFilterAttribute.cs</b> and add a reference to <b>System.Web.Mvc</b> and the <b>MvcMusicStore.Models</b> namespace:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;<b>using System.Web.Mvc;</b><b>using MvcMusicStore.Models;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Inherit the <b>ActionLogFilterAttribute</b> class from <b>ActionFilterAttribute </b>and then make <b>ActionLogFilterAttribute</b> class implement <b>IActionFilter</b> interface.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...namespace MvcMusicStore.Filters{    public class ActionLogFilterAttribute : ActionFilterAttribute, IActionFilter    {        ...</pre></td></tr></table></span></div><br /></li>
+          <li>Make <b>ActionLogFilterAttribute</b> class override the method <b>OnActionExecuting, </b>where you will write the logging code. After that, your class should look like the following:<p><i>(Code Snippet – ASP.NET MVC 3 Custom Action Filters – Ex1 Logging Actions – CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using MvcMusicStore.Models;namespace MvcMusicStore.Filters{    public class ActionLogFilterAttribute : ActionFilterAttribute, IActionFilter    {<b>        public override void OnActionExecuting(ActionExecutingContext filterContext)</b><b>        {</b><b>            MusicStoreEntities storeDB = new MusicStoreEntities();</b><b>            ActionLog log = new ActionLog()</b><b>            {</b><b>                Controller = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,</b><b>                Action = filterContext.ActionDescriptor.ActionName,</b><b>                IP = filterContext.HttpContext.Request.UserHostAddress,</b><b>                DateTime = filterContext.HttpContext.Timestamp</b><b>            };</b><b>            storeDB.AddToActionLogs(log);</b><b>            storeDB.SaveChanges();</b><b>            base.OnActionExecuting(filterContext);</b><b>        }</b>    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note: </b><b>OnActionExecuting</b> method<b> </b>is using <b>Entity Framework</b> to add a new ActionLog register.  It creates and fills a new entity instance with the context information from <b>filterContext</b>. <br />You could read more about <b>ControllerContext</b> class at <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.controllercontext.aspx">msdn</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269992845" href="#">
+          <span />
+        </a>
+        <a name="_Toc282066976" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Injecting a Code Interceptor into the Store Controller Class</b>
+        </p>
+        <p>In this task you will add the custom filter by injecting it to all controller classes and controller actions that will be logged. For the purpose of this exercise, the Store Controller class will have a log.</p>
+        <p>The method <b>OnActionExecuting</b> from <b>ActionLogFilterAttribute</b> custom filter runs when an injected element is called.</p>
+        <p>It is also possible to intercept a specific controller method. </p>
+        <ol>
+          <li>Open the <b>StoreController</b> at <b>MvcMusicStore\Controllers </b>and add a reference to the <b>Filters </b>namespace:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…using MvcMusicStore.ViewModels;using MvcMusicStore.Models;<b>using MvcMusicStore.Filters;</b>namespace MvcMusicStore.Controllers{…</pre></td></tr></table></span></div></li>
+          <li />
+          <li>Inject the custom filter <b>ActionLogFilter</b> into <b>StoreController</b> class. <div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…using MvcMusicStore.ViewModels;using MvcMusicStore.Models;using MvcMusicStore.Filters;namespace MvcMusicStore.Controllers{<b>    [ActionLogFilter]</b>    public class StoreController : Controller    {        MusicStoreEntities storeDB = new MusicStoreEntities();        //        // GET: /Store/        public ActionResult Index()        {            // Create list of genres…</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>When a filter is injected into a controller class, all its actions are also injected. If you would like to apply the filter only for a set of actions, you would have to inject <b>[ActionLogFilter] </b>to each one of them:<br /><b>    [ActionLogFilter]</b><br />    public ActionResult Index()<br />    {<br />       …<br />    }<br />    …<br /><b>    [ActionLogFilter]</b><br />    public ActionResult Browse(string genre)<br />    {<br />    …<br />    }</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269833741" href="#">
+          <span />
+        </a>
+        <a name="_Toc282066977" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the logging filter is working. You will start the application and visit the store, and then you will check logged activities.</p>
+        <ol>
+          <li>Press <b>F5 </b>to run the application.</li>
+          <li>Browse to <b>/ActionLog </b>to see log view initial state:</li>
+          <li>
+            <img src="images\30716662-84f0-4a46-8d98-66d69b27fb1a.png" />
+            <p>
+              <b>Figure 2</b>
+              <br />
+              <i>Log tracker status before page activity</i>
+            </p>
+            <br />
+          </li>
+          <li>Browse to <b>/Store</b> and perform some actions there, like browsing an album detail.</li>
+          <li>Browse to <b>/ActionLog</b> and if the log is empty press <b>F5</b> to refresh the page. Check that your visits were tracked:<p><img src="images\ae8dc085-816b-4143-9368-23cdaf60af07.png" /></p><p><b>Figure 3</b><br /><i>Action log with activity logged</i></p><br /></li>
+        </ol>
+        <a name="_GoBack" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_855562dc-7cc0-4def-b10f-af1b0ea2275a.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

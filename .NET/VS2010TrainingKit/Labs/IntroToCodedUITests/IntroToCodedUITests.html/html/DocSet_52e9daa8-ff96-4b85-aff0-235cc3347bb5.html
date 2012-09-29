@@ -1,0 +1,108 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Introduction to Code Generation using Coded UI Test Builder " />
+      <MSHelp:RLTitle Title="Exercise 2: Introduction to Code Generation using Coded UI Test Builder " />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Introduction to Code Generation using Coded UI Test Builder </title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Coded UI Tests with Visual Studio 2010 Ultimate</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Introduction to Code Generation using Coded UI Test Builder </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use the Coded UI Test Builder to generate test code for the Tailspin Toys Web application and modify the generated code in order to enable data driven testing.</p>
+        <ol>
+          <li>Open Internet Explorer and click on the Tailspin Toys button from the favorites bar.<p><img src="images\f17b5dab-5b24-4caa-8fb7-5ecead6832c4.png" /></p><p><b>Figure 11</b><br /><i>Tailspin Toys link</i></p></li>
+          <li>Click on the Model Airplanes link. </li>
+          <li>Click on the Fourth Coffee Flyer link.</li>
+          <li>Click the Add To Cart link to load the shopping cart.</li>
+          <li>Return to Visual Studio, locate the <b>CodedUITestMethod1</b> method in the CodedUITest1.cs file, and add a blank line after the call to the “this.UIMap.Clickonwhitespaceinwebsite” method.<p><img src="images\47a52e62-5772-4349-99d7-f2a58e9a725e.png" /></p><p><b>Figure 12</b><br /><i>Adding blank line to test source</i></p></li>
+          <li>Right-click at the location of the blank line and select <b>Generate Code for Coded UI Test | Use Coded UI Test Builder… </b>from the context menu. This will load the <b>Coded UI Test Builder</b> window (which is always displayed over other windows) and the Internet Explorer instance that we previously left open.<p><img src="images\97b4e93d-e6c5-45a8-9ce5-f392bdc7d42f.png" /></p><p><b>Figure 13</b><br /><i>Starting the Coded UI Test Builder</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The Coded UI Test Builder is used to record actions and assertions within the user interface which are then converted to code.</td></tr></table><p /></div></li>
+          <li>Now we will add an assertion to verify that the Quantity textbox is equal to 1. Drag and drop the crosshair from the Coded UI Test Builder tool window onto the Quantity textbox in Internet Explorer. This action will load a window showing the control properties.<p><img src="images\dd56d9da-3243-40c9-9270-d3b9c6c10645.png" /></p><p><b>Figure 14</b><br /><i>Selecting an element to use for assertion</i></p></li>
+          <li>Select the <b>Text</b> property and click the <b>Add Assertion</b> button. This will load a dialog to finalize the assertion options to use.</li>
+          <li>Verify that the Comparator to use is <b>AreEqual</b> and that the comparison value is ‘1’. Select the <b>OK</b> button to continue.<p><img src="images\bd2e7a85-0aa6-4482-8179-ea2abcde2379.png" /></p><p><b>Figure 15</b><br /><i>Selecting the comparator type and value</i></p></li>
+          <li>Verify that a <b>checkbox</b> has been added to the Text property row in the Coded UI Test Builder window.<p><img src="images\b1deb8e3-5b2c-46ee-9883-33d3808dbe31.png" /></p><p><b>Figure 16</b><br /><i>Text property showing assertion checkbox</i></p></li>
+          <li>Click on the <b>Generate Code</b> button in the Coded UI Test Builder tool window.<p><img src="images\7efaa5f3-007d-409a-a433-e7bb6edd1602.png" /></p><p><b>Figure 17</b><br /><i>Generate Code button location</i></p></li>
+          <li>In the Generate Code window, use <b>QuantityEqualsOne</b> for the Method Name and select the <b>Add and Generate</b> button to generate the validation code.<p><img src="images\e7c229a7-c00b-4302-84f2-ce5af2924f27.png" /></p><p><b>Figure 18</b><br /><i>Generating assertion code</i></p></li>
+          <li>Remove the “Fourth Coffee Flyer” item from the shopping cart.</li>
+          <li>Close the Coded UI Test Builder.</li>
+          <li>Close the Internet Explorer window and return to Visual Studio.</li>
+          <li>Note that the assertion code generation has added the new validation step.<p><img src="images\5ca4b918-d8c1-48e0-b6e7-e1b8dc1a532d.png" /></p><p><b>Figure 19</b><br /><i>Newly created assertion step for coded UI test</i></p></li>
+          <li>Right-click and select <b>Run Tests</b> to run the tests with the new validation steps.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_82d1debe-ef03-40b4-aab6-2b0ac47e48d8.html">Exercise 3: Data Driven Demonstration for Coded UI Test</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Suppressing Code Analysis Warnings" />
+      <MSHelp:RLTitle Title="Exercise 2: Suppressing Code Analysis Warnings" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Suppressing Code Analysis Warnings</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using Code Analysis with Visual Studio 2010 to Improve Code Quality</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Suppressing Code Analysis Warnings</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to suppress Code Analysis warnings at the project and source level.</p>
+        <ol>
+          <li>In the <b>Error List</b> window, select the first three warnings that appear which are associated with the project. Note that they are not associated with a file by looking in the File column. Imagine that we do not want to address the selected issues and no longer want them to appear when Code Analysis executes.</li>
+          <li>Right-click on the selected warnings and select <b>Supress Message(s) | In Project Suppression File</b> from the context menu that appears. This will add assembly level metadata to a project level GlobalSuppressions.cs file.<p><img src="images\335213eb-8040-4dab-8e00-1c68815349c9.png" /></p><p><b>Figure 1</b><br /><i>Suppressing specific code analysis rules at the project level</i></p></li>
+          <li>Open the <b>GlobalSuppressions.cs</b> file to view the added code.<p><img src="images\e7cc9d82-c2f0-4bc1-8d42-119b374aaadc.png" /></p><p><b>Figure 2</b><br /><i>Suppressed rules are crossed out and GlobalSuppressions.cs changes</i></p></li>
+          <li>Take a look at the next Code Analysis warning that is listed, <b>CA1726</b>, which suggests changing the type name ‘Cancelled’ with the preferred alternate ‘Canceled’. <b>Double-click</b> on it to go to the correct source location for the fix.</li>
+          <li>Right-click on the class name ‘Cancelled’ and select <b>Refactor | Rename…</b> from the context menu that appears.<p><img src="images\3625957b-1b37-46f4-b593-9e2583caf734.png" /></p><p><b>Figure 3</b><br /><i>Renaming class to fix spelling</i></p></li>
+          <li>In the Rename window, change ‘Cancelled’ to ‘Canceled’ and select the <b>OK</b> button to continue.</li>
+          <li>In the Preview Changes – Rename window, review the proposed changes and select the <b>Apply</b> button to complete the refactoring process.</li>
+          <li>Move on to the next Code Analysis warning by selecting it. Imagine that we want to suppress this specific rule, but this time we only want applied to this particular source file. Right-click on the warning and select <b>Suppress Message(s) | In Source</b> from the context menu that appears. This applies a <b>SuppressMessage</b> attribute to the delegate for which the Code Analysis rule was identifying.<p><img src="images\b90bd56b-09a2-4eb4-a59e-60bcbc5e42c6.png" /></p><p><b>Figure 4</b><br /><i>Suppressing a Code Analysis rule at the source code level</i></p></li>
+          <li>Select <b>Analyze | Run Code Analysis on Tailspin.Model</b> from the main menu and verify that more of the warnings have been successfully addressed.</li>
+          <li>At this point, there are additional Code Analysis warnings that we could address, but imagine that we simply want to ignore the remaining items for now. Return to the <b>Code Analysis</b> section of the project properties and select the ‘<b>Microsoft Minimum Recommended Rules</b>’ option.</li>
+          <li>Select <b>Analyze | Run Code Analysis on Tailspin.Model </b>from the main menu and verify that the number of warnings has dramatically been reduced. The warnings that appear as the result of using this rule set are more likely to be problematic during runtime.<br /></li>
+        </ol>
+        <br />
+        <p>To give feedback please write to <a href="docSet_mailto:VSKitFdbk@microsoft.com">VSKitFdbk@Microsoft.com</a></p>
+        <a name="_GoBack" href="#">
+          <span />
+        </a>
+        <p>Copyright © 2010 by Microsoft Corporation. All rights reserved.</p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Version>1.0</Version>
+  <Author>
+    <Name>RoJacobs</Name>
+  </Author>
+  <Id>WCFServiceDiscoveryVideo</Id>
+  <Title>WCF Service Discovery</Title>
+  <Description>
+    WCF in .NET 4 includes an implementation of the WS-Discovery protocol.  Sounds exciting right?  Actually it is very cool because it allows you to build applications and services that can discover other services using UDP multicast messages or via a discovery proxy.  In this episode I'll walk through the Service Discovery lab where we build a messenger style application I call "ChatWOW".  In this lab you will see how to make your service discoverable and how you can discover other services.
+  </Description>
+  <Abstract>
+    WCF in .NET 4 includes an implementation of the WS-Discovery protocol.  Sounds exciting right?  Actually it is very cool because it allows you to build applications and services that can discover other services using UDP multicast messages or via a discovery proxy.  In this episode I'll walk through the Service Discovery lab where we build a messenger style application I call "ChatWOW".  In this lab you will see how to make your service discoverable and how you can discover other services.
+  </Abstract>
+  <Url>
+    mms://mschnlnine.vo.llnwd.net/d1/ch9/0/4/2/9/6/4/104Episode19ServiceDiscovery_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/Endpoint/endpointtv-Service-Discovery-with-WCF/Player/" />
+  </CustomProperties>
+</Video>

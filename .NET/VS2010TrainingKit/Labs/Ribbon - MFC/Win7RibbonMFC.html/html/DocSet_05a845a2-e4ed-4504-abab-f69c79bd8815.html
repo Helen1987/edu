@@ -1,0 +1,169 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Adding and Using More Controls to an Existing Ribbon" />
+      <MSHelp:RLTitle Title="Exercise 3: Adding and Using More Controls to an Existing Ribbon" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Adding and Using More Controls to an Existing Ribbon</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Ribbon with MFC - Native</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Adding and Using More Controls to an Existing Ribbon</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Exercise 1 demonstrated how to use the MFC Wizard to create an application with a default ribbon. Exercise 2 demonstrated how to use Ribbon Designer to add or modify Ribbon controls easily. This exercise will demonstrate more about Ribbon controls, and focus on how to use Button, CheckBox, Slider, and ComboBox MFC Ribbon controls at run time.</p>
+        <a name="_Toc282093905" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Build the Existing Ribbon Application to See the Ribbon Controls</b>
+        </p>
+        <ol>
+          <li>Open the RibbonApp solution from the EX03_Starter\Begin\RibbonApp folder.</li>
+          <li>On the <b>Build</b> menu, click <b>Rebuild Solution</b>.</li>
+          <li>On the <b>Debug</b> menu, click <b>Start Debugging</b>.</li>
+          <li>The application as shown in Figure 3-1 will open. All of the ribbon controls shown here were created using the Ribbon Designer. (Exercise 2 shows how to use the Ribbon Designer.)<img src="images\9dbc3e8d-dca0-41fd-9c5f-95ee9ce67bf5.png" /><p><b>Figure 3-1</b><br /></p><br /></li>
+          <li>Click the “<i>My Category</i>” tab, and you will see the ribbon change, as shown in Figure 3-2.<p><img src="images\a0e64b4c-d297-4d78-a9d4-146d20b4591c.png" /></p><p><b>Figure 3-2</b><br /></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note: </b>For your convenience, some variables and functions (such as event handler functions and helper functions) are already declared and defined for you in this project, so you only need to focus on the implementation in the following tasks.</td></tr></table><p /></div><br /></li>
+          <li>Close the application.</li>
+        </ol>
+        <a name="_Toc282093906" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Disable and Enable a Button at Run Time</b>
+        </p>
+        <ol>
+          <li>You can add code manually to disable or enable a button. As shown in Figure 3-2, the <i>Disable</i> panel of <i>My Category</i> includes one checkbox and one button. You can trigger an event by selecting or clearing the checkbox. Selecting the checkbox will disable the Object button. The variables have been declared for you, along with some necessary functions.</li>
+          <li>To update the event handler functions for the checkbox control in MainFrm.cpp, enter the following code inside the <b>CMainFrame::OnDisableCheckbox</b> and <b>CMainFrame::OnUpdateDisableCheckbox</b> methods:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void CMainFrame::OnDisableCheckbox(){<b>    m_bChecked = !m_bChecked;</b>}void CMainFrame::OnUpdateDisableCheckbox(CCmdUI *pCmdUI){<b>    pCmdUI-&gt;SetCheck(!m_bChecked);</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>You must also update an event handler function for the button object in MainFrm.cpp as follows:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void CMainFrame::OnUpdateDisableObject(CCmdUI *pCmdUI){<b>    pCmdUI-&gt;Enable(m_bChecked);</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Build and run your application. If you select the “<i>Disable Object Button</i>” checkbox, the “Object” button will be disabled, as shown in Figure 3-3.<p><img src="images\7b4704c9-98bf-42cd-be14-83fb3e120e27.png" /></p><p><b>Figure 3-3</b><br /></p><br /></li>
+        </ol>
+        <a name="_Toc282093907" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Display the Currently Selected Combo Box Item</b>
+        </p>
+        <ol>
+          <li>Update the CMainFrame::OnComboMessage method in Mainfrm.cpp, so that a message box will be displayed when an item is selected from the dropdown list in the combo box:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void CMainFrame::OnComboMessage(){<b>    CMFCRibbonComboBox* pFontComboBox = DYNAMIC_DOWNCAST(CMFCRibbonComboBox, m_wndRibbonBar.FindByID(ID_COMBO_BOX));</b><b>    // Get the selected index</b><b>    int nCurSel =pFontComboBox-&gt;GetCurSel();</b><b>    if (nCurSel &gt;= 0)</b><b>    {</b><b>        CString item=pFontComboBox-&gt;GetItem(nCurSel);</b><b>        CString sMessage = _T("");</b><b>        sMessage.Format(_T("Current Selected Item is \"%s\"."),item);</b><b>        MessageBox(sMessage, _T("Combo Box Item"), MB_OK);</b><b>    }</b><b>    else</b><b>    {</b><b>        MessageBox(_T("Please select one item from droplist of Combo Box."), _T("Combo Box Item"), MB_OK);</b><b>    }</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>Select an item from the combobox, and click the “<i>Message Box</i>” button. A message box will be displayed, as shown below in Figure 3-4.<p><img src="images\43ed55e4-4f1b-4dfa-926d-288fb6eb5ac3.png" /></p><p><b>Figure 3-4</b><br /></p><br /></li>
+        </ol>
+        <a name="_Toc282093908" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Draw a Rectangle in the View when a Button is Clicked</b>
+        </p>
+        <ol>
+          <li>The Rectangle panel on the Home category includes a Draw button (see Figure 3-1). Update the following constructor and methods in the <b>RibbonAppDoc.cpp</b> file as shown below, so that a rectangle will be drawn when the Draw button is clicked.<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CRibbonAppDoc::CRibbonAppDoc(){<b>    m_bDraw = FALSE;</b>}bool CRibbonAppDoc::EnableDraw(void){<b>    return m_bDraw;</b>}void CRibbonAppDoc::OnRectDraw(){<b>    m_bDraw = TRUE;</b><b>    UpdateAllViews(NULL);</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>In the <b>RibbonAppView.cpp</b> file, add the following lines to the <b>CRibbonAppView::OnDraw</b> function after the comment “//TODO: add draw code for native data here”, as follows:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>// Draw a rectangle</b><b>CRect client;</b><b>CBrush brush;</b><b>GetWindowRect(&amp;client);</b><b>if (pDoc-&gt;EnableDraw() &amp;&amp; brush.CreateSolidBrush(RGB(255,0,222)))</b><b>{</b><b>    int width=client.Width()/2; // to make it smaller</b><b>    int height= client.Height()/2;</b><b>    CRect rect=CRect(0,0, width, height);</b><b>    pDC-&gt;FillRect(rect, &amp;brush);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the solution. Click the Draw button to see the application as shown in Figure 3-5.<p><img src="images\dd1945b4-792c-4ee7-8a0d-7bb61044be1f.png" /></p><p><b>Figure 3-5</b><br /></p><br /></li>
+        </ol>
+        <a name="_Toc282093909" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Change the Color of the Rectangle</b>
+        </p>
+        <ol>
+          <li>The Color combobox in the Font panel controls the color of the rectangle. To enable the Color control, replace the implementation of the <b>CRibbonAppDoc::GetColor</b> method in the <b>RibbonAppDoc.cpp</b> file with the following code:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>COLORREF CRibbonAppDoc::GetColor(void){<b>    CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx*) AfxGetMainWnd())-&gt;GetRibbonBar();</b><b>    ASSERT_VALID(pRibbon);</b><b>    CMFCRibbonColorButton* pColor = DYNAMIC_DOWNCAST(</b><b>       CMFCRibbonColorButton, pRibbon-&gt;FindByID(ID_FONT_COLOR));</b><b>    // Get the selected color</b><b>    return pColor-&gt;GetColor();</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Update the event handler function of <b>CRibbonAppDoc::OnFontColor</b> in <b>RibbonAppDoc.cpp</b> file.<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void CRibbonAppDoc::OnFontColor(){<b>    UpdateAllViews(NULL);</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>In the <b>RibbonAppView.cpp</b> file, update the <b>CRibbonAppView::OnDraw</b> method by replacing the line “<i>brush.CreateSolidBrush(RGB(255,0,222))</i>” to the following one inside the <b>if</b> clause:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>brush.CreateSolidBrush(pDoc-&gt;GetColor())</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>Click the Draw button, and select the color Yellow from the Color combo box to see the new UI shown in Figure 3-6.<p><img src="images\c9060aa0-2fb8-4845-8881-4cc4677aafd2.png" /></p><p><b>Figure 3-6</b><br /></p><br /></li>
+        </ol>
+        <a name="_Toc282093910" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Move the Slider to Zoom the Rectangle</b>
+        </p>
+        <ol>
+          <li>Update the helper method <b>CRibbonAppDoc::GetSliderFactor</b> in the <b>RibbonAppDoc.cpp</b> file as follows:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Return the factor of zooming the rectangledouble CRibbonAppDoc::GetSliderFactor(void){<b>    // Get a pointer to the ribbon bar</b><b>    CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx*) AfxGetMainWnd())-&gt;GetRibbonBar();</b><b>    ASSERT_VALID(pRibbon);</b><b>    CMFCRibbonSlider* pSlider = DYNAMIC_DOWNCAST(CMFCRibbonSlider, pRibbon-&gt;FindByID(ID_RECT_SLIDER));</b><b>    // Get current position</b><b>    int position =pSlider-&gt;GetPos();</b><b>    return (double)position/(double)pSlider-&gt;GetRangeMax();</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Update the event handler function of the Slider as follows:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void CRibbonAppDoc::OnRectSlider(){<b>    if(GetAsyncKeyState(VK_LBUTTON)==0)</b><b>    {</b><b>        UpdateAllViews(NULL);</b><b>    }</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>In the <b>RibbonAppView.cpp</b> file, update the first <b>if</b> clause in the <b>CRibbonAppView::OnDraw</b> method to enable the Slider function.<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>if (pDoc-&gt;EnableDraw() &amp;&amp; brush.CreateSolidBrush(pDoc-&gt;GetColor()))</b><b>{</b><b>    int width=client.Width()/2; // to make it smaller</b><b>    int height= client.Height()/2;</b><b>    double factor=pDoc-&gt;GetSliderFactor(); </b><b>    if (factor)</b><b>    {</b><b>        width=width*factor;</b><b>        height=height*factor;</b><b>    }</b><b>    CRect rect=CRect(0,0, width, height);</b><b>    pDC-&gt;FillRect(rect, &amp;brush);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>Click the Draw button, and then move the slider. When the Slider is moved, the rectangle will be resized using a zoom factor, as shown in Figure 3-7.<p><img src="images\8d777b74-96fa-4bca-8066-775a6eaa7007.png" /></p><p><b>Figure 3-7</b><br /></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><a name="_GoBack" href="#"><span /></a><b>Note: </b>By the end of this exercise, the application you build with EX03_Starter\Begin\RibbonApp\RibbonApp.sln should be the same as the application built using EX03_Starter\End\RibbonApp\RibbonApp.sln.</td></tr></table><p /></div><br /></li>
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

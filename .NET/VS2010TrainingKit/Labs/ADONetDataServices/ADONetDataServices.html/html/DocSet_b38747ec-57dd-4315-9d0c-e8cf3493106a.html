@@ -1,0 +1,237 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Consuming WCF Data Services Using ASP.NET Ajax Library Beta" />
+      <MSHelp:RLTitle Title="Exercise 2: Consuming WCF Data Services Using ASP.NET Ajax Library Beta" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Consuming WCF Data Services Using ASP.NET Ajax Library Beta</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ADO.NET Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Consuming WCF Data Services Using ASP.NET Ajax Library Beta</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>WCF Data Services provides a client script class for simplifying the interaction between an ASP.NET Ajax application and a WCF data service. By using this class, you can create Web applications that interact with data through a data service on the Web site and that can update the Web page without a full postback to the Web server.</p>
+        <p>In this exercise you will learn how to consume the WCF data service from an ASP.NET Ajax application using this script class to query, delete or modify data through the data service.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>To verify that each step is correctly performed, it is recommended to build the solution at the end of each task.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc225853134" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284156" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302693" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307198" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921190" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Configuring a Client to Consume the Data Service</b>
+        </p>
+        <p>In this task you will modify some configuration on the client side that will allow you to consume the data service using the ASP.NET Ajax Library Beta.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ADONETDataServiceSample.sln</b> located under the <b>Source\Ex02-ConsumingDataServicesUsingAspNetAjax\begin</b> folder of this lab<b> </b>(choosing the folder that matches the language of your preference.) </li>
+          <li>Add the data service client library to the project. To do this, right-click on the <b>Scripts</b> folder under the <b>WebSite</b> project and select <b>Add</b>, then <b>Existing Item</b>. From the <b>Add Existing Item</b> dialog, navigate to the <b>Source\Assets</b> folder of this lab and select the <b>MicrosoftAjaxAdoNet.debug.js</b> file under the <b>MicrosoftAjax</b> folder.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: In past releases, this AJAX client library was embedded into the<b> System.Web.Extensions</b> assembly. It was <b>removed in .NET 3.5 SP1, </b>and it is now part of the <b>ASP.NET Ajax Library Beta</b>.<br />We’ve packaged the file along with the training kit for convenience, but it can be downloaded with the rest of the ASP.NET Ajax Library Beta scripts from <a href="http://www.codeplex.com/aspnet/Wiki/View.aspx?title=AJAX">here</a>.</td></tr></table><p /></div><br /></li>
+          <li>Add a <b>ScriptManager</b> that manages client script for Microsoft ASP.NET AJAX pages. To do this, add to the <b>Default.aspx</b> web page the following content.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;body&gt;    &lt;form id="form1" runat="server"&gt;    &lt;asp:Button runat="server" ID="hiddenTargetControlForModalPopup"                Style="display: none" /&gt;<b>    &lt;cc1:toolkitscriptmanager id="ToolkitScriptManager" runat="server"&gt;</b><b>       &lt;Scripts&gt;</b><b>         &lt;asp:ScriptReference Path="~/Scripts/MicrosoftAjaxAdoNet.debug.js" /&gt;</b><b>       &lt;/Scripts&gt;</b><b>   &lt;/cc1:toolkitscriptmanager&gt;</b>   &lt;cc1:modalpopupextender runat="server" id="ModalPopupExtender1"        targetcontrolid="hiddenTargetControlForModalPopup"        popupcontrolid="pnlProductDetail" backgroundcssclass="modalBackground"        okcontrolid="btnSave" onokscript="doSaveAction()"        cancelcontrolid="btnCancel" dropshadow="true"        popupdraghandlecontrolid="pnlDrag"        behaviorid="programmaticModalPopupBehavior"&gt;     &lt;/cc1:modalpopupextender&gt;...</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In this case you use the <b>ToolkitScriptManager</b> because the web page uses a control from the <b>AJAXControlToolkit</b>. If you have a page that does not use any control from the <b>AJAXControlToolkit</b>, instead, you can define a regular <b>ScriptManager</b> control.</td></tr></table><p /></div><br /></li>
+          <li>Implement the method that retrieves an instance of the <b>AdoNetServiceProxy</b> class. This class provides functions that you can call in order to interact with a data service from an <b>ASP.NET AJAX</b> application. To do this, replace the <b>getService()</b> function (located in <b>ProductGateway.js</b> file of the <b>WebSite</b> project) with the following content.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function getService(){<b>    return new Sys.Data.AdoNetServiceProxy("/AdventureWorks.svc");</b>}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc225853135" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284157" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302694" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307199" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921191" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating a Query to Consume the Data Service</b>
+        </p>
+        <p>In this task you will create a REST query using some of the data service query string options, call the query method of the <b>AdoNetServiceProxy</b> class to retrieve some products and display them in a web page.</p>
+        <ol>
+          <li>Write the query in a REST form. To do this, add to the <b>getProducts()</b> function (located in <b>ProductGateway.js</b> file) the following content (shown in <b>bold</b>).<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function getProducts(){              var ServiceGateway = getService();    var categoryID = $get("cmbProductCategory").value;    var productName = $get("txtProductName").value;    if( categoryID )    {<b>        var queryStr = "/ProductCategory(" + categoryID + ")/Product";</b><b>        if (productName) {</b><b>            queryStr += "?$filter=indexof(Name,'" + productName + "') gt -1 or '' eq '" + productName + "'";</b><b>        }</b>        //TODO: Call the data service    }    else    {        alert('Please select a category');           } }</pre></td></tr></table></span></div><br /></li>
+          <li>Retrieve the Products from the data service by calling the query method of the data service class. To do this, add to <b>getProducts()</b> function the following content (shown in <b>bold</b>).<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function getProducts(){              var ServiceGateway = getService();    var categoryID = $get("cmbProductCategory").value;    var productName = $get("txtProductName").value;    if( categoryID )    {        var queryStr = "/ProductCategory(" + categoryID + ")/Product";        if( productName )        {            queryStr += "?$filter=indexof(Name,'" + productName + "') gt -1 or '' eq '" + productName + "'";        }<b>        ServiceGateway.query(queryStr, getProductsSuccess, genericFailure);</b>    }    else    {        alert('Please select a category');           }        }</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The query function signature is<b>:</b><br /><b>           query: function(query, succeededCallback, failedCallback, userContext, webRequest)</b><br />And the arguments detail is:<br /><b>query:</b> Path to query.<br /><b>succeededCallback:</b> Callback to execute upon successful completion of the operation.<br /><b>failedCallback:</b> Callback to execute upon unsuccessful completion of the operation.<br /><b>userContext:</b> A context object associated with this operation.<br /><b>webRequest:</b> A WebRequest object to use for this operation.</td></tr></table><p /></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Notice that<b> </b>the <b>getCategories()</b> function in ProductGateway.js also makes a query and also applies the <b>orderby </b>query option:  <b>"/ProductCategory?$orderby=Name"</b>. This will retrieve all the <b>ProductCategory</b> items ordered by the <b>Name</b> attribute.</td></tr></table><p /></div></li>
+          <br />
+        </ol>
+        <a name="_Toc225853136" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284158" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302695" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307200" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921192" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Inserting Entities Using the Data Service</b>
+        </p>
+        <p>In this task you will create a product object that will be sent to the data service to make an insert in the database. You will also implement a callback function that is executed every time the insert method succeeds.</p>
+        <ol>
+          <li>Create the object representing the new product that will be sent to the data service. To do this, add to the <b>insertProduct() </b>function (located in <b>ProductGateway.js</b> file) the following code.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function insertProduct(){    var ServiceGateway = getService();<b>    var newProduct =</b><b>    {</b><b>        Name: $get("txtName").value,</b><b>        ProductNumber: $get("txtProductNumber").value,</b><b>        Color: $get("txtColor").value,</b><b>        StandardCost: $get("txtStandardCost").value,</b><b>        ListPrice: $get("txtListPrice").value,</b><b>        Size: $get("txtSize").value,</b><b>        Weight: $get("txtWeight").value,</b><b>        ProductCategory: {__metadata: {uri: "ProductCategory(" + </b><b>                         $get("cmbPDCategory").value + ")"}},</b><b>        SellStartDate: new Date(),</b><b>        SellEndDate: new Date(),</b><b>        ModifiedDate:new Date()</b><b>    };</b>    //TODO: Call the data service}</pre></td></tr></table></span></div><br /></li>
+          <li>Insert the new product by calling the insert method of the data service gateway. To do this, add to the <b>insertProduct() </b>function the following code.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The <b>Product</b> entity has a foreign key to<b> ProductCategory </b>that needs to be treated differently from the other attributes.<b> </b>Instead of setting a value to the foreign key <b>ProductCategoryId,</b> you had to define a pointer to the <b>ProductCategory</b> related entity in the form of an URI:            <i>uri: "ProductCategory(" ProductCategoryId")"</i><br />This must be sent to the data service inside a <b>__metadata</b> element.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function insertProduct(){    var ServiceGateway = getService();    var newProduct =    {        Name: $get("txtName").value,        ProductNumber: $get("txtProductNumber").value,        Color: $get("txtColor").value,        StandardCost: $get("txtStandardCost").value,        ListPrice: $get("txtListPrice").value,        Size: $get("txtSize").value,        Weight: $get("txtWeight").value,        ProductCategory: {__metadata: {uri: "ProductCategory(" +                          $get("cmbPDCategory").value + ")"}},        SellStartDate: new Date(),        SellEndDate: new Date(),        ModifiedDate:new Date()    };<b>    ServiceGateway.insert(newProduct, "/Product", insertProductSuccess, genericFailure);</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The insert function signature is:<br /><b>           insert: function(item, resourceSetUri, succeededCallback, failedCallback, userContext, webRequest)</b><br />And the arguments detail is:<br /><b>item:</b> Item to insert.<br /><b>resourceSetUri:</b> Resource set into which the item should be inserted.<br /><b>succeededCallback:</b> Callback to execute upon successful completion of the operation.<br /><b>failedCallback:</b> Callback to execute upon unsuccessful completion of the operation.<br /><b>userContext:</b> A context object associated with this operation.<br /><b>webRequest:</b> A WebRequest object to use for this operation.</td></tr></table><p /></div><br /></li>
+          <li>Implement the function that is executed every time a new product insertion succeeds. In this case you will refresh the products grid with the new items. To do this, replace the <b>insertProductSuccess </b>function with the following content.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function insertProductSuccess(result, context, operation){  <b>    getProducts();</b>}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc225853137" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284159" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302696" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307201" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921193" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Updating Entities Using the Data Service</b>
+        </p>
+        <p>In this task you will make changes to an existing product that will then be sent to the data service to make an update in the database.</p>
+        <ol>
+          <li>Get the full object to send and update its properties. To do this, add to <b>updateProduct() </b>function (located in <b>ProductGateway.js</b> file) the following content.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function updateProduct(){    var ServiceGateway = getService();<b>    updatedProduct = Records[$get("txtSelectedIndex").value];</b><b>    updatedProduct.Name = $get("txtName").value;</b><b>    updatedProduct.ProductNumber = $get("txtProductNumber").value;</b><b>    updatedProduct.Color = $get("txtColor").value;</b><b>    updatedProduct.StandardCost = $get("txtStandardCost").value;</b><b>    updatedProduct.ListPrice = $get("txtListPrice").value;</b><b>    updatedProduct.Size = $get("txtSize").value;</b><b>    updatedProduct.Weight = $get("txtWeight").value;</b><b>    updatedProduct.ModifiedDate = new Date();</b>    //TODO: Call the data service}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In this case you are sending the full object to the data service, although there may be some fields that don’t need to be updated, remaining unchanged during the transaction. There is also another approach, in which you can send the object only with the attributes that will be updated.</td></tr></table><p /></div><br /></li>
+          <li>Update the product by calling the update method of the data service gateway. To do this, add to <b>updateProduct() </b>function the following content.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function updateProduct(){    var ServiceGateway = getService();    updatedProduct = Records[$get("txtSelectedIndex").value];    updatedProduct.Name = $get("txtName").value;    updatedProduct.ProductNumber = $get("txtProductNumber").value;    updatedProduct.Color = $get("txtColor").value;    updatedProduct.StandardCost = $get("txtStandardCost").value;    updatedProduct.ListPrice = $get("txtListPrice").value;    updatedProduct.Size = $get("txtSize").value;    updatedProduct.Weight = $get("txtWeight").value;    updatedProduct.ModifiedDate = new Date();<b>    ServiceGateway.update(updatedProduct, updateProductSuccess, genericFailure);</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The update function signature is:<br /><b>           update: function(item, succeededCallback, failedCallback, userContext, webRequest)</b><br />And the arguments detail is:<br /><b>item: </b>Item to update.<br /><b>succeededCallback: </b>Callback to execute upon successful completion of the operation.<br /><b>failedCallback:</b> Callback to execute upon unsuccessful completion of the operation.<br /><b>userContext: </b>A context object associated with this operation.<br /><b>webRequest: </b>A WebRequest object to use for this operation.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc225853138" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284160" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302697" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307202" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921194" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Removing Entities Using the Data Service</b>
+        </p>
+        <p>In this task you will delete products from the database using the data service. </p>
+        <ol>
+          <li>Loop over the product list to retrieve all the selected rows and delete them by calling the remove method of the data service gateway. To do this, add to <b>deleteProduct() </b>function (located in <b>ProductGateway.js</b> file) the following content (shown in <b>bold</b>).<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function deleteProduct(){    var ServiceGateway = getService();<b>    for (i=0;i&lt;Records.length;i++)</b><b>    {        </b><b>        var chk = $get("chk_product_" + i); </b><b>        if (chk.checked)</b><b>        {</b><b>            var product = Records[i];</b><b>            ServiceGateway.remove(product, deleteProductSuccess, genericFailure);</b><b>        }</b><b>    }</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The <b>remove</b> function signature is:<br /><b>           remove: function(item, succeededCallback, failedCallback, userContext, webRequest)</b><br />And the arguments detail is:<br /><b>item:</b> Item to remove.<br /><b>succeededCallback:</b> Callback to execute upon successful completion of the operation.<br /><b>failedCallback:</b> Callback to execute upon unsuccessful completion of the operation.<br /><b>userContext:</b> A context object associated with this operation.<br /><b>webRequest:</b> A WebRequest object to use for this operation.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc236650892" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284161" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_6ca740a2-a674-4c09-8b74-d3404056bc82.html">Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

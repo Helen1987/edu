@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BlendLabSite", "BlendLabSite\", "{7BA69F0C-0388-4FE6-AB56-5838454303E9}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/BlendLabSite"
+		Debug.AspNetCompiler.PhysicalPath = "BlendLabSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BlendLabSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/BlendLabSite"
+		Release.AspNetCompiler.PhysicalPath = "BlendLabSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BlendLabSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "16362"
+		ProjOutputReferences = "{2fdd85eb-9c50-4681-8450-5922f1ce0c66}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlendLab", "BlendLab\BlendLab.csproj", "{2FDD85EB-9C50-4681-8450-5922F1CE0C66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BA69F0C-0388-4FE6-AB56-5838454303E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA69F0C-0388-4FE6-AB56-5838454303E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA69F0C-0388-4FE6-AB56-5838454303E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA69F0C-0388-4FE6-AB56-5838454303E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDD85EB-9C50-4681-8450-5922F1CE0C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDD85EB-9C50-4681-8450-5922F1CE0C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDD85EB-9C50-4681-8450-5922F1CE0C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDD85EB-9C50-4681-8450-5922F1CE0C66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

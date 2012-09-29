@@ -1,0 +1,167 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction To Managed Extensibility Framework</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>The Managed Extensibility Framework (MEF) allows developers to provide hooks into their .NET applications for extensions by first and third parties. MEF can be thought of as a general application extension facility.</p>
+        <p>MEF enables developers to create extensions dynamically, without the extending application or the extension requiring any specific knowledge of the other.  This ensures no coupling exists between the two at compile time, enabling applications to be extended at runtime, without the need to recompile.  MEF also provides the ability to examine the metadata of an extension assembly before loading the extension into the application -- a much faster approach.</p>
+        <p>Several key concepts relating to extensibility are covered in this lab:</p>
+        <ul>
+          <li><b>Composition</b> is the practice of combining several objects with discrete functionality into one or more complex objects. Composition is not inheritance of functionality from a parent class, but is instead the assembling of several different objects into one. For example, <b>Wing</b>, <b>Propeller</b>, <b>Fuselage</b>, and <b><i>VerticalStabilizer</i></b> objects could be composed as part of an <b>Aircraft</b> object.</li>
+          <li><b>ComposableParts</b> are the key building blocks of MEF.  <b>ComposableParts</b> enable applications to expose and consume component extensions via <b>Exports</b> and <b>Imports.</b></li>
+          <li><b>Contracts</b> are the avenue for communication between <b>Export</b> and <b>Import</b> components. A <b>Contract</b> is normally implemented via an <b>Interface</b> class. <b>Contracts</b> enable MEF <b>ComposableParts</b> to avoid dependencies or tight coupling with other components.</li>
+          <li><b>Conditional Binding</b> allows loading of components, which meet specific metadata criteria. Following the example above, you might choose to load <b>VerticalStabilizer </b>components, which were made only of composite graphite.</li>
+        </ul>
+        <p>Extensibility is achieved, primarily, by adding <b>Import</b> attributes at appropriate points in the application and adding corresponding <b>Export </b>attributes to the extensions.  <b>Import</b> and <b>Export</b> attributes can be thought of in the same aspect as a supplier and consumer respectively. <b>Export</b> components supply some value; <b>Import</b> components consume that value. Other options for extensibility are open to developers, including completely custom extensibility approaches; however, this lab focuses solely on the primary approach discussed above. Moreover, the components can be imported using the <b>ImportMany</b> attribute, which loads all the components that match the given contract as a collection.</p>
+        <p>With the release of Silverlight 4, MEF has been included in it, allowing you to extend rich internet applications. This does not imply that MEF can only be used with Silverlight 4; using the version available in codeplex (<a href="http://mef.codeplex.com/">http://mef.codeplex.com</a>), MEF can be used to compose applications created in Silverlight 3.</p>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Create extensibility modules and components</li>
+          <li>Import Extended assemblies while an application is running</li>
+          <li>Extend a Silverlight 4 application (optional)</li>
+        </ul>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>.NET Framework 4</li>
+          <li>Silverlight 4 (optional)</li>
+          <li>Silverlight 4 SDK (optional)</li>
+          <li>Silverlight 4 Tools for Visual Studio 2010 (optional)</li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps.</p>
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br />For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. The <b>Dependencies.dep</b> file launches the Visual Studio installer file that installs the code snippets.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab comprises the following exercises:</p>
+        <ol>
+          <li>
+            <a href="docSet_d0710038-bd5c-4b3a-b7a8-ee4a6753b779.html">Exercise 1: Using MEF to Extend an Application</a>
+          </li>
+          <li>
+            <a href="docSet_7b2bed22-f7c8-4204-a48f-444c9d922aba.html">Exercise 2: Using Metadata and Lazy-Loading Modules</a>
+          </li>
+          <li>
+            <a href="docSet_7549f1e5-d9c6-4fa9-82c5-0a7b78f648c7.html">Exercise 3: Using MEF and Silverlight 4</a>
+          </li>
+        </ol>
+        <h1 class="heading">Starting Materials</h1>
+        <p>This Hands-On Lab includes the following starting materials.</p>
+        <ul>
+          <li><b>Visual Studio solutions. </b>Depending on the exercise you will find Visual Studio solutions that you can use as starting point for the exercises.</li>
+        </ul>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Each exercise is accompanied by an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Each exercise contains a Visual Basic and a C# version; Inside the <b>End/Begin</b> solution folder, you will find two folders: <b>VB</b>, containing the Visual Basic version of the exercise, and <b>C#</b>, containing the C# version of it.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>Estimated time to complete this lab: <b>30 minutes</b>.</p>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_d0710038-bd5c-4b3a-b7a8-ee4a6753b779.html">Exercise 1: Using MEF to Extend an Application</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

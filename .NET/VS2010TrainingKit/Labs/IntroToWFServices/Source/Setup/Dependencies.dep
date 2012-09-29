@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DependencyCheckerConfiguration>
+
+  <title>Introduction To Workflow Services using .NET Framework 4</title>
+  <!--<image>.\Resources\customLogo.png</image>-->
+
+  <previews>
+    <title>Steps Summary</title>
+    <preview name="Check dependencies" description="Check prerequisites for the Introduction To Workflow Services lab"></preview>
+    <preview name="Install Visual Studio code snippets" description="Launch the Visual Studio installer to install the code snippets"></preview>
+  </previews>
+
+  <tasks>
+    <task description="Create HR Application Data base" scriptName=".\scripts\tasks\CreateDatabase.cmd" displayConsole="true"/>
+    <task description="Create Workflow Instance Persistence Store" scriptName=".\scripts\tasks\CreateInstanceStore.cmd" displayConsole="true"/>
+    <task description="Launch the Visual Studio installer to install the code snippets" scriptName=".\scripts\tasks\installVSCodeSnippets.cmd" displayConsole="true"/>
+  </tasks>
+
+  <dependencies>
+    <os type="Vista" buildNumber="6000">
+      <dependency
+                      value=".\scripts\Dependencies\Check\CheckVistaSP1.ps1"
+                      enabled="true"
+                      optional="false"
+                      required="true"
+                      title="Windows Vista SP1"
+                      explanation="Introduction To Workflow Services lab requires Windows Vista Service Pack 1"
+                      scriptName=""
+                      downloadUrl="http://www.microsoft.com/downloads/details.aspx?FamilyID=f559842a-9c9b-4579-b64a-09146a0ba746" />
+    </os>
+    <os type="Vista;Server" buildNumber="6001;6002;7100;7600;7601">
+      <dependency
+                      value=".\scripts\Dependencies\Check\CheckVS2010RTM.ps1"
+                      enabled="true"
+                      optional="false"
+                      required="true"
+                      title="Microsoft Visual Studio 2010"
+                      explanation="Introduction To Workflow Services lab requires Microsoft Visual Studio 2010"
+                      scriptName=""
+                      downloadUrl="http://www.microsoft.com/visualstudio/en-us/products/2010/default.mspx" />
+
+      <dependency
+                      value=".\scripts\Dependencies\Check\CheckVS2010SP1.ps1"
+                      enabled="true"
+                      optional="false"
+                      required="true"
+                      title="Microsoft Visual Studio 2010 Service Pack 1"
+                      explanation="Introduction To Workflow Services lab requires Microsoft Visual Studio 2010 Service Pack 1"
+                      scriptName=""
+                      downloadUrl="http://go.microsoft.com/fwlink/?LinkId=207130" />
+
+      <dependency
+                     value=".\scripts\Dependencies\Check\CheckNET4.ps1"
+                     enabled="true"
+                     optional="false"
+                     required="true"
+                     title=".NET Framework 4"
+                     explanation="Introduction To Workflow Services lab requires .NET Framework 4"
+                     scriptName=""
+                     downloadUrl="http://www.microsoft.com/visualstudio/en-us/products/2010/default.mspx" />
+
+      <dependency
+                     value=".\scripts\Dependencies\Check\CheckIIS7inWindows7.ps1"
+                     enabled="true"
+                     optional="true"
+                     required="false"
+                     title="Internet Information Service (IIS)"
+                     explanation="Introduction To Workflow Services lab requires IIS to locally deploy the application through Windows Server AppFabric"
+                     scriptName=".\scripts\dependencies\setup\install-iis7.bat"
+                     downloadUrl="" />
+
+      <dependency
+                     value=".\scripts\Dependencies\Check\CheckIISRemoteAdministration.ps1"
+                     enabled="true"
+                     optional="true"
+                     required="false"
+                     title="IIS Manager for Remote Administration"
+                     explanation="Introduction To Workflow Services lab requires IIS Manager for Remote Administration as a pre-requisite for the Windows Server AppFabric"
+                     scriptName=""
+                     downloadUrl="http://go.microsoft.com/fwlink/?LinkId=182018" />
+
+      <dependency
+                     value=".\scripts\Dependencies\Check\CheckAppServerExtensions.ps1"
+                     enabled="true"
+                     optional="true"
+                     required="false"
+                     title="Windows Server AppFabric"
+                     explanation="Introduction To Workflow Services lab requires Windows Server AppFabric to deploy the solution"
+                     scriptName=""
+                     downloadUrl="http://go.microsoft.com/fwlink/?LinkID=169435" />  
+    </os>
+  </dependencies>
+  <errorMessages>
+    <errorMessage error="OperatingSystemNotSupported">
+      <![CDATA[<p><b>The automatic set up can not proceed.</b></br>The lab you are trying to set up has not been tested in your environment, and some features may not work as expected.</br>You can configure your environment manually installing the prerequisites shown in the lab's overview.</p><p><b>Tested Environments: </b>Windows Vista, Windows 7, Windows 2008 and Windows 2008 R2</p><br/>]]>
+    </errorMessage>
+  </errorMessages>
+</DependencyCheckerConfiguration>

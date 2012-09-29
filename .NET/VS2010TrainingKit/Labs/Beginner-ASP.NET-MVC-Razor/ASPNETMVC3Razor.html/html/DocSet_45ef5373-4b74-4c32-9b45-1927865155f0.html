@@ -1,0 +1,198 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Razor</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This Hands-on Lab assumes you have basic knowledge of <b>ASP.NET MVC</b>. If you have not used <b>ASP.NET MVC </b>before, we recommend you to go over <b>ASP.NET MVC Fundamentals</b> Hand-on Lab.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>ASP.NET MVC 3 introduces the new view engine Razor, which was conceived to simplify the current syntax used in ASP.NET web pages. In this lab, you will learn how to create Razor views inside an MVC solution.</p>
+        <p>In the beginning of this Lab you will first get familiar with Razor syntax and its features: general rules, code blocks, inline HTML and layout pages. Once you have learned the basics, in Exercise 2 you will add Razor views in the MVC Music Store solution to provide the same functionality you have in ASP.NET views, but with a clearer and reduced code.</p>
+        <p>At the end of this lab, in Exercise 3, you will learn how to create and consume Razor Helpers to use images, grids and custom functionality.</p>
+        <h1 class="heading">About Razor View Engine</h1>
+        <p>Many ASP.NET Web pages have C# or VB code blocks in the same place as HTML markup. In some occasions this combination is uncomfortable for writing and delimiting code. To deal with that problem, Razor was designed as an easy to learn, compact and expressive view engine that enables a fluid coding workflow.</p>
+        <p>Razor is not a new programming language itself, but uses C# or Visual Basic syntax for having code inside a page without ASP.NET delimiter: <b>&lt;%= %&gt;</b>. Razor file extension is ‘<b>cshtml’</b> for C# language, and ‘<b>vbhtml’</b> for Visual Basic. In this lab, we will use C# Razor with <b>cshtml</b> syntax.</p>
+        <h1 class="heading">Razor Syntax – The fundamentals</h1>
+        <p>Before getting introduced to Razor you should first know some simple rules that will help you understand how to write HTML with C# or Visual Basic in the same page:</p>
+        <ol>
+          <li>‘<b>@</b>’ is the magic character that precedes code instructions in the following contexts:<ol><li>‘@’ For a single code line/values:<p>A single code line inside the markup:</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;p&gt;   Current time is: @DateTime.Now&lt;/p&gt;</pre></td></tr></table></span></div></li><br /><li>‘@{ … }’ For code blocks with multiple lines:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@{      var name = “John”;     var nameMessage = "Hello, my name is " + name + " Smith";} </pre></td></tr></table></span></div></li><br /><li> ‘@:’ For single plain text to be rendered in the page.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@{     @:The day is: @DateTime.Now.DayOfWeek. It is a &lt;b&gt;great&lt;/b&gt; day!}</pre></td></tr></table></span></div></li><br /></ol></li>
+          <li>HTML markup lines can be included at any part of the code:<p>It is no need to open or close code blocks to write HTML inside a page. If you want to add a code instruction inside HTML, you will need to use ‘@’ before the code:</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@if(IsPost) {      &lt;p&gt;Hello, the time is @DateTime.Now and this page is a postback!&lt;/p&gt;} else {      &lt;p&gt;Hello, today is: &lt;/p&gt; @DateTime.Now}</pre></td></tr></table></span></div><br /></li>
+          <li>Razor uses code syntax to infer indent:<p>Razor Parser infers code ending by reading the opening and the closing characters or HTML elements. In consequence, the use of openings “{“ and closings “}” is mandatory, even for single line instructions:</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// This won’t work in Razor. Content has to be wrapped between { }if( i &lt; 1 ) int myVar=0;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <h2 class="subheading">Conditionals and loops with inline HTML</h2>
+        <p>Here you will find examples of conditionals with inline html.</p>
+        <ul>
+          <li>If statement:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;p&gt;Single line If&lt;/p&gt;@if(result != ""){    &lt;p&gt;Result: @result&lt;/p&gt;}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;p&gt;Code block If&lt;/p&gt;@{    var showToday = false;    if(showToday){        @DateTime.Today;    } else{        &lt;text&gt;Sorry!&lt;/text&gt;    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Foreach statement:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;p&gt; Single Line Foreach &lt;/p&gt;&lt;ul&gt;@foreach (var myItem in Request.ServerVariables){     &lt;li&gt;@myItem&lt;/li&gt; }&lt;/ul&gt;</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;p&gt; Code block Foreach &lt;/p&gt;@{    &lt;h3&gt;Team Members&lt;/h3&gt; string[] teamMembers = {"Matt", "Joanne", "Robert", "Nancy"};    foreach (var person in teamMembers)    {        &lt;p&gt;@person&lt;/p&gt;    }}</pre></td></tr></table></span></div><br /></li>
+          <li>While statement:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@{    var countNum = 0;     while (countNum &lt; 50) {        countNum += 1;        &lt;p&gt;Line #@countNum: &lt;/p&gt;    }}</pre></td></tr></table></span></div><br /></li>
+        </ul>
+        <h2 class="subheading">Comments</h2>
+        <p>Comments in Razor are delimited by <b>@*</b><b>*@.</b> If you are inside a C# code block, you can also use // and /* */ comment delimiters.</p>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>cshtml</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>@*</b><b>    A Razor Comment</b><b>*@</b><b>@{</b><b>    //A C# comment</b><b>    /* A Multi</b><b>         line C# comment</b><b>    */</b><b>}</b></pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <p>In this Hands-on Lab, you will learn how to:</p>
+        <ul>
+          <li>Create Razor Layout page templates</li>
+          <li>Create MVC Views using Razor syntax</li>
+          <li>Create and consume Razor Helpers</li>
+        </ul>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>ASP.NET and ASP.NET MVC 3</li>
+          <li>Visual Studio 2010 Express</li>
+          <li>SQL Server Database (Express edition or above)<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You can install the previous system requirements by using the Web Platform Installer 3.0: <a href="http://go.microsoft.com/fwlink/?LinkID=194638">http://go.microsoft.com/fwlink/?LinkID=194638</a>.</td></tr></table><p /></div><br /></li>
+        </ul>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ol>
+          <li>Exercise 1: Creating a Home page view using Razor syntax</li>
+          <li>Exercise 2: Using Models in Razor views</li>
+          <li>Exercise 3: Creating and Consuming Razor Helpers from a View</li>
+        </ol>
+        <p>Estimated time to complete this lab: <b>30 minutes</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <a name="_Toc166647553" href="#">
+                  <span />
+                </a>
+                <a name="_Toc172462715" href="#">
+                  <span />
+                </a>
+                <a name="_Toc182141329" href="#">
+                  <span />
+                </a> Each exercise is accompanied by an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc244326109" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_63f00bb6-2a0a-48f2-9222-41f8aba7e26a.html">Exercise 1: Creating a Home page view using Razor syntax</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

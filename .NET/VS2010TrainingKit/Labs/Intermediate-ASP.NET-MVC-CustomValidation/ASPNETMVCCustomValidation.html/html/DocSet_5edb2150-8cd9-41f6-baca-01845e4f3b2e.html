@@ -1,0 +1,150 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Using Unobtrusive jQuery at Client Side" />
+      <MSHelp:RLTitle Title="Exercise 4: Using Unobtrusive jQuery at Client Side" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Using Unobtrusive jQuery at Client Side</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Custom Validation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Using Unobtrusive jQuery at Client Side</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to enable MVC 3 Unobtrusive jQuery validation at client side. For that reason you will include jQuery libraries into the Master Page and enable unobtrusive jQuery globally.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>The Unobtrusive jQuery uses <i>data-ajax</i> prefix JavaScript to invoke action methods on the server rather than intrusively emitting inline client scripts.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc282145891" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Running the Application before Enabling Unobtrusive jQuery</b>
+        </p>
+        <ol>
+          <li>In this task, you will run the application before including jQuery in order to compare both validation models.</li>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at Source\Ex04-Unobtrusive JavaScript Validation\Begin and press <b>F5 </b>to run the application.</li>
+          <li>The project starts in the Home page. Browse <b>/StoreManager/Create</b> and click <b>Save </b>without filling the form to verify that you get validation messages:<p><img src="images\74406234-74ab-4de6-afd0-ebde4734f500.png" /></p><p><b>Figure 1</b><br /><i>Client validation disabled</i></p><br /></li>
+          <li>In the browser, open the <b>Create</b> view source code:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML – Create.html</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…&lt;form action="/StoreManager/Create" method="post"&gt;<b>&lt;div class="validation-summary-errors"&gt;&lt;ul&gt;&lt;li style="display:none"&gt;&lt;/li&gt;</b>&lt;/ul&gt;&lt;/div&gt;…&lt;p&gt;    &lt;label for="Album_Title"&gt;Title&lt;/label&gt;    &lt;input class="input-validation-error" id="Album_Title" name="Album.Title" type="text" value="" /&gt;<b>    &lt;span class="field-validation-error"&gt;An Album Title is required&lt;/span&gt;</b>&lt;/p&gt;            &lt;p&gt;    &lt;label for="Album_Price"&gt;Price&lt;/label&gt;    &lt;input class="input-validation-error" id="Album_Price" name="Album.Price" type="text" value="0" /&gt;    &lt;span class="field-validation-error"&gt;Price must be between 0.01 and 100.00&lt;/span&gt;…</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282145892" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Enabling Client Validation from Web.config</b>
+        </p>
+        <p>In this task, you will enable unobtrusive jQuery <b>client validation</b> from <b>Web.config</b> file, which is by default set to false in all new ASP.NET MVC 3 projects.</p>
+        <ol>
+          <li>Open <b>Web.Config</b> file at project root, and make sure that the <b>ClientValidationEnabled</b> key value is set to <b>true</b>.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML  - Web.Config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…&lt;configuration&gt;  &lt;appSettings&gt;    &lt;add key="ClientValidationEnabled" value="true"/&gt;     &lt;add key="UnobtrusiveJavaScriptEnabled" value="true"/&gt;   &lt;/appSettings&gt;…</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>You can also enable client validation by code at Global.asax.cs to get the same results: <br /><b> HtmlHelper.ClientValidationEnabled = true;</b><br />Additionally, you can assign ClientValidationEnabled attribute into any controller to have a custom behavior.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282145893" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding Unobtrusive jQuery to Master Page</b>
+        </p>
+        <p>In this task, you will add the unobtrusive jQuery references into the Master Page.</p>
+        <ol>
+          <li>Open <b>Site.Master</b> at <b>Views\Shared</b>.</li>
+          <li>Add MVC 3 script references to <b>jQuery</b>:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…&lt;head runat="server"&gt;    &lt;link href="/Content/Site.css" rel="Stylesheet" type="text/css" /&gt;    &lt;title&gt;&lt;asp:ContentPlaceHolder ID="TitleContent" runat="server" /&gt;&lt;/title&gt;<b>    &lt;script src="../../Scripts/jquery-1.4.1.js" type="text/javascript"&gt;&lt;/script&gt;</b><b>    &lt;script src="../../Scripts/jquery.validate.js" type="text/javascript"&gt;&lt;/script&gt;</b><b>    &lt;script src="../../Scripts/jquery.validate.unobtrusive.js" type="text/javascript"&gt;&lt;/script&gt;</b>&lt;/head&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b> </b>All these jQuery libraries are included in all MVC 3 new projects. You can find more libraries in the project’s folder <b>/Scripts</b>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282145894" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application Using Unobtrusive jQuery Validation</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b> create view template performs client side validation using jQuery libraries when the user creates a new album.</p>
+        <ol>
+          <li>Press <b>F5 </b>to run the application.</li>
+          <li>The project starts in the Home page. Browse <b>/StoreManager/Create</b> and click <b>Save </b>without filling the form to verify that you get validation messages:<p><img src="images\210ece5d-1bad-48e4-a5b4-72a9669bacc3.png" /></p><p><b>Figure 2</b><br /><i>Client validation with jQuery enabled</i></p><br /></li>
+          <li>In the browser, open the source code for Create view:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…&lt;/title&gt;<b>   &lt;script src="../../Scripts/jquery-1.4.1.js" type="text/javascript"&gt;&lt;/script&gt;</b><b>   &lt;script src="../../Scripts/jquery.validate.js" type="text/javascript"&gt;&lt;/script&gt;</b><b>    &lt;script src="../../Scripts/jquery.validate.unobtrusive.js" type="text/javascript"&gt;&lt;/script&gt;</b>&lt;/head&gt;…&lt;p&gt;    &lt;label for="Album_Title"&gt;Title&lt;/label&gt;<b>    &lt;input data-val="true" data-val-length="The field Title must be a string with a maximum length of 160." data-val-length-max="160" data-val-required="An Album Title is required" id="Album_Title" name="Album.Title" type="text" value="" /&gt;</b>&lt;/p&gt;&lt;p&gt;    &lt;label for="Album_Price"&gt;Price&lt;/label&gt;<b>    &lt;input data-val="true" data-val-number="The field Price must be a number." data-val-range="Price must be between 0.01 and 100.00" data-val-range-max="100" data-val-range-min="0.01" data-val-required="Price is required" id="Album_Price" name="Album.Price" type="text" value="0" /&gt;</b>    &lt;span class="field-validation-valid" data-valmsg-for="Album.Price" data-valmsg-replace="true"&gt;&lt;/span&gt;&lt;/p&gt;                &lt;span class="field-validation-valid" data-valmsg-for="Album.Title" data-valmsg-replace="true"&gt;&lt;/span&gt;&lt;/p&gt;            …</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>For each client validation rule, Unobtrusive jQuery adds an attribute with data-val-rulename="message". Below is a list of tags that Unobtrusive jQuery inserts into the html input field to perform client validation:<br /><b>Data-val</b><br /><b>Data-val-number</b><br /><b>Data-val-range</b><br /><b>Data-val-range-min / Data-val-range-max</b><br /><b>Data-val-required</b><br /><b>Data-val-length</b><br /><b>Data-val-length-max / Data-val-length-min</b><br /><br />All the data values are filled with model <b>Data Annotation</b>. Then, all the logic that works at server side can be run at client side.<br /><br />For example, Price attribute has the following data annotation in the model: <br /><b>   [Required(ErrorMessage = "Price is required")]</b><br /><b>   [Range(0.01, 100.00, ErrorMessage = "Price must be between 0.01 and 100.00")]</b><br /><b>   public object Price { get; set; }</b><br /><br />After using Unobtrusive jQuery, the generated code is:<br />   &lt;input data-val="true" <br /><b>   data-val-number="The field Price must be a number." </b><br /><b>   data-val-range="Price must be between 0.01 and 100.00" </b><br /><b>   data-val-range-max="100" </b><br /><b>   data-val-range-min="0.01" </b><br /><b>   data-val-required="Price is required" </b><br />   id="Album_Price" name="Album.Price" type="text" value="0" /&gt;</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_540b67fd-00d6-43da-8fb0-9af1b35bb21a.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

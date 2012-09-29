@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Version>1.0.0</Version>
+  <Author>
+    <Name>ryandunn</Name>
+  </Author>
+  <Id>WhatIsWindowsAzureVideo</Id>
+  <Title>What is Windows Azure?</Title>
+  <Description>
+    Just what is Windows Azure?  Join Ryan in this brief video for an introduction to Windows Azure.  We'll explore its components, the key features, and discuss why you should care.
+  </Description>
+  <Abstract>
+    Just what is Windows Azure?  Join Ryan in this brief video for an introduction to Windows Azure.  We'll explore its components, the key features, and discuss why you should care.
+  </Abstract>
+  <Url>http://mschnlnine.vo.llnwd.net/d1/ch9/6/7/0/4/7/4/WhatIsWindowsAzure_2MB_ch9.wmv</Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/posts/dunnry/What-is-Windows-Azure/player/" />
+  </CustomProperties>
+  <DocumentThumbnail>http://mschnlnine.vo.llnwd.net/d1/ch9/6/7/0/4/7/4/WhatIsWindowsAzure_large_ch9.png</DocumentThumbnail>
+</Video>

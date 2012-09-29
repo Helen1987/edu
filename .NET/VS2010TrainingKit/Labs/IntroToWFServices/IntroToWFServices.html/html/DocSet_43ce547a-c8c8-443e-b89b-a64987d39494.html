@@ -1,0 +1,214 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Applicant Screening" />
+      <MSHelp:RLTitle Title="Exercise 3: Applicant Screening" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Applicant Screening</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow Services using .NET Framework 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Applicant Screening</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Due to the high volume of résumés that Contoso receives, they want to automate a portion of the résumé screening process. In this exercise, you will send a message to a Flowchart Workflow Service that screens candidates based on education, and then you will notify the HR reviewer of applications that need review by a human.</p>
+        <a name="_Toc246389203" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310988" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002943" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise, you can use the solution you finished from Exercise 2. Alternatively, you can follow the following steps to begin with Exercise 3.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for <b>Exercise 3</b> located under the <b>\Source\Ex3\Begin</b> folder (choosing the folder that matches the language of your preference.) Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc246389204" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310989" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002944" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding the Education Screening Activity</b>
+        </p>
+        <p>In this task, you will add an existing activity that screens résumés based on the level of education.</p>
+        <ol>
+          <li>Open <b>ScreenEducation.xaml</b> file of the <b>HRApplicationServices.Activities</b> project and explore it. This activity is implemented as a Flowchart that will be used to automatically screen out applicants based on the level of education. While the other activities in our HRApplicationServices.Activities library were implemented in code, this activity is implemented in XAML. You can create and share activities implemented in code or XAML using the Workflow Designer.<p><img src="images\c00fa8ae-bb71-47e8-913f-3e4a53141f06.png" /></p><p><b>Figure 31</b><br /><i>The ScreenEducation Flowchart</i></p><br /></li>
+        </ol>
+        <a name="_Toc246389207" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310992" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002945" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Calling the ScreenEducation Activity</b>
+        </p>
+        <ol>
+          <li>Open <b>SubmitApplication.xamlx</b>.</li>
+          <li>Expand the <b>Screen Applicant</b> sequence.</li>
+          <li>Add a new variable <b>EducationPassed</b> of type <b>Boolean </b>to the <b>Screen Applicant</b> scope<b>. </b>To do this:<ol><li>Click the <b>Variables</b> button</li><li>Click on <i>Create Variable</i></li><li>Name the variable <b>EducationPassed</b></li><li>In the type select <b>Boolean</b></li></ol></li>
+          <li>From the <b>HRApplicationServices.Activities</b> group drop a <b>ScreenEducation</b> activity onto the Screen Applicant sequence and set the following properties:<ol><li>Display Name: <b>Auto Screen Education</b></li><li>Education: <b>ApplicationRequest.Resume.Education</b></li><li>EducationPassed: <b>EducationPassed</b></li></ol></li>
+        </ol>
+        <a name="_Toc246389208" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310993" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002946" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Conditionally Notifying a Human Reviewer</b>
+        </p>
+        <p>Not all applicants will pass the education screening. For those that do not, you need to update the database and notify them. For those that do pass you need to notify a human reviewer to check the application and make a decision.</p>
+        <ol>
+          <li>Drop an <b>If</b> activity from the Control Flow group below the Auto Screen Education activity and set its properties:<ol><li>Display Name: <b>If Education Screen Passed</b></li><li>Condition: <b>EducationPassed</b></li></ol></li>
+          <li>If the applicant failed the education screen, you will simply update the database. Drop an <b>UpdateHireApproved</b> activity from the <b>HRApplicationServices.Activities</b> group on the <b>Else</b> part of the If activity and set the properties. The <b>Hire</b> variable defaulted to False so the applicant will not be hired in this branch.<ol><li>Display Name: <b>Update No Hire</b></li><li>ApplicantID: <b>ApplicationResponse.ApplicationID</b></li><li>HireApproved: <b>Hire</b></li></ol></li>
+          <li>If the applicant passed the education screen you need to notify a human reviewer and wait for a response. Drop a <b>Sequence</b> activity from the Control Flow group on the <b>Then</b> part of the If activity and set the properties.<ol><li>Display Name: <b>Human Screening</b></li></ol></li>
+          <li>You need to send an email to the HR Administrator to let them know there is an application to review. To do this, drop the <b>RequestHumanScreening</b> activity from the <b>HRApplicationServices.Activities</b> group to the Human Screening sequence and set the properties.<ol><li>Display Name: <b>Request Human Screening</b></li><li>ApplicationID: <b>ApplicationResponse.ApplicationID</b></li><li>ApplicationRequest: <b>ApplicationRequest</b></li></ol></li>
+          <li>Now you need to wait for a response from the HR Administrator. They will be using a web page to send a message to your workflow with the result of the screening. Drop a <b>TransactedReceiveScope</b> activity from the <b>Messaging</b> group below the Request Human Screening activity and set the properties.<ol><li>Display Name: <b>When Human Screening Complete</b></li></ol></li>
+          <li>Add a variable <b>HumanScreening</b> of type <b>HumanScreeningResult</b> to the <b>When Human Screening Complete</b> scope.</li>
+          <li>Drop a <b>Receive</b> activity from the Messaging group in the Request area and set the following properties:<ol><li>Operation Name: <b>HumanScreeningCompleted</b></li><li>Service Contract Name:<b> {http://contoso.com/hr/}IApplicationService</b></li><li>Content: Click <img src="images\3faddc4d-cfec-4dae-85af-44c15e60b7ca.png" /> to display the Content Definition dialog and set the Message data to <b>HumanScreening</b></li></ol></li>
+          <li>Because this message is sent to a workflow that already exists you must use correlation to provide a way for the WorkflowServiceHost to locate the correct workflow instance. To establish correlation for this Receive activity, do the following.<ol><li><b>CorrelatesOn</b>: Click <img src="images\70dbb618-4c95-4e77-866a-284a4e4435fd.png" /> to display the CorrelatesOn Definition dialog</li><li>CorrelatesWith: <b>ApplicationIDHandle</b></li><li>Key: Double-click the <b>AppID : Int32</b> value</li><li>Click <b>OK</b> to dismiss the dialog</li></ol></li>
+          <p>
+            <img src="images\a5e60e93-5d00-49e6-b751-55b1adf0962b.png" />
+          </p>
+          <p>
+            <b>Figure 32</b>
+            <br />
+            <i>The Correlation definition for the Human Screening Receive activity</i>
+          </p>
+          <br />
+          <li>Once the message is received you need to update the database and send a reply. Since you have more than one activity in the <b>Body</b> drop a <b>Sequence</b> and set the following property:<ol><li>Display Name: <b>Update Human Screening Result</b></li></ol></li>
+          <li>Now you can set the actual Hire value from the human screening result. Because Hire was initialized to False, the only way Hire is actually set to true is if the applicant passes both automated and human screening. Drag an <b>Assign</b> activity from the Primitives group and drop it into the <b>Update Human Screening Result</b> sequence and set the properties.<ol><li>Display Name: <b>Assign Hire</b></li><li>To: <b>Hire</b></li><li>Value: <b>HumanScreening.HiringApproved</b></li></ol></li>
+          <li> Drop an <b>UpdateHireApproved</b> activity from the <b>HRApplicationServices.Activities</b> group below the Assign Hire activity and set the properties.<ol><li>Display Name: <b>Update Hire Result</b></li><li>ApplicantID: <b>ApplicationResponse.ApplicationID</b></li><li>HireApproved: <b>Hire</b></li></ol></li>
+          <li>Now you need to send a response to the web application. To create a <b>SendReply</b> activity, right-click the Receive activity, and select <b>Create SendReply</b>. Because the Receive activity is inside the Request area and the reply cannot be placed there the <b>SendReply</b> activity will be placed on the clipboard.<p><img src="images\dfe91542-c409-4a04-8c27-ef17abe4f3f5.png" /></p><p><b>Figure 33</b><br /><i>Create a SendReply for the receive</i></p><br /><p><img src="images\55e7a4ae-911a-47bd-88d0-ee9153266e26.png" /></p><p><b>Figure 34</b><br /><i>Worflow Designer message saying that the SendReply activity was copied to the clipboard</i></p><br /></li>
+          <li>Paste the <b>SendReply</b> below the Update Hire Result activity and set its properties.<ol><li>Display Name: <b>Send Human Screening Reply</b></li><li>Content - Message data: <b>True</b></li></ol></li>
+          <p>
+            <img src="images\6137c033-ff59-4d70-868e-781def81ce2b.png" />
+          </p>
+          <p>
+            <b>Figure 35</b>
+            <br />
+            <i>Human Screening Completed</i>
+          </p>
+          <br />
+          <li>From the menu select <b>Build / Build Solution</b> (CTRL+SHIFT+B).</li>
+        </ol>
+        <a name="_Toc246389209" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310994" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002947" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Sending Human Screening Results</b>
+        </p>
+        <p>The HireApproval.aspx page will need to call the SubmitApplication.xamlx workflow. Even though they are in the same website the way you call into the workflow is by sending it a message. In this task, you will modify the page to send the hire message.</p>
+        <ol>
+          <li>Next we need to Add a Service Reference to send a message to the receive activity of the <b>SubmitApplication.xamlx</b> workflow that is waiting for the human screening result. To do this right-click the <b>HRApplicationServices</b> project and select <b>Add Service Reference.</b></li>
+          <li>In the Add Service Reference dialog click <b>Discover</b> to find the service <b>SubmitApplication.xamlx</b>.</li>
+          <li>Name the service reference <b>Application</b>,<b> </b>and click <b>OK</b> to generate the reference. After the proxy was generated by Visual Studio, make sure that the Web.config file has the following endpoint configuration.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;endpoint address="http://localhost:62305/SubmitApplication.xamlx" </b><b>    binding="basicHttpBinding"</b><b>    bindingConfiguration="BasicHttpBinding_IApplicationService"</b><b>    contract="Application.IApplicationService"</b><b>    name="BasicHttpBinding_IApplicationService" /&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>In the <b>HRApplicationServices</b> project, right-click <b>HireApproval.aspx</b>, and select <b>View Code</b> (F7).</li>
+          <li>Add the following namespace directives.<p><i>(Code Snippet – Introduction to WF Services Lab – HireApprovalNamespace CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using HRApplicationServices.Contracts;</b><b>using HRApplicationServices.Application;</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Introduction to WF Services Lab – HireApprovalNamespace VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports HRApplicationServices.Contracts</b><b>Imports HRApplicationServices.Application</b></pre></td></tr></table></span></div><br /></li>
+          <li>Locate the <b>SendHumanScreenComplete</b> method, and modify the code as shown.<p><i>(Code Snippet – Introduction to WF Services Lab – SendHumanScreenComplete CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void SendHumanScreenComplete(bool hire){<b> ApplicationServiceClient proxy = new ApplicationServiceClient();</b><b> try</b><b> {</b><b> // Create the result</b><b> HumanScreeningResult result = new HumanScreeningResult()</b><b> {</b><b> AppID = Convert.ToInt32(LabelAppID.Text),</b><b> HiringApproved = hire,</b><b> };</b><b> // Wrap it in a request</b><b> HumanScreeningCompletedRequest request = </b><b> new HumanScreeningCompletedRequest(result);</b><b> // Call the workflow service</b><b> proxy.HumanScreeningCompleted(result);</b><b> proxy.Close();</b><b> }</b><b> catch (Exception)</b><b> {</b><b> proxy.Abort();</b><b> throw;</b><b> } </b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Introduction to WF Services Lab – SendHumanScreenComplete VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>VB</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub SendHumanScreenComplete(ByVal hire As Boolean)<b> Dim proxy As ApplicationServiceClient = New ApplicationServiceClient()</b><b> Try</b><b> Dim result As New HumanScreeningResult With</b><b> {</b><b> .AppID = Convert.ToInt32(LabelAppID.Text),</b><b> .HiringApproved = hire</b><b> }</b><b> proxy.HumanScreeningCompleted(result)</b><b> proxy.Close()</b><b> Catch ex As Exception</b><b> proxy.Abort()</b><b> Throw</b><b> End Try</b>End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you are using Visual Basic and get a compilation error stating that the <b>ApplicationServiceClient</b> type is not defined, add the <b>SubmitApplication.vb</b> file located at <b>Assets\VB\HRApplicationServices</b> to the <b>HRApplicationServices</b> project.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_2307ae35-31b8-4053-be57-1fc93666147b.html">Exercise 3: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

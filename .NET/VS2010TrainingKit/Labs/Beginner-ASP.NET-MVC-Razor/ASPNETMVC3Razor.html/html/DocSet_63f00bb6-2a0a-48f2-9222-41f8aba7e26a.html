@@ -1,0 +1,279 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a Home Page View Using Razor Syntax" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a Home Page View Using Razor Syntax" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a Home Page View Using Razor Syntax</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Razor</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a Home Page View Using Razor Syntax</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>You have been working with ASP.NET C# language and HTML to create controllers and views. In this exercise, you will learn how to create MVC 3 views by using <b>Razor syntax</b> and <b>Razor Layout Pages</b>. In order to do that you will work with MVC Music Store web application to write its <b>Home Page view in Razor</b>.</p>
+        <a name="_Toc275354086" href="#">
+          <span />
+        </a>
+        <a name="_Toc275441014" href="#">
+          <span />
+        </a>
+        <a name="_Toc275530008" href="#">
+          <span />
+        </a>
+        <h2 class="subheading">Razor Layout Pages</h2>
+        <p>A<b> Razor Layout page</b> is the equivalent of an ASP.NET Master Page. It <b>defines the structure</b> of a Web page by using <b>HTML markup</b>, and defines sections that will be filled with custom content. Web pages linked to a layout will only have to complete the sections with their own HTML. By using layout pages your site will have a <b>consistent look</b> that will also be easier to modify.</p>
+        <h2 class="subheading">Razor Layout Pages – Structure</h2>
+        <p>
+          <img src="images\d7e5dc04-9a39-47d1-bafd-7697f797e619.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Layout and Web Pages</i>
+        </p>
+        <br />
+        <p>In essence, Razor Layout pages are HTML files that define a <b>Body</b> and additional <b>sections</b> by using the following instructions:</p>
+        <ul>
+          <li><b>@RenderBody():</b> Renders the content of a page that is not within any named sections.</li>
+          <li><b>@RenderSection("mySectionName"):</b> Renders the content of the section within the given name. Sections are mandatory by default, so each page linked to the template will have to declare them.</li>
+          <li><b>@RenderSection("mySectionName", optional:true):</b> Renders the content of an optional section. The pages that are linked to the template can omit the definition of an optional section.</li>
+        </ul>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>Note</b>: <b>Optional sections</b> allow us to use the same layout in pages that share part of the structure. However, <b>this feature has to be carefully used if we want to keep a tidy and maintainable layout</b>. In those cases, when the differences between the pages are significant, it will be better to add a new page layout instead of having a complex one.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>Next you will see an example of a layout that defines two sections, one of them optional:</p>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Site.cshtml</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Layout Page Content&lt;/title&gt;        &lt;link href="/Content/Site.css" rel="Stylesheet" type="text/css" /&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id="header"&gt;<b>        @RenderSection("header")</b>    &lt;/div&gt;    &lt;div id="main"&gt;<b>        @RenderBody()</b>    &lt;/div&gt;    &lt;div id="footer"&gt;<b>        @RenderSection("footer", optional:true)</b>    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Optional sections can also be defined by using Razor directive <b>IsSectionDefined("name")</b>.<br />The following line is equival to “<b>@RenderSection("footer",optional:true)</b>”:<br /><b>      @if (IsSectionDefined("footer")) {</b><br /><b>            @RenderSection("footer")</b><br /><b>      }</b></td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>Here is an example of a Razor Web page that links to the previous layout:</p>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>cshtml</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>@{</b>    LayoutPage = "~/Shared/Site.cshtml";<b>}</b><b>@section header {</b>&lt;p&gt;    Razor example&lt;/p&gt;<b>}</b><b>@section footer {</b>&lt;p&gt;    Optional page footer&lt;/p&gt;<b>}</b>&lt;div&gt;    Using Layout Pages – Body content&lt;/div&gt;</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Most of the HTML elements were moved to the layout, leaving only the body and the section declarations.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc282513984" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a CSHTML Layout Page</b>
+        </p>
+        <p>In this task, you will learn how to create a Layout page for Razor views that will work like the Site.master page from the ASP.NET MVC Fundamentals Hands-on Lab exercises.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start | All Programs | Microsoft Visual Studio 2010 Express | Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex01-CreatingAHomeRazorView\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>Add a <b>Layout Page</b>. Because it is a shared resource you will create it under the <b>/Views/Shared</b> folder, in the same place of ASP.NET MasterPage. To do this, expand the <b>Views</b> folder and right-click the <b>Shared</b> folder. Select <b>Add</b> and then the <b>New Item</b> command.<p><img src="images\4d998be2-0755-4e62-a543-c4ce81540553.png" /></p><p><b>Figure 2</b><br /><i>Adding a new item to the solution</i></p><br /></li>
+          <li>In the <b>Add New Item</b> dialog box, select the <b>MVC 3 Layout Page (Razor) </b>template, located under <b>Visual C#, Web</b> template list. Change the name to <b>Site.cshtml</b> and click <b>Add</b>.<p><img src="images\e4c33d03-4a24-4a72-a035-d5153ab35c18.png" /></p><p><b>Figure 3</b><br /><i>Adding a new Razor Layout Page</i></p><br /></li>
+          <li>Site.cshtml file is added. This template contains the HTML layout for all pages on the site. It includes the <b>&lt;html&gt;</b> element for the HTML response, as well as the <b>&lt;head&gt;</b> and <b>&lt;body&gt;</b> elements.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;    &lt;title&gt;@ViewBag.Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;        @RenderBody()    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This is the standard layout page generated by MVC 3, which displays the body inside a &lt;div&gt; block.<br /><b>@ViewBag.Title</b> (equivalent of @ViewBag [“Title”] used in ASP.NET to access ViewBag collection) shows the content of “Title” element.<br />As <b>@ViewBag</b> refers to dynamic type collection, it is possible to assign any type of elements inside.</td></tr></table><p /></div><br /></li>
+          <li>Add a reference to Mvc MusicStore stylesheet, to define the style of your site.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;<b>&lt;link href="/Content/Site.css" rel="Stylesheet" type="text/css" /&gt;</b>    &lt;title&gt;@ViewBag.Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;        @RenderBody()    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Add a common header with links to the Home page and Store area on all pages in the site. In order to do that, add the following code inside the <b>&lt;div&gt;</b> statement.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;      &lt;link href="/Content/Site.css" rel="Stylesheet" type="text/css" /&gt;      &lt;title&gt;@ViewBag.Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;<b>       &lt;div id="header"&gt;</b><b>            &lt;h1&gt;ASP.NET MVC MUSIC STORE&lt;/h1&gt;</b><b>            &lt;ul id="navlist"&gt;</b><b>                &lt;li class="first"&gt;&lt;a href="/" id="current"&gt;Home&lt;/a&gt;&lt;/li&gt;</b><b>                &lt;li&gt;&lt;a href="/Store/"&gt;Store&lt;/a&gt;&lt;/li&gt;</b><b>            &lt;/ul&gt;</b><b>        &lt;/div&gt;</b>        @RenderBody()    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Add an optional section before the body by using <b>IsSectionDefined</b> directive:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…          &lt;/div&gt;<b>      @if (IsSectionDefined("header")) {</b><b>            @RenderSection("header")</b><b>      }</b>       @RenderBody()&lt;/div&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Optional sections can also be defined by using the directive <b>@RenderSection(“header”,optional:true)</b></td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc275354087" href="#">
+          <span />
+        </a>
+        <a name="_Toc275441015" href="#">
+          <span />
+        </a>
+        <a name="_Toc275530009" href="#">
+          <span />
+        </a>
+        <a name="_Toc282513985" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding a View Template in Razor</b>
+        </p>
+        <p>In this task, you will add a view template in Razor for the <b>Home</b> page. At the end of the task you should get the same page you use to have when using ASPX templates, but with a simplified syntax.</p>
+        <ol>
+          <li>Open <b>HomeController.cs </b>class and right-click inside the Index Action method display context menu. Select <b>Add View</b> menu option to display the dialog box.<p><img src="images\c71efdc5-a14d-43a5-89ef-27070118d59f.png" /></p><p><b>Figure 4</b><br /><i>Adding a new Home Index View from a Razor Template</i></p><br /></li>
+          <li>The <b>Add View</b> Dialog appears. It allows generating View template files. By default this dialog pre-populates the name of the View template so that it matches the action method that will use it (in this case, View name is set to Index). Fill the dialog box according to the following values and click <b>Add</b>:<ol><li>Choose <b>Razor (CSHTML)</b> at “View Engine”.</li><li>Make sure the “Use a layout or master page” checkbox is checked and verify that Razor Layout template path is “<b>~/Views/Shared/Site.cshtml</b>”.<p><img src="images\cf83a2f1-cfdc-4728-8a67-546101379205.png" /></p><p><b>Figure 5</b><br /><i>Adding a new Razor View dialog box</i></p><br /></li></ol></li>
+          <li>Visual Studio generates an <b>Index.cshtml</b> Razor view template inside the <b>Views\Home</b> folder with this structure:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@{    ViewBag.Title = "Index";    Layout = "~/Views/Shared/Site.cshtml";}&lt;h2&gt;Index&lt;/h2&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You can change your page layout by modifying the Layout variable value.</td></tr></table><p /></div><br /></li>
+          <li>Add a comment and a title inside a code block with Razor syntax.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>@{</b><b>    ViewBag.Title = "Home";</b>    Layout = "~/Views/Shared/Site.cshtml";<b>}</b><b>&lt;h2&gt;This is the Home Page&lt;/h2&gt;</b><b>@{</b><b>    var myname = "MVC Music Store";</b><b>    &lt;div&gt;</b><b>        My name is @myname</b><b>    &lt;/div&gt;</b><b>}</b><b>@*</b><b>    &lt;div&gt;</b><b>        I'm inside a comment</b><b>    &lt;/div&gt;</b><b>*@</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you have an HTML markup inside a code block (in this example, <b>&lt;div&gt;</b>) and want to use C# code instruction inside, you will need to use the <b>@</b> operator. After the HTML markup is closed (in this example , <b>&lt;/div&gt;)</b>, you can continue writing C# code again without using <b>@</b>.</td></tr></table><p /></div><a name="_Toc275354088" href="#"><span /></a><a name="_Toc275441016" href="#"><span /></a><a name="_Toc275530010" href="#"><span /></a><br /></li>
+          <li>Show current date after the title, and use <b>@:</b> delimiter to write a variable inside a code block:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>@{</b>    ViewBag.Title = "Home";    Layout = "~/Views/Shared/Site.cshtml";<b>}</b>&lt;h2&gt;This is the Home Page&lt;/h2&gt;@{    var myname = "MVC Music Store";    &lt;div&gt;        My name is @myname    &lt;/div&gt;}<b>@{</b><b>    var now = DateTime.Now;</b><b>    &lt;text&gt;</b><b>        Now is @now</b><b>    &lt;/text&gt;</b><b>}</b><b>&lt;div&gt;</b><b>@{</b><b>    var engine = "Razor";</b><b>    @: I'm using @engine engine.</b><b>}</b><b>&lt;/div&gt;</b>@*    &lt;div&gt;        I'm inside a comment    &lt;/div&gt;*@</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>@:</b> operator allows <b>single lines</b> that can contain <b>plain text</b> or any mixture of text, markup and code that starts with plain text. <b>@:</b> must be used once per line.<br />To write multiple plain text/mixed lines, use the HTML element <b>&lt;text&gt;&lt;/text&gt;</b> instead.<br />Note that is not necessary to use <b>@:</b> inside a code block if you won’t be starting with plain text. As you have seen before, HTML markup elements can be included at any part of the code.</td></tr></table><p /></div><br /></li>
+          <li>Add the optative section “Header”, which was defined in the layout page. This will render a “Welcome” message before the body section:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>@{</b>    ViewBag.Title = "Home";    Layout = "~/Views/Shared/Site.cshtml";<b>}</b><b>@section header {</b><b>   &lt;h3&gt;Welcome&lt;/h3&gt;</b><b>}</b>&lt;h2&gt;This is the Home Page&lt;/h2&gt;…</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282513986" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Running the Application</b>
+        </p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The project starts in the Home page. Verify that the Razor view is loaded:<p><img src="images\e0885d15-0615-4c21-959b-a9880f2a012c.png" /></p><p><b>Figure 6</b><br /><i>Showing a Razor View</i></p><br /></li>
+        </ol>
+        <a name="_Toc282513987" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Passing Parameters to a Layout Page</b>
+        </p>
+        <p>In this task, you will learn how to pass parameters from a page to its layout. To do that, you will use the <b>PageData</b> dynamic collection to pass a string message that will be rendered in the layout.</p>
+        <ol>
+          <li>Open <b>Index.cshtml</b> view from the folder <b>\Views\Home</b>, and assign a string value to PageData collection:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml </th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>@{</b>    ViewBag.Title = "Home";    Layout = "~/Views/Shared/Site.cshtml";<b>    PageData["ApplicationTitle"]= "ASP.NET MVC 3 MUSIC STORE – Razor Style";</b><b>}</b>…</pre></td></tr></table></span></div><br /></li>
+          <li>Open <b>Site.cshtml</b> layout page from <b>\Views\Shared</b> project folder, and modify it to show PageData <b>ApplicationTitle</b> element after the @RenderBody directive:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml – Site.cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…       @RenderBody()<b>       @if (PageData["ApplicationTitle"]!=null) {</b><b>          &lt;h3&gt;@PageData["ApplicationTitle"]&lt;/h3&gt;</b><b>       }</b>…</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282513988" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The project starts in the Home page. Verify that the Razor view is loaded showing the PageData text:<p><img src="images\69109ea2-aa5a-4534-89c9-3dc64f961ea3.png" /></p><p><b>Figure 7</b><br /><i>A Razor View Showing a PageData element</i></p><br /></li>
+        </ol>
+        <p>In the next exercise you will learn how to create more Razor views that will access to Music Store model and show content.</p>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_f5b2e0a5-4457-4fea-a094-344504d9ceb9.html">Exercise 2: Using Models in Razor Views</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

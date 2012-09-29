@@ -1,0 +1,154 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Calling a WCF Service and Binding Data" />
+      <MSHelp:RLTitle Title="Exercise 3: Calling a WCF Service and Binding Data" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Calling a WCF Service and Binding Data</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating a Windows Forms Application to Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Calling a WCF Service and Binding Data</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <br />
+        <p>In this exercise you'll create a WCF service proxy that can be used to call an existing WCF service. You'll also use a clientaccesspolicy.xml file to handle cross-domain issues and bind data to controls.</p>
+        <ol>
+          <li>Right-click on the <b>SilverlightCustomerViewer</b> project and select <b>Add Service Reference</b> from the menu.</li>
+          <li>Once the <b>Add Service Reference</b> dialog appears click the <b>Discover</b> button to locate WCF services within the solution. </li>
+          <li>Click on the icon to the left of <b>CustomerService.svc</b> to expand it.  Drill-down until you can see the <b>ICustomerService</b> contract. Click the contract name and note that it has several service operations available.</li>
+          <li>In the <b>Namespace</b> box supply a name of <b>CustomerService.Proxies</b> as shown next:<p><img src="images\e969718a-236c-4e4c-afca-02afc670d3ec.png" /></p><p><b>Figure 10</b><br /><i>Add Service Reference dialog box</i></p></li>
+          <li>Click <b>OK</b> to create the WCF service proxy.</li>
+          <li>Add a new <b>Customer</b> class into the <b>SilverlightCustomerViewer</b> project and change the class's namespace so that it matches with the namespace of the class generated by the WCF proxy:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>SilverlightCustomerViewer.CustomerService.Proxies</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CustomerService.Proxies</pre></td></tr></table></span></div></li>
+          <li>Add a <b>FullName</b> property into the <b>Customer</b> class as shown next.  Ensure that you mark the class with the <b>partial</b> keyword. This property will be displayed by the <b>ComboBox</b> control.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public partial class Customer{    public string FullName    {        get        {            return FirstName + " " + LastName;        }    }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Partial Class Customer    Public ReadOnly Property FullName() As String       Get          Return FirstName + " " + LastName       End Get    End PropertyEnd Class</pre></td></tr></table></span></div></li>
+          <li>Open the <b>MainPage.xaml </b>code-beside file in the editor and import the <b>proxy</b> namespace at the top of the code file:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using SilverlightCustomerViewer.CustomerService.Proxies;</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Imports CustomerService.Proxies</pre></td></tr></table></span></div></li>
+          <br />
+          <br />
+          <li>Add the following code within the constructor to hook the <b>Loaded</b> event to an event handler:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Loaded += MainPage_Loaded;</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>AddHandler Loaded, AddressOf MainPage_Loaded</pre></td></tr></table></span></div></li>
+          <li>Add a <b>MainPage_Loaded</b> method immediately after the constructor with the following code to use the WCF service proxy created earlier and make an asynchronous data request:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void MainPage_Loaded(object sender, RoutedEventArgs e){    var proxy = new CustomerServiceClient();    proxy.GetCustomersCompleted += proxy_GetCustomersCompleted;    proxy.GetCustomersAsync();}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub MainPage_Loaded(sender as Object, e as RoutedEventArgs)    Dim proxy as New CustomerServiceClient()    AddHandler proxy.GetCustomersCompleted, _      AddressOf proxy_GetCustomersCompleted    proxy.GetCustomersAsync()End Sub</pre></td></tr></table></span></div></li>
+          <li>Add the following method and associated code to handle the asynchronous callback that will be made when data from the WCF service is returned to the Silverlight application.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Once the WCF service proxy returns data it can be accessed through the GetCustomersCompletedEventArgs object's Result property which is typed as an ObservableCollection of Customer.  The collection is assigned to the ItemsSource property of the ComboBox which is similar to the DataSource property found on data controls in ASP.NET and Windows Forms.</td></tr></table><p /></div><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void proxy_GetCustomersCompleted(object sender,   GetCustomersCompletedEventArgs e){    CustomersComboBox.ItemsSource = e.Result;}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub proxy_GetCustomersCompleted(sender as Object, _  e as GetCustomersCompletedEventArgs)   CustomersComboBox.ItemsSource = e.ResultEnd Sub</pre></td></tr></table></span></div></li>
+          <li>Back in <b>MainPage.xaml</b>, select the <b>TextBlock</b> control immediately to the right of Customer ID and select <b>Properties</b> from the menu.</li>
+          <li>Locate the <b>Text</b> property and remove any text from it.</li>
+          <li>Click on the <b>Text</b> property's black triangular icon shown next and select <b>Apply Data Binding…</b>from the menu:<p><img src="images\d61cdc41-05c4-4215-9b18-69af2813dd1e.png" /></p><p><b>Figure 11</b><br /><i>Apply Data Binding</i></p></li>
+          <li>The data binding properties window will appear and open the <b>Source</b> area. Click <b>ElementName</b> on the left and <b>CustomersComboBox</b> on the right to identify the <b>ComboBox</b> as the data binding source as shown next:<p><img src="images\55277435-f108-464b-92ae-5e87ada13aec.png" /></p><p><b>Figure 12</b><br /><i>Setting the Binding Source</i></p></li>
+          <li>Click on the <b>Path</b> area (immediately below the Source area of the data binding window) and select <b>SelectedItem</b> from the properties:<p><img src="images\8e188775-58fd-4ee0-a5b7-7fdf2c75ed91.png" /></p><p><b>Figure 13</b><br /><i>Path</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> After removing the text from the <b>Text</b> property you won't see the <b>TextBlock</b> control on the designer surface. To get to it within the <b>Properties</b> window you can select the <b>TextBlock</b> in the XAML code or right-click on the designer and select <b>Document Outline</b> from the menu. You can then drill-down into the visual tree to select different controls within the designer and access their properties within the Properties window.</td></tr></table><p /></div></li>
+          <li>Locate the <b>TextBlock</b> control modified within the previous steps in  the XAML editor and change the <b>Text</b> property value to the following (notice the inclusion of the <b>CustomerID</b> property after SelectedItem):<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Text="{Binding ElementName=CustomersComboBox, Path=SelectedItem.CustomerID}"</pre></td></tr></table></span></div></li>
+          <li>Perform the previous steps to add data bindings to all of the <b>TextBox</b> controls in the designer. You'll need to modify the <b>Text</b> property of each control within the XAML as in the previous step to specify the appropriate property of the <b>SelectedItem</b> to bind to.  The properties that each TextBox should bind to are shown next:<table style=""><tr valign="top"><th><p>TextBox</p></th><th><p>Property to Bind</p></th></tr><tr valign="top"><td><p>First Name</p></td><td><p>FirstName</p></td></tr><tr valign="top"><td><p>Last Name</p></td><td><p>LastName</p></td></tr><tr valign="top"><td><p>Company Name</p></td><td><p>CompanyName</p></td></tr><tr valign="top"><td><p>Email</p></td><td><p>EmailAddress</p></td></tr><tr valign="top"><td><p>Phone</p></td><td><p>Phone</p></td></tr></table></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> Once you've defined a binding for one TextBox control's Text property using the data binding window it's often faster to copy and paste it within the XAML to the other TextBox controls and then change the property name defined in the binding.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <li>After adding the proper data bindings to the <b>TextBox</b> controls take a moment to look through the XAML and notice that each <b>TextBox</b> binding has <b>Mode=TwoWay</b> added to it. This allows changes to a <b>TextBox</b> control to be propagated back to the bound property automatically. An example of a <b>TwoWay</b> binding is show next:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Text="{Binding ElementName=CustomersComboBox,   Path=SelectedItem.FirstName,Mode=TwoWay}"</pre></td></tr></table></span></div></li>
+          <li>Right-click the <b>SilverlightCustomerViewer.Web</b> project and set it as the startup project.  Set the html page in the project as the startup page by right-clicking the file and selecting<b> Set As Start Page</b>.</li>
+          <li>Press F5 to compile and run the project and notice that an error occurs once the Silverlight application loads. This is due to a cross-domain call being made from Silverlight to the WCF service. The service uses a different port then the Silverlight host Web project causing a cross-domain exception to be thrown.</li>
+          <li>To fix the cross-domain issue, rename the existing <b>clientaccesspolicy.exclude</b> file in the <b>CustomersService</b> project to <b>clientaccesspolicy.xml</b>. </li>
+          <li>Open the <b>clientaccesspolicy.xml</b> file in the editor and take a moment to look through the XML. Anytime Silverlight makes a call to a service in a different domain a client access policy file must be in place to successfully talk with the service. This file must be placed at the root of the service application.</li>
+          <li>Run the application again and notice that data now loads in the <b>ComboBox</b> control. Select a customer and notice how the data from it is bound to the appropriate <b>TextBlock</b> and <b>TextBox</b> controls.</li>
+          <li>Back in Visual Studio, double-click on both buttons in the designer to create <b>Click</b> event handlers.</li>
+          <li>Add the following code into the <b>Update</b> button's click event handler to call the WCF service and pass the updated Customer object:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>var proxy = new CustomerServiceClient();var cust = CustomersComboBox.SelectedItem as Customer;cust.ChangeTracker.State = ObjectState.Modified;proxy.SaveCustomerCompleted += (s, args) =&gt;{    var opStatus = args.Result;    string msg = (opStatus.Status) ? "Customer Updated!" :                     "Unable to update Customer: " + opStatus.Message;    MessageBox.Show(msg);                 };proxy.SaveCustomerAsync(cust);</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Dim proxy as New CustomerServiceClient()</b>Dim cust = CType(CustomersComboBox.SelectedItem, Customer)cust.ChangeTracker.State = ObjectState.ModifiedAddHandler proxy.SaveCustomerCompleted, Sub(s, args)     Dim opStatus = args.Result    Dim msg As String = If(opStatus.Status, "Customer Updated!", _      "Unable to update Customer: " +opStatus.Message)    MessageBox.Show(msg)End Subproxy.SaveCustomerAsync(cust)</pre></td></tr></table></span></div></li>
+          <li>Add the following code into the <b>Delete</b> button's click event handler:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>var proxy = new CustomerServiceClient();var cust = CustomersComboBox.SelectedItem as Customer;cust.ChangeTracker.State = ObjectState.Deleted;proxy.SaveCustomerCompleted += (s, args) =&gt;{    OperationStatus opStatus = args.Result;    if (opStatus.Status)    {        ((ObservableCollection&lt;Customer&gt;)CustomersComboBox.ItemsSource).Remove(cust);        MessageBox.Show("Customer deleted!");    }    else    {        MessageBox.Show("Unable to delete Customer: " + opStatus.Message);    }};proxy.SaveCustomerAsync(cust);</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Dim proxy as New CustomerServiceClient()Dim cust = CType(CustomersComboBox.SelectedItem, Customer)cust.ChangeTracker.State = ObjectState.DeletedAddHandler proxy.SaveCustomerCompleted, Sub(s, args)     Dim opStatus As OperationStatus = args.Result    If opStatus.Status ThenCType(CustomersComboBox.ItemsSource, _        ObservableCollection(Of Customer)).Remove(cust)MessageBox.Show("Customer deleted!")    ElseMessageBox.Show("Unable to delete Customer: " + opStatus.Message)    End IfEnd Subproxy.SaveCustomerAsync(cust)</pre></td></tr></table></span></div></li>
+          <li>Run the application and test the update and delete functionality.</li>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

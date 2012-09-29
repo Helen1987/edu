@@ -1,0 +1,153 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Dynamic Workflows with XAML" />
+      <MSHelp:RLTitle Title="Exercise 4: Dynamic Workflows with XAML" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Dynamic Workflows with XAML</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Dynamic Workflows with XAML</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Up to this point, you have been authoring workflows in .xaml, .cs or .vb files. These files are compiled into types that are included in the assembly of the project and run by the workflow runtime. </p>
+        <p>While it might look like the format of the source files does not matter, .xaml files offer some distinct advantages over authoring workflows in C# or VB.</p>
+        <ul>
+          <li>The Workflow Designer works with .xaml files only, workflows authored in C# or VB have no designer support.</li>
+          <li>XAML can be loaded and run dynamically without compiling it into an assembly</li>
+        </ul>
+        <p>Dynamic workflows provide some interesting possibilities for programs that want to generate business logic or make a runtime decision on which business logic to load and run. </p>
+        <a name="_Toc244412395" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935105" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 3. Alternatively, you can follow the following steps to begin with Exercise 4.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 4 located under the <b>Source\Ex4-XAML\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc243285443" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388958" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412396" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935106" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Modifying SayHello.xaml Files Properties</b>
+        </p>
+        <p> In this task you will modify the HellowWorkflow program to load and run the SayHello.xaml file. Then you will modify the text of SayHello.xaml and observe the change in the message the next time you run the application.</p>
+        <ol>
+          <li>You need to tell Visual Studio to treat <b>SayHello.xaml</b> as deployed content rather than code. To do this<ol><li>In Solution Explorer select <b>SayHello.xaml</b></li><li>Build Action: <b>Content</b></li><li>Copy To Output Directory: <b>Copy Always</b></li><li>Set the Custom Tool to blank<p><img src="images\c558022c-3fd1-423f-8f45-65f9f03e7e4d.png" /></p><p><b>Figure 13</b><br /><i>Change the properties of SayHello.xaml to treat it as content</i></p></li></ol></li>
+        </ol>
+        <a name="_Toc243285444" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388959" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412397" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935107" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Modifying Main() to Load the SayHello.xaml File</b>
+        </p>
+        <p>Previously your workflow was compiled into a type. To invoke a workflow from a .xaml file you will need to use <b>ActivityXamlServices</b> to load the .xaml file into memory and create an instance of an activity<b> </b>that <b>WorkflowInvoker</b> can invoke. Keep in mind that any assemblies that your .xaml file references must be available when the workflow is invoked.</p>
+        <ol>
+          <li>Add the following namespace directives to the program.cs or Module1.vb file.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.Activities.XamlIntegration;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System.Activities.XamlIntegration</b></pre></td></tr></table></span></div><br /></li>
+          <li>Modify program.cs or Module1.vb to use <b>ActivityXamlServices</b> and also add a call to <b>Console.ReadKey</b> this will make it easier to see what is happening with your app when running it from Windows Explorer.<p>(Code Snippet - Introduction to WF4 Lab - <i>ActivityXamlServices CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>static void Main(string[] args)</b><b>{</b><b>    WorkflowInvoker.Invoke(ActivityXamlServices.Load("SayHello.xaml"));</b><b>    Console.ReadKey(false);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet - Introduction to WF4 Lab - <i>ActivityXamlServices VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Shared Sub Main()</b><b>    WorkflowInvoker.Invoke(ActivityXamlServices.Load("SayHello.xaml"))</b><b>    Console.ReadKey(False)</b><b>End Sub</b></pre></td></tr></table></span></div></li>
+          <br />
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b091e7a5-e333-4896-8263-dd9736de308b.html">Exercise 4: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

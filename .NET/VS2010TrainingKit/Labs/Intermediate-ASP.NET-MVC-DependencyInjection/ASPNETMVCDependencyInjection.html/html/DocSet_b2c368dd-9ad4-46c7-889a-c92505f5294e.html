@@ -1,0 +1,254 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Injecting a Controller" />
+      <MSHelp:RLTitle Title="Exercise 1: Injecting a Controller" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Injecting a Controller</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Dependency Injection</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Injecting a Controller</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use Dependency Injection in MVC Controllers, by integrating Unity Application Block. For that reason you will include services into your MVC Music Store controllers to separate the logic from the data access. The service will create a new dependence into the controller constructor that will be resolved using Dependency Injection with the help of <b>Unity</b> application block.</p>
+        <p>With this approach you will learn how to generate less coupled applications, which are more flexible and easier to maintain and test. Additionally, you will also learn how to integrate MVC with Unity.</p>
+        <h1 class="heading">About StoreManager Service</h1>
+        <p>The MVC Music Store provided in the begin solution now includes a service that manages the Store Controller data, <b>StoreService</b>. Below you will find the Store Service implementation. Note that all the methods return Model entities.</p>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>C# - StoreService.cs</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using MvcMusicStore.Models;namespace MvcMusicStore.Services{    public class StoreService : MvcMusicStore.Services.IStoreService    {<b>        MusicStoreEntities storeDB = new MusicStoreEntities();</b>        public IList&lt;string&gt; GetGenreNames()        {            var genres = from genre in storeDB.Genres                         select genre.Name;            return genres.ToList();        }        public Genre GetGenreByName(string name)        {            var genre = storeDB.Genres.Include("Albums")                    .Single(g =&gt; g.Name == name);            return genre;        }        public Album GetAlbum(int id)        {            var album = storeDB.Albums.Single(a =&gt; a.AlbumId == id);            return album;        }    }}</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <p>Additionally, in the <b>StoreController</b> you will find in the begin solution now uses <b>StoreService</b>. All data references were removed from Store Controller, and therefore it is possible to modify the current data access provider without making changes at any method that consumes the Store Service. </p>
+        <p>You will find below that the <b>Store Controller</b> implementation has a dependency with the Store Service inside the class constructor.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> The dependency introduced in this exercise is related to <b>MVC Inversion of Control</b> (IoC).<br />The <b>StoreController</b> class constructor receives an <b>IStoreService</b> parameter, which is essential to perform service calls inside the class. However, <b>StoreController</b> does not implement the default constructor (with no parameters) that any controller must have to work with IoC.<br />To resolve the dependency, the controller should be created by an abstract factory (a class that returns any object of the specified type).</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>C# - StoreController.cs</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;<b>using MvcMusicStore.ViewModels;</b><b>using MvcMusicStore.Models;</b><b>using MvcMusicStore.Services;</b>namespace MvcMusicStore.Controllers{    public class StoreController : Controller    {<b>        private IStoreService service;</b>        public StoreController(IStoreService service)        {<b>            this.service = service;</b>        }        //        // GET: /Store/        public ActionResult Index()        {            // Create list of genres<b>            var genres = this.service.GetGenreNames();</b>            // Create your view model            var viewModel = new StoreIndexViewModel            {                Genres = genres.ToList(),                NumberOfGenres = genres.Count()            };            return View(viewModel);        }        //        // GET: /Store/Browse?genre=Disco        public ActionResult Browse(string genre)        {<b>            var genreModel = this.service.GetGenreByName(genre);</b>            var viewModel = new StoreBrowseViewModel()            {                Genre = genreModel,                Albums = genreModel.Albums.ToList()            };            return View(viewModel);        }        //        // GET: /Store/Details/5        public ActionResult Details(int id)        {<b>            var album = this.service.GetAlbum(id);</b>            return View(album);        }    }}</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> You will get an error when a class tries to create this Store Controller without sending the service interface, because there is not a parameterless constructor declared.Through this lab you will learn how to deal with this problem using Dependency Injection with Unity.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc282507713" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Running the Application</b>
+        </p>
+        <p>In this task, you will run the Begin application, which is now including the service into the Store Controller that separates the data access from the application logic.</p>
+        <p>After browsing to the store you will receive an exception since the controller service is not passed as a parameter by default:</p>
+        <ol>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at <b>Source\Ex01-Injecting Controller\Begin</b>.</li>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>Browse to <b>/Store</b> to load Store Controller. You will get the error message “<b>No parameterless constructor defined for this object</b>”:<p><img src="images\54d6ba73-468c-412a-875b-d778a47f60e0.png" /></p><p><b>Figure 1</b><br /><i>Error while running MVC Begin Application</i></p><br /></li>
+          <li>Close the browser.<br /></li>
+        </ol>
+        <p>In the following steps you will work on the Music Store Solution to inject the dependency this controller needs.</p>
+        <a name="_Toc282507714" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Including Unity into MvcMusicStore Solution</b>
+        </p>
+        <p>In this task, you will include Unity Application Block 2.0 into your solution.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> The Unity Application Block (Unity) is a lightweight, extensible dependency injection container with optional support for instance and type interception. It’s a general-purpose container for use in any type of .NET application. It provides all the common features found in dependency injection mechanisms including: object creation, abstraction of requirements by specifying dependencies at runtime and flexibility, be deferring the component configuration to the container.<br />You could read more about Unity 2.0 at <a href="http://msdn.microsoft.com/en-us/library/ff663144.aspx">msdn</a>.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at <b>Source\Ex01-Injecting Controller\Begin</b>.</li>
+          <li>In the <b>MvcMusicStore</b> project, add a reference to <b>Microsoft.Practices.Unity.dll</b>, which is included in <b>Source\Assets\Unity 2.0\</b> folder of this lab.</li>
+        </ol>
+        <a name="_Toc282507715" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a Unity Controller Factory</b>
+        </p>
+        <p>In this task, you will add to the solution a custom controller factory for <b>Unity</b>. This class implements <b>IControllerFactory</b> interface, extending <b>CreateController</b> and <b>ReleaseController</b> methods to work with Unity. This factory will create the instances of the controllers that work with Dependency Injection.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> A controller factory is an implementation of the IControllerFactory interface, which is responsible both for locating a controller type and for instantiating an instance of that controller type.<br />The following implementation of <b>CreateController</b> finds the controller by name inside the Unity container and returns an instance if it was found. Otherwise, it delegates the creation of the controller to an inner factory. One of the advantages of this logic is that controllers can be registered by name.<br />You can find <b>IControllerFactory</b> interface reference at <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.icontrollerfactory.aspx">msdn</a>.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>In the <b>MvcMusicStore</b> project, create a new folder named <b>Factories</b>,<b> </b>and add the <b>UnityControllerFactory </b>class, which is included in the <b>Source\Assets </b>folder of this lab.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C# - UnityControllerFactory.cs</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using Microsoft.Practices.Unity;using System.Web.Routing;namespace MvcMusicStore.Factories{    public class UnityControllerFactory : IControllerFactory    {        private IUnityContainer _container;        private IControllerFactory _innerFactory;        public UnityControllerFactory(IUnityContainer container)            : this(container, new DefaultControllerFactory())        {        }        protected UnityControllerFactory(IUnityContainer container, IControllerFactory innerFactory)        {            _container = container;            _innerFactory = innerFactory;        }        public IController CreateController(RequestContext requestContext, string controllerName)        {            try            {                return _container.Resolve&lt;IController&gt;(controllerName);            }            catch (Exception)            {                return _innerFactory.CreateController(requestContext, controllerName);            }        }        public void ReleaseController(IController controller)        {            _container.Teardown(controller);        }        public System.Web.SessionState.SessionStateBehavior GetControllerSessionBehavior(RequestContext requestContext, string controllerName)        {            return System.Web.SessionState.SessionStateBehavior.Default;        }    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This factory class can be reused in any project that uses Dependency Injection for Controllers. </td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282507716" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Registering Unity in Global.asax.cs Application_Start</b>
+        </p>
+        <p>In this task, you will register Unity library into <b>Global.asax.cs</b> Application Start.</p>
+        <ol>
+          <li>Open <b>Global.asax.cs</b> file.</li>
+          <li>Include <b>Microsoft.Practices.Unity</b> Application Block, and references to the namespaces <b>Services</b>, <b>Factories</b> and <b>Controllers</b>:<p>(Code Snippet – ASP.NET MVC Dependency Injection – Ex1 Injecting Controllers Global using– Csharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using System.Web.Routing;<b>using Microsoft.Practices.Unity;</b><b>using MvcMusicStore.Services;</b><b>using MvcMusicStore.Factories;</b><b>using MvcMusicStore.Controllers;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Create a new Unity Container in <b>Global.asax.cs</b><b>Application_Start</b> and register the Store Service and the Store Controller.<p>(Code Snippet – ASP.NET MVC Dependency Injection –Ex1 Injecting Controllers Unity Container – Csharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…protected void Application_Start(){    AreaRegistration.RegisterAllAreas();    RegisterGlobalFilters(GlobalFilters.Filters);    RegisterRoutes(RouteTable.Routes);<b>    var container = new UnityContainer();</b><b>    container.RegisterType&lt;IStoreService, StoreService&gt;();</b><b>    container.RegisterType&lt;IController, StoreController&gt;("Store");</b>}…</pre></td></tr></table></span></div><br /></li>
+          <li>Register a UnityControllerFactory  of the previous container inside MVC ControllerBuilder as the current factory for the controllers:<p>(Code Snippet – ASP.NET MVC Dependency Injection – Ex1 Injecting Controllers Global application start)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…protected void Application_Start(){    AreaRegistration.RegisterAllAreas();    RegisterGlobalFilters(GlobalFilters.Filters);    RegisterRoutes(RouteTable.Routes);    var container = new UnityContainer();    container.RegisterType&lt;IStoreService, StoreService&gt;();    container.RegisterType&lt;IController, StoreController&gt;("Store");<b>    var factory = new UnityControllerFactory(container);</b><b>    ControllerBuilder.Current.SetControllerFactory(factory);</b>}…</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>ControllerBuilder </b>is an MVC class responsible for dynamically building a controller. <br />You can read more about ControllerBuilder at <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.controllerbuilder.aspx">msdn</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282507717" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <p>In this task, you will run the application to verify that the Store can now be loaded after including Unity.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>Browse to <b>/Store</b>. This will invoke <b>StoreController</b>, which is now created by using <b>UnityControllerFactory</b>.<p><img src="images\261eb1c7-9f2a-41e6-b13c-122f58ba3043.png" /></p><p><b>Figure 2</b><br /><i>MVC Music Store</i></p><br /></li>
+          <li>Close the browser.<br /></li>
+        </ol>
+        <p>In the following exercises you will learn how to extend the Dependency Injection scope, and use it inside MVC Views and Action Filters.</p>
+        <a name="_Toc269833741" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_fcf1f100-8821-4a6e-83eb-df199fad4745.html">Exercise 2: Injecting a View</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

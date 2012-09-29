@@ -1,0 +1,142 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Feature Event Receiver" />
+      <MSHelp:RLTitle Title="Exercise 2: Feature Event Receiver" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Feature Event Receiver</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Microsoft SharePoint 2010 Developer Tools</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Feature Event Receiver</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In the previous exercise, you learned how to modify the project properties and features properties using visual designers and property sheets.</p>
+        <p>In this exercise, you will add some code. Over the next few steps, you are going to add a feature receiver so you can write code against the SharePoint object model that will be automatically executed during feature activation and feature deactivation.</p>
+        <a name="_Toc281415909" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a Feature Event Receiver</b>
+        </p>
+        <p>In this task, you will add an event receiver class to your feature in order to react to the event generated with configuring your SharePoint site collection features.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ContosoWebParts.sln</b> located under the <b>Source\Ex2-EventReceiver\begin\ </b>(choosing the folder that matches the language of your preference.) Alternatively, you may continue working with the solution obtained after completing the previous exercise.</li>
+          <li>In the Solution Explorer, right-click on the Main feature node, and choose <b>Add Event Receiver</b>, to<b> </b>add an event receiver to the selected feature.<p><img src="images\8f5740e2-7bd1-4ffd-b533-8d14a5231035.png" /></p><p><b>Figure 17</b><br /><i>Add Event Receiver (C#)</i></p><br /><p><img src="images\a6a64823-6a6c-4720-a16b-38d3596e9d24.png" /></p><p><b>Figure 18</b><br /><i>Add Event Receiver (VB)</i></p><br /></li>
+        </ol>
+        <a name="_Toc281415910" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding Functionality to the Event Receiver</b>
+        </p>
+        <p>In this task, you will implement the <b>FeatureActivated</b> and <b>FeatureDeactivating</b> methods to change the Title and Image URL of the top-level site.</p>
+        <ol>
+          <li>Implement the <b>FeatureActivated</b> method, to do this, proceed as follows:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Before changing the <b>Title</b> property, your code should track its original value so that it can be restored upon feature deactivation.</td></tr></table><p /></div><br /><ol><li>In the Solution Explorer, double-click on the <b>Main.EventReceiver.cs</b> (C#) class file under the <b>Main</b> Feature node. In VB, click on the <b>Main</b> feature and press F7 to open the <b>Code View</b>.<p><img src="images\bb0c5b78-153a-41e5-96a1-ac599585857a.png" /></p><p><b>Figure 19</b><br /><i>Main.EventReceiver.cs file (C#)</i></p><br /></li><li>Locate the definition of the <b>FeatureActivated</b> method.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The definition is the first comment inside the <b>MainEventReceiver</b> class.</td></tr></table><p /></div><br /></li><li>Replace the commented definition with the following code:<p><i>(Code Snippet – SharePoint Tools Lab – FeatureActivated Properties CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public override void FeatureActivated(SPFeatureReceiverProperties properties)</b><b>{</b><b>    SPSite siteCollection = properties.Feature.Parent as SPSite;</b><b>    if (siteCollection != null)</b><b>    {</b><b>        // save top site's original Title and SiteLogoUrl</b><b>        SPWeb site = siteCollection.RootWeb;</b><b>        site.Properties["OriginalTitle"] = site.Title;</b><b>        site.Properties.Update();</b><b>        // update the Title and SiteIconUrl</b><b>        site.Title = "VS 2010 SPT Rocks";</b><b>        site.SiteLogoUrl = "_layouts/images/ContosoWebParts/SiteIcon.gif";</b><b>        site.Update();</b><b>    }</b><b>}</b></pre></td></tr></table></span></div></li><br /><p><i>(Code Snippet – SharePoint Tools Lab – FeatureActivated Properties VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Overrides Sub FeatureActivated(ByVal properties As SPFeatureReceiverProperties)</b><b>    Dim siteCollection = TryCast(properties.Feature.Parent, SPSite)</b><b>    If siteCollection IsNot Nothing Then</b><b>        ' save top site's original Title and SiteLogoUrl</b><b>        Dim site = siteCollection.RootWeb</b><b>        site.Properties("OriginalTitle") = site.Title</b><b>        site.Properties.Update()</b><b>        ' update the Title and SiteIconUrl</b><b>        site.Title = "VS 2010 SPT Rocks"</b><b>        site.SiteLogoUrl = "_layouts/images/ContosoWebParts/SiteIcon.gif"</b><b>        site.Update()</b><b>    End If</b><b>End Sub</b></pre></td></tr></table></span></div><br /></ol></li>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> The code above first obtains <b>SPWeb</b> reference to the top-level from the <b>SPSite</b> to get the <b>Title’s</b> property current value. It stores the value as a name/value pair inside the SPWeb.Properties collection and then modifies it to the new value “<b>VS 2010 SPT Rocks</b>”.<br />Finally, it changes the <b>SiteLogoUrl </b>property to point to <b>SiteIcon.gif</b> inside the Images folder.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> You should also be able to see that there are several method stubs inside the class definition that are commented out. There is also a GUID attribute that has been applied to the receiver class to give a unique identifier. Do not remove the GUID from the class because it will be used behind the scenes by the SPT during the packaging process.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Implement <b>FeatureDeactivating</b> so that your code restores the original <b>Title</b> property value and changes the <b>SiteLogoUrl</b> property value back to an empty string.<p><i>(Code Snippet – SharePoint Tools Lab – FeatureDeactivating Properties CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public override void FeatureDeactivating(SPFeatureReceiverProperties properties)</b><b>{</b><b>    SPSite siteCollection = properties.Feature.Parent as SPSite;</b><b>    if (siteCollection != null)</b><b>    {</b><b>        // restore top site's original Title and SiteLogoUrl</b><b>        SPWeb site = siteCollection.RootWeb;</b><b>        site.Title = site.Properties["OriginalTitle"];</b><b>        site.SiteLogoUrl = string.Empty;</b><b>        site.Update();</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – SharePoint Tools Lab – FeatureDeactivating Properties VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Overrides Sub FeatureDeactivating(ByVal properties As SPFeatureReceiverProperties)</b><b>    Dim siteCollection = TryCast(properties.Feature.Parent, SPSite)</b><b>    If siteCollection IsNot Nothing Then</b><b>        ' restore top site's original Title and SiteLogoUrl</b><b>        Dim site = siteCollection.RootWeb</b><b>        site.Title = site.Properties("OriginalTitle")</b><b>        site.SiteLogoUrl = String.Empty</b><b>        site.Update()</b><b>    End If</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_2df9192e-f653-42fb-86a4-0978817ed87b.html">Exercise 3: Deploying and Debugging SharePoint Projects</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Models and Data Access</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>This Hands-on Lab assumes you have basic knowledge of <b>ASP.NET MVC</b>. If you have not used <b>ASP.NET MVC </b>before, we recommend you to go over <b>ASP.NET MVC Fundamentals </b>Hand-on Lab.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>In <b>ASP.NET MVC Fundamentals </b>Hand-on Lab, you have been passing hard-coded data from the Controllers to the View templates. But in order to build a real web application you might want to use a real database.</p>
+        <p>This Hands-on Lab will show you how to use the free SQL Server Express as a database engine in order to store and retrieve the data needed for the Music Store application. To accomplish that, you will start with an already created database from which you will create the Entity Data Model for the application. Through this lab, you will meet the <b>Database First</b> approach and the <b>Code First</b> Approach as well.</p>
+        <p>However, you could use a <b>Model First</b> approach, by creating the same model using the tools and then generating a database from it.</p>
+        <p>
+          <img src="images\117f9510-015e-4c98-8962-8fceec21a81e.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Database First vs. Model First</i>
+        </p>
+        <br />
+        <p>After generating the Model, you will make the proper adjustments in the StoreController to provide the Store Views with the data taken from the database instead of hard-coded one. You will not need to make any change to the View templates because the StoreController will be returning to the View templates the same ViewModels as before, although this time the data will come from the database.</p>
+        <br />
+        <h2 class="subheading">The Code First Approach</h2>
+        <p>The Code First approach allows us to define the model from the code without generating classes that are generally coupled with the framework.</p>
+        <p>In code first, Model objects are defined with POCOs , “Plain Old CLR Objects”. POCOs are defined as simple plain classes that have no inheritance and do not implement interfaces. We can automatically generate the database from them, or we can use an existing database and generate the class mapping from the code.</p>
+        <p>The benefit of using this approach is that the Model remains independent from the persistence framework (in this case, Entity Framework), as the POCOs classes are not coupled with the mapping framework.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b> </b>Although that this Hands-on Lab will cover the use of the free SQL Server Express, the code will also work with the full version of SQL Server.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>This Lab is based on ASP.NET MVC 3.</p>
+        <a name="_GoBack" href="#">
+          <span />
+        </a>
+        <p>If you wish to explore the whole Music Store tutorial application you can find it in <a href="http://mvcmusicstore.codeplex.com/">http://mvcmusicstore.codeplex.com/</a>.</p>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <p><b>System Requirements</b></p>
+        <p>You must have the following items to complete this lab:</p>
+        <ol>
+          <li>ASP.NET and ASP.NET MVC 3</li>
+          <li>Visual Studio 2010 Express</li>
+          <li>SQL Server Database (Express edition or above)<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: You can install the previous system requirements by using the Web Platform Installer 3.0: <a href="http://go.microsoft.com/fwlink/?LinkID=194638">http://go.microsoft.com/fwlink/?LinkID=194638</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <p><b>Setup</b></p>
+        <p><b><i>Installing Code Snippets</i></b></p>
+        <p>For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. To install the code snippets run <b>.\Source\Assets\CodeSnippets.vsi</b> file.</p>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ol>
+          <li>Exercise 1: Adding a Database</li>
+          <li>Exercise 2: Adding a Database using Code First</li>
+          <li>Exercise 3: Querying the Database with Parameters</li>
+        </ol>
+        <p>Estimated time to complete this lab: <b>35 minutes</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <a name="_Toc166647553" href="#">
+                  <span />
+                </a>
+                <a name="_Toc172462715" href="#">
+                  <span />
+                </a>
+                <a name="_Toc182141329" href="#">
+                  <span />
+                </a> Each exercise is accompanied by an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc244326109" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b304b37f-ebc3-432d-b55d-a6fc571798db.html">Exercise 1: Adding a Database</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

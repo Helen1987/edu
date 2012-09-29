@@ -1,0 +1,121 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Multitouch WMTouch with MFC - Native</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Windows 7 gives users the ability to manage applications with the touch of their fingers, using no intermediate device. This expands the stylus-based capabilities of tablet PCs. Unlike other pointing devices, this new capability allows multiple input events at the same time from different pointing locations, and it enables complex scenarios, such as managing applications with ten fingers or with multiple simultaneous users. However, to pull this off, we have to adapt our application's user interface and behavior to support this new input model.</p>
+        <p>MFC in Visual Studio 2010 has added support for checking Multitouch hardware readiness and simplified the process of receiving touch events.</p>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to manage Multitouch events, including:</p>
+        <ul>
+          <li>Processing input from Windows Touch</li>
+          <li>Understanding the implications of manipulating multiple touch events simultaneously </li>
+          <li>Checking for Multitouch hardware existence and readiness</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Windows 7</li>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>A Multitouch hardware device </li>
+        </ul>
+        <p><b>Introduction</b></p>
+        <p>To create a Multitouch driven application you can choose one of three approaches: Good, Better, and Best.</p>
+        <p>The “Good” approach is the easiest of the three. You should design your application user interface with touch ability in mind. Use large and clean Win32 based controls that make a natural interface for better user experience. Touch abilities such as scrolling come from the Win32 controls. There is no need for extra work. For example, try to scroll the document that you are reading now with your fingers! This is the “Good” approach.</p>
+        <p>The "Better" approach lets the system receive various low-level touch events and passes the result of the heuristics that the system performs with these events to your application as “gestures”. For example, if the user makes a rotation movement on the screen, the system will issue a rotation gesture event with the rotation angle. Although the "Better" approach is easy to use, it has its limitations. Using gestures one cannot get Rotate, Translate, and Scale simultaneously. Also you cannot handle many different touch-based actions at the same time. For example two users that operate different areas of the Window.</p>
+        <p>The “Best” approach is to read the low-level touch events as the input to the application. Applications like “Piano” or complex controls like multiple sliders that can be operated simultaneously are good examples. For example, run MS Paint, select a drawing tool from the gallery and draw with four of your fingers.</p>
+        <p>
+          <img src="images\e47d243f-68d0-45ea-a363-3157d7c976b2.png" />
+        </p>
+        <br />
+        <p>In this Hands-On Lab, you will mimic the new MS Paint Multitouch painting feature using the “Best” approach. We will read and use the raw touch events.</p>
+        <a name="_Toc212354933" href="#">
+          <span />
+        </a>
+        <h1 class="heading">About the Multitouch Scratchpad Application</h1>
+        <p>The Multitouch Scratchpad application presents a simple window that allows simultaneously drawing of continuous lines with your fingers. While the folder <b>Source\<i>MFC_WMTouchSource\Starter</i></b> contains files needed for the exercise, <b><i>Source\MFC_WMTouchSource\Final</i></b> contains the completed solution.</p>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

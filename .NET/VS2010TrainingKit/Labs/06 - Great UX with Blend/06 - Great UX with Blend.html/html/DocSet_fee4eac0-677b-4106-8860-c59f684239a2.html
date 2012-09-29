@@ -1,0 +1,117 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Blend playing nice with MVVM " />
+      <MSHelp:RLTitle Title="Exercise 3: Blend playing nice with MVVM " />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Blend playing nice with MVVM </title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Great UX with Blend</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Blend playing nice with MVVM </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Behaviors are not limited to playing animations or changing states.  As a developer there are a few behaviors specific to us; namely the DataStateBehavior, CallMethodAction, InvokeCommand.  This exercise uses the DataStateBehavior and CallMethodAction to integrate into our ViewModel.</p>
+        <ol>
+          <li>In the application you’ve downloaded, there is a ViewModel already defined: MainViewModel.cs.  Included is a property called IsMenuOpen and two methods OpenMenu() and CloseMenu().  <div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private bool isMenuOpen;public bool IsMenuOpen{        get { return isMenuOpen; }        set        {                isMenuOpen = value;                NotifyPropertyChanged("IsMenuOpen");        }}public void OpenMenu(){        IsMenuOpen = true;}public void CloseMenu(){        IsMenuOpen = false;}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private isMenuOpen_Renamed As BooleanPublic Property IsMenuOpen() As Boolean        Get                Return isMenuOpen_Renamed        End Get        Set(ByVal value As Boolean)                isMenuOpen_Renamed = value                NotifyPropertyChanged("IsMenuOpen")        End SetEnd PropertyPublic Sub OpenMenu()        IsMenuOpen = TrueEnd SubPublic Sub CloseMenu()        IsMenuOpen = FalseEnd Sub</pre></td></tr></table></span></div></li>
+          <li>In Blend add the MainViewModel as a DataSource.  Do this by clicking the Create DataSource button in the Data panel and then selecting Create Object Data Source.<p><img src="images\81dc236e-2641-4496-8980-9653a2dd0fc9.png" /></p><p><b>Figure 12</b><br /><i>Create Object Data Source</i></p></li>
+          <li>You’ll be prompted with a Create Object Data Source dialog box. Select the MainViewModel from dialog box.  This will create a DataSource in XAML.<p><img src="images\4b86509c-d79b-48b6-9c9d-b008c601b493.png" /></p><p><b>Figure 13</b><br /><i>Data Source dialog box </i></p></li>
+          <li>After the data source is created, click and dragging it onto the Artboard.  Notice the cursor below indicating bind the data source to the LayoutRoot DataContext.<p><img src="images\df1e217b-24fd-44b5-bac0-2912405633b3.png" /></p><p><b>Figure 14</b><br /><i>Bind the data source </i></p></li>
+          <li>Instead of using the GoToState behavior for the Checked and Unchecked events, use the ViewModel to do the work.  There are a number of reasons for this.  For example if you need to track when a user opens or closes the menu, that functionality is better served in the VM.  Or if need to request data for a dynamic menu, again this is better done in the VM.</li>
+          <li>Remove the GoToState behaviors for the ToggleButton and replace them with CallMethodAction behaviors.  From the Asset panel drag and drop two CallMethodAction behaviors onto the ToggleButton.  From the properties panel set the EventName, TargetObject, and MethodName.<p><img src="images\3a8017e1-4a5b-4311-842d-2d15b525b903.png" /></p><p><b>Figure 15</b><br /><i>Change Properties</i></p><table style=""><tr valign="top"><th><p>Property name</p></th><th><p>value</p></th></tr><tr valign="top"><td><p>EventName</p></td><td><p>select Checked from the drop down</p></td></tr><tr valign="top"><td><p>TargetObject</p></td><td><p>click the Advanced Options square button  to the right and select Data Binding.  This will bring up the Create Data Binding dialog.  From this dialog, select MainViewModel and click OK.</p></td></tr><tr valign="top"><td><p>MethodName</p></td><td><p>Type in OpenMenu.  This is the method defined in the ViewModel</p></td></tr></table></li>
+          <p>
+            <img src="images\f7387172-870e-4146-b807-2f447f9486fe.png" />
+          </p>
+          <p>
+            <b>Figure 16</b>
+            <br />
+            <i>Binding window</i>
+          </p>
+          <li>Do the same for the CloseMethod.</li>
+          <li>The final step before getting this working is adding the DataStateBehavior.  This will listen to the IsMenuOpen property and change the state based on the value.</li>
+          <li>Back in the UI add a DataStateBehavior to the LayoutRoot and bind it to the Boolean property in the VM.<p><img src="images\c205c238-9a0e-4f97-a07f-0290a839e07a.png" /></p><p><b>Figure 17</b><br /><i>Change Properties</i></p><table style=""><tr valign="top"><th><p>Property name</p></th><th><p>value</p></th></tr><tr valign="top"><td><p>Binding</p></td><td><p>Like the TargetObject, click the Advanced Options button.  Bind to the IsMenuOpen property of the MainViewModel (below figure)</p></td></tr><tr valign="top"><td><p>Value</p></td><td><p>Set this to “True”.  This is the compared value</p></td></tr><tr valign="top"><td><p>TrueState</p></td><td><p>Select MenuExpanded from the drop down.</p></td></tr><tr valign="top"><td><p>FalseState</p></td><td><p>Select MenuMinimized from the drop down.</p></td></tr></table></li>
+          <p>
+            <img src="images\d77443f0-97f1-49e6-ac49-339ac7e4b5d5.png" />
+          </p>
+          <p>
+            <b>Figure 18</b>
+            <br />
+            <i>Binding window</i>
+          </p>
+          <li>At this point you’ve wired up the ViewModel to the View using the DataStateBehavior and the CallMethodAction.  Run the project to see the menu open and close.</li>
+        </ol>
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

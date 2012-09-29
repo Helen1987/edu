@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Service="System.ServiceModel.Routing.RoutingService, System.ServiceModel.Routing, version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
+

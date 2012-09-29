@@ -1,0 +1,168 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Hello Workflow" />
+      <MSHelp:RLTitle Title="Exercise 1: Hello Workflow" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Hello Workflow</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Hello Workflow</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Workflows execute a business process. Each step in that process is implemented by an <b><i>Activity</i></b>.</p>
+        <p>In this exercise, you will create and test a simple “Hello World” process using Windows Workflow Foundation 4.</p>
+        <a name="_Toc243285432" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388949" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412385" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935092" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Simple Hello Workflow Application</b>
+        </p>
+        <p>In this task you will create a very simple workflow that will be the equivalent to this code:</p>
+        <div class="code">
+          <span codeLanguage="CSharp">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>C#</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>private static void SayHello(){    Console.WriteLine("Hello Workflow 4");}</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>Private Shared Sub SayHello()    Console.WriteLine("Hello Workflow 4")End Sub</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Select <b>File / New Project</b> Ctrl+Shift+N and set the project options<ol><li>Installed Templates: select either <b>Visual C#</b> or <b>Visual Basic</b> then select <b>Workflow</b>  under the language</li><li>Template: <b>Workflow Console Application</b></li><li>Name: <b>HelloWorkflow</b>. </li><li>Location: <b>%TrainingKitInstallFolder%\Labs\IntroToWF\Ex1-HelloWorkflow\Begin</b></li><li>Solution: <b>HelloWorkflow</b></li></ol></li>
+          <p>
+            <img src="images\2b035150-4d61-409a-a08a-95c0855fd5f4.png" />
+          </p>
+          <p>
+            <b>Figure 1</b>
+            <br />
+            <i>Creating a new Workflow Console Application (C#)</i>
+          </p>
+          <br />
+          <p>
+            <img src="images\2a54c717-865b-4c22-88e3-fed89abb89bc.png" />
+          </p>
+          <p>
+            <b>Figure 2</b>
+            <br />
+            <i>Creating a new Workflow Console Application (Visual Basic)</i>
+          </p>
+          <br />
+          <li>Since your business process is a 1-step process, you can simply add a <b>WriteLine</b> activity to implement the process. From the <b>Toolbox</b>, drag a <b>WriteLine</b> activity and drop it on the design surface.<p><img src="images\37feeb6b-3aaa-4461-8111-c3c2f02fdfc5.png" /></p><p><b>Figure 3</b><br /><i>Adding a WriteLine activity</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>If the Toolbox window is not visible, select <b>Toolbox</b> from the <b>View</b> menu.</td></tr></table><p /></div><br /></li>
+          <li>Set the <b>WriteLine</b><b>Text</b> property to <b>"Hello Workflow 4"</b>. <p><img src="images\f961c3ef-41e8-4f60-9226-fe1aa383e752.png" /></p><p><b>Figure 4</b><br /><i>Setting the Text property</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\2515b7a9-c0cf-4e0f-aa32-8219737b1d6f.png" /><b>WriteLine Activity</b><br />The <b>WriteLine </b>activity is a simple activity that will display a message on the console. The text property is an <b><i>Expression</i></b>which could be the result of calling a function or evaluating the property of an object. In this case, the expression is a literal string so you must quote the string.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_381d3208-2340-46d2-a392-8ecb383f2d47.html">Exercise 1 Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

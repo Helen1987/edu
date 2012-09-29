@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomActionVSIX", "CustomActionVSIX\CustomActionVSIX.csproj", "{246F199F-B84E-4BF9-9FE3-6AD5D8DC2604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomActionItemExtension", "CustomActionItemExtension\CustomActionItemExtension.csproj", "{BB23E935-2532-4716-B62F-B15B5A0BFA69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{246F199F-B84E-4BF9-9FE3-6AD5D8DC2604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246F199F-B84E-4BF9-9FE3-6AD5D8DC2604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246F199F-B84E-4BF9-9FE3-6AD5D8DC2604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246F199F-B84E-4BF9-9FE3-6AD5D8DC2604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB23E935-2532-4716-B62F-B15B5A0BFA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB23E935-2532-4716-B62F-B15B5A0BFA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB23E935-2532-4716-B62F-B15B5A0BFA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB23E935-2532-4716-B62F-B15B5A0BFA69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

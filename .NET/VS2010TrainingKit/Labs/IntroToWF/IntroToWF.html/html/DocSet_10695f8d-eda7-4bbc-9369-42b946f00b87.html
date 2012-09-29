@@ -1,0 +1,293 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 7: If/Else Logic" />
+      <MSHelp:RLTitle Title="Exercise 7: If/Else Logic" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 7: If/Else Logic</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 7: If/Else Logic</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In the previous exercise, you created an enhanced Hello Workflow application with a custom hello message. In this exercise, you will add If/Else logic to the workflow to display a different Hello message depending on a custom condition.</p>
+        <p>This exercise will use the "write the test first" approach, that is, first writing a test for the new requirement and then implementing the necessary code to make it pass.</p>
+        <a name="_Toc244412411" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935124" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 6. Alternatively, you can follow the following steps to begin with Exercise 7.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 7 located under the <b>\Source\Ex7-IfElse\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc243285459" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388971" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412412" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935125" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Writing the Test for a New Requirement</b>
+        </p>
+        <p>You have a new requirement for your application. If the name has an odd number of letters then you want the first word of the greeting to be "Greetings", otherwise the first word should be "Hello". As an example, now your workflow will be the equivalent of this code:</p>
+        <div class="code">
+          <span codeLanguage="CSharp">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>C#</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>private static string SayHello(string userName){    string FirstWord = null;    if (userName.Length % 2 == 0)        FirstWord = "Hello";    else        FirstWord = "Greetings";    return FirstWord + ", " + userName +" from Workflow 4";}</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>Private Shared Function SayHello(ByVal userName As String) As String    Dim FirstWord As String = Nothing    If userName.Length Mod 2 = 0 Then        FirstWord = "Hello"    Else        FirstWord = "Greetings"    End If    Return FirstWord &amp; ", " &amp; userName &amp; " from Workflow 4"End Function</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <ol>
+          <li>Create a test to verify the new requirement. To do this, open the <b>SayHelloFixture.cs </b>file (<b>C#</b>) or <b>SayHelloFixture.vb</b> (<b>Visual Basic</b>), located under the HelloWorkflow.Test project, and add the following test.<p>(Code Snippet - <i>Introduction to WF</i>4<i>Lab - ShouldReturnGreetingWithOddLengthName Test CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod]</b><b>public void ShouldReturnGreetingWithOddLengthName()</b><b>{</b><b>    var output = WorkflowInvoker.Invoke(</b><b>        new SayHello() { UserName = "Odd" });</b><b>    string greeting = output["Greeting"].ToString();</b><b>    Assert.AreEqual("Greetings Odd from Workflow 4", greeting);</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet - <i>Introduction to WF</i>4<i>Lab - ShouldReturnGreetingWithOddLengthName Test VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>&lt;TestMethod()&gt;</b><b>Public Sub ShouldReturnGreetingWithOddLengthName()</b><b>    Dim output = WorkflowInvoker.Invoke(</b><b>        New SayHello() With {.UserName = "Odd"})</b><b>    Assert.AreEqual("Greetings Odd from Workflow 4",</b><b>                    output("Greeting").ToString())</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Right-click over test method and select <b>Run Tests </b>(<img src="images\73d072ae-3ba0-42e4-bc51-14fe17b7ac4a.png" />). The test will fail because you have not modified the workflow yet to return a different hello message in each case.<p><img src="images\0e72649c-74da-480e-947f-801d7676354c.png" /></p><p><b>Figure 42</b><br /><i>ShouldReturnGreetingWithOddLengthName test failing</i></p><br /></li>
+        </ol>
+        <a name="_Toc243285460" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388972" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412413" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935126" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Implementing the New Requirement in the Workflow</b>
+        </p>
+        <ol>
+          <li>Open <b>SayHello.xaml</b> in the workflow designer. To do this, double-click the file in Solution Explorer.</li>
+          <li>Add a <b>FirstWord</b> variable to store the first word of the hello message, whether it is "Hello" or "Greetings". To do this, follow these steps:<ol><li>Select the <b>Sequence</b> by clicking over the shape surface.</li><li>Click the <b>Variables</b> button. A panel that displays the available variables for the <b>Sequence</b> activity appears.</li><li>Click <b><i>Create Variable.</i></b></li><li>Type <b>FirstWord</b> in the Name box.</li></ol></li>
+          <p>
+            <img src="images\76b132e4-7317-4edd-a0b0-d7610740021e.png" />
+          </p>
+          <p>
+            <b>Figure 43</b>
+            <br />
+            <i>Adding the FirstWord variable of type String to Sequence</i>
+          </p>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="images\b186b63c-b715-4347-a7a4-c6425ebd8706.png" />
+                  <b>Variables</b>
+                  <br />In Windows Workflow Foundation (WF), variables represent the storage of data. Arguments, on the other side, represent the flow of data into and out of an activity. Variables have a scope just as they do in C# or Visual Basic. If you open the variables pane without selecting an activity you will not be able to add a variable. The activity selected in the designer will provide the scope for the variable. In this case, FirstWord belongs to the Sequence scope.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Now you need to test the <b>UserName</b> argument to see if it has an even or odd number of characters. To do this, drag an <b>If</b> activity from the <b>Control Flow</b> group in the toolbox and drop it into the <b>Sequence</b> activity above the <b>Assign</b> activity.</li>
+          <li>Set the <b>If</b> activity <b>DisplayName</b> to <b>If UserName is Even </b>by selecting the text on the shape and editing it inline or by setting it in the property grid (select the activity and press <b>F4</b> to display it).<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The Workflow designer allows you to give the shape a more readable name by setting its DisplayName property.</td></tr></table><p /></div></li>
+          <br />
+          <p>
+            <img src="images\0797fb69-3527-4ffe-8206-e872bba6077c.png" />
+          </p>
+          <p>
+            <b>Figure 44</b>
+            <br />
+            <i>The If activity with the description set</i>
+          </p>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="images\9d476d5e-98f4-4aa3-b948-9b03a2b1ba2e.png" />
+                  <b>  Watch Out</b>
+                  <br />The red icons (<img src="images\1831e1f6-9eae-4a29-bd38-2f36e2d2382a.png" />) are warning you that this workflow is not valid currently. The <b>If</b> activity still requires that you supply an expression for the Condition argument.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Supply an expression for the <b>If</b> condition. To do this, double-click the <b>If</b> activity to open it and type the following expression in the <b>Condition</b> box. This will check if the name length is odd or even.<div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>UserName.Length Mod 2 = 0</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="images\4fd6cdf3-3652-444f-a944-d9c3712180ad.png" />
+                  <b>Expressions</b>
+                  <br />Expressions are program statements that can be a literal string, a conditional statement, or an expression that concatenates several strings or calls a method or invokes another activity. Expressions are written using Visual Basic syntax even if the application is in C#. This means capitalization does not matter, comparison is performed using a single equals sign instead of “==”, and the Boolean operators are the words "And" and "Or" instead of the symbols "&amp;&amp;" and "||".</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Update the <b>FirstWord</b> variable value for even length names, which should be greeted with a "Hello" message. Drag an <b>Assign</b> activity from <b>Primitives</b> group in the toolbox and drop it into the <b>Then</b> area. After that, type <b>FirstWord</b> in the <b>To</b> box (left side) and <b>"Hello "</b> (including the space at the end) in the <b>Value</b> box (right side).</li>
+          <li>Now update the <b>FirstWord</b> variable value for odd length names, which should be greeted with a "Greetings" message. Drag and <b>Assign</b> activity from <b>Primitives</b> group in the toolbox and drop it into the <b>Else</b> area. Then type <b>FirstWord</b> in the <b>To</b> box (left side) and <b>"Greetings "</b> (including the space at the end) in the <b>Value</b> box (right side).<p><img src="images\e652e9a3-620e-4734-8a87-c6548f15bf88.png" /></p><p><b>Figure 45</b><br /><i>The completed If activity</i></p><br /></li>
+          <li>Modify the final <b>Assign</b> activity to customize the hello message displayed based on the <b>FirstWord</b> value. To do this, in the <b>Assign</b> activity located below the <b>If</b> activity replace the content of the <b>Value</b> box (right side) with the following expression:<div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>FirstWord &amp; UserName _</b><b>&amp; " from Workflow 4"</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p>
+            <img src="images\80a22e25-0e1a-498e-a90c-f8b69d59c208.png" />
+          </p>
+          <p>
+            <b>Figure 46</b>
+            <br />
+            <i>The Completed Workflow</i>
+          </p>
+          <br />
+          <li>Press <b>CTRL</b>+<b>SHIFT</b>+<b>B</b> to build the solution.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_d245c999-a85c-4187-b9f8-aea5accb78d9.html">Exercise 7: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

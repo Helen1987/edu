@@ -1,0 +1,171 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Building a Data-Driven Master/Detail Business Form in WPF using Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this lab, you will learn all the necessary steps for creating and customizing a master-detail business form in WPF 4.0 using Visual Studio 2010 tools.</p>
+        <h1 class="heading">Objectives</h1>
+        <p>Once you have completed this lab you will understand:</p>
+        <ul>
+          <li>How to use the Data Sources window with a WPF project, to create initial scaffolding for the data bindings of your application</li>
+          <li>How to use the Data Sources window to “paint” a databinding on an existing WPF control</li>
+          <li>How to create master-detail scaffolding with the Data Sources window</li>
+          <li>How to customize the output of the data sources window to create custom visuals using the Databinding expression builder in the Visual Studio 2010 property browser</li>
+          <li>How to use markup extension intellisense to create databinding expressions</li>
+          <li>How to extract a common look into a resource using the extract resource feature of Visual Studio 2010</li>
+          <li>How to apply a common look to a control using the resource picker feature of Visual Studio 2010</li>
+        </ul>
+        <h1 class="heading">Scenario</h1>
+        <p>The application being built in this lab is a simple read-only representation of the sort of application that might be used to manage and view entries in a real estate agent’s office. The techniques used could easily be applied to nearly any data-driven client application scenario.</p>
+        <h1 class="heading">Prerequisites</h1>
+        <p>You should have a basic familiarity with the following products or technologies before you begin this lab:</p>
+        <ul>
+          <li>Data-driven application UI development</li>
+          <li>Windows Presentation Foundation</li>
+        </ul>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>.NET Framework 4</li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps:</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To perform the setup steps you need to run the scripts in a command window with administrator privileges.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, run the <b>CheckDependencies.cmd</b> script located under the <b>Setup</b> folder of this lab. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. The CheckDependencies.cmd file launches the Visual Studio installer file that installs the code snippets.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ul>
+          <li>Creating the Application’s Data Scaffolding</li>
+          <li>Creating Master-Detail Scaffolding</li>
+          <li>Creating and Using Resources</li>
+        </ul>
+        <p>Estimated time to complete this lab: <b>45 minutes</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Each exercise is accompanied by an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Each exercise contains a Visual Basic and a C# version; Inside the <b>End/Begin</b> solution folder you will find two folders: <b>VB</b>, containing the Visual Basic version of the exercise, and <b>C#</b>, containing the C# version of it.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">For More Information</h1>
+        <p>See the following videos in which this application is built up:</p>
+        <ul>
+          <li>“What's New for Microsoft Silverlight and Microsoft Windows Presentation Foundation (WPF) Developers in Microsoft Visual Studio 2010”: <a href="http://videos.visitmix.com/MIX09/T73M">http://videos.visitmix.com/MIX09/T73M</a></li>
+          <li>“What's New in Windows Presentation Foundation (WPF) 4”: <a href="http://videos.visitmix.com/MIX09/T39F">http://videos.visitmix.com/MIX09/T39F</a></li>
+        </ul>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_427b20ee-3174-4f13-835d-a87901f10e7f.html">Exercise 1: Creating the Application’s Data Scaffolding, Making Basic Customizations</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

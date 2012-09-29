@@ -1,0 +1,222 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Testing CRUD actions" />
+      <MSHelp:RLTitle Title="Exercise 2: Testing CRUD actions" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Testing CRUD actions</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Testing</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Testing CRUD actions</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to test CRUD actions that modify the database. One of the premises to take into account is that tests don’t necessarily run in a specific order. Another one is that every test could be executed as many times as needed. So your tests should not depend on previous tests executions. For instance, if your test is going to delete a record in the database, the setup of the test should provide the record to be deleted. This way, the test could be executed repeatedly.</p>
+        <a name="_Toc282180599" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Reviewing the provided solution</b>
+        </p>
+        <p>Some changes where performed to the end solution of the last exercise in order to prepare it for this one. </p>
+        <ul>
+          <li>A test project is provided to hold the tests for this exercise</li>
+          <li>The CRUD tests were created using the approach followed in the previous exercise (right-click on the class to be tested and then <b>Create Unit Tests</b>)</li>
+          <li>The test project has its own database for testing purposes: since in this exercise you are testing actions that rely on a database, a well-known database for testing purposes was included inside the testing project. This database includes the tables used by the entity classes and has data pre-loaded to simplify test execution.<p><img src="images\1838b2a7-1894-45c5-a2f3-ecfad3bbdfbb.png" /></p><p><b>Figure 12</b><br /><i>Well-known database as part of the testing project</i></p></li>
+          <li>A web.config was added to the project to connect the solution to this database in order to avoid modifying data in the project to be tested.</li>
+          <li />
+        </ul>
+        <p>In this task, you will review those changes before moving on, in the following tasks, with the particular additions for testing CRUD actions.</p>
+        <ol>
+          <li>Start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 </b>| <b>Microsoft Visual Studio 2010</b>. </li>
+          <li>In the <b>File</b> menu, choose Open<b> Project</b>. In the Open Project dialog, browse to Source\Ex02-Testing CRUD actions\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>. Based on the changes explained, you should use this solution instead of the one you ended exercise 1 with.</li>
+          <li>In the <b>Test </b>menu, select <b>Run</b> and then <b>All Tests in Solution</b>.</li>
+        </ol>
+        <p>The tests are executed and fail. In this exercise, you will modify these tests to make them succeed.</p>
+        <p>
+          <img src="images\cc61794c-68a7-4186-ad7c-f2db03488b1c.png" />
+        </p>
+        <p>
+          <b>Figure 13</b>
+          <br />
+          <i>Running all the tests</i>
+        </p>
+        <br />
+        <a name="_Toc282180600" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding transaction capabilities to the Test Methods</b>
+        </p>
+        <p>In this task, you will learn how to use transactions to limit the scope of the test. This way, you could execute the test as many times as you want, without altering the database content.</p>
+        <ol>
+          <li> In the <b>Solution Explorer</b> right-click the project <b>MvcMusicStore.Tests </b>and<b> </b>select <b>Add Reference</b>.</li>
+          <li>
+            <img src="images\810293f7-0605-4e47-9703-3fe86b464c0a.png" />
+            <p>
+              <b>Figure 14</b>
+              <br />
+              <i>Adding a Reference</i>
+            </p>
+            <br />
+          </li>
+          <li>In the <b>Add Reference </b>window select the <b>Net </b>tab and locate the <b>System.Transactions </b>component and click <b>OK.</b><p><img src="images\10279b0d-e195-44bc-86ea-433d1fd83f70.png" /></p><p><b>Figure 15</b><br /><i>Adding System.Transactions reference</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>System.Transactions</b> classes provide explicit and implicit transaction programming model. In the implicit model, when you use <b>TransactionScope </b>the transaction manager determines if it will subscribe to a current transaction or if it will instantiate a new one. This depends on two factors: whether an ambient transaction already exists and also the <b>TransactionScopeOption</b> parameter in the constructor.<br />When you use <b>TransactionScope </b>in a <b>using </b>block, the whole block is transactional. This avoids you from having to focus on the transaction scope. If you were using a SQL Server database (not a local one, as now) and you wanted to commit the changes to the database, you would have toinvoke <b>TransactionScope</b>’s <b>Complete </b>method. Since the intention in this exercise is to maintain the database intact for the next test, you will not see that invocation in the code. Nevertheless you should remember to use it appropriately when your intention is to commit the changes of the transaction.</td></tr></table><p /></div><br /></li>
+          <li>Add the following <b>using</b> directives in the <b>StoreManagerControllerTest.cs</b> class. To do this, add the following references before the namespace definition:<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 Using directives – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using MvcMusicStore.Controllers;using Microsoft.VisualStudio.TestTools.UnitTesting;using System;using Microsoft.VisualStudio.TestTools.UnitTesting.Web;using MvcMusicStore.Models;using System.Web.Mvc;<b>using System.Transactions;</b><b>using System.Linq;</b><b>using MvcMusicStore.ViewModels;</b>namespace MvcMusicStore.Tests{</pre></td></tr></table></span></div></li>
+          <br />
+        </ol>
+        <br />
+        <a name="_Toc282180601" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Testing Create Action Method</b>
+        </p>
+        <p>In this task, you will learn how to test the creation of new records in the database by adding new albums.</p>
+        <ol>
+          <li>Open <b>StoreManagerControllerTest.cs</b> class and locate the <b>CreateTest</b> method.</li>
+          <li>Test the addition of a new Album, then retrieve it from the database and compare its attributes to verify that it was correctly persisted.  To do this, replace the <b>CreateTest</b> method with the following code.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 CreateTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void CreateTest(){<b>    using (TransactionScope ts = new TransactionScope())</b><b>    {</b><b>        StoreManagerController target = new StoreManagerController();</b><b>        Album album = new Album()</b><b>        {</b><b>            GenreId = 1,</b><b>            ArtistId = 1,</b><b>            Title = "New Album",</b><b>            Price = 10,</b><b>            AlbumArtUrl = "/Content/Images/placeholder.gif"</b><b>        };</b><b>        ActionResult actual;</b><b>        actual = target.Create(album);</b><b>        Assert.IsTrue(album.AlbumId != 0);</b><b>        MusicStoreEntities storeDB = new MusicStoreEntities();</b><b>        var newAlbum = storeDB.Albums.SingleOrDefault(a =&gt; a.AlbumId == album.AlbumId);</b><b>        Assert.AreEqual(album.GenreId, newAlbum.GenreId);</b><b>        Assert.AreEqual(album.ArtistId, newAlbum.ArtistId);</b><b>        Assert.AreEqual(album.Title, newAlbum.Title);</b><b>        Assert.AreEqual(album.Price, newAlbum.Price);</b><b>        Assert.AreEqual(album.AlbumArtUrl, newAlbum.AlbumArtUrl);</b><b>    }</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You will notice that before the test method two new <b>DeploymentItem</b> attributes were added. This two attributes refer to the database and its log file. <br />The <b>DeploymentItem </b>attribute is used in test methods to alert to the test engine of files that will be needed to execute tests.  Visual Studio run tests in a different folder where it copies the built assemblies.  This folder is created for each test execution and when a test is run, code-under-test assemblies, and the deployment items are placed in a test deployment folder specific for that test run. Since these files are copied every time the test is executed, the database used for the test execution always starts with the same set of data. </td></tr></table><p /></div><br /></li>
+          <li>Run the test. On the <b>StoreManagerControllerTest.cs</b> class right-click the <b>CreateTest</b> method and select <b>Run Tests</b><p><img src="images\da2a263d-7ac8-40e3-bf32-5187ff8ddd45.png" /></p><p><b>Figure 16</b><br /><i>Running the CreateTest test</i></p><br /></li>
+        </ol>
+        <a name="_Toc282180602" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Testing Delete Action Method</b>
+        </p>
+        <p>In this task, you will learn how to test the deletion of albums.</p>
+        <ol>
+          <li>Open <b>StoreManagerControllerTest.cs</b> class and locate the <b>DeleteTest </b>method.</li>
+          <li>Test the deletion of an Album and then verify it no longer exists in the database.  To do this, replace the <b>DeleteTest</b> method with the following code.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 DeleteTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;/// A test for Delete///&lt;/summary&gt;[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void DeleteTest(){<b>    using (TransactionScope ts = new TransactionScope())</b><b>    {</b><b>        StoreManagerController target = new StoreManagerController();</b><b>        int id = 669;</b><b>        ActionResult actual;</b><b>        actual = target.Delete(id, null);</b><b>        Assert.IsNotNull(actual);</b><b>        MusicStoreEntities storeDB = new MusicStoreEntities();</b><b>        var album = storeDB.Albums.SingleOrDefault(a =&gt; a.AlbumId == id);</b><b>        Assert.IsNull(album);</b><b>    }</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Run the test. On the <b>StoreManagerControllerTest.cs</b> class right-click the <b>DeleteTest</b> method and select <b>Run Tests</b><p><img src="images\20bd1990-a8c5-4744-94e4-75a406c36713.png" /></p><p><b>Figure 17</b><br /><i>Running the DeleteTest test</i></p><br /></li>
+        </ol>
+        <a name="_Toc282180603" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Testing Edit Action Method</b>
+        </p>
+        <p>In this task, you will learn how to test the HTTP-GET edit action method.</p>
+        <ol>
+          <li>Open <b>StoreManagerControllerTest.cs</b> class and locate the <b>EditTest </b>method.</li>
+          <li>Test the edit action by obtaining an Album’s information. To do this, replace the <b>EditTest</b> method with the following code.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 EditTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;///A test for Edit///&lt;/summary&gt;[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void EditTest(){<b>    StoreManagerController target = new StoreManagerController();</b><b>    int id = 669;</b><b>    ActionResult actual;</b><b>    actual = target.Edit(id);</b><b>    Assert.IsNotNull(actual);</b><b>    Assert.IsInstanceOfType(actual, typeof(ViewResult));</b><b>    ViewResult viewResult = (ViewResult)actual;</b><b>    Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(StoreManagerViewModel));</b><b>    StoreManagerViewModel model = (StoreManagerViewModel)viewResult.ViewData.Model;</b><b>    Assert.AreEqual(id, model.Album.AlbumId);</b><b>    Assert.AreEqual("Ring My Bell", model.Album.Title);</b><b>           Assert.AreEqual(10, model.Genres.Count());</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In this code block you first verify that the <b>Edit</b> action method returns an <b>ActionResult</b> object and that is of type <b>ViewResult</b>. This conversion is necessary to reach the model defined in the <b>StoreManagerViewModel</b>. Finally, the album obtained is compared by its <b>ID</b> and <b>Title</b> attributes. </td></tr></table><p /></div><br /></li>
+          <li>Run the test. On the <b>StoreManagerControllerTest.cs</b> class right-click the <b>EditTest</b> method and select <b>Run Tests</b><p><img src="images\7c023de0-3a92-44bc-a8e8-427fbb9976c4.png" /></p><p><b>Figure 18</b><br /><i>Running the EditTest test</i></p><br /></li>
+        </ol>
+        <a name="_Toc282180604" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Testing Index Action Method</b>
+        </p>
+        <p>In this task, you will test the Index action method that obtains the list of genres from the store.</p>
+        <ol>
+          <li>In the <b>Solution Explorer</b> expand the project <b>MvcMusicStore.Tests </b>and<b> </b>double click on the <b>StoreControllerTest.cs</b> class.</li>
+          <li>Add the following namespaces at the beginning of the <b>StoreControllerTest.cs</b> file:<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 StoreControllerTestUsing – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using MvcMusicStore.Controllers;using Microsoft.VisualStudio.TestTools.UnitTesting;using System;using Microsoft.VisualStudio.TestTools.UnitTesting.Web;using System.Web.Mvc;<b>using MvcMusicStore.ViewModels;</b><b>using MvcMusicStore.Models;</b>namespace MvcMusicStore.Tests{</pre></td></tr></table></span></div><br /></li>
+          <li>Test getting all the Genres for the Music Store by invoking the <b>Index</b> action method and verify the amount of genres retrieved. To do this, replace the <b>IndexTest</b> method with the following code.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 IndexTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;/// A test for Index///&lt;/summary&gt;[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void IndexTest(){<b>    StoreController target = new StoreController();</b><b>    ActionResult actual;</b><b>    actual = target.Index();</b><b>    Assert.IsNotNull(actual);</b><b>    Assert.IsInstanceOfType(actual, typeof(ViewResult));</b><b>    ViewResult viewResult = (ViewResult)actual;</b><b>    Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(StoreIndexViewModel));</b><b>    StoreIndexViewModel model = (StoreIndexViewModel)viewResult.ViewData.Model;</b><b>    Assert.AreEqual(10, model.Genres.Count);</b><b>    Assert.AreEqual(10, model.NumberOfGenres);</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Run the test. On the <b>StoreControllerTest.cs</b> class right-click the <b>IndexTest</b> method and select <b>Run Tests</b>.<p><img src="images\023b00e9-84e5-4456-b2c0-7ba19945afab.png" /></p><p><b>Figure 19</b><br /><i>Running the IndexTest test</i></p><br /></li>
+        </ol>
+        <a name="_Toc282180605" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Testing Details Action Method</b>
+        </p>
+        <p>In this task, you will test the Details method. This method obtains a specific album based on its ID.</p>
+        <ol>
+          <li>Open <b>StoreControllerTest.cs</b> class and locate the <b>DetailsTest</b> method.</li>
+          <li>Test getting the Album’s information for a record stored in the provided database. To do this, replace the <b>DetailsTest</b> method with the following code.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 DetailsTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;///A test for Details///&lt;/summary&gt;[TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void DetailsTest(){<b>    StoreController target = new StoreController();</b><b>    int id = 669;</b><b>    ActionResult actual;</b><b>    actual = target.Details(id);</b><b>    Assert.IsNotNull(actual);</b><b>    Assert.IsInstanceOfType(actual, typeof(ViewResult));</b><b>    ViewResult viewResult = (ViewResult)actual;</b><b>    Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(Album));</b><b>    Album album = (Album)viewResult.ViewData.Model;</b><b>    Assert.AreEqual(id, album.AlbumId);</b><b>    Assert.AreEqual("Ring My Bell", album.Title);</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Run the test. On the <b>StoreControllerTest.cs</b> class right-click the <b>DetailsTest</b> method and select <b>Run Tests</b><p><img src="images\dc812037-3069-4957-8038-c478bde142d1.png" /></p><p><b>Figure 20</b><br /><i>Running the DetailsTest test</i></p><br /></li>
+        </ol>
+        <a name="_Toc282180606" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 7 – Testing Browse Action Method for StoreController</b>
+        </p>
+        <p>In this task, you will learn how to test the Browse method. This method returns a list of albums for a specific genre.</p>
+        <ol>
+          <li>Open <b>StoreControllerTest.cs</b> class and locate the <b>BrowseTest</b> method.</li>
+          <li>Test getting the Albums list for a provided genre. To do this, replace the <b>BrowseTest</b> method with the following code.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex2 BrowseTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>/// &lt;summary&gt;/// A test for Browse///&lt;/summary&gt; [TestMethod()][DeploymentItem("MvcMusicStore.mdf")][DeploymentItem("MvcMusicStore_log.ldf")]public void BrowseTest(){<b>    StoreController target = new StoreController(); </b><b>    string genre = "Disco"; </b><b>    ActionResult actual;</b><b>    actual = target.Browse(genre);</b><b>    Assert.IsNotNull(actual);</b><b>    Assert.IsInstanceOfType(actual, typeof(ViewResult));</b><b>    ViewResult viewResult = (ViewResult)actual;</b><b>    Assert.IsNotNull(viewResult.ViewData.Model);</b><b>    Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(StoreBrowseViewModel));</b><b>    StoreBrowseViewModel model = (StoreBrowseViewModel)viewResult.ViewData.Model;</b><b>    Assert.AreEqual("Disco", model.Genre.Name);</b><b>    Assert.AreEqual(3, model.Albums.Count);</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>This is the last test of the exercise where you will verify that all tests pass. To do this, in the <b>Test</b> menu, select <b>Run</b> and then <b>All Tests in Solution</b>. <p><img src="images\f75ce5fe-0f98-43b2-9a66-cb1589ebe20d.png" /></p><p><b>Figure 21</b><br /><i>Running all testsx in the solution</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_88d712a5-0b33-4e38-a96c-dbbb933902f6.html">Exercise 3: Testing cart actions</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

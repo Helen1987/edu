@@ -1,0 +1,121 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Managing Test Suites and Test Cases" />
+      <MSHelp:RLTitle Title="Exercise 1: Managing Test Suites and Test Cases" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Managing Test Suites and Test Cases</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Test Case Management with Microsoft Test Manager 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Managing Test Suites and Test Cases</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use the Microsoft Test Manager to manage test suites and test cases.</p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Test Manager from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Test Manager 2010</b>. This is a new tool dedicated to manual software testing that has been built from the ground up for Visual Studio 2010.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Microsoft Test Manager allows testers to work with test plans, author and organize manual test cases, execute test cases, file bugs, and post results back to Team Foundation Server.</td></tr></table><p /></div><p><img src="images\891ce9dc-4fc7-4fe1-bee9-8937badd60ee.png" /></p><p><b>Figure 1</b><br /><i>Microsoft Test Manager starting up</i></p></li>
+          <li>Select the activity center drop down from the top menu that currently shows Testing Center. The <b>Testing Center</b> is used to work with manual test cases and other general test case management. <b>Lab Center</b> is used to work with physical or virtual testing labs. For this lab, we will focus on the Testing Center.<p><img src="images\951f8a07-36df-47cc-8ce2-f202eff4c6f3.png" /></p><p><b>Figure 2</b><br /><i>Choosing Activity Centers in Microsoft Test and Lab Manager</i></p></li>
+          <li>Select the <b>Plan</b> tab from the Testing Center.<p><img src="images\0fdb515f-6c13-499c-9728-4b4e45559682.png" /></p><p><b>Figure 3</b><br /><i>Location of Plan tab</i></p></li>
+          <li>In the <b>Contents</b> panel under the Iteration 2 node, locate the nodes labeled 7, 8, and 9. These nodes are requirements-based <b>test suites</b> which contain test cases linked to requirements. Select <b>test suite 7</b> to see the list of linked test cases.<p><img src="images\9f8eee4a-162d-4142-844e-bd2cfc5b316f.png" /></p><p><b>Figure 4</b><br /><i>Test cases assigned as requirements for a test suite</i></p></li>
+          <li>Open the test case with<b> ID = 41</b> by right-clicking on it and selecting <b>Open Test Case</b> from the context menu that appears.<p><img src="images\f78bf43a-8d49-450e-8614-cd6effc27c20.png" /></p><p><b>Figure 5</b><br /><i>Opening a test case from within Test and Lab Manger</i></p></li>
+          <li>Select the <b>Tested User Stories</b> tab and note that this test case links back to a user story.<p><img src="images\24a30217-defd-43ed-9f7b-f12536f8bb70.png" /></p><p><b>Figure 6</b><br /><i>Tested User Stories tab</i></p></li>
+          <li>Close the test case by selecting the <b>X</b> in the top-right corner of the test case window. Be careful not to close the Test Manager application.<p><img src="images\06c24dec-439a-4a0a-9f04-00efecf10b0f.png" /></p><p><b>Figure 7</b><br /><i>Location of Close button (X)</i></p></li>
+          <li>Locate and select the test suite labeled <b>End-to-End Tests</b>. This <b>static test suite</b> contains arbitrary test cases and other test suites.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>There may not be any items in the End-to-end tests suite.</td></tr></table><p /></div></li>
+          <li>The third and final test suite type is the <b>query-based suite</b>. Although not represented in this lab, query-based test suites allow work item queries to be constructed in order to gather test cases. For example, imagine a scenario where you want to create a test suite that includes all priority 1 test cases from iteration 1’s test plan.<p><img src="images\017bafd5-f112-4cd5-9d74-85a03a869036.png" /></p><p><b>Figure 8</b><br /><i>Query-based suite</i></p></li>
+          <li>Locate and select <b>test suite 9</b> and note that its state is set to <b>In Planning</b>. The remaining two states are <b>In Progress</b> and <b>Completed</b>. Only test suites that are set to the In Progress state are shown on the Test activity tab.<p><img src="images\365a58e6-5957-4764-b0c4-34cb0dd052a7.png" /></p><p><b>Figure 9</b><br /><i>Test suite state selection</i></p></li>
+          <li>Locate and select <b>test suite 7</b>. Note that you can open, add, create, and remove test cases from the right-hand side of the window. <p><img src="images\935cc541-34bf-494b-8e72-0b881d4e7b2c.png" /></p><p><b>Figure 10</b><br /><i>Working with test cases [your screen may look different]</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>To learn more about working with manual test cases, see the lab titled Authoring and Running Manual Tests using Microsoft Test Manager 2010.</td></tr></table><p /></div></li>
+          <li>Select the test case with <b>ID = 41</b>.</li>
+          <li>Select the <b>Configurations</b> button to load the <b>Select Test Configurations</b> window.</li>
+          <li>Select the <b>All Configurations</b> button to show all configuration options that are available and select the <b>Vista and IE7</b> checkbox.<p><img src="images\053c7a0a-aad3-4e56-b719-e14579a027d6.png" /></p><p><b>Figure 11</b><br /><i>Working with test configurations</i></p></li>
+          <li>Select the <b>Apply Changes</b> button to continue.</li>
+          <li>Select the <b>Properties</b> link to load the test plan properties window. The first section of the test plan properties window allows you to edit the basic properties like name, description, area path, iteration, state, and so on. The <b>Run Settings</b> section allows you to specify how manual and automated test runs should be setup, what the test environment to use, and even the specific build to test.<p><img src="images\fab735b6-a19c-4438-8021-4c90c3fa7d3a.png" /></p><p><b>Figure 12</b><br /><i>Test plan properties window</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Test settings are particularly important as they specify how and what data will be collected during test runs. If bugs are found during a test run, this data will be used by developers to reproduce and better understand the problem</td></tr></table><p /></div></li>
+          <li>Open the test settings for <b>Manual Runs</b> by selecting on the <b>Open</b> link.<p><img src="images\bf300cb3-d1a3-4369-a850-29ae3a69bc7c.png" /></p><p><b>Figure 13</b><br /><i>Location of Open link</i></p></li>
+          <li>Select the <b>Data and Diagnostics</b> step from the left-hand side of the test settings window. This allows you to select which <b>Data Diagnostic Adapters</b> you want to utilize. For example, the Video Recorder will record the screen as seen by the tester during test runs. <p><img src="images\3c0e3950-fe24-415f-9aba-6493bbb9609d.png" /></p><p><b>Figure 14</b><br /><i>Data and Diagnostics options</i></p></li>
+          <li>Enable the <b>Event Log</b> diagnostic adapter and select the <b>Configure</b> button.<p><img src="images\979b4e44-5b1d-45bb-bdaf-7a5758d091d6.png" /></p><p><b>Figure 15</b><br /><i>Event Log diagnostic adapter</i></p></li>
+          <li>In the <b>Configure Diagnostic Data Adapter – Event Log</b> window, note that you can specify which event logs and event types to collect from. Select the <b>Save</b> button to continue.<p><img src="images\36e84963-2c74-46bb-891f-9230389f9500.png" /></p><p><b>Figure 16</b><br /><i>Configuring the Event Log diagnostic adapter</i></p></li>
+          <li>Select the <b>Finish</b> button to return to the test plan properties window.</li>
+          <li><b>Test environments</b> are also managed from the test plan properties window. Test environments are either physical or virtual environments used to run tests against or to collect data. For example, when testing a Web application, it may be necessary to collect data from both the client and the server at the same time as components of that system reside in different environments. For this test plan, there is just one local test environment.</li>
+          <li><b>Test configurations</b> describe which platforms to test against during test runs. Select the drop down that currently has Windows Server 2008 and IE8 selected to see the options available. Select the <b>Don’t Apply</b> button when finished.<p><img src="images\88b82b3f-95f2-451c-ad39-853351379d8e.png" /></p><p><b>Figure 17</b><br /><i>Specifying testing platforms</i></p></li>
+          <li>The <b>Builds</b> section of the test plan properties window defines the build definition that test results and bugs will be filed against. Select the drop down labeled <b>Filter For Builds</b>.<p><img src="images\b73c1492-ceed-443a-bebd-c5494749b069.png" /></p><p><b>Figure 18</b><br /><i>Build definition to use for testing</i></p></li>
+          <li>Build quality can also be specified so that testers do not prematurely start the testing process. Select the <b>Build Quality</b> drop down to see the options available.<p><img src="images\ba198370-6d9c-4c64-9b18-f1f60c5d2a40.png" /></p><p><b>Figure 19</b><br /><i>Build quality options</i></p></li>
+          <li>Press the <b>Escape</b> key to cancel the selection of a build quality and select the <b>Cancel</b> button to return to the test plan properties window.</li>
+          <li>Finally, note that a specific build is setup for test runs.<p><img src="images\fcc0c0c4-f1b9-4db8-8e70-55893d772628.png" /></p><p><b>Figure 20</b><br /><i>Build version specified for testing</i></p></li>
+          <li>Close the test plan properties window by selecting the <b>X</b> in the top-right corner of the test plan properties window. Be careful not to close the Test Manager application. </li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_5a6ac189-9864-406f-94c8-a9cf20de9f2a.html">Exercise 2: Analyzing Test Runs</a>
+        </p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

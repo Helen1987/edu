@@ -1,0 +1,133 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Using HTML Code Snippets in Visual Studio 2010" />
+      <MSHelp:RLTitle Title="Exercise 1: Using HTML Code Snippets in Visual Studio 2010" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Using HTML Code Snippets in Visual Studio 2010</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Development in Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Using HTML Code Snippets in Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use HTML code snippets in Visual Studio 2010. You will also learn how to create your own custom HTML snippets.</p>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc282089417" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a New ListView to an HTML Page Using an HTML Code Snippet</b>
+        </p>
+        <p>In this task, you will open an existing ASP.NET web application and use a snippet to add a ListView control to an existing webpage.</p>
+        <ol>
+          <li>Navigate to <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>. Select the <b>File</b> | <b>Open</b> | <b>Project/Solution…</b> menu command. In the <b>Open Project</b> dialog, navigate to <b><i>\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab</i></b> and select HTMLLab.sln file.</li>
+          <li>In Solution Explorer, open the <b>Default.aspx</b> file by double-clicking it. Examine the code present on the page. Note that the page contains a <b>GridView</b> control with an <b>ID</b> of <b>Products</b>.<p><img src="images\504d5f45-3a7f-48b4-8c8f-8c75f08eed0d.png" /></p><p><b>Figure 1</b><br /><i>Existing Grid View control in Default.aspx</i></p><br /></li>
+          <li>On the Default.aspx page, you will add a <b>ListView</b> control. Place the cursor after closing GridView tag (<b>&lt;/asp:GridView&gt;</b>) and press the <b>ENTER</b> key. Press the “<b>&lt;</b>” key to invoke the completion list.<p><img src="images\57e3ab81-a5e4-4159-aa9e-965c2b26495b.png" /></p><p><b>Figure 2</b><br /><i>Completion List</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The small icons next to each completion indicate what type of completion it is:<br /><img src="images\d841df00-60f9-494a-bcad-268c1830cd3c.png" />  Indicates that a completion entry is also a snippet keyword<br /><img src="images\05c3bc18-9252-4d0a-901d-053413bf57d4.png" />  Indicates a snippet keyword<br /><img src="images\8e4d0a89-8809-474f-a9aa-2fea0d013fd7.png" />  Indicates a completion entry</td></tr></table><p /></div><br /></li>
+          <li>Select <b>ListView</b> from the completion list and press the <b>TAB</b> key twice to insert the snippet.<p><img src="images\653131b1-ed38-4dcf-8970-857fd52522e8.png" /></p><p><b>Figure 3</b><br /><i>The inserted snippet</i></p><br /></li>
+          <li>To progress you will need to add the layout, to put in a temporary placeholder. Enter the following code to define the <b>LayoutTemplate</b>:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;LayoutTemplate&gt;</b><b>    &lt;table id="itemPlaceholderContainer"&gt;</b><b>        &lt;tr runat="server" id="itemPlaceholder"&gt;</b><b>        &lt;/tr&gt;</b><b>    &lt;/table&gt;</b><b>&lt;/LayoutTemplate&gt;</b></pre></td></tr></table></span></div><br /><p><img src="images\572f4e49-92ac-48f7-af7b-5b9af1fb0d38.png" /></p><p><b>Figure 4</b><br /><i>The completed snippet</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In this task, you brought up the completion list by typing the “&lt;” character. Another way to show that list is to use the CTRL+J shortcut. Yet another option is to invoke the snippet picker by using the CTRL+K, CTRL+X shortcut. This may be faster in some cases because you can narrow the snippets by group as shown below:<br /><img src="images\2d4d2294-432d-4313-b693-6e25b928140e.png" /><br /><br />By selecting the ASP.NET folder and pressing the TAB key, you will see a list of the ASP.NET specific snippets:<br /><img src="images\07ce44e8-9246-4517-a4a1-5deb3e8e7d86.png" /><br />You can abort this action by pressing the ESC key. Do not add any more controls to this page at this time.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282089418" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating a Custom HTML Snippet</b>
+        </p>
+        <p>In this task, you will create a custom HTML snippet for use inside of the Visual Studio 2010 IDE. The new code snippet will create a label control with the preset default values. Any custom Snippets implemented are stored as XML files in a well-known directory. </p>
+        <ol>
+          <li>In Visual Studio 2010 select <b>File</b> | <b>New</b> | <b>File</b> from the menu<b> </b>to open the <b>New File</b> dialog. In the <b>New File</b> dialog select <b>General</b> from Categories, <b>XML File</b> from Templates and click <b>Open</b>.</li>
+          <li>To create the structure of the snippet you will use an existing snippet. In the XML file editor, press <b>CTRL+K</b>, <b>CTRL+X</b> to display the snippets list.<p><img src="images\f7b75268-5972-4ecd-afa2-420ac0d4a841.png" /></p><p><b>Figure 5</b><br /><i>Snippets list</i></p><br /></li>
+          <li>Select <b>Snippet</b> from the list. An XML code snippet will be inserted in the file.<p><img src="images\2f867faf-7bf7-4ca8-b985-f32f04aa8494.png" /></p><p><b>Figure 6</b><br /><i>XML definition of a code snippet list</i></p><br /></li>
+          <li>Supply the following values for the indicated XML elements:<table style=""><tr valign="top"><th><p>Field</p></th><th><p>Value</p></th></tr><tr valign="top"><td><p>Title</p></td><td><p>“Address Block”</p></td></tr><tr valign="top"><td><p>Shortcut</p></td><td><p>“AddrBlock”</p></td></tr><tr valign="top"><td><p>Description</p></td><td><p>“XML snippet to create a quick address block.”</p></td></tr></table></li>
+          <br />
+          <p>Snippet picker uses the <b>Title</b> value to display the name of the snippet. Completion list uses the <b>Shortcut</b> value to select the snippet.</p>
+          <li>Under the <b>&lt;SnippetTypes&gt;</b> node, delete the first <b>&lt;SnippetType&gt;</b> XML element containing the value <b>SurroundsWith</b>. Be sure to leave the <b>&lt;SnippetType&gt;</b> XML element that contains the value <b>Expansion</b>.</li>
+          <li>Delete the entire <b>Declarations</b> XML node.</li>
+          <li>Delete the <b>Code</b> XML node, including the CDATA value within it from the Snippet XML element. </li>
+          <li>Delete the XML element at the top of the file. When finished with these steps, your snippet should look like this:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet"&gt;  &lt;Header&gt;    &lt;Title&gt;Address Block&lt;/Title&gt;    &lt;Author&gt;author&lt;/Author&gt;    &lt;Shortcut&gt;AddrBlock&lt;/Shortcut&gt;    &lt;Description&gt;XML Snippet to create a quick address block.&lt;/Description&gt;    &lt;SnippetTypes&gt;      &lt;SnippetType&gt;Expansion&lt;/SnippetType&gt;    &lt;/SnippetTypes&gt;  &lt;/Header&gt;  &lt;Snippet&gt;  &lt;/Snippet&gt;&lt;/CodeSnippet&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>In the <b>Snippet</b> element, add the following code (enclosing <b>Snippet</b> tags shown for guidance).<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;Snippet&gt;<b>      &lt;Code Language="html"&gt;</b><b>        &lt;![CDATA[&lt;label for="CustomerType"&gt;Customer Type:&lt;/label&gt;</b><b>   &lt;select&gt;</b><b>   &lt;option&gt;Federal&lt;/option&gt;</b><b>   &lt;option&gt;State&lt;/option&gt;</b><b>   &lt;option&gt;Corporate&lt;/option&gt;</b><b>   &lt;option&gt;Residential&lt;/option&gt;</b><b>   &lt;/select&gt; </b><b>   &lt;br /&gt;</b><b></b><b>    &lt;label&gt;Name: &lt;/label&gt;</b><b>    &lt;input id="name" name="name"/&gt;&lt;br /&gt;</b><b></b><b>    &lt;label &gt;Address Line 1: &lt;/label&gt;</b><b>    &lt;input id="AddressLine1" name="AddressLine1"/&gt;&lt;br /&gt;</b><b></b><b>    &lt;label&gt;Address Line 2: &lt;/label&gt;</b><b>    &lt;input id ="AddressLine2" name="AddressLine2"/&gt;&lt;br /&gt;</b><b></b><b>    &lt;label&gt;City &lt;/label&gt; &lt;input id="City" name="City"/&gt;&lt;br /&gt;</b><b></b><b>    &lt;label&gt;State &lt;/label&gt;&lt;input id="State" name="State"/&gt;&lt;br /&gt;</b><b></b><b>    &lt;label &gt;Zip Code &lt;/label&gt;   &lt;input id="zip" name="zip"/&gt;&lt;br /&gt;&lt;br /&gt;</b><b></b><b>      $end$]]&gt;</b><b>      &lt;/Code&gt;</b>&lt;/Snippet&gt;</pre></td></tr></table></span></div><br /><p>This will add a label control with the ID of <b>AddrBlock</b>.</p></li>
+          <li>Using <b>Windows Explorer</b>, navigate to C:\Users\&lt;Username&gt;\Documents\ folder. Create a sub-folder “Snippets” in the C:\Users\&lt;Username&gt;\Documents\ folder.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> There are two ways to deploy code snippets to the environment.<br />Option 1: Save the XML as a .snippet file to the C:\Users\&lt;Username&gt;\Documents\Visual Studio 10\Code Snippets\Visual Web Developer\My HTML Snippets\ folder. Visual Studio will automatically find these snippets and make them available for use.<br />Option 2: Save created snippet XML as a .snippet file in some other location and use the <b>Code Snippets Manager</b> to add the snippet to Visual Studio.<br />Snippets added using the <b>Code Snippets Manager</b> will not be available in the auto complete list.</td></tr></table><p /></div><br /></li>
+          <li>Select the <b>File</b> | <b>Save As</b> menu command. In the <b>Save File As</b> dialog, change the path to C:\Users\&lt;Username&gt;\Documents\Snippets folder. Change the file name to “AddrBlock”, set the <b>Save as type</b> dropdown list to <b>Snippet Files (*.snippet)</b> and click <b>Save</b>.</li>
+          <li>Open the <b>Code Snippets Manager</b> by using the <b>Tools</b> | <b>Code Snippets Manager…</b> menu or the CTRL + K, CTRL + B shortcut. <b>The Code Snippets Manager</b> dialog appears.<p><img src="images\2b0b1b73-d5aa-4fcd-89a8-4347dea2e312.png" /></p><p><b>Figure 7</b><br /><i>Code Snippets Manager</i></p><br /></li>
+          <li>In the <b>Language</b> dropdown list, select <b>HTML</b>. Click the <b>Add</b> button to open a <b>Code Snippet Directory</b> dialog.<p><img src="images\dfe5e22a-c7f2-43cc-a9b3-86c008c82a1e.png" /></p><p><b>Figure 8</b><br /><i>Add a code snippets folder</i></p><br /></li>
+          <li>In the <b>Code Snippet Directory </b>dialog, navigate to the folder you created (C:\Users\&lt;Username&gt;\Documents\Snippets\) and click the <b>Select Folder</b> button. The <b>Snippets</b> folder appears in the list of snippet locations. Click the <b>OK</b> button to dismiss the dialog.<p><img src="images\4b7cf6d8-68ea-40b4-824a-10292462e3c2.png" /></p><p><b>Figure 9</b><br /><i>Snippets folder added to list of snippet locations</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_f109cb56-c1be-431b-aa8e-1beec0b80ebb.html">Exercise 1: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

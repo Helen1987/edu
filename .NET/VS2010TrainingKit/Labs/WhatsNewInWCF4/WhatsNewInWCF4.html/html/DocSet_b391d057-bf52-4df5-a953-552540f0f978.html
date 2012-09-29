@@ -1,0 +1,186 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Windows Communication Foundation (WCF) in .NET 4 includes three new features areas:</p>
+        <ul>
+          <li>Simplified Configuration</li>
+          <li>Service Discovery</li>
+          <li>Service Routing</li>
+        </ul>
+        <p>In this lab, you will get a chance to try out these new features and learn how they work. You will also experience the improved hosting and deployment capabilities of the new Windows Server AppFabric.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\785705ff-962b-415c-ae7c-583fa416302d.png" />
+                <b>Do I have to do all the exercises?</b>
+                <br />This lab is long. To do all of it will probably take close to 2 hours.  The lab is designed so that each exercise is independent of the others. Just open the solution found under the Begin folder for the exercise. For example, if you wanted to learn how to use Service Discovery you would start with Exercise 4 and open the solution from the <b>Source\Ex4-ServiceDiscover\Begin </b>folder</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn:</p>
+        <ul>
+          <li>How simplifications to configuration make WCF easier to use</li>
+          <li>How to use Service Discovery to locate services</li>
+          <li>How to use Service Routing</li>
+          <li>How to Deploy and Monitor services using AppFabric</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <a name="_Toc211161219" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>Microsoft .NET Framework 4</li>
+          <li>Windows Server AppFabric - <a href="http://msdn.microsoft.com/en-us/windowsserver/ee695849.aspx">Download</a></li>
+        </ul>
+        <a name="_Setup" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the Dependency Checker. To make sure that everything is correctly configured, follow these steps:</p>
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br />For convenience, much of the code you will be managing along this hands-on lab is available as Visual Studio code snippets that are automatically installed by the DependencyChecker</td></tr></table><p /></div></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab comprises the following exercises. </p>
+        <p><b>Simplified Configuration</b></p>
+        <ol>
+          <li>Simplified Configuration</li>
+          <li>Service Behavior</li>
+          <li>Protocol Mapping</li>
+        </ol>
+        <p><b>Service Discovery</b></p>
+        <ol>
+          <li>Service Discovery</li>
+          <li>Metadata Extensions</li>
+          <li>Discovery Announcements</li>
+          <li>Discovery Proxy</li>
+        </ol>
+        <p><b>Routing</b></p>
+        <ol>
+          <li>Service Routing</li>
+          <li>Content Based Routing</li>
+          <li>Backup Lists</li>
+        </ol>
+        <p><b>AppFabric</b></p>
+        <ol>
+          <li>Deploying the Web Application</li>
+        </ol>
+        <h1 class="heading">Starting Materials</h1>
+        <p>This Hands-On Lab includes the following starting materials.</p>
+        <ul>
+          <li><b>Visual Studio solutions. </b>Depending on the exercise you will find Visual Studio solutions for C# and Visual Basic that you can use as starting point for the exercises.</li>
+        </ul>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\40655f4c-ae66-4a78-8062-3b3ced92bf49.png" />
+                <b> What if I get stuck?</b>
+                <br />The source code that accompanies this hands-on lab includes an end folder where you can find a Visual Studio solution with the code that you would obtain if you complete the steps in each exercise. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_44792aa4-491d-4485-965a-48997926d337.html">Setup</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

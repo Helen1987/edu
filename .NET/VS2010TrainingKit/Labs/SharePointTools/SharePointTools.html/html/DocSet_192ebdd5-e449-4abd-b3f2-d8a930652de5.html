@@ -1,0 +1,153 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Microsoft SharePoint 2010 Developer Tools</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this lab, you will start using the Visual Studio 2010 SharePoint Developers Tools. This will give you a chance to become familiar with the standard project structure used by SharePoint Developers Tools. You will go through the steps of creating and testing a project that contains a Feature, a Feature Receiver and a Web Part. Along the way you will learn to configure the SharePoint project’s deployment options as well debug a SharePoint project using Visual Studio 2010 by single-stepping through the code in your solution.</p>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Create a brand new SharePoint project using the templates included in the SharePoint Developers Tools.</li>
+          <li>Create and code a Feature Event Receiver in order to react to SharePoint feature activation and deactivation.</li>
+          <li>Configure, deploy, test and debug a SharePoint project using Visual Studio 2010 SharePoint developers Tools.</li>
+          <li>Create, modify and test SharePoint Web Parts using Visual Studio 2010.</li>
+          <li>Create, modify and test SharePoint Ajax-enabled Visual Web Parts using Visual Studio 2010.</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ul>
+          <li>
+            <a href="docSet_b6eb3991-787d-479c-b050-4bf9353abdc0.html">Exercise 1: Creating a SharePoint 2010 Project</a>
+          </li>
+          <li>
+            <a href="docSet_70f50e5c-33e1-4ce0-97e6-5558d7e74094.html">Exercise 2: Feature Event Receiver</a>
+          </li>
+          <li>
+            <a href="docSet_2df9192e-f653-42fb-86a4-0978817ed87b.html">Exercise 3: Deploying and Debugging SharePoint Projects</a>
+          </li>
+          <li>
+            <a href="docSet_c5f17980-979f-4b14-89c4-a58c783b63dc.html">Exercise 4: Creating, Deploying and Testing Web Parts</a>
+          </li>
+          <li>
+            <a href="docSet_174c0b9f-43d6-48c3-991f-5491dbc3a29e.html">Exercise 5: Creating a Visual Web Part with AJAX Behavior</a>
+          </li>
+        </ul>
+        <p>Estimated time to complete this lab: <b>45 minutes</b>.</p>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>Internet Information Server 7.0</li>
+          <li>Microsoft SharePoint Server 2010</li>
+          <li>Microsoft SharePoint Server 2010 Developer Tools<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You can follow the <a href="http://msdn.microsoft.com/en-us/library/ee554869(office.14).aspx">Set up the Development Environment for SharePoint Server</a> article in order to get instruction to install SharePoint Server appropiatelly.</td></tr></table><p /></div><br /></li>
+        </ul>
+        <a name="_Toc166647553" href="#">
+          <span />
+        </a>
+        <a name="_Toc172462715" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141329" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps.</p>
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br /><a name="_GoBack" href="#"><span /></a>The Configuration Wizard will also setup a new blank site collection at the location <b>http://localhost/sites/SharePointToolsLab</b>. This is the site you will use to test and debug the code you are going to write with the Visual Studio 2010 SharePoint Tools. If you want to change the site collection location, modify the <b>SetupSiteCollection.ps1</b> in the <b>Setup\scripts\tasks</b> folder of this lab.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Starting Materials</h1>
+        <p>This Hands-On Lab includes the following starting materials.</p>
+        <ul>
+          <li>Each exercise is accompanied by a starting solution you can find in the <b>Begin</b> folder of each exercise. Some code sections are missing from these solutions, which will be completed through each exercise. Therefore the starting solutions will not work if you run them directly.</li>
+          <li> Inside each exercise you will also find an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</li>
+          <li>Each exercise contains a <b>Visual Basic</b> and a <b>C#</b> version; Inside the End/Begin solution folder you will find two folders: VB, containing the Visual Basic version of the exercise, and C#, containing the C# version of it.</li>
+        </ul>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b6eb3991-787d-479c-b050-4bf9353abdc0.html">Exercise 1: Using HTML Code Snippets in Visual Studio 2010</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

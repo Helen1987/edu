@@ -1,0 +1,166 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Refactor!" />
+      <MSHelp:RLTitle Title="Exercise 2: Refactor!" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Refactor!</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Visual Studio 2010: Test Driven Development</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Refactor!</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>While the system code you just created passes the test, it is obvious that it is completely nonsensical. Continue iterating through your work, refactoring from this simplest example to something that actually makes sense in addition to passing the test.  Now you will move on to the refactoring stage.</p>
+        <br />
+        <a name="_Toc281931465" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Moving from Passing the Test to Building Functionality</b>
+        </p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the <b>SimpleDataStructures.sln</b> solution file.  By default, this file is located in the folder: <b><i>\Source\Ex02-Refactor\begin\</i></b>and choose the language of your preference. Optionally, you can continue working the solution you created in the previous exercise.</li>
+          <li>You need to be able to verify that pushing an item onto the stack actually alters the stack, that is, after the <b>Push</b> operation; the stack holds an item as you expect. One way of verifying that might be to make sure that the stack is no longer empty after pushing an item onto the stack. </li>
+          <li>Update the test accordingly:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[TestMethod]public void ThenShouldBeAbleToPushAnItemOntoTheStack(){    var theStack = new SimpleStack();    theStack.Push(1);<b>Assert.IsFalse(theStack.IsEmpty);</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;TestMethod()&gt; Public Sub ThenShouldBeAbleToPushAnItemOntoTheStack()    Dim theStack As New SimpleStack    theStack.Push(1)<b>Assert.IsFalse(theStack.IsEmpty)</b>End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Now run the test and it should fail. What causes the failure?</li>
+          <li>Remember, you did the simplest thing you could in the implementation of <b>IsEmpty</b> and always returned true. Now you need to make some more design decisions about how <b>IsEmpty</b> should really behave, and what that means for the <b>Push</b> method as well.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Test-Driven Development is also commonly called Test-Driven Design for the very reasons you are starting to see – you are defining how your system should behave and designing it to deliver that behavior in a very iterative manner.</td></tr></table><p /></div><br /></li>
+          <li>After navigating back to the <b>SimpleStack</b> class and looking closer, it appears the stack is going to need a mechanism for storing some state – specifically the state of what item(s) the stack holding onto. </li>
+          <li>Storing the items in a list would allow us to determine if the stack <b>IsEmpty</b> by checking the size of the list. It would also give us somewhere to store the pushed items.<p>(Code Snippet – <i>TDD Lab - Ex2 Refactor SimpleStack C#</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>class SimpleStack{<b>    ArrayList _items;</b><b></b><b>    public bool IsEmpty </b><b>    {</b><b>        get { return _items.Count == 0; }</b><b>    }</b><b></b><b>    internal void Push(int p)</b><b>    {</b><b>        _items.Add(0);</b><b>    }</b>}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>TDD Lab - Ex2 Refactor SimpleStack VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Class SimpleStack<b>    Private _items As ArrayList</b><b>    Public ReadOnly Property IsEmpty() As Boolean</b><b>        Get</b><b>            Return (Me._items.Count = 0)</b><b>        End Get</b><b>    End Property</b><b>    Friend Sub Push(ByVal p As Integer)</b><b>        Me._items.Add(0)</b><b>    End Sub</b>End Class</pre></td></tr></table></span></div><br /></li>
+          <li>Notice the <b>ArrayList</b> type is not recognized. Press <b>CTRL+.</b> and select the option to import the <b>System.Collections</b> namespace.</li>
+          <li>Now run the tests.  You may be surprised to see they continue to fail.  The tests are failing because you have not initialized your <b>ArrayList</b>. Look closely and notice Visual Studio is telling you that with the little green squiggly underline:<p><img src="images\e6df5c00-208d-440d-a29f-065ec15f2317.png" /></p><p><b>Figure 1</b><br /><i>The green squiggly line and tooltip calling attention to an uninitialized field(C#)</i></p><br /></li>
+          <li>Add a default constructor and initialize the list in the constructor, as shown in the following code.<p>(Code Snippet – <i>TDD Lab - Ex2 SimpleStack Constructor C#</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>class SimpleStack{    ArrayList _items;<b>    public SimpleStack()</b><b>    {</b><b>        _items = new ArrayList();</b><b>    }</b>    …}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>TDD Lab - Ex2 SimpleStack Constructor VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Class SimpleStack    Private _items As ArrayList<b>    Public Sub New()</b><b>        Me._items = New ArrayList</b><b>    End Sub</b>…End Class</pre></td></tr></table></span></div><br /></li>
+          <li>Run the tests again and this time they will pass with green colors!</li>
+          <li>How do you know you have stored the correct item? All you have done is push something onto the stack.  In this case, in an earlier step in the lab you stuck to doing the simplest thing and just added a zero (0) onto the stack.<p><img src="images\f0cbb9a4-2079-4ce6-a38e-74a3686a20ae.png" /></p><p><b>Figure 2</b><br /><i>Do the simplest thing possible to pass a test</i></p><br /></li>
+          <li>That is not too useful. You need to drive out something a bit more functional.</li>
+          <li>Add a new test that will first push an item onto the stack, then pop an item off, and make sure you have the same item that was pushed onto the stack.<p>(Code Snippet – <i>TDD Lab - Ex2 ThenShouldBeAbleToPushAndPopAnItemFromTheStack C#</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod]</b><b>public void ThenShouldBeAbleToPushAndPopAnItemFromTheStack()</b><b>{</b><b>    var theStack = new SimpleStack();</b><b>    theStack.Push(1);</b><b></b><b>    int poppedItem = theStack.Pop();</b><b></b><b>    Assert.AreEqual(1, poppedItem);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>TDD Lab - Ex2 ThenShouldBeAbleToPushAndPopAnItemFromTheStack VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestMethod()&gt; Public Sub ThenShouldBeAbleToPushAndPopAnItemFromTheStack ()</b><b>    Dim theStack As New SimpleStack</b><b>    theStack.Push(1)</b><b>    Dim poppedItem As Integer = theStack.Pop()</b><b>    Assert.AreEqual(1, poppedItem)</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Again, notice the Smart Tag that appears below the newly defined <b>Pop</b> method.<p><img src="images\d2d3aff8-9874-40bb-aafc-50d3c20e3a40.png" /></p><p><b>Figure 3</b><br /><i>Use Smart Tags to generate method stubs, complete with the correct return type (C#)</i></p><br /><p><img src="images\3d0929a4-7570-44e2-825f-10fbe9592de1.png" /></p><p><b>Figure 4</b><br /><i>Use Smart Tags to generate method stubs, complete with the correct return type (VB)</i></p><br /></li>
+          <li>Trigger the Smart Tag and let it generate a method stub for the <b>Pop</b> method, and then navigate to the new stubbed method using Quick Search (CTRL + ,). </li>
+          <li>Notice that Visual Studio was able to determine that <b>Pop</b> needed to return a value, and it inferred the correct return type – in this case, an <b>int</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>internal int Pop(){    throw new NotImplementedException();}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Function Pop() As Integer     Throw New NotImplementedExceptionEnd Function</pre></td></tr></table></span></div><br /></li>
+          <li>Run the test and it will fail due to the <b>NotImplementedException</b>, but now that you have defined what <b>Pop</b> should look like and how it should behave in this context, you can add the implementation details to get the test passing.<p>(Code Snippet – <i>TDD Lab - Ex2 Pop Implementation C#</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>internal int Pop(){<b>    int value = (int) _items[0];</b><b>    _items.RemoveAt(0);</b><b></b><b>    return value;</b>}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>TDD Lab - Ex2 Pop Implementation VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Function Pop() As Integer<b>    Dim value As Integer = CInt(Me._items.Item(0))</b><b>    Me._items.RemoveAt(0)</b><b>    Return value</b>End Function</pre></td></tr></table></span></div><br /></li>
+          <li>Running the test once again results in a failure. But why? The <b>Pop</b> method looks good, but the test fails due to your naïve <b>Push</b> implementation. Time to fix that!<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>internal void Push(int p){<b>    _items.Add(p);</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Friend Sub Push(ByVal p As Integer)<b>    Me._items.Add(p)</b>End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Run the tests and all three will be green!</li>
+        </ol>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This lab is not meant to do a deep dive into the principles and practice of Test-Driven Development, nor on how to properly implement a stack.<br />However, if you were to continue designing and building out the <b>SimpleStack</b>, you would need to continue to think about how the stack would handle trying to call Pop on an empty stack. Moreover, what happens when you try to operate against a full stack? Or a partially filled stack? <br />To tackle those design questions you would need to introduce some new test fixtures, complete with more tests, into your SimpleStackTests.cs file.<br />In addition, you may have noticed there is also a bug in your implementation! You are pushing on to the end of the <b>Stack</b>, but popping from the front!  This issue would have been caught in short order as you continued to flesh out your design with tests for pushing and popping multiple items.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc281931466" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Reorganizing the Code</b>
+        </p>
+        <p>At some point, you will determine its time to move the <b>SimpleStack</b> implementation out of the <b>SimpleDataStructures.Tests</b> project and into the <b>SimpleDataStructures</b> project and namespace. You could have done that when you created the class (see: Exercise 1, Task #3, Step #2) by using the “Generate Other…” Smart Tag action. However, you opted to do the simplest thing and let Visual Studio use the default settings, which generated the class in the project you were in, when the Smart Tag was triggered, the <b>SimpleDataStructures.Tests</b> project.</p>
+        <ol>
+          <li>Using the <b>Visual Studio Solution Explorer</b>, select the SimpleStack.cs file (or SimpleStack.vb) from the <b>SimpleDataStructures.Tests</b> project. Right-click and select <b>Cut</b>, then right-click in the <b>SimpleDataStructures</b> project and select <b>Paste</b>. At this point the Solution Explorer should look similar to this:<p><img src="images\c7172034-5329-474b-9816-2fe52493d26b.png" /></p><p><b>Figure 5</b><br /><i>The solution structure after moving the SimpleStack.cs file(C#)</i></p><br /><p><img src="images\7e41bd3d-1af8-468f-8296-58cfd9b41c45.png" /></p><p><b>Figure 6</b><br /><i>The solution structure after moving the SimpleStack.cs file(VB)</i></p><br /></li>
+          <li>Open the SimpleStack.cs file and change the namespace to <b>SimpleDataStructures</b>. Press Ctrl-S to save the file. This is not required if using VB.Net.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>namespace SimpleDataStructures</b></pre></td></tr></table></span></div><br /></li>
+          <li>Navigate to the tests and you will notice all of the red-squiggly lines.  Navigate back to the SimpleStack.cs file (or SimpleStack.vb) again and look at the definition of the SimpleStack class. When Visual Studio generated the class, it did the simplest thing it could and created the class as internal by default because that is the visibility that was needed at the time. Now that you have refactored the class out into a different project and namespace, you need to adjust its visibility.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>namespace SimpleDataStructures {<b>    public class SimpleStack</b>    {        …    }}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Class SimpleStack</b>    …End Class</pre></td></tr></table></span></div><br /></li>
+          <li>Along the same lines, you also need to change the visibility of the <b>Push</b> and <b>Pop</b> methods to be public.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public void Push(int p)</b>{    _items.Add(p);}<b>public int Pop()</b>{    int value = (int)_items[0];    _items.RemoveAt(0);    return value;}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Sub Push(ByVal p As Integer)</b>    Me._items.Add(p)End Sub<b>Public Function Pop() As Integer</b>    Dim value As Integer = CInt(Me._items.Item(0))    Me._items.RemoveAt(0)    Return valueEnd Function</pre></td></tr></table></span></div><br /></li>
+          <li>Finally, you also need to add reference the <b>SimpleDataStructures</b> project from the <b>SimpleDataStructures.Tests</b> project. Right-click on the <b>References</b> in the <b>Solution Explorer</b>, and select <b>Add Reference</b>. Click the <b>Projects</b> tab in the <b>Add Reference</b> dialog, select the <b>SimpleDataStructures</b> project, and then click <b>OK</b>.<p><img src="images\3417f0f5-4830-443d-99b2-bb13f14ad5e3.png" /></p><p><b>Figure 7</b><br /><i>Add a reference to the SimpleDataStructures project</i></p><br /></li>
+          <li>Run the tests again and observe they all pass!</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_c85ee73c-59f0-41e7-95fc-19f3bc204ad3.html">Summary</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

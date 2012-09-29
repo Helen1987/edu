@@ -1,0 +1,146 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Packaging and Deploying Web Applications for Internet Information Server (IIS)" />
+      <MSHelp:RLTitle Title="Exercise 4: Packaging and Deploying Web Applications for Internet Information Server (IIS)" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Packaging and Deploying Web Applications for Internet Information Server (IIS)</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Development in Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Packaging and Deploying Web Applications for Internet Information Server (IIS)</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In the previous exercise, you deployed a web application to the Visual Studio Development Studio. In this exercise, you will deploy the same web application to IIS. <b>In order to complete this exercise, you will need to launch Visual Studio as Administrator, by right-clicking the Visual Studio 2010 icon in the Start menu and selecting <i>Run as administrator</i></b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To complete the tasks in this exercise, you must have completed all the tasks in Exercise 3, or use the solution from the <b><i>%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex04-PackageDeployIIS\begin\C#\HTMLLab</i></b> folder.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc282089434" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Opening the Project Properties Publish Page, Setting the Web Application to Use IIS and Create a Package.</b>
+        </p>
+        <p>In this task, you will open the product properties page, set the web application to use IIS and examine some of the features and settings available.</p>
+        <ol>
+          <li>Using Windows Explorer, create a new folder “C:\HTMLLab”.</li>
+          <li>In Visual Studio, open the properties page for the HTMLLab project by right-clicking the HTMLLab project and selecting <b>Properties</b> from the menu.</li>
+          <li>Click the <b>Web</b> tab.</li>
+          <li>In the <b>Server</b> section of the properties page, click the radio button <b>Use Local IIS Web server</b>:<p><img src="images\e3fca54b-d17d-41dd-8bdc-e35be575f0e3.png" /></p><p><b>Figure 40</b><br /><i>Setting web application to use local IIS Server</i></p><br /></li>
+          <li>Click the <b>Create Virtual Directory</b> button to create a virtual directory on the local instance of IIS. You should see a message box notifying that the virtual directory was created successfully.<p><img src="images\da7a6cac-de01-4f16-bd8b-10911b73b788.png" /></p><p><b>Figure 1</b><br /><i>Virtual directory created successfully</i></p><br /></li>
+          <li>Click the <b>Package/Publish Web</b> tab. In the <b>Items to deploy (applies to Web Deploy only)</b> section, notice that <b>Include IIS settings as configured in IIS</b> checkbox is now enabled.<p><img src="images\8fe8e362-49ce-4644-9fe9-03970eef6ef1.png" /></p><p><b>Figure 42</b><br /><i>IIS settings is enabled</i></p><br /><p>Checking this box ensures that all of the IIS settings for your web application are packaged by MSBuild.</p></li>
+          <li>Make sure that the active configuration is set to <b>Staging</b>.</li>
+          <li>Check the <b>Include IIS settings as configured in IIS</b> checkbox and the <b>Include application pool settings used by this Web project</b> settings.</li>
+          <li>Check the <b>Create deployment package as a zip file</b> checkbox. Note the path in the location textbox. This is where the build process will create the package.</li>
+          <li>Set <b>C:\HTMLLab\</b> as Destination Application Physical Path<p><img src="images\ff8da46a-5a5d-4390-b093-30fc2ccb56dc.png" /></p><p><b>Figure 43</b><br /><i>Create package as ZIP file and output path</i></p><br /></li>
+          <li>Press <b>CTRL+SHIFT+S</b> to save all the changes.</li>
+          <li>In the <b>Project</b> menu click <b>Build Deployment Package</b>. In the <b>Output</b> window observe that the build and publish process succeeded.<p><img src="images\5f018afd-7485-4835-8710-94d92c4cdaf1.png" /></p><p><b>Figure 44</b><br /><i>Successful build and publish</i></p><br /></li>
+          <li>Using Windows Explorer, navigate to the relative path in the location textbox referenced above. For example, if you are still using the HTMLLab project from Exercise 1, navigate to the <b>%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab\obj</b> folder.</li>
+          <li>Note that a folder for the selected configuration (Staging) has been created. Double-click on it. Within that folder, a new folder <b>Package</b> is created. Double-click on <b>Package</b> folder to open it.<p><img src="images\39cf2db2-0901-4afd-bf10-2ebd31ba8627.png" /></p><p><b>Figure 45</b><br /><i>Packaged web application</i></p><br /><p>Note that this folder contains the same items as in the previous Exercise.</p></li>
+        </ol>
+        <a name="_Toc282089435" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 –Deploying the Package</b>
+        </p>
+        <p>In this task, you will deploy the package to the web application created in the previous task.</p>
+        <ol>
+          <li>Navigate to <b>Start</b> | <b>All Programs</b> | <b>Accessories</b> and click <b>Run</b>. In the <b>Run</b> box type: “inetmgr” and click OK to bring up <b>Internet Information Services Manager</b>.</li>
+          <li>In the <b>Connections</b> tree view on the left, expand the node for the local machine. Within that node, expand the node for sites. <p><img src="images\8fd35522-92cd-4d9f-8729-d30b64167c0e.png" /></p><p><b>Figure 46</b><br /><i>List of local web sites</i></p><br /></li>
+          <li>Expand the <b>Default Web Site</b> node. Verify that the <b>HTMLLab</b> web application is listed (this was created when you clicked the <b>Create Virtual Directory</b> button in the previous task.)<p><img src="images\0d180184-1c11-444d-871f-fd993f4b96d2.png" /></p><p><b>Figure 47</b><br /><i>HTMLLab virtual directory created</i></p><br /></li>
+          <li>Next you will deploy the application in Trial mode.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Trial</b> or <b>What If</b> mode does not actually perform the deployment, but shows you what will happen if you install the package. This is very useful in situations where you are handing off your package to a deployment team or server administrator. The team or administrator can then run the package in Trial mode to see the impact on the server.</td></tr></table><p /></div><br /></li>
+          <li>Navigate to <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Visual Studio Tools</b>. Right-click <b>Visual Studio Command Prompt (2010)</b> and select <b>Run as administrator</b> to open the command prompt.</li>
+          <li>At the command prompt, change the current directory to <b>C:\Program Files\IIS\Microsoft Web Deploy\</b> by typing: <div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>cd "C:\Program Files\IIS\Microsoft Web Deploy\"</b></pre></td></tr></table></span></div><br /></li>
+          <li>Execute the HTMLLab.deploy.cmd batch file with the <b>/t</b> (for Trial) flag. For example, if you are still using the HTMLLab project from Exercise 1, type:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>"%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab\obj\Staging\Package\HTMLLab.deploy.cmd" /t</b></pre></td></tr></table></span></div><br /><p><img src="images\a992323b-b3e3-458a-af03-b690e806ac8c.png" /></p><p><b>Figure 48</b><br /><i>Executing the deployment command batch file in Trial mode</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you receive the following error after running the previous command:<br />“<i>The application pool that you are trying to use has the 'managedRuntimeVersion' property set to 'v2.0'. This application requires 'v4.0'</i>”<br />Execute the <b>aspnet_regiis.exe –i</b> command from a Visual Studio 2010 Command Prompt with administrator privileges and then try again.</td></tr></table><p /></div><br /></li>
+          <li>Examine the output of the Trial deployment.<p><img src="images\5ab6dcbd-1a4f-4726-8aa5-b641d61a3b29.png" /></p><p><b>Figure 49</b><br /><i>Results of the Trial mode deployment</i></p><br /><p>In this case, you can see that the MSDeploy will make 12 changes to the server.</p></li>
+          <li>Execute the deployment by re-running the HTMLLab.deploy.cmd batch file. In this instance remove the <b>/t</b> (trial) flag and replace it with the <b>/y</b> (yes) flag. For example, if you are still using the HTMLLab project from Exercise1, type:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>"%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab\obj\Staging\Package\HTMLLab.deploy.cmd" /y</b></pre></td></tr></table></span></div><br /><p><img src="images\49ec9641-8698-42f3-b3d5-b4821e389506.png" /></p><p><b>Figure 50</b><br /><i>Executing the deployment command batch file in Yes mode</i></p><br /></li>
+          <li>Examine the output of the deployment.<p><img src="images\db608fd2-32db-4ff6-8910-7b8ee1aa699d.png" /></p><p><b>Figure 51</b><br /><i>Executing the deployment command batch file in Yes mode</i></p><br /><p>MSBuild deployed the package to the specified physical location.</p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_0c6092e3-ed31-4fe6-b5cf-5d79a43a7300.html">Exercise 4: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

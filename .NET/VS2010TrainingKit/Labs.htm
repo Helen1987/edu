@@ -1,0 +1,2238 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head id="ctl00_head">
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta name="WT.pagetype" content="topicpage" />
+    <title>Visual Studio 2010 and .NET Framework 4 Training Kit</title>
+    <link href="styles/vs2010.css" type="text/css" rel="stylesheet" />
+    <link href="styles/main.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="scripts/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="scripts/common.js"></script>
+	<script type="text/javascript" src="scripts/deplinks.js"></script>
+</head>
+<body>
+       <!-- Dependency Checker installation checker-->
+     <embed id="dcDetectorMoz" type="application/dc-plugin" style="height:0px;width:0px"></embed>
+     <object id="dcDetectorIE" classid="CLSID:4A5C71B6-C5C0-41EB-8917-16014CDF375B" style="height:0px;width:0px"></object>
+   <!-- End  Dependency Checker installation checker-->
+	 <!-- START SECURITY MESSAGE -->
+    <div id="securityMessageContainer">
+        <div id="securityMessage">
+            <p>
+                <img src="images/exclamation.png" class="exclamation" />
+                This Training Kit requires the execution of JavaScript for navigating the contents
+                and watching videos. If you are viewing this page in Internet Explorer locally on
+                your computer, please click the security message at the top of this window and click
+                Yes in the resulting dialog.
+            </p>
+            <img src="images/securityMessage.png" id="securityMessageImage" />
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#securityMessageContainer").hide();
+    </script>
+
+
+
+    <div id="background">
+        <div id="contents">
+        
+             			
+		      	<!--//////////////////////////////-->
+            <!--///// TASKBAR NAVIGATION /////-->
+            <!--//////////////////////////////-->
+            <div id="taskbarNav">
+              <a href="default.htm" id="wocn">
+                <img src="images/VSLogo_small.png" alt="" />
+              </a>
+              <a href="Labs.htm" id="topic_1">
+                <div class="centerdiv">Labs</div>
+              </a>
+              <a href="Presentations.htm" id="topic_2">
+                <div class="centerdiv">Presentations</div>
+              </a>
+              <a href="Demos.htm" id="topic_3">
+                <div class="centerdiv">Demos</div>
+              </a>
+
+              <a href="Videos.htm" id="rsc">
+                <div class="centerdiv">Videos</div>
+              </a>
+              <a href="prerequisites.htm" id="prq">
+                <div class="centerdiv">Prerequisites</div>
+              </a>
+            </div>
+            <!--/ #taskbarNav -->
+            
+            <!--////////////////////////////////-->
+            <!--///// INTRODUCTORY SECTION /////-->
+            <!--////////////////////////////////-->            
+            <div id="introContent">
+                <h2>Hands-on Labs</h2>
+                <p>Hands-on Labs provide step-by-step instructions and code samples to guide you through using new technologies.</p>
+            </div><!--/ #introContent -->
+            
+            <div id="wideLayout" class="topicPage">
+
+                <!--/////////////////////////////-->
+                <!--///// SIDEBAR MODULES   /////-->
+                <!--/////////////////////////////-->
+                <div class="moduleSidebar" id="moduleSidebar">
+                    <!--<h3>Modules</h3>-->
+                    <ul>
+						                         <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('ManagedLanguages')">Managed Languages</a>
+                                <!--<span class="description" id="balloon_1">
+                                    <div class="top">Managed Languages</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('ASPNET')">ASP.NET 4</a>
+                                <!--<span class="description" id="balloon_2">
+                                    <div class="top">ASP.NET 4</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('Windows')">Windows</a>
+                                <!--<span class="description" id="balloon_3">
+                                    <div class="top">Windows</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('WF')">Windows Workflow</a>
+                                <!--<span class="description" id="balloon_4">
+                                    <div class="top">Windows Workflow</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('WCF')">Windows Communication Foundation</a>
+                                <!--<span class="description" id="balloon_5">
+                                    <div class="top">Windows Communication Foundation</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('OfficeAndSharePoint')">Office and SharePoint</a>
+                                <!--<span class="description" id="balloon_6">
+                                    <div class="top">Office and SharePoint</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('Silverlight')">Silverlight</a>
+                                <!--<span class="description" id="balloon_7">
+                                    <div class="top">Silverlight</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('DataAccess')">Data Access</a>
+                                <!--<span class="description" id="balloon_8">
+                                    <div class="top">Data Access</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('Parallel')">Parallel Computing</a>
+                                <!--<span class="description" id="balloon_9">
+                                    <div class="top">Parallel Computing</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('Extensibility')">Extensibility</a>
+                                <!--<span class="description" id="balloon_10">
+                                    <div class="top">Extensibility</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('ALM')">Application Lifecycle Management</a>
+                                <!--<span class="description" id="balloon_11">
+                                    <div class="top">Application Lifecycle Management</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                <li>
+                            <div class="item">
+                                <a class="resourceTitle" href="javascript:showElement('WindowsAzure')">Windows Azure</a>
+                                <!--<span class="description" id="balloon_12">
+                                    <div class="top">Windows Azure</div>
+                                    <div class="middle">
+                                                                                 
+                                    </div>
+                                    <div class="bottom">
+                                    </div>
+                                </span>-->
+                            </div>
+                        </li>
+                                                
+                    </ul>
+                </div>
+                
+                                 <div id="ManagedLanguages" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Managed Languages</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="IntroToFSharp">
+                                                <a name="IntroToFSharp"></a>
+												<a href="Labs\IntroToFSharp\IntroToFSharp.html\html\DocSet_default.html" target="_blank"><h3>Introduction To F#</h3></a>                                                
+                                                <p>This Hands-On Lab is comprised by the following exercises. Examine the basic F# types including tuples and functions. Discover how the "let" keyword allows values to be bound to identifiers. See that in F# functions are the same as any other value, and are handled the same way. Demonstrate how this allows advanced language features such as partially-applied or "curried" functions. Discover how F# lists are built and the power that can be achieved by F#'s "Head + Tail" approach. Demonstrate the powerful pattern matching and recursion capabilities of F#. Demonstrate the power and usefulness of discriminated unions in F#.</p>
+												<p>
+																						
+												
+												<a href="Labs\IntroToFSharp\IntroToFSharp.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\IntroToFSharp\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="Dev10Office">
+                                                <a name="Dev10Office"></a>
+												<a href="Labs\Dev10Office\Dev10Office.html\html\DocSet_default.html" target="_blank"><h3>Visual Studio 2010: Office Programmability</h3></a>                                                
+                                                <p>In this lab you will see how new features in Visual Studio 2010, C# 4, and Visual Basic 10 make it easer to develop applications leveraging Microsoft Office. Additionally, you'll see a number of other powerful features which speed other elements of Office development.</p>
+												<p>
+																						
+												
+												<a href="Labs\Dev10Office\Dev10Office.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Dev10Office\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="TestDrivenDevelopment">
+                                                <a name="TestDrivenDevelopment"></a>
+												<a href="Labs\TestDrivenDevelopment\TestDrivenDevelopment.html\html\DocSet_default.html" target="_blank"><h3>Visual Studio 2010: Test Driven Development</h3></a>                                                
+                                                <p>Visual Studio 2010 brings with it several enhancements to help cut development friction and enable the developer to focus on the task at hand: writing high-quality code. In the following exercises we'll highlight several of the new features that the TDD developer can use to enhance his/her development cadence. Visual Studio helps your cadence by cutting the number of keystrokes to accomplish frequently performed tasks, speeds navigation through your solution, and enables you to use test frameworks other than MSTest.</p>
+												<p>
+																						
+												
+												<a href="Labs\TestDrivenDevelopment\TestDrivenDevelopment.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\TestDrivenDevelopment\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\WhatsNewInCSharpAndVb\Whats New In CSharp 4 and VB 10.pptx">What's New In C# 4 and Visual Basic 10 </a>                                                
+                                                <a href="Presentations\WhatsNewInCSharpAndVb\Whats New In CSharp 4 and VB 10.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 <div class="moduleContent">
+                                    Demos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Demos\LanguagesTenInOne\.\Source">
+    Managed Languages 10-in-1
+  </a>                                                
+                                                                                                												<a href="Demos\LanguagesTenInOne\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#FixingPIAPainsWithTypeEquivalence">Fixing PIA Pains with Type Equivalence</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/vcsharp/default.aspx" target="_blank">Visual C# Developer Center on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/vbasic/default.aspx" target="_blank">Visual Basic Developer Center on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/fsharp/default.aspx" target="_blank">Microsoft F# Developer Center on MSDN</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="ASPNET" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>ASP.NET 4</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="AspNetWebForms4">
+                                                <a name="AspNetWebForms4"></a>
+												<a href="Labs\AspNetWebForms4\AspNetWebForms4.html\html\DocSet_default.html" target="_blank"><h3>Introduction to ASP.NET Web Forms 4</h3></a>                                                
+                                                <p>
+    Through this hands-on lab you will understand some of the new features of WebForms 4 such as ClientID, Routing and granular control for ViewState.</p>
+												<p>
+																						
+												
+												<a href="Labs\AspNetWebForms4\AspNetWebForms4.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\AspNetWebForms4\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="WebDevelopment">
+                                                <a name="WebDevelopment"></a>
+												<a href="Labs\WebDevelopment\WebDevelopment.html\html\DocSet_default.html" target="_blank"><h3>Web Development in Visual Studio 2010</h3></a>                                                
+                                                <p>In this lab, you'll look at several of the new web development features in Visual Studio 2010.
+ You'll see how HTML code snippets speeds up the development of web applications. Visual Studio 2010 also
+ makes it easier to manage multiple Web.config files for the various deployment environments of your 
+ web application. Finally, you'll see how Visual Studio 2010 integrates with the Microsoft Web Deployment tool
+ to automate the packaging and deployment of your application and its dependencies.</p>
+												<p>
+																						
+												
+												<a href="Labs\WebDevelopment\WebDevelopment.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\WebDevelopment\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVC3Fundamentals">
+                                                <a name="ASPNETMVC3Fundamentals"></a>
+												<a href="Labs\Beginner-ASP.NET-MVC-Fundamentals MVC3\ASPNETMVC3Fundamentals.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Fundamentals</h3></a>                                                
+                                                <p>
+This Hands-On Lab is based on MVC (Model View Controller) Music Store, a tutorial application that introduces and explains step-by-step how to use ASP.NET MVC and Visual Web Developer 2010 Express (which is free). Throughout the lab you will learn the simplicity, yet power of using these technologies together. You will start with a simple application and will build it until you have a fully functional MVC Web Application.
+   </p>
+												<p>
+																						
+												
+												<a href="Labs\Beginner-ASP.NET-MVC-Fundamentals MVC3\ASPNETMVC3Fundamentals.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Beginner-ASP.NET-MVC-Fundamentals MVC3\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVC3FormsandValidation">
+                                                <a name="ASPNETMVC3FormsandValidation"></a>
+												<a href="Labs\Beginner-ASP.NET-MVC-HelpersFormsAndValidation MVC3\ASPNETMVC3FormsandValidation.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Helpers, Forms and Validation</h3></a>                                                
+                                                <p>
+In ASP.NET MVC Models and Data Access Hand-on Lab, you have been loading data from the database and displaying it. In this Hands-on Lab, you will add to the Music Store application, the ability to edit that data.
+   </p>
+												<p>
+																						
+												
+												<a href="Labs\Beginner-ASP.NET-MVC-HelpersFormsAndValidation MVC3\ASPNETMVC3FormsandValidation.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Beginner-ASP.NET-MVC-HelpersFormsAndValidation MVC3\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVC3ModelsAndDataAccess">
+                                                <a name="ASPNETMVC3ModelsAndDataAccess"></a>
+												<a href="Labs\Beginner-ASP.NET-MVC-ModelsAndDataAccess MVC3\ASPNETMVC3ModelsAndDataAccess.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Models and Data Access</h3></a>                                                
+                                                <p>This Hands-on Lab will show you how to use the free SQL Server Express as a database engine in order to store and retrieve the data needed for the Music Store application. To accomplish that, you will start with an already created database, from which you will generate the Entity Data Model you will use in the application.</p>
+												<p>
+																						
+												
+												<a href="Labs\Beginner-ASP.NET-MVC-ModelsAndDataAccess MVC3\ASPNETMVC3ModelsAndDataAccess.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Beginner-ASP.NET-MVC-ModelsAndDataAccess MVC3\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVC3Razor">
+                                                <a name="ASPNETMVC3Razor"></a>
+												<a href="Labs\Beginner-ASP.NET-MVC-Razor\ASPNETMVC3Razor.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Razor</h3></a>                                                
+                                                <p>
+ASP.NET MVC 3 introduces the new view engine Razor, which was conceived to simplify the current syntax used in ASP.NET web pages. In this lab you will learn how to create Razor views inside an MVC solution. 
+In the beginning of this Lab you will first get familiar with Razor syntax and its features: general rules, code blocks, inline HTML and layout pages. Once you have learned the basics, in Exercise 2 you will add Razor views in the MVC Music Store solution to provide the same functionality you have in ASP.NET views, but with a clearer and reduced code.
+At the end of this lab, in Exercise 3, you will learn how to create and consume third party Razor Helpers.
+   </p>
+												<p>
+																						
+												
+												<a href="Labs\Beginner-ASP.NET-MVC-Razor\ASPNETMVC3Razor.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Beginner-ASP.NET-MVC-Razor\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVC3CustomActionFilters">
+                                                <a name="ASPNETMVC3CustomActionFilters"></a>
+												<a href="Labs\Intermediate-ASP.NET-MVC-CustomActionFilters\ASPNETMVC3CustomActionFilters.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Custom Action Filters</h3></a>                                                
+                                                <p>
+In ASP.NET MVC 3 Global, Dynamic Filters Hands-on Lab, you have been adding filters to MVC processing. In this Hands-on Lab, you will use custom filters to log your site activity.
+To achieve that, in the proposed exercise you will create a custom filter attribute that will work with any specified controller. That filter will catch controller's requests, and save them into a database table. Through a log view you will be able to see the list of visits that each filtered controller had.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Intermediate-ASP.NET-MVC-CustomActionFilters\ASPNETMVC3CustomActionFilters.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Intermediate-ASP.NET-MVC-CustomActionFilters\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVCCustomValidation">
+                                                <a name="ASPNETMVCCustomValidation"></a>
+												<a href="Labs\Intermediate-ASP.NET-MVC-CustomValidation\ASPNETMVCCustomValidation.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Custom Validation</h3></a>                                                
+                                                <p>
+	In ASP.NET MVC Helpers, Forms and Validation Hands-on Lab , you have been validating data from the create and edit album forms. In this Hands-on Lab, you will use custom validation logic to control price range in the server side as well as in the client.
+In order to achieve that, in the first exercise you will create a custom validation property attribute and then add it to the Album model. The existing create and edit views in the StoreManager controller will process the new custom validation from the server side.
+In the second exercise, you will add JavaScript code and associate it to the previous custom validation, making the same views run that validation code at client side.
+
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Intermediate-ASP.NET-MVC-CustomValidation\ASPNETMVCCustomValidation.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Intermediate-ASP.NET-MVC-CustomValidation\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVCDependencyInjection">
+                                                <a name="ASPNETMVCDependencyInjection"></a>
+												<a href="Labs\Intermediate-ASP.NET-MVC-DependencyInjection\ASPNETMVCDependencyInjection.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Dependency Injection</h3></a>                                                
+                                                <p>
+In Object Oriented Programming paradigm, objects work together in a collaboration model where there are contributors and consumers. Naturally, this communication model generates dependencies between objects and components that could became difficult to manage when complexity increases .
+You have probably heard about Factory Pattern and the separation between the interface and the implementation using services. However, the client objects are often responsible for service location.
+Before introducing the Dependency Injection Pattern, we will explain what Inversion of Control (IoC) principle is. 
+With Inversion of Control (Ioc), consumer objects do not create the other objects on which they rely. Those objects come from an external source.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Intermediate-ASP.NET-MVC-DependencyInjection\ASPNETMVCDependencyInjection.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Intermediate-ASP.NET-MVC-DependencyInjection\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVCGlobalAndDynamicActionFilters">
+                                                <a name="ASPNETMVCGlobalAndDynamicActionFilters"></a>
+												<a href="Labs\Intermediate-ASP.NET-MVC-GlobalAndDynamicActionFilters\ASPNETMVCGlobalAndDynamicActionFilters.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Global and Dynamic Action Filters</h3></a>                                                
+                                                <p>
+ASP.NET MVC provides action filters for performing logic either before an action method is called or after its run. Action Filters are custom attributes that provide a declarative means to add pre-action and post-action behavior to controller action methods.
+In previous versions of MVC, action filters were applied by making a filter attribute and apply it to a controller or an action method. MVC 3 provides the ability to define filters outside that scope, giving the possibility to apply filters to all actions in an MVC application.
+In ASP.NET MVC 2 Membership, Authorization and Store Checkout you have been working with the security of your web application. In this Hands-on Lab you will use Global Filters and will apply them to site logging. In order to achieve that, in the first exercise you will learn how to use the filters and how to customize an Attribute filter for global security. Then, in the second exercise you will learn how to create a Global Dynamic Filter by using MVC Filter Providers. That consists in a filter in which execution depends on the context.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Intermediate-ASP.NET-MVC-GlobalAndDynamicActionFilters\ASPNETMVCGlobalAndDynamicActionFilters.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Intermediate-ASP.NET-MVC-GlobalAndDynamicActionFilters\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVCNuGet">
+                                                <a name="ASPNETMVCNuGet"></a>
+												<a href="Labs\Intermediate-ASP.NET-MVC-NuGet\ASPNETMVCNuGet.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 NuGet</h3></a>                                                
+                                                <p>
+With .NET you can develop class libraries, web projects, complete solutions, frameworks, application servers, web controls and helpers, etc. A live ecosystem of such packages (many of them open source projects) is available for you to download from the Internet and add to your own solutions. You can also create your own library and publish it in your server. Nevertheless, this model implies some costs: you should locate the appropriate software, download and compile it, resolve dependencies of other packages, etc.
+With NuGet (http://nuget.codeplex.com) tool, you can download, create, and publish software packages, ready to be used by other developers, resolving the hassles of dependencies tracking. You can use a console tool to create a new package, upload it to a Microsoft server or to a server of your own, browse and install them from Visual Studio.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Intermediate-ASP.NET-MVC-NuGet\ASPNETMVCNuGet.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Intermediate-ASP.NET-MVC-NuGet\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASPNETMVC3Testing">
+                                                <a name="ASPNETMVC3Testing"></a>
+												<a href="Labs\Intermediate-ASP.NET-MVC-Testing MVC3\ASPNETMVC3Testing.html\html\DocSet_default.html" target="_blank"><h3>ASP.NET MVC 3 Testing</h3></a>                                                
+                                                <p>
+Testing an application is an automated way of verifying it is always behaving the way it is supposed to. That way, you can later make changes to the code and refactor components without breaking something else somewhere in the application.This Lab will take you through the process of testing controllers in an ASP.NET MVC application, used to verify that actions are working properly.
+In this Hands-on Lab, each test is independent from the others, but instead of stubs or mocks, you will be testing the controllers against a well-known database. If needed, that database will be protected by transactions and its initial state will be copied for each test execution, making sure that each test runs with a controlled data set.
+  </p>
+												<p>
+																						
+																										<a href="dep://Labs\Intermediate-ASP.NET-MVC-Testing MVC3\Source\Setup\Dependencies.dep" onclick="return CheckDC('2.0.0');">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\Intermediate-ASP.NET-MVC-Testing MVC3\ASPNETMVC3Testing.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Intermediate-ASP.NET-MVC-Testing MVC3\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\IntroAspNetMvc\Introduction to ASP.NET MVC.pptx">Introduction to ASP.NET MVC </a>                                                
+                                                <a href="Presentations\IntroAspNetMvc\Introduction to ASP.NET MVC.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                                <li>
+                                            <div class="item">
+                                                <a href="Presentations\WhatsNewInAspNetWebForms4\Whats New In ASP.NET Web Forms 4.pptx">Whats New In ASP.NET Web Forms 4 </a>                                                
+                                                <a href="Presentations\WhatsNewInAspNetWebForms4\Whats New In ASP.NET Web Forms 4.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                                <li>
+                                            <div class="item">
+                                                <a href="Presentations\WebDeploymentWithVs2010\Web Deployment with Visual Studio 2010.pptx">Web Deployment with Visual Studio 2010 </a>                                                
+                                                <a href="Presentations\WebDeploymentWithVs2010\Web Deployment with Visual Studio 2010.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 <div class="moduleContent">
+                                    Demos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Demos\AdventureWorksAjax\AdventureWorksAjax.html\html\DocSet_default.html">
+          AdventureWorks using AJAX
+      </a>                                                
+                                                												<a href="Demos\AdventureWorksAjax\AdventureWorksAjax.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\AdventureWorksAjax\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#DataDrivenWebApplications">Simplifying Data-Driven Web Applications</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://www.asp.net/" target="_blank">The Official Microsoft ASP.NET Site</a></li>	
+                                        											<li class="additionalLink"><a href="http://trainingkit.webcamps.ms/" target="_blank">Microsoft Web Camps Training Kit</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="Windows" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Windows</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="WPF4DataDrivenMasterDetailBusinessForm">
+                                                <a name="WPF4DataDrivenMasterDetailBusinessForm"></a>
+												<a href="Labs\WPF4DataDrivenMasterDetailBusinessForm\WPF4DataDrivenMasterDetailBusinessForm.html\html\DocSet_default.html" target="_blank"><h3>Building a Data-Driven Master/Detail Business Form in WPF using Visual Studio 2010</h3></a>                                                
+                                                <p>In this lab you will learn all the necessary steps for creating and customizing a master-detail business form in WPF 4 using Visual Studio 2010 tools. The application being built in this lab is a simple read-only representation of the sort of application that might be used to manage and view entries in a real estate agent's office. The techniques used could easily be applied to nearly any data-driven client application scenario.</p>
+												<p>
+																						
+												
+												<a href="Labs\WPF4DataDrivenMasterDetailBusinessForm\WPF4DataDrivenMasterDetailBusinessForm.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\WPF4DataDrivenMasterDetailBusinessForm\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="Win7TaskbarMFC">
+                                                <a name="Win7TaskbarMFC"></a>
+												<a href="Labs\Taskbar - MFC\Win7TaskbarMFC.html\html\DocSet_default.html" target="_blank"><h3>Taskbar with Visual C++ and MFC</h3></a>                                                
+                                                <p>
+    In this lab, you will learn how to integrate your MFC application with the Windows 7 Taskbar. This includes providing visual progress and status indicators, using taskbar progress bars and overlay icons, quickly accessing common tasks and frequent destinations using taskbar jump lists, and customizing the taskbar thumbnail with live previews of MDI views.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Taskbar - MFC\Win7TaskbarMFC.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Taskbar - MFC\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="Win7MultiTouchGestureMFC">
+                                                <a name="Win7MultiTouchGestureMFC"></a>
+												<a href="Labs\Multitouch Gesture - MFC\Win7MultiTouchGestureMFC.html\html\DocSet_default.html" target="_blank"><h3>Multitouch Gestures with MFC - Native</h3></a>                                                
+                                                <p>   
+    In this lab, you will learn how to manage multitouch gesture events. This includes understanding the implications of manipulating an object with gesture events, checking for multitouch hardware existence and readiness, and extracting information from the gesture Windows Message.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Multitouch Gesture - MFC\Win7MultiTouchGestureMFC.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Multitouch Gesture - MFC\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="Win7MultitouchMFC">
+                                                <a name="Win7MultitouchMFC"></a>
+												<a href="Labs\Multitouch WMTouch - MFC\Win7MultitouchMFC.html\html\DocSet_default.html" target="_blank"><h3>Multitouch WMTouch with MFC - Native</h3></a>                                                
+                                                <p>
+    In this lab, you will learn how to manage Multitouch events. This includes processing input from Windows Touch, understanding the implications of manipulating multiple touch events simultaneously, and checking for multitouch hardware existence and readiness.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Multitouch WMTouch - MFC\Win7MultitouchMFC.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Multitouch WMTouch - MFC\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="Win7RibbonMFC">
+                                                <a name="Win7RibbonMFC"></a>
+												<a href="Labs\Ribbon - MFC\Win7RibbonMFC.html\html\DocSet_default.html" target="_blank"><h3>Ribbon with MFC - Native</h3></a>                                                
+                                                <p>
+    This lab is intended for MFC developers who are developing desktop applications and want to take advantage of the new MFC Ribbon framework.  The lab steps you through how to add a default Ribbon to a small application, edit various Ribbon controls in Ribbon Designer, and then use the controls at run time. You will learn how easily MFC Ribbon framework allows you to edit and use Ribbon controls. When you are finished, you will have performed all the steps necessary to add and customize a basic Ribbon in an application.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\Ribbon - MFC\Win7RibbonMFC.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\Ribbon - MFC\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\WindowsPresentationFoundation4\Windows Presentation Foundation 4.pptx">What's New in Windows Presentation Foundation 4 </a>                                                
+                                                <a href="Presentations\WindowsPresentationFoundation4\Windows Presentation Foundation 4.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 
+							 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://windowsclient.net/wpf/default.aspx" target="_blank">WPF on WindowsClient.net</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/Windows7TrainingCourse" target="_blank">Windows 7 Training Course on MSDN</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="WF" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Windows Workflow</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="IntroToWF">
+                                                <a name="IntroToWF"></a>
+												<a href="Labs\IntroToWF\IntroToWF.html\html\DocSet_default.html" target="_blank"><h3>Introduction to Workflow 4</h3></a>                                                
+                                                <p>
+     In this lab you will get to know the basics of creating, hosting and running a workflow. This lab is also intended to be and introduction to the new workflow authoring constructs in the .NET Framework 4 and Visual Studio 2010, including the new Workflow Designer, expressions, variables and arguments. Additionally, you will explore the use of some basic built-in activities.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\IntroToWF\IntroToWF.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\IntroToWF\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="IntroToWFServices">
+                                                <a name="IntroToWFServices"></a>
+												<a href="Labs\IntroToWFServices\IntroToWFServices.html\html\DocSet_default.html" target="_blank"><h3>Introduction to Workflow Services using .NET Framework 4</h3></a>                                                
+                                                <p>This hands-on lab is intended to introduce developers to writing workflow services using .NET Framework 4. You will examine the different messaging activities of Windows Workflow, and learn how to configure them to create a distributed application. This lab is built around a specific HR business scenario where candidates submit their applications and are hired or rejected based on an evaluation process.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\IntroToWFServices\IntroToWFServices.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\IntroToWFServices\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\AppFabricAndWorkflow\AppFabric and Workflow.pptx">Workflow Services and Windows Server AppFabric </a>                                                
+                                                <a href="Presentations\AppFabricAndWorkflow\AppFabric and Workflow.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#IntroToWindowsWorflow">Introduction to Windows Workflow in .NET 4</a>                                                
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#IntroToWorkflowServices">Introduction to Workflow Services in .NET 4</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/netframework/cc896557.aspx" target="_blank">Changes for WCF and WF in .NET Framework 4</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/netframework/aa663328.aspx" target="_blank">Windows Workflow Foundation on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://channel9.msdn.com/shows/Endpoint/" target="_blank">endpoint.tv on Channel 9</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="WCF" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Windows Communication Foundation</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="WhatsNewInWCF4">
+                                                <a name="WhatsNewInWCF4"></a>
+												<a href="Labs\WhatsNewInWCF4\WhatsNewInWCF4.html\html\DocSet_default.html" target="_blank"><h3>What's New in WCF 4?</h3></a>                                                
+                                                <p>
+    Windows Communication Foundation 4 includes a new feature that enables service discovery. Service discovery allows you to locate services on the same subnet using ad hoc discovery, or using a proxy to establish connections with servers regardless of where they are. In this lab you will create a simple chat application that will use both methods to learn about available services.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\WhatsNewInWCF4\WhatsNewInWCF4.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\WhatsNewInWCF4\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                								 
+								                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#IntroToWCFRoutingService">The New WCF Routing Service</a>                                                
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#WCFServiceDiscoveryVideo">WCF Service Discovery</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/netframework/cc896557.aspx" target="_blank">Changes for WCF and WF in .NET Framework 4</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/netframework/aa663324.aspx" target="_blank">Windows Communication Foundation on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://channel9.msdn.com/shows/Endpoint/" target="_blank">endpoint.tv on Channel 9</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="OfficeAndSharePoint" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Office and SharePoint</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="OfficeUICustomizationLab">
+                                                <a name="OfficeUICustomizationLab"></a>
+												<a href="Labs\OfficeUICustomization\OfficeUICustomization.html\html\DocSet_default.html" target="_blank"><h3>Microsoft Office 2010 UI Customization</h3></a>                                                
+                                                <p>In this Lab, you will explore the different ways in which Office 2010's UI can be customized to provide a platform for building rich office applications. You will make use of the Visual Studio support for Office 2010.</p>
+												<p>
+																						
+												
+												<a href="Labs\OfficeUICustomization\OfficeUICustomization.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\OfficeUICustomization\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="SharePointTools">
+                                                <a name="SharePointTools"></a>
+												<a href="Labs\SharePointTools\SharePointTools.html\html\DocSet_default.html" target="_blank"><h3>Microsoft SharePoint 2010 Developer Tools</h3></a>                                                
+                                                <p>In this lab you will start using the Visual Studio 2010 SharePoint Developers Tools. This will give you a chance to become familiar with the standard project structure used by SharePoint Developers Tools. You will go through the steps of creating and testing a project that contains a Feature, a Feature Receiver and a Web Part. Along the way you will learn to configure the SharePoint project’s deployment options as well debug a SharePoint project using Visual Studio 2010 by single-stepping through the code in your solution.</p>
+												<p>
+																						
+																										<a href="dep://Labs\SharePointTools\Source\Setup\Dependencies.dep" onclick="return CheckDC('2.0.0');">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\SharePointTools\SharePointTools.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\SharePointTools\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\OfficeUICustomization\OfficeUICustomization.pptx">Office 2010 UI Customization </a>                                                
+                                                <a href="Presentations\OfficeUICustomization\OfficeUICustomization.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                                <li>
+                                            <div class="item">
+                                                <a href="Presentations\SharePointDevelopment\SharePoint Development with VS10.pptx">SharePoint Development with Visual Studio 2010 </a>                                                
+                                                <a href="Presentations\SharePointDevelopment\SharePoint Development with VS10.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 <div class="moduleContent">
+                                    Demos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Demos\Office2010CustomTaskPanes\.\Source">
+    Microsoft Office 2010 Custom Task Panes
+  </a>                                                
+                                                                                                												<a href="Demos\Office2010CustomTaskPanes\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\Office2010OutlookFormRegions\.\Source">
+        Microsoft Office 2010 Outlook Form Regions
+      </a>                                                
+                                                                                                												<a href="Demos\Office2010OutlookFormRegions\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\Office2010PublishingAddIn\.\Source">
+        Microsoft Office 2010 Publishing Add-In
+  </a>                                                
+                                                                                                												<a href="Demos\Office2010PublishingAddIn\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\Office2010UICustomization\Office2010UICustomization.html\html\DocSet_default.html">
+        Microsoft Office 2010 UI Customization
+      </a>                                                
+                                                												<a href="Demos\Office2010UICustomization\Office2010UICustomization.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\Office2010UICustomization\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\SharePointToolsExtensibility\Source\Readme.html\html\DocSet_default.html">
+        Extending SharePoint 2010 Tools in Visual Studio 2010
+      </a>                                                
+                                                												<a href="Demos\SharePointToolsExtensibility\Source\Readme.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\SharePointToolsExtensibility\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\SharePointToolsProject\SharePointTools2010Project.html\html\DocSet_default.html">
+        Microsoft SharePoint Developers Tools 2010 - Project Templates
+      </a>                                                
+                                                												<a href="Demos\SharePointToolsProject\SharePointTools2010Project.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\SharePointToolsProject\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\SharePointToolsWebParts\SharePointToolsWebParts.html\html\DocSet_default.html">
+    Microsoft SharePoint Developers Tools 2010 - Web Parts Templates
+  </a>                                                
+                                                												<a href="Demos\SharePointToolsWebParts\SharePointToolsWebParts.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\SharePointToolsWebParts\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                                                 
+							 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/vsto/" target="_blank">Office Development with Visual Studio Developer Center on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/sharepoint/" target="_blank">SharePoint Developer Center on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://channel9.msdn.com/learn/courses/SharePoint2010Developer" target="_blank">SharePoint 2010 Developer Training Course on Channel 9</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/office/" target="_blank">Office Developer Center on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://channel9.msdn.com/learn/courses/Office2010" target="_blank">Office 2010 Training Course on Channel 9</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="Silverlight" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Silverlight</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="WinForms_and_Silverlight">
+                                                <a name="WinForms_and_Silverlight"></a>
+												<a href="Labs\01 - WinForms\01 - WinForms and Silverlight.html\html\DocSet_default.html" target="_blank"><h3>Migrating a Windows Forms Application to Silverlight</h3></a>                                                
+                                                <p>Silverlight provides a Rich Internet Application (RIA) framework that can be used to build applications that can be deployed through the Web while preserving the rich client-side functionality found in traditional desktop applications created using Windows Forms. This lab is designed to guide Windows Forms developers through the process of migrating applications to Silverlight.</p>
+												<p>
+																						
+												
+												<a href="Labs\01 - WinForms\01 - WinForms and Silverlight.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\01 - WinForms\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ASP.NET_and_Silverlight">
+                                                <a name="ASP.NET_and_Silverlight"></a>
+												<a href="Labs\02 - ASP.NET\02 - ASP.NET and Silverlight.html\html\DocSet_default.html" target="_blank"><h3>Migrating an ASP.NET Web Forms Application to Silverlight</h3></a>                                                
+                                                <p>Silverlight provides a Rich Internet Application (RIA) framework that can be used to build applications that can be deployed through the Web while preserving the rich client-side functionality found in traditional desktop applications. This lab is designed to guide ASP.NET and jQuery developers through the process of migrating applications to Silverlight.</p>
+												<p>
+																						
+												
+												<a href="Labs\02 - ASP.NET\02 - ASP.NET and Silverlight.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\02 - ASP.NET\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="PanelsXAMLControls">
+                                                <a name="PanelsXAMLControls"></a>
+												<a href="Labs\03 - XAML and Controls\03 - XAML and Controls.html\html\DocSet_default.html" target="_blank"><h3>Working with Panels, XAML, and Controls</h3></a>                                                
+                                                <p>
+    This lab is designed to show how to work with XAML, panels, controls, and Visual Studio's Cider editor. You will learn the foundation of a Silverlight application's UI.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\03 - XAML and Controls\03 - XAML and Controls.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\03 - XAML and Controls\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="Data_Binding">
+                                                <a name="Data_Binding"></a>
+												<a href="Labs\04 - Data Binding\04 - Data Binding.html\html\DocSet_default.html" target="_blank"><h3>Silverlight Data Binding</h3></a>                                                
+                                                <p>Data binding is a key technology in Silverlight that allows data to be presented to end users and then processed. In this lab exercise you'll learn different data binding techniques that can be used to perform one way and two way bindings and see how data can be accessed directly without having to go through controls in the user interface.</p>
+												<p>
+																						
+												
+												<a href="Labs\04 - Data Binding\04 - Data Binding.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\04 - Data Binding\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="OOB">
+                                                <a name="OOB"></a>
+												<a href="Labs\05 - Migrating Apps to OOB\05 - Migrating Existing Apps to Out-Of-Browser.html\html\DocSet_default.html" target="_blank"><h3>Migrating Existing Apps to Out-Of-Browser</h3></a>                                                
+                                                <p>
+    Silverlight started off as a browser plug-in. Since then, Silverlight has emerged as a client platform technology that not only includes browser based applications, but is now a desktop platform as well. This lab is designed to guide Winforms or desktop developers through the process of developing a desktop application in Silverlight. In the lab you'll create a Silverlight web browser. It will truly be a desktop application. Along the way you'll learn how to enable Silverlight out-of-browser, detect the context the application is running in, customize the window, and how to interact with Microsoft Excel.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\05 - Migrating Apps to OOB\05 - Migrating Existing Apps to Out-Of-Browser.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\05 - Migrating Apps to OOB\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="Blend">
+                                                <a name="Blend"></a>
+												<a href="Labs\06 - Great UX with Blend\06 - Great UX with Blend.html\html\DocSet_default.html" target="_blank"><h3>Great UX with Blend</h3></a>                                                
+                                                <p>
+    A user's experience with an application is the perception of how it works. No matter how solid the backend is, if it's easy to use the user will think it's a great product. Silverlight enables you to quickly add small pieces of functionality that can greatly improve the user experience. This lab is designed to introduce developers to Expression Blend. In the lab you'll create a menu that transitions between an opened and closed states. Along the way you'll learn how to use Blend to create states, work with behaviors, and integrate MVVM with Blend.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\06 - Great UX with Blend\06 - Great UX with Blend.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\06 - Great UX with Blend\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="WebServices">
+                                                <a name="WebServices"></a>
+												<a href="Labs\07 - Web Services and Silverlight\07 - Web Services and Silverlight.html\html\DocSet_default.html" target="_blank"><h3>Web Services and Silverlight</h3></a>                                                
+                                                <p>In this lab you'll learn how to create a Silverlight-Enabled WCF Service and define operations. You'll also examine the default configuration for Silverlight-enabled services and create a proxy object that can be used to communicate with a service from a Silverlight client. A bonus exercise is also included that demonstrates how to debug WCF service calls using a tool called Fiddler. 
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\07 - Web Services and Silverlight\07 - Web Services and Silverlight.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\07 - Web Services and Silverlight\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="RIA">
+                                                <a name="RIA"></a>
+												<a href="Labs\08 - Using RIA Services\08 - Using WCF RIA Services.html\html\DocSet_default.html" target="_blank"><h3>Using WCF RIA Services</h3></a>                                                
+                                                <p>WCF RIA Services provides a distributed data exchange framework that builds upon existing functionality in Windows Communication Foundation (WCF) to allow data to be exchanged between a Silverlight client and a server. In this lab you'll create a WCF RIA Services domain service class and call it from a Silverlight application. You'll also learn how data annotations can be applied to metadata classes to validate object properties and share validation logic across client and server. 
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\08 - Using RIA Services\08 - Using WCF RIA Services.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\08 - Using RIA Services\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="OOBDeepDive">
+                                                <a name="OOBDeepDive"></a>
+												<a href="Labs\09 - Deep Dive into OOB\09 - Deep Dive into OOB.html\html\DocSet_default.html" target="_blank"><h3>Deep Dive into Out of Browser</h3></a>                                                
+                                                <p>
+    Silverlight out-of-browser enables you to create desktop applications. Using elevated trust further opens the possibilities of what your application can do. This lab is designed to further explore what can be down with an out-of-browser Silverlight application. In the lab you'll create an application that imports data directly from Excel. Along the way you'll learn how to interact with the hard drive, check for updates, and work with Excel from Silverlight.
+  </p>
+												<p>
+																						
+												
+												<a href="Labs\09 - Deep Dive into OOB\09 - Deep Dive into OOB.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\09 - Deep Dive into OOB\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="MVVM">
+                                                <a name="MVVM"></a>
+												<a href="Labs\10 - Using MVVM\10 - Silverlight Patterns - Using MVVM.html\html\DocSet_default.html" target="_blank"><h3>Using the MVVM Pattern in Silverlight Applications</h3></a>                                                
+                                                <p>The Model-View-ViewModel (MVVM) pattern provides a flexible way to build Silverlight applications that promotes code re-use, simplifies maintenance and supports testing.  In this lab exercise you'll learn how to migrate an existing Silverlight application that uses code-behind files for all of the C# or VB code into a more structured architecture that follows the MVVM pattern.</p>
+												<p>
+																						
+												
+												<a href="Labs\10 - Using MVVM\10 - Silverlight Patterns - Using MVVM.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\10 - Using MVVM\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\IntroNetRiaServices\Introduction to .NET RIA Services.pptx">Introduction to .NET RIA Services </a>                                                
+                                                <a href="Presentations\IntroNetRiaServices\Introduction to .NET RIA Services.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 
+							 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://silverlight.net/" target="_blank">The Official Microsoft Silverlight Site</a></li>	
+                                        											<li class="additionalLink"><a href="http://silverlight.tv/" target="_blank">Silverlight TV on Channel 9</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/Silverlight4TrainingCourse" target="_blank">Silverlight 4 Training Course on MSDN</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="DataAccess" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Data Access</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="ADONetDataServices">
+                                                <a name="ADONetDataServices"></a>
+												<a href="Labs\ADONetDataServices\ADONetDataServices.html\html\DocSet_default.html" target="_blank"><h3>Introduction to ADO.NET Data Services</h3></a>                                                
+                                                <p>Through this hands-on lab you will learn how to create a data service using the Entity Framework as its data source, and how to consume the service using both the .NET client APIs and the ASP.NET AJAX APIs. You will also use Service Interceptors to add validation support and Service Operations to perform custom queries. Additionally, you will be introduced to the new Row Count feature, that provides support for determine the total number of entities in a set without retrieving them all.</p>
+												<p>
+																						
+												
+												<a href="Labs\ADONetDataServices\ADONetDataServices.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\ADONetDataServices\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\WhatsNewInEntityFramework4\Whats New In Entity Framework 4.pptx">Whats New In Entity Framework 4 </a>                                                
+                                                <a href="Presentations\WhatsNewInEntityFramework4\Whats New In Entity Framework 4.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                                <li>
+                                            <div class="item">
+                                                <a href="Presentations\WhatsNewInDataServices15\Whats New In ADONET Data Services 1.5.pptx">Whats New In ADONET Data Services 1.5 </a>                                                
+                                                <a href="Presentations\WhatsNewInDataServices15\Whats New In ADONET Data Services 1.5.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 <div class="moduleContent">
+                                    Demos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Demos\AdoNetDataServices15TenInOne\WCFDataServices10In1.html\html\DocSet_default.html">
+        WCF Data Services 10-in-1
+  </a>                                                
+                                                												<a href="Demos\AdoNetDataServices15TenInOne\WCFDataServices10In1.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\AdoNetDataServices15TenInOne\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#ServerDrivenPagingADONETDataServices">Server-Driven Paging with ADO.NET Data Services</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/data/bb931106.aspx" target="_blank">ADO.NET Data Services on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/data/aa937723.aspx" target="_blank">ADO.NET Entity Framework on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/data/" target="_blank">Data Developer Center on MSDN</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="Parallel" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Parallel Computing</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="ParallelExtensions">
+                                                <a name="ParallelExtensions"></a>
+												<a href="Labs\ParallelExtensions\ParallelExtensions.html\html\DocSet_default.html" target="_blank"><h3>Parallel Extensions: Building Multicore Applications with .NET</h3></a>                                                
+                                                <p>Microsoft's Parallel Computing Platform (PCP) is providing tools enabling developers to leverage the power of Multicore processors in an efficient, maintainable, and scalable manner. Parallel Extensions to the .NET Framework brings several important concepts into this toolset. In this Hands-On Lab, you will learn how to parallelize an existing algorithm by using the static Parallel helper class, create and run Tasks, use the Future<T> class to create and run Tasks that return a value and use Parallel LINQ (PLINQ) to optimize LINQ queries to exectue in a parallel environment.</p>
+												<p>
+																						
+												
+												<a href="Labs\ParallelExtensions\ParallelExtensions.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\ParallelExtensions\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\ParallelComputingForManagedDevs\Parallel Computing for Managed Developers.pptx">Parallel Computing for Managed Developers </a>                                                
+                                                <a href="Presentations\ParallelComputingForManagedDevs\Parallel Computing for Managed Developers.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 <div class="moduleContent">
+                                    Demos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Demos\ContosoAutomotive\.\Source">ContosoAutomotive Demo</a>                                                
+                                                                                                												<a href="Demos\ContosoAutomotive\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\ParallelBabyNames\.\Source">
+          BabyNames
+      </a>                                                
+                                                                                                												<a href="Demos\ParallelBabyNames\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\ParallelForLoop\.\Source">
+          Parallel.For Loop
+      </a>                                                
+                                                                                                												<a href="Demos\ParallelForLoop\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\ParallelLINQ\.\Source">
+          Parallel LINQ (PLINQ)
+      </a>                                                
+                                                                                                												<a href="Demos\ParallelLINQ\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\ParallelTask\.\Source">
+          System.Threading.Tasks
+      </a>                                                
+                                                                                                												<a href="Demos\ParallelTask\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                                                 
+							 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/concurrency/default.aspx" target="_blank">Parallel Computing Developer Center on MSDN</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="Extensibility" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Extensibility</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="IntroToMEF">
+                                                <a name="IntroToMEF"></a>
+												<a href="Labs\IntroToMEF\IntroToMEF.html\html\DocSet_default.html" target="_blank"><h3>Introduction To Managed Extensibility Framework</h3></a>                                                
+                                                <p>The Managed Extensibility Framework (MEF) allows developers to provide hooks into their .NET applications for extensions by first and third parties. MEF can be thought of as a general application extension facility. In this Hands-On Lab, you will learn how to define extensibility points for components, perform conditional binding and component creation and import extended assemblies while an application is running.</p>
+												<p>
+																						
+												
+												<a href="Labs\IntroToMEF\IntroToMEF.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\IntroToMEF\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\IntroMef\Introduction to Mef.pptx">Introduction to the Managed Extensibility Framework </a>                                                
+                                                <a href="Presentations\IntroMef\Introduction to Mef.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 <div class="moduleContent">
+                                    Demos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Demos\IntroToMef\.\Source">
+          Intro to Managed Extensibility Framework
+      </a>                                                
+                                                                                                												<a href="Demos\IntroToMef\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#MEFPreview7">MEF Preview 7</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://www.codeplex.com/MEF" target="_blank">Managed Extensibility Framework Community Site</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="ALM" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Application Lifecycle Management</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="AuthoringAndRunningManualTests">
+                                                <a name="AuthoringAndRunningManualTests"></a>
+												<a href="Labs\AuthoringAndRunningManualTests\AuthoringAndRunningManualTests.html\html\DocSet_default.html" target="_blank"><h3>Authoring and Running Manual Tests using Microsoft Test Manager 2010</h3></a>                                                
+                                                <p>In this lab, you will learn how to use Microsoft Test Manager to author a manual test case and take advantage of test parameters. You will then run this test case using the Microsoft Test Runner. While running this test case you will capture an action recording which can be used to take advantage of Fast Forward for Manual Testing, to quickly re-run test steps or even entire test cases in the future. Finally you will explore how Shared Steps can be used to more effectively author common test steps which can then be reused across multiple test cases.</p>
+												<p>
+																						
+																										<a href="Labs\AuthoringAndRunningManualTests\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\AuthoringAndRunningManualTests\AuthoringAndRunningManualTests.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="IntroToCodedUITests">
+                                                <a name="IntroToCodedUITests"></a>
+												<a href="Labs\IntroToCodedUITests\IntroToCodedUITests.html\html\DocSet_default.html" target="_blank"><h3>Introduction to Coded UI Tests with Visual Studio 2010 Ultimate</h3></a>                                                
+                                                <p>Coded UI tests are a new capability of Visual Studio 2010 which provide a way to create fully automated tests to validate the functionality and behavior of your application's user interface. In this lab, you will gain a basic understanding of coded UI tests by creating a new test and adding validation logic to it.</p>
+												<p>
+																						
+																										<a href="Labs\IntroToCodedUITests\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\IntroToCodedUITests\IntroToCodedUITests.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="IntroToTestCaseManagement">
+                                                <a name="IntroToTestCaseManagement"></a>
+												<a href="Labs\IntroToTestCaseManagement\IntroToTestCaseManagement.html\html\DocSet_default.html" target="_blank"><h3>Introduction to Test Case Management with Microsoft Test Manager 2010</h3></a>                                                
+                                                <p>In this lab you will be introduced to working with Microsoft Test Manager. Microsoft Test Manager can be used to organize your test plans, author and manage your test cases, and run manual tests. This lab will provide you with a basic understanding of how Microsoft Test Manager can be used to perform these activities. Also be sure to see "Authoring and Running Manual Tests with Microsoft Test Manager" if you are interested in these aspects of Microsoft Test Manager.</p>
+												<p>
+																						
+																										<a href="Labs\IntroToTestCaseManagement\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\IntroToTestCaseManagement\IntroToTestCaseManagement.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="PlanningYourProjects">
+                                                <a name="PlanningYourProjects"></a>
+												<a href="Labs\PlanningYourProjects\PlanningYourProjects.html\html\DocSet_default.html" target="_blank"><h3>Planning your Projects with Team Foundation Server 2010</h3></a>                                                
+                                                <p>In this lab you will learn about some of the new agile project management capabilities of Team Foundation Server 2010. You will learn how Team Foundation Server 2010 now supports hierarchical work items, which allow for such rich relationships as parent/child and successor/predecessor. You will see how new Excel workbooks can be used to quickly manage your backlog and plan your iterations. And you will also see how Microsoft Project can be used to create a detailed project plan which can then be fully synchronized with Team Foundation Server 2010.</p>
+												<p>
+																						
+																										<a href="Labs\PlanningYourProjects\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\PlanningYourProjects\PlanningYourProjects.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="BranchingAndMerging">
+                                                <a name="BranchingAndMerging"></a>
+												<a href="Labs\BranchingAndMerging\BranchingAndMerging.html\html\DocSet_default.html" target="_blank"><h3>Branching and Merging Visualization with Team Foundation Server 2010</h3></a>                                                
+                                                <p>In this lab, you will be introduced to the new branching and merging visualization support in Team Foundation Server 2010. The improvements made in TFS 2010 make it much easier to understand a solution branch hierarchy and to propagate changes during the merge process.</p>
+												<p>
+																						
+																										<a href="Labs\BranchingAndMerging\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\BranchingAndMerging\BranchingAndMerging.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="DebuggingWithIntelliTrace">
+                                                <a name="DebuggingWithIntelliTrace"></a>
+												<a href="Labs\DebuggingWithIntelliTrace\DebuggingWithIntelliTrace.html\html\DocSet_default.html" target="_blank"><h3>Debugging with IntelliTrace using Visual Studio 2010 Ultimate</h3></a>                                                
+                                                <p>In this lab, you will learn about the new IntelliTrace debugging feature provided in Visual Studio 2010 Ultimate. Before the addition of IntelliTrace, debugging was done from a specific point in time going forward. If you wanted to find out more information for a previous call, you would set a breakpoint and then re-run the application. IntelliTrace now enables you to seek to a large number of execution points, that occurred in the past, and drill into any of them, comparing variables, call stacks, etc. in order to help pinpoint causes of issues without having to reproduce the problem.</p>
+												<p>
+																						
+																										<a href="Labs\DebuggingWithIntelliTrace\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\DebuggingWithIntelliTrace\DebuggingWithIntelliTrace.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="AnalyzeYourCode">
+                                                <a name="AnalyzeYourCode"></a>
+												<a href="Labs\AnalyzeYourCode\AnalyzeYourCode.html\html\DocSet_default.html" target="_blank"><h3>Using the Architecture Explorer in Visual Studio 2010 Ultimate to Analyze Your Code</h3></a>                                                
+                                                <p>The Visual Studio 2010 Ultimate Architecture Explorer provides an easy way to drill down into your code and analyze relationships between projects, types, their assemblies and references. In this lab, you'll see how you can use the Architecture Explorer to examine an existing solution and create dynamic DGML diagrams.</p>
+												<p>
+																						
+																										<a href="Labs\AnalyzeYourCode\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\AnalyzeYourCode\AnalyzeYourCode.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="ImproveCodeQuality">
+                                                <a name="ImproveCodeQuality"></a>
+												<a href="Labs\ImproveCodeQuality\ImproveCodeQuality.html\html\DocSet_default.html" target="_blank"><h3>Using Code Analysis with Visual Studio 2010 to Improve Code Quality</h3></a>                                                
+                                                <p>The Code Analysis feature of Visual Studio performs static code analysis on code to help developers identify potential design, globalization, interoperability, performance, security, and a host of other categories of potential problems. In Visual Studio 2010, improvements have been made to the code analysis engine itself, as well as ability to configure rule sets rather than picking and choosing from one flat list of rules. In this lab, you will be introduced to Code Analysis, how to configure rules sets to use, and finally how to suppress specific rules at a project and source code level.</p>
+												<p>
+																						
+																										<a href="Labs\ImproveCodeQuality\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\ImproveCodeQuality\ImproveCodeQuality.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="CodeDiscovery">
+                                                <a name="CodeDiscovery"></a>
+												<a href="Labs\CodeDiscovery\CodeDiscovery.html\html\DocSet_default.html" target="_blank"><h3>Code Discovery using the Architecture Tools in Visual Studio 2010 Ultimate</h3></a>                                                
+                                                <p>In this lab you will learn how to generate and navigate dependency graphs with Visual Studio 2010 Ultimate in order better understand and communicate system architecture.</p>
+												<p>
+																						
+																										<a href="Labs\CodeDiscovery\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\CodeDiscovery\CodeDiscovery.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="UnderstandClassCoupling">
+                                                <a name="UnderstandClassCoupling"></a>
+												<a href="Labs\UnderstandClassCoupling\UnderstandClassCoupling.html\html\DocSet_default.html" target="_blank"><h3>Understanding Class Coupling with Visual Studio 2010 Ultimate</h3></a>                                                
+                                                <p>Understanding the relationship between classes on a new code project can be difficult. In this lab, you'll use the new DGML diagrams in Visual Studio 2010 Ultimate to drill down into an existing code base and figure how types are related.</p>
+												<p>
+																						
+																										<a href="Labs\UnderstandClassCoupling\Working with the Visual Studio 2010 RTM Virtual Machine.html\html\DocSet_default.html">
+																												<img class="labImage" src="images/checkbox.png" title="Lab setup" border="0" />
+														 Lab Setup</a>
+												
+												<a href="Labs\UnderstandClassCoupling\UnderstandClassCoupling.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                								 
+								                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#LapAroundALM">A Lap Around Visual Studio 2010 Application Lifecycle Management</a>                                                
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#SoftwareTesting1">Software Testing with Microsoft Visual Studio 2010: Part 1, an Introduction</a>                                                
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#SoftwareTesting2">Software Testing with Microsoft Visual Studio 2010: Part 2, Making it Real</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/vstudio/ff625779.aspx" target="_blank">Application Lifecycle Management on MSDN</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                  <div id="WindowsAzure" class="modulesContent" style="display: none;">
+                    
+                    <!--/////////////////////////////-->
+                    <!--///// MODULE CONTENT //////-->
+                    <!--/////////////////////////////-->
+                    <div class="featuredContent">
+                        <h2>Windows Azure</h2>
+                        
+                        <div class="entrySum">
+                            <div class="summaryLeft">
+                                <p>
+                                    
+                                </p>
+
+								                                <div>
+                                                                                   <div class="item" id="IntroToWindowsAzureLabVS2010">
+                                                <a name="IntroToWindowsAzureLabVS2010"></a>
+												<a href="Labs\IntroductionToWindowsAzureVS2010\Lab.html\html\DocSet_default.html" target="_blank"><h3>Introduction to Windows Azure</h3></a>                                                
+                                                <p>In this hands-on lab, you will explore the basic elements of a Windows Azure service by creating a simple GuestBook application that demonstrates many features of the Windows Azure platform, including web and worker roles, blob storage, table storage, and queues.</p>
+												<p>
+																						
+												
+												<a href="Labs\IntroductionToWindowsAzureVS2010\Lab.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\IntroductionToWindowsAzureVS2010\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                                    <div class="item" id="WindowsAzureDebuggingLab">
+                                                <a name="WindowsAzureDebuggingLab"></a>
+												<a href="Labs\WindowsAzureDebugging\Lab.html\html\DocSet_default.html" target="_blank"><h3>Debugging Applications in Windows Azure</h3></a>                                                
+                                                <p>In this lab, you will explore some simple techniques for debugging applications deployed in Windows Azure; and you will learn what features and techniques are available in Visual Studio and Windows Azure to debug applications once deployed to Windows Azure.</p>
+												<p>
+																						
+												
+												<a href="Labs\WindowsAzureDebugging\Lab.html\html\DocSet_default.html" target="_blank">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Lab HTML" border="0" />
+                                                 Launch Lab</a>
+											
+															                                        <a href="Labs\WindowsAzureDebugging\.\Source">
+                                                    <img class="labImage" src="images/folder.png" title="Lab sources" border="0" />
+                                                 View Source</a>
+												
+												</p>
+                                            </div>
+                                                                        </div>
+                                 
+                            </div><!--/ .summaryLeft -->
+                            
+                            <div class="summaryRight">
+                            
+                        
+                                                                <div class="moduleContent">
+                                    Presentations
+                                    <ul>
+										                                        <li>
+                                            <div class="item">
+                                                <a href="Presentations\WindowsAzurePlatformOverview\Windows Azure Platform Overview.pptx">Windows Azure Platform Overview </a>                                                
+                                                <a href="Presentations\WindowsAzurePlatformOverview\Windows Azure Platform Overview.pptx">
+                                                    <img class="labImage" src="images/powerpnt.png" title="Presentation" border="0" />
+                                                </a>
+                                            </div>                                            
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 								 
+								                                 <div class="moduleContent">
+                                    Demos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Demos\HelloWindowsAzureVS2010\Demo Script - Hello Windows Azure.html\html\DocSet_default.html">Hello Windows Azure</a>                                                
+                                                												<a href="Demos\HelloWindowsAzureVS2010\Demo Script - Hello Windows Azure.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\HelloWindowsAzureVS2010\.">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                                <li>											
+                                            <div class="item">
+                                                <a href="Demos\DeployWindowsAzureVS2010\Demo Script - Deploy ToDo.html\html\DocSet_default.html">Deploying Windows Azure Services</a>                                                
+                                                												<a href="Demos\DeployWindowsAzureVS2010\Demo Script - Deploy ToDo.html\html\DocSet_default.html">
+                                                    <img class="labImage" src="images/arrowBullet.png" title="Demo" border="0" />
+                                                </a>  
+												                                                												<a href="Demos\DeployWindowsAzureVS2010\.">
+                                                    <img class="labImage" src="images/folder.png" title="Source" border="0" />
+                                                </a>
+																				                                     
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                                                 
+							                                 <div class="moduleContent">
+                                    Videos
+                                    <ul>
+										                                        <li>											
+                                            <div class="item">
+                                                <a href="Videos.htm#WhatIsWindowsAzureVideo">What is Windows Azure?</a>                                                
+                                            </div>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                 
+                                                                <div class="moduleContent">
+                                    Additional content
+                                    <ul>
+																					<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/windowsazure" target="_blank">Windows Azure Developer Center on MSDN</a></li>	
+                                        											<li class="additionalLink"><a href="http://msdn.microsoft.com/en-us/WAZPlatformTrainingCourse" target="_blank">Windows Azure Platform Training Course on MSDN</a></li>	
+                                                                            </ul>
+                                </div>
+                                                                
+                            </div><!--/ .summaryRight -->
+                            
+                            <div class="filler"></div>
+                        </div><!--/ .entrySum -->
+                        
+                    </div><!--/ #featuredContent -->
+                    
+                    
+                   
+                </div>    
+                                 
+                
+				<script language="javascript">
+					var labId = window.location.hash;
+					if (labId!="")
+					{
+						$('.modulesContent:has(#' + labId.replace('.','\\.') + ')').show();
+					}
+					else
+					{
+						$('.modulesContent:first').show();
+					}
+				</script>
+                <div class="filler"></div>
+            </div><!--/ #wideLayout -->
+            
+            <div class="filler"></div>
+            <div id="contentBottom"></div>
+            <div class="clear"></div>  
+            
+                          <!--//////////////////-->
+              <!--///// FOOTER /////-->
+              <!--//////////////////-->
+              <div id="footer">
+                <div id="footerTop">
+                </div>
+                <div id="footerContent">
+                  <img id="footerLeft" src="images/dpe_logo.png" alt="Developer and Platform Evangelism" />
+                  <div class="filler">
+                  </div>
+                </div>
+                <div id="footerBottom">
+                </div>
+                <div class="filler">
+                </div>
+              </div>            
+        </div><!--/ #contents -->
+        
+    </div><!--/ #background -->
+</body>
+</html>
+

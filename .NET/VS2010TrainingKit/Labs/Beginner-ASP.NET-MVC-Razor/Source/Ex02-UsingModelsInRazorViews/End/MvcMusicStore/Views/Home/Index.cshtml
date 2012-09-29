@@ -1,0 +1,36 @@
+﻿@inherits System.Web.Mvc.WebViewPage<DateTime>
+
+@using System.Globalization;
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+
+    <h2>This is the Home Page</h2>
+
+	@{
+		var myname = "MVC Music Store";
+		<div>
+			My name is @myname
+		</div>
+	}
+
+	@{
+		<text>
+			Current time is @Model.ToString(CultureInfo.CurrentUICulture)
+		</text>
+	}
+
+	<div>
+	@{
+		var engine = "Razor";
+		@: I'm using @engine engine
+	}
+	</div>
+
+	@*
+		<div>
+			I'm inside a comment
+		</div>
+	*@

@@ -1,0 +1,115 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Adding Simple Controls to an Existing Ribbon" />
+      <MSHelp:RLTitle Title="Exercise 2: Adding Simple Controls to an Existing Ribbon" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Adding Simple Controls to an Existing Ribbon</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Ribbon with MFC - Native</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Adding Simple Controls to an Existing Ribbon</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Visual Studio 2010 has a new feature called Ribbon Designer for MFC application, which makes it easy to add and edit any Ribbon controls to your application.</p>
+        <p>In this exercise, you will learn how to drag a control in Ribbon Designer and how to add an event handler easily. For this exercise, you will use the RibbonApp solution from EX02_Starter\Begin\RibbonApp folder.</p>
+        <a name="_Toc282093902" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding Simple Controls to an Existing Ribbon</b>
+        </p>
+        <ol>
+          <li>Launch RibbonApp.sln in Visual Studio 2010.</li>
+          <li>In the <b>Solution Explorer</b>, double-click the <b>RibbonApp.rc</b> file to open the <b>Resource View</b> pane.</li>
+          <li>In the Resource View, expand RibbonApp.rc -&gt; Ribbon -&gt; IDR_RIBBON node. Double-click the file to open the Ribbon Designer. The Resource View panel, Ribbon Bar Designer panel, and Toolbox panel are shown in Figure 2-1.<p><img src="images\68ccacfa-1963-4970-948a-d6d903f8e03c.png" /></p><p><b>Figure 2-1</b><br /></p><br /></li>
+          <li>Drag a Category control from the Toolbox to the Ribbon Bar. In the Designer, you will see a Category named “<i>Category1</i>” and a Panel in Category1 named “<i>Panel1</i>”. Drag two Button controls from the Toolbox to “<i>Panel1</i>”. The buttons are named “<i>Button1</i>” and “<i>Button2</i>” by default. The Ribbon Bar has a new look, which is shown in Figure 2-2.<p><img src="images\cdaa922a-50c9-450f-b597-f8bff7f2ee6e.png" /></p><p><b>Figure 2-2</b><br /></p><br /></li>
+          <li>Right-click “<i>Category1</i>”, and select Properties to open the Properties pane. As shown in the Property window in Figure 2-3, you can easily rename the Caption to “<i>My Category</i>”, and edit the other properties. In the Property pane, select “<i>IDB_WRITELARGE</i>” from the dropdown list of Large Images, and select “<i>IDB_WRITESMALL</i>” from the dropdown list of Small Images. This defines the image collection for the elements in this category.<p><img src="images\4907dc7b-c317-44ef-90d7-2d0eda64a987.png" /></p><p><b>Figure 2-3</b><br /></p><br /></li>
+          <li>Open the Properties pane of the buttons you just created, and change the captions to “My Button” and “<i>My Choice</i>”.</li>
+          <li>To add an image to your buttons, in the Properties pane for each of the buttons click <b>Large Image Index</b> (you will see an ellipsis button (<img src="images\7553d327-1b3b-44d5-a638-08614cb0f2d9.png" />) when you select the value field, which will allow you to browse the image collection.) Click the ellipsis button (<img src="images\c0226a48-52d4-4518-a16f-778b67f39231.png" />), and select “<i>0</i>” in the Image Collection dialog. Do the same for the <b>Image Index</b> property. Finally, edit the other properties as shown in Figure 2-4.<p><img src="images\7f99c880-0c8e-4db3-a883-c8dafd4c4ff6.png" /></p><p><b>Figure 2-4</b><br /></p><br /></li>
+          <li>Test your Ribbon by clicking the “Test Ribbon” button on the toolbar, as shown in Figure 2-5.<p><img src="images\4c4b0fa2-558c-4717-b4c8-b18ecae81ca4.png" /></p><p><b>Figure 2-5</b><br /></p><br /></li>
+          <li>Build and Run your application. Now, it has a new look as shown in Figure 2-6. The two buttons that you created (“<i>My Choice</i>” and “<i>My Button</i>”) are disabled by default. The buttons will be enabled once you add a click event handler for each of them.<p><img src="images\18273c98-b5f6-409d-b9ba-4cb004838d15.png" /></p><p><b>Figure 2-6</b><br /></p><br /></li>
+        </ol>
+        <a name="_Toc282093903" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Add Event Handlers to the Controls</b>
+        </p>
+        <ol>
+          <li>It is very easy to add event handlers in the Ribbon Designer. Right-click the “<i>My Button</i>” button control, and select “Add Event Handler”. The Event Handler Wizard will open. Type “<i>OnMyButton</i>” in the <b>Function handler name</b> textbox, select “<i>Command</i>” from the <b>Message type</b> list and “<i>CMainFrame</i>” from the <b>Class list</b>, as shown in Figure 2-7.<p><img src="images\abec38ae-7e47-452b-a55a-a83c7fba6062.png" /></p><p><b>Figure 2-7</b><br /></p><br /></li>
+          <li>Click “Add and Edit”. The wizard will generate some functions automatically for you, and then open the source code editor. Here, you will see the empty function <b>CMainFrame::OnMyButton()</b>in MainFrm.cpp.</li>
+          <li>Add the following line of code to the OnMyButton method in Mainfrm.cpp.<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>MessageBox(TEXT("This is My Button!"), TEXT("My Button"), MB_OK);</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and Run your solution. Your application will have a Ribbon Bar with one Category and two buttons. Click the “<i>My Button</i>” button, and test your application as shown in Figure 2-8.<p><img src="images\159b87f9-c46d-4731-bc90-06c1f633240c.png" /></p><p><b>Figure 2-8</b><br /></p><br /></li>
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Development in Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Microsoft Visual Studio 2010 offers many new features for development of ASP.NET web applications. The goal of these new features is to aid developers in creating and deploying high quality and fully featured web applications quickly and easily.</p>
+        <p>Visual Studio 2010 now supports HTML code snippets. Snippets are a great way to generate high-quality code. There are many snippets that come with Visual Studio, and developers have the ability to create their own.</p>
+        <p>Another new feature which Visual Studio 2010 provides is the ability to transform the Web.config file for deployment. Visual Studio 2010 supports a rich configuration transformation language that allows developers to change elements in the Web.config file including connection string, file path locations, and service addresses.</p>
+        <p>Deployment of ASP.NET web applications is now easier due to new packaging and deployment features in Visual Studio 2010. Now web applications can be easily published to a specific location on the build machine (or even to a ZIP file) and easily deploy to either the Visual Studio Web Server or Windows Internet Information Server (IIS).</p>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Use HTML code snippets to aid in development of ASP.NET web application pages</li>
+          <li>Create and deploy your own custom HTML code snippets</li>
+          <li>Create and automatically transform the Web.config as the web application is deployed across environments</li>
+          <li>Create a deployment package for your ASP.NET web application and deploy the application to either the Visual Studio Development web server or Windows Internet Information Server (IIS)</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ul>
+          <li>Using HTML Code Snippets in Visual Studio 2010</li>
+          <li>Transforming a Web.config file for deployment</li>
+          <li>Packaging and deploying a web application to the Visual Studio Development Web Server</li>
+          <li>Packaging and deploying a web application to the Windows Internet Information Server (IIS)</li>
+        </ul>
+        <p>Estimated time to complete this lab: <b>60 minutes</b>.</p>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>IIS 7.0</li>
+        </ul>
+        <a name="_Toc166647553" href="#">
+          <span />
+        </a>
+        <a name="_Toc172462715" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141329" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps.</p>
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Starting Materials</h1>
+        <p>This Hands-On Lab includes the following starting materials:</p>
+        <ul>
+          <li>Visual Studio solutions<b>:</b> The exercise provides a Visual Studio solution that you can use as starting point for the lab exercise. You will find the starting point at: <b><i>%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab</i></b><ul><li>HTMLLab.sln: A solution containing a simple web application used as a starting point for Exercise 1 and the subsequent exercises. <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b> </b>For each exercise, there is an End folder which contains the resulting solution you should obtain after completing that exercise.</td></tr></table><p /></div><br /></li></ul></li>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> User will perform appropriate name value replacement in all path references containing &lt;Username&gt; tag.<br />To verify that each step is correctly performed, it is recommended that you build the solution at the end of each task.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ul>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b6eb3991-787d-479c-b050-4bf9353abdc0.html">Exercise 1: Using HTML Code Snippets in Visual Studio 2010</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

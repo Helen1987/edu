@@ -1,0 +1,191 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a NuGet Package" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a NuGet Package" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a NuGet Package</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 NuGet</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a NuGet Package</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you will learn how to package your solution using <b>NuGet</b>.</p>
+        <p>For that purpose, you will run a script that will create the MusicStore package in your project folder. The script will be configured with a <b>nuspec</b> (NuGet specification) file, which will specify all the package settings and dependencies.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> A <b>nuspec</b> file is a manifest in <b>XML</b> format that is used to build the package and is also stored in the package after the build process. It contains:<br />     - The <b>metadata</b> for a package that includes the following fields: Id, version, authors (collection of author elements), description, language, tags (collection), licenceUrl (Uri), projectURL (Uri), iconUrl (Uri) and requrireLicenceAcceptance(boolean).<br />     - An optional list of package’s <b>dependencies</b>. Each dependency element has the following attributes: id (the ID of a package that this package depends on), version (the required version of the dependency package. If you enter this value as a specific version number, such as 1.2.3, NuGet assumes that any package of that version or later is allowable. You can be more specific about which versions are allowable by using interval notation; for more information, see <a href="http://nuget.codeplex.com/wikipage?title=Version Range Specification">Specifying Version Ranges</a>).<br />     - An optional list of <b>files</b><b>to include</b> in the package. Each file element has the following attributes: src, target (both are paths).<br />Other considerations:<br />     - If no version is specified, NuGet will assume that the latest version is being used.<br />     - All paths are relative to the <b>nuspec</b> file, unless an absolute file is specified.<br />For more information, check <a href="http://nuget.codeplex.com/documentation?title=Nuspec Format">http://nuget.codeplex.com/documentation?title=Nuspec Format</a>.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>Below is a sample nuspec file that uses most of the described elements:</p>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>XML</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;package&gt;    &lt;metadata&gt;        &lt;id&gt;NuGetSample&lt;/id&gt;        &lt;version&gt;2.0.0&lt;/version&gt;        &lt;authors&gt;Microsoft&lt;/authors&gt;        &lt;description&gt;This is an example of a nuspec file&lt;/description&gt;        &lt;tags&gt;NuGet nuspec hands-on-lab microsoft asp.net&lt;/tags&gt;        &lt;language&gt;en-US&lt;/language&gt;    &lt;/metadata&gt;    &lt;dependencies&gt;        &lt;dependency id="sample-package" version="3.0.0" /&gt;        &lt;dependency id="another-package" version="4.0.0" /&gt;    &lt;/dependencies&gt;    &lt;files src="..\sample\anyfile.dll"/&gt;    &lt;files src="..\sample\requiredLibrary.dll" target="bin"/&gt;&lt;/package&gt;</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <a name="_Toc282171616" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a nuspec File</b>
+        </p>
+        <p>In this task, you will add a <b>nuspec</b> file that will contain a description of the package to be created.</p>
+        <ol>
+          <li>Open the <b>Source\Ex01-Creating NuGet Package\Begin\MvcMusicStore</b> folder in Windows Explorer.</li>
+          <li>Create a new empty txt file and rename it to <b>MvcMusicStore.nuspec</b>.</li>
+          <li>Open <b>MvcMusicStore.nuspec</b> in Visual Studio or any text/XML editor.</li>
+          <li>Add the following XML specification to the <b>MvcMusicStore.nuspec</b> file:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;?xml version="1.0" encoding="utf-8"?&gt;</b><b>&lt;package&gt;</b><b>  &lt;metadata&gt;</b><b>    &lt;id&gt;MvcMusicStore&lt;/id&gt;</b><b>    &lt;version&gt;1.0&lt;/version&gt;    </b><b>    &lt;description&gt;Music Store ASP.NET MVC Application&lt;/description&gt;</b><b>    &lt;authors&gt;Microsoft&lt;/authors&gt;</b><b>    &lt;language&gt;en-US&lt;/language&gt;</b><b>  &lt;/metadata&gt;</b><b>&lt;/package&gt;</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Language attribute is an ISO code. You could find more information about interntionalization in this article at <a href="http://msdn.microsoft.com/en-us/library/ee796272(CS.20).aspx">msdn</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269992845" href="#">
+          <span />
+        </a>
+        <a name="_Toc282171617" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating the NuSpec Script</b>
+        </p>
+        <p>In this task, you will create a script that will automatically use NuGet executable with <b>MvcMusicStore.nuspec</b> specifications:</p>
+        <ol>
+          <li>Open the <b>Source\Ex01-Creating NuGet Package\Begin</b> folder in Windows Explorer.</li>
+          <li>Create a new txt file and rename it to <b>CreateNuGetPackage.cmd</b>.</li>
+          <li>Open <b>CreateNuGetPackage.cmd </b>in Visual Studio or any text editor, and add the following lines:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cmd</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>@echo off</b><b>..\..\Assets\NuGet.exe pack MvcMusicStore\MvcMusicStore.nuspec</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Package file will be automatically named with <b>nuspec</b> attributes as <i>&lt;name&gt;.&lt;version&gt;.nupkg</i><br />The <a href="http://nuget.codeplex.com/releases/52018/download/184132"><b>NuGet.exe</b></a> command-line utility is a wrapper for the PackageBuilder API used to create packages. Therefore, as an alternative you can use the API directly to create packages.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282171618" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Generating the NuGet File</b>
+        </p>
+        <ol>
+          <li>Execute the <b>CreateNuGetPackage.cmd</b> file by double-clicking it. After that, check that a new package file <b>MvcMusicStore.1.0.nupkg</b> was generated in the same folder.</li>
+          <li>Rename <b>MvcMusicStore.1.0.nupkg</b> as a .zip<b> </b>file.</li>
+          <li>Open it with Windows Explorer to see its content. Note that the <b>NuGet</b> package contains the <b>nuspec</b> file used to build the package as well as the solution files.<p><img src="images\e36529a4-1b7c-4850-9b6c-e3db2df5751e.png" /></p><p><b>Figure 1</b><br /><i>.nuget file content</i></p><br /></li>
+        </ol>
+        <a name="_Toc282171619" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Using Post-Build Events to Generate the Package</b>
+        </p>
+        <p>In this task, you will use Visual Studio Post-Build events to automatically generate the NuGet package each time the solution is built. In order to do that, you will include the NuGet script into post-build events set up. Therefore, NuGet.exe will get executed in the same way as before, but you will not need an extra step each time you want to package:</p>
+        <ol>
+          <li>Open the begin solution at <b>Source\Ex01-Creating NuGet Package\Begin\MvcMusicStore</b>.</li>
+          <li>Open <b>MvcMusicStore</b> project Properties from Solution Explorer:<p><img src="images\79d0ccb9-95b6-4f5b-96d7-8c802cfc0b31.png" /></p><p><b>Figure 2</b><br /><i>Project properties</i></p><br /></li>
+          <li>Open the <b>Build-Events</b> tab and click on <b>Edit Post-Build</b>.<p><img src="images\3aed32bb-5955-4484-8326-211e32071345.png" /></p><p><b>Figure 3</b><br /><i>Adding Build Events</i></p><br /></li>
+          <li>Copy the following line into the <b>Post-build Command Line</b> dialog and click <b>OK</b>:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Post-build Command</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>"$(SolutionDir)..\..\..\Assets\NuGet.exe" pack "$(SolutionDir)MvcMusicStore.nuspec"</b></pre></td></tr></table></span></div><br /><p><img src="images\e8fd532a-3ede-4a80-a8b5-04a5870a917c.png" /></p><p><b>Figure 4</b><br /><i>Creating a Post-build event</i></p><br /></li>
+        </ol>
+        <a name="_Toc282171620" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Building and Packaging the Solution</b>
+        </p>
+        <p>In this task, you will build the solution and verify that the package is generated after the build.</p>
+        <ol>
+          <li>Build the solution or press <b>CTRL+F5</b>.</li>
+          <li>Check that the package was generated at the <b>bin</b> folder:<p><img src="images\5a63656e-38cf-4223-99bf-dab9c41c3e93.png" /></p><p><b>Figure 5</b><br /><i>Post-build NuGet generated at \bin folder</i></p><br /></li>
+          <li>Rename <b>MvcMusicStore.nupkg</b> as a .zip<b> </b>file.</li>
+          <li>Open it with Windows Explorer to see the content. Note that each <b>nuget</b> package contains the <b>nuspec</b> file used to build the package.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_27ae2256-213b-4b9e-923d-e0e074535576.html">Exercise 2: Consuming NuGet Packages</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

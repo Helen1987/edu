@@ -1,0 +1,835 @@
+/* OVERRIDING C9 DEFAULTS */
+html body
+{
+    font-family: 'Segoe UI' , Arial, Sans-Serif !important;
+    font-size: 77%;
+    color: #010e2a;
+    background: #fff url(../images/farBackground.jpg) top center repeat-y;
+}
+body #wideLayout, body #stdLayout, body #fullLayout
+{
+    padding: 0;
+}
+body #wideLayout
+{
+    /*position: relative;*/
+    padding: 0px 9px 0px;
+}
+#background
+{
+}
+body #wideLayout, body #stdLayout, body #fullLayout
+{
+    background: url(../images/contentRepeatClear.png) repeat-y center top;
+}
+body #contentBottom
+{
+    height: 19px;
+    padding: 0;
+    background-image: url(../images/contentBottom.png);
+}
+body #footer
+{
+    padding: 6px 22px 26px;
+    color: #777;
+}
+body #footer a
+{
+    color: #1155a8;
+}
+body #footer a:hover
+{
+    text-decoration: underline;
+}
+body #rss
+{
+    position: relative;
+    z-index: 9998;
+}
+body #menu .menu li
+{
+    z-index: 1;
+}
+
+body h2
+{
+    font-size: 21px;
+    font-weight: normal;
+    color: #1a1a1a !important;
+}
+body h3
+{
+    font-size: 17px;
+    font-weight: normal;
+    color: #555;
+}
+body p
+{
+    line-height: 1.5em;
+}
+body a:hover
+{
+    color: #1155a8;
+    text-decoration: underline;
+}
+
+/* SECURITY MESSAGE */
+#securityMessage
+{
+    padding: 10px;
+    background-color: #FFFFE1;
+    width: 400px;
+    border: solid 3px #CCCCCC;
+    top: 20px;
+    margin: auto;
+    text-align: left;
+}
+
+#securityMessageContainer
+{
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    margin-top: 15px;
+}
+
+
+#securityMessageImage
+{
+    border: solid 1px #CCCCCC;
+    margin-left: 10px;
+}
+
+#securityMessage .exclamation
+{
+    float: left;
+    margin: 10px;
+}
+
+/* DOWNLOAD WINDOWS 7 BUTTON */
+#getWindows7
+{
+    display: block;
+    width: 237px;
+    height: 67px;
+    margin: 12px 0 0 19px;
+    text-indent: -9999px;
+    background: url(../images/getButton.png) top center no-repeat;
+}
+#getWindows7:hover
+{
+    background-position: center;
+}
+#getWindows7:active
+{
+    background-position: bottom center;
+    outline-color: invert;
+    outline-width: 0;
+}
+
+/* TASKBAR NAVIGATION */
+#taskbarNav
+{
+    position: relative;
+    margin: 9px 0 0 1px;
+    height: 53px;
+    background: url(../images/taskbarBackground.png) top center no-repeat;
+}
+
+#taskbarNav a
+{
+    position: absolute;
+	text-align:center;
+    top: 2px;
+    display: block;
+    width: 183px;
+    height: 52px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#taskbarNav #wocn
+{
+    width: 60px;
+}
+
+#taskbarNav a:hover
+{
+    text-decoration: none;
+    background-position: 0 -208px !important;
+}
+#taskbarNav #wocn:hover
+{
+    text-decoration: none;
+}
+#taskbarNav img
+{
+    position: absolute;
+    z-index: 3;
+    top: 6px;
+    left: 16px;
+}
+#taskbarNav .centerdiv
+{
+    /*position: absolute;*/
+    /*z-index: 4;*/
+    /*top: 15px;*/
+    /*left: 61px;*/ /*with images*/ 	
+    /*cursor: pointer;*/
+	margin-top:15px;
+}
+
+#wocn
+{
+    left: 8px;
+}
+#topic_1
+{
+    left: 70px;
+}
+#topic_2
+{
+    left: 255px;
+}
+#topic_3
+{
+    left: 440px;
+}
+#rsc
+{
+    left: 625px;
+}
+#prq
+{
+    left: 809px;
+}
+
+#taskbarNav #wocn img
+{
+    top: 10px;
+    left: 12px;
+}
+
+.bullet
+{
+    margin: 0px 2px 0px -2px;
+}
+
+.wocn #wocn, .wocn #wocn:hover
+{
+    color: #000;
+    background-position: 0 0 !important;
+}
+
+.topic_1 #topic_1, .topic_1 #topic_1:hover
+{
+    color: #000;
+    background-position: 0px -52px !important;
+}
+
+.topic_2 #topic_2, .topic_2 #topic_2:hover
+{
+    color: #000;
+    background-position: 0px -104px !important;
+}
+
+.topic_3 #topic_3, .topic_3 #topic_3:hover
+{
+    color: #000;
+    background-position: 0px -156px !important;
+}
+.prq #prq, .prq #prq:hover
+{
+    color: #000;
+    background-position: 0 0px !important;
+}
+.rsc #rsc, .rsc #rsc:hover
+{
+    color: #000;
+    background-position: 0 -156px !important;
+}
+
+
+/* INTRO SECTION */
+#introContent
+{
+    position: relative;
+    display: block;
+    width: 934px;
+    height: 153px;
+    margin: -6px 0 0 0px;
+    padding: 22px 33px 0;
+    background: url(../images/VS_ParticleWave_Color_rgb.png) top center no-repeat;
+}
+#introContent h2
+{
+    color: #FFF !important;
+    width: 90%;
+    /*margin: 8px 2px 4px;*/
+	margin: 90px -4px 2px 40px;
+    font-size: 28px;
+    letter-spacing: -0.045em;
+    font-weight: normal;
+}
+#introContent p
+{
+    color: #FFF;
+    width: 90%;
+    margin: 0px 0px 0px 40px;
+    /*margin-left: 2px;*/
+    font-size: 14px;
+    line-height: 1.3em;
+}
+
+.wocn #introContent
+{
+    background-position: 0 0;
+}
+
+
+/* SIDEBAR RESOURCES */
+.moduleSidebar
+{
+    float: left;
+    width: 274px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0px 1px 0px 1px;
+}
+.sidebarResources
+{
+    float: right;
+    width: 274px;
+    min-height: 1000px;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0px 1px 0px 1px;
+}
+.sidebarResources h3, .moduleSidebar h3
+{
+    margin: 10px 0px 10px 21px;
+}
+.sidebarResources h3
+{
+    padding-left: 15px;
+    text-indent: -24px;
+}
+.sidebarResources ul, .moduleSidebar ul
+{
+    margin: 0;
+    border-top: 1px solid #ddd;
+}
+.sidebarResources ul, .moduleSidebar ul
+{
+    list-style: none;
+}
+.sidebarResources ul a, .moduleSidebar ul a
+{
+    display: block;
+    padding: 9px 21px;
+    font-size: 11px;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ddd;
+}
+.sidebarResources ul a:hover, .moduleSidebar ul a:hover
+{
+    text-decoration: none;
+    background: url(../images/linkBackground.png);
+}
+.sidebarResources ul span, .moduleSidebar ul span
+{
+    display: block;
+}
+.sidebarResources ul a:hover span, .moduleSidebar ul a:hover span
+{
+    text-decoration: underline;
+}
+.sidebarResources ul a:hover span.resourceUrl, .moduleSidebar ul a:hover span.resourceUrl
+{
+    color: #000;
+    text-decoration: none;
+}
+.sidebarResources ul a:active, .moduleSidebar ul a:active
+{
+    background-color: #e0e0e0;
+}
+.sidebarResources ul .resourceTitle, .moduleSidebar ul .resourceTitle
+{    
+    font-size: 12px;
+}
+.sidebarResources ul .resourceUrl, .moduleSidebar ul .resourceUrl
+{
+    color: #333;
+}
+.sidebarResources li, .moduleSidebar li
+{
+    list-style-type: none;
+}
+.sidebarResources .content, .moduleSidebar .content
+{
+    padding: 12px 21px 0;
+    border: solid #ddd;
+    border-width: 1px 0 0;
+}
+.sidebarResources .tagCloud, .moduleSidebar .tagCloud
+{
+    text-align: left;
+}
+.sidebarResources .tagCloud a, .moduleSidebar .tagCloud a
+{
+    padding: 0 12px 0 0;
+    line-height: 1.6em;
+    font-weight: normal !important;
+}
+
+/* PRIMARY CONTENT */
+#primaryContent
+{
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    display: block;
+    margin: 0px 275px 0px 0px;
+    position: relative;
+    padding-left: 10px;
+}
+.modulesContent
+{
+    background-color: #F3F3F3;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    display: block;
+    float: left;
+    width: 704px;
+    min-height: 254px;
+    /* position: relative; */
+}
+.primaryContentShadow
+{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: -3px;
+    bottom: 0;
+    width: 2px;
+    background: url(../images/primaryContentShadow.png) top center repeat-y;
+}
+
+/* FEATURED CONTENT */
+.featuredContent
+{
+    border: 1px collaped #D5D5D5;
+    padding: 0;
+    border-collapse: collapse;
+}
+.featuredContent h2
+{
+    background-color: #EBEBEB;
+    /*border-bottom-width:0; border-left-width:0; border-right-width:0; border-top:1px solid #D5D5D5;*/
+    padding: 6px 8px 6px 10px;
+}
+.featuredContent h2 + span
+{
+    display: block;
+	padding: 10px 20px 10px 27px;
+}
+.featuredContent div img, .featuredContent div object
+{    
+    /* margin: 0 2.5% 2% 0; */
+}
+.featuredContent div h1
+{
+    width: auto;
+}
+.featuredContent div h1 a
+{
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: normal;
+    color: #1155a8;
+    margin-bottom: 4px;
+}
+.featuredContent .entrySum .summaryRight {
+    /* background-color: #F3F3F3; */
+    float: left;
+    padding-left: 0px;
+    width: 240px;
+}
+.featuredContent .entrySum .summaryLeft
+{
+    float: left;
+    padding: 10px;
+    width: 443px;
+    /* background-color: #f3f3f3; */
+}
+.featuredContent .bodyLabel span
+{
+    line-height: 1.5em;
+}
+.featuredContent .formats
+{
+    margin: 3px 3px 12px;
+}
+.featuredContent .comboList ul
+{
+    background-color: transparent;
+}
+.featuredContent .item p
+{
+    margin: 0px 15px 0px 15px;
+}
+.labImage
+{
+    margin-top: 2px;
+    padding: 0px 0px 5px 5px;
+    vertical-align: middle;
+}
+
+/* CONTEXUTAL MEDIA */
+#contextualMedia h2
+{
+    font-size: 100%;
+}
+#contextualMedia h2.feature
+{
+    clear: left;
+    height: 43px;
+    margin: 0;
+    padding: 12px 6px 0 25px;
+    font-size: 21px;
+    background-color: #ebebeb;
+    border: solid #d5d5d5;
+    border-width: 1px 0;
+}
+#contextualMedia .relatedContent
+{
+    width: auto;
+}
+#contextualMedia .relatedContent .content
+{
+    padding: 0;
+}
+#contextualMedia .relatedContent .innerContainer
+{
+    margin: auto;
+    padding: 4px 0;
+}
+#contextualMedia .box .content
+{
+    background-color: #fff;
+    border: none;
+}
+#contextualMedia .box .contents
+{
+    border: solid #ebebeb;
+    border-width: 1px 0 0;
+}
+#contextualMedia .box2
+{
+    height: 35px;
+    padding-top: 1px;
+    background-color: #f3f3f3;
+    border: none; ;}
+#contextualMedia .box2 .header
+{
+    height: 34px;
+    background-color: #f3f3f3;
+    border: 0;
+}
+#contextualMedia .sidebartitle h2
+{
+    margin: -1px 4px 2px;
+}
+#contextualMedia .sidebartitle h2 a
+{
+    font-weight: normal;
+    color: #1155a8;
+}
+#contextualMedia .entrySmall
+{
+    width: 322px;
+    min-height: 80px;
+    padding: 12px 10px 0 21px;
+    border-bottom: 1px solid #ebebeb;
+}
+#contextualMedia .smallleft
+{
+    margin-right: 14px;
+}
+#contextualMedia .pagerTitle
+{
+    margin-top: 6px;
+}
+
+/* PAGER BUTTONS IMAGE SPRITE */
+body .pager .pagerButton
+{
+    width: 29px;
+    height: 28px;
+    background-image: url(../images/pager.png) !important;
+    background-repeat: no-repeat;
+}
+
+body .pager .pagerButton.pagerFirst
+{
+    background-position: 0 -28px;
+}
+body .pager .pagerButton.pagerFirst:hover
+{
+    background-position: 0 -56px;
+}
+body .pager .pagerButton.pagerFirst:active
+{
+    background-position: 0 -84px;
+}
+body .pager .pagerButton.pagerFirst.disabled, body .pager .pagerButton.pagerFirst.disabled:hover, body .pager .pagerButton.pagerFirst.disabled:active
+{
+    background-position: 0 0;
+}
+
+body .pager .pagerButton.pagerBack
+{
+    background-position: -29px -28px;
+}
+body .pager .pagerButton.pagerBack:hover
+{
+    background-position: -29px -56px;
+}
+body .pager .pagerButton.pagerBack:active
+{
+    background-position: -29px -84px;
+}
+body .pager .pagerButton.pagerBack.disabled, body .pager .pagerButton.pagerBack.disabled:hover, body .pager .pagerButton.pagerBack.disabled:active
+{
+    background-position: -29px 0;
+}
+
+body .pager .pagerButton.pagerNext
+{
+    background-position: -58px -28px;
+}
+body .pager .pagerButton.pagerNext:hover
+{
+    background-position: -58px -56px;
+}
+body .pager .pagerButton.pagerNext:active
+{
+    background-position: -58px -84px;
+}
+body .pager .pagerButton.pagerNext.disabled, body .pager .pagerButton.pagerNext.disabled:hover, body .pager .pagerButton.pagerNext.disabled:active
+{
+    background-position: -58px 0;
+}
+
+body .pager .pagerButton.pagerLast
+{
+    background-position: -87px -28px;
+}
+body .pager .pagerButton.pagerLast:hover
+{
+    background-position: -87px -56px;
+}
+body .pager .pagerButton.pagerLast:active
+{
+    background-position: -87px -84px;
+}
+body .pager .pagerButton.pagerLast.disabled, body .pager .pagerButton.pagerLast.disabled:hover, body .pager .pagerButton.pagerLast.disabled:active
+{
+    background-position: -87px 0;
+}
+
+.moduleContent
+{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+    margin-top: 5px;
+}
+.moduleContent ul
+{
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.videoPlayer
+{
+    background-color:#F3F3F3;
+    text-align: center;
+}
+
+.additionalLink
+{
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+/* HOMEPAGE-SPECIFIC */
+.wocn .primaryContentShadow
+{
+    top: 90px;
+}
+
+/* HOMEPAGE LINKS */
+.homepageLinks
+{
+    margin: 0;
+    background-color: #fff;
+}
+.homepageLinks .productLogo
+{
+    padding: 20px;
+}
+.homepageLinks a
+{
+    display: block;
+    min-height: 100px;
+    padding: 14px 30px 10px;
+}
+.homepageLinks a img
+{
+    float: left;
+    position: relative;
+    top: 6px;
+    left: -12px;
+}
+.homepageLinks a span
+{
+    display: block;
+    font-size: 14px;
+}
+.homepageLinks a span.title
+{
+    font-size: 18px;
+}
+.homepageLinks a span.description
+{
+    color: #555;
+}
+.homepageLinks a:hover
+{
+    text-decoration: none;
+}
+.homepageLinks a:hover span.title
+{
+    color: #000;
+    text-decoration: underline;
+}
+.homepageLinks a:hover span.description
+{
+    color: #1a1a1a;
+}
+.homepageLinks a:active
+{
+}
+.homepageLinks a:active span.title
+{
+}
+.homepageLinks a:active span.description
+{
+}
+
+.homepageLinks .topic
+{
+    border: solid #eee;
+    border-width: 1px 0;
+}
+.homepageLinks .topic_3
+{
+    border: solid #eee;
+    border-width: 1px 0;
+}
+
+.homepageLinks .topic:hover
+{
+    background-color: #dee6f3;
+    background-position: 644px -195px;
+    border-color: #dee6f3;
+}
+
+.homepageLinks .topic_2:hover
+{
+	background-color: #6fc356;
+    background-position: 644px -390px;
+    border-color: #6fc356;
+}
+
+.homepageLinks .topic_3:hover
+{
+	background-color: #f49220;
+    background-position: 644px -585px;
+	border-color: #f49220;
+}
+
+/* BALLOONS */
+#moduleSidebar .item .description
+{
+    width: 360px;
+    position: absolute;
+    display: none;
+    margin-left: 210px;
+    margin-top: -25px;
+}
+#moduleSidebar .item .description .top
+{
+    height: 23px;
+    background: url(../images/BalloonTop.png) no-repeat;
+    padding: 10px 0px 0px 75px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #39544F;
+}
+#moduleSidebar .item .description .middle
+{
+    background: url(../images/BalloonMiddle.png) repeat-y;
+    padding: 5px 25px 0px 75px;
+}
+#moduleSidebar .item .description .bottom
+{
+    height: 23px;
+    background: url(../images/BalloonBottom.png) no-repeat;
+}
+
+.moduleContent .item .description
+{
+    width: 360px;
+    position: absolute;
+    display: none;
+    margin-left: -550px;
+    margin-top: 12px;
+    z-index: 999;
+}
+.moduleContent .item .description .top
+{
+    height: 23px;
+    background: url(../images/BalloonTopInverted.png) no-repeat;
+    padding: 10px 0px 0px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #39544F;
+}
+.moduleContent .item  .middle
+{
+    background: url(../images/BalloonMiddleInverted.png) repeat-y;
+    padding: 5px 75px 0px 25px;
+}
+.moduleContent .item .description .bottom
+{
+    height: 23px;
+    background: url(../images/BalloonBottomInverted.png) no-repeat;
+}
+
+.links
+{
+	margin: 1em 0em 0em 0em;
+	font-size: 0.75em;
+	text-align: center;
+}
+.links img
+{
+	margin-bottom: 2px;
+	padding-left: 1em;
+	vertical-align: middle;
+}

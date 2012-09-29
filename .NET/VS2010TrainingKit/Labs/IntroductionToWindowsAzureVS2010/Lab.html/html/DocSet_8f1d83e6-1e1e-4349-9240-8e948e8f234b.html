@@ -1,0 +1,271 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Deploying a Windows Azure Application" />
+      <MSHelp:RLTitle Title="Exercise 3: Deploying a Windows Azure Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Deploying a Windows Azure Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Windows Azure</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Deploying a Windows Azure Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you deploy the application created in the previous exercise to Windows Azure using the Management Portal. First, you provision the required service components, upload the application package to the staging area and configure it. You then execute the application in the staging area to verify its operation. Finally, you promote the application to production.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>In order to complete this exercise, you need to sign up for a Windows Azure account and purchase a subscription. <br />For a description of the provisioning process, see <a href="http://blogs.msdn.com/david_sayed/archive/2010/01/07/provisioning-windows-azure.aspx">Provisioning Windows Azure</a>.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc240253406" href="#">
+          <span />
+        </a>
+        <a name="_Toc266620943" href="#">
+          <span />
+        </a>
+        <a name="_Toc278816311" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Storage Account and a Hosted Service Component</b>
+        </p>
+        <p>The application you deploy in this exercise requires both compute and storage services. In this task, you create a new Windows Azure storage account to allow the application to persist its data. In addition, you define a hosted service component to execute application code.</p>
+        <ol>
+          <li>Navigate to <a href="http://windows.azure.com/">http://windows.azure.com</a> using a Web browser and sign in using the Windows Live ID associated with your Windows Azure account.<p><img src="images\45a2aa58-ac35-4364-8129-9ad2ce73e871.png" /></p><p><b>Figure 27</b><br /><i>Signing in to the Windows Azure Platform Management Portal</i></p><br /></li>
+          <li>First, you create the storage account that the application will use to store its data. In the Windows Azure ribbon, click <b>New Storage Account</b>.<p><img src="images\2af45403-50df-4b68-8b6e-d7feb2965db9.png" /></p><p><b>Figure 28</b><br /><i>Creating a new storage account</i></p><br /></li>
+          <li>In the <b>Create a New Storage Account </b>dialog, pick your subscription in the drop down list labeled <b>Choose a subscription</b>.<p><img src="images\49927259-bed7-430a-8a34-ba0e44242500.png" /></p><p><b>Figure 29</b><br /><i>Choosing a subscription to host the storage account</i></p><br /></li>
+          <li>In the textbox labeled <b>Enter a URL</b>, enter the name for your storage account, for example, <b><i>&lt;yourname&gt;guestbook</i></b>, where <i>&lt;yourname&gt;</i> is a unique name. Windows Azure uses this value to generate the endpoint URLs for the storage account services.<p><img src="images\df1de727-f0ad-4f68-b19d-8dd4a84a6db7.png" /></p><p><b>Figure 30</b><br /><i>Choosing the URL of the new storage account</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The portal ensures that the name is valid by verifying that the name complies with the naming rules and is currently available. A validation error will be shown if you enter a name that does not satisfy the rules.<br /><img src="images\905795a1-4d36-44c1-8c34-ac674963bb55.png" /></td></tr></table><p /></div><br /></li>
+          <li>Select the option labeled <b>Create or choose an affinity group</b> and then pick <b>Create a new affinity group</b> from the drop down list.<p><img src="images\2272d527-875e-406e-a58e-f6d769731603.png" /></p><p><b>Figure 31</b><br /><i>Creating a new affinity group</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The reason that you are creating a new affinity group is to deploy both the hosted service and storage account to the same location, thus ensuring high bandwidth and low latency between the application and the data it depends on.</td></tr></table><p /></div><br /></li>
+          <li>In the <b>Create a New Affinity Group</b> dialog, enter an <b>Affinity Group Name</b>, select its <b>Location</b> in the drop down list, and then click <b>OK</b>.<p><img src="images\1ba4abc9-065e-4097-90ff-0dd6b5f0976f.png" /></p><p><b>Figure 32</b><br /><i>Creating a new affinity group</i></p><br /></li>
+          <li>Back in the <b>Create a New Storage Account</b> dialog, click <b>Create</b> to register your new storage account. Wait until the account provisioning process completes and updates the <b>Storage Accounts</b> tree view. Notice that the <b>Properties</b> pane shows the <b>URL</b> assigned to each service in the storage account. Record the public storage account name—this is the first segment of the URL assigned to your endpoints. <p><img src="images\6101c871-9a97-416e-a80f-d495e0599c2a.png" /></p><p><b> Figure 33</b><br /><i>Storage account successfully created</i></p><br /></li>
+          <li>Now, click the <b>View</b> button next to <b>Primary access key</b> in the <b>Properties</b> pane. In the <b>View Storage Access Keys</b> dialog, click <b>Copy to Clipboard</b> next to the <b>Primary Access Key</b>. You will use this value later on to configure the application.<p><img src="images\88a99bda-8ba0-499b-a2cb-fff1dea17e61.png" /></p><p><b>Figure 34</b><br /><i>Retrieving the storage access keys</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>  The <b>Primary Access Key</b> and <b>Secondary</b> Access <b>Key</b> both provide a shared secret that you can use to access storage. The secondary key gives the same access as the primary key and is used for backup purposes. You can regenerate each key independently in case either one is compromised.</td></tr></table><p /></div><br /></li>
+          <li>Next, create the compute component that executes the application code. Click <b>Hosted Services</b> on the left pane. Click on <b>New Hosted Service</b> button on the ribbon. <p><img src="images\32ae2681-aa6f-47ea-af10-8940844a1f30.png" /></p><p><b>Figure 35</b><br /><i>Creating a new hosted service</i></p><br /></li>
+          <li> In the <b>Create a new Hosted Service</b> dialog, select the subscription where you wish to create the service from the drop down list labeled <b>Choose a subscription</b>.<p><img src="images\230251e2-412e-40df-bc13-3c4078eeaedb.png" /></p><p><b>Figure 36</b><br /><i>Choosing your subscription</i></p><br /></li>
+          <li>Enter a service name in the textbox labeled <b>Enter a name for your service</b> and choose its URL  by entering a prefix in the textbox labeled  <b>Enter a URL prefix for your service</b>, for example, <b><i>&lt;yourname&gt;guestbook</i></b>, where <i>&lt;yourname&gt;</i> is a unique name. Windows Azure uses this value to generate the endpoint URLs for the hosted service.<p><img src="images\53221236-f41d-40a0-854f-04ab096eab39.png" /></p><p><b>Figure 37</b><br /><i>Choosing a service name and URL</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>If possible, choose the same name for both the storage account and hosted service. However, you may need to choose a different name if the one you select is unavailable.</td></tr></table><p /></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The portal ensures that the name is valid by verifying that the name complies with the naming rules and is currently available. A validation error will be shown if you enter name that does not satisfy the rules.<br /><img src="images\f1f3060c-a8f6-4178-9fe1-e006018d9ea7.png" /></td></tr></table><p /></div><br /></li>
+          <li>Select the option labeled <b>Create or choose an affinity group</b> and then pick the <b>guestbook</b> affinity group from the drop down list—this is the same affinity group that you defined earlier, when you created the storage account.<p><img src="images\0bffe205-4a11-48f5-9ad9-104a9b5419a7.png" /></p><p><b>Figure 38</b><br /><i>Choosing an affinity group</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>By choosing <b>guestbook </b>as the affinity group, you ensure that the hosted service is deployed to the same location as the storage account that you provisioned earlier.</td></tr></table><p /></div><br /></li>
+          <li>Select the option labeled <b>Do not Deploy</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>While you can create and deploy your service to Windows Azure in a single operation by completing the <b>Deployment Options</b> section, for this hands-on lab, you will defer the deployment step until the next task.</td></tr></table><p /></div><br /></li>
+          <li>Click <b>OK</b> to create the hosted service and then wait until the provisioning process completes.<p><img src="images\50195ebe-8ed6-4cb7-941d-8ee961e9f0de.png" /></p><p><b>Figure 39</b><br /><i>Hosted service successfully created</i></p><br /></li>
+          <li>Do not close the browser window. You will use the portal for the next task.</li>
+        </ol>
+        <a name="_Toc240253407" href="#">
+          <span />
+        </a>
+        <p>
+          <b>
+          </b>
+        </p>
+        <a name="_Toc266620944" href="#">
+          <span />
+        </a>
+        <a name="_Toc278816312" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Deploying the Application to the Windows Azure Platform Management Portal</b>
+        </p>
+        <p>There are several alternatives for deploying applications to Windows Azure. The Windows Azure Tools for Visual Studio allow you to both create and deploy the service package to the Windows Azure environment directly from Visual Studio. Another deployment option is the <a href="http://code.msdn.microsoft.com/azurecmdlets">Windows Azure Service Management PowerShell Cmdlets</a> that enable a scripted deployment of your application. Lastly, the Windows Azure Platform Management Portal provides the means to deploy and manage your service using only your browser. For more information about deployment, see the <b>Windows Azure Deployment</b> lab in this training kit.</p>
+        <p>In this task, you deploy the application to the staging environment using the Management Portal but first, you generate the service package using Visual Studio.</p>
+        <ol>
+          <li>If it is not already open, launch Visual Studio<b> </b>as administrator from<b> Start | All Programs | Microsoft Visual Studio 2010 </b>by right clicking the <b>Microsoft Visual Studio 2010 </b>shortcut and choosing <b>Run as administrator</b>. </li>
+          <li>If the <b>User Account Control</b> dialog appears, click <b>Continue</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open</b> and then <b>Project/Solution</b>. In the <b>Open Project</b> dialog, browse to <b>Ex3-WindowsAzureDeployment </b>in the <b>Source </b>folder<b> </b>of the lab and choose the folder for the language of your preference (Visual C# or Visual Basic). Select <b>Begin.sln</b> in the <b>Begin</b> folder and click <b>Open</b>. Alternatively, you may continue with the solution that you obtained after completing the previous exercise.</li>
+          <li>To configure the storage before deploying the service, open <b>ServiceConfiguration.cscfg</b> file located in <b>GuestBook</b> service. Replace the placeholder labeled [YOUR_ACCOUNT_NAME] with the <b>Storage Account Name</b> that you chose when you configured the storage account in Task 1. If you followed the recommendation, the name should follow the pattern <b><i>&lt;yourname&gt;guestbook</i></b>, where <i>&lt;yourname&gt;</i> is a unique name. Make sure to replace both instances of the placeholder, one for the <i>DataConnectionString</i> and the second one for the <i>Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString</i>.</li>
+          <li>Next, replace the placeholder labeled [YOUR_ACCOUNT_KEY] with the <b>Primary Access Key</b> value that you recorded earlier, when you created the storage account in Task 1. Again, replace both instances of the placeholder, one for each connection string.<p><img src="images\25201977-08f6-47a7-ba84-b54793128925.png" /></p><p><b>Figure 40</b><br /><i>Configuring the storage account connection strings</i></p><p /></li>
+          <li>Generate the package to deploy to the cloud. To do this, right-click the <b>GuestBook</b> cloud project and select <b>Publish</b>. In the <b>Deploy Windows Azure project</b> dialog, select the option labeled <b>Create Service Package Only</b> and then click <b>OK</b>.<p>After Visual Studio builds the project and generates the service package, Windows Explorer opens with the current folder set to the location where the generated package is stored.</p><p><img src="images\ec581ee0-9111-4c12-8b37-35574394fa49.png" /></p><p><b>Figure 41</b><br /><i>Creating a service package in Visual Studio</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Although the procedure is not shown here, the Publish Cloud Service feature in the Windows Azure Tools enables deployment of your service package directly from Visual Studio. To use this feature, you need to configure a set of credentials that you use to authenticate access to the management service using a self-issued certificate that you upload to the Management Portal.</td></tr></table><p /></div><br /></li>
+          <li>Now, switch back to the browser window and the Management Portal.</li>
+          <li>At the portal, select the hosted service that you created in the previous step and then click <b>New Staging Deployment</b> on the ribbon. <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>A hosted service is a service that runs your code in the Windows Azure environment. It has two separate deployment slots: staging and production. The staging deployment slot allows you to test your service in the Windows Azure environment before you deploy it to production.</td></tr></table><p /></div><br /><p><img src="images\0ac840c2-167f-403f-9f1a-f17f9d864189.png" /></p><p><b>Figure 42</b><br /><i>Hosted service summary page</i></p><br /></li>
+          <li>In the <b>Create a new Deployment</b> dialog, to select a <b>Package location</b>, click <b>Browse Locally</b>, navigate to the folder where Visual Studio generated the package in Step 4 and then select <b>GuestBook.cspkg</b>. </li>
+          <li>Now, to choose the <b>Configuration File</b>, click <b>Browse Locally</b> and select <b>ServiceConfiguration.cscfg</b> in the same folder that you used in the previous step.</li>
+          <li>
+            <div class="alert">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th align="left">
+                    <img class="note" src="../local/note.gif" />Note:</th>
+                </tr>
+                <tr>
+                  <td>The <i>.cscfg</i> file contains configuration settings for the application, including the instance count that you will update later in the exercise.</td>
+                </tr>
+              </table>
+              <p />
+            </div>
+            <br />
+          </li>
+          <li>Finally, for the <b>Deployment name</b>, enter a label to identify the deployment; for example, use <b>v1.0</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The portal displays the label in its user interface for staging and production, allowing you to identify the version currently deployed in each environment.</td></tr></table><p /></div><br /><p><img src="images\bf512bca-c56d-4d66-bc33-ef6cf145d363.png" /></p><p><b>Figure 43</b><br /><i>Configuring the service package deployment</i></p><br /></li>
+          <li>Click <b>OK</b> to start the deployment. Notice that the portal displays a warning message when you do this. Click <b>See more details</b> to review and understand the message. <img src="images\21385767-36e5-4a8b-a5a7-fed84f3337a6.png" /><p><b>Figure 44</b><br /><i>Reviewing the warnings</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In this particular case, the warning indicates that only a single instance is being deployed for at least one of the roles. This is not recommended because it does not guarantee the service’s availability. In the next task, you will increase the number of instances to overcome this issue.<br /><img src="images\23033dc2-6dd2-4ab9-b172-b59c98471088.png" /></td></tr></table><p /></div><br /></li>
+          <li>Click <b>Yes</b> to override and submit the deployment request. Notice that the package begins to upload and that the portal shows the status of the deployment to indicate its progress. <p><img src="images\b75f6118-72c5-4e38-b3a6-6651c61ec8de.png" /></p><p><b>Figure 45</b><br /><i>Uploading a service package to the Windows Azure Platform Management Portal</i></p><br /></li>
+          <li>Wait until the deployment process finishes, which may take several minutes. At this point, you have already uploaded the package and it is in a <b>Ready</b> state. Notice that the portal assigned a <b>DNS name</b> to the deployment that includes a unique identifier. Shortly, you will access this URL to test the application and determine whether it operates correctly in the Windows Azure environment, but first you need to configure it.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>During deployment, Windows Azure analyzes the configuration file and copies the service to the correct number of machines, and starts all the instances. Load balancers, network devices and monitoring are also configured during this time.</td></tr></table><p /></div><br /><p><img src="images\9206bf1d-a641-43fa-9bef-0434ea79108c.png" /></p><p><b>Figure 46</b><br /><i>Package successfully deployed and ready</i></p></li>
+        </ol>
+        <br />
+        <a name="_Toc240253408" href="#">
+          <span />
+        </a>
+        <a name="_Toc266620945" href="#">
+          <span />
+        </a>
+        <a name="_Toc278816313" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Configuring the Application to Increase the Number of Instances</b>
+        </p>
+        <p>Before you can test the deployed application, you need to configure it. In this task, you define the storage account settings for the application.</p>
+        <ol>
+          <li>In <b>Hosted Services</b>, select your GuestBook service and click <b>Configure</b> on the ribbon.<p><img src="images\1e905869-5328-4443-8c27-9ee1ad49118d.png" /></p><p><b>Figure 47</b><br /><i>Configuring application settings</i></p><br /></li>
+          <li>In the <b>Configure Deployment</b> dialog, select the option labeled <b>Edit current configuration</b>, locate the <b>Instances</b> element inside the <b>GuestBook_WebRole</b> configuration and change its <b>count</b> attribute to <i>2</i>. Do the same for the <b>GuestBook_WorkerRole</b><i>c</i>onfiguration to also increase its instance count to <i>2</i>.</li>
+          <p>
+            <img src="images\3c3e5aa9-f94f-46af-842f-2597d1d8bc9c.png" />
+          </p>
+          <p>
+            <b>Figure 48</b>
+            <br />
+            <i>Configuring the Instances count</i>
+          </p>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>The configuration is simply an XML document that contains the value of the settings declared in the service definition file. Its initial content is determined by the <b>ServiceConfiguration.cscfg</b> file that you uploaded earlier, when you deployed the package in Task 2.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>The <b>Instances</b> setting controls the number of roles that Windows Azure starts and is used to scale the service. For a token-based subscription—currently only available in countries that are not provisioned for billing—this number is limited to a maximum of two instances. However, in the commercial offering, you can change it to any number that you are willing to pay for.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Click <b>Save</b> to update the configuration and wait for the hosted service to apply the new settings. <p><img src="images\1a66fe4a-c68e-4edd-84ce-1dc07a4f73ec.png" /></p><p><b>Figure 49</b><br /><i>Updating the number of role instances</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The portal displays a legend "Updating deployment..." while the settings are applied.</td></tr></table><p /></div></li>
+        </ol>
+        <br />
+        <a name="_Toc240253409" href="#">
+          <span />
+        </a>
+        <a name="_Toc266620946" href="#">
+          <span />
+        </a>
+        <a name="_Toc278816314" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Testing the Application in the Staging Environment</b>
+        </p>
+        <p>In this task, you run the application in the staging environment and access its public endpoint to test that it operates correctly.</p>
+        <ol>
+          <li>In <b>Hosted Services</b>, select your GuestBook service and then click the link located in the right pane under <b>DNS name.</b><p><img src="images\220365c2-721d-4ea1-8572-99be18e62d9f.png" /></p><p><b>Figure 50</b><br /><i>Running the application in the staging environment</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The link shown for DNS name has the form <i>&lt;guid&gt;.cloudapp.net</i>, where <i>&lt;guid&gt;</i> is some random identifier. This is different from the address where the application will run once it is in production. Although the application executes in a staging area that is separate from the production environment, there is no actual physical difference between staging and production – it is simply a matter of where the load balancer is connected. </td></tr></table><p /></div><br /></li>
+          <li>If you wish, you may test the application by signing the guest book and uploading an image.<p><img src="images\8a3b1dc8-7088-4abb-a5bd-2b53c5a63f59.png" /></p><p><b>Figure 51</b><br /><i>Application running in the staging environment</i></p></li>
+        </ol>
+        <br />
+        <a name="_Toc240253410" href="#">
+          <span />
+        </a>
+        <a name="_Toc266620947" href="#">
+          <span />
+        </a>
+        <a name="_Toc278816315" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Promoting the Application to Production</b>
+        </p>
+        <p>Now that you have verified that the service is working correctly in the staging environment, you are ready to promote it to final production. When you deploy the application to production, Windows Azure reconfigures its load balancers so that the application is available at its production URL.</p>
+        <ol>
+          <li>In <b>Hosted Services</b>, select your GuestBook service and then click <b>Swap VIP</b> on the ribbon.<p><img src="images\b8aa106a-91bd-4167-9857-fc43f2ec6555.png" /></p><p><b>Figure 52</b><br /><i>Promoting the application to the production slot</i></p><br /></li>
+          <li>On the <b>Swap VIPs</b> dialog, click <b>OK</b> to swap the deployments between staging and production.<p><img src="images\0621807e-0bf5-426b-b3cd-d749ebf43559.png" /></p><p><b>Figure 53</b><br /><i>Promoting the application to the production deployment</i></p><br /></li>
+          <li>Wait for the promotion process to complete, which typically takes a few seconds.<a name="_GoBack" href="#"><span /></a><p><img src="images\344664ed-8b80-4df5-9e14-862bd2b7adda.png" /></p><p><b>Figure 54</b><br /><i>Application successfully deployed to production</i></p><br /></li>
+          <li>Click the <b>DNS name</b> link to open the production site in a browser window and notice the URL in the address bar.<p><img src="images\f295aa6a-d879-416d-81bd-81542a5da33b.png" /></p><p><b>Figure 55</b><br /><i>Application running in the production environment</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>If you visit the production site shortly after its promotion, the DNS name might not be ready. If you encounter a DNS error (404), wait a few minutes and try again. Keep in mind that Windows Azure creates DNS name entries dynamically and that the changes might take few minutes to propagate.</td></tr></table><p /></div><br /></li>
+          <li>Even when a deployment is in a suspended state, Windows Azure still needs to allocate a virtual machine (VM) for each instance and charge you for it. Once you have completed testing the application, you need to remove the deployment from Windows Azure to avoid an unnecessary expense. To remove a running deployment, go to <b>Hosted Services</b>, select the deployment slot where the service is currently hosted, staging or production, and then click <b>Stop</b> on the ribbon. Once the service has stopped, click <b>Delete</b> on the ribbon to remove it.</li>
+        </ol>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

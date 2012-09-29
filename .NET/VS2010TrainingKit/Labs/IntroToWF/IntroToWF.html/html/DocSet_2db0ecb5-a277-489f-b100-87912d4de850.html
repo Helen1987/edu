@@ -1,0 +1,203 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Welcome to Windows Workflow Foundation 4 (WF) Microsoft's programming model, engine and tools for quickly building workflow-enabled applications. This release of WF in .NET Framework 4 changes several development paradigms from previous versions. Workflows are now easier to create, execute, and maintain.</p>
+        <p>In this lab, you will get to know the basics of creating, hosting and running a workflow. This lab is also an introduction to the new workflow authoring constructs in the .NET Framework 4 and Visual Studio 2010, including the new Workflow Designer, expressions, variables and arguments. Additionally, you will explore the use of some basic built-in activities, create custom activities, activity designers and even re-host the workflow designer in a WPF application.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\335db6bc-5531-490a-96d6-81c372134df0.png" />
+                <b>  Do I have to do all the exercises?</b>
+                <br />This lab is long.  To do all of it will probably take close to 2 hours.  This lab has been designed so that each exercise is independent of the others.  Just open the solution found under the Begin folder for the exercise.  For example, if you wanted to learn how to create a custom activity designer you would start with Exercise 9 and open the solution from the <b>Source\Ex9-ActivityDesigner\Begin </b>folder</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn:</p>
+        <ul>
+          <li>How to create a sequential workflow using the designer and XAML or, alternatively, using plain C# or Visual Basic code</li>
+          <li>How to run and test the sequential workflow using the <b>WorkflowApplication</b> and <b>WorkflowInvoker</b> classes</li>
+          <li>How to pass <b>InArguments</b> and receive <b>OutArguments</b> from a workflow</li>
+          <li>How <b>Expressions</b> and <b>Variables</b> are used</li>
+          <li>How to use the <b>WriteLine</b>, <b>If</b>, <b>TryCatch</b>, <b>Catch&lt;T&gt; </b>and <b>Throw</b> activities</li>
+          <li>How to load and run an activity from a <b>xaml</b> file</li>
+          <li>How to create an activity designer</li>
+          <li>How to host the <b>WorkflowDesigner</b> in your own application</li>
+        </ul>
+        <a name="_Setup" href="#">
+          <span />
+        </a>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <a name="_Toc211161219" href="#">
+          <span />
+        </a>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>Microsoft .NET Framework 4</li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the Dependency Checker. To make sure that everything is correctly configured, follow these steps:</p>
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br />For convenience, much of the code you will be managing along this hands-on lab is available as Visual Studio code snippets.<br />To use code snippets with <b>XAML</b>, right-click on the xaml file, select <b>Open With</b> and choose <b>XML Editor</b>. Then you can insert <b>XML</b> snippets into the file.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab comprises the following exercises:</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>Note</b>: each exercise builds on the one before it but you can start at any point in the lab by opening the solution in the Begin folder for the exercise.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Hello Workflow</li>
+          <li>Refactoring Workflow</li>
+          <li>The CodeActivity</li>
+          <li>Dynamic Workflows with XAML</li>
+          <li>Testing Workflows</li>
+          <li>WorkflowApplication</li>
+          <li>Adding If/Else Logic</li>
+          <li>Error Handling</li>
+          <li>Custom Activities and Designers</li>
+          <li>Hosted Designer</li>
+        </ol>
+        <p>Estimated time to complete this lab: <b>120 minutes</b>.</p>
+        <a name="_Toc166647553" href="#">
+          <span />
+        </a>
+        <a name="_Toc172462715" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141329" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388947" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412383" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Starting Materials</h3>
+        <ul>
+          <li><b>Visual Studio solutions. </b>Depending on the exercise you will find Visual Studio solutions for C# and Visual Basic that you can use as starting point for the exercises.</li>
+        </ul>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\b3eb7398-2291-48ca-ba80-4282214a5150.png" />
+                <b>  What if I get stuck?</b>
+                <br />The source code that accompanies this hands-on lab includes an end folder where you can find a Visual Studio solution with the code that you would obtain if you complete the steps in each exercise. You can use this solution as a guide if you need additional help working through the exercises.<br />Remember to build the solutions before opening any file using the workflow designer.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_a639458a-1047-4306-bf89-2c1c1d36fad2.html">Exercise 1: Hello Workflow</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

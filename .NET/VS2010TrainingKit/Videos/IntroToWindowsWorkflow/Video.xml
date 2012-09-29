@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Version>1.0</Version>
+  <Author>
+    <Name>RoJacobs</Name>
+  </Author>
+  <Id>IntroToWindowsWorflow</Id>
+  <Title>Introduction to Windows Workflow in .NET 4</Title>
+  <Description>
+    Windows Workflow in .NET 4 (WF4) is an all new workflow engine.  In this episode I'm going to take you through the hands on lab from the Visual Studio 2010 training course.
+  </Description>
+  <Abstract>
+    Windows Workflow in .NET 4 (WF4) is an all new workflow engine.  In this episode I'm going to take you through the hands on lab from the Visual Studio 2010 training course.
+  </Abstract>
+  <Url>
+    http://ecn.channel9.msdn.com/o9/ch9/9/6/5/6/0/5/IntroToWF4Lab_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/Endpoint/endpointtv-Screencast-Lab-Introduction-to-Workflow-in-NET-4/Player/" />
+  </CustomProperties>
+</Video>

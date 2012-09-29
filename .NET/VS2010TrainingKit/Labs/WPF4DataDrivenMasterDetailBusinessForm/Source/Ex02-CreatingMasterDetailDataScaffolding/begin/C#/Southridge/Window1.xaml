@@ -1,0 +1,26 @@
+﻿<Window x:Class="Southridge.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="600" Width="800" xmlns:my="clr-namespace:Southridge" Loaded="Window_Loaded">
+    <Window.Resources>
+        <my:SouthridgeDataSet x:Key="SouthridgeDataSet" />
+        <CollectionViewSource x:Key="listingsViewSource" Source="{Binding Path=Listings, Source={StaticResource SouthridgeDataSet}}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource listingsViewSource}">
+        <Grid DataContext="{StaticResource listingsViewSource}" HorizontalAlignment="Left" Margin="23,30,0,0" Name="grid1" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="MLS:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="47,3,0,3" Name="mLSTextBox" Text="{Binding Path=MLS}" VerticalAlignment="Center" Width="120" />
+            <Label Content="Title:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="47,3,0,3" Name="titleTextBox" Text="{Binding Path=Title}" VerticalAlignment="Center" Width="120" />
+            <Label Content="Price:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="47,3,0,3" Name="priceTextBox" Text="{Binding Path=Price}" VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <Image Height="150" HorizontalAlignment="Left" Margin="224,34,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="200" Source="{Binding Path=PrimaryPhoto}" />
+    </Grid>
+</Window>

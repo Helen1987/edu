@@ -1,0 +1,188 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 11: Deploying the Web Application" />
+      <MSHelp:RLTitle Title="Exercise 11: Deploying the Web Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 11: Deploying the Web Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 11: Deploying the Web Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will deploy the Routing we application project using Windows Server AppFabric; a set of extensions to the Windows Application Server and the Windows Process Activation Service (WAS). The goal of Windows Server AppFabric is to simplify the deployment, configuration, management, and monitoring of Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) services built on .NET 4.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\776e802f-93a3-4882-bfd3-8ec731f7446a.png" />   Is AppFabric installed?<br />AppFabric is <b>not installed</b> as a part of the .NET Framework 4 installation. It comes as a separate install delivered through a Windows Update package for Windows that you can download from <a href="http://go.microsoft.com/fwlink/?LinkID=169435">http://go.microsoft.com/fwlink/?LinkID=169435</a><br /><a name="_GoBack" href="#"><span /></a>To determine if AppFabric is installed open IIS Manager. If AppFabric is installed when you open the Default Web Site you will see <b>AppFabric</b> at the top of the features window.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc249317779" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957353" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 10. Alternatively, you can follow the following steps to begin with Exercise 11.</p>
+        <ol>
+          <li>Open the starting solution for Exercise 11 located under the <b>Source\Ex11-DeployWebApplication\Begin</b><b>(choosing the folder that matches the language of your preference.)</b> Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc246389214" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310999" href="#">
+          <span />
+        </a>
+        <a name="_Toc246743529" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317780" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957354" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating the Deployment Package</b>
+        </p>
+        <p>In this task, you will use the Web Deployment feature inside Visual Studio to create a deployment package.</p>
+        <ol>
+          <li>In the Solution Explorer right-click the <b>RouterService</b> project and select <b>Package/Publish Settings</b> set the options as follows.</li>
+          <li>Items to deploy using FTP, FPSE, File System or Web Deployment Tool Section:<ol><li><b>Only files needed to run this application</b><p><img src="images\cb233f38-83f9-4d95-adde-5f7c6f17bebf.png" /></p><p><b>Figure 37</b><br /><i>Items to deploy</i></p><br /></li></ol></li>
+          <li>Web Deployment Package Settings section:<ol><li>Create deployment package as a ZIP file</li><li>Location: <b>obj\Debug\Package\RouterService.zip</b></li><li>IIS Web Site/Application name to be used on the destination server:  <b>Default Web Site/RouterService</b><p><img src="images\3b762f70-d752-40da-8e40-c059b9f1002b.png" /></p><p><b>Figure 38</b><br /><i>Web Deployment Package Settings</i></p><br /></li></ol></li>
+          <li>Press <b>CTRL+SHIFT+S</b> to save all files – this will save your changes.</li>
+          <li>In the <b>Solution Explorer</b> right-click the <b>RouterService</b> project, and select the <b>Build Deployment</b><b>Package </b>action. You should see <b>Publish succeeded</b> as the status in the bottom left corner when the action has completed.</li>
+        </ol>
+        <a name="_Toc246389215" href="#">
+          <span />
+        </a>
+        <a name="_Toc246743530" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317781" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957355" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Deploying the Package</b>
+        </p>
+        <ol>
+          <li>In this task, you will use the Web Deployment feature inside IIS Manager to deploy the package to the local web server.</li>
+          <li>Open Internet Information Services (IIS) Manager using the Start menu.</li>
+          <li>Expand the <b>Server</b> node, expand <b>Sites</b>, and right-click the <b>Default Web Site</b>. Select <b>Deploy</b> / <b>Import Application</b>.<p><img src="images\6a1c7faf-6606-4ea4-ad50-7acfe6bb5c7b.png" /></p><br /><p><b>Figure 39</b><br /><i>Import Application in the IIS Manager</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\076d52e1-05f0-40bb-90a0-f07ea746d1d7.png" /><b>Watch Out</b><br />If IIS was not enabled at the time of Visual Studio 2010 installation you may need to install ASP.NET into IIS by running the following command from an Administrator Visual Studio 2010 command prompt <b>aspnet_regiis.exe -iru</b><br />If you don’t see a Deploy menu option it could mean that IIS Web Deployment Tool is not installed or may need to be reconfigured. To fix this you should do the following<br />Download the IIS Web Deployment tool from <a href="http://www.iis.net/extensions/WebDeploymentTool">http://www.iis.net/extensions/WebDeploymentTool</a><br />Start the setup<br />If setup shows you the Change / Repair / Remove screen select <i>Change</i> and install the IIS Manager UI module.</td></tr></table><p /></div><br /></li>
+          <li>For <b>Package path</b> browse to the location where the package was created. By default this was in the <b>obj\Debug\Package</b> folder for the <b>RouterService</b> project. Select the <b>RouterService.zip</b> file.<p><img src="images\8d0cac22-d207-473e-8e2a-d6a95bdcf44e.png" /></p><p><b>Figure 40</b><br /><i>Select the package</i></p><br /></li>
+          <li>Click <b>Next</b> 3 times to use the defaults on the rest of the <b>Import Application Package</b> wizard pages. When asked if you want to run this application in the default .NET 4 application pool click <b>Yes</b>.</li>
+          <li>Click <b>Finish</b> when the wizard has finished.</li>
+        </ol>
+        <a name="_Toc246389217" href="#">
+          <span />
+        </a>
+        <a name="_Toc244311000" href="#">
+          <span />
+        </a>
+        <a name="_Toc246743532" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317782" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957356" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Changing the Client Application Configuration</b>
+        </p>
+        <p>While you were developing the solution, you were using the Visual Studio Development Web Server. Now that you deploy your solution in the IIS environment, you are going to use a different endpoint for the Router Service.</p>
+        <ol>
+          <li>Open the <b>app.config</b> file from the <b>CalculatorClient</b> project and modify the <b>RouterService</b> endpoint address with the following configuration.<p><i>(Code Snippet - What is new in WCF4 Lab – RouterService endpoint XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>App.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>  &lt;endpoint address="http://localhost/RouterService/Router.svc/general"            binding="basicHttpBinding"            contract="CalculatorServiceReference.ICalculatorService"            name="RouterService" /&gt;&lt;/client&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_a39779ca-5d51-4b6f-afa8-10e5d8e59c09.html">Exercise 11: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

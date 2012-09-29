@@ -1,0 +1,142 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Verification" />
+      <MSHelp:RLTitle Title="Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ADO.NET Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In order to verify that you have correctly performed all steps of the exercises, proceed as follows:</p>
+        <a name="_Toc246302690" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307195" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Verification 1</h3>
+        <p>In this verification you will use a web browser to consume the Data Service and check its XML response.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> The easiest way to try a data service is to simply access it using a web browser. While this is probably not the way you will ultimately use the data service (it is more likely that a program will interact with it), it is an easy way to understand how requests work, what results look like, and other details surrounding the implementation of the service.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>To interact with the Data Service you need to start a new instance of the <b>WebSite</b> project. To do this, in <b>Solution Explorer</b> right-click the <b>WebSite</b> project, point to <b>Debug</b> and select <b>Start New Instance</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If the dialog <b>Debugging Not Enabled</b> appears, select <b>Modify the Web.config file to enable debugging </b>and click <b>OK</b>.</td></tr></table><p /></div><br /></li>
+          <li>Navigate to<b><a href="http://localhost:50000/AdventureWorks.svc">http://localhost:50000/AdventureWorks.svc</a></b>. You will notice that the XML response of the data service is a list of entity-sets. The entity-sets in the Entity Data Model (EDM) style represent the database tables that are exposed by the data service. The output will be similar to what is shown below.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The XML document returned by default is an Atom service document since the default serialization used by the data service is Atom.</td></tr></table><p /></div><br /><p><img src="images\43324761-07e1-44cf-afc7-a3b063ecf3de.png" /></p><p><b>Figure 11</b><br /><i>Data Service XML response</i></p></li>
+          <br />
+          <li>To browse a specific product, use the following address in the web browser <a href="http://localhost:50000/AdventureWorks.svc/Product(680)"><b>http://localhost:50000/AdventureWorks.svc/Product(680)</b></a> (where 680 is the product id). The following output should appear.<p><img src="images\94c194d3-d9e1-4407-bbca-b8d1e2c1cf81.png" /></p><p><b>Figure 12</b><br /><i>Data Service XML response for a specific product</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If the browser displays a message saying it cannot display the feed, try turning off the feed reading view. In Internet Explorer, this option is located under <b>Tools | Internet Options | Content </b>Tab<b> | Feeds Section | Settings</b>, uncheck <b>Turn on feed reading view</b>.</td></tr></table><p /></div><br /></li>
+          <li>In Visual Studio press <b>Shift</b> + <b>F5 (C#) or Ctrl + Alt + Break (Visual Basic)</b> to stop debugging.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The WCF Data Services framework implements a data addressing scheme that uses URIs. It is based on the Entity Data Model (EDM) specification for data types and data sets. For building <b>more complex requests</b> to the service using URIs check <a href="http://msdn.microsoft.com/en-us/library/cc668786.aspx">Simple Addressing Scheme for Data with Uniform URLs</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc246302691" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307196" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Verification 2</h3>
+        <p>In this verification you will use the WPF application to retrieve a list of products from the database and perform an update of a product’s details.</p>
+        <ol>
+          <li>Set the <b>UserInterface</b> project as <b>StartUp</b> project. To do this, right-click <b>UserInterface</b> project in <b>Solution Explorer</b> and select <b>Set as StartUp Project</b>.</li>
+          <li>Press <b>F5</b> to run the application. The following window should appear. You can list, create, update, and delete products from this window.<p><img src="images\412cdfef-86cc-4748-87a3-c6abec45441f.png" /></p><p><b>Figure 13</b><br /><i>Application main window</i></p></li>
+          <br />
+          <li>On the <b>Product Category</b> combo select <b>Brakes</b> and click<b> Search. </b>The application will retrieve from the data service all products from the <b>Brakes</b> category and display them in the grid.<p><img src="images\fe1d355c-f5ac-461b-ae07-7d6c921b76de.png" /></p><p><b>Figure 14</b><br /><i>Brakes category products</i></p></li>
+          <br />
+          <li>Edit the first product on the list details. To do this, double-click the first product on the product list.<p><img src="images\c91ae742-1994-43d4-a5da-b337a8582c11.png" /></p><p><b>Figure 15</b><br /><i>Edit Product Details</i></p></li>
+          <br />
+          <li>Change the product color from <b>Silver</b> to <b>Gold </b>and click<b> Save. </b>The application will update the product entity and the record will be stored in the database.<p><img src="images\3c46d8bf-f823-4726-8ed0-76143b3b46b3.png" /></p><p><b>Figure 16</b><br /><i>Product Updated</i></p><br /></li>
+          <li>You can also try the <i>creating and deleting</i> the operations.</li>
+          <li>Close the application to end this verification.</li>
+        </ol>
+        <a name="_Toc236650885" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284154" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_b38747ec-57dd-4315-9d0c-e8cf3493106a.html">Exercise 2: Consuming WCF Data Services Using ASP.NET Ajax Library Beta</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

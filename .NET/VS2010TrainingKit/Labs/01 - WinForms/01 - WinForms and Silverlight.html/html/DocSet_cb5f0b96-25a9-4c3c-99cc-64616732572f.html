@@ -1,0 +1,119 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Exploring a Windows Forms Application" />
+      <MSHelp:RLTitle Title="Exercise 1: Exploring a Windows Forms Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Exploring a Windows Forms Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating a Windows Forms Application to Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Exploring a Windows Forms Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll open an existing Visual Studio 2010 solution and walk through code found in a WCF and Windows Forms project.  The main goal of the exercise is to get acquainted with an existing Windows Forms application and supporting code to better understand what code can be re-used during the migration to Silverlight. Throughout the exercise you'll view data access code that relies on Entity Framework 4, examine a WCF service contract and run the Windows Forms project to explore the functionality it offers. To get started, follow the steps below.</p>
+        <ol>
+          <li>Open Visual Studio 2010 and select <b>File  Open  Project/Solution</b> from the menu.</li>
+          <li>Open the following Visual Studio solution file:<table style=""><tr valign="top"><th><p>Language</p></th><th><p>[Lab Files Location]</p></th></tr><tr valign="top"><td><p>C#</p></td><td><p>/MigratingToSilverlight/Starting Point/C#/CustomerViewer/CustomerViewer.sln</p></td></tr><tr valign="top"><td><p>Visual Basic</p></td><td><p>/MigratingToSilverlight/Starting Point/VB/CustomerViewer/CustomerViewer.sln</p></td></tr></table></li>
+          <li>The following projects are available in the solution:<ul><li><b>CustomerService.Model</b> – Contains entities and data repository classes used to access an AdventureWorks LT database.</li><li><b>CustomersService</b> – A WCF service application that exposes entities to various applications.</li><li><b>CustomerViewer </b>– A Windows Forms project that consumes data from a WCF service.</li><li><b>CustomerViewer.Web</b> – An ASP.NET Web Forms project that uses jQuery to make RESTful calls to a WCF service.</li></ul></li>
+          <p>
+            <img src="images\16ac79de-2344-47b5-a688-e47ef60b3d27.png" />
+          </p>
+          <p>
+            <b>Figure 2</b>
+            <br />
+            <i>Solution explorer view</i>
+          </p>
+          <li>Right-click on <b>CustomerService.svc</b> in the <b>CustomersService</b> project and select <b>View in Browser</b> from the menu. This will start a local WCF server and show a test page.</li>
+          <li>Back in Visual Studio, right-click on the <b>CustomerViewer</b> project and select <b>Set as StartUp Project</b> from the menu.</li>
+          <li>Run the application by pressing F5. The first time the application runs there will be short delay before data is loaded.</li>
+          <li>Once data loads, notice that customers appear in the <b>ComboBox</b>. Once a customer is selected the details are shown in the form allowing customer data to be updated or deleted.</li>
+          <li>Back in Visual Studio, right-click on <b>CustomerForm.cs </b>or <b>CustomerForm.vb</b> (depending upon your language) and select <b>View Code</b> from the menu. Take a moment to explore the code and note the following:<ol><li>A WCF service proxy is used to call a service that supplies customer data</li><li>Control data bindings are defined in the <b>SetBindings</b> method</li><li>Customer data can be updated and deleted through interactions with the WCF service</li></ol></li>
+          <li>Locate the <b>CustomerService.Model</b> project and double-click the <b>AdventureWorksLT.edmx</b> file to see the Entity Framework 4 model that's exposed. The entity model contains several entities including Customer which is used by the Windows Forms application.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> DataSets are not used in the application since data will exposed through a Web Service and consumed by many different types of clients. The CustomerService.Model project contains strongly-typed objects that work well in a service-oriented environment. Strongly-typed objects also fit in well with Silverlight applications where the DataSet class and related classes such as DataTable aren't supported. By using a Web Service to expose strongly-typed data, many different types of applications can interact with the data regardless of technology or framework.</td></tr></table><p /></div></li>
+          <li>Open <b>CustomerRepository</b> in the <b>Repository</b> folder and take a moment to look through the code that interacts with the entity model (you might also want to look at the base class named RepositoryBase). This class is responsible for all communication with Entity Framework and acts as a re-useable repository layer in the application.</li>
+          <li>Locate the <b>CustomerService</b> project and view <b>ICustomerService</b> in the editor to see the operations it exposes. The operations are used to load Customer objects and handle update and delete operations. The Windows Forms project currently uses a WCF service proxy object to communicate with the different service operations and the Silverlight project will need to call the same service. Service calls are forwarded to the CustomerRepository class examined earlier.</li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> WCF services work well in environments where data must be exposed to different types of clients without requiring a specific technology or framework. The application shown in this lab uses WCF services to promote data re-use, allow different types of clients to consume data, and provide a standards-compliant way to access data.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a Global Action Filter" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a Global Action Filter" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a Global Action Filter</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Global and Dynamic Action Filters</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a Global Action Filter</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <a name="_Toc269992844" href="#">
+          <span />
+        </a>
+        <p>In this exercise, you will learn how to add a global filter that will perform certain logic before displaying each view. In order to do that, you will register as global the custom filter for application logging created in ASP.NET MVC Custom Action Filter Hands-on Lab.</p>
+        <br />
+        <a name="_Toc282146887" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Registering a Filter as Global</b>
+        </p>
+        <p>In this task, you will register a global filter to manage your site logging at a global level. In order to do that, you will add <b>ActionLogFilterAttribute </b>filter into MVC <b>GlobalFilterCollection</b> at <b>Global.asax.cs</b>.</p>
+        <ol>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at Source\Ex01-Global Action Filter\Begin.</li>
+          <li>Open <b>Global.asax.cs </b>at project root. In the method <b>RegisterGlobalFilters </b>, add a new security filter to the <b>filters</b> collection:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public static void RegisterGlobalFilters(GlobalFilterCollection filters){    filters.Add(new HandleErrorAttribute());<b>    filters.Add(new ActionLogFilterAttribute());</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>the previous implementation of<b> RegisterGlobalFilters </b>(with the <b>HandleErrorAttribute</b> filter only) is the one included in an MVC 3 application by default. In this task, you are only adding an additional filter, <b>ActionLogFilterAttribute.</b></td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269992845" href="#">
+          <span />
+        </a>
+        <a name="_Toc282146888" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the Application</b>
+        </p>
+        <ol>
+          <li>Press <b>F5 </b>to run the application.</li>
+          <li>Browse to <b>/ActionLog</b> View. You will see that the initial activities have been tracked.<p><img src="images\f6b693ad-6e59-47ff-a140-5206c2dc5dbf.png" /></p><p><b>Figure 1</b><br /><i>ActionLogView: Initial site activity was tracked</i></p><br /></li>
+          <li>Click on <b>Admin</b> to load the <b>LogOn</b> View.</li>
+          <li>Browse <b>/ActionLog </b>view again to see the administration site tracked. If you see the same table as before, please refresh the page.<p><img src="images\17227754-d3a7-4576-818a-a94ad17e897b.png" /></p><p><b>Figure 2</b><br /><i>ActionLogView: Recent activities logged</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_ce9887a4-d882-48f8-964b-29a92761c00a.html">Exercise 2: Creating a Global Dynamic Filter</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

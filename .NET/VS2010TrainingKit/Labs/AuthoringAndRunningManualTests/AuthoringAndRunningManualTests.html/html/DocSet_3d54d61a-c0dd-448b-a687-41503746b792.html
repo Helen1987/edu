@@ -1,0 +1,167 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Authoring a Manual Test Plan" />
+      <MSHelp:RLTitle Title="Exercise 1: Authoring a Manual Test Plan" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Authoring a Manual Test Plan</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Authoring and Running Manual Tests using Microsoft Test Manager 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Authoring a Manual Test Plan</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to create a manual test plan and populate it with steps. The plan can later be run to confirm the expected behavior of your software.</p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Test Manager from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Test Manager 2010</b>. This is a new tool dedicated to manual software testing that has been built from the ground up for Visual Studio 2010.</li>
+          <li>In this lab we’re going to focus on creating a new manual test case and running it. We will focus on the other aspects of managing test cases and test plans in another lab.</li>
+          <li>Select the <b>Plan</b> activity button at the top of the Test Manager window.</li>
+          <li>In the left pane, highlight <b>End-to-End Tests</b> and click the <b>New</b> button in the right pane.<p><img src="images\ac3b1c1d-1575-4743-af28-0b140d59da80.png" /></p><p><b>Figure 1</b><br /><i>Creating a new manual test</i></p></li>
+          <li>In the <b>Title</b> box, type “Confirm that receipt number appears after successful order”. Alternatively, you can open the “New Test Case.txt” file from the <b>Code Snippets</b> folder on the desktop of the VM and copy and paste the title from there.</li>
+          <li>At this point, we’re ready to add steps to this manual test. Each step includes an <b>Action</b>, which describes the action the tester needs to perform. Optionally, a step can include an <b>Expected Result</b>, which describes the expected result of the given action.</li>
+          <li>In the <b>Steps</b> panel, create a step for each of the following <b>Actions</b>, only one of which has an Expected Result. See the next paragraph for an alternate, faster way to add the actions.<table style=""><tr valign="top"><th><p>Action</p></th><th><p>Expected Result</p></th></tr><tr valign="top"><td><p>Open http://WIN-GS9GMUJITS8:8000</p></td><td><br /></td></tr><tr valign="top"><td><p>Click Model Airplanes</p></td><td><br /></td></tr><tr valign="top"><td><p>Click Northwind Trader</p></td><td><br /></td></tr><tr valign="top"><td><p>Click Add to Cart</p></td><td><br /></td></tr><tr valign="top"><td><p>Click Checkout</p></td><td><br /></td></tr><tr valign="top"><td><p>Enter @First, @Last, @Email, @Address, @City, @Country, @State, @PostalCode</p></td><td><br /></td></tr><tr valign="top"><td><p>Click Review Order</p></td><td><br /></td></tr><tr valign="top"><td><p>Click Place Order</p></td><td><br /></td></tr><tr valign="top"><td><p>Confirm order page has receipt #</p></td><td><p>Receipt # should appear at top of order confirmation page</p></td></tr><tr valign="top"><td><p>Close Browser</p></td><td><br /></td></tr></table></li>
+          <li>An alternative method to manual entry of each step is to copy and paste all steps from the “New Test Case.txt” file to add them all at once. In order to do this, select the first blank <b>Action</b> cell and press the <b>Escape</b> key so that the cell has dotted lines surrounding it, then paste in all steps.<p><img src="images\0ee8d325-e309-4302-9b2c-276c776f3319.png" /></p><p><b>Figure 2</b><br /><i>Steps are ready to be pasted</i></p></li>
+          <li>At this point, the <b>Steps</b> panel should look similar to the following:<p><img src="images\3dafa575-45a3-49d2-ac69-b5d19864a014.png" /></p><p><b>Figure 3</b><br /><i>Steps for new manual test</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Adding a value in the Expected Result column for a manual test step adds a checkbox next to the step action so that the tester is required to manually validate that the test passed.<b> </b></td></tr></table><p /></div></li>
+          <li>Note the “Enter @First, @Last, @Email, @Address, @City, @Country, @State, @PostalCode” step. In this step, we used the <b>@</b> sign to indicate that there were iteration-specific variables to be used during the manual test pass. We can define which variables to use by scrolling down to the <b>Parameter Values</b> section of this form and entering them for each iteration. Use the following table to set up values for three iterations (or use the copy and paste method from the “New Test Case.txt” file once again):<table style=""><tr valign="top"><th><p>First</p></th><th><p>Last</p></th><th><p>Email</p></th><th><p>Address</p></th></tr><tr valign="top"><td><p>Michael</p></td><td><p>Affronti</p></td><td><p>Michael@Contoso.com</p></td><td><p>One Microsoft Way</p></td></tr><tr valign="top"><td><p>Chris</p></td><td><p>Barry</p></td><td><p>Chris@Tailspin.com</p></td><td><p>Two Tailspin Trail</p></td></tr><tr valign="top"><td><p> Robin</p></td><td><p>Wood</p></td><td><p>Robin@Northwind.com</p></td><td><p>Nine Northwind Street</p></td></tr></table></li>
+          <a name="_GoBack" href="#">
+            <span />
+          </a>
+          <br />
+          <table style="">
+            <tr valign="top">
+              <th>
+                <p>City</p>
+              </th>
+              <th>
+                <p>Country</p>
+              </th>
+              <th>
+                <p>State</p>
+              </th>
+              <th>
+                <p>PostalCode</p>
+              </th>
+            </tr>
+            <tr valign="top">
+              <td>
+                <p>Redmond</p>
+              </td>
+              <td>
+                <p>USA</p>
+              </td>
+              <td>
+                <p>Washington</p>
+              </td>
+              <td>
+                <p>98052</p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td>
+                <p>Springfield</p>
+              </td>
+              <td>
+                <p>USA</p>
+              </td>
+              <td>
+                <p>Illinois</p>
+              </td>
+              <td>
+                <p>11135</p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td>
+                <p>North Wind</p>
+              </td>
+              <td>
+                <p>USA</p>
+              </td>
+              <td>
+                <p>North Dakota</p>
+              </td>
+              <td>
+                <p>99909</p>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <li>The <b>Parameter Values</b> section should now look like this:<p><img src="images\c944bb4a-7146-40aa-99a5-fa5aa0a7d40e.png" /></p><p><b>Figure 4</b><br /><i>Parameter values for manual test</i></p></li>
+          <li>Save test case by clicking the <b>Save</b> icon in the top-right corner of the window. <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The test case is saved as a project work item.</td></tr></table><p /></div><p><img src="images\2486dfa9-1008-47e6-a179-eef92b199af8.png" /></p><p><b>Figure 5</b><br /><i>Save button location</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e305eab3-97c5-45f4-b5d8-c5bee6bd64db.html">Exercise 2: Running a Manual Test Plan</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

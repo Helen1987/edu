@@ -1,0 +1,1 @@
+return Test-Path "HKLM:SOFTWARE\Microsoft\Inetmgr\7.0" -pathType Container

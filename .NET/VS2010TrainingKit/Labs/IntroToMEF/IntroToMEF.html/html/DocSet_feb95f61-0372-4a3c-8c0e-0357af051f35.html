@@ -1,0 +1,97 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Verification" />
+      <MSHelp:RLTitle Title="Exercise 2: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction To Managed Extensibility Framework</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this verification, you will run the application to verify that all the queries are shown in the main application. In addition, you will verify the lazy behavior of the query objects.</p>
+        <ol>
+          <li>In order to verify the lazy instantiation of an object you will add an empty constructor to any of the ICarQuery implementations and set a breakpoint on it to check when it is being instantiated. To do this, open the <b>FabrikamQuery.cs</b> (C#) or <b>FabrikamQuery.vb</b> (Visual Basic), add a new constructor to it and set a breakpoint by pressing <b>F9</b> as shown in the following screenshot.<p><img src="images\b8f7cd84-380a-4a83-b60f-b9930831b144.png" /></p><p><b>Figure 12</b><br /><i>FabrikamQuery constructor breakpoint (C#)</i></p><br /><p><img src="images\1e3c2031-8559-4b7c-a580-8de7ffe34489.png" /></p><p><b>Figure 13</b><br /><i>FabrikamQuery constructor breakpoint (C#)</i></p><br /></li>
+          <li>Compile the solution (<b>CTRL+SHIFT+B</b>).</li>
+          <li>Set <b>ContosoAutomotive</b> as the startup project.  In the Solution Explorer, right-click <b>ContosoAutomotive</b> and select <b>Set as startup project</b>.</li>
+          <li>Press F5 to run the application.  The parent CashMaker window should appear with a list of manufacturers on it. You should note the FabrikamQuery constructor has not been executed.<p><img src="images\1d0eb579-2419-408b-9443-cd8d08eb653d.png" /></p><p><b>Figure 14</b><br /><i>The CashMaker window shows manufacturers.</i></p><br /></li>
+          <li>Click on the Fabrikam Motor Company icon on the list of manufacturers in the Cash Maker application. Now, the code will stop in the breakpoint you have set in the FabrikamQuery constructor, because the instance is being created on demand.<p><img src="images\8fab589e-05c7-472c-b58c-d515517fbb03.png" /></p><p><b>Figure 15</b><br /><i>FabrikamQuery constructor breakpoint (C#)</i></p><br /><p><img src="images\507796b6-93b0-4b0a-af63-1541bdadedf4.png" /></p><p><b>Figure 16</b><br /><i>FabrikamQuery constructor breakpoint (C#)</i></p><br /></li>
+          <li>Click the close button (<img src="images\a6813b47-66ae-4f72-b54a-0f5c55c36ef8.png" />) in the top right of the <b>Cash Maker</b> window to close it.</li>
+          <li>Remove the breakpoint and the constructor you just created in the FabrikamQuery class.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_7549f1e5-d9c6-4fa9-82c5-0a7b78f648c7.html">Exercise 3: Using MEF and Silverlight 4</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

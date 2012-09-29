@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c94fde7c-7cae-4507-b93b-bffb53a22a58" solutionId="c94fde7c-7cae-4507-b93b-bffb53a22a58" resetWebServer="false" name="ContosoWebParts" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="a426ed9b-a9eb-4deb-b9d9-079dbac8c59e" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="45e84473-6a85-4c47-a80e-6c0897bcc78f" />
+  </projectItems>
+</package>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Author>
+    <Name>RoJacobs</Name>
+  </Author>
+  <Id>DataDrivenWebApplications</Id>
+  <Version>1.0</Version>
+  <Title>Simplifying Data-Driven Web Applications</Title>
+  <Description>
+    In this episode of 10-4, we discuss how the development of data-driven web applications has evolved in ASP.NET and how in the .NET Framework 4 it becomes even easier. Whether you're working on a new or existing application, getting your UI to light up model-level metadata/validation becomes as simple as a single line of code.
+  </Description>
+  <Abstract>
+    In this episode of 10-4, we discuss how the development of data-driven web applications has evolved in ASP.NET and how in the .NET Framework 4 it becomes even easier. Whether you're working on a new or existing application, getting your UI to light up model-level metadata/validation becomes as simple as a single line of code.
+  </Abstract>
+  <Url>
+    http://mschnlnine.vo.llnwd.net/d1/ch9/4/7/2/2/7/4/104Episode22SimplifyingDataDrivenWebApplication_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/10-4/10-4-Episode-22-Simplifying-Data-Driven-Web-Applications/Player/" />
+  </CustomProperties>
+</Video>

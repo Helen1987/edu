@@ -1,0 +1,1 @@
+$(Get-ItemProperty HKLM:\SOFTWARE\Microsoft\INETSTP\Components).METABASE -ne $null

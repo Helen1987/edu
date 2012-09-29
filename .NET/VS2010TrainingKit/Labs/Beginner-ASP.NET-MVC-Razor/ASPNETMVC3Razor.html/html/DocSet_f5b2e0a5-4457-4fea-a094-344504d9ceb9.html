@@ -1,0 +1,173 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Using Models in Razor Views" />
+      <MSHelp:RLTitle Title="Exercise 2: Using Models in Razor Views" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Using Models in Razor Views</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Razor</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Using Models in Razor Views</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will work with models in Razor views. Initially, you will use the <b>@inherits</b> directive that was released as part of MVC 3.0, and then the new <b>@model</b> directive that is now supported in the Razor engine. These directives provide a simplified way to reference your strongly-typed models in your view files. You will add view templates used by action methods to browse the albums in the music store.</p>
+        <a name="_Toc282513990" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Using the @inherits Directive</b>
+        </p>
+        <p>In this task, you will replace the <b>Index</b> action method of the <b>HomeController</b> to retrieve the Date &amp; time formatted in the webserver’s culture.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start | All Programs | Microsoft Visual Studio 2010 Express | Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex02-UsingModelsInRazorViews\Begin, select MvcMusicStore.sln and click <b>Open</b>.</li>
+          <li>In the <b>Solution Explorer</b>, browse to the <b>Controllers</b> folders and then double-click the <b>HomeController.cs</b> class.</li>
+          <li>Replace the implementation of the view method, to pass the current Date and Time to the view. To do this, replace the following code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;namespace MvcMusicStore.Controllers{    public class HomeController : Controller    {        //        // GET: /Home/        public ActionResult Index()        {<b>            return View(DateTime.Now);</b>        }    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Open the <b>Index</b> view associated to this controller. To do this in the Solution Explorer navigate to <b>Views</b>\<b>Home</b> and double-click <b>Index.cshtml</b>.</li>
+          <li>Replace the <b>@model dynamic;</b> line at the top with the following one:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>@inherits System.Web.Mvc.WebViewPage&lt;DateTime&gt;</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note:</b> The <b>@inherits</b> directive indicates that you want to derive the view from System.Web.Mvc.WebViewPage&lt;DateTime&gt; class. This way, you can define strong-type models inside a Razor’s view.</td></tr></table><p /></div><br /></li>
+          <li>Add a reference to the <b>System.Globalization</b> namespace bellow the <b>@inherits</b> directive. To do this, add the following line:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@inherits System.Web.Mvc.WebViewPage&lt;DateTime&gt;<b>@using System.Globalization;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Replace the code block that informs the Date and Time with the following one.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@{<s>      var now = DateTime.Now;</s><s>      &lt;text&gt;</s><s>            Current time is @now</s><s>      &lt;/text&gt;</s><b>      &lt;text&gt;</b><b>            Current time is @Model.ToString(CultureInfo.CurrentUICulture)</b><b>      &lt;/text&gt;</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The @Model is replaced by the type passed to the view: DateTime.Now. Additionally, the ToString method is invoked with the CurrentUICulture to show the Culture configuration for the user interface.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282513991" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the Application</b>
+        </p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The project starts in the Home page. Verify that Razor view is loaded and the Date andTime is displayed:<p><img src="images\29f020a1-10f5-4e3c-a2a6-21c28767158d.png" /></p><p><b>Figure 1</b><br /><i>Running the Home page</i></p><br /></li>
+        </ol>
+        <a name="_Toc282513992" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a View Template in Razor</b>
+        </p>
+        <p>In this task, you will add a new Index.cshtml view, in this case, using the <b>@model</b> directive. This directive, represents an improvement for the <b>@inherits</b>, simplifying the use of strongly-typed model classes in the view. You simply write <b>@model <i>StrongModelType</i></b>at the top of the cshtml file, replacing the @inherits directive. You will add a view template in Razor for the Store Index page, which shows a list of Genres. At the end of the task you should get the same functionality you had when using ASPX templates, but with a simplified code.</p>
+        <ol>
+          <li>Before creating the new View template, you should build the project so that the <b>Add View Dialog</b> knows about the <b>ViewModel</b> class to use. Build the project by selecting the <b>Debug</b> menu item and then <b>Build MvcMusicStore</b>.<p><img src="images\1bb9cb5e-978b-40bf-8e44-f4ea3cb51e41.png" /></p><p><b>Figure 2</b><br /><i>Building the project in Visual Web Developer 2010</i></p><br /></li>
+          <li>Open the <b>StoreController.cs</b> file and right-click inside the Index Action method to display the context menu. Select <b>Add View</b> menu option to display the dialog box.<p><img src="images\b1c2b1c7-4c7a-462e-bbf6-24e4f2495b92.png" /></p><p><b>Figure 3</b><br /><i>Adding a View from the Action method</i></p><br /></li>
+          <li>The <b>Add View</b> dialog appears. Fill the dialog box according to the following values:<ol><li>Check “Create a strongly-typed view”.</li><li>Choose “<b>StoreIndexViewModel (MvcMusicStore.ViewModels)</b>” at Model class.</li><li>Check “Use a layout or master page” and verify that Razor Layout template path is “<b>~/Views/Shared/Site.cshtml</b>”<b> </b>by clicking the “<b>…</b>” button and then click <b>Add</b>.<p><img src="images\bdc66ab6-f02e-401d-93f3-338ae080904d.png" /></p><p><b>Figure 4</b><br /><i>Adding a new Razor View dialog box</i></p><br /></li></ol></li>
+          <li>Visual Studio generates an <b>Index.cshtml</b> Razor view template inside the <b>Views\Store</b> folder with the following structure:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model MvcMusicStore.ViewModels.StoreIndexViewModel@{    ViewBag.Title = "Index";    Layout = "~/Views/Shared/Site.cshtml";}&lt;h2&gt;Index&lt;/h2&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>@model <i>StrongModelType</i></b> directive at the top of the View specifies its base class. By default Razor will make the view to derive from <b>System.Web.Mvc.WebViewPage&lt;TModel&gt;</b>.<br />Inside the @{ } block , the view sets the layout that will be used, and also sets the value for the <b>ViewBag.Title</b> element.</td></tr></table><p /></div><br /></li>
+          <li>Add logic in the Index .cshtml to show the list of genres from the model. To do this, replace the content of the generated file with the following one:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model MvcMusicStore.ViewModels.StoreIndexViewModel<b>@{</b><b>    ViewBag.Title = "Browse Genres";</b><b>    Layout = "~/Views/Shared/Site.cshtml";</b><b>}</b><b>&lt;h2&gt;Browse Genres&lt;/h2&gt;</b><b>&lt;p&gt;Select from @Model.NumberOfGenres&lt;/p&gt;</b><b>@foreach (string genreName in Model.Genres) {</b><b>&lt;li&gt;</b><b>    @Html.ActionLink(genreName, "Browse", new { genre = genreName }, null)</b><b>&lt;/li&gt;</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The foreach loops through the genres and generates an <b>ActionLink</b> to the Browse action method. This method is implemented in the provided solution, but its view will be created in task 5.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282513993" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application</b>
+        </p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store</b> to verify that Razor view is loaded:<p><img src="images\e7c92f8c-280d-4606-990e-7cc3a872e62c.png" /></p><p><b>Figure 5</b><br /><i>Browsing genres with a Razor View</i></p><br /></li>
+        </ol>
+        <a name="_Toc275441017" href="#">
+          <span />
+        </a>
+        <a name="_Toc282513994" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Creating Browse CSHTML View and Adding Details CSHTML View</b>
+        </p>
+        <ol>
+          <li>In the previous task, you have learned how to add a Razor view. Now you will include the views that are missing from the original Music Store Application: <b>Browse</b> and <b>Details</b>.</li>
+          <li>The cshtml files are included in the <b>Source\Assets\cshtml</b> folder of this Lab. In order to add them to the application, drag them from a <b>Windows Explorer</b> window into the <b>Solution Explorer</b> in Visual Web Developer Express, as shown below:<p><img src="images\96f89dec-2c13-4714-aa91-650540b864ae.png" /></p><p><b>Figure 6</b><br /><i>Dragging views</i></p><br /></li>
+          <li>Visual Studio will add <b>Browse.cshtml</b> and <b>Details.cshtml</b> Razor views.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml – Browse.cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model MvcMusicStore.ViewModels.StoreBrowseViewModel@{    ViewBag.Title = "Browse Albums";    Layout = "~/Views/Shared/Site.cshtml";}    &lt;h2&gt;Browsing Genre: @Model.Genre.Name&lt;/h2&gt;    &lt;ul&gt;    @foreach (var album in Model.Albums) {       &lt;li&gt;@album.Title&lt;/li&gt;    }    &lt;/ul&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Browse.cshtml page will loop all the albums for the selected genre, listing their titles.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml – Details.cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model MvcMusicStore.Models.Album@{    ViewBag.Title = "Details";    Layout = "~/Views/Shared/Site.cshtml";}   &lt;h2&gt;Album: @Model.Title &lt;/h2&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Details.cshtml page displays the album title.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282513995" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Running the Application</b>
+        </p>
+        <p>In this task, you will run the application to verify that Razor views are displayed as expected.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store</b> and click on <b>Rock</b> genre to verify that <b>Details </b>view can be loaded, with the same appearance as the .aspx pages:<p><img src="images\52d38cfd-096a-48b7-9b4a-295becd467fd.png" /></p><p><b>Figure 7</b><br /><i>Browsing genres albums with Razor View</i></p><br /></li>
+          <li>Change the URL to <b>/Store/Details/5</b> to verify an album’s information.<p><img src="images\9243b8b0-edfa-45d9-9619-d709e51c7a19.png" /></p><p><b>Figure 8</b><br /><i>Browsing album details with Razor View</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_a94fe853-2d11-4266-a620-94de1db7798a.html">Exercise 3: Creating and Consuming Razor Helpers</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

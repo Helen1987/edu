@@ -1,0 +1,97 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Analyzing External Assemblies Using Architecture Explorer" />
+      <MSHelp:RLTitle Title="Exercise 3: Analyzing External Assemblies Using Architecture Explorer" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Analyzing External Assemblies Using Architecture Explorer</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using the Architecture Explorer in Visual Studio 2010 Ultimate to Analyze Your Code</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Analyzing External Assemblies Using Architecture Explorer</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <ol>
+          <li>In this exercise, you will learn how to load and navigate external .NET assemblies. This can help you gain insight into the architecture of frameworks or applications for which you do not have the original project or source files.</li>
+          <li>Select the <b>Select Files</b> option from Architecture Explorer. This allows you to load compiled .NET assemblies and analyze them as you already have done with the Class and Solution Views.<p><img src="images\637c5ae9-1bd4-458b-986e-913dcd921a2a.png" /></p><p><b>Figure 1</b><br /><i>Select Files view allows you to load and navigate any .NET assembly</i></p></li>
+          <li>In the <b>File Name</b> box, enter “<b>c:\windows\microsoft.net\framework\v4.0.30319</b>” and press the <b>Enter</b> key.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>If the v4.0.30319 directory is not available, select the most recent one available.</td></tr></table><p /></div></li>
+          <li>In the <b>File Name</b> box, enter “<b>System.Data.dll</b>” and select the <b>Open</b> button to continue.</li>
+          <li>Select the <b>System.Data.dll</b> file to view its types.<p><img src="images\22a6a2a9-8281-4412-b3d4-6b1816f30ff3.png" /></p><p><b>Figure 2</b><br /><i>iewing System.Data.dll types</i></p></li>
+          <li>Select the <b>Filter</b> button at the top of the types list and select the check box for <b>Class</b> and the check box for <b>IsPublic</b>.<p><img src="images\1c606231-4272-41c9-8c14-71276f436911.png" /></p><p><b>Figure 3</b><br /><i>Creating a filter for public classes</i></p></li>
+          <li>Press the <b>OK</b> button to see the list of public classes in the System.Data.dll assembly.</li>
+          <li>Enter “<b>Sql</b>” into the filter box at the top of the current type list and press Enter so that we can view types that contain that text.<p><img src="images\cd4863c2-e786-4152-8abb-aa8bb20a2c7c.png" /></p><p><b>Figure 4</b><br /><i>Filtering with custom text</i></p></li>
+          <li><b>Select all</b> of the listed types and press the <b>Create New Graph</b> button.<p><img src="images\4effef1b-7b0c-484f-84b9-4553daa08806.png" /></p><p><b>Figure 5</b><br /><i>DGML diagram showing System.Data.dll and its classes</i></p></li>
+        </ol>
+        <br />
+        <p>To give feedback please write to <a href="docSet_mailto:VSKitFdbk@microsoft.com">VSKitFdbk@Microsoft.com</a></p>
+        <p>Copyright © 2010 by Microsoft Corporation. All rights reserved.</p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

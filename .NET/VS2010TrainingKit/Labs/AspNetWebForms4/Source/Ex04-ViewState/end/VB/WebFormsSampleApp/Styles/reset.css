@@ -1,0 +1,20 @@
+﻿body { margin: 0px; background: #fff; color: #000; }
+body, th, td, input, textarea, select, button { font-family: Arial, Tahoma, Sans-Serif; font-size: 12px; }
+h1,h2,h3,h4,h5,h6 { margin: 1em 0; padding: 0; }
+h1 { font-size: 2em; }
+h2 { font-size: 1em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.15em; }
+h5 { font-size: 0.85em; }
+h6 { font-size: 0.75em; }
+p { margin: 15px 0; }
+img { border: 0; }
+hr { display: none; }
+form { margin: 0; padding: 0; }
+ul { margin: 12px 0; padding: 0 0 0 40px; }
+ul li { margin: 0; padding: 0; }
+.clear { clear: both; }
+.off { display: none; }
+hr { display: none; }
+a { color: #0048aa; text-decoration: none; }
+a { color: #000; text-decoration: underline; }

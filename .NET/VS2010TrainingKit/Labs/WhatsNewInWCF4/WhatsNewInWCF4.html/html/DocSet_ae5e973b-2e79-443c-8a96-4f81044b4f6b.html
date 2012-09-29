@@ -1,0 +1,209 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Service Discovery" />
+      <MSHelp:RLTitle Title="Exercise 4: Service Discovery" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Service Discovery</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Service Discovery</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will add an ad hoc discovery mechanism to the DiscoveryChat program using <b>System.ServiceModel.Discovery</b>, an implementation of the WS-Discovery protocol. In order for a service to be discoverable in an ad hoc manner, it needs to respond to incoming probe messages. Ad hoc discovery implies that these probe messages come in through a well-known port over UDP multicast.</p>
+        <a name="_Toc244159119" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317751" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957318" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>This exercise uses a new begin solution.</p>
+        <ol>
+          <li>Open the starting solution for Exercise 4 located under the <b>Source\Ex4-ServiceDiscovery\Begin (choosing the folder that matches the language of your preference.) </b>Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc229456227" href="#">
+          <span />
+        </a>
+        <a name="_Toc232478779" href="#">
+          <span />
+        </a>
+        <a name="_Toc232490430" href="#">
+          <span />
+        </a>
+        <a name="_Toc244159120" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317752" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957319" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Configuring Service Discovery for the DiscoveryChat Application</b>
+        </p>
+        <p><b>DiscoveryChat</b> is a chat application that automatically discovers users on the network using ad hoc or managed discovery via a proxy.</p>
+        <p>
+          <img src="images\af21685d-9246-49d6-ab73-ef55ec44a570.png" />
+        </p>
+        <p>
+          <b>Figure 12</b>
+          <br />
+          <i>Two simple chat windows with no discovery enabled</i>
+        </p>
+        <br />
+        <p>The first thing you need to do is to enable discovery in the simple chat application.</p>
+        <ol>
+          <li>To enable discovery, you need to add a service behavior on the service that will be discoverable. Open the <b>App.config</b> configuration file from the <b>DiscoveryChat</b> project.</li>
+          <li>Add a new Service Behavior named <b>DiscoveryBehavior</b> inside the <b><i>&lt;serviceBehaviors&gt;</i></b> element.<p><i>(Code Snippet – What is new in WCF4 Lab – serviceDiscovery config XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>App.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;behaviors&gt;  &lt;serviceBehaviors&gt;<b>    &lt;behavior name="DiscoveryBehavior"&gt;</b><b>      &lt;serviceDiscovery /&gt;</b><b>    &lt;/behavior&gt;</b>  &lt;/serviceBehaviors&gt;&lt;/behaviors&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Modify the service description by adding the <b>behaviorConfiguration</b> attribute referencing the <b>DiscoveryBehavior</b> just created.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>App.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;services&gt;  &lt;service name="Microsoft.Samples.Discovery.ChatService" <b>           behaviorConfiguration="DiscoveryBehavior"&gt;</b>    &lt;endpoint       address=""       binding="wsHttpBinding"       contract="ISimpleChatService"/&gt;  &lt;/service&gt;&lt;/services&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Next, you need to add a UDP discovery endpoint. This is where the discovery probe messages will be processed.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\f44c15b6-0d74-475b-a360-eb23a007ff5e.png" /><b>Probe Messages</b><br />A Probe message is a WS-Discovery message used by a client to search for services on the network by service type. For more information about Probe messages, see section 5.2 of the <a href="http://go.microsoft.com/fwlink/?LinkId=87841">WS-Discovery Specification</a>.</td></tr></table><p /></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – udpDiscoveryEndpoint XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>App.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;services&gt;  &lt;service name="Microsoft.Samples.Discovery.ChatService "            behaviorConfiguration="DiscoveryBehavior"&gt;    &lt;endpoint       address=""       binding="wsHttpBinding"       contract="ISimpleChatService"/&gt;<b>    &lt;endpoint </b><b>      name="udpDiscoveryEpt" </b><b>      kind="udpDiscoveryEndpoint"/&gt;</b>  &lt;/service&gt;&lt;/services&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\5472a2d4-53de-46d9-9317-44d56323663e.png" /><b>Making Services Discoverable</b><br />Adding the DiscoveryBehavior makes your service discoverable. The UDP endpoint (specified by the attribute <b>kind = “udpDiscoveryEndpoint”</b>) is where the discovery component will listen for discovery messages.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc229456228" href="#">
+          <span />
+        </a>
+        <a name="_Toc232478780" href="#">
+          <span />
+        </a>
+        <a name="_Toc232490431" href="#">
+          <span />
+        </a>
+        <a name="_Toc244159121" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317753" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957320" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Enabling ad hoc Discovery</b>
+        </p>
+        <p>In this task, you will add code to asynchronously search for other chat users on the same subnet using service discovery. In order to utilize discovery functionality, you will need to add a reference to System.ServiceModel.Discovery to your project and add the associated namespace directive for System.ServiceModel.Discovery as well.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>Note</b>: This has already been done for you in the Begin solution for this Exercise.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Open the <b>SimpleChat</b> form in code view by clicking on it, and pressing <b>F7</b>.</li>
+          <li>Locate the <b>AdHocDiscovery</b> method stub and add the following code. This code will initiate discovery looking for services that implement the <b>ISimpleChatService</b> contract and then, as services are found, it will add them to the list of available services.<p><i>(Code Snippet - What is new in WCF4 Lab – AdHocDiscovery Method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void AdHocDiscovery(){<b>    this.discoveryClient = new DiscoveryClient(new UdpDiscoveryEndpoint());</b><b>    this.discoveryClient.FindProgressChanged +=</b><b>        new EventHandler&lt;FindProgressChangedEventArgs&gt;(this.OnFindProgressChanged);</b><b>    this.discoveryClient.FindCompleted +=</b><b>        new EventHandler&lt;FindCompletedEventArgs&gt;(this.OnFindCompleted);</b><b>    // Setup the form for discovery</b><b>    this.ShowDiscoveryInProgress(true);</b><b>    // Do async discovery</b><b>    this.discoveryClient.FindAsync(new FindCriteria(typeof(ISimpleChatService)));</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – AdHocDiscovery Method VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub AdHocDiscovery()<b>    Me._discoveryClient = New DiscoveryClient(New UdpDiscoveryEndpoint())</b><b>    AddHandler _discoveryClient.FindProgressChanged, AddressOf OnFindProgressChanged</b><b>    AddHandler _discoveryClient.FindCompleted, AddressOf OnFindCompleted</b><b>    ' Setup the form for discovery</b><b>    Me.ShowDiscoveryInProgress(True)</b><b>    ' Do async discovery</b><b>    Me._discoveryClient.FindAsync(New FindCriteria(GetType(ISimpleChatService)))</b>End Sub</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\aead0f0f-b940-435a-9620-659d653fa1de.png" /><b>Using DiscoveryClient</b><br />The discovery process can be started either synchronous or asynchronously by using the Find or FindAsync methods respectively. Furthermore, you can also add a DynamicEndpoint to your application that searches performs discovery under the covers. In this application, you are using the <b>FindAsync</b> method because the asynchronous operation allows the chat peers to be added as they are discovered.<br />During discovery, you can register some events handlers. For example, FindProgressChanged is invoked each time one of service endpoints has been discovered. If you want to be notified when the discovery process is finished, then the handler FindCompleted should be used.</td></tr></table><p /></div><br /></li>
+          <li>Implement the <b>OnFindProgressChanged</b> and <b>OnFindCompleted</b> handlers as shown in the following code by pasting it below the <b>AdHocDiscovery() </b>method implementation.<p><i>(Code Snippet - What is new in WCF4 Lab – DiscoveryClient Event Handlers CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void OnFindProgressChanged(object sender, FindProgressChangedEventArgs e)</b><b>{</b><b>    this.PopulateUserList(e.EndpointDiscoveryMetadata);</b><b>}</b><b>private void OnFindCompleted(object sender, FindCompletedEventArgs e)</b><b>{</b><b>    if (e.Cancelled)</b><b>    {</b><b>        this.ShowStatus("Discovery cancelled");</b><b>    }</b><b>    else if (e.Error != null)</b><b>    {</b><b>        this.discoveryClient.Close();</b><b>        MessageBox.Show(</b><b>            e.Error.Message,</b><b>            this.Text,</b><b>            MessageBoxButtons.OK,</b><b>            MessageBoxIcon.Information,</b><b>            MessageBoxDefaultButton.Button1,</b><b>            (MessageBoxOptions)0);</b><b>    }</b><b>    else</b><b>    {</b><b>        if (this.discoveryClient.InnerChannel.State ==                                 CommunicationState.Opened)</b><b>        {</b><b>            this.discoveryClient.Close();</b><b>        }</b><b>    }</b><b>    this.discoveryClient = null;</b><b>    this.ShowDiscoveryInProgress(false);</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – DiscoveryClient Event Handlers VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub OnFindProgressChanged(ByVal sender As Object, ByVal e As FindProgressChangedEventArgs)</b><b>    Me.PopulateUserList(e.EndpointDiscoveryMetadata)</b><b>End Sub</b><b>Private Sub OnFindCompleted(ByVal sender As Object, ByVal e As FindCompletedEventArgs)</b><b>    If e.Cancelled Then</b><b>        Me.ShowStatus("Discovery cancelled")</b><b>    ElseIf e.Error IsNot Nothing Then</b><b>        Me._discoveryClient.Close()</b><b>        MessageBox.Show(e.Error.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, CType(0, MessageBoxOptions))</b><b>    Else</b><b>        If Me._discoveryClient.InnerChannel.State = CommunicationState.Opened Then</b><b>            Me._discoveryClient.Close()</b><b>        End If</b><b>    End If</b><b>    Me._discoveryClient = Nothing</b><b>    Me.ShowDiscoveryInProgress(False)</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\f60de4ce-c0f0-4590-9363-31d10cb9c940.png" /><b> Watch Out</b><br />DiscoveryChat will open an HTTP endpoint. If you try to do this without first creating a URL ACL, you will get an AddressAccessDeniedException.</td></tr></table><p /></div><br /><p><img src="images\349daaca-bfd7-469f-8ed1-ee2406217d4a.png" /></p><p><b>Figure 13</b><br /><i>AddressAccessDeniedException</i></p><br /></li>
+          <li>Create a URL ACL for port 8000. To do this <ol><li>Open a command prompt as administrator</li><li>Run the SetUrlACL.cmd file from the <b>Source\Setup </b>folder as shown.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD (Administrator)</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>SetURLACL.cmd 8000</b></pre></td></tr></table></span></div></li><br /></ol></li>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="images\4fb0ad4f-e351-4260-bf4e-a73c789d5c64.png" />
+                  <b>SetURLACL.cmd</b>
+                  <br />This script and the matching DelURLACL.cmd file are useful tools for managing URL ACLs.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_971e65ef-1c09-4bd3-9814-9b909fcfc318.html">Exercise 4: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

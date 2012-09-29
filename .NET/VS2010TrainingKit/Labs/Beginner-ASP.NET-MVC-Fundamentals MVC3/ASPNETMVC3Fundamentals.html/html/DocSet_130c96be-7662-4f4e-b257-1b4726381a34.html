@@ -1,0 +1,226 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Fundamentals</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <p>This Hands-On Lab is based on MVC (Model View Controller) Music Store, a tutorial application that introduces and explains step-by-step how to use ASP.NET MVC and Visual Web Developer 2010 Express (which is free). Throughout the lab you will learn the simplicity, yet power of using these technologies together. You will start with a simple application and will build it until you have a fully functional MVC Web Application.</p>
+        <p>This Lab will work with ASP.NET MVC 3 and it uses new features as dynamic properties in views.</p>
+        <p>If you wish to explore the ASP.NET MVC 2 version of the tutorial application, you will find it in <a href="http://mvcmusicstore.codeplex.com/">http://mvcmusicstore.codeplex.com/</a>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This Hands-On Lab assumes that the developer has basic experience with Web Development and technologies such as HTML and JavaScript.<br /><img src="images\3385be77-e940-47c2-9362-d9f33b02c906.png" /> Before diving into ASP.NET MVC, if you would like more context on the ASP.NET 4 stack – watch <a href="http://channel9.msdn.com/learn/courses/VS2010/ASPNET/ASPNET4/">this short video</a> where Jonathan Carter takes us through what’s new in ASP.NET 4.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">The Music Store application</h1>
+        <p>The Music Store web application to be built throughout this Lab comprises three main parts: shopping, checkout, and administration. Visitors will be able to browse albums by genre, add albums to their cart, review their selection and finally proceed to checkout to login and complete the order. Additionally, store administrators will be able to manage the store’s available albums as well as their main properties.</p>
+        <p>
+          <img src="images\996e7493-1fc0-409c-8a81-48585d071342.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Music Store screens</i>
+        </p>
+        <br />
+        <h1 class="heading">MVC Essentials</h1>
+        <p>Music Store application will be built using <b>Model View Controller (MVC)</b>, an architectural pattern that separates an application into three main components:</p>
+        <ul>
+          <li><b>Models</b>: Model objects are the parts of the application that implement the domain logic. Often, model objects also retrieve and store model state in a database.</li>
+          <li><b>Views:</b> Views are the components that display the application's user interface (UI). Typically, this UI is created from the model data. An example would be the edit view of Albums that displays text boxes and a drop-down list based on the current state of an Album object.</li>
+          <li><b>Controllers:</b> Controllers are the components that handle user interaction, manipulate the model, and ultimately select a view to render the UI. In an MVC application, the view only displays information; the controller handles and responds to user input and interaction.</li>
+        </ul>
+        <p>The MVC pattern helps you to create applications that separate the different aspects of the application (input logic, business logic, and UI logic), while providing a loose coupling between these elements. This separation helps you manage complexity when you build an application, because it enables you to focus on one aspect of the implementation at a time. In addition to managing complexity, the MVC pattern makes it easier to test applications than it is to test a traditional ASP.NET Web application, encouraging the use of test-driven development (TDD) for creating an applications.</p>
+        <p>Then, the <b>ASP.NET MVC</b> framework provides an alternative to the ASP.NET Web Forms pattern for creating MVC-based Web applications. The <b>ASP.NET MVC</b> framework is a lightweight, highly testable presentation framework that (as with Web-forms-based applications) is integrated with existing ASP.NET features, such as master pages and membership-based authentication so you get all the power of the core .NET framework.  This is useful if you are already familiar with ASP.NET Web Forms because all of the libraries that you already use are available to you in ASP.NET MVC as well.</p>
+        <p>In addition, the loose coupling between the three main components of an MVC application also promotes parallel development. For instance, one developer can work on the view, a second developer can work on the controller logic, and a third developer can focus on the business logic in the model.</p>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Create an ASP.NET MVC application from scratch based on the Music Store Application tutorial</li>
+          <li>Add Controllers to handle URLs to the Home page of the site and for browsing its main functionality</li>
+          <li>Add a View to customize the content displayed along with its style</li>
+          <li>Add Model classes to contain and manage data and domain logic</li>
+          <li>Use View Model pattern to pass information from controller actions to the view templates</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>ASP.NET and ASP.NET MVC 3</li>
+          <li>Visual Studio 2010 Express</li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <h4 class="subheading">Installing Code Snippets</h4>
+        <p>For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. To install the code snippets run <b>.\Source\Assets\CodeSnippets.vsi</b> file.</p>
+        <h4 class="subheading">Installing Web Platform Installer</h4>
+        <p>This section assumes that you don’t have some or all the system requirements installed. In case you do, you can simply skip this section.</p>
+        <p>Microsoft Web Platform Installer (WebPI) is a tool that manages the installation of the prerequisites for this Lab.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> As well as the Microsoft Web Platform, WebPI can also install many of the open source applications that are available like Umbraco, Kentico, DotNetNuke and many more.  These are very useful for providing a foundation from which to customize an application to your requirements, dramatically cutting down your development time.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>Please follow these steps to downloads and install Microsoft Visual Studio 2010 Express Edition and SQL Server 2008 Express Edition:</p>
+        <ol>
+          <li>Install the Web Platform Installer 3.0. To do this, Navigate to <a href="http://go.microsoft.com/fwlink/?LinkID=194638">http://go.microsoft.com/fwlink/?LinkID=194638</a> using a web browser. Click <b>Run</b> in the File Download Security Warning.<p><img src="images\8e536c2c-f33e-446c-8fc6-388bc4cec568.png" /></p><p><b>Figure 2</b><br /><i>File download pop up</i></p><br /></li>
+          <li>Allow the program to make changes to your computer by clicking <b>Yes</b> in the User Account Control pop up.</li>
+        </ol>
+        <h4 class="subheading">Running Web Platform Installer to install Lab prerequisites</h4>
+        <ol>
+          <li>The Web Platform Installer launches and shows a list of downloads. </li>
+          <li>Choose the <b>Products</b> category at the top side of the window, then click the <b>All </b>folder at the left, and then clik <b>Add</b> for the following items:<ul><li><b>ASP.NET MVC 3</b></li><li><b>Visual Web Developer 2010 Express</b></li></ul></li>
+          <p>
+            <img src="images\c64a958e-d783-4924-8497-0f1abb89d3b1.png" />
+          </p>
+          <p>
+            <b>Figure 3</b>
+            <br />
+            <i>Web Platform Installer window</i>
+          </p>
+          <br />
+          <li>Click on <b>Install</b>. The <b>Web Platform Installer </b>displays the list of software to be installed. Accept by clicking <b>I Accept</b>.<p><img src="images\17f9c25f-620d-4e33-8004-7a39e0d5b636.png" /></p><p><b>Figure 4</b><br /><i>Web Platform Installation</i></p><br /></li>
+          <li>The SQL Server Express Edition could be configured to run with <b>Windows Integrated Authentication</b> or <b>Mixed Mode Authentication</b>. To simplify this Lab, select <b>Windows Integrated Authentication </b>and click on <b>Continue</b>. SQL Server will then use your Windows credentials to connect to the databases.<p><img src="images\08f3fa8a-dc9e-4e67-a016-9751d933bdf3.png" /></p><p><b>Figure 5</b><br /><i>Web Platform Installation – SQL Server Express Authentication mode</i></p><br /></li>
+          <li>The appropriate components will be downloaded and installed.<p><img src="images\0f39e98e-6073-4bbc-8c55-045087860dbc.png" /></p><p><b>Figure 6</b><br /><i>Web Platform Installation – Download progress</i></p><br /></li>
+          <li>If your computer doesn’t have the <b>Microsoft.NET Framework 4.0</b>, a pop up will ask you to restart the computer. Click <b>Yes</b>.<p><img src="images\8ef832f5-a39e-4427-9398-d22fc8b7c309.png" /></p><p><b>Figure 7</b><br /><i>Web Platform Installation – Microsoft.NET Framework 4 installation</i></p><br /></li>
+          <li>After rebooting your PC, restart the Web Platform Installer by selecting it from the <b>Start</b> menu | <b>All Programs</b> | <b>Microsoft</b><b>Web Platform Installer</b>.<p><img src="images\e7951c03-0b71-4457-92fe-4e262db44115.png" /></p><p><b>Figure 8</b><br /><i>Starting Web Platform Installer</i></p><br /></li>
+          <li>The <b>Web Platform Installer</b> will resume downloading and installing the products. When this process is finished, the Installer will show the list of all the software installed. Click <b>Finish</b>.<p><img src="images\88fca2bc-5246-4703-a8a1-4fb7437b62bc.png" /></p><p><b>Figure 9</b><br /><i>Web Platform Installer</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you get an error with SQL Server Express 2008 R2 installation like the following, please dismiss it. You will be able to work-around it in <b>ASP.NET MVC 2.0 Models and Data Access</b> Hands-on lab.<br /><img src="images\841fd4a0-66cf-4a74-884e-e458161e8112.png" /><br />Figure 10<br />SQL Server Express 2008 R2 installation error</td></tr></table><p /></div><br /></li>
+          <li>Finally the Web Platform Installer shows the installed products. Click <b>Exit </b>to finish the setup process.</li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab is comprised by the following exercises:</p>
+        <ol>
+          <li>Exercise 1: Creating MusicStore ASP.NET MVC Web Application Project</li>
+          <li>Exercise 2: Creating a Controller</li>
+          <li>Exercise 3: Passing parameters to a Controller</li>
+          <li>Exercise 4: Adding Ajax for Searching Activities</li>
+          <li>Exercise 5: Creating a View Model</li>
+          <li>Exercise 6: Using parameters in View</li>
+        </ol>
+        <p>Estimated time to complete this lab: <b>45 minutes</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <a name="_Toc166647553" href="#">
+                  <span />
+                </a>
+                <a name="_Toc172462715" href="#">
+                  <span />
+                </a>
+                <a name="_Toc182141329" href="#">
+                  <span />
+                </a> Each exercise is accompanied by an <b>End</b> folder containing the resulting solution you should obtain after completing the exercises. You can use this solution as a guide if you need additional help working through the exercises.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc244326109" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_c8e1c489-bf9e-471f-8b97-46b96d3075a5.html">Exercise 1: Creating MusicStore ASP.NET MVC Web Application Project</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Passing parameters to a Controller" />
+      <MSHelp:RLTitle Title="Exercise 3: Passing parameters to a Controller" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Passing parameters to a Controller</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Fundamentals</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Passing parameters to a Controller</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Until now, you have been returning constant strings from the Controllers. In this exercise you will learn how to pass parameters to a Controller using the URL and querystring and then making the method actions respond with text to the browser.</p>
+        <a name="_Toc282507914" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding Genre Parameter to StoreController</b>
+        </p>
+        <p>In this task, you will use the <b>querystring</b> to send parameters to the <b>Browse</b> action method in the <b>StoreController</b>.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex03-PassingParametersToAController\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>. Alternatively, you may continue with the solution that you obtained after completing the previous exercise.</li>
+          <li>Open <b>StoreController</b> class. To do this, in the <b>Solution Explorer</b>, expand the <b>Controllers</b> folder and double-click <b>StoreController.cs</b>.</li>
+          <li>Change the <b>Browse</b> method, adding a string parameter to request for a specific genre. ASP.NET MVC will automatically pass any querystring or form post parameters named <b>genre</b> to this action method when invoked. To do this, replace the <b>Browse </b>method with the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex3 StoreController BrowseMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>//</b><b>// GET: /Store/Browse?genre=Disco</b><b>public string Browse(string genre)</b><b>{</b><b>  string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);</b><b>  return message;</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You are using the <b>HttpUtility.HtmlEncode</b> utility method to prevents users from injecting Javascript into the View with a link like <b>/Store/Browse?Genre=&lt;script&gt;window.location=’http://hackersite.com’&lt;/script&gt;</b>.<br />For further explanation, please visit <a href="http://msdn.microsoft.com/en-us/library/a2a4yykt(v=VS.80).aspx">this msdn article</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282507915" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the Application</b>
+        </p>
+        <p>In this task, you will try out the Application in a web browser and use the <b>genre</b> parameter.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store/Browse?Genre=Disco</b> to verify that the action receives the genre parameter.<p><img src="images\1811c303-9b2d-4d17-9b95-db60cb3c784e.png" /></p><p><b>Figure 19</b><br /><i>Browsing /Store/Browse?Genre=Disco</i></p><br /></li>
+          <li>Close the browser.</li>
+        </ol>
+        <a name="_Toc282507916" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding an Id Parameter Embedded in the URL</b>
+        </p>
+        <p>In this task, you will use the <b>URL</b> to pass an <b>Id</b> parameter to the <b>Details</b> action method of the <b>StoreController</b>. ASP.NET MVC’s default routing convention is to treat the segment of a URL after the action method name as a parameter named <b>Id</b>.  If your action method has a parameter named Id then ASP.NET MVC will automatically pass the URL segment to you as a parameter. In the URL <b>Store/Detail/5</b>, <b>Id</b> will be interpreted as <b>5</b>.</p>
+        <ol>
+          <li>Change the <b>Details</b> method of the <b>StoreController</b>, adding an <b>int</b> parameter called <b>id</b>. To do this, replace the <b>Details </b>method with the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex3 StoreController DetailsMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>//</b><b>// GET: /Store/Details/5</b><b>public string Details(int id)</b><b>{</b><b>  string message = "Store.Details, ID = " + id;</b><b>  return message;</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282507917" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application</b>
+        </p>
+        <p>In this task, you will try out the Application in a web browser and use the <b>Id</b> parameter.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store/Details/5</b> to verify that the action receives the id parameter.<p><img src="images\debd3bd0-9161-4931-b1bc-1de05cf543ab.png" /></p><p><b>Figure 20</b><br /><i>Browsing /Store/Details/5</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_f5d3d395-7b98-424c-a5cd-41afb9fd2d93.html">Exercise 4: Creating a View</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

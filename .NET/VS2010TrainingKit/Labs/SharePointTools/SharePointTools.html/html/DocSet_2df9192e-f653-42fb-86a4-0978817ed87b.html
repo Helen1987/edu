@@ -1,0 +1,125 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Deploying and Debugging SharePoint Projects" />
+      <MSHelp:RLTitle Title="Exercise 3: Deploying and Debugging SharePoint Projects" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Deploying and Debugging SharePoint Projects</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Microsoft SharePoint 2010 Developer Tools</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Deploying and Debugging SharePoint Projects</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will test the work done so far and see how your project behaves when tested inside a SharePoint site. Also, you will debug your code using Visual Studio 2010 debugger.</p>
+        <a name="_Toc281415912" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Configuring and Deploying a SharePoint Project</b>
+        </p>
+        <p>In this task, you will configure the project properties previous to deploy the SharePoint project to the SharePoint Server.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ContosoWebParts.sln</b> located under the <b>Source\Ex3-DeployingAndDebugging\begin\ </b>(choosing the folder that matches the language of your preference.) Alternatively, you may continue working with the solution obtained after completing the previous exercise.</li>
+          <li>Right-click on the ContosoWebParts project node in the Solution Explorer and click Properties.</li>
+          <li>Navigate to the <b>SharePoint</b> tab to see the project deployment options.</li>
+          <li>Note that there are two textboxes that allow you to add command-line instructions which will execute either just before and directly after the SPT deploy steps are processed. You are not going to add anything to either of the two top textboxes.</li>
+          <li>Find the combo box control with the caption Active Deployment Configuration and change the selected item from Default to <b>No Activation</b>.<p><img src="images\6a0203d7-c558-4851-b280-3aa57ce15b6d.png" /></p><p><b>Figure 20</b><br /><i>SharePoint Project Properties</i></p><br /></li>
+          <li>Inside the <b>Edit Configurations</b> listbox, select the <b>No Activation</b> configuration and click the <b>View…</b> button to see its deployment configuration steps.</li>
+          <li>Click <b>OK</b> to close the View Deployment Configuration dialog. Save all your work and close the page which shows the project properties.<p><img src="images\8c1ac72a-8405-4a0b-9a51-674b925b0c24.png" /></p><p><b>Figure 21</b><br /><i>No Activation Deployment Configuration</i></p><br /></li>
+          <li>Now it's time to run the Deploy command. First, make sure the Output Window is visible so you can see how the things progress during the execution of the Deploy command. Then right-click on the ContosoWebParts project in Solution Explorer and run the project <b>Deploy</b> command.<p><img src="images\118e1725-d459-40c8-99c6-e6828ab96ea3.png" /></p><p><b>Figure 22</b><br /><i>Deploy SharePoint Project (C#)</i></p><br /><p><img src="images\822d63cb-13a0-43bb-a93a-9c16a358cd81.png" /></p><p><b>Figure 23</b><br /><i>Deploy SharePoint Project (C#)</i></p><br /></li>
+          <li>Examine the Output Window after the Deploy command has completed. Verify the steps that provided output to the Output windows.<p><img src="images\abc73c6d-278f-43d8-88f3-2a946825788f.png" /></p><p><b>Figure 24</b><br /><i>Successful Deploy Output window</i></p><br /></li>
+          <li>At this point, the solution package for the <b>ContosoWebParts</b> project has been deployed on the local SharePoint. Let's test out your work by trying to activate the feature you defined inside the ContosoWebParts project.<ol><li>Open Internet Explorer, and browse to the test site at <b>http://localhost/sites/SharePointToolsLab</b>.</li><li>Point to <b>Site Actions</b> and click <b>Site Settings</b> to navigate to the Site Settings page.</li><li>Inside the <b>Site Collection Administration</b> section of the <b>Site Settings</b> page, click on the <b>Site collection features</b> link to navigate to the Site Collection Administration &gt; Features page.</li><li>Locate the feature you have been working on with a title of <b>Contoso Web Parts</b>. You should also be able to see the feature's custom feature icon.<p><img src="images\4857cfd7-68a1-4bfe-992d-df3170eb0a9b.png" /></p><p><b>Figure 25</b><br /><i>SharePoint Site Collection Administration</i></p><br /></li></ol></li>
+          <li>Activate the <b>Contoso Web Parts</b> feature. If you return to the site's home page you should be able to verify that the code inside the <b>FeatureActivated</b> event handler executed and changed the site's title and its site icon.<p><img src="images\026711ac-a014-4248-85b2-b9aae13bf0d1.png" /></p><p><b>Figure 26</b><br /><i>SharePoint Feature Activated</i></p><br /></li>
+          <li>Navigate back to the <b>Site Collection Administration</b> &gt; <b>Features</b> page, and deactivate the <b>ContosoWebParts</b> feature so that you can test the code in the <b>FeatureDeactivating</b> event handler. Return to the site's home page and verify that the site title has been restored to its original value and that the site icon has been changed back to the default site icon for SharePoint sites.<p><img src="images\b5b83245-9cb3-481f-9eb7-ae5883e24c18.png" /></p><p><b>Figure 27</b><br /><i>SharePoint Feature Deactivated</i></p><br /></li>
+        </ol>
+        <a name="_Toc281415913" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Debugging SharePoint Feature Using Visual Studio 2010</b>
+        </p>
+        <p>In this task, you will use Visual Studio 2010 to enter in debug mode so that you can single step through the code while it's executing inside the context of the test site.</p>
+        <ol>
+          <li>Open the source <b>Main Event Receiver</b> in <b>Code View</b> by pressing <b>F7</b> with the <b>Main</b> Feature selected, and add a breakpoint to <b>FeatureActivated</b>.<p><img src="images\691367e7-1b4a-48b5-85ce-402675b8c7de.png" /></p><p><b>Figure 28</b><br /><i>FeatureActivated Breakpoint (C#)</i></p><br /><p><img src="images\4197a9c5-d3f2-4bd4-b5e2-78b8abc7dc43.png" /></p><p><b>Figure 29</b><br /><i>FeatureActivated Breakpoint (VB)</i></p><br /></li>
+          <li>Start the project in debug mode by running <b>Debug \ Start Debugging</b> menu command or pressing the equivalent shortcut key which is <b>F5</b>.</li>
+          <li>After running the Start Debugging command wait until the Visual Studio debugger has launched the Internet Explorer and navigated to the test site.</li>
+          <li>Within the test site, navigate to the <b>Site Collection Administration</b> &gt; <b>Features</b> page and activate the <b>ContosoWebParts</b> feature.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> At this point, Visual Studio should come into focus, and break at the line where you set the breakpoint. If this does not occur, try deactivating and reactivating the feature again.</td></tr></table><p /></div><br /><p><img src="images\711f0444-6193-421c-9f51-4c8d0c7a6cb7.png" /></p><p><b>Figure 30</b><br /><i>Debugging FeatureActivated (C#)</i></p><br /><p><img src="images\b08c4fd5-5afb-4114-81d5-038f8e9d223e.png" /></p><p><b>Figure 31</b><br /><i>Debugging FeatureActivated (VB)</i></p><br /></li>
+          <li>Press the <b>F11</b> key to single-step through the remaining lines of code. You should be able to hit <b>F11</b> repeatedly until the Visual Studio debugger relinquishes control back to the Internet Explorer.</li>
+          <li>Return to Visual Studio and stop the debugger by running the <b>Debug \ Stop Debugging</b> menu command or by pressing the equivalent shortcut key which is <b>SHIFT+F5</b>.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_c5f17980-979f-4b14-89c4-a58c783b63dc.html">Exercise 4: Creating, Deploying and Testing Web Parts</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

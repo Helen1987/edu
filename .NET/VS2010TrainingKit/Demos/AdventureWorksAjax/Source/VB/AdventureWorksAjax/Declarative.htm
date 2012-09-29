@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>AdventureWorks AJAX</title>
+        <link href="Content/Styles/Default.css" rel="stylesheet" type="text/css" />
+
+        <script src="Content/Scripts/MicrosoftAjax/MicrosoftAjax.debug.js" type="text/javascript"></script>
+        <script src="Content/Scripts/MicrosoftAjax/MicrosoftAjaxTemplates.debug.js" type="text/javascript"></script>
+        <script src="Content/Scripts/MicrosoftAjax/MicrosoftAjaxAdoNet.debug.js" type="text/javascript"></script>
+        <script src="Content/Scripts/MicrosoftAjax/MicrosoftAjaxDataContext.debug.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            var dataContext = Sys.create.adoNetDataContext({
+                    serviceUri: "AdventureWorks.svc"
+                });
+        </script>
+    </head>
+    <body
+        xmlns:sys="javascript:Sys"
+        xmlns:dataview="javascript:Sys.UI.DataView"
+        sys:activate="*">
+        <h1>AdventureWorks AJAX</h1>
+        <table
+            cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Suffix</th>
+                </tr>
+            </thead>
+            <tbody
+                id="customersTemplate"
+                class="sys-template"
+                sys:attach="dataview"
+                dataview:autofetch="true"
+                dataview:dataprovider="{{ dataContext }}"
+                dataview:fetchoperation="Customers"
+                dataview:fetchparameters="{{ { $top: 20, $orderby: 'FirstName', $expand: 'Orders' } }}"
+                dataview:initialselectedindex="0"
+                dataview:selecteditemclass="selected">
+                <tr sys:command="select" sys:class-odd="{{ $index % 2 != 0 }}">
+                    <td>{binding Title, defaultValue=}</td>
+                    <td>{binding FirstName}</td>
+                    <td>{binding MiddleName, defaultValue=}</td>
+                    <td>{binding LastName}</td>
+                    <td>{binding Suffix, defaultValue=}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div
+            class="sys-template"
+            sys:attach="dataview"
+            dataview:data="{binding selectedData, source=$customersTemplate}"
+            <h2>{{ FirstName + " " + LastName }}</h2>
+            <label for="first-name">
+                <span>First Name:</span>
+                <input type="text" id="first-name" sys:value="{binding FirstName}" />
+            </label>
+            <label for="middle-name">
+                <span>Middle Name:</span>
+                <input type="text" id="middle-name" sys:value="{binding MiddleName, defaultValue=}" />
+            </label>
+            <label for="last-name">
+                <span>Last Name:</span>
+                <input type="text" id="last-name" sys:value="{binding LastName}" />
+            </label>
+            <input type="button" sys:command="save" sys:value="Update" />
+        </div>
+    </body>
+</html>

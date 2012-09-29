@@ -1,0 +1,140 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Injecting Action Filters" />
+      <MSHelp:RLTitle Title="Exercise 3: Injecting Action Filters" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Injecting Action Filters</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Dependency Injection</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Injecting Action Filters</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In a previous Lab about Custom Action Filters you have been working with filters customization and injection. In this exercise,you will learn how to inject filters with Dependency Injection by using Unity Application Block containers. To do that, you will add to the Music Store Solution a custom action filter that will trace site activity.</p>
+        <br />
+        <a name="_Toc282507724" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Including the Tracking Filter in the Solution</b>
+        </p>
+        <p>In this task, you will include in the Music Store a custom action filter for event tracing. As filters were treated in a previous Lab “Custom Action Filters”, you will include the filter class from the Assets folder and then create a Filter Provider for Unity:</p>
+        <ol>
+          <li>Open the begin solution at <b>/Source/Ex03 – Injecting Filters/Begin/MvcMusicStore.sln</b>.</li>
+          <li>Create the folder <b>/Filters </b>at project root.</li>
+          <li>Add the custom action filter <b>TraceActionFilter.cs</b> to the project in the folder <b>/Filters </b>that you can find it at<b>/Sources/Assets/TraceActionFilter.cs</b>.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C# - TraceActionFilter.cs</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;namespace MvcMusicStore.Filters{    public class TraceActionFilter : IActionFilter    {        public void OnActionExecuted(ActionExecutedContext filterContext)        {            filterContext.HttpContext.Trace.Write("OnActionExecuted");            filterContext.HttpContext.Trace.Write("Action " + filterContext.ActionDescriptor.ActionName);            filterContext.HttpContext.Trace.Write("Controller " + filterContext.ActionDescriptor.ControllerDescriptor.ControllerName);        }        public void OnActionExecuting(ActionExecutingContext filterContext)        {            filterContext.HttpContext.Trace.Write("OnActionExecuting");            filterContext.HttpContext.Trace.Write("Action " + filterContext.ActionDescriptor.ActionName);            filterContext.HttpContext.Trace.Write("Controller " + filterContext.ActionDescriptor.ControllerDescriptor.ControllerName);        }    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This custom action filter performs ASP.NET tracing.<br />You can check “Global and Dynamic Action Filters” Lab for more reference.</td></tr></table><p /></div><br /></li>
+          <li>Add the empty class <b>FilterProvider.cs</b> to the project in the folder <b>/Filters.</b></li>
+          <li>Include <b>System.Web.Mvc</b> and <b>Microsoft.Practices.Unity</b> namespaces in <b>FilterProvider.cs</b>.<p>(Code Snippet – ASP.NET MVC Dependency Injection – Ex03 Injecting Action Filters – FilterProvider namespace – Csharp)</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C# </th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;<b>using System.Web.Mvc;</b><b>using Microsoft.Practices.Unity;</b>namespace MvcMusicStore.Filters{    public class FilterProvider     {    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Make the class inherit from <b>IFilterProvider</b> Interface.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using Microsoft.Practices.Unity;namespace MvcMusicStore.Filters{    public class FilterProvider : IFilterProvider    {    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Add a <b>IUnityContainer</b> property in <b>FilterProvider</b> class, and then create a class constructor to set the container:<p>(Code Snippet – ASP.NET MVC Dependency Injection – Ex03 Injecting Action Filters – IUnityContainer – Csharp)</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C# </th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using Microsoft.Practices.Unity;namespace MvcMusicStore.Filters{    public class FilterProvider : IFilterProvider    {<b>        IUnityContainer container;</b><b>        public FilterProvider(IUnityContainer container)</b><b>        {</b><b>            this.container = container;</b><b>        }</b>    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The filter provider class constructor is not creating a <b>new</b> object inside. The container is passed as a parameter, and the dependency is solved by Unity.</td></tr></table><p /></div><br /></li>
+          <li>Implement in <b>FilterProvider</b> class the method <b>GetFilters</b> from <b>IFilterProvider</b> interface:<p>(Code Snippet – ASP.NET MVC Dependency Injection –  Ex03 Injecting Action Filters – GetFilters – Csharp)</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C# </th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using Microsoft.Practices.Unity;namespace MvcMusicStore.Filters{    public class FilterProvider : IFilterProvider    {        IUnityContainer container;        public FilterProvider(IUnityContainer container)        {            this.container = container;        }<b>        public IEnumerable&lt;Filter&gt; GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)</b><b>        {</b><b>            foreach (IActionFilter actionFilter in container.ResolveAll&lt;IActionFilter&gt;())</b><b>                yield return new Filter(actionFilter, FilterScope.First, null);</b><b>        }</b>    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This implementation of <b>GetFilters</b> method is shorter than the one you have learned in “<b>Global and Dynamic Action Filters”</b> lab, where you ask if each controller or action was inside a list of accepted items.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282507725" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Registering and Enabling the Filter</b>
+        </p>
+        <ol>
+          <li>In this task, you will enable site tracking and then you will register the filter in <b>Global.asax.cs Application_Start</b> method to start tracing:</li>
+          <li>Open <b>Web.config</b> at project root and enable trace tracking at System.Web group:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>  &lt;system.web&gt;<b>    &lt;trace enabled="true"/&gt;</b>    &lt;compilation debug="true" targetFramework="4.0"&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Open <b>Global.asax.cs</b> at project root and add a reference to the Filters namespace:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using System.Web.Routing;using Microsoft.Practices.Unity;using MvcMusicStore.Services;using MvcMusicStore.Factories;using MvcMusicStore.Controllers;<b>using MvcMusicStore.Filters;</b>namespace MvcMusicStore</pre></td></tr></table></span></div><br /></li>
+          <li>Select <b>Application_Start</b> method and register the filter in the Unity Container. You will have to register the filter provider and the action filter as well:<p>(Code Snippet – ASP.NET MVC Dependency Injection –  Ex03 Injecting Action Filters – Global asax unity registration - CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Application_Start(){    AreaRegistration.RegisterAllAreas();    RegisterGlobalFilters(GlobalFilters.Filters);    RegisterRoutes(RouteTable.Routes);    var container = new UnityContainer();    container.RegisterType&lt;IStoreService, StoreService&gt;();    container.RegisterType&lt;IController, StoreController&gt;("Store");    var factory = new UnityControllerFactory(container);    ControllerBuilder.Current.SetControllerFactory(factory);    IDependencyResolver resolver = DependencyResolver.Current;    container.RegisterInstance&lt;IMessageService&gt;(new MessageService {         Message = "You are welcome to our Web Camps Training Kit!",        ImageUrl = "/Content/Images/logo-webcamps.png"        });    container.RegisterType&lt;IViewPageActivator, CustomViewPageActivator&gt;(new InjectionConstructor(container));<b>    container.RegisterInstance&lt;IFilterProvider&gt;("FilterProvider", new FilterProvider(container));</b><b>    container.RegisterInstance&lt;IActionFilter&gt;("LogActionFilter", new TraceActionFilter());</b>    IDependencyResolver newResolver = new UnityDependencyResolver(container, resolver);    DependencyResolver.SetResolver(newResolver);}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282507726" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Running the Application</b>
+        </p>
+        <p>In this task, you will run the application and test that the custom action filter is tracing the activity:</p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>Browse to <b>/Store</b> and choose ‘<b>Rock’</b> genre. You can browse to more genres if you want to.<p><img src="images\9784bd80-9447-48e8-8955-49837464c1aa.png" /></p><p><b>Figure 1</b><br /><i>Music Store</i></p><br /></li>
+          <li>Browse to <b>/Trace.axd</b> to see the Application Trace page, and then click the ‘<b>View Details’ </b>link at the right column for <b>Store/</b>:<p><img src="images\192ac257-c94e-4071-ac8b-9ec10b8da3f3.png" /></p><p><b>Figure 2</b><br /><i>Application Trace Log</i></p><br /><p><img src="images\b496e06a-5a63-45ca-8ad1-ee49464906fa.png" /></p><p><b>Figure 3</b><br /><i>Application Trace – Request Details</i></p><br /></li>
+          <li>Close the browser.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b1b64704-68cc-4f9c-aa29-a639794259de.html">Summary</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

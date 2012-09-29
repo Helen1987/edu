@@ -1,0 +1,5 @@
+﻿INSERT INTO SalesLT.Customer
+                         (NameStyle, Title, FirstName, MiddleName, LastName, Suffix, CompanyName, SalesPerson, EmailAddress, Phone, PasswordHash, PasswordSalt, rowguid, 
+                         ModifiedDate)
+VALUES        (0, 'Mr.', N'John', NULL, N'Aabe', NULL, N'Acme Corp', N'adventure-works\pamela0', N'johnd@acme.com', N'123-123-1234', 
+                         'L/Rlwxzp4w7RWmEgXX+/A7cXaePEPcp+KwQhl2fJL7w=', '1KjXYs4=', NEWID(), GETDATE())

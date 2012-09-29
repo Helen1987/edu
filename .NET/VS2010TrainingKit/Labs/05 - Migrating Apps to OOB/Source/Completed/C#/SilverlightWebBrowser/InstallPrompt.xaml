@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="SilverlightWebBrowser.InstallPrompt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<RadialGradientBrush GradientOrigin="0.5,-0.043" RadiusX="0.876" RadiusY="0.563">
+    			<GradientStop Color="#FF474747" Offset="1"/>
+    			<GradientStop Color="#FF919191"/>
+    		</RadialGradientBrush>
+    	</Grid.Background>
+    	<Border x:Name="InstallPanel" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" d:LayoutOverrides="Width" Background="#B1FFFFFF" CornerRadius="6" BorderBrush="White">
+    		<StackPanel Margin="20">
+
+    			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="This application needs to be installed." d:LayoutOverrides="Height"/>
+    			<TextBlock TextWrapping="Wrap" Text="Click the Install button below." d:LayoutOverrides="Height" HorizontalAlignment="Center"/>
+    			<Button x:Name="InstallButton" Margin="0,19,0,0" HorizontalAlignment="Center" FontFamily="/SilverlightWebBrowser;component/Fonts/Fonts.zip#Bodoni Bd BT" FontSize="21.333" Style="{StaticResource BlueButtonStyle}" Padding="12,5">
+    				<StackPanel Orientation="Horizontal">
+    					<Path Data="F1M136.7153,229.0835C136.7153,229.0835,149.7293,229.0885,155.6393,229.0885C157.1863,229.0885,158.4423,227.8335,158.4423,226.2855C158.4423,224.7365,157.1863,223.4825,155.6393,223.4825C150.6843,223.4825,136.7313,223.4765,136.7313,223.4765C136.7313,223.4765,137.6683,222.5285,141.9893,218.2075C143.0833,217.1135,143.0833,215.3395,141.9893,214.2445C140.8943,213.1495,139.1193,213.1495,138.0253,214.2445C134.5213,217.7475,127.9683,224.3005,127.9683,224.3005C126.8743,225.3945,126.8743,227.1695,127.9683,228.2645C127.9683,228.2645,133.6223,233.9185,137.9443,238.2395C139.0393,239.3345,140.8143,239.3345,141.9083,238.2395C143.0033,237.1455,143.0033,235.3705,141.9083,234.2755C138.4043,230.7715,136.7153,229.0835,136.7153,229.0835" Height="14.013" Stretch="Fill" Width="17.104" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Fill="#FF252525">
+    						<Path.RenderTransform>
+    							<CompositeTransform Rotation="-90"/>
+    						</Path.RenderTransform>
+    					</Path>
+    					<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="INSTALL" TextOptions.TextHintingMode="Animated" FontSize="18.667" Margin="5,0,0,0" Foreground="#FF252525"/>
+    				</StackPanel>
+    			</Button>
+    		</StackPanel>
+    	</Border>
+    	<Border x:Name="AlreadyInstalledPanel" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" d:LayoutOverrides="Width" Background="#B1FFFFFF" CornerRadius="6" BorderBrush="White">
+		      <TextBlock TextAlignment="Center" Margin="8" TextOptions.TextHintingMode="Animated">
+		        <Run>This application </Run>
+		        <LineBreak/>
+		        <Run> is already installed onto this computer.</Run>
+		        <LineBreak/>
+		      </TextBlock>
+		</Border>
+    </Grid>
+</UserControl>

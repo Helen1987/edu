@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Author>
+    <Name>JasOlson</Name>
+  </Author>
+  <Id>MEFPreview7</Id>
+  <Version>1.0</Version>
+  <Title>MEF Preview 7</Title>
+  <Description>
+    In this episode of 10-4, we revisit the Managed Extensibility Framework and take a look at all the new improvements made in the latest available release, Preview 7.
+  </Description>
+  <Abstract>
+    In this episode of 10-4, we revisit the Managed Extensibility Framework and take a look at all the new improvements made in the latest available release, Preview 7.
+  </Abstract>
+  <Url>
+    http://ecn.channel9.msdn.com/o9/ch9/3/7/6/0/9/4/104Episode32MefPreview7_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/10-4/10-4-Episode-32-MEF-Preview-7/Player/" />
+  </CustomProperties>
+</Video>

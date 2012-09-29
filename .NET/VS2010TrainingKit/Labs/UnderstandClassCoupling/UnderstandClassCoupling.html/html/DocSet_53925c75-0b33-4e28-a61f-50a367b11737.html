@@ -1,0 +1,114 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Introduction to Class Dependency Graphs " />
+      <MSHelp:RLTitle Title="Exercise 1: Introduction to Class Dependency Graphs " />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Introduction to Class Dependency Graphs </title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Understanding Class Coupling with Visual Studio 2010 Ultimate</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Introduction to Class Dependency Graphs </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to generate and navigate a class dependency graph.</p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Visual Studio from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>In Source Control Explorer (<b>View | Other Windows | Source Control Explorer</b>), navigate to <b>Tailspin Toys | Development | Iteration 2</b> and double-click on the <b>TailspinToys.sln</b> file to open the Tailspin Toys solution.</li>
+          <li>Rebuild the solution (<b>Build | Rebuild Solution</b> from the main menu). This step may take a few minutes to complete.</li>
+          <li>Close the <b>Output</b> window after the build has successfully completed.</li>
+          <li>Create a new class dependency graph (<b>Architecture | Generate Dependency Graph | By Class</b>). The class dependency graph is stored in a <b>Directed Graph Markup Language</b> format (hereafter referred to as <b>DGML</b>), which allows you to work with it using Visual Studio 2010 as well as other standard tools.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Generating the class dependency graph for all projects in the solution may take a minute to complete.</td></tr></table><p /></div></li>
+          <li>Select the <b>Quick Clusters</b> button from the Directed Graph toolbar to view all classes and their relationships at a glance.<p><img src="images\8429b914-6272-4216-a778-dd910b0e5e43.png" /></p><p><b>Figure 1</b><br /><i>Quick Clusters layout button location</i></p><p><img src="images\a723e342-31cb-446b-b2bd-5247718eb712.png" /></p><p><b>Figure 2</b><br /><i>Quick Clusters view of generated class dependency graph</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The generated dependency graph views that you see may be different from the screenshots shown in this lab manual. You may need to perform additional zooming, scrolling, and visually searching for objects specified in the lab steps.</td></tr></table><p /></div></li>
+          <li>The Quick Clusters layout view of this class dependency graph only gives us an idea of the number of classes in all TailspinToys projects and their degree of dependency between each other. This is of limited usefulness to us, so <b>zoom</b> in towards the center of the graph by holding down the <b>Ctrl</b> key and using the mouse scroll wheel until you can clearly see the <b>Product</b> class.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Zooming can also be done using the Zoom drop down box in the Directed Graph toolbar, or alternatively by using the <b>+</b> and <b>–</b> magnifying glass icons next to the Zoom drop down. </td></tr></table><p /></div><p><img src="images\b2168778-b749-46df-8cdc-3995cf511e87.png" /></p><p><b>Figure 3</b><br /><i>Close up view of class dependency graph showing the Product class</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Gray lines of varying thicknesses represent the magnitude of relationship interdependencies between classes, with thicker lines equating to more relationships.</td></tr></table><p /></div></li>
+          <li>Select the <b>Product</b> class by left-clicking on it to highlight only the direct relationships (purple color) between the Product class and the other classes represented in the graph. <p><img src="images\05e58177-7c84-4a9d-a1a9-bd55917e807a.png" /></p><p><b>Figure 4</b><br /><i>Product class selected showing direct relationship lines</i></p></li>
+          <li>Selecting the Product class node from the graph helps highlight its direct relationship to other classes, but it is still difficult to distinguish between incoming and outgoing dependency relationships. To help visually make this distinction, change the graph layout by selecting the <b>Top to Bottom</b> button from the Directed Graph toolbar.<p><img src="images\5cb63c7c-ea52-46fe-9f89-8f5b119f49e8.png" /></p><p><b>Figure 5</b><br /><i>Top to Bottom layout button location</i></p><p><img src="images\4cd424c5-7d89-4b24-8466-7f9385529696.png" /></p><p><b>Figure 6</b><br /><i>Result of Top to Bottom layout</i></p></li>
+          <li>The top to bottom layout shows incoming dependency relationship lines on the top and outgoing lines on the bottom. This is an improvement, but there is still a lot of visual noise from dependency relationships between the other classes (shown in gray). Select the <b>Butterfly Mode</b> button to hide the relationship lines that do not live on a path through the selected Product node.<p><img src="images\cccc049f-6d13-4769-a183-0983db8bcd70.png" /></p><p><b>Figure 7</b><br /><i>Butterfly Mode button location</i></p><p><img src="images\b6845428-4dfc-44e3-8420-ba9bbd9cb15e.png" /></p><p><b>Figure 8</b><br /><i>Butterfly Mode view</i></p></li>
+          <li>We can simplify the visualization of dependency relationships and classes even further by choosing the depth to branch out. Select the <b>Neighborhood Browse Mode</b> button from the Directed Graph toolbar and select the <b>1 Link</b> option. <p><img src="images\f762a08e-6568-420a-986d-85a05d68353e.png" /></p><p><b>Figure 9</b><br /><i>Neighborhood Browse Mode button location</i></p><p><img src="images\9f9f238f-efc3-4715-b4c2-652f3aeb528d.png" /></p><p><b>Figure 10</b><br /><i>Result of Neighborhood Browse Mode with 1 Link</i></p></li>
+          <li>Select the <b>Quick Clusters</b> layout button to return to the clusters layout view.<p><img src="images\4852e49f-016b-48d4-8b58-441af2894293.png" /></p><p><b>Figure 11</b><br /><i>Quick Clusters layout button location</i></p></li>
+          <li>Zoom out as necessary to fit the entire graph into view.<p><img src="images\7f4a3b19-1dca-4c81-bb6f-e65556282f86.png" /></p><p><b>Figure 12</b><br /><i>Quick Clusters view showing direct dependencies between Product and other classes</i></p></li>
+          <li>Locate the <b>OrderLine</b> class node and hover the mouse cursor over the purple relationship line that connects to the <b>Product</b> class node. When the navigation control appears, click on the <b>+</b> button to see the details of this relationship. This will start the process of generating a new dependency graph.<p><img src="images\4d77d283-8579-4d17-a54c-111f1f79f342.png" /></p><p><b>Figure 13</b><br /><i>Location of + button to create a new graph</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The navigation control that appears when hovering over a purple relationship line exposes three actions. The two arrows navigate to either the source or the target node of the relationship (depending upon context). The + button will help you generate a new graph with just the source and target nodes.</td></tr></table><p /></div></li>
+          <li>In the <b>Generate Dependency Graph</b> window, only include <b>Types</b> and <b>Methods</b>. We will leave Assemblies, Namespaces, and Externals out of the new graph. Select the option to <b>Show Containment as group</b> and select the <b>OK</b> button to generate the new graph.<p><img src="images\9e568f3a-ede9-47e6-aea7-487f1e47a00d.png" /></p><p><b>Figure 14</b><br /><i>Generate Dependency Graph options</i></p><p><img src="images\3df31f89-ad71-46e0-bc9d-ba5decd2e705.png" /></p><p><b>Figure 15</b><br /><i>Initial view of generated dependency graph</i></p></li>
+          <li>Let’s expand on this initial view by right-clicking and selecting <b>Group | Expand All</b>.</li>
+          <li>Select the <b>Top to Bottom</b> layout button.<p><img src="images\91894505-306c-4d6b-920c-3485d4b00f88.png" /></p><p><b>Figure 16</b><br /><i>Expanded dependency graph</i></p></li>
+          <li>So far, the only additional thing that we have learned about the relationship between these two classes is the methods that are involved. To see more details about the relationship between the methods, select the <b>Dependency Matrix View</b> button.<p><img src="images\bf7988c7-b3d0-4624-adf5-8eac65a882f6.png" /></p><p><b>Figure 17</b><br /><i>Dependency Matrix View button location</i></p><p><img src="images\5498de95-0ea1-44c5-8704-db6ea5f5dc93.png" /></p><p><b>Figure 18</b><br /><i>Dependency matrix view</i></p></li>
+          <li>The dependency matrix view allows sorting rows or columns by display name. Select the <b>Sort Rows by Display Name</b> button just to the right of the Dependency Matrix View button.</li>
+          <li>The dependency matrix view currently shows the relationship going from the OrderLine class to the Product class, as you can see from the arrow direction in Figure 15. </li>
+          <li>Another option that you have is to use the Reflexive view in order to see the relationships regardless of the direction. Select the <b>Show Reflexive View</b> button.<p><img src="images\dafac1ec-1263-477d-993d-a267d6b727e9.png" /></p><p><b>Figure 19</b><br /><i>Show Reflexive View button location</i></p><p><img src="images\8ca0dc33-c619-48da-a982-f217cacc8fca.png" /></p><p><b>Figure 20</b><br /><i>Reflexive view of dependency matrix</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_83eee840-1025-4c2b-a84c-6c96bb623bb9.html">Exercise 2: Discovering Circular References</a>
+        </p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

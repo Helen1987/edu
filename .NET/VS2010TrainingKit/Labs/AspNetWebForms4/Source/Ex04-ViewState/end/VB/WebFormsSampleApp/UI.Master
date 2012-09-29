@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ Master Language="vb" AutoEventWireup="true" CodeBehind="UI.Master.vb" Inherits="WebFormsSampleApp.Master.UI" %>
+<%@ Register Src="~/UserControls/ShoppingCart.ascx" TagName="ShoppingCart" TagPrefix="uc1" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+	<title>AdventureWorks Cycles Store</title>
+	<link type="text/css" rel="Stylesheet" media="screen" href="/Styles/reset.css" />
+	<link type="text/css" rel="Stylesheet" media="screen" href="/Styles/main.css" />
+	<script type="text/javascript" src="/Scripts/jquery-1.4.1.js"></script>
+	<asp:ContentPlaceHolder ID="HeadContent" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div id="wrap">
+	  <div id="header">
+			<h1><a href="./"><span>AdventureWorks - Cycles store</span></a></h1>
+		</div>
+		<hr />
+		<div id="nav">
+			<a href="#">About Us</a> | <a href="#">Products</a> | <a href="#">Warranty</a> |
+			<a href="#">Contact Us</a>
+		</div>
+		<hr />
+		<uc1:ShoppingCart ID="ShoppingCart1" runat="server" ClientIDMode="Static" />
+		<hr />
+		<div id="content">
+			<asp:ContentPlaceHolder ID="MainContent" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+
+	</div>
+	</form>
+	<div id="footerWrap">
+		<div id="footer">
+			<p class="copy"><span>Web Forms Sample &copy; Copyright <%= DateTime.Now.Year %></span></p>
+		</div>
+	</div>
+</body>
+</html>

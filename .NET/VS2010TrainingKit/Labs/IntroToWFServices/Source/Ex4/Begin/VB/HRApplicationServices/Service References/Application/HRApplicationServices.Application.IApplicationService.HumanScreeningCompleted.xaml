@@ -1,0 +1,58 @@
+﻿<Activity x:Class="Application.Activities.HumanScreeningCompleted" this:HumanScreeningCompleted.EndpointConfigurationName="BasicHttpBinding_IApplicationService" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ha="clr-namespace:HRApplicationServices.Application;assembly=HRApplicationServices, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:ha1="clr-namespace:HRApplicationServices.Application;assembly=HRApplicationServices" xmlns:hc="clr-namespace:HRApplicationServices.Contracts;assembly=HRApplicationServices.Contracts" xmlns:hc1="clr-namespace:HRApplicationServices.Contracts;assembly=HRApplicationServices.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://contoso.com/hr/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:this="clr-namespace:Application.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String" />
+    <x:Property Name="HumanScreeningResult" Type="InArgument(hc:HumanScreeningResult)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="_boolean" Type="OutArgument(s:Nullable(x:Boolean))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://contoso.com/hr/IApplicationService/HumanScreeningCompleted" OperationName="HumanScreeningCompleted" ServiceContractName="p:IApplicationService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="ha1:HumanScreeningCompletedRequest">[New HRApplicationServices.Application.HumanScreeningCompletedRequest() With { .HumanScreeningResult = HumanScreeningResult }]</InArgument>
+      </p1:SendMessageContent>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://contoso.com/hr/IApplicationService/HumanScreeningCompletedResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="ha1:HumanScreeningCompletedResponse">
+          <VariableReference x:TypeArguments="ha1:HumanScreeningCompletedResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="ha1:HumanScreeningCompletedResponse" x:Name="__ReferenceID1" Name="tempResult" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:Nullable(x:Boolean)">[_boolean]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">[tempResult.boolean]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

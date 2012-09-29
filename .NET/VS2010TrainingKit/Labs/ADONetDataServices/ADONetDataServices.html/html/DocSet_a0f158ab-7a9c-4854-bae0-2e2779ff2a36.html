@@ -1,0 +1,344 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Extending Data Services with Service Operations and Interceptors" />
+      <MSHelp:RLTitle Title="Exercise 3: Extending Data Services with Service Operations and Interceptors" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Extending Data Services with Service Operations and Interceptors</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ADO.NET Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Extending Data Services with Service Operations and Interceptors</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>There are scenarios where you need to add data validation rules or custom behaviors. In this exercise you will use <b>Service Interceptors</b> to add validation support and <b>Service Operations</b> to perform custom queries.</p>
+        <p>The scenario used in this exercise is very similar to the one in the previous exercise. You will retrieve a product list, but this time, using a <b>Service Operation</b> instead of a REST query and then add <b>Service Interceptors</b> to upgrade the <i>create</i> and <i>update</i> product functionality.</p>
+        <a name="_Toc225853142" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284165" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302699" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307204" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921197" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Service Operation</b>
+        </p>
+        <p>In this task you will create a service operation to retrieve a product list, add an access rule and call it from a JS script.</p>
+        <ol>
+          <li>Open <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>DataServiceOperationsAndInterceptors.sln</b> located under the <b>Source\Ex03-ServiceInterceptors\begin</b> folder of this lab<b> </b>(choosing the folder that matches the language of your preference.) </li>
+          <li>Open the <b>AdventureWorks.svc.cs (C#) or AdventureWorks.svc.vb (Visual Basic)</b> file. To do this, in Solution Explorer, double-click the <b>AdventureWorks.svc.cs (C#) or AdventureWorks.svc.vb (Visual Basic)</b> file.<p><img src="images\feab5faa-09fb-4eca-92c7-055973aef0f2.png" /></p><p><b>Figure 24</b><br /><i>Opening AdventureWorks.svc.cs file</i></p></li>
+          <br />
+          <p>
+            <img src="images\deb30e35-5d17-4508-85fd-9b31a5827d58.png" />
+          </p>
+          <p>
+            <b>Figure 25</b>
+            <br />
+            <i>Opening AdventureWorks.svc.vb file</i>
+          </p>
+          <br />
+          <li>Add a service operation to retrieve products. To do this, in the <b>AdventureWorks.svc.cs (C#) or AdventureWorks.svc.vb (Visual Basic)</b> file add the following method.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This method has a <b>WebGet</b> attribute because this API works over WCF. The Service Operation receives two parameters and returns an <b>IQueryable</b> interface. The method uses the <i>CurrentDataSource</i> property as data source and performs a LINQ query to retrieve the products within the specified category and with the defined product name, if the parameter is distinct from an empty string.</td></tr></table><p /></div><br /><p>(Code Snippet – <i>Data Services Interceptors Lab – Service Operation CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[WebGet]</b><b>public IQueryable&lt;Product&gt; GetProducts(string productName, int productCategoryId)</b><b>{</b><b>    return from p in this.CurrentDataSource.Product</b><b>           where p.ProductCategory.ProductCategoryID == productCategoryId</b><b>           &amp;&amp; (p.Name == productName || String.IsNullOrEmpty(productName))</b><b>           select p;</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet – <i>Data Services Interceptors Lab – Service Operation VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>&lt;WebGet()&gt; _</b><b>Public Function GetProducts(ByVal productName As String, ByVal productCategoryId As Integer) As IQueryable(Of Product)</b><b>    Return From p In Me.CurrentDataSource.Product _</b><b>        Where p.ProductCategory.ProductCategoryID = productCategoryId AndAlso (p.Name = productName OrElse [String].IsNullOrEmpty(productName)) _</b><b>        Select p</b><b>End Function</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>To access the data you should use the <b>CurrentDataSource</b> property of the Service, that is the generic type received when declaring the Data Service class. Because when received as the generic type, the service registers the serializers through WCF. If you use a different data source, the answer will not be able to be serialized.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>By returning a query instead of the final data, the Data Service engine is able to apply additional operators (such as orderby or filter) to the query. If you want to avoid this, return an <b>IEnumerable</b> interface.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>To be able to use the <b>Service Operation</b> you need to specify an <b>access rule</b>. To do so, place the following bolded code inside the <b>InitializeService</b> method (located in the <b>AdventureWorks.svc.cs (C#) or AdventureWorks.svc.vb (Visual Basic)</b> file).<p>(Code Snippet – <i>Data Services Interceptors Lab – Access Rule CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public static void InitializeService(DataServiceConfiguration config){    config.SetEntitySetAccessRule("*", EntitySetRights.All);<b>   config.SetServiceOperationAccessRule("GetProducts", ServiceOperationRights.All);</b><b>    config.DataServiceBehavior.MaxProtocolVersion = System.Data.Services.Common.DataServiceProtocolVersion.V2;</b>}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Interceptors Lab – Access Rule VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Shared Sub InitializeService(ByVal config As DataServiceConfiguration)    config.SetEntitySetAccessRule("*", EntitySetRights.All)<b>    config.SetServiceOperationAccessRule("GetProducts", ServiceOperationRights.All)</b><b>    config.DataServiceBehavior.MaxProtocolVersion = System.Data.Services.Common.DataServiceProtocolVersion.V2</b>End Sub</pre></td></tr></table></span></div></li>
+          <br />
+          <p>You have configured the Service Operation <i>GetProducts</i> to have <b>All</b> access rights.</p>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>Other possible access rights are <b>AllRead</b>, <b>None</b>, <b>ReadMultiple</b> and <b>ReadSingle.</b></td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Add JavaScript code to call this <b>Service Operation</b>. To do this, in <b>Solution Explorer</b>, double-click <b>ProductGateway.js,</b> remove the code inside <b>getProducts</b> function and add the following code inside it.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JavaScript</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function getProducts() {    var ServiceGateway = getService();<b>    var sb = new Sys.StringBuilder();</b><b>    sb.append("GetProducts?");</b><b>    sb.append("productName='");</b><b>    sb.append($get("txtProductName").value);</b><b>    sb.append("'&amp;");</b><b>    sb.append("productCategoryId=");</b><b>    sb.append($get("cmbProductCategory").value);</b><b>    ServiceGateway.query(sb.toString(), getProductsSuccess, genericFailure);</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This method obtains a service gateway that is an instance of the <b>Sys.Data.AdoNetServiceProxy </b>class, and then builds a string to call the <b>GetProducts</b> Service Operation, adding the two parameters in the query string URL encoded. Finally it executes a query using the query string and two callbacks functions. One for success and the other one to be called in case of an error.</td></tr></table><p /></div><br /></li>
+          <li>To verify this task, in solution explorer, press <b>F5</b> to run the solution. Then select the <b>Brakes</b> category from the <i>Product Category</i> drop down list and click <b>Search</b>. You should see an output similar to the following image.<p><img src="images\6b6f29d6-56f5-4e86-bb33-1c67a20159d0.png" /></p><p><b>Figure 26</b><br /><i>Using the Service Operation</i></p></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> If the solution throws a <b>JScript</b> error when using Internet Explorer 8, omit the exception and turn on Internet Explorer 8 <b>Compatibility View</b> (<img src="images\bb4505fd-7cf8-4464-a809-e60463f541b3.png" /> ).</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Close the web browser to stop the application.</li>
+        </ol>
+        <a name="_Toc225853143" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284166" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302700" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307205" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921198" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating a Service Interceptor</b>
+        </p>
+        <p>In this task you will create a Service Interceptor to add a required database field. It will add a row GUID to every updated product to be saved into the data base.</p>
+        <ol>
+          <li>Add a change interceptor to add a row GUID to every new product created. To do this, in the <b>AdventureWorks.svc.cs</b> file add the following method below the <b>GetProducts</b> method.<p>(Code Snippet – <i>Data Services Interceptors Lab – Change Interceptor Add rowGuid CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[ChangeInterceptor("Product")]</b><b>public void OnChangeProduct(Product product, UpdateOperations action)</b><b>{           </b><b>    if (action == UpdateOperations.Add)</b><b>    {</b><b>        product.rowguid = Guid.NewGuid();</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Interceptors Lab – Change Interceptor Add rowGuid VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;ChangeInterceptor("Product")&gt; _</b><b>Public Sub OnChangeProduct(ByVal product As Product, ByVal action As UpdateOperations)</b><b>    If action = UpdateOperations.Add Then</b><b>        product.rowguid = Guid.NewGuid()</b><b>    End If</b><b>End Sub</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> This method has a <b>ChangeInterceptor</b> attribute with a <i>Product</i> string as parameter to indicate that it will intercept all the changes to the <i>Product</i> entities. The Service Interceptor receives two parameters, one is the entity that will intercept and the other is the change action performed. It has no return value. The method checks the action and if it is an <b>Add</b> action, it adds a new GUID to the current <i>Product</i> entity. This fixes the duplicate products issue you have identified in the previous exercise.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Now you will add validation logic in the <b>Change Interceptor</b> you’ve inserted in the previous step, which will be applied to new and updated entities. You will also add a modified date to every product added or updated. To do this, add the following code in the <b>OnChangeProduct</b> method.<p>(Code Snippet – <i>Data Services Interceptors Lab – Change Interceptor Product Color Validation CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[ChangeInterceptor("Product")]public void OnChangeProduct(Product product, UpdateOperations action){<b>    if (action == UpdateOperations.Add || action == UpdateOperations.Change)</b><b>    {</b><b>        if (String.IsNullOrEmpty(product.Color))</b><b>            throw new DataServiceException("Product must have a color specified");</b><b>        DateTime fakeToday = new DateTime(2009, 03, 26);</b><b>        product.ModifiedDate = fakeToday;</b><b>    }</b>    if (action == UpdateOperations.Add)    {        product.rowguid = Guid.NewGuid();    }}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Interceptors Lab – Change Interceptor Product Color Validation VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;ChangeInterceptor("Product")&gt; _Public Sub OnChangeProduct(ByVal product As Product, ByVal action As UpdateOperations)<b>    If action = UpdateOperations.Add OrElse action = UpdateOperations.Change Then</b><b>        If String.IsNullOrEmpty(product.Color) Then</b><b>            Throw New DataServiceException("Product must have a color specified")</b><b>        End If</b><b>        Dim fakeToday = New DateTime(2009, 3, 26)</b><b>        product.ModifiedDate = fakeToday</b><b>    End If</b>    If action = UpdateOperations.Add Then        product.rowguid = Guid.NewGuid()    End IfEnd Sub</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> There exists a validation that the <i>Color</i> attribute from the Product entity cannot be null or an empty string. If so, an exception is thrown and the operation is aborted. The method also adds a modified date to every added or modified product.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>To verify the above steps, press <b>F5</b> to run the solution.</li>
+          <li>Edit an existing product to check for the color validation. To do this, select <i>Brakes</i> from the <i>Product Category</i> drop down list and then click <b>Search</b>.<p><img src="images\54ab0eca-ce93-4988-8551-f3056b3dd14a.png" /></p><p><b>Figure 27</b><br /><i>Listing brakes</i></p><br /></li>
+          <li>Click the first row listed where the <i>Name</i> is <i>Rear Brakes</i>. You should see the following popup window.<p><img src="images\41f8fb07-6120-4e71-9ebf-6df1f48cec6a.png" /></p><p><b>Figure 28</b><br /><i>Editing Rear Brakes</i></p><br /></li>
+          <li>Empty the <i>Color</i> field and click <b>Save</b>. The following alert should appear.<p><img src="images\b2815967-cb01-4bbd-8fa9-6c16ca42b7d9.png" /></p><p><b>Figure 29</b><br /><i>Update method is failing</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The alert is showing the error message that is received as parameter from the callback event handler in the script.<br />When using Internet Explorer 8 in Windows 7, the exception may not be caught by JavaScript and will be displayed in Visual Studio as an unhandled exception.</td></tr></table><p /></div><br /></li>
+          <li>Edit the same existing brake from the grid. To do this, click on the first row listed. Set the <i>Size</i> to <i>3</i> and the <i>Color</i> to <i>Red</i>. Click <b>Save</b> to commit the changes. Notice that the grid that has been updated. The modified date is 2009-03-26; that is the value set in the <b>Service Interceptor</b>.<p><img src="images\4fb22d33-2d84-48e8-8f90-2285cef5113b.png" /></p><p><b>Figure 30</b><br /><i>Updating a product</i></p></li>
+          <br />
+          <li>Close the web browser to stop the application.</li>
+        </ol>
+        <a name="_Toc225853144" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284167" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302701" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307206" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921199" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Using Service Interceptors to Add Custom Query Constraints</b>
+        </p>
+        <p>In this task you will add a custom constraint when querying Product Category entities. The product categories are retrieved to fill the <i>Product Category</i> drop down list.</p>
+        <ol>
+          <li>Add the following using directive in the <b>AdventureWorks.svc.cs (C#) or AdventureWorks.svc.vb (Visual Basic) </b> file<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.Linq.Expressions;</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Imports System.Linq.Expressions</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Add a query interceptor to just let retrieve the categories that start with the ‘B’ letter. To do this, add the following code below the <b>OnChangeProduct</b> method in the <b>AdventureWorks.svc.cs (C#) or AdventureWorks.svc.vb (Visual Basic) </b>file.<p>(Code Snippet – <i>Data Services Interceptors Lab – Query Interceptor ProductCategory CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[QueryInterceptor("ProductCategory")]</b><b>public Expression&lt;Func&lt;ProductCategory, bool&gt;&gt; OnQueryProductCategory()</b><b>{</b><b>    return (pc) =&gt; pc.Name.StartsWith("B");</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Interceptors Lab – Query Interceptor ProductCategory VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;QueryInterceptor("ProductCategory")&gt; _</b><b>Public Function OnQueryProductCategory() As Expression(Of Func(Of ProductCategory, Boolean))</b><b>    Return (Function(pc) pc.Name.StartsWith("B"))</b><b>End Function</b></pre></td></tr></table></span></div></li>
+        </ol>
+        <p />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This method has a <b>QueryInterceptor</b> attribute with a <i>ProductCategory</i> string as parameter to indicate that it will intercept all queries to the <i>ProductCategory</i> entities. The method receives no parameters and returns an Expression&lt;Func&lt;<i>EntityType</i>, bool&gt;&gt; (C#) or Expression(Of Func(Of ProductCategory, Boolean)) (Visual Basic) (where <i>EntityType</i> is the actual type of the entity being intercepted) to be then evaluated by the WCF Data Service engine.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>To verify this step, press <b>F5</b> to run the solution.</li>
+          <li>Expand the <i>Product Category</i> listing and check that only the product categories starting with the ‘B’ letter are shown.<p><img src="images\b5f3276b-261e-4a61-8f8b-7511b32ee363.png" /></p><p><b>Figure 31</b><br /><i>Filtering the Product Category</i></p></li>
+          <br />
+          <li>Close the web browser to stop the application.</li>
+        </ol>
+        <a name="_Toc236650899" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284168" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_c564acc4-28f7-4c8e-95c6-a12408cf8aa5.html">Exercise 4: Adding Client-Side Paging with Row Count</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

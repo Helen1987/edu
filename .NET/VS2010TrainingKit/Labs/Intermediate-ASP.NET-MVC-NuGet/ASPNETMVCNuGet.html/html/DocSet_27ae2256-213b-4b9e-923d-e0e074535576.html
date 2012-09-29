@@ -1,0 +1,144 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Consuming NuGet Packages" />
+      <MSHelp:RLTitle Title="Exercise 2: Consuming NuGet Packages" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Consuming NuGet Packages</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 NuGet</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Consuming NuGet Packages</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to consume external libraries in your project by using NuGet public repositories. You will be able to add any packaged library from the cloud into your project.</p>
+        <p>With that goal in mind, in this exercise you will add an ELMAH (Error Logging Modules and Handlers) Library to your project, enabling you to see the error log generated by the library.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> is a pluggable library for error and exception logging that can be dynamically added to an ASP.NET web application.<br />To read more about <b>ELMAH</b>, see this article at <a href="http://msdn.microsoft.com/en-us/library/aa479332.aspx">msdn</a>.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc282171622" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Consuming an External Library from Visual Studio 2010 NuGet Extension</b>
+        </p>
+        <p>In this task, you will include <b>ELMAH</b> library into your project to add an error log.</p>
+        <ol>
+          <li>Open the begin solution at <b>Source\Ex02-Consuming and Packing NuGet\Begin\MvcMusicStore</b>.</li>
+          <li>From Solution Explorer, open References folder and right-click to add <b>Library Package Reference.</b><p><img src="images\4f0c0e3f-d88d-4270-af6b-43770d6a1cee.png" /></p><p><b>Figure 1</b><br /><i>NuGet Tool – Adding a package reference</i></p><br /></li>
+          <li>Select <b>ELMAH</b> from the package list and click <b>Install</b>.<p><img src="images\9e54046c-2bd4-4c44-bec5-01252fe2ad44.png" /></p><p><b>Figure 2</b><br /><i>NuGet Tool – Installing a package reference</i></p><br /></li>
+          <li>
+            <img src="images\7f9aeebd-ed6c-445c-ac3c-78b983f53793.png" />
+            <p>
+              <b>Figure 3</b>
+              <br />
+              <i>Package Manager Options – Elmah Library added to the solution</i>
+            </p>
+            <br />
+            <p>
+              <img src="images\64663c7d-4d44-4a3e-a69d-4226c4340497.png" />
+            </p>
+            <p>
+              <b>Figure 4</b>
+              <br />
+              <i>Project folder– Elmah Library download location</i>
+            </p>
+            <br />
+          </li>
+        </ol>
+        <a name="_Toc282171623" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the Solution</b>
+        </p>
+        <ol>
+          <li>In this task, you will run the solution to see ELMAH log working:</li>
+          <li>Press <b>F5</b> to run <b>MvcMusicStore</b> solution.</li>
+          <li>Browse an inexistent URL like <b>/test</b>. You should see a “<i>The resource cannot be found</i>” error message.</li>
+          <li>Browse <b>/elmah.axd</b> to see the log that will include a line for the error logged when browsing an inexistent URL:<p><img src="images\60e324e2-973d-4f3b-8198-1ca277364ffe.png" /></p><p><b>Figure 5</b><br /><i>Elmah Library log view</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_9abfe8ab-5fc9-4c8b-ab54-7b7356a96ff9.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

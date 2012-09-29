@@ -1,0 +1,171 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 5: Handling Deletion" />
+      <MSHelp:RLTitle Title="Exercise 5: Handling Deletion" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 5: Handling Deletion</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Helpers, Forms and Validation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 5: Handling Deletion</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>The ability to delete albums is not yet implemented. This is what this exercise will be about. Like before, you will implement the Delete scenario using two separate methods within the <b>StoreManagerController</b> class:</p>
+        <ol>
+          <li>One action method will display a confirmation form</li>
+          <li>A second action method will handle the form submission</li>
+        </ol>
+        <a name="_Toc282517433" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Implementing the HTTP-GET Delete Action Method</b>
+        </p>
+        <p>In this task, you will implement the HTTP-GET version of the Delete action method to retrieve the album’s information.</p>
+        <ol>
+          <li>Start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>. </li>
+          <li>In the <b>File</b> menu, choose Open<b> Project</b>. In the Open Project dialog, browse to Source\Ex05-HandlingDeletion\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>Open <b>StoreManagerController </b>class. To do this, expand the <b>Controllers</b> folder and double-click <b>StoreManagerController.cs</b>.</li>
+          <li>The Delete controller action is exactly the same as the previous Store Details controller action: it queries the <b>album</b> object from the database using the <b>id</b> provided in the URL and returns the appropiate <b>View</b>. To do this, replace the HTTP-GET <b>Delete</b> action method code with the following:<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex5 Handling Deletion HTTP-GET Delete action – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>//// GET: /StoreManager/Delete/5<b>public ActionResult Delete(int id)</b><b>{</b><b>    var album = storeDB.Albums.Single(a =&gt; a.AlbumId == id);</b><b>    return View(album);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Before creating the new View template, you should build the project so that the <b>Add View Dialog</b> knows about the class to use. Build the project by selecting the <b>Debug</b> menu item and then <b>Build MvcMusicStore</b>.<p><img src="images\bcb2cf1d-317e-4519-a904-5fdc9f71e39f.png" /></p><p><b>Figure 26</b><br /><i>Building the project</i></p><br /></li>
+          <li>Right-click inside the <b>Delete</b> action method and select <b>Add View</b>. This will bring up the Add View dialog.</li>
+          <li>In the Add View dialog, verify that the View name is <b>Delete</b>. Check the <b>Create a strongly-typed view</b> checkbox and select <b>Album (MvcMusicStore.Models) </b>from the<b> View data class</b> drop-down. Select <b>Delete</b> from the <b>View content</b> drop-down. Leave the other fields with their default value and then click <b>Add</b>.<p><img src="images\05f23c21-5600-4f54-8d83-930fbcd8f882.png" /></p><p><b>Figure 27</b><br /><i>Adding a Delete View</i></p><br /></li>
+          <li>The Delete template shows all the fields from the model. You will show only the album’s title. To do this, replace the <b>asp:Content</b> with the following code:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;<b>    &lt;h2&gt;Delete Confirmation&lt;/h2&gt;</b><b>    &lt;p&gt;</b><b>        Are you sure you want to delete the album titles</b><b>        &lt;strong&gt;&lt;%: Model.Title %&gt;&lt;/strong&gt; ?</b><b>    &lt;/p&gt;</b><b>    &lt;div&gt;</b><b>    &lt;% using (Html.BeginForm()) { %&gt;</b><b>        &lt;input type="submit" value="Delete" /&gt; |</b><b>        &lt;%: Html.ActionLink("Back to List", "Index") %&gt;</b><b>    &lt;% } %&gt;</b><b>    &lt;/div&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282517434" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Delete</b> View page displays a confirmation deletion form.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager</b>. Select one album to delete by clicking <b>Delete</b> and verify that the new view is uploaded.<p><img src="images\e03e346b-5081-4d55-8113-97b6bb4931cf.png" /></p><p><b>Figure 28</b><br /><i>Deleting an Album</i></p><br /></li>
+        </ol>
+        <a name="_Toc282517435" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3– Implementing the HTTP-POST Delete Action Method</b>
+        </p>
+        <p>In this task, you will implement the HTTP-POST version of the Delete action method that will be invoked when a user clicks the <b>Delete</b> button. The method should delete the album in the database.</p>
+        <ol>
+          <li>Close the browser if needed, to return to the Visual Studio window. Open <b>StoreManagerController </b>class. To do this, expand the <b>Controllers</b> folder and double-click <b>StoreManagerController.cs</b>.</li>
+          <li>Replace <b>HTTP-POST Delete</b> action method code with the following:<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Handling Deletion HTTP-POST Delete action – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>//// POST: /StoreManager/Delete/5 [HttpPost]public ActionResult Delete(int id, FormCollection collection){<b>    var album = storeDB.Albums</b><b>        .Include("OrderDetails").Include("Carts")</b><b>        .Single(a =&gt; a.AlbumId == id);</b><b>    storeDB.DeleteObject(album);</b><b>    storeDB.SaveChanges();</b><b>    return RedirectToAction("Index");</b>}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282517436" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Deleting on Cascade</b>
+        </p>
+        <p>Because of Referential Integrity, a deletion of an <b>Album</b> could raise an exception if it has <b>OrderDetails</b> entries. To solve this, you should allow cascade deletes. So, when you delete an Album, it will delete all the OrderDetails entries for that album. In this task, you will activate deletion on cascade.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>In this scenario you will delete an Album no matter if it has an order associated. Consider that in other application scenarios this could not be the correct action.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>On the Solution Explorer expand the <b>Models</b> folder and then double-click <b>StoreDB.edmx</b>. This opens the Entity Data Model designer.</li>
+          <li>Open the <b>Models/StoreDB.edmx</b> entity diagram. Right-click the relation between <b>Album </b>and <b>OrderDetail </b>and select <b>Properties</b>.<p><img src="images\88f3b50b-f764-4050-9f8a-fb3d57d4c66f.png" /></p><p><b>Figure 29</b><br /><i>Editing Properties of a Relation</i></p><br /></li>
+          <li>In the <b>Properties</b> window, set the <b>End1 OnDelete</b> value to <b>Cascade</b>.<p><img src="images\ec21544b-86b9-45b1-9896-532b13451220.png" /></p><p><b>Figure 30</b><br /><i>OnDelete property</i></p><br /></li>
+        </ol>
+        <a name="_Toc282517437" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Delete</b> View page lets you delete an Album and then redirects to the StoreManager Index View.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager</b>.  Select one album to delete by clicking <b>Delete. </b>Confirm the deletion by clicking <b>Delete</b> button:<p><img src="images\77d2e238-3042-4ef3-b1e1-195d8dcd49f7.png" /></p><p><b>Figure 31</b><br /><i>Deleting an Album </i></p><br /></li>
+          <li>Verify that the album was deleted since it does not appear in the <b>Index.aspx</b> page.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_38f48dbb-08eb-43b0-80c0-61372d9d2da1.html">Exercise 6: Adding Validation</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

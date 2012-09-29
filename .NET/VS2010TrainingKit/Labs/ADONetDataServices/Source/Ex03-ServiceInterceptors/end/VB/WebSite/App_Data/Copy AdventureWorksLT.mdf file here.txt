@@ -1,0 +1,1 @@
+The dependency checker and setup process will place a version of AdventureWorksLT database file in this folder.

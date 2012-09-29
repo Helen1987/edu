@@ -1,0 +1,158 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Visual Studio 2010: Test Driven Development</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Test Driven Development (TDD), also frequently referred to as Test Driven Design, is a development methodology where developers create software by first writing a unit test, then writing the actual system code to make the unit test pass.  The unit test can be viewed as a small specification around how the system should behave; writing it first helps the developer to focus on only writing enough code to make the test pass, thereby helping ensure a tight, lightweight system which is specifically focused meeting on the documented requirements.</p>
+        <p>TDD follows a cadence of “Red, Green, Refactor.” Red refers to the visual display of a failing test – the test you write first will not pass because you have not yet written any code for it. Green refers to the step of writing just enough code in your system to make your unit test pass – your test runner’s UI will now show that test passing with a green icon. Refactor refers to the step of refactoring your code so it is tighter, cleaner, and more flexible. This cycle is repeated constantly throughout a TDD developer’s workday.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This lab is not meant to teach you how to work with TDD; instead, it is intended to highlight Visual Studio 2010’s support for working in TDD.  If you are interested in learning more about the TDD methodology and its benefits then you should look to the following books as a starting point:<br /><i>Test Driven Development in Microsoft .NET</i>  by James Newkirk and Alexei Voronstov, ISBN 0735619484<br /><i>Pragmatic Unit Testing in C# with NUnit, 2nd Edition</i> by Andy Hunt, Dave Thomas, and Matt Hargett, ISBN 0977616673</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>A critical aspect of TDD is developer cadence.  Getting into a productive development rhythm (the elusive “zone”) involves having the right mindset, but also working with tools that assist the developer in working rapidly and with as little friction as possible.</p>
+        <p>Visual Studio 2010 brings with it several enhancements to help cut development friction and enable the developer to focus on the task: writing high-quality code.  In the following exercises, you will learn several of the new features that the TDD developer can use to enhance his/her development cadence.  VS10 helps your cadence by cutting the number of keystrokes to accomplish frequently performed tasks, speeds navigation through your solution, and enables you to use test frameworks other than MSTest.</p>
+        <p>To demonstrate the new features you will build an implementation of a stack in a test-first manner, showing how tests drive the design and implementation of a <b>SimpleStack</b> class.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> In computer science, a stack is an abstract data type and data structure based on the principle of Last In First Out (LIFO).<br />If you are unfamiliar with the concept of a stack as a data structure, or just need a quick refresher, please see the full <a href="http://en.wikipedia.org/wiki/Stack_(data_structure)">Wikipedia article</a> for a more thorough definition.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Use the new Smart Tag actions to save keystrokes by letting the IDE generate small bits of code for you.</li>
+          <li>Use Quick Search to move around in the code base with just a few keystrokes.</li>
+        </ul>
+        <a name="_Toc157870738" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010 </li>
+          <li>.NET Framework 4.0</li>
+        </ul>
+        <h1 class="heading">Setup</h1>
+        <p>All the requisites for this lab are verified using the <b>Configuration Wizard</b>. To make sure that everything is correctly configured, follow these steps.</p>
+        <ol>
+          <li>Run the <b>Configuration Wizard</b> for the Training Kit if you have not done it previously. To do this, browse to <b>Source\Setup</b> folder of this lab, and double-click the <b>Dependencies.dep</b> file. Install any pre-requisites that are missing (rescanning if necessary) and complete the wizard.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Configuration Wizard is used for checking dependencies and setting up the environment. If the Configuration Wizard is not installed on your machine, you must install it running the DependencyChecker.msi file located on the %VS2010TKInstallationFolder%\Assets\DependencyChecker folder (e.g. by default the Training Kit is installed under C:\VS2010TrainingKit).<br />For convenience, much of the code you will be managing along this lab is available as Visual Studio code snippets. The <b>Dependencies.dep</b> file launches the Visual Studio installer file that installs the code snippets.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab comprises the following exercises:</p>
+        <ol>
+          <li>Start test-driving your design by writing the tests and them making them go from Red (failing) to Green (passing).</li>
+          <li>Refactor your code, run the tests, and ensure they all pass.</li>
+        </ol>
+        <p>Estimated time to complete this lab: <b>60 minutes</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This lab shows code examples in both C# and VB.NET; however, screen shots reflect only C# actions. Each action shown in the screenshots has a similar set of steps for VB.NET.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_f5e2dbfd-83a4-4780-988c-4aa1000d36f5.html">Exercise 1: Red, Green…</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

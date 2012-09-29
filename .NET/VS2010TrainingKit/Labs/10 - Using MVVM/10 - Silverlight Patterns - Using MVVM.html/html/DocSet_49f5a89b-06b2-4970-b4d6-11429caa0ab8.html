@@ -1,0 +1,136 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Creating a ViewModel Class" />
+      <MSHelp:RLTitle Title="Exercise 2: Creating a ViewModel Class" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Creating a ViewModel Class</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using the MVVM Pattern in Silverlight Applications</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Creating a ViewModel Class</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll create a ViewModelBase class that provides core functionality that can be used by one or more ViewModel classes. You'll then derive from ViewModelBase and create a ViewModel class that will be used to retrieve and manipulate customer data used in the MainPage.xaml View.</p>
+        <ol>
+          <li>Locate the file named <b>mvvmInpcPropertyCS.snippet </b>(for C#) or <b>mvvmInpcPropertyVB.snippet</b> (for VB) in the <b>SilverlightCustomerViewer/CodeSnippets</b> folder. </li>
+          <li>Copy the file for your chosen language to the following location (or use <b>Tools  Code Snippets Manager</b> in Visual Studio to import it):<table style=""><tr valign="top"><th><p>Language</p></th><th><p>Lab Files Location</p></th></tr><tr valign="top"><td><p>C#</p></td><td><p>Documents\Visual Studio 2010\Code Snippets\Visual C#\My Code Snippets</p></td></tr><tr valign="top"><td><p>Visual Basic</p></td><td><p>Documents\Visual Studio 2010\Code Snippets\Visual Basic\My Code Snippets</p></td></tr></table></li>
+          <li>
+            <div class="alert">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th align="left">
+                    <img class="note" src="../local/note.gif" />Note:</th>
+                </tr>
+                <tr>
+                  <td> The mvvmInpc snippet will be used to create properties within a ViewModel class later in this lab.  It's one of several snippets available in MVVM Light (http://mvvmlight.codeplex.com) and has been modified for use in this lab exercise.</td>
+                </tr>
+              </table>
+              <p />
+            </div>
+          </li>
+          <li>Right-click on the <b>SilverlightCustomerViewer</b> project and select <b>Add  New Folder</b>. Give the folder a name of <b>ViewModels</b>.</li>
+          <li>Add a new class into the <b>ViewModels</b> folder named <b>ViewModelBase</b> and mark it as <b>abstract</b> (C#) or <b>MustInherit</b> (VB).</li>
+          <li>Implement the <b>INotifyPropertyChanged</b> interface on the class and resolve the namespace.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> INotifyPropertyChanged is an important interface in Silverlight used by the data binding engine to notify controls and other objects when a bound property value changes. By implementing INotifyPropertyChanged on the ViewModelBase class you can write the code once and re-use it across multiple ViewModel classes. The interface is located in the System.ComponentModel namespace. </td></tr></table><p /></div></li>
+          <li />
+          <li>Once the interface has been implemented on the <b>ViewModelBase</b> class, add a method named <b>OnPropertyChanged</b> into <b>ViewModelBase</b> to handle raising the <b>PropertyChanged</b> event from the <b>INotifyPropertyChanged</b> interface.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you need help with this step please refer to the ViewModelBase class in the lab's Completed folder. Creating an OnPropertyChanged method was covered in the data binding lab.</td></tr></table><p /></div></li>
+          <li>Add a new <b>public Boolean</b> property into the <b>ViewModelBase</b> class named <b>IsDesignTime</b>. </li>
+          <li>Add a <b>get</b> block (but no set block) into the property that returns <b>DesignerProperties.IsInDesignTool</b> as the value. Resolve any namespaces as needed.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> When using the MVVM pattern and ViewModel classes it's important to know when code is executing in a design-time tool such as Visual Studio or Expression Blend and when it's executing at runtime. When code runs in a design tool network calls will not execute properly and can error out the designer. The IsDesignTime property will be used to detect where code is running to ensure that ViewModel classes execute properly at design-time.</td></tr></table><p /></div></li>
+          <li>Add a new class into the <b>ViewModels</b> folder named <b>MainPageViewModel</b> that derives from <b>ViewModelBase </b>.</li>
+          <li>Add the following properties into <b>MainPageViewModel </b>using the mvvmInpc code snippet  and resolve any missing namespaces as necessary (type mvvmInpc + tab + tab to use the snippet in C# or mvvminpc + tab to use the snippet in VB):<table style=""><tr valign="top"><th><p>Property Name</p></th><th><p>Property Type</p></th></tr><tr valign="top"><td><p>Customers</p></td><td><p>ObservableCollection of Customer</p></td></tr><tr valign="top"><td><p>CurrentCustomer</p></td><td><p>Customer</p></td></tr><tr valign="top"><td><p>StatusMessage</p></td><td><p>string</p></td></tr></table></li>
+          <li>
+            <div class="alert">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th align="left">
+                    <img class="note" src="../local/note.gif" />Note:</th>
+                </tr>
+                <tr>
+                  <td> If you need help with creating the properties in this step refer to the MainPageViewModel class in the lab's Completed folder.</td>
+                </tr>
+              </table>
+              <p />
+            </div>
+          </li>
+          <li>Within the <b>CurrentCustomer</b> property's <b>set</b> block add code to set the <b>StatusMessage</b> property to empty strings (add the code within the existing "if" statement).</li>
+          <li>Add another property named <b>ServiceAgent</b> of type <b>ICustomersServiceAgent </b>and resolve the namespace (create it as a standard .NET property).</li>
+          <li>Add the following methods into <b>MainPageViewModel</b> to handle retrieving, updating and deleting customer objects:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The ObjectState parameter used in the following code is automatically created by the WCF proxy generator when using self-tracking entities in Entity Framework 4. By changing the object state we can easily track whether delete or update operations should occur for a given Customer object.</td></tr></table><p /></div><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void GetCustomers(){    ServiceAgent.GetCustomers((s, e) =&gt; Customers = e.Result);}public void UpdateCustomer(){    SaveCustomer(ObjectState.Modified);}public void DeleteCustomer(){    SaveCustomer(ObjectState.Deleted);     Customers.Remove(CurrentCustomer);    CurrentCustomer = null;}private void SaveCustomer(ObjectState state){    CurrentCustomer.ChangeTracker.State = state;    ServiceAgent.SaveCustomer(CurrentCustomer, (s, e) =&gt;    {        StatusMessage = (e.Result.Status) ? "Success!" :           "Unable to complete operation";    });}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private SubGetCustomers()    ServiceAgent.GetCustomers(Sub(s, e) Customers =e.Result)End Sub Public SubUpdateCustomer()    SaveCustomer(ObjectState.Modified)End Sub Public SubDeleteCustomer()    SaveCustomer(ObjectState.Deleted)    Customers.Remove(CurrentCustomer)    CurrentCustomer= NothingEnd Sub Private SubSaveCustomer(ByValstate AsObjectState)    CurrentCustomer.ChangeTracker.State= state    ServiceAgent.SaveCustomer(CurrentCustomer, _    Sub(s, e)StatusMessage= _    If(e.Result.Status, "Success!", "Unable to complete operation"))End Sub</pre></td></tr></table></span></div></li>
+          <li>Add the following constructors into <b>MainPageViewModel</b>:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>publicMainPageViewModel() : this(newCustomersServiceAgent()){} publicMainPageViewModel(ICustomersServiceAgentserviceAgent){if (!IsDesignTime){if (serviceAgent != null) ServiceAgent=serviceAgent;GetCustomers();}}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Sub New()    Me.New(NewCustomersServiceAgent())End Sub Public Sub New(ByValserviceAgentAsICustomersServiceAgent)    If NotIsDesignTimeThen        IfserviceAgentIsNotNothing Then            Me.ServiceAgent=serviceAgent        End If        GetCustomers()    End IfEnd Sub</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Error: Note format was corrupted. Title should be bold.ViewModel is instantiated without any parameters.  It passes a new instance of the CustomersServiceAgent object to the second constructor which assigns it to the ServiceAgent property when not in design mode (note that instead of hard coding the service agent type it could be injected using a dependency injection framework). The second constructor accepts any object that implements the ICustomersServiceAgent interface allowing mock objects to be passed in for the service agent when testing the ViewModel class. Following this pattern provides a flexible way to work with different types of service agent objects when the application is running as well as when tests need to be executed.</td></tr></table><p /></div></li>
+          <li>Ensure that the <b>SilverlightCustomerViewer</b> project compiles before proceeding to the next exercise.</li>
+        </ol>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

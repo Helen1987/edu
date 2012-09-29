@@ -1,0 +1,177 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: New ASP.NET Project Templates" />
+      <MSHelp:RLTitle Title="Exercise 1: New ASP.NET Project Templates" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: New ASP.NET Project Templates</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ASP.NET Web Forms 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: New ASP.NET Project Templates</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will explore the new ASP.NET 4 Web Forms project templates provided in Visual Studio 2010. In earlier versions of ASP.NET, the project templates provided only a simple structure with very little guidance on how to build a production Web application. Developers had to implement certain common scenarios, like simple forms authentication, each time from scratch.</p>
+        <p>ASP.NET 4 introduces three new templates, one for an <b>Empty Web application</b> project, and one each for a <b>Web Application</b> and <b>Web Site</b> project.</p>
+        <p>The Empty Web Application template is a stripped-down Web Application project, very similar to earlier versions, including a minimal Web.config file.</p>
+        <p>The other new templates contain major changes, for example:</p>
+        <ul>
+          <li><b>Basic Membership Functionality</b>: Most of the web sites or applications require some kind of security and authentication. The new templates have a simple implementation of a security module which lets you quickly get started in securing access to the new application.</li>
+          <li><b>Default Master Page</b>: Frequently, master pages are used to define common rendering across a web application, like headers, menus, login status, etc. The new templates include a master page used by the default page.</li>
+          <li><b>Default CSS file</b>: UI can be easily modified if the site was built using CSS. All the UI components that compose the project created by the new template make use of the provided cascading style sheet file definition, named Site.css. Moreover, ASP.NET 4 Web Forms include improvements on CSS support in the Web.config pages attribute controlRenderingCompatibilityVersion which indicates the level of backward compatibility.</li>
+          <li><b>Minified Web.config</b>: With the Microsoft .NET Framework 4, all the configuration required for each module that is not application-specific, can be inferred from the <b>machine.config</b> file located inside the .NET Framework directory. This helps having a simpler Web.config which only includes the data that is application-specific, avoiding the needs of duplicating setting and thus having a much simpler and consumable configuration file.</li>
+          <li><b>jQuery Integration</b>: The jQuery library is a very popular open-source JavaScript library that is included with both ASP.NET Web Forms and ASP.NET MVC. The Microsoft Ajax Library was designed to appeal to jQuery developers. You can mix jQuery plug-ins and Microsoft Ajax client controls seamlessly within the same Ajax application.</li>
+        </ul>
+        <p>On this exercise, you will create a web application using the new ASP.NET 4 WebForms template, explore the created project to identify the elements mentioned above, and implement a simple example using jQuery.</p>
+        <a name="_Toc280375240" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 - Creating a new Web Application</b>
+        </p>
+        <p>In this task, you will create a new Web Application using the project template provided with ASP.NET 4 Web Forms.</p>
+        <ol>
+          <li>Open <b>Microsoft Visual Studio 2010</b>. Click <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>From the <b>File</b> menu, select <b>New</b> | <b>Project</b>.</li>
+          <li>In the <i>New Project</i> dialog, select the <b>ASP.NET Web Application</b> template, located under the <b>Web</b> templates.</li>
+          <li>Type <b>NewWebApplicationTemplate</b> as <b>Name</b> and set its location to <b>Ex01-NewTemplates\Begin\ (Choosing the folder that matches the language of your preference)</b> inside the <b>Source</b> folder of this lab. Make sure that <b>Create directory for the solution</b> is checked, and click <b>OK</b> to create the project.<p><img src="images\8417885e-3984-48cf-85d6-13554115ccf5.png" /></p><p><b>Figure 1</b><br /><i>Creating a Web Application using the new templates(C#)</i></p><br /><p><img src="images\6a2c5e36-80d5-4095-bc3c-c441caf276ad.png" /></p><p><b>Figure 2</b><br /><i>Creating a Web Application using the new templates(VB)</i></p><br /></li>
+          <li>Your solution should look like the following:<p><img src="images\ae73eae0-eab6-44de-bd24-672bea9cd1c7.png" /></p><p><b>Figure 3</b><br /><i>Web Application created using the new Project Template (C#)</i></p><br /><p><img src="images\da7559e2-a984-4c4c-a3f9-41e80b32b58a.png" /></p><p><b>Figure 4</b><br /><i>Web Application created using the new Project Template (VB)</i></p><br /><p>You can easily identify the new features mentioned in the introduction by inspecting the project structure:</p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You will go through each of these items later on this exercise</td></tr></table><p /></div><br /><ul><li><b>Basic Membership Functionality</b>: All the security functionality is implemented inside the Account folder of the project.</li><li><b>Default Master Page</b>: The provided master page called <b>Site.Master</b> can be found at the root of the Web Application.</li><li><b>Default CSS file</b>: A Styles folder with a <b>Site.css</b> file inside is automatically created by the template. This is where the styles for the whole site are defined.</li><li><b>Minified Web.config</b>: Opening the <b>Web.config</b> file at the root of the Web Application will show a really simple and clean configuration file.</li><li><b>jQuery Integration</b>: jQuery JavaScript library files are located inside the new <b>Scripts</b> folder.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You will notice that there are 3 .js files inside the Scripts folder. All of them are different versions of the jQuery Library:<br /><b>    - jquery-1.4.1-vsdoc.js:</b> This file has comments inline to support Visual Studio IntelliSense. You should not use it in your web site; it is intended for use at design time by Visual Studio.<br /><b>    - jquery-1.4.1.js:</b> This file is the jQuery library itself. You will use it while develop your application.<br /><b>    - jquery-1.4.1.min.js:</b> This file is the minified version of the jquery-1.3.2.js. Unnecessary blank-spaces have been removed and variables names were collapsed from the previous one. This file is optimized to be used on production environment saving user’s bandwidth.</td></tr></table><p /></div><br /></li></ul></li>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> Visual Studio 2010 also ships with an empty template if you not need all the features that the default template provides. To create an empty web application, simply choose the <b>Empty ASP.NET Web Application</b> template. This template only includes the Web.config.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <a name="_Toc280375241" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 - Exploring Out-of-the-Box Authentication Mechanism</b>
+        </p>
+        <p>You are already aware that the new ASP.NET 4 Web Forms templates provide basic membership functionality to secure your web application; in this task, you will explore the implementation, identifying the key elements of it.</p>
+        <ol>
+          <li>In the Solution Explorer, expand the Account folder. You should see 4 pages and a Web.config file inside it.<p><img src="images\7a2896ab-8455-472c-9117-c9758c46ee60.png" /></p><p><b>Figure 5</b><br /><i>Account folder inside the new Project Template (C#)</i></p><br /><p><img src="images\1663f7fc-cc5a-4318-8e9f-3d896e8bf8d5.png" /></p><p><b>Figure 6</b><br /><i>Account folder inside the new Project Template (VB)</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> the <b>Web.config</b> file located inside the Account folder allows unauthenticated users to access the Register.aspx page. Access to other pages is limited to authenticated users only.<br />Permissions for the Login.aspx page is not required since it is defined as the Forms Authentication login page making it automatically accessible to any user (authenticated or not.)</td></tr></table><p /></div><br /></li>
+          <li>In the Solution Explorer, double-click on the <b>Login.aspx</b> file. This is the default login page which contains a <b>Login</b> control with a custom layout template. <div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent"&gt;    &lt;h2&gt;        Log In    &lt;/h2&gt;    &lt;p&gt;        Please enter your username and password.        &lt;asp:HyperLink ID="RegisterHyperLink" runat="server" EnableViewState="false"&gt;Register&lt;/asp:HyperLink&gt; if you don't have an account.    &lt;/p&gt;<b>    &lt;asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false"&gt;</b><b>        &lt;LayoutTemplate&gt;</b><b>           ...</b><b>        &lt;/LayoutTemplate&gt;</b><b>    &lt;/asp:Login&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Open the <b>Site.Master</b> file, located at root level of the NewWebApplicationTemplate project; and locate the LoginView control.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The LoginView control is used to show the login status, and provide the link to login/logout. Adding this control to the Master Page implies it will be rendered in all the web pages across the web application that has this master page set.</td></tr></table><p /></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The control is configured to show the name of the logged in user, or a link to the login page when an anonymous user access the site.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"&gt;&lt;head runat="server"&gt;    &lt;title&gt;&lt;/title&gt;    &lt;link href="~/Styles/Site.css" rel="stylesheet" type="text/css" /&gt;    &lt;asp:ContentPlaceHolder ID="HeadContent" runat="server"&gt;    &lt;/asp:ContentPlaceHolder&gt;&lt;/head&gt;&lt;body&gt;    &lt;form runat="server"&gt;    &lt;div class="page"&gt;        &lt;div class="header"&gt;            &lt;div class="title"&gt;                &lt;h1&gt;                    My ASP.NET Application                &lt;/h1&gt;            &lt;/div&gt;            &lt;div class="loginDisplay"&gt;<b>                &lt;asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false"&gt;</b><b>                    &lt;AnonymousTemplate&gt;</b><b>                        [ &lt;a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server"&gt;Log In&lt;/a&gt; ]</b><b>                    &lt;/AnonymousTemplate&gt;</b><b>                    &lt;LoggedInTemplate&gt;</b><b>                        Welcome &lt;span class="bold"&gt;&lt;asp:LoginName ID="HeadLoginName" runat="server" /&gt;&lt;/span&gt;!</b><b>                        [ &lt;asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/&gt; ]</b><b>                    &lt;/LoggedInTemplate&gt;</b><b>                &lt;/asp:LoginView&gt;</b>            &lt;/div&gt;            &lt;div class="clear hideSkiplink"&gt;                &lt;asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal"&gt;                    &lt;Items&gt;                        &lt;asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/&gt;                        &lt;asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/&gt;                    &lt;/Items&gt;                &lt;/asp:Menu&gt;            &lt;/div&gt;        &lt;/div&gt;        &lt;div class="main"&gt;            &lt;asp:ContentPlaceHolder ID="MainContent" runat="server"/&gt;        &lt;/div&gt;        &lt;div class="clear"&gt;        &lt;/div&gt;    &lt;/div&gt;    &lt;div class="footer"&gt;    &lt;/div&gt;    &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Register.aspx and ChangePassword.aspx pages are also implemented using ASP.NET Login Controls.<br />Register.aspx uses the <b>CreateUserWizard</b> control to guide the user through the registration process, while ChangePassword.aspx uses the <b>ChangePassword</b> control.</td></tr></table><p /></div><br /><p>All Login controls are configured to use Forms Authentication with a SQL Membership, Role and Profile provider. This configuration can be found in the Web.config located in the root directory of your application. </p></li>
+          <li>In the Solution Explorer, double-click on the Web.config located in the root directory of your application to open it.</li>
+          <li>Locate the <b>&lt;authentication&gt;</b> element located inside the <b>&lt;system.web&gt;</b> configuration section. This section configures the forms login authentication as explained above.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;authentication mode="Forms"&gt;  &lt;forms loginUrl="~/Account/Login.aspx" timeout="2880" /&gt;&lt;/authentication&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Below the authentication section, explore the membership, profile and role providers’ definition. By default, the template has all providers configured to use ASP.NET profiles database.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;membership&gt;  &lt;providers&gt;    &lt;clear/&gt;    &lt;add name="AspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="ApplicationServices"         enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false"         maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10"         applicationName="/" /&gt;  &lt;/providers&gt;&lt;/membership&gt;&lt;profile&gt;  &lt;providers&gt;    &lt;clear/&gt;    &lt;add name="AspNetSqlProfileProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="ApplicationServices" applicationName="/"/&gt;  &lt;/providers&gt;&lt;/profile&gt;&lt;roleManager enabled="false"&gt;  &lt;providers&gt;    &lt;clear/&gt;    &lt;add name="AspNetSqlRoleProvider" type="System.Web.Security.SqlRoleProvider" connectionStringName="ApplicationServices" applicationName="/" /&gt;    &lt;add name="AspNetWindowsTokenRoleProvider" type="System.Web.Security.WindowsTokenRoleProvider" applicationName="/" /&gt;  &lt;/providers&gt;&lt;/roleManager&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>You can get detailed information about ASP.NET security in the following MSDN articles:<br />    - <a href="http://msdn.microsoft.com/en-us/library/ms178329.aspx">ASP.NET Login Controls Overview</a><br />    - <a href="http://msdn.microsoft.com/en-us/library/aa480476.aspx">Explained: Forms Authentication in ASP.NET 2.0</a><br />    - <a href="http://msdn.microsoft.com/en-us/library/yh26yfzy.aspx">Introduction to Membership</a><br />    - <a href="http://msdn.microsoft.com/en-us/library/2y3fs9xs.aspx">ASP.NET Profile Properties Overview</a><br />    - <a href="http://msdn.microsoft.com/en-us/library/9ab2fxh0.aspx">Managing Authorization Using Roles</a></td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc280375242" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 - Exploring Minified Web.config</b>
+        </p>
+        <ol>
+          <li>In the Microsoft .NET Framework 4, the major configuration elements have been moved to the machine.config file, and applications now inherit these settings. This allows the Web.config file in ASP.NET 4 applications either to be empty or to contain just the a few lines. </li>
+          <li>ASP.NET 4 Web Forms new templates take advantage of this new feature by removing redundant configuration from the configuration file. The Web.config file then inherits the common configuration, such as AJAX, routing, and integration with IIS 7, from the machine.config file by default.</li>
+          <li>In this task, you will explore the default Web.config file detecting which elements are required.</li>
+          <li>In the Solution Explorer, double-click in the <b>Web.config</b> file, located in the root directory of your <b>NewWebApplicationTemplate</b> project to open it.<p>You will notice that it is shorter than previous versions ASP.NET’s Web.config files. In an Empty Web Forms application, the only required element in the Web.config file is the <b>compilation</b> element located in the <b>&lt;system.web&gt;</b> configuration section. This element indicates to the compiler the framework version that the application is targeted to.</p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;!-- ... --&gt;  &lt;system.web&gt;<b>    &lt;compilation debug="true" targetFramework="4.0" /&gt;</b>&lt;!-- ... --&gt;  &lt;/system.web&gt;&lt;/configuration&gt;</pre></td></tr></table></span></div><br /><p>Since you have created an application that includes the authentication module, you will see the configuration sections described in the previous task. These elements are not required on an application that does not use ASP.NET authentication </p><p>The following table shows to which component each configuration element applies:</p><table style=""><tr valign="top"><th><p>Component</p></th><th><p>Configuration element</p></th></tr><tr valign="top"><td><p>Forms Authentication</p></td><td><p><b>configuration/system.web/authentication</b></p></td></tr><tr valign="top"><td><p>ASP.NET Membership</p></td><td><p><b>configuration/system.web/membership</b></p></td></tr><tr valign="top"><td><p>ASP.NET Profile</p></td><td><p><b>configuration/system.web/profile</b></p></td></tr><tr valign="top"><td><p>ASP.NET Role Management</p></td><td><p><b>configuration/system.web/roleManager</b></p></td></tr></table></li>
+          <br />
+          <p>Additionally, you will see a &lt;connectionString&gt; configuration section. This section defines the connection string that will be used by all preconfigured the SQL Providers.</p>
+        </ol>
+        <a name="_Toc280375243" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 - Using Out-of-the-Box jQuery Scripts</b>
+        </p>
+        <p>As it was explained, jQuery is a very popular JavaScript library that provides developers with a framework for interacting with the UI components rendered in the web page. The new templates include this library out-of-the-box.</p>
+        <p>In this task, you will benefit from jQuery to change the color of the web page title.</p>
+        <ol>
+          <li>In the Solution Explorer, double-click on the <b>Default.aspx</b> file to open it.<p><img src="images\4e47b25c-3cd6-4eee-9678-d732489650e8.png" /></p><p><b>Figure 7</b><br /><i>Opening Default.aspx file inside the Web Application (C#)</i></p><br /><p><img src="images\346e2929-3da0-4218-b7ec-3e4491ff95c8.png" /></p><p><b>Figure 8</b><br /><i>Opening Default.aspx file inside the Web Application (VB)</i></p><br /></li>
+          <li>In the <b>MainContent</b> content, add a button that will be in charge of changing the color of the “Welcome to ASP.NET” title. To do this, paste the following bolded code at the bottom of the page markup.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent"&gt;    &lt;h2&gt;        Welcome to ASP.NET!    &lt;/h2&gt;    &lt;p&gt;        To learn more about ASP.NET visit &lt;a href="http://www.asp.net" title="ASP.NET Website"&gt;www.asp.net&lt;/a&gt;.    &lt;/p&gt;    &lt;p&gt;        You can also find &lt;a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;amp;clcid=0x409"            title="MSDN ASP.NET Docs"&gt;documentation on ASP.NET at MSDN&lt;/a&gt;.    &lt;/p&gt;<b>    &lt;input type="button" id="btnChangeTitleStyle" value="Change Title Style" /&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>To use jQuery, you must add a reference to the jQuery Library. To do this, add the following script element, which references the jQuery source file, inside the <b>HeaderContent</b> Content tag.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent"&gt;<b>    &lt;script type="text/javascript" src="Scripts/jquery-1.4.1.js"&gt;&lt;/script&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> jQuery libraries are also available in the Microsoft AJAX Content Delivery Network (CDN). It provides catching support for the most common JavaScript libraries like jQuery and AJAX.<br />If you use it, users browsing your application will download the JavaScript libraries from the CDN instead from your Web Server.<br />If you want to use the jQuery version provided by the CDN, you have to update the script element for:<br />&lt;script type="text/javascript" src="<b>http://ajax.microsoft.com/ajax/jquery/jquery-1.4.1.js</b>"&gt;&lt;/script&gt;</td></tr></table><p /></div><br /></li>
+          <li>Inside the <b>HeaderContent</b> element, add the JavaScript implementation to change the color of the title. To do this, paste the following bolded JavaScript code below the jQuery reference.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent"&gt;    &lt;script type="text/javascript" src="Scripts/jquery-1.4.1.js"&gt;&lt;/script&gt;<b>    &lt;script type="text/javascript"&gt;</b><b>        $(document).ready(function () {</b><b>            $("#btnChangeTitleStyle").click(function () {</b><b>                $("h2").css("color", "red");</b><b>            });</b><b>        });</b><b>    &lt;/script&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The above implementation is fully implemented using jQuery, below you can find a brief explanation about what the preceding code does:<br />When the document is loaded, an anonymous function is registered that in turn registers the click event functionality for the <b>btnChangeTitleStyle</b> button. When the button is clicked, the function uses <a href="http://docs.jquery.com/Selectors">jQuery selectors</a> to set the color property on all the <b>h2</b> elements to red.<br />You can check the <a href="http://jquery.com/">official jQuery web site</a> where you can find a lot of <a href="http://docs.jquery.com/Tutorials">tutorials</a> to get started with it.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_61db82f1-f576-4b38-a176-9f9e5bf9dd50.html">Exercise 1: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

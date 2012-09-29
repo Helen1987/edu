@@ -1,0 +1,264 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 6: WorkflowApplication" />
+      <MSHelp:RLTitle Title="Exercise 6: WorkflowApplication" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 6: WorkflowApplication</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 6: WorkflowApplication</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>To this point in the labs you have focused on creating an activity and invoking it in the simplest way possible with the <b>WorkflowInvoker</b> class. The <b>WorkflowInvoker.Invoke</b> method is simple because it is synchronous and invokes the workflow on the same thread as the caller.</p>
+        <p>Another way to invoke a workflow is with the <b>WorkflowApplication</b> class. This class allows you to run a workflow on a separate thread and to supply delegates to be invoked when the workflow completes, goes idle, terminates or has an unhandled exception. This allows you to create multi-threaded server or client programs more easily than you can without using WF4.</p>
+        <p>In this exercise, you will modify the host application to run your SayHello activity with WorkflowApplication and observe the threading behavior. You now have two requirements for your workflow.</p>
+        <ol>
+          <li>Return a personalized greeting</li>
+          <li>Return a non-zero Int32 value containing the managed thread ID that the workflow was invoked on</li>
+        </ol>
+        <p>Using the “write the test first” approach, you will begin by writing a test that verifies your new requirement for the workflow thread ID.</p>
+        <a name="_Toc244412406" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935118" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 5. Alternatively, you can follow the following steps to begin with Exercise 6.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 6 located under the <b>Source\Ex6-WorkflowApplication\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc243285454" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388967" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412407" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935119" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Writing the Test to Verify that the Workflow Thread ID is Returned as an Out Argument</b>
+        </p>
+        <p>In this task, you will create a test that verifies that the workflow returns a non-zero integer in the output arguments named WorkflowThread.</p>
+        <ol>
+          <li>Open SayHelloFixture.cs and add the following namespace directives<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.Threading;</b><b>using System.Diagnostics;</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Imports System.Threading</b><b>Imports System.Diagnostics</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Add the <b>ShouldReturnWorkflowThread</b> test as shown<p><i>(Code Snippet - Introduction to WF</i>4<i>Lab - ShouldReturnWorkflowThread Test CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>/// &lt;summary&gt;</b><b>/// Verifies that the workflow returns an Out Argument</b><b>/// Name: WorkflowThread</b><b>/// Type: Int32</b><b>/// Value: Non-Zero</b><b>/// &lt;/summary&gt;</b><b>[TestMethod]</b><b>public void ShouldReturnWorkflowThread()</b><b>{</b><b>    var output = WorkflowInvoker.Invoke(</b><b>     new SayHello()</b><b>     {</b><b>         UserName = "Test"</b><b>     });</b><b>    Assert.IsTrue(output.ContainsKey("WorkflowThread"),</b><b>        "SayHello must contain an OutArgument named WorkflowThread");</b><b>    // Don't know for sure what it is yet</b><b>    var outarg = output["WorkflowThread"];</b><b>    Assert.IsInstanceOfType(outarg, typeof(Int32),</b><b>        "WorkflowThread must be of type Int32");</b><b>    Assert.AreNotEqual(0, outarg,</b><b>        "WorkflowThread must not be zero");</b><b>    Debug.WriteLine("Test thread is " +</b><b>                    Thread.CurrentThread.ManagedThreadId);</b><b>    Debug.WriteLine("Workflow thread is " + outarg.ToString());</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet</i>-<i>Introduction to WF</i>4<i>Lab</i>-<i>ShouldReturnWorkflowThread Test VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>''' &lt;summary&gt;</b><b>''' Verifies that the SayHello workflow contains an Out Argument</b><b>''' Name: WorkflowThread</b><b>''' Type: Int32</b><b>''' Value: Non-Zero</b><b>''' &lt;/summary&gt;</b><b>''' &lt;remarks&gt;&lt;/remarks&gt;</b><b>&lt;TestMethod()&gt; Public Sub ShouldReturnWorkflowThread()</b><b>    Dim output = WorkflowInvoker.Invoke( _</b><b>    New SayHello() With {.UserName = "Test"})</b><b>    Assert.IsTrue(output.ContainsKey("WorkflowThread"),</b><b>      "SayHello must contain an OutArgument named WorkflowThread")</b><b>    ' Don't know for sure what it is yet</b><b>    Dim outarg = output("WorkflowThread")</b><b>    Assert.IsInstanceOfType(outarg, GetType(Int32),</b><b>        "WorkflowThread must be of type Int32")</b><b>    Assert.AreNotEqual(0, output("WorkflowThread"),</b><b>       "WorkflowThread must not be zero")</b><b>    Debug.WriteLine("Test thread is " &amp; _</b><b>        Thread.CurrentThread.ManagedThreadId)</b><b>    Debug.WriteLine("Workflow thread is " &amp; outarg.ToString())</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Press <b>CTRL+R, A</b> to run all tests. You should see the new test fail because you have not added the WorkflowThread out argument yet.<p><img src="images\a28987bd-06f6-49b8-9f6a-8429e2282e1e.png" /></p><p><b>Figure 32</b><br /><i>One test passes, one test fails because you have no WorkflowThread argument</i></p></li>
+          <br />
+        </ol>
+        <a name="_Toc243285455" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388968" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412408" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935120" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Returning the WorkflowThread as an Argument</b>
+        </p>
+        <p>Now that you have a test to verify the behavior, you need modify your workflow to make the test pass.</p>
+        <ol>
+          <li>Open <b>SayHello.xaml</b> and add an <b>Out</b> argument named <b>WorkflowThread</b> of type <b>Int32</b><p><img src="images\a4ebccde-25ad-41e5-979f-d2f1c0c0d51c.png" /></p><p><b>Figure 33</b><br /><i>Add the WorkflowThread Out argument</i></p><br /><p>Until now, your workflow has been just one activity. Now you need two activities, one to assign the greeting and another to assign the workflow thread. You need to modify the workflow to use an activity that will contain the two assign activities and there are several activities you could choose from to do this, but let’s begin with the simplest one, the Sequence activity.</p></li>
+          <li>You cannot drop a sequence on the designer until you remove the Assign activity that is already there.  You will use this assign activity inside the sequence so you need to cut it, drop the sequence and then and paste it back. Right click on the Assign activity and select <b>Cut</b>.<p><img src="images\b24bbb72-680b-425c-83ad-fc2650dc2088.png" /></p><p><b>Figure 34</b><br /><i>Cutting the Assign an Activity</i></p></li>
+          <br />
+          <li>Drag a <b>Sequence</b> and drop it on the design surface<p><img src="images\70190d0e-bedf-4721-b350-663ccbd849e9.png" /></p><p><b>Figure 35</b><br /><i>Drop a Sequence on the designer</i></p><br /></li>
+          <li>Right click inside the sequence and select <b>Paste</b> to put the Assign activity inside the sequence.<p><img src="images\29908fba-d805-4535-b882-6a419808f538.png" /></p><p><b>Figure 36</b><br /><i>Paste the assign activity inside the sequence</i></p><br /></li>
+          <li>Import the <b>System.Threading</b> namespace into your workflow. Click on <b>Imports</b> and add <b>System.Threading. </b>To<b> </b>do this type the first few letters of the namespace and when the correct namespace is highlighted press <b>Enter</b><p><img src="images\846d6f64-6bb4-45be-9b9e-0bcb7a25b43f.png" /></p><p><b>Figure 37</b><br /><i>Click on Imports and add System.Threading</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\18e80f68-32ea-4184-b9ef-00baad320446.png" /><b>Do I have to add System.Threading to Imports?</b><br />No, this is optional just as it would be in any C# or VB project. If you don’t import the namespace you will have to fully qualify classes from the name space as in <b>System.Threading.Thread</b></td></tr></table><p /></div><br /></li>
+          <li>Now you need to assign the current managed thread ID to the <b>WorkflowThread</b> out argument. Drop an <b>Assign</b> activity on the Sequence below the first Assign activity and set the properties as shown<p><img src="images\f9958218-e06a-414d-98f2-42d21035f6c5.png" /></p><p><b>Figure 38</b><br /><i>Set the properties of the second Assign activity as shown</i></p><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution</li>
+          <li>Press <b>CTRL+R,A</b> to run all tests. The tests will now pass. If you want to see the thread returned by the workflow, double click on the <b>ShouldReturnWorkflowThread</b> test. The Debug output will appear in the test results. The actual thread ID will vary on your computer but you will notice that the thread ID for the test is the same as the thread ID for the Workflow because WorkflowInvoker invokes the workflow synchronously on the calling thread.<p><img src="images\6deea4e4-a2d5-4ee3-9875-090d76129ce2.png" /></p><p><b>Figure 39</b><br /><i>Debug trace output appears in test results</i></p></li>
+        </ol>
+        <a name="_Toc243285456" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388969" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412409" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935121" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Modifying the Test to use WorkflowApplication</b>
+        </p>
+        <p>Your test is good but it has one weakness. It verifies that the WorkflowThread returned is non-zero but it does not verify that it returns the actual managed thread ID that the workflow ran on.  For example, your test would pass if the workflow always returned 1 in the WorkflowThread out argument. </p>
+        <p>If you want to verify the actual thread ID you will need to use <b>WorkflowApplication</b> to run the workflow.  In this task you will modify the test to capture the thread of the workflow by obtaining it during a call to the <b>WorkflowApplication.Completed</b> action and then comparing that value to the value returned from the workflow.</p>
+        <ol>
+          <li>Open <b>SayHelloFixture.cs</b> (C#) or <b>SayHelloFixture.vb</b> (VB) and locate the <b>ShouldReturnWorkflowThread</b> test.  Modify it as shown to use the <b>WorkflowApplication</b> class to run the workflow. This code will use the <b>WorkflowApplication.Completed</b> action to capture the output arguments and thread ID. <p><i>(Code Snippet</i> -<i>Introduction to WF</i>4<i>Lab</i> -<i>ShouldReturnWorkflowThread WFApp Test CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>/// &lt;summary&gt;</b><b>/// Verifies that the workflow returns an Out Argument</b><b>/// Name: WorkflowThread</b><b>/// Type: Int32</b><b>/// Value: Non-Zero, matches thread used for Completed action</b><b>/// &lt;/summary&gt;</b><b>[TestMethod]</b><b>public void ShouldReturnWorkflowThread()</b><b>{</b><b>    AutoResetEvent sync = new AutoResetEvent(false);</b><b>    Int32 actionThreadID = 0;</b><b>    IDictionary&lt;string, object&gt; output = null;</b><b>    WorkflowApplication workflowApp = </b><b>        new WorkflowApplication(</b><b>                 new SayHello()</b><b>                 {</b><b>                     UserName = "Test"</b><b>                 });</b><b>    // Create an Action&lt;T&gt; using a lambda expression</b><b>    // To be invoked when the workflow completes</b><b>    workflowApp.Completed = (e) =&gt;</b><b>        {</b><b>            output = e.Outputs;</b><b>            actionThreadID = Thread.CurrentThread.ManagedThreadId;</b><b>            // Signal the test thread the workflow is done</b><b>            sync.Set();</b><b>        };</b><b>    workflowApp.Run();</b><b>    // Wait for the sync event for 1 second</b><b>    sync.WaitOne(TimeSpan.FromSeconds(1));</b><b>    Assert.IsNotNull(output, </b><b>        "output not set, workflow may have timed out");</b><b>    Assert.IsTrue(output.ContainsKey("WorkflowThread"),</b><b>        "SayHello must contain an OutArgument named WorkflowThread");</b><b>    // Don't know for sure what it is yet</b><b>    var outarg = output["WorkflowThread"];</b><b>    Assert.IsInstanceOfType(outarg, typeof(Int32),</b><b>        "WorkflowThread must be of type Int32");</b><b>    Assert.AreEqual(actionThreadID, (int)outarg,</b><b>        "WorkflowThread should equal actionThreadID");</b><b>    Debug.WriteLine("Test thread is " +</b><b>                    Thread.CurrentThread.ManagedThreadId);</b><b>    Debug.WriteLine("Workflow thread is " + outarg.ToString());</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet</i>-<i>Introduction to WF</i>4<i>Lab</i>–<i>ShouldReturnWorkflowThread WFApp Test VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>''' &lt;summary&gt;</b><b>''' Verifies that the SayHello workflow contains an Out Argument</b><b>''' Name: WorkflowThread</b><b>''' Type: Int32</b><b>''' Value: Non-Zero, matches thread used for Completed action</b><b>''' &lt;/summary&gt;</b><b>''' &lt;remarks&gt;&lt;/remarks&gt;</b><b>&lt;TestMethod()&gt; Public Sub ShouldReturnWorkflowThread()</b><b>    Dim sync As New AutoResetEvent(False)</b><b>    Dim actionThreadID As Int32 = 0</b><b>    Dim output As IDictionary(Of String, Object) = Nothing</b><b>    Dim workflowApp As New WorkflowApplication( _</b><b>        New SayHello() With {.UserName = "Test"})</b><b>    workflowApp.Completed = _</b><b>        Function(e)</b><b>            output = e.Outputs</b><b>            actionThreadID = Thread.CurrentThread.ManagedThreadId</b><b>            ' Signal the test thread the workflow is done</b><b>            sync.Set()</b><b>            ' VB requires a lambda expression to return a value</b><b>            ' It is not used with Action(Of T)</b><b>            Return Nothing</b><b>        End Function</b><b>    workflowApp.Run()</b><b>    ' Wait for the sync event for 1 second</b><b>    sync.WaitOne(TimeSpan.FromSeconds(1))</b><b>    Assert.IsNotNull(output, "output not set, workflow may have timed out")</b><b>    Assert.IsTrue(output.ContainsKey("WorkflowThread"),</b><b>                  "SayHello must contain an OutArgument named WorkflowThread")</b><b>    ' Don't know for sure what it is yet</b><b>    Dim outarg = output("WorkflowThread")</b><b>    Assert.IsInstanceOfType(outarg, GetType(Int32),</b><b>                        "WorkflowThread must be of type Int32")</b><b>    Assert.AreEqual(actionThreadID,</b><b>                DirectCast(output("WorkflowThread"), Integer),</b><b>                "WorkflowThread should equal actionThreadID")</b><b>    Debug.WriteLine("Test thread is " &amp; _</b><b>                Thread.CurrentThread.ManagedThreadId)</b><b>    Debug.WriteLine("Workflow thread is " &amp; outarg.ToString())</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="images\99fa2e9a-6450-4c39-995d-5b802290200d.png" />
+                  <b>Delegates, not events</b>
+                  <br />
+                  <b>WorkflowApplication.Completed</b> and other properties of WorkflowApplication are not events but delegates. Handling them requires you to provide a method, anonymous method or lambda expression.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_eab77b34-a40d-4d37-a219-f6c6ed7ee181.html">Exercise 6: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Creating and Consuming Razor Helpers" />
+      <MSHelp:RLTitle Title="Exercise 3: Creating and Consuming Razor Helpers" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Creating and Consuming Razor Helpers</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Razor</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Creating and Consuming Razor Helpers</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>ASP.NET Web Pages Helpers are components that provide certain functionality, and can be accessed by any Razor or ASP.NET Web Page by using a single line of code. You can build your own helpers, which are stored as .cshtml razor files, or use the built-in helpers from ASP.NET or Razor.</p>
+        <p>Using helpers will increase your code reusability, organization and maintainability because you will be creating separate units for specific features. In addition, you could take advantage of built-in or third party helpers to easily interact with multimedia, social networks, security, email and data grids.</p>
+        <p>In this exercise, you will learn how to consume and create Razor helpers in your solution. To do that, you will first use a WebImage helper to display images with watermarks, and then you will use a WebGrid helper to show the album data. At the end, you will create a custom helper with Razor syntax to show the current date.</p>
+        <a name="_Toc282513997" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Consuming the Razor WebImage Helper</b>
+        </p>
+        <p>In this task, you will learn how to use Razor WebImage Helper to display an image and add a watermark on it.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>WebImage </b>Razor Helper provides functionality to <b>manage images</b> in your page.<br />The usage of WebImage helper requires two steps:<br />1. You need to work with Razor syntax and create <b>a variable that will contain the image</b>:<br /><b>   @{ var myImage = WebImage("/Content/myImage.jpg")</b><br /><b>      // Work with the image…</b><br /><b>    }</b><br /><br />2. Then, in order to load the image in the page, you have to show the variable that contains the image inside an <b>HTML &lt;img/&gt;</b> tag:<br /><b>      &lt;img src="@myImage"/&gt;</b><br /><br />Here you will find a reference of the additional <b>WebImage</b> Razor functions that are available:<br />     - <b><i>WebImage</i>(<i>string Path):</i></b>Loads an image from the specified path.<br />     - <b><i>WebImage.AddImagesWatermark(string Path)</i></b><br />     - <b><i>WebImage.AddTextWatermark(string text):</i></b> Adds the specified text to the image.<br />     - <b><i>WebImage.FlipHorizontal()/</i></b><b><i>WebImage.FlipVertical()</i>: </b>Flips the image horizontally /vertically.<br />     - <b><i>WebImage.GetImageFromRequest([opt]string postedFileName):</i></b>Gets and image from request after being posted.<br />     - <b><i>WebImage.Resize(width, height):</i></b>Resizes the image to the size specified in pixels.<br />     - <b><i>WebImage.RotateLeft() /</i></b><b><i>WebImage.RotateRight():</i></b>Rotates the image left / right.<br />     - <b><i>WebImage.Save(path):</i></b>Saves the image to the specified path.<br /><br />You can find more information about Razor WebImage Helper in <a href="http://www.asp.net/webmatrix/tutorials">ASP.NET Web Pages with Razor Syntax Book Beta</a>.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start | All Programs | Microsoft Visual Studio 2010 Express | Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex03-CreatingAndUsingHelpersInRazor\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>Open <b>Index.cshtml</b> view at <b>Views/Home</b> project folder and add WebImage Helper logic to load an image and save it in a different location. To do this, you will first use WebImage() to load an image inside a variable:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model dynamic@{    ViewBag.Title = "Index";    Layout = "~/Views/Shared/Site.cshtml";}    &lt;h2&gt;Index&lt;/h2&gt;<b>@{</b><b>      var image = new WebImage(@"~\Content\Images\home-showcase.png");</b><b>      var imagePath = @"Content/Images/newimage.png";</b><b>      var saveImagePath = @"~\Content\Images\newimage.png";</b><b>      image.Save(saveImagePath);</b><b>}</b><b>&lt;img src="@imagePath" alt="image with watermark"/&gt;</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> ImagePath separator character is “<b>/</b>” to allow browser compatibility.</td></tr></table><p /></div><br /></li>
+          <li>Add a watermark to the image by using AddWatermark() method:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…@{      var image = new WebImage(@"~\Content\Images\home-showcase.png");<b>      image = image.AddImageWatermark(@"~\Content\Images\logo.png", horizontalAlign: "Left", verticalAlign: "Top");</b>      var imagePath = @"Content/Images/newimage.png";      var saveImagePath = @"~\Content\Images\newimage.png";      image.Save(saveImagePath);}&lt;img src="@imagePath" alt="image with watermark"/&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>AddImageWatermark</b> method<b> </b>accepts more parameters than the ones used here, which are optional and provide a default value. Here is the complete method definition:<br /><b>   AddImageWatermark(</b><br /><b>     string watermarkImageFilePath, </b><br /><b>     string format (optional, default is null), </b><br /><b>     int width (optional, default is 0, in pixel units), </b><br /><b>     int height (optional, default is 0, in pixel units), </b><br /><b>     string horizontalAlign (optional, default is "Right"), </b><br /><b>     string verticalAlign (optional, default is "Bottom"), </b><br /><b>     int opacity (optional, default is 100, in percentage), </b><br /><b>     int padding (optional, default is 5, in pixel units)</b><br /><b>);</b></td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282513998" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the Application</b>
+        </p>
+        <p>In this task, you will run the application to verify that the image with the watermark is loaded.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The application starts in the Home page and displays the image with the watermark:<p><img src="images\e754d836-3811-4f92-8ed0-5c3b5976f4b5.png" /></p><p><b>Figure 1</b><br /><i>Image and watermark using Razor WebImage helper</i></p><br /></li>
+        </ol>
+        <a name="_Toc282513999" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a WebGrid Helper to Browse View</b>
+        </p>
+        <p>In this task, you will add a WebGrid helper to show a grid of albums inside Browse view.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> The <b>WebGrid</b> Helper renders an HTML table that displays data from the model or from a database. It supports data formatting, paging and sorting.<br />It generates a collection of Columns and parameters within the given data source, which is rendered as an HTML table that can be accessed after the grid is generated.<br />To <b>use</b> a grid <b>from a model</b>, you will first need to generate the grid and assign it to a variable with the WebGrid creation method, which receives the model data structure as a required parameter:<br /><b>@{</b><br /><b>     var grid = new WebGrid(Model.Elements);</b><br /><b>}</b><br />Then, to <b>render</b> the grid in the page you will have to use a GetHtml() method:<br />@{<br />     var grid = new WebGrid(Model.Elements);<br /><b>     grid.GetHtml();</b><br />}<br /><br />Here you will find method references  if you  want to use additional features:<br /><b>  WebGrid(dynamic IEnumerable&lt;object&gt; source (required field), </b><br /><b>     IEnumerable&lt;string&gt; columnNames (default is null),</b><br /><b>     string defaultSort (default is null),</b><br /><b>     int rowsPerPage (default it 10),</b><br /><b>     bool canPage (default is true),</b><br /><b>     bool canSort (default is true),</b><br /><b>     string ajaxUpdateContainerId (default is null),</b><br /><b>     string fieldNamePrefix (default is null),</b><br /><b>     string pageFieldName (default is null),</b><br /><b>     string selectionFieldName (default is null),</b><br /><b>     string sortFieldName (default is null),</b><br /><b>     string sortDirectionFieldName  (default is null)</b><br /><b>  );</b><br /><br /><b>   WebGrid.GetHtml(string tableStyle (default is null),</b><br /><b>        string headerStyle (default is null), </b><br /><b>        string footerStyle (default is null),</b><br /><b>        string rowStyle (default is null),</b><br /><b>        string alternatingRowStyle (default is null), </b><br /><b>        string selectedRowStyle (default is null), </b><br /><b>        bool displayHeader (default is true), </b><br /><b>        bool fillEmptyRows (default is false), </b><br /><b>        string emptyRowCellValue (default is null), </b><br /><b>        IEnumerable&lt;WebGridColumn&gt; columns (default is null), </b><br /><b>        IEnumerable&lt;string&gt; exclusions (default is null), </b><br /><b>        WebGridPagerModes mode (default is 3), </b><br /><b>        string firstText (default is null), </b><br /><b>        string previousText (default is null), </b><br /><b>        string nextText (default is null), </b><br /><b>        string lastText (default is null), </b><br /><b>        int numericLinksCount (default is null)</b><br /><b>  );</b></td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Open <b>Browse.cshtml</b> view at <b>Views/Store</b> project folder.</li>
+          <li>Create a WebGrid that uses the model to show the albums. Additionally the grid will be sorted by name and show 10 elements. To do this, you will create the grid using <b>Model.Albums</b> and two extra parameters: <b>defaultSort</b> and <b>rowsPerPage</b>.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model MvcMusicStore.ViewModels.StoreBrowseViewModel@{    ViewBag.Title = "Browse Albums";    Layout = "~/Views/Shared/Site.cshtml";}<b>@{</b><b>    var grid = new WebGrid(Model.Albums, defaultSort: "Name", rowsPerPage: 10);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Display the <b>WebGrid</b> specifying two values in the Column collection: Title and Artist.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model MvcMusicStore.ViewModels.StoreBrowseViewModel@{    ViewBag.Title = "Browse Albums";    Layout = "~/Views/Shared/Site.cshtml";}@{var grid = new WebGrid(Model.Albums, defaultSort: "Name", rowsPerPage: 10);}<b>@grid.GetHtml(columns: grid.Columns(</b><b>      grid.Column("Title"),</b><b>      grid.Column("Artist")</b><b>))</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282514000" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application</b>
+        </p>
+        <ol>
+          <li>In this task, you will run the application to verify that the WebGrid is loaded and shows album data as expected.</li>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The project starts at Home. Change the URL to <b>/Store/Browse</b> to verify that the Browse view loads the WebGrid as configured in the last steps:<p><img src="images\0efd98ca-dfa3-4676-a78b-81ab25df78f1.png" /></p><p><b>Figure 2</b><br /><i>A Razor WebGrid showing the albums</i></p><br /></li>
+        </ol>
+        <a name="_Toc282514001" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Creating a Custom Helper</b>
+        </p>
+        <ol>
+          <li>Up to now you have been using Razor third party helpers. In this task, you will learn how to create your own custom helper in Razor. In order to do that you will add to the solution a helper with the name <b>“ShowTime()”</b> that will show the current date and time.</li>
+          <li>Add a new element into App_Code by doing right-click on App_Code folder, and selecting “<b>Add|New Item</b>”.<p><img src="images\019a3ad3-8d6c-4b60-8e9d-752d63b012b3.png" /></p><p><b>Figure 3</b><br /><i>Adding a new item into App_Code</i></p><br /></li>
+          <li>In the Add New Item dialog, select from MVC 3 templates, <b>MVC 3 Partial Page (Razor)</b>. Use the name <b>MyHelpers.cshtml</b> and click <b>Add</b>. This will create an empty Razor file with the name MyHelpers.cshtml.<p><img src="images\ef94306c-f208-4a93-a433-84dc9fcc38d2.png" /></p><p><b>Figure 4</b><br /><i>Adding a new Razor Helper</i></p><br /></li>
+          <li>Open <b>MyHelpers.cshtml</b> and declare the helper:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>@helper ShowTime(){</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>In ShowTime helper, include HTML code to show current date. To do that, you will use the @DateTime.Now code inside an HTML markup block:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@helper ShowTime(){<b>    &lt;div&gt;</b><b>        Current Time is @DateTime.Now</b><b>    &lt;/div&gt;</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Open <b>Index.cshtml</b> View in the project folder <b>Views/Home</b> to call the helper:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>cshtml</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>@model dynamic@{    ViewBag.Title = "Index";    Layout = "~/Views/Shared/Site.cshtml";}&lt;h2&gt;Index&lt;/h2&gt;<b>@MyHelpers.ShowTime()</b>@{      var image = new WebImage(@"~\Content\Images\home-showcase.png");      image = image.AddImageWatermark(@"~\Content\Images\logo.png", horizontalAlign: "Left", verticalAlign: "Top");      var imagePath = @"Content/Images/newimage.png";      var saveImagePath = @"~\Content\Images\newimage.png";      image.Save(saveImagePath);}&lt;img src="@imagePath" alt="image with watermark"/&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282514002" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Running the Application</b>
+        </p>
+        <ol>
+          <li>In this task, you will run the application to verify that the helper is working as expected.</li>
+          <li>Press <b>F5</b> to run the application.</li>
+          <li>The project starts at Home:<p><img src="images\68b094a5-62eb-4037-84a4-cec3cc5afb61.png" /></p><p><b>Figure 5</b><br /><i>Current time displayed with a custom helper</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b61d4e7e-d7ac-4275-82d2-aed9718b9538.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

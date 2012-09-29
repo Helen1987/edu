@@ -1,0 +1,168 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Parallelize LINQ Queries using PLINQ" />
+      <MSHelp:RLTitle Title="Exercise 4: Parallelize LINQ Queries using PLINQ" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Parallelize LINQ Queries using PLINQ</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Parallel Extensions: Building Multicore Applications with .NET</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Parallelize LINQ Queries using PLINQ</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Developers can optimize their LINQ queries to execute in a parallel environment by utilizing Parallelized LINQ (PLINQ).</p>
+        <p>The Parallel Extensions library offers many different ways to implement parallelism in LINQ queries. PLINQ provides you with the <b>System.Linq.ParallelEnumerable</b> class which offers functionality similar to the <b>System.Linq.Enumerable </b>class.</p>
+        <br />
+        <a name="_Toc210808285" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933636" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Using the ParallelEnumerable Class’ Static Methods to Parallelize LINQ</b>
+        </p>
+        <p>In this task, you will continue to use the same solution as the previous exercises.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ParallelExtLab.sln</b> located under<b> Source\Ex04-PLINQ\begin</b><i> </i><b>(Choosing the folder that matches the language of your preference.)</b><i> </i>Optionally, you can continue working the solution you created in the previous exercise.</li>
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex4Task1_PLINQ()</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex4Task1_PLINQ();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex4Task1_PLINQ()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex4Task1_PLINQ() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task1_PLINQ CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex4Task1_PLINQ()</b><b>{</b><b>    var q = Enumerable.Select(</b><b>              Enumerable.OrderBy(</b><b>                Enumerable.Where(employeeData, </b><b>                x =&gt; x.EmployeeID % 2 == 0),</b><b>                x =&gt; x.EmployeeID),</b><b>              x =&gt; PayrollServices.GetEmployeeInfo(x))</b><b>              .ToList();</b><b>    foreach (var e in q)</b><b>    {</b><b>        Console.WriteLine(e);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task1_PLINQ VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex4Task1_PLINQ()</b><b>    Dim q = Enumerable.Select(</b><b>                Enumerable.OrderBy(</b><b>                    Enumerable.Where(</b><b>                        employeeData,</b><b>                        Function(x) x.EmployeeID Mod 2 = 0),</b><b>                        Function(x) x.EmployeeID),</b><b>                        Function(x) PayrollServices.GetEmployeeInfo(x)) _</b><b>            .ToList()</b><b>    For Each e In q</b><b>        Console.WriteLine(e)</b><b>    Next e</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>Select()</b>, <b>OrderBy()</b>, and <b>Where()</b> methods are extension methods off of the <b>IEnumerable </b>generic class, however you are accessing them in a static manner here. You will try a more succinct usage later.<br />The <b>ToList()</b> call is for illustrative purposes and is not always necessary in production code. It is used here because you want to immediately fire the LINQ query to collect all of the <b>Employee Info</b> strings, and then write them out to screen later.<br />If you were to leave the <b>ToList()</b> off, the query will still fire in order of the <b>Employee ID</b> but each call to <b>GetEmployeeInfo()</b> wouldn’t fire until the <b>IEnumerable generic</b> is iterated through during the <b>foreach</b> loop. This is known as Delayed Execution.<br />See Scott Wisniewski’s article at <a href="http://msdn.microsoft.com/en-us/magazine/cc163378.aspx">http://msdn.microsoft.com/en-us/magazine/cc163378.aspx</a> for more information.</td></tr></table><p /></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that the LINQ query performs the operations in order of the <b>Employee ID</b>. Also observe the total amount of time required to complete the work (the exact time required will vary):<p><img src="images\9e2509d8-11e1-4591-aa2a-748d721fd760.png" /></p><p><b>Figure 13</b><br /><i>Output from a non-parallelized LINQ query</i></p><br /></li>
+          <li>It is easy to parallelize this query by making use of the static <b>ParallelEnumerable</b> class’s version of the same LINQ methods. Additionally you’ll need to add an <b>AsParallel()</b> call to the query’s data source. Modify the <b>Main()</b> method just to call the PLINQAsParallel method.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex4Task1_PLINQAsParallel();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex4Task1_PLINQAsParallel()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex4Task1_PLINQAsParallel() to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task1_PLINQAsParallel CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex4Task1_PLINQAsParallel()</b><b>{</b><b>    var q = ParallelEnumerable.Select(</b><b>            ParallelEnumerable.OrderBy(</b><b>              ParallelEnumerable.Where(employeeData.AsParallel(),</b><b>                x =&gt; x.EmployeeID % 2 == 0),</b><b>              x =&gt; x.EmployeeID),</b><b>            x =&gt; PayrollServices.GetEmployeeInfo(x))</b><b>          .ToList();</b><b>    foreach (var e in q)</b><b>    {</b><b>        Console.WriteLine(e);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task1_PLINQAsParallel VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex4Task1_PLINQAsParallel()</b><b>    Dim q = ParallelEnumerable.Select(</b><b>                ParallelEnumerable.OrderBy(</b><b>                    ParallelEnumerable.Where(</b><b>                        employeeData.AsParallel(),</b><b>                        Function(x) x.EmployeeID Mod 2 = 0),</b><b>                        Function(x) x.EmployeeID),</b><b>                        Function(x) PayrollServices.GetEmployeeInfo(x)) _</b><b>            .ToList()</b><b>    For Each e In q</b><b>        Console.WriteLine(e)</b><b>    Next e</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The calls to the <b>Select()</b>, <b>OrderBy()</b>, and <b>Where()</b> methods, which were previously being made on <b>Enumerable</b>, are now being made on <b>ParallelEnumerable</b>. Also notice that a call to <b>AsParallel()</b> has been added to the data source.</td></tr></table><p /></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe the LINQ query no longer performs the operations in a particular order.  Also note that in this example the parallelized version completes in less time than the non-parallelized version (in this case, it completed in roughly half the time due to it being run on a dual-core machine; your results will vary based on the hardware you run this example on).<p><img src="images\7a7956da-a189-4fc9-b3ac-7435077cbe11.png" /></p><p><b>Figure 14</b><br /><i>Output from a parallelized LINQ query</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The operations are executed in parallel with as many operations occurring concurrently as the number of physical cores will allow.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc210808286" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933637" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Using the ParallelEnumerable Class’ Extension Methods to Parallelize LINQ</b>
+        </p>
+        <p>As mentioned earlier, a more succinct way to take advantage of the <b>Enumerable</b> and <b>ParallelEnumerable</b> classes’ static LINQ methods is to use them as Extension methods.</p>
+        <ol>
+          <li>Converting a non-parallelized LINQ query implemented using extension methods to a PLINQ query is straight forward. Replace the PLINQ query in the <b>Main()</b> method to match the following LINQ query:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex4Task2_Extensions();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex4Task2_Extensions()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex4Task2_Extensions() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task2_Extensions CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex4Task2_Extensions()</b><b>{</b><b>    var q = employeeData.</b><b>        Where(x =&gt; x.EmployeeID % 2 == 0).OrderBy(x =&gt; x.EmployeeID)</b><b>        .Select(x =&gt; PayrollServices.GetEmployeeInfo(x))</b><b>        .ToList();</b><b>    foreach (var e in q)</b><b>    {</b><b>        Console.WriteLine(e);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task2_Extensions VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex4Task2_Extensions()</b><b>    Dim q = employeeData _</b><b>            .Where(Function(x) x.EmployeeID Mod 2 = 0) _</b><b>            .OrderBy(Function(x) x.EmployeeID) _</b><b>            .Select(Function(x) PayrollServices.GetEmployeeInfo(x)) _</b><b>            .ToList()</b><b>    For Each e In q</b><b>        Console.WriteLine(e)</b><b>    Next e</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Again, the <b>ToList()</b> used to execute the LINQ query immediately rather than waiting for it to execute when the <b>IEnumerable&lt;T&gt;</b> returned by <b>Select() </b>is iterated over during the <b>foreach</b> that comes later. You are avoiding Delayed Execution.</td></tr></table><p /></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that the LINQ query performs the operations in order of the Employee ID.  Also observe the total amount of time required to complete the work (the exact time required will vary):<p><img src="images\b9079af2-4be4-4596-86ee-a5ceb01ea0f7.png" /></p><p><b>Figure 15</b><br /><i>Output from non-parallelized LINQ query with extension methods</i></p><br /></li>
+          <li>To parallelize this LINQ query just replace the current method call from <b>Main()</b>, with the following one.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex4Task2_ConvertToParallelExtensions();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex4Task2_ConvertToParallelExtensions()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex4Task2_ConvertToParallelExtensions() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task2_ConvertToParallelExtensions CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex4Task2_ConvertToParallelExtensions()</b><b>{</b><b>    var q = employeeData.AsParallel()</b><b>        .Where(x =&gt; x.EmployeeID % 2 == 0).OrderBy(x =&gt; x.EmployeeID)</b><b>        .Select(x =&gt; PayrollServices.GetEmployeeInfo(x))</b><b>        .ToList();</b><b>    foreach (var e in q)</b><b>    {</b><b>        Console.WriteLine(e);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task2_ConvertToParallelExtensions VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex4Task2_ConvertToParallelExtensions()</b><b>    Dim q = employeeData.AsParallel() _</b><b>                .Where(Function(x) x.EmployeeID Mod 2 = 0) _</b><b>                .OrderBy(Function(x) x.EmployeeID) _</b><b>                .Select(Function(x) PayrollServices.GetEmployeeInfo(x)) _</b><b>                .ToList()</b><b>    For Each e In q</b><b>        Console.WriteLine(e)</b><b>    Next e</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that like the LINQ query based on the <b>ParallelEnumerable</b> static class, the PLINQ query implemented as extension methods no longer performs operations in order by <b>EmployeeID</b>. Instead the operations are executed in parallel with as many operations occurring concurrently as the number of physical cores will allow. Also note that as in the previous parallelize LINQ example, the parallelized version completes in roughly half the time as the non-parallelized version.<p><img src="images\72f178bd-0a81-49d5-89a8-6bcd92a43bea.png" /></p><p><b>Figure 16</b><br /><i>Output from parallelized LINQ query with extension methods</i></p><br /></li>
+        </ol>
+        <a name="_Toc210808287" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933638" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Using AsParallel() With Query Comprehension Syntax</b>
+        </p>
+        <p>In this task you will use the Parallel Extensions library and the <b>AsParallel()</b> method to create parallelized LINQ queries using the query comprehension syntax.</p>
+        <ol>
+          <li>Replace the LINQ query in the <b>Main() </b>method with the following query comprehension syntax:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    // Methods to call<b>    Ex4Task3_PLINQComprehensionSyntax();</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex4Task3_PLINQComprehensionSyntax()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex4Task3_PLINQComprehensionSyntax() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task3_PLINQComprehensionSyntax CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex4Task3_PLINQComprehensionSyntax()</b><b>{</b><b>    var q = from e in employeeData.AsParallel()</b><b>            where e.EmployeeID % 2 == 0</b><b>            orderby e.EmployeeID</b><b>            select PayrollServices.GetEmployeeInfo(e);</b><b>    foreach (var e in q)</b><b>    {</b><b>        Console.WriteLine(e);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex4 Ex4Task3_PLINQComprehensionSyntax VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex4Task3_PLINQComprehensionSyntax()</b><b>    Dim q = From e In employeeData.AsParallel()</b><b>            Where e.EmployeeID Mod 2 = 0</b><b>            Order By e.EmployeeID</b><b>            Select PayrollServices.GetEmployeeInfo(e)</b><b>    For Each e In q</b><b>        Console.WriteLine(e)</b><b>    Next e</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that although the LINQ syntax was changed, the data was processed in the same parallel manner as it was with the <b>ParallelEnumerable</b> extension methods.<p><img src="images\8b9652eb-055d-496e-9f32-5b9a4a921112.png" /></p><p><b>Figure 17</b><br /><i>Output from parallelized LINQ query using the query comprehension syntax</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_dfce7ba9-3875-4861-b82e-3617d87ff6e0.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

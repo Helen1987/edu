@@ -1,0 +1,194 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Build a Multitouch Gesture Application" />
+      <MSHelp:RLTitle Title="Exercise 1: Build a Multitouch Gesture Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Build a Multitouch Gesture Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Multitouch Gestures with MFC - Native</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Build a Multitouch Gesture Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <a name="_Toc243306799" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Create the MFC application using the Application Wizard</b>
+        </p>
+        <ol>
+          <li>Start Visual Studio 2010.</li>
+          <li>Create a new MFC application project with the name <b><i>TouchGestureDemo</i></b> and press <b>OK</b>.<p><img src="images\50dc7c61-7ee4-459e-8d4a-e9edc1c54494.png" /></p><br /></li>
+          <li>In the Application Type dialog of the MFC Application Wizard, select Single Document. To keep the application simple, select (or deselect) the options in the various dialogs of the MFC Application Wizard based on the screenshots below and then press <b>Next &gt; </b>after each dialog.</li>
+          <li>
+            <p>
+              <img src="images\4df90994-d0fc-4924-94bf-0efb6dc52253.png" />
+            </p>
+            <br />
+            <p>
+              <img src="images\d3fda833-37bb-4ef2-a263-9fd4f8760732.png" />
+            </p>
+            <br />
+            <p>
+              <img src="images\aae96ec4-5536-4794-967d-e95cb7197ddf.png" />
+            </p>
+            <br />
+            <p>
+              <img src="images\9cc19fea-2b9f-4cef-9166-5376db3b744c.png" />
+            </p>
+            <br />
+          </li>
+          <li>Continue clicking <b>Next</b> until you finally hit <b>Finish</b> on the <b>Generated Classes</b> wizard dialog:<p><img src="images\579a1abf-3c33-48d4-b58c-1df3dfcc9be0.png" /></p><br /></li>
+        </ol>
+        <a name="_Toc243306800" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Test the Existence and Readiness of Multitouch Hardware</b>
+        </p>
+        <p>The application that we are building requires touch enabled hardware, so we need to check for this in the application. </p>
+        <ol>
+          <li>In TouchGestureDemo.cpp, add the following code at the end of CTouchGestureDemoApp::InitInstance():<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BYTE digitizerStatus = (BYTE) GetSystemMetrics(SM_DIGITIZER);if ((digitizerStatus &amp; (0x80 + 0x40)) == 0) //Stack Ready + MultiTouch{  AfxMessageBox(L"No touch input is currently available.");  return FALSE;}BYTE nInputs = (BYTE) GetSystemMetrics(SM_MAXIMUMTOUCHES);CString str;str.Format(L"Touch input available with %d touch points.", nInputs);AfxMessageBox(str);return TRUE;</pre></td></tr></table></span></div></li>
+          <br />
+          <li>You can see that besides checking for touch availability, we also find out the number of touch inputs that the hardware support.</li>
+          <li> Build and run.</li>
+          <li>Depending on the number of touch inputs you have on your machine, you should see output similar to the following screenshot:<p><img src="images\cbde5a2b-c226-4842-ad2e-1b4ca5605d67.png" /></p><br /></li>
+        </ol>
+        <br />
+        <a name="_Toc243306801" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Add the Drawing Object Source and Header Files to the Project, and Draw the Rectangle</b>
+        </p>
+        <p>In the Starter folder, you will find two files: DrawingObject.h and DrawingObject.cpp. Copy them to the project folder and use “Add Existing item…” to add them to the project.</p>
+        <ol>
+          <li>Add an #include DrawingObject.h line near the end of stdafx.h header file, just after #include &lt;afxcontrolbars.h&gt;:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>   #include "DrawingObject.h"</pre></td></tr></table></span></div><br /></li>
+          <li>Add the following <i>protected</i> member variable definition to <i>ChildView.h</i>. This is the main drawing object:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    // The drawing object    CDrawingObject m_drawingObject;</pre></td></tr></table></span></div><br /></li>
+          <li>In addition, add the following <i>protected</i> member variables to <i>ChildView.h</i>. These are needed to support positioning and sizing of the drawing object:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    // Needed for drawing object position and size calculations    double m_dblZoomRatioStart;    double m_dblZoomRatioTotal;    CPoint m_ptCenter;</pre></td></tr></table></span></div><br /></li>
+          <li>To draw the rectangle, add the following line in ChildView.cpp at the end of CChildCiew::OnPaint():<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    m_drawingObject.Paint(&amp;dc);</pre></td></tr></table></span></div><br /></li>
+          <li>When the window is resized, we want to reset the drawing rectangle to its default location and size (making it easy to find it, if it moves outside the client area boundaries), so let’s add a WM_SIZE message handler. </li>
+          <li>Switch to the Class View (Select the Class View option under the View Menu) and Select the <i>CChildView</i> class.</li>
+          <li>In the Properties page, go to the <b>Messages</b> property sheet (by pressing <img src="images\570b77c8-4431-4cad-a896-3a80bd1a1dbd.png" /> icon) and navigate to WM_SIZE, then add the OnSize() message handler from the drop down box: <p><img src="images\2a979e55-3fa4-4075-b5be-764928ac81d9.png" /></p><br /></li>
+          <li>Inside the CChildView::OnSize() handler (after the TODO comment) append the following code to reset the drawing object:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    m_drawingObject.ResetObject(cx, cy);</pre></td></tr></table></span></div><br /></li>
+          <li>Build and run.</li>
+          <li>After responding to the initial message about the availability of touch inputs, a red rectangle should appear in the middle of the window:<p><img src="images\eb648122-a8c7-49d2-84f4-7205c73efd92.png" /></p><br /></li>
+        </ol>
+        <a name="_Toc243306802" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Touch Now! </b>
+        </p>
+        <p>It’s time to start! By default a touch-enabled system provides WM_GESTURE messages to the target window. This is somewhat similar to mouse and keyboard messages. The system consumes the low-level touch input events and calculates the resulting gesture for us.  MFC provides a number of message handler overrides that can receive each of the gesture types and each returns a Boolean value. If a gesture input is processed by the application, the corresponding override should return TRUE; otherwise it returns FALSE.</p>
+        <ol>
+          <li>Let’s move! Add the following five protected method definitions to <i>ChildView.h</i>:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Overridesprotected:// Gesture handlersvirtual BOOL OnGestureZoom(CPoint ptCenter, long lDelta);virtual BOOL OnGesturePan(CPoint ptFrom, CPoint ptTo);virtual BOOL OnGestureRotate(CPoint ptCenter, double dblAngle);virtual BOOL OnGesturePressAndTap(CPoint ptFirstFinger, long lDelta);virtual BOOL OnGestureTwoFingerTap(CPoint ptCenter);</pre></td></tr></table></span></div><br /></li>
+          <li>Starting with the Pan Gesture handler, add this code to <i>ChildView.cpp</i>:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BOOL CChildView::OnGesturePan(CPoint ptFrom, CPoint ptTo){int dx = ptTo.x - ptFrom.x;int dy = ptTo.y - ptFrom.y;if (dx != 0 || dy != 0){m_drawingObject.Move(dx, dy);RedrawWindow();}return TRUE;}</pre></td></tr></table></span></div><br /></li>
+          <li>Now, the Zoom Gesture implementation, add this code to <i>ChildView.cpp</i>:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BOOL CChildView::OnGestureZoom(CPoint ptCenter, long lDelta){if ((m_pCurrentGestureInfo-&gt;dwFlags &amp; GF_BEGIN) == GF_BEGIN){m_dblZoomRatioStart = m_dblZoomRatioTotal = lDelta;}else if (lDelta != 0){m_dblZoomRatioTotal += lDelta;double zoomFactor = (double)m_dblZoomRatioTotal / m_dblZoomRatioStart;m_drawingObject.Zoom(zoomFactor, ptCenter.x, ptCenter.y);m_dblZoomRatioStart = m_dblZoomRatioTotal;RedrawWindow();}return TRUE;}</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Rotate Gesture handler in <i>ChildView.cpp</i>:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BOOL CChildView::OnGestureRotate(CPoint ptCenter, double dblAngle){if ((m_pCurrentGestureInfo-&gt;dwFlags &amp; GF_BEGIN) == GF_BEGIN){// Make the first center, the rotating onem_ptCenter = ptCenter;}else if (dblAngle != 0.){m_drawingObject.Rotate(dblAngle * PI / 100.0, m_ptCenter.x, m_ptCenter.y);RedrawWindow();}return TRUE;}</pre></td></tr></table></span></div><br /></li>
+          <li>Similarly, add the handlers for the “Press and Tap” and “Two Finger Taps” Gestures in <i>ChildView.cpp</i>:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BOOL CChildView::OnGesturePressAndTap(CPoint ptFirstFinger, long lDelta){if ((m_pCurrentGestureInfo-&gt;dwFlags &amp; GF_BEGIN) != 0){m_drawingObject.ShiftColor();RedrawWindow();}return TRUE;}BOOL CChildView::OnGestureTwoFingerTap(CPoint ptCenter){m_drawingObject.TogleDrawDiagonals();RedrawWindow();return TRUE;}</pre></td></tr></table></span></div><br /></li>
+          <li>Build and run.</li>
+          <li>Try to move the rectangle with two fingers; you can see that it follows your fingers’ movement. </li>
+          <li>Try to move the rectangle without touching it; instead touch the screen in an empty area of the Window. It moves! We didn’t perform “hit testing” to check if the touch location is inside the rectangles’ boundaries. We respond to any gesture within the whole client area.</li>
+          <li>Try using the remaining gestures as well: Rotate, Zoom, Two Finger Tap and Finger Roll.</li>
+        </ol>
+        <a name="_Toc243306803" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – There Is a Bug! </b>
+        </p>
+        <ol>
+          <li>Try to rotate the rectangle. What happened? By default, a Window receives all gestures except rotation. However, we can configure the touch engine to supply any gestures we want. MFC provides a class that can help, CGestureConfig, which allows you to customize Windows gesture features such as zoom, pan or rotate.</li>
+          <li>Add this member variable to <i>ChildView.h</i>:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Fieldsprotected:// Holds gesture configurationCGestureConfig m_gestureConfig;</pre></td></tr></table></span></div><br /></li>
+          <li>Switch to the <b>Class View</b> and Select the CChildView class. In the Properties page, go to the <b>Messages</b> property sheet and navigate to WM_CREATE, then add the OnCreate() message handler from the drop down box: <p><img src="images\a543a4cc-94f6-485c-9e85-00122a377592.png" /></p><br /></li>
+          <li>Inside the CChildView::OnCreate() handler (after the TODO comment) append the following code to enable receiving the rotation gesture:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    GetGestureConfig(&amp;m_gestureConfig);    // Only rotation is not enabled by default    m_gestureConfig.EnableRotate();    SetGestureConfig(&amp;m_gestureConfig);</pre></td></tr></table></span></div></li>
+          <br />
+          <li>Build and run.</li>
+          <li>Try to rotate the rectangle. It works! Well done!</li>
+          <li>Here is a screenshot for the demo in action, after “Rotation”, “Press and Tap” and “Two Finger Taps” gestures have all been applied:<p><img src="images\1f4c420e-623c-4952-b879-08245a5a42b9.png" /></p><br /></li>
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

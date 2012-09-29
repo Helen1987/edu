@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Author>
+    <Name>BrianKel</Name>
+  </Author>
+  <Id>LapAroundALM</Id>
+  <Version>1.0</Version>
+  <Title>A Lap Around Visual Studio 2010 Application Lifecycle Management</Title>
+  <Description>
+    In this demo-rich session we will take a tour of many of the new capabilities of Visual Studio 2010 for application lifecycle management. This includes a look at the new build automation, project management, branching and merging, and related capabilities of Team Foundation Server 2010. We will also look at the new design and modeling tools in Visual Studio 2010. This session was presented by Brian Keller during Microsoft DevDays 2010 in The Hague in The Netherlands.
+  </Description>
+  <Abstract>
+    In this demo-rich session we will take a tour of many of the new capabilities of Visual Studio 2010 for application lifecycle management. This includes a look at the new build automation, project management, branching and merging, and related capabilities of Team Foundation Server 2010. We will also look at the new design and modeling tools in Visual Studio 2010. This session was presented by Brian Keller during Microsoft DevDays 2010 in The Hague in The Netherlands.
+  </Abstract>
+  <Url>
+    http://ecn.channel9.msdn.com/o9/ch9/4/9/2/2/4/5/dd201015_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/posts/matthijs/A-Lap-Around-Visual-Studio-2010-Application-Lifecycle-Management/Player/" />
+  </CustomProperties>
+</Video>

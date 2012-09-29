@@ -1,0 +1,124 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Embedding an Excel Worksheet in Microsoft Word" />
+      <MSHelp:RLTitle Title="Exercise 2: Embedding an Excel Worksheet in Microsoft Word" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Embedding an Excel Worksheet in Microsoft Word</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Visual Studio 2010: Office Programmability</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Embedding an Excel Worksheet in Microsoft Word</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will embed your Excel worksheet in a Microsoft Word document. This exercise will also introduce C# developers to optional parameters.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>To verify that each step is correctly performed, it is recommended to build the solution at the end of each task. </td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <a name="_Toc211249679" href="#">
+          <span />
+        </a>
+        <br />
+        <a name="_Toc281930412" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Embedding your Excel Worksheet into a New Microsoft Word Document</b>
+        </p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the <b>OfficeApplication.sln</b> solution file.  By default, this file is located in the folder: <b>%TrainingKitInstallFolder%<i>\Labs\Dev10Office\Source\Ex02-EmbeddingWorksheet\Begin\</i></b> and choose the language of your preference. Optionally, you can continue working the solution you created in the previous exercise.</li>
+          <li>Copy your Excel worksheet so that it can be pasted into the Word document. The <b>Copy()</b> method accomplishes this for you.  Add the following code to the end of the <b>DisplayInExcel</b> method (in the Visual Basic method, this command must be within the <b>With</b> block):<div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>.Range("A1:C4").Copy()</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>x1.get_Range("A1:C4").Copy();</pre></td></tr></table></span></div><br /></li>
+          <li>Now that your worksheet is copied to the clipboard, you need to create a Word document and past the worksheet into it. In the Module1.vb (VB) or Program.cs (C#) file, create a new method called EmbedInWordDocument as shown in the following code:<p><i>(Code Snippet – Office Programmability Lab - Ex2 EmbedInWordDocument VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub EmbedInWordDocument()</b><b>    Dim word As New Word.Application</b><b>    word.Visible = True</b><b>    word.Documents.Add()</b><b>    word.Selection.PasteSpecial(Link:=True, DisplayAsIcon:=False)</b><b>End Sub</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Office Programmability Lab - Ex2 EmbedInWordDocument CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void EmbedInWordDocument()</b><b>{</b><b>    var word = new Word.Application();</b><b>    word.Visible = true;</b><b>    word.Documents.Add();</b><b>    word.Selection.PasteSpecial(Link: true, DisplayAsIcon: false);</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> C# developers will recognize a new feature to C# 4.0 in the call to <b>PasteSpecial</b>: the use of optional parameters. <b>PasteSpecial</b> actually has seven parameters. In most cases, you do not need to supply values for these parameters, as the defaults are adequate for the application. In previous version of C# these values still had to be provided even if the provided value was of type <b>System.Reflection.Missing.Value</b>, which resulted in called to <b>PasteSpecial</b> that look like this:</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>object iconIndex = System.Reflection.Missing.Value;object link = true;object placement = System.Reflection.Missing.Value;object displayAsIcon = false;object dataType = System.Reflection.Missing.Value;object iconFileName = System.Reflection.Missing.Value;object iconLabel = System.Reflection.Missing.Value;word.Selection.PasteSpecial(ref iconIndex,          ref link,          ref placement,          ref displayAsIcon,          ref dataType,          ref iconFileName,          ref iconLabel);</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> C# developers should also note that while parameters to <b>PasteSpecial</b> are still by reference, it is no longer necessary to specify this with the <b>ref</b> keyword.</td></tr></table><p /></div><br /></li>
+          <li>Call the <b>EmbedInWordDocument</b> method from the end of the Main method in the Module1.vb (VB) or Program.cs (C#) file as show:<div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main()    Dim checkAccounts = CreateAccountList()    checkAccounts.DisplayInExcel(Sub(account, cell)            cell.Value2 = account.ID            cell.Offset(0, 1).Value2 = account.Balance            cell.Offset(0, 2).Value2 = account.AccountHolder            If account.Balance &lt; 0 Then                cell.Interior.Color = RGB(255, 0, 0)                cell.Offset(0, 1).Interior.Color = RGB(255, 0, 0)                cell.Offset(0, 2).Interior.Color = RGB(255, 0, 0)            End If        End Sub)<b>    EmbedInWordDocument()</b>End Sub</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    var checkAccounts = CreateAccountList();    checkAccounts.DisplayInExcel((account, cell) =&gt;    {        cell.Value2 = account.ID;        cell.get_Offset(0, 1).Value2 = account.Balance;        cell.get_Offset(0, 2).Value2 = account.AccountHolder;        if (account.Balance &lt; 0)        {            cell.Interior.Color = 255;            cell.get_Offset(0, 1).Interior.Color = 255;            cell.get_Offset(0, 2).Interior.Color = 255;        }    });<b>    EmbedInWordDocument();</b>}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e54199ca-9245-4ab2-8e79-dc2539beccc3.html">Exercise 2: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Querying the Database with Parameters" />
+      <MSHelp:RLTitle Title="Exercise 3: Querying the Database with Parameters" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Querying the Database with Parameters</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Models and Data Access</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Querying the Database with Parameters</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to query the database using parameters and how to use the Query Result Shaping, a feature that reduces the number of accesses to the database to retrieve data in a more efficient way.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>For further information on Query Result Shaping, visit the following <a href="http://msdn.microsoft.com/en-us/library/bb896272(VS.90).aspx">msdn article</a>.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc269388903" href="#">
+          <span />
+        </a>
+        <a name="_Toc269480930" href="#">
+          <span />
+        </a>
+        <a name="_Toc282594796" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Modifying StoreController to Retrieve Albums from Database</b>
+        </p>
+        <p>In this task, you will change the <b>StoreController</b> class to access the database to retrieve albums from a specific genre.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex03-QueryingTheDatabaseWithParametersDBFirst\Begin (or Ex03-QueryingTheDatabaseWithParametersCodeFirst\Begin if you want to use a Code First approach), select <b>MvcMusicStore.sln</b> and click <b>Open</b>. Alternatively, you may continue with the solution that you obtained after completing any of the previous exercises.</li>
+          <li>Open the <b>StoreController</b> class to change the <b>Browse</b> action method. To do this, in the <b>Solution Explorer</b>, expand the <b>Controllers</b> folder and double-click <b>StoreController.cs</b>.</li>
+          <li>Change the <b>Browse</b> action method to retrieve albums for a specific genre. To do this, replace the following code:<p><i>(Code Snippet – ASP.NET MVC Models and Data Access – Ex3 StoreController BrowseMethod – CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>//// GET: /Store/Browse?genre=Discopublic ActionResult Browse(string genre){<b>    // Retrieve Genre and its Associated Albums from database</b><b>    var genreModel = storeDB.Genres.Include("Albums")</b><b>        .Single(g =&gt; g.Name == genre);</b><b>    var viewModel = new StoreBrowseViewModel()</b><b>    {</b><b>        Genre = genreModel,</b><b>        Albums = genreModel.Albums.ToList()</b><b>    };</b>    return View(viewModel);}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>You can use the .<b>Single()</b> extension in LINQ because in this case only one genre is expected for an album. The <b>Single()</b> method takes a Lambda expression as a parameter, which in this case specifies a single Genre object such that its name matches the value defined.</td></tr></table><p /></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You will take advantage of a feature that allows you to indicate other related entities you want loaded as well when the Genre object is retrieved. This feature is called <b>Query Result Shaping</b>, and enables you to reduce the number of times needed to access the database to retrieve information. In this scenario, you will want to pre-fetch the Albums for the Genre you retrieve.<br />The query includes <b>Genres.Include(“Albums”)</b> to indicate that you want related albums as well. This will result in a more efficient application, since it will retrieve both Genre and Album data in a single database request.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269476536" href="#">
+          <span />
+        </a>
+        <a name="_Toc269480931" href="#">
+          <span />
+        </a>
+        <a name="_Toc282594797" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the Application</b>
+        </p>
+        <p>In this task, you will try out the Application in a web browser and obtain albums for a specific genre from the database.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store/Browse?genre=Jazz</b> to verify that the results are being pulled from the database.<p><img src="images\f294b298-9c7d-4fad-9726-9fc382458206.png" /></p><p><b>Figure 1</b><br /><i>Browsing /Store/Browse?genre=Jazz</i></p><br /></li>
+        </ol>
+        <a name="_Toc269480932" href="#">
+          <span />
+        </a>
+        <a name="_Toc282594798" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Accessing Albums by Id</b>
+        </p>
+        <p>In this task, you will repeat the previous procedure, in this case, to obtain albums by Id.</p>
+        <ol>
+          <li>Close the browser if needed, to return to Visual Studio. Open the <b>StoreController</b> class to change the <b>Details</b> action method. To do this, in the <b>Solution Explorer</b>, expand the <b>Controllers</b> folder and double-click <b>StoreController.cs</b>.</li>
+          <li>Change the <b>Details</b> action method to retrieve albums details based on their <b>Id</b>. To do this, replace the following code:<p><i>(Code Snippet – ASP.NET MVC Models and Data Access – Ex3 StoreController DetailsMethod – CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>//// GET: /Store/Details/5public ActionResult Details(int id){<b>    var album = storeDB.Albums.Single(a =&gt; a.AlbumId == id);</b>    return View(album);}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282594799" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application</b>
+        </p>
+        <p>In this task, you will try out the Application in a web browser and obtain album details based on its Id. </p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/Store/Details/500</b> to verify that the results are being pulled from the database.<p><img src="images\8ec4eefd-8bdf-443e-9422-7c68c11ff1e7.png" /></p><p><b>Figure 2</b><br /><i>Browsing /Store/Details/500</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_3baf583e-30c3-40c1-b90c-791edbb85743.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

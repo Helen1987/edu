@@ -1,0 +1,144 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Analyzing Project Structure using Architecture Explorer and DGML" />
+      <MSHelp:RLTitle Title="Exercise 2: Analyzing Project Structure using Architecture Explorer and DGML" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Analyzing Project Structure using Architecture Explorer and DGML</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using the Architecture Explorer in Visual Studio 2010 Ultimate to Analyze Your Code</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Analyzing Project Structure using Architecture Explorer and DGML</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn more about the features of Architecture Explorer from the Solution View. This includes more exposure to node navigation, filtering support, and a sample scenario that demonstrates the combined power of Architecture Explorer and DGML diagrams to aid in architectural analysis.</p>
+        <ol>
+          <li>Select the <b>Solution View</b> option from Architecture Explorer to view all projects that are part of the TailspinToys solution.<p><img src="images\2d43046e-07bf-4ecb-a020-19818b6ae200.png" /></p><p><b>Figure 1</b><br /><i>Solution view showing projects from the TailspinToys solution</i></p></li>
+          <li>Select the <b>Tailspin.Web</b> project to see a flat view of its files.<p><img src="images\288fa87a-a219-484b-b8fa-29b8d75feb52.png" /></p></li>
+        </ol>
+        <p>
+          <b>Figure 2</b>
+          <br />
+          <i>Viewing all files for the Tailspin.Web project</i>
+        </p>
+        <ol>
+          <li>At the top of the source files list is a filter box. Enter “<b>.cs</b>” into the filter box and press <b>Enter</b> in order to restrict display to files that have the .cs extension.<p><img src="images\34e0737e-462f-499e-9f8c-c091d0b742b4.png" /></p><p><b>Figure 3</b><br /><i>Filtering source files</i></p></li>
+          <li>Press <b>Ctrl + A</b> to select all of the .cs files and select the <b>Create New Graph</b> button.<p><img src="images\ac09cbd1-9d2e-4aad-bd22-b9401270c1f2.png" /></p><p><b>Figure 4</b><br /><i>DGML diagram showing source files from Tailspin.Web project</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>If Ctrl + A does not work, make sure that the list you are trying to select currently has focus by first clicking somewhere within that list.</td></tr></table><p /></div></li>
+          <li><b>Close</b> the new graphs and return to Architecture Explorer.</li>
+          <li>Select the <b>Tailspin.Web</b> project again to return to an unfiltered view of the files.</li>
+          <li>Select the vertical <b>Files</b> bar and select the <b>Classes</b> navigation option to view all of the classes from the Tailspin.Web project.<p><img src="images\98f163ba-6fc1-48cc-97ed-1b6b61060410.png" /></p><p><b>Figure 5</b><br /><i>Viewing Tailspin.Web classes</i></p></li>
+          <li>Press <b>Ctrl + A</b> to select all of the classes and select the <b>Create New Graph</b> button.<p><img src="images\234df642-12cb-4be5-a3c5-fd63d94ffd6b.png" /></p><p><b>Figure 6</b><br /><i>DGML diagram showing all classes from Tailspin.Web project</i></p></li>
+          <li><b>Close</b> the new graph and return to Architecture Explorer.</li>
+          <li>Clear the selected columns in Architecture Explorer by selecting the <b>Clear Columns</b> button.</li>
+          <li>Select the <b>Solution View</b>, navigate to the <b>Tailspin.Web</b> project once again and select the <b>References</b> option from the vertical <b>Files</b> bar. This will show us all of the referenced assemblies used by this project.<p><img src="images\7aabe3c4-be9c-4b63-8784-05c24c54a45d.png" /></p><p><b>Figure 7</b><br /><i>Selecting all referenced assemblies for a project</i></p></li>
+          <li>Select the <b>Filter</b> button at the top of the referenced assemblies list and select the check box for <b>Project</b>. This will filter out all references that are external to the TailspinToys solution.<p><img src="images\a3ece66d-dcf5-4fae-9d6c-ef0f425a15c8.png" /></p><p><b>Figure 8</b><br /><i>Filter button and Project option locations</i></p></li>
+          <li>Select the <b>OK</b> button to accept the filter changes.</li>
+          <li><b>Select all</b> of the filtered project references and select the <b>Create New Graph</b> button.</li>
+          <li><b>Delete</b> the <b>TailspinToys</b> node from the diagram.<p><img src="images\1e5ef6f4-d68a-4d43-a987-64e970b877ca.png" /></p><p><b>Figure 9</b><br /><i>DGML diagram showing outgoing references from Tailspin.Web</i></p></li>
+          <li>Now we can explore the referential relationship between <b>Tailspin.SimpleSqlRepository</b> and the other projects in the diagram. In Architecture Explorer, select just the <b>Tailspin.SimpleSqlRepository</b> item and change the Files viewing options to <b>References</b>.<p><img src="images\d7ad1a87-c957-427a-842d-42a5b24c0e01.png" /></p><p><b>Figure 10</b><br /><i>Listing references for the Tailspin.SimpleSqlRepository project</i></p></li>
+          <li>Select the <b>Tailspin.Infrastructure</b> and <b>Tailspin.Model</b> items and then <b>drag and drop</b> them onto the existing DGML diagram.<p><img src="images\7be1f360-d775-4ab8-9962-7a2171be7aa5.png" /></p><p><b>Figure 11</b><br /><i>Updated DGML diagram showing outgoing references from Tailspin.SimpleSqlRepository project</i></p></li>
+          <li>Now we can create a better view of how the Product related classes for these projects fit into this picture. Return to the Architecture Explorer and select the <b>three project references</b> from the <b>Tailspin.Web</b> project once again.</li>
+          <li>Select the vertical <b>Files</b> bar and select the <b>Classes</b> option to view all classes from the selected projects.</li>
+          <li>In the <b>Filter</b> box, enter “<b>Product</b>” and press <b>Enter</b> to see all classes that contain that term. </li>
+          <li><b>Select all</b> the filtered classes, then <b>drag and drop</b> them onto the existing DGML diagram.<p><img src="images\bc0cb048-ad0e-46f5-8b72-f2af18974165.png" /></p><p><b>Figure 12</b><br /><i>Updated DGML diagram showing how Product related classes relate to existing projects</i></p></li>
+          <li>Select the <b>ProductList</b> class from the DGML diagram and select the <b>Butterfly Mode</b> button from the Directed Graph toolbar. This removes nodes that do not directly reference ProductList.<p><img src="images\f4928907-4a2d-4bd2-9c01-617092428c47.png" /></p><p><b>Figure 13</b><br /><i>The Butterfly Mode button</i></p><p><img src="images\1c5912d7-6ba2-4f2f-8374-9b34f5f0924b.png" /></p><p><b>Figure 14</b><br /><i>Butterfly Mode view for ProductList</i></p></li>
+          <li>Select the <b>Butterfly Mode</b> button once again to turn it off.</li>
+          <li>Select the <b>Quick Clusters</b> button and zoom to fit the entire graph to the available screen space. Note that it is now easy to see that the Tailspin.SimpleSqlRepository project and its Product related classes are responsible for data access.<p><img src="images\665add53-45dd-41a3-92ad-09e31bf06133.png" /></p><p><b>Figure 15</b><br /><i>The Quick Clusters button</i></p><p><img src="images\224a9d84-c069-479c-ae98-a564c15a452a.png" /></p><p><b>Figure 16</b><br /><i>Quick Clusters view of current dependency graph</i></p></li>
+          <li>Now we can see how the Tailspin administrator application fits into the overall architecture that we have looked at so far. Clear the selected columns in Architecture Explorer by selecting the <b>Clear Columns</b> button.</li>
+          <li>Select the <b>Solution View</b> and select <b>Tailspin.Admin.App</b>.</li>
+          <li>Select the vertical <b>Files</b> bar and select the <b>References</b> option. Note that there are no references to any of the Tailspin projects. There are references to System.Data.dll and System.Data.Linq.dll, so perhaps the admin application is going directly to the database. </li>
+          <li>Now we will investigate the admin application further to see if there is truly cause for concern. Select the vertical bar currently displaying References and select the <b>Classes</b> option instead.</li>
+          <li><b>Select all</b> classes that start with <b>Product</b>.<p><img src="images\80e0a6d4-b456-4c28-98c0-3f59b263f62b.png" /></p><p><b>Figure 17</b><br /></p></li>
+          <p class="label">
+            <i>Selecting product related classes for Tailspin admin application</i>
+          </p>
+          <li>Select the <b>Create New Graph</b> button.<p><img src="images\145103df-544a-4c6f-8caa-8793fb8da906.png" /></p><p><b>Figure 18</b><br /><i>DGML diagram showing Tailspin admin application and Product classes</i></p></li>
+          <li><b>Delete</b> the <b>TailspinToys</b> solution node from the diagram.</li>
+          <li>Note that there are no outbound calls to the Tailspin.SimpleSqlRepository data access code. <b>Right-click</b> somewhere within the current DGML diagram and select the <b>Save As XPS…</b> option. We are going to create a work item and assign it to someone to investigate further.<p><img src="images\76b50f5d-d99c-48ca-929f-40df2eec4f04.png" /></p><p><b>Figure 19</b><br /><i>Saving DGML diagram as XPS</i></p></li>
+          <li>Name the XPS file “<b>AdminAppReview</b>” and select the <b>Save</b> button.</li>
+          <li>In Team Explorer, <b>right-click</b> on the <b>Work Items</b> node for the TailspinToys project and select the <b>New Work Item | Task </b>option.</li>
+          <li>Fill in the following fields as shown in the table below:<table style=""><tr valign="top"><th><p>Work Item Field</p></th><th><p>Value</p></th></tr><tr valign="top"><td><p>Title</p></td><td><p>Review why Admin app is not using the Data Access Layer project</p></td></tr><tr valign="top"><td><p>Assigned To</p></td><td><p>Michael Affronti (PM)</p></td></tr><tr valign="top"><td><p>Stack Rank</p></td><td><p>1</p></td></tr><tr valign="top"><td><p>Details Description</p></td><td><p>Take a look at the attached diagram. Notice how we’re using Product data but not getting it via the Tailspin data access project.</p></td></tr></table></li>
+          <li>Select the <b>Attachments</b> tab and click the <b>Add</b> button.<p><img src="images\3a1ba144-a9ca-4c8d-b77c-d4e23bb2f60f.png" /></p><p><b>Figure 20</b><br /><i>Location of Attachments tab and Add button</i></p></li>
+          <li>Select the <b>Browse</b> button and select the XPS file that you saved.</li>
+          <li>In the <b>Comment</b> field, enter “<b>Snapshot of current Admin app.</b>”</li>
+          <li>Select the <b>OK</b> button to add the attachment to the new work item.</li>
+          <li>Select the <b>Save Work Item</b> button to finish the process of creating the new work item.<p><img src="images\b69cc04b-aa44-4e49-b9fa-676b0de9dea4.png" /></p><p><b>Figure 21</b><br /><i>Save Work Item button location</i></p></li>
+          <li>Close all open windows in Visual Studio including the new work item and existing graphs. You do not need to save the existing graphs.</li>
+          <li>Clear the selected columns in Architecture Explorer by selecting the <b>Clear Columns</b> button.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_efc1dcbe-4080-477b-9928-586f82e6597c.html">Exercise 3: Analyzing External Assemblies Using Architecture Explorer</a>
+        </p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

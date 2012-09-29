@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Author>
+    <Name>JasOlson</Name>
+  </Author>
+  <Id>FixingPIAPainsWithTypeEquivalence</Id>
+  <Version>1.0</Version>
+  <Title>Fixing PIA Pains with Type Equivalence</Title>
+  <Description>
+    In this episode of 10-4, we take a look at a new feature in CLR4 called "Type Equivalence" and how it helps address the pain points normally associated with Primary Interop Assemblies and COM Interop.
+  </Description>
+  <Abstract>
+    In this episode of 10-4, we take a look at a new feature in CLR4 called "Type Equivalence" and how it helps address the pain points normally associated with Primary Interop Assemblies and COM Interop.
+  </Abstract>
+  <Url>
+    http://mschnlnine.vo.llnwd.net/d1/ch9/0/8/3/5/7/4/104Episode25TypeEquivalence_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/10-4/10-4-Episode-25-Fixing-PIA-Pains-with-Type-Equivalence/Player/" />
+  </CustomProperties>
+</Video>

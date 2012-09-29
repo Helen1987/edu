@@ -1,0 +1,156 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Adding a Create View" />
+      <MSHelp:RLTitle Title="Exercise 4: Adding a Create View" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Adding a Create View</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Helpers, Forms and Validation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Adding a Create View</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Now that the <b>StoreManagerController</b> supports the <b>Edit</b> ability, in this exercise you will learn how to add a Create View template to let store managers to add new Albums to the application.</p>
+        <p>Like you did with the Edit functionality, you will implement the Create scenario using two separate methods within the <b>StoreManagerController</b> class:</p>
+        <ol>
+          <li>One action method will display an empty form when store managers first visit the <b>/StoreManager/Create</b> URL. </li>
+          <li>A second action method will handle the scenario where the store manager clicks the <b>Save</b> button within the form and submits the values back to the <b>/StoreManager/Create</b> URL as an HTTP-POST.</li>
+        </ol>
+        <a name="_Toc282517427" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Implementing the HTTP-GET Create action method</b>
+        </p>
+        <p>In this task, you will implement the HTTP-GET version of the Create action method to retrieve a list of all Genres and Artists, package this data up into a StoreManagerViewModel object, which will then be passed to a View template.</p>
+        <ol>
+          <li>Start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>. </li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex04-AddingACreateView\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>Open <b>StoreManagerController </b>class. To do this, expand the <b>Controllers</b> folder and double-click <b>StoreManagerController.cs</b>.</li>
+          <li>Replace the <b>Create</b> action method code with the following:<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex4 StoreManagerController HTTP-GET Create action – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>        //        // GET: /StoreManager/Create        public ActionResult Create()        {<b>            var viewModel = new StoreManagerViewModel()</b><b>            {</b><b>                Album = new Album(),</b><b>                Genres = new SelectList(storeDB.Genres.ToList(), "GenreId", "Name"),</b><b>                Artists = new SelectList(storeDB.Artists.ToList(), "ArtistId", "Name")</b><b>            };</b><b></b><b>            return View(viewModel);</b>        }</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282517428" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding the Create View</b>
+        </p>
+        <p>In this task, you will add the Create View template that will display a new (empty) Album form.</p>
+        <ol>
+          <li>Before creating the new View template, you should build the project so that the <b>Add View Dialog</b> knows about the class to use. Build the project by selecting the <b>Debug</b> menu item and then <b>Build MvcMusicStore</b>.<p><img src="images\a51b781e-2e7f-4f64-bc62-97264245ff23.png" /></p><p><b>Figure 21</b><br /><i>Building the project</i></p><br /></li>
+          <li>Right-click inside the <b>Create</b> action method and select <b>Add View</b>. This will bring up the Add View dialog.</li>
+          <li>In the Add View dialog, verify that the View Name is <b>Create</b>. Check the <b>Create a strongly-typed view</b> checkbox and select <b>StoreManagerViewModel (MvcMusicStore.ViewModels) </b>from the<b> View data class</b> drop-down. Select <b>Create</b> from the <b>View content</b> drop-down. Leave the other fields with their default value and then click <b>Add</b>.<p><img src="images\93b75a25-030f-44d0-b647-9695de9b81a5.png" /></p><p><b>Figure 22</b><br /><i>Adding an Edit View</i></p><br /></li>
+          <li>Update the generated View template to invoke the <b>Html.EditorFor()</b> helper method:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    &lt;% using (Html.BeginForm()) {%&gt;        &lt;%: Html.ValidationSummary(true) %&gt;        &lt;fieldset&gt;<b>            &lt;legend&gt;Create Album&lt;/legend&gt;</b><b>            &lt;%: Html.EditorFor(model =&gt; model.Album, </b><b>                        new { Artists = Model.Artists, Genres = Model.Genres })%&gt;            </b><b>            &lt;p&gt;</b><b>                &lt;input type="submit" value="Save" /&gt;</b><b>            &lt;/p&gt;</b>        &lt;/fieldset&gt;    &lt;% } %&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282517429" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Create</b> View page displays an empty Album form.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager/Create</b>. Verify that an empty form is displayed for filling the new Album properties.<p><img src="images\d69cbcb7-3b00-4063-b59a-956ab3c1f0db.png" /></p><p><b>Figure 23</b><br /><i>Create View with an empty form</i></p><br /></li>
+        </ol>
+        <a name="_Toc282517430" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Implementing the HTTP-POST Create Action Method</b>
+        </p>
+        <p>In this task, you will implement the HTTP-POST version of the Create action method that will be invoked when a user clicks the <b>Save</b> button. The method should save the new album in the database.</p>
+        <ol>
+          <li>Close the browser if needed, to return to the Visual Studio window. Open <b>StoreManagerController </b>class. To do this, expand the <b>Controllers</b> folder and double-click <b>StoreManagerController.cs</b>.</li>
+          <li>Replace <b>HTTP-POST Create</b> action method code with the following:<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex4 StoreManagerController HTTP- POST Create action – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>        //        // POST: /StoreManager/Create        [HttpPost]<b>        public ActionResult Create(Album album)</b><b>        {</b><b>            try</b><b>            {</b><b>                if (ModelState.IsValid)</b><b>                {</b><b>                    // Save Album</b><b>                    storeDB.AddToAlbums(album);</b><b>                    storeDB.SaveChanges();</b><b>                    return Redirect("Index");</b><b>                }</b><b>            }</b><b>            catch (Exception ex)</b><b>            {</b><b>                ModelState.AddModelError(String.Empty, ex);</b><b>            }</b><b>            // Invalid - redisplay with errors</b><b>            var viewModel = new StoreManagerViewModel()</b><b>            {</b><b>                Album = album,</b><b>                Genres = new SelectList(storeDB.Genres.ToList(), "GenreId", "Name", album.GenreId),</b><b>                Artists = new SelectList(storeDB.Artists.ToList(), "ArtistId", "Name", album.ArtistId)</b><b>            };</b><b>            return View(viewModel);</b><b>        }</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>One difference from the previous Edit action method is that instead of loading an existing Album and calling UpdateModel, the action method is receiving an Album as a parameter. ASP.NET MVC will automatically create this Album object from the posted &lt;form&gt; values. <br />The method checks that the submitted values are valid, and if they are, it saves the new Album in the database and then redirects to the StoreManager Index View.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282517431" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Create</b> View page lets you create a new Album and then redirects to the StoreManager Index View.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager/Create</b>. Fill the empty form with data for a new Album, like the one in the following figure:<p><img src="images\c539639b-2c3a-4e96-92c5-648934ce8d5e.png" /></p><p><b>Figure 24</b><br /><i>Creating an Album</i></p><br /></li>
+          <li>Verify that you get redirected to the StoreManager Index View that includes the new Album just created.<p><img src="images\f4512f49-1618-4816-ae89-818385d25ced.png" /></p><p><b>Figure 25</b><br /><i>New Album created</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_29b3d40e-4b25-4952-9e6f-1740cffc0bc0.html">Exercise 5: Handling Deletion</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelsControlsLab", "PanelsControlsLab\PanelsControlsLab.csproj", "{7FFC37CF-5761-441A-A9A1-B046D3B3AE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelsControlsLab.Web", "PanelsControlsLab.Web\PanelsControlsLab.Web.csproj", "{A6C8D166-1F9D-4A0E-BE5E-06C35A6E5293}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FFC37CF-5761-441A-A9A1-B046D3B3AE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FFC37CF-5761-441A-A9A1-B046D3B3AE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FFC37CF-5761-441A-A9A1-B046D3B3AE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FFC37CF-5761-441A-A9A1-B046D3B3AE68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C8D166-1F9D-4A0E-BE5E-06C35A6E5293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C8D166-1F9D-4A0E-BE5E-06C35A6E5293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C8D166-1F9D-4A0E-BE5E-06C35A6E5293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C8D166-1F9D-4A0E-BE5E-06C35A6E5293}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

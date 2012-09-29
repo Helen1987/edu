@@ -1,0 +1,869 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+        Microsoft Office 2010 UI Customization
+      </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Exploring the Add-In</li>
+          <li>Exploring the Add-In Implementation</li>
+          <li>Checking Group Elements and Common UI controls</li>
+          <li>Discovering Callbacks definitions</li>
+          <li>Analyzing Ribbon structure</li>
+          <li>Analyzing Backstage structure</li>
+          <li>Analyzing Context Menus structure</li>
+          <li>Allowing access to the Add-In on an specific range of cells</li>
+        </ol>
+        <a name="_Toc281991198" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Exploring the Add-In</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open <b>Microsoft Visual Studio 2010</b> from Start | All Programs.</li>
+                <li>Open the <b>ExcelRibbonX.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference).</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li />
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\a275a6a0-f9db-4ad3-8263-a6f5ad9bf4b6.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Press <b>F5</b> to debug the Add-In.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>This demo consists of an Excel Add-In. that adds a Ribbon, a Backstage tab and Context Menu.</li>
+                <li>When you run the solution, an instance of Excel opens, with the Add-In automatically enabled.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\9c611dda-6c1b-4127-a076-b1a5dfb4fa40.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Select the row <b>C5</b> inside the spreadsheet.</li>
+                <li>Check the “<b>Contoso Parts</b>” tab in the Ribbon at the top of the screen.</li>
+                <li>Show the different buttons of the Tab.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The new toolbar at the top of the screen, which is the base of the Fluent UI, is called the Ribbon.</li>
+                <li>This demo solution defines a mocked tab for the Ribbon showing some of the controls available for it.</li>
+                <li>There is specific code to show the “<b>Contoso Parts</b>” tab only when you select a row inside the <b>C5:G8</b> range. We will explore that part of the code during the last segment of this demo.</li>
+                <li>There are different controls and elements that you can define in your Ribbon tab that can be grouped into different categories. </li>
+                <li>We will go through these features in the following segments.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\3f977be5-6acc-4d42-b998-bd8f5e0d1762.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Press the <b>File</b> tab.</li>
+                <li>Select the “<b>Contoso Process</b>” menu.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>This section is called the Backstage. Here developers can combine document-level tasks and actions.</li>
+                <li>The backstage was introduced in office 2010 and enhances the functionality provided by the Microsoft Office button in previous releases.</li>
+                <li>The “<b>Contoso Process</b>” backstage page is added by this demo Add-In to show a possible usage of it.</li>
+                <li>As the Ribbon tab, there are different controls and elements available for the Backstage that can be grouped in different categories and sections.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\e5660471-942d-48f6-bdf4-375579dad06f.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Click the “<b>Request Extension</b>” button.</li>
+                <li>Check that the UI is modified based on the performed action.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>It is possible to define behavior when the user interacts with the different elements using something called <b>callbacks</b>, this will be explained more deeply below.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\05e39800-2ea0-4728-90e5-8afc3bef09a1.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Exit the <b>File</b> tab and get back to the spreadsheet.</li>
+                <li>Right-click any cell inside the <b>C5:G8</b> range.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Context menus are shown when you right-click a section of a spreadsheet.</li>
+                <li>This demo defines two menus to be shown in the Context menu when you right-click a cell inside the valid range.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\35928878-6b39-4220-a27c-2a438bea05a5.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Navigate inside the “Recalculate” and “Assets Risks” menus.</li>
+                <li>Close <b>Excel</b>.</li>
+                <li>Get back to <b>Visual Studio 2010</b></li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>New controls and elements with improved UI can be shown inside the new Context Menus of Office 2010.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\775509b4-2ee9-4219-8b5a-17bdb976c06a.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281991199" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – Exploring the Add-In Implementation</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Inside the Solution Explorer, expand the <b>ExcelRibbon</b> project node and explore its content.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>This demo is based on an Excel Add-In project. All these kinds of project have a similar structure and can be created using the Excel Add-In project template.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\ac0d2942-2d99-4eb6-984e-fa0224948237.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Double-click the <b>ThisAddIn.cs</b> file (for C# projects) or the <b>ThisAddIn.vb</b> file (for Visual Basic projects) inside the <b>Excel</b> folder.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>All Add-Ins have a specific class defined as entry point where initialization and recycling code can be defined.</li>
+                <li>The default name of that class is <b>ThisAddIn</b>.</li>
+                <li>This class should inherit from the <b>Microsoft.Office.Tools.AddInBase</b> abstract class (inherited definitions can be found inside the hidden ThisAddIn.Designer.xml file).</li>
+                <li>The demo implementation overrides the CreateRibbonExtensibilityObject method to create a new instance of the RibbonX class.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\8387b519-a7db-4b2d-9312-9e870b65aa65.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Double-click the <b>RibbonX.cs</b> file (for C# projects) or the <b>RibbonX.vb</b> file (for Visual Basic projects).</li>
+                <li>Find the <b>GetCustomUI</b> method inside the <b>RibbonX</b> class.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>RibbonX is a class created using the Ribbon template.</li>
+                <li>It provides a way to extend the different sections of the Office UI and define the behavior I showed previously on this demo.</li>
+                <li>The GetCustomUI method defines the name of the XML file where the UI elements and their structure are defined. By default, the XML file has a similar name to the Ribbon class but ends with an .xml extension.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\81a61c12-708c-40f8-a12e-08520b873abb.png" />
+              </p>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Double-click the <b>RibbonX.xml</b> file.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>All the controls and elements that are displayed in the different extensible points of the Office Fluent UI are defined here.</li>
+                <li>This file has three sections: Ribbon, Backstage and Context Menus. Each of them contains the elements shown at the beginning of this demo.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\676606b7-a817-4b86-8d1a-567827702c9d.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281991200" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #3 – Checking Group Elements and Common UI Controls</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>If the <b>ribbon</b>, <b>backstage</b> or <b>contextmenu</b> elements in the <b>RibbonX.xml</b> file are collapsed, expand them</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>UI Sections are defined using XML tags. Most of the elements are common to the three sections, and have similar behavior or representations.</li>
+                <li>Groups and UI Controls will be the most common elements that you will use when you create your UI, no matter if you are creating a tab for the Ribbon or a menu for the Context Menu.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\ac1a5c2f-e8ed-44d9-b89b-58571e832431.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight a group element inside the ribbon element.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Grouping similar elements is a common task when creating an Add-In UI; since it allows organizing controls and elements in sections improving the User Experience.</li>
+                <li>To define a group or category you must add the <b>group</b> XML element.</li>
+                <li>Elements inside the same group are defined within the group element.</li>
+                <li>Different attributes can be added to  the group element, for example:<ul><li><b>id</b>: indicates the group identifier</li><li><b>label</b>: indicates the group display name</li><li><b>autoscale</b>: sets if the group is allowed to collapse elements inside it when the ribbon is resized horizontally.</li><li><b>imageMso</b>: defines the image that should be shown when the ribbon is too small to show the icons inside the group. </li></ul></li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\de2642bf-f564-4ce9-b61b-ecc0f342c79b.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Check the different UI controls inside the xml.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>UI Controls are the atomic elements that you will use to create your UI.</li>
+                <li>If you used Visual Studio before, they are as the controls for a Desktop application, or the Web Controls for an ASP.NET Application.</li>
+                <li>The most common controls are:<ul><li><b>button</b></li><li><b>toggleButton</b> (A button that can be pressed or released)</li><li><b>editBox</b> (A textbox to edit values)</li><li><b>dropdown</b> (A classical combobox)</li><li><b>imageControl</b> (A control to show images)</li><li><b>hyperlink</b> (A control to create links to other documents or perform specific actions)</li></ul></li>
+                <li>Elements also share common attributes like:<ul><li><b>id</b>: indicates the control Identifier</li><li><b>label</b>: indicates the control display mame</li><li><b>imageMso</b>: sets the image associated with the control</li></ul></li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b13add20-3d17-4516-80c7-a98c92bd9c01.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281991201" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #4 – Discovering Callbacks definitions</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>If the backstage element is collapsed, expand it.</li>
+                <li>Highlight the button with the <b>RequestExtensionButton</b> id.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>On this markup, you can see the definition for the button we clicked before, which had associated behavior.</li>
+                <li>To link a button with the behavior, you must define the appropriate callbacks. This is the most common way to add functionality to an Add-Ins.</li>
+                <li>Callbacks allow defining a method name inside the xml file which will be invoked when the user executes an action on the element.</li>
+                <li>In this demo, you can see that the button has the <b>onAction</b> attribute defined and it is set to <b>ExtendDesignDueDate</b>.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\96d6de58-a71c-478e-99b9-0de623dfa01a.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Double-click the <b>RibbonX.cs</b> file (for C# projects) or the <b>RibbonX.vb</b> file (for Visual Basic projects).</li>
+                <li>Find the <b>ExtendDesignDueDate</b> method inside the <b>RibbonX</b> class.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The behaviors are implemented inside the class’ code, related with the xml file.</li>
+                <li>The method names have to match the value defined in the callback attribute, in this case, the one defined in the <b>onAction</b> attribute of the control: <b>ExtendDesignDueDate</b>.</li>
+                <li>The method has to receive as unique parameter a <b>Microsoft.Office.Core.IRibbonControl</b> object, which is the instance of the element against which the action was performed.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\15e47943-be54-4282-b4d1-5a5fa3840f9e.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Add a breakpoint to the first line of the <b>ExtendDesignDueDate</b> method.</li>
+                <li>Press <b>F5</b> to debug the Add-In again.</li>
+                <li>Open the <b>File</b> tab, and select the “<b>Contoso Process</b>” menu.</li>
+                <li>Click the “<b>Request Extension</b>” button.</li>
+                <li>Press <b>Shift + F5</b> or click <b>Stop Debugging</b> on the <b>Debug</b> menu. </li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Visual Studio 2010 provides debugging of the Microsoft Office Add-Ins.</li>
+                <li>You only have to add breakpoints and perform the required actions to raise the callbacks. </li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\e3828feb-8f73-4320-99c9-ee90c1412bc5.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <a name="_Toc281991202" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #5 – Analyzing Ribbon structure</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Double click on the RibbonX.xml file to open it.</li>
+                <li>Highlight the tab element, inside tabs.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The Ribbon is composed mainly of a collection of Tabs containing controls to interact with your application. To define a new tab you must add a new &lt;tab&gt; element inside the &lt;tabs&gt; collection in the Ribbon configuration file.</li>
+                <li>In this demo, we only included one tab named “Contoso Parts”.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\64ba0da6-a81e-42b2-b0d6-cce882638b3b.png" />
+              </p>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Press <b>F5</b>, and go to <b>D5</b> in the Excel instance opened.</li>
+                <li>Show the name of the tab.</li>
+                <li>Play with the tab controls to show there is no functionality implemented.</li>
+                <li>Close Excel.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>You will be able to check the new added tab by starting a new instance of the application.</li>
+                <li>Since, there is code in the application to filter the mocked functionality of the tab to certain cells; you should click in a specific range in order to enable the Tab.</li>
+                <li>Now, notice that the “Contoso Parts” Tab has several groups of controls. These controls have no functionality, but they help you realize the different ways in which you can customize the Office UI.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\33ed13f7-288b-452b-8fa8-11f786cde62e.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In Visual Studio, double click on the <b>RibbonX.xml</b> file to open it if it is not already open.</li>
+                <li>Highlight the <b>GroupDrive</b> group.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Inside a Tab, you can define controls and group of controls.</li>
+                <li>As you can see, there are several types of controls to choose from and several properties to play with.</li>
+                <li>Later on this demo, you will see how to control the tab visibility from custom code using callbacks.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\9b23106e-2db6-4334-a3a7-7704ad30d386.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <a name="_Toc281991203" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #6 – Analyzing Backstage structure</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Collapse the <b>&lt;ribbon&gt;</b> element in order to ensure the <b>&lt;backstage&gt;</b> element is visible.</li>
+                <li>Highlight the Backstage element.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The main difference you will notice in the &lt;backstage&gt; element is the presence of a single &lt;tab&gt; element instead of a &lt;tabs&gt; collection.</li>
+                <li>Even though, the creation of controls remains similar to the Ribbon, you group and order elements in columns.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b45aff2b-abf5-4d72-b2ad-6cf8c540efa5.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the <b>firstColumn</b> element.</li>
+                <li>Scroll down and highlight the <b>secondColumn</b> element.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>You can see that this demo defines two different columns to group the items. </li>
+                <li>To show this behavior, in the sample we placed all the controls that the user can interact with, in the first column.</li>
+                <li>While on the second one, a column-graph image will be displayed.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\1e340bda-3d88-414b-9c18-7f5d956e8319.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the <b>primaryItem</b> and <b>topItems</b> definition inside the group element.</li>
+                <li>Press F5 to start the solution.</li>
+                <li>In Excel, point to File and select the Contoso Process Backstage tab</li>
+                <li>Show the primaryItem and the topItems.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>To order the elements in each column, each group has the ability to define the position of the items.</li>
+                <li>In this demo, you can see that a primary Item containing a button is defined </li>
+                <li>Additional items are rendered inside the topItems element. </li>
+                <li>To understand how this positioning works, let us run the demo again.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\1d43d599-bb43-4701-905d-05d52f8f6863.png" />
+              </p>
+              <p>
+                <img src="images\c1fe95b3-3604-44a8-ab58-927630943474.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Close excel.</li>
+                <li>Highlight the layoutContainer in Visual studio</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Within the topItems element, you can define one or more layout containers, </li>
+                <li>These containers are not only useful for grouping controls, but also allows us to describe the layout in which the will be rendered, for example, horizontal.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\79dfdc86-22b7-4fbf-bd07-e8bddd47a78f.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <a name="_Toc281991204" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #7 – Analyzing Context Menus structure</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Collapse the backstage element.</li>
+                <li>Highlight the contextMenu item.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Prior to Microsoft Office 2010, the only way to customize context menus in the Microsoft Office Fluent Ribbon user interface (UI) was by using CommandBars solutions.</li>
+                <li>In Microsoft Office 2010, you can customize built-in context menus just as any other component of the Ribbon UI.</li>
+                <li>In this demo, two different context menu items are defined.</li>
+              </ul>
+            </td>
+            <td>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the gallery element declaration</li>
+                <li>Highlight the getItemImage callback declaration.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The gallery element is a context menu item that contains a set of images as sub-item. </li>
+                <li>These images are populated with the getItemImage callback declaration.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\9401ae16-dcfd-4261-b533-0d895400baeb.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the splitButton element declaration</li>
+                <li>Highlight the menu items declaration.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The splitButton is a button that contains other buttons within it.</li>
+                <li>These buttons are defined inside the menu element declared in the xml.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\1cfb7f67-aa39-419e-b228-8de13428611e.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the insertAfterMso attribute declaration</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The insertAfterMso attribute defines the position of the element in the context menu.</li>
+                <li>In this demo, the elements are positioned after the PasteSpecialAlt element.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\1ca54b1a-00ca-4be2-beab-51061a095880.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Highlight the last two button elements.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Additionally, the Add-in binds the FormatCellsDialog and HyperlinkInsert context menu element visibility to the GetNegatedProcessToolsVisibility </li>
+                <li>We will see how the visibility binding works on the next segment.</li>
+                <li>Office 2010 provides these two elements by default.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\af2b73dc-6aec-4a85-afcf-d49dcb5fe070.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <a name="_Toc281991205" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #8 – Allowing access to the Add-In on an specific range of cells</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Double-click the <b>RibbonX.cs</b> file (for C# projects) or the <b>RibbonX.vb</b> file (for Visual Basic projects).</li>
+                <li>Locate the Ribbon_Load method. </li>
+                <li>Highlight the <b>SheetSelectionChange</b> event handler declaration.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>This demo toggles the Contoso ribbon and context menus visibility, for a specific cells range.</li>
+                <li>This behavior implemented using cutom code using the SheetSelectionChange event of the ExcelApplication class.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\7a4f7dc9-06b8-4655-9ff5-eceb103e4dc5.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Locate the excelApplication_SheetSelectionChange method.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>When the event handler gets in control, it verifies if the selected cell is within the defined range and sets the InsideData value to true, which consecutively activates the <b>TabParts</b>.</li>
+                <li>If the selected cell is not valid, setting the InsideData value to false deactivates the <b>TabHome</b>.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\63d7153b-831d-4131-916f-e95457e9f026.png" />
+              </p>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Locate the GetProcessToolsVisibility and GetNegatedProcessToolsVsibility methods.</li>
+                <li>Double click on the RibbonX.xml file to open it.</li>
+                <li>Locate the TabParts and highlight the getVisible attribute.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The ribbon and context menu elements visibility is restricted to the same behavior through the GetProcessToolsVisibility and GetNegatedProcessToolsVsibility methods.   </li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\bb142a38-c73a-4deb-975b-e38e307ee193.png" />
+              </p>
+              <p>
+                <img src="images\d2c24977-2794-4f0d-831e-ae44f047e87b.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

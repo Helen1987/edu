@@ -1,0 +1,530 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Hello Windows Azure</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ul>
+          <li>Creating the Hello Windows Azure application</li>
+          <li>Deploying the application</li>
+          <br />
+        </ul>
+        <a name="_Toc285012819" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Creating the Hello Windows Azure application</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Start Visual Studio 2010 (as administrator).</p>
+              <p>Select <b>File  New  Project</b>.</p>
+              <a name="_GoBack" href="#">
+                <span />
+              </a>
+              <p>Select from the <b>Visual C#</b> Installed templates the <b>Cloud </b>category.</p>
+              <p>Select the <b>Windows Azure Project</b>.</p>
+              <p>Name the solution <b>HelloAzure</b>.</p>
+              <p>Click OK to launch a wizard.</p>
+              <p>From the wizard, add the <b>ASP.NET Web Role</b> in C#.</p>
+              <p>Select the added Role and click the edit icon.</p>
+              <p>Rename from <b>WebRole1</b> to <b>HelloAzure_WebRole</b>.</p>
+            </td>
+            <td>
+              <p>Let’s launch Visual Studio 2010 and create a new project.</p>
+              <p>In this case, I have installed the November CTP of the Windows Azure SDK and the Windows Azure Tools for Visual Studio.</p>
+              <p>Notice that we now have a new category of projects – Cloud Services.</p>
+              <p>We have a new template called “Windows Azure Project”.</p>
+              <p>This template launches a wizard that allows us to select the type and programming language for a role within our project.</p>
+              <p>Let’s name our new project HelloAzure and rename the WebRole1 to HelloAzure_WebRole.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\e76b7c8c-3493-4028-844f-e39ff4e41553.png" />
+              </p>
+              <p>
+                <img src="images\2a94c463-f0fa-46ca-ae76-0e238678f204.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Click <b>OK</b> and wait for the new solution to be created.</p>
+              <p>Double click the <b>Default.aspx</b> page to open it and select the design view.</p>
+            </td>
+            <td>
+              <p>Visual Studio will now create a new solution.</p>
+              <p>This solution will contain two projects</p>
+              <p>The first project named HelloAzure_WebRole is a standard ASP.NET project.</p>
+              <p>The second project is a new Windows Azure Project.</p>
+              <p>This Windows Azure Project references to our ASP.NET project.  It also contains a configuration file that defines the model for our Windows Azure solution. We’ll take a look at this model in just a few minutes.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\36070e63-a4b4-4db5-8268-099de0431f4a.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Expand the Toolbox.</p>
+              <p>Drag and drop an ASP.NET Label Control.</p>
+              <p>Change the <b>Font-&gt;Size</b> property for the new label to <b>XX-Large</b></p>
+            </td>
+            <td>
+              <p>First, let’s build our HelloAzure web page.</p>
+              <p>Let’s open the default web page</p>
+              <p>Now we’ll add a standard ASP.NET label control to our default page.  </p>
+              <p>Let’s go ahead and adjust the font size on the label.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\8bba6ac0-67bc-4f15-bbde-be5d1cb4fee3.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Right click the design surface and select View Code from the context menu to view the Default.aspx.cs code behind file.</p>
+              <p>Add code in the Page_Load event to set the text for the label.</p>
+            </td>
+            <td>
+              <p>Now let’s add a bit of code to display the text “Hello Windows Azure” in the label.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\e338e2c0-7983-4d37-9b50-6ea191b91dc7.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Open the ServiceConfiguration.cscfg file.</p>
+              <p>Updated the settings to run 2 instances of the web role.</p>
+            </td>
+            <td>
+              <p>Before we run this application, let’s take a look at the model that defines our Windows Azure application.</p>
+              <p>Let’s navigate over to the HelloAzure Windows Azure Project and open the ServiceConfiguration.cscfg file </p>
+              <p>This configuration file defines the roles for our Windows Azure project.   As you can see here, it also defines the number of instances per role.   </p>
+              <p>Let’s simply change the number of instances here to 2.  </p>
+            </td>
+            <td>
+              <p>
+                <img src="images\d64bb53b-73a0-4516-a7a7-c8f1f74e389b.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Select<b> Debug-&gt;Start Debugging</b></p>
+            </td>
+            <td>
+              <p>Now let’s start the application in debug mode or just press the familiar F5 button.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\0fc93636-8be8-43ae-a334-3f1afc3f1365.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>NOTE: It will take 30-90 seconds until the Web application starts.</p>
+            </td>
+            <td>
+              <p>Here we can see our simple ASP.NET web application and the text “Hello Windows Azure”</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\0a348a87-0361-4256-b605-ee591769e722.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Show the compute emulator by right-clicking the Azure icon in the task bar and select “Show Compute Emulator UI”.</p>
+              <p>Expand the HelloAzure application in the compute emulator and expand the WebRole.</p>
+              <p>Select the WebRole and show the two instances that are running.</p>
+            </td>
+            <td>
+              <p>This will cause the ASP.NET project to be compiled into a .NET assembly, just as normal.  </p>
+              <p>However, since we have a Windows Azure Project in our solution set as the startup project, this will start the Windows Azure compute emulator.</p>
+              <p>To see the details of the running projects we need to show the compute emulator UI.</p>
+              <p>The Windows Azure compute emulator, or simple compute emulator, is a simulated environment for developing and testing Windows Azure applications on your machine.</p>
+              <p>You can think of this as a Cassini like environment.</p>
+              <p>Here you can see the compute emulator UI. </p>
+              <p>Notice that we have a new deployment containing our HelloAzure application.</p>
+              <p>If we expand the WebRole for the HelloAzure application, we can see that there are two instances for this role.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\33b1fb0d-3757-4aae-854b-9d2312a570d6.png" />
+              </p>
+              <p>
+                <img src="images\222151ae-3087-4748-a9b0-c03068785ebc.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Switch back to Visual Studio.</p>
+              <p>Set a breakpoint on the line that sets the label text.</p>
+            </td>
+            <td>
+              <p>Let’s quickly switch back over to Visual Studio and set a breakpoint</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\c6e1efd3-3da1-4936-a3c0-ef124d4ba9a3.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Switch back to Internet Explorer and refresh the page.</p>
+              <p>Switch back to Visual Studio to see the breakpoint.</p>
+              <p>Press F5 to continue execution.</p>
+            </td>
+            <td>
+              <p>Now let’s refresh the page</p>
+              <p>Notice that we can drop into Visual Studio to debug our project and step through lines of code – just as we normally do.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\a2963eb5-ba8b-4c89-a842-fe7e77a48d51.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Stop the application by closing Internet Explorer.</p>
+            </td>
+            <td>
+              <br />
+            </td>
+            <td>
+              <br />
+            </td>
+          </tr>
+        </table>
+        <br />
+        <br />
+        <a name="_Toc285012820" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Deploying the application</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Switch back to Visual Studio.</p>
+              <p>Right click the <b>HelloAzure</b> project and select <b>Publish</b> from the context menu.</p>
+              <p>On the Deploy Windows Azure project dialog select “Create Service Package Only” and click OK.</p>
+              <br />
+            </td>
+            <td>
+              <p>So you’ve seen how we can build and debug simple web applications for Windows Azure with the new Visual Studio extensions and the SDK</p>
+              <p>Now let’s deploy our HelloAzure application to the cloud</p>
+              <p>Let’s switch back to Visual Studio</p>
+              <p>To deploy our app, first let’s right click the HelloAzure Windows Azure Project and select Publish</p>
+              <p>We just want to generate the package to deploy it using the management portal, so we choose “Create Service Package Only”.</p>
+              <p>This will compile and build the solution. It will also create a new service package, essentially a zip file, containing the assemblies and configuration files for the solution. </p>
+            </td>
+            <td>
+              <p>
+                <img src="images\b9a1a77e-9bd6-4ef2-87e7-d7723fffd0a5.png" />
+              </p>
+              <p>
+                <img src="images\d0721595-5411-48cc-9d67-a5962557a731.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Copy the path where the service package was published from the Windows Explorer address bar.</p>
+            </td>
+            <td>
+              <p>Once the publish process is complete, Visual Studio will open the directory where the service package was created.</p>
+              <p>It will also launch the default browser and navigate to the management portal.</p>
+              <p>Let’s copy the path to this file.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\6faccc62-5939-4825-b18a-95ad7b264818.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Switch over to the browser window that was launched during the Publish process.</p>
+            </td>
+            <td>
+              <p>Now let’s login to the management portal using our Live ID.</p>
+              <p>Previously, I have created a subscription in the management portal.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\b02c317e-37a0-46e6-90ae-a60e6c505689.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Click on the New Hosted Service button from the Common Tasks ribbon.</p>
+            </td>
+            <td>
+              <p>Once in the management portal, we select the type of project we want to create in the management portal.</p>
+              <p>In this case, we want to deploy an application to run in Windows Azure, so we click on the “New Hosted Service” button from the Common Tasks ribbon.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\1b949e61-204c-4ea0-a162-77648a53a779.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Choose a subscription.</p>
+              <p>Enter the service name (i.e. HelloAzure)</p>
+              <p>Enter the URL prefix (i.e. helloazure)</p>
+              <p>Choose a region (i.e. Anywhere US)</p>
+            </td>
+            <td>
+              <p>We need to select the subscription where we want to create the hosted service.</p>
+              <p>Next, let’s give our service a name.</p>
+              <p>Now we pick a URL prefix and the dialog will check the availability.</p>
+              <p>For this demo, we will just choose any region for the deployments, but in practice we can choose the geography for our app as well or use an affinity group.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\bad54666-5b96-4aa1-b0b4-bc00978b91ba.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Leave the “Deploy to stage environment” option selected and the “Start after successful deployment” check enabled.</p>
+              <p>Set a name for the deployment.</p>
+              <p>Use the Browse Locally button from the Package location and browse for the HelloAzure.cspkg file generated by Visual Studio.</p>
+              <p>Then, use the Browse Locally From the Configuration File and browse for the ServiceConfiguration.cscfg file generated by Visual Studio. You can also paste that address from the notepad opened in step 4.</p>
+              <p>Click OK.</p>
+            </td>
+            <td>
+              <p>We’ll leave the deployment options by default to let our service deploy to stage environment and start after the deployment.</p>
+              <p>Now, let’s give the deployment a name and select the package and configuration files location.</p>
+              <p>To specify the package from our local filesystem we use the Browse Locally button and browse to the service package that we published from Visual Studio.</p>
+              <p>We also need to browse to the ServiceConfiguration file that was also published from Visual Studio.   You might recall that this file defines the roles and number of instances per role.</p>
+              <p>In this case, we don’t need to add any certificate for our service, so we click OK to start creating and deploying the hosted service.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\b5efe7ea-81c6-4b2a-83e8-2a58a6d01fc4.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Wait for the package to upload and initialize.</p>
+            </td>
+            <td>
+              <p>Now, we have to wait a few minutes to upload the package.</p>
+              <p>Then, the web role will be initialized.</p>
+              <p>At this point Windows Azure will start up virtual machine instances for each of the roles.</p>
+              <p>Once the instances started, our application – the assemblies, ASPX pages, etc. that we uploaded earlier – will be deployed into each of the instances.  </p>
+              <p>We need to wait a while until the service becomes ready.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\1bf6d2f9-90c3-4c87-991a-1587e1e53d2d.png" />
+              </p>
+              <p>
+                <img src="images\7fa7fb67-4a6b-44c6-b1d6-5615fd35d4c2.png" />
+              </p>
+              <p>
+                <img src="images\6ba3b1c4-33ed-4a84-a93e-5b62ebf13ee7.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Select the node with the deployment name.</p>
+              <p>On the properties pane click the DNS name link.</p>
+            </td>
+            <td>
+              <p>Once the application is running in staging, we can now access it using the temporary Website URL generated.</p>
+              <p>By selecting the deployment in the items list, we can see its properties in the right pane, clicking on the DNS name we can navigate to our Hello Azure application.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\08c3cf26-dcaf-4b7e-948f-66a373162298.png" />
+              </p>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>View the HelloAzure web site in the new browser window</p>
+              <p>Close the browser window.</p>
+            </td>
+            <td>
+              <p>Here we can see our Hello Windows Azure application running in Windows Azure – it’s publicly exposed on the web!</p>
+              <p>In fact, you could even access it now if you could enter this long, temporary web site URL.</p>
+              <p>Let’s close this window and go back to the Management portal.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\33c5dc21-dd82-49d2-a2af-9938724dc398.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Click the <b>Swap VIP</b> button in the Deployments ribbon.</p>
+              <p>You will be prompted to confirm that you want to switch to the production environment. Press the <b>OK</b> button when prompted.</p>
+              <p><b>NOTE:</b>  It can take a few minutes to start the production environment.</p>
+            </td>
+            <td>
+              <p>Let’s see how we can move our application from staging to production. </p>
+              <p>We’ll click on the sync button and confirm that we want to move the switch the staging environment with production.  </p>
+              <p>This can take a few minutes.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\b25ca678-653b-4fe3-a9c1-c0f50b032aa7.png" />
+              </p>
+              <p>
+                <img src="images\23509bd5-d35d-477a-b6cb-1213f2923821.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>Select the node with the deployment name.</p>
+              <p>On the properties pane click on the DNS name link.</p>
+            </td>
+            <td>
+              <p>You can now see that the production environment is running.</p>
+              <p>Let’s now browse to our application running in production.</p>
+            </td>
+            <td>
+              <p>
+                <img src="images\dc38fccb-ee13-4d80-a934-e410edc29379.png" />
+              </p>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <p>You should see the web page with the text Hello Windows Azure dialog running with the production URL.</p>
+            </td>
+            <td>
+              <p>Finally, you can see that our simple “Hello Azure” application is running in the production environment.  </p>
+              <p>Notice that the URL is the sub-domain on cloudapp.net that we specified when creating the project in the Management portal.   </p>
+              <p>If you have internet access, you can browse to this site now.  </p>
+            </td>
+            <td>
+              <p>
+                <img src="images\f58d59b0-9635-4b2f-9c9b-16875c5c51f6.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://contoso.com/hr/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SubmitApplication" targetNamespace="http://contoso.com/hr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://localhost:62305/SubmitApplication.xamlx?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://contoso.com/hr/Imports">
+      <xsd:import schemaLocation="http://localhost:62305/SubmitApplication.xamlx?xsd=xsd1" namespace="http://contoso.com/contracts/hr" />
+      <xsd:import schemaLocation="http://localhost:62305/SubmitApplication.xamlx?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApplicationService_SubmitJobApplication_InputMessage">
+    <wsdl:part xmlns:q1="http://contoso.com/contracts/hr" name="SubmitJobApplicationRequest" element="q1:SubmitJobApplicationRequest" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_SubmitJobApplication_OutputMessage">
+    <wsdl:part xmlns:q2="http://contoso.com/contracts/hr" name="SubmitJobApplicationResponse" element="q2:SubmitJobApplicationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IApplicationService">
+    <wsdl:operation name="SubmitJobApplication">
+      <wsdl:input wsaw:Action="http://contoso.com/hr/IApplicationService/SubmitJobApplication" message="tns:IApplicationService_SubmitJobApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://contoso.com/hr/IApplicationService/SubmitJobApplicationResponse" message="tns:IApplicationService_SubmitJobApplication_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="SubmitApplication">
+    <wsdl:port name="BasicHttpBinding_IApplicationService" binding="i0:BasicHttpBinding_IApplicationService">
+      <soap:address location="http://localhost:62305/SubmitApplication.xamlx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,120 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Handling Commands and Binding to a ViewModel" />
+      <MSHelp:RLTitle Title="Exercise 3: Handling Commands and Binding to a ViewModel" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Handling Commands and Binding to a ViewModel</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using the MVVM Pattern in Silverlight Applications</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Handling Commands and Binding to a ViewModel</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll add commanding support into the SilverlightCustomerViewer project. Commanding allows events triggered in a View such as a Button's Click event to be routed directly to a ViewModel instance without having to add code in a code-beside file. You'll be introduced to the ICommand interface as well as a RelayCommand class that will be used within MainPageViewModel to handle commands. Finally, you'll bind MainPageViewModel to a View using a declarative binding syntax.</p>
+        <ol>
+          <li>Open the <b>Commanding/RelayCommand.cs</b> class in the <b>SilverlightCustomerViewer</b> project and note that it implements <b>ICommand</b>. This interface is required in order for a Silverlight application to support commanding.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Commanding is the process of forwarding events that occur in the user interface to a ViewModel object for processing at runtime.  The RelayCommand class will be used to wire properties in a ViewModel to methods that are invoked when any control derived from ButtonBase is clicked in a View. It satisfies the ICommand interface allowing commanding to be used in Silverlight MVVM applications.</td></tr></table><p /></div></li>
+          <li>Add the following code into <b>MainPageViewModel</b> to create properties capable of binding to controls that expose a Command property. Resolve the required namespace.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>publicRelayCommandUpdateCustomerCommand{get;private set;} publicRelayCommandDeleteCustomerCommand{get;private set;}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private _UpdateCustomerCommand As RelayCommandPublic Property UpdateCustomerCommand() As RelayCommand    Get        Return _UpdateCustomerCommand    End Get    Private Set(ByVal value As RelayCommand)        _UpdateCustomerCommand = value    End SetEnd PropertyPrivate _DeleteCustomerCommand As RelayCommandPublic Property DeleteCustomerCommand() As RelayCommand    Get        Return _DeleteCustomerCommand    End Get    Private Set(ByVal value As RelayCommand)        _DeleteCustomerCommand = value    End SetEnd Property</pre></td></tr></table></span></div></li>
+          <li>Add the following code into <b>MainPageViewModel</b> to handle wiring up the properties defined in the previous step to methods that will be invoked once a command is executed:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private voidWireCommands(){UpdateCustomerCommand= newRelayCommand(UpdateCustomer);DeleteCustomerCommand= newRelayCommand(DeleteCustomer);}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private SubWireCommands()       UpdateCustomerCommand = New RelayCommand(AddressOf UpdateCustomer)    DeleteCustomerCommand = New RelayCommand(AddressOf DeleteCustomer)End Sub</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> WireCommands handles associating two RelayCommand properties with methods that will be invoked as a command is executed in a View.  For example, any Button with a Command property bound to UpdateCustomerCommand will cause the UpdateCustomer method to be invoked.</td></tr></table><p /></div></li>
+          <li>Add a call to the <b>WireCommands</b> method within <b>MainPageViewModel's</b> second constructor (add the code immediately under the GetCustomers method call within the constructor).</li>
+          <li>Add code within the <b>CurrentCustomer</b> property's <b>set</b> block to assign the <b>IsEnabled</b> property of <b>UpdateCustomerCommand</b> and <b>DeleteCustomerCommand</b> to a value of <b>true</b> (add the code within the existing "if" statement). </li>
+          <li>Open <b>MainPage.xaml</b> and add the following xml namespace definition on the <b>UserControl</b> element to reference the <b>ViewModels</b> namespace:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>xmlns:viewModels="clr-namespace:SilverlightCustomerViewer.ViewModels"</pre></td></tr></table></span></div></li>
+          <li>Create a <b>UserControl.Resources</b> element within the XAML immediately below the beginning <b>UserControl</b> element and add the following code into it:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;viewModels:MainPageViewModel x:Key="ViewModel" /&gt;</pre></td></tr></table></span></div></li>
+          <li>Bind the <b>ViewModel</b> key created in the previous step to the <b>LayoutRoot</b> element's <b>DataContext</b> property using a <b>StaticResource</b> binding. This will bind a MainPageViewModel object instance to the DataContext.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>DataContext="{Binding Source={StaticResource ViewModel}}"</pre></td></tr></table></span></div></li>
+          <li>Build the solution. If you encounter any compilation errors resolve them before continuing.</li>
+          <li>Right-click on the <b>ComboBox</b> control in the designer and select <b>Properties</b> from the menu.</li>
+          <li>Locate the <b>ItemsSource</b> property and click on its <b>Binding</b> value to view the data binding window. Select <b>Customers</b> from the available <b>Path </b>values as shown next:<p><img src="images\1c0b6a5f-72ca-4254-8e99-461c5c636727.png" /></p><p><b>Figure 1</b><br /><i>Binding Data to the ItemsSource Property</i></p></li>
+          <li>Follow the same procedure shown in the previous step to bind the <b>ComboBox</b> control's <b>SelectedItem</b> property to <b>CurrentCustomer</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You'll need to click on the icon to the right of SelectedItem and then select Apply Data Binding to access the data binding window.</td></tr></table><p /></div></li>
+          <li>Bind the <b>Text</b> property of each <b>TextBox</b> control to the associated property in <b>CurrentCustomer</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> To do this, first clear any existing bindings by selecting the data icon to the right of the Text property and select Reset Value. You'll need to bind the Text property of each TextBox to CurrentCustomer and then select the appropriate property from CurrentCustomer (FirstName, LastName, etc.) in the data binding window.</td></tr></table><p /></div></li>
+          <li>Bind the <b>Command</b> property of each <b>Button</b> control to the appropriate command property in the ViewModel (UpdateCustomerCommand or DeleteCustomerCommand) using the same technique shown in the previous steps.</li>
+          <li>Drag a <b>TextBlock</b> control from the Toolbox and drop it directly to the right of the existing <b>Delete</b> button. Change the <b>Width</b> of the <b>TextBlock</b> to <b>200</b>.</li>
+          <li>Bind the newly added <b>TextBlock</b> control's <b>Text</b> property to the <b>StatusMessage</b> property of the ViewModel using the data binding window.</li>
+          <li>Run the application and test the functionality. As you update or delete a Customer object a success message should appear to the right of the Button controls. Select a different customer and the success message should disappear.</li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

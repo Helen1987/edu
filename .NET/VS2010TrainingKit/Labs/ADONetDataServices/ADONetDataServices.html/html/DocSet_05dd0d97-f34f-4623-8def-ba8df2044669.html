@@ -1,0 +1,328 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating and Consuming WCF Data Services" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating and Consuming WCF Data Services" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating and Consuming WCF Data Services</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ADO.NET Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating and Consuming WCF Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you will learn how to create a data service and consume it with an existing WPF user interface using  the .NET Data Services Client API.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To verify that each step is correctly performed, it is recommended to build the solution at the end of each task.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141331" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284148" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302686" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307191" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921184" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating the Data Service Web Application Project</b>
+        </p>
+        <p>In this task you will create an ASP.NET Web application project that will host and expose the data service.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ADONETDataServiceSample.sln</b> located under the <b>Source\Ex1-CreatingDataServices\begin</b> folder of this lab<b> </b>(choosing the folder that matches the language of your preference.) This is an empty solution for exercise 1.</li>
+          <li>In Solution Explorer, right-click <b>ADONETDataServiceSample </b>solution, point to <b>Add</b> and select <b>New Project</b>.</li>
+          <li>In the <b>Add New Project</b> dialog, select the <b>Visual C# language or Visual Basic language </b>and then the<b> Web</b> project type.  Make sure that <b>.NET Framework 4.0 </b>is selected, and then select the <b>ASP.NET Web Application </b>template.</li>
+          <li> You may set the location to the provided <b>Source\Ex1-CreatingDataServices\begin</b> folder of this lab<b> </b>(and choosing the folder that matches the language of your preference) which is the provided folder.</li>
+          <li>Change the <b>Name</b> to <b>WebSite</b> and click <b>OK</b>.<p><img src="images\c76f13e9-dba9-4dec-9f9c-c2de7ead079b.png" /></p><p><b>Figure 1</b><br /><i>Creating a new Website (C#)</i></p><br /><p><img src="images\3991b1db-1d09-47fa-a37f-13bb82f83581.png" /></p><p><b>Figure 2</b><br /><i>Creating a new Website (Visual Basic)</i></p><br /></li>
+        </ol>
+        <a name="_Toc246284149" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302687" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307192" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921185" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating the Entity Data Model</b>
+        </p>
+        <p>In this task you will create the mapping specification that connects programmable classes to storage structures.</p>
+        <p>The Entity Data Model (EDM) is a specification for defining the data used by applications built on the Entity Framework. Applications using the EDM define entities and relationships in the domain of the application in a design schema. </p>
+        <ol>
+          <li>Create the <b>AdventureWorks</b> Entity Data Model. To do this, in <b>Solution Explorer</b>, right-click the <b>WebSite</b> project, point to <b>Add</b>, and click <b>New Item</b>. </li>
+          <li>In the <b>Add New Item</b> dialog box select <b>ADO.NET Entity Data Model.</b> Specify a Name value of <b>AdventureWorks.edmx</b>, and then click <b>Add</b>.<p><img src="images\deafb12d-364c-4042-b80d-8ef1d5f2e809.png" /></p><p><b>Figure 3</b><br /><i>Adding the ADO.NET Entity Data Model (C#)</i></p><br /><p><img src="images\5ee68bca-27dc-4e2c-9788-19afd061ce86.png" /></p><p><b>Figure 4</b><br /><i>Adding the ADO.NET Entity Data Model (Visual Basic)</i></p><br /></li>
+          <li>After the <b>Entity Data Model Wizard</b> opens, select <b>Generate From Database</b> and click <b>Next</b>.</li>
+          <li>Specify the Database connection. To do this, follow these steps:<ol><li>Click <b>New Connection</b></li><li>In <b>Choose Data Source</b> dialog, select <b>Microsoft SQL Server Database File (SqlClient)</b> as <b>Data Source</b> and click <b>Continue</b>.</li><li>Click the <b>Browse</b> button to set the database file name to use.</li><li>Browse to the <b>Source\Assets</b> folder and select the <b>AdventureWorksLT.mdf</b> file.</li><li>Click <b>OK</b> to save the connection.</li><br /></ol><p><img src="images\95bfb2f6-4c37-49ad-89e8-b0d44c18e624.png" /></p><p><b>Figure 5</b><br /><i>Specify the database connection</i></p><br /></li>
+          <li>Back on the Entity Data Model Wizard click Next.</li>
+          <li>You will be prompted if you want to copy the file inside your project directory and change the connection string accordingly. Click <b>Yes</b> to proceed.</li>
+          <li>Include only the <b>Tables </b>objects from all the proposed database objects, leave the <b>Model Namespace</b> by default, clear both check boxes, and click <b>Finish</b>.<p><img src="images\624e1610-680a-45c4-bf49-85bccd4d2ac6.png" /></p><p><b>Figure 6</b><br /><i>Choose database objects to include in the model</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>For information see <a href="http://msdn2.microsoft.com/en-us/library/bb387122.aspx">ADO.NET Entity Framework</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc246284150" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302688" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307193" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921186" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Creating the Data Service</b>
+        </p>
+        <p>In this task you will create the WCF Data Service that expose data by using the Entity Data Model as specified by the ADO.NET Entity Framework.</p>
+        <ol>
+          <li>Add the Data Service. To do this, in <b>Solution Explorer</b>, right-click the <b>WebSite</b> project, point to <b>Add</b>, and click <b>New Item</b>.</li>
+          <li>In the <b>Add New Item</b> dialog box select <b>WCF Data Service.</b> Specify a Name value of <b>AdventureWorks.svc</b>, and then click <b>Add</b>.<br /><p><img src="images\ade64e11-f0e5-4913-be68-28f96ea07adc.png" /></p><p><b>Figure 7</b><br /><i>Add the WCF Data Service item (C#)</i></p></li>
+          <br />
+          <p>
+            <img src="images\1e670f37-4289-4366-bd2a-d3801a52d6ca.png" />
+          </p>
+          <p>
+            <b>Figure 8</b>
+            <br />
+            <i>Add the WCF Data Service item (Visual Basic)</i>
+          </p>
+          <br />
+          <li>Locate the class definition and replace it with the following code. This will indicate the service to use the entity framework data model as a data source.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Visual Studio will open the code file for the new service by default. You can also find the file in the Solution Explorer by right clicking on the <b>AdventureWorks.svc</b> file.</td></tr></table><p /></div><br /><p>(Code Snippet – <i>Data Services Lab - AdventureWorks Data Service Definition CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public class AdventureWorks : DataService&lt;AdventureWorksLTEntities&gt;</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - AdventureWorks Data Service Definition VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Class AdventureWorks</b><b>    Inherits DataService(Of AdventureWorksLTEntities)</b></pre></td></tr></table></span></div><br /></li>
+          <li>Enable read and write access to all resources in the Entity Data Model associated with the service by replacing the code in the <b>InitializeService</b> method with the following:<p>(Code Snippet – <i>Data Services Lab - AdventureWorks.svc InitializeService CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public static void InitializeService(DataServiceConfiguration config)</b><b>{</b><b>    config.SetEntitySetAccessRule("*", EntitySetRights.All);</b><b>    config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V2;</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - AdventureWorks.svc InitializeService VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Shared Sub InitializeService(ByVal config As DataServiceConfiguration)</b><b>    config.SetEntitySetAccessRule("*", EntitySetRights.All)</b><b>    config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V2</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> By default a data service does not expose any resources. Access to resources need to be explicitly enabled before any resources or associations are accessible. For more information, see <a href="http://msdn.microsoft.com/en-us/library/system.data.services.idataserviceconfiguration.setentitysetaccessrule.aspx">IDataServiceConfiguration.SetEntitySetAccessRule Method (System.Data.Services)</a>.</td></tr></table><p /></div><br /></li>
+          <li>Configure the web site to use port 50000. To do this:<ol><li>In <b>Solution Explorer</b>, right-click <b>WebSite</b> project and in the context menu select <b>Properties</b>.</li><li>In the <b>Properties</b> page open the <b>Web</b> tab.</li><li>In the <b>Servers</b> section select <b>Specific Port</b>.</li><li>Set the port number to <b>50000</b>.</li><li>Press <b>Ctrl</b> + <b>S</b> to save changes.<p><img src="images\401c4a51-19e5-4f0e-bcf6-e2f52d6def39.png" /></p><p><b>Figure 9</b><br /><i>Specifying a port number</i></p><br /></li></ol></li>
+        </ol>
+        <a name="_Toc246284151" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302689" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307194" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921187" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Using the .NET Client API to Consume the Service</b>
+        </p>
+        <p>WCF Data Services includes a minimum-footprint client library that presents a more natural programming model for applications written using the .NET Framework targeting data services. The client library can return results in terms of .NET objects.</p>
+        <p>In this task you will consume the previously created data service using the .NET Client library. This library provides a programming model for applications using the .NET Framework and Internet data services. You will interact with the data services using a WPF client application that allows querying, adding, deleting and updating records from the database. These operations are performed through a class that acts as gateway to access the Data Service, and return entity objects using the <b>WCF Data Services</b> Client API.</p>
+        <ol>
+          <li>Include the WPF application project to the solution. To do this, right-click the <b>ADONETDataServiceSample</b> solution in <b>Solution Explorer</b>, point to <b>Add</b> and click <b>Existing Project</b>. Browse the <b>Source\Assets</b> folder of this lab (choosing the folder that matches the language of your preference.), and select <b>UserInterface.csproj </b>under the<b> UserInterface </b>folder and click <b>Open</b>.</li>
+          <li>Right click the <b>WebSite project</b> node and click <b>Build</b>. You can also test the project configuration is correct by starting a new instance of the Web project, but this is not required in this step.</li>
+          <li>Create the .NET objects to represent each of the entities of the data service definition.  To do this, right click on the <b>UserInterface </b>project and select <b>Add Service Reference…</b></li>
+          <li>Click <b>Discover</b>, choose the <b>AdventureWorks.svc</b> service and name the reference <b>AdventureWorks </b>then<b> c</b>lick <b>OK</b> to save and dismiss the Add Service Reference dialog.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In order to represent each of the entities defined in the data service as .NET objects in the client; corresponding classes need to be defined for the client application. One option is to define the classes manually. Another option, more automatic, is using the <b>Add Service Reference</b> tool that ships with Visual Studio 2010.<br />If any problem arises in the previous step you can also find the <b>AdventureWorks.cs (C#) </b>or <b>AdventureWorks.vb (Visual Basic)</b> file, generated with the <b>Add Service Reference </b>tool, in the <b>Source\Assets </b>folder of this lab and choosing the folder that matches the language of your preference.</td></tr></table><p /></div><br /></li>
+          <li>Start to implement the<b> ProductGateway</b> operations using WCF Data Service URI Syntax and LINQ to Data Services. In <b>Solution Explorer</b>, open <b>ProductGateway.cs (C#) </b>or <b>ProductGateway.vb (Visual Basic)</b>. To do this, double-click the <b>ProductGateway.cs (C#) or ProductGateway.vb (Visual Basic)</b> file under the <b>Gateway</b> folder of <b>UserInterface</b> project.</li>
+          <li>Retrieve all the products that match with the name and category passed as parameter using WCF Data Service URI syntax. To do this, replace the <b>GetProducts</b> method with the following content.<p>(Code Snippet – <i>Data Services Lab - ProductGateway GetProducts CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public IList&lt;Product&gt; GetProducts(string productName, ProductCategory category){<b>    int categoryId = category.ProductCategoryID;</b><b>    IEnumerable&lt;Product&gt; products = this.context.Execute&lt;Product&gt;(</b><b>        new Uri(this.context.BaseUri.ToString() +</b><b>            "/ProductCategory(" + categoryId + ")/Product?$filter=indexof(Name,'" + productName + "') gt -1 or '' eq '" + productName + "'"));</b><b>    List&lt;Product&gt; productsSet = new List&lt;Product&gt;();</b><b>    foreach (Product p in products)</b><b>    {</b><b>        this.context.LoadProperty(p, "ProductCategory");</b><b>        productsSet.Add(p);</b><b>    }</b><b>    return productsSet;</b>}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - ProductGateway GetProducts VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Function GetProducts(ByVal productName As String, ByVal category As ProductCategory) As IList(Of Product) Implements IProductGateway.GetProducts<b>    Dim categoryId = category.ProductCategoryID</b><b>    Dim products = Me.context.Execute(Of Product)(</b><b>        New Uri(Me.context.BaseUri.ToString() &amp;</b><b>            "/ProductCategory(" &amp; categoryId &amp; ")/Product?$filter=indexof(Name,'" &amp; productName &amp; "') gt -1 or '' eq '" &amp; productName &amp; "'"))</b><b>    Dim productsSet As New List(Of Product)()</b><b>    For Each p In products</b><b>        Me.context.LoadProperty(p, "ProductCategory")</b><b>        productsSet.Add(p)</b><b>    Next</b><b>    Return productsSet</b>End Function</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This query selects all products belonging to a specified category and also executes a filter that checks the product name. This filter makes use of the <b>indexof</b> function and use the <b>gt</b> (greater than), <b>or</b> and <b>eq</b> (equals) operations of the WCF Data Services URI syntax. <br />For more information, see <a href="http://msdn.microsoft.com/en-us/library/cc668766.aspx">URI Format for Addressing Resources (ADO.NET Data Services Framework)</a>.</td></tr></table><p /></div><br /></li>
+          <li>Retrieve a list of all the product categories stored in the <b>ProductCategory</b> table using LINQ to WCF Data Services. The client library handles the details of mapping the LINQ statement to a URI in the target data service and retrieving the specified resources as .NET objects. To do this, replace the <b>GetCategories</b> method with the following content.<p>(Code Snippet – <i>Data Services Lab - ProductGateway GetCategories CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public IList&lt;ProductCategory&gt; GetCategories(){<b>    var productCategories = from c in this.context.ProductCategory</b><b>                            orderby c.Name</b><b>                            select c;</b><b>    return productCategories.ToList();</b>}</pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - ProductGateway GetCategories VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Function GetCategories() As IList(Of ProductCategory) Implements IProductGateway.GetCategories<b>    Dim productCategories = From c In Me.context.ProductCategory</b><b>                            Order By c.Name</b><b>                            Select c</b><b>    Return productCategories.ToList()</b>End Function</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The context object used in this method is an instance of <b>AdventureWorksLTEntities</b>. This class has properties that represent each table of the <b>AdventureWorksLT</b> database as a <b>DataServiceQuery</b> class that implements <b>IQueryable</b> interface and allow LINQ to work with these entities.</td></tr></table><p /></div><br /></li>
+          <li>Delete the specified product from the database and then call the <b>SaveChanges</b> method to submit the changes to the data service. To do this, add the following code to the <b>DeleteProduct</b> method.<p>(Code Snippet – <i>Data Services Lab - ProductGateway DeleteProduct CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public void DeleteProduct(Product product){<b>    this.context.AttachTo("Product", product);</b><b>    this.context.DeleteObject(product);</b><b>    this.context.SaveChanges();</b>}</pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet – <i>Data Services Lab - ProductGateway DeleteProduct VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Public Sub DeleteProduct(ByVal product As Product) Implements IProductGateway.DeleteProduct<b>    Me.context.AttachTo("Product", product)</b><b>    Me.context.DeleteObject(product)</b><b>    Me.context.SaveChanges()</b>End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Update the product properties including relationships to objects and single values. To do this, add the following code to the <b>UpdateProduct</b> method.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This code receives the product with the new <b>ProductCategory</b> object associated, and stores it in a temporary variable. Then calling the <b>LoadProperty</b> method, it re-loads the <b>ProductCategory</b> object from the database to remove the old binding. Finally the new <b>ProductCategory</b> and its binding are added using the context to be able to save the changes. Also notice that the context should attach the objects first to perform operations over them.</td></tr></table><p /></div><br /><p>(Code Snippet – <i>Data Services Lab - ProductGateway UpdateProduct CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public void UpdateProduct(Product product){<b>    ProductCategory newCategory = product.ProductCategory;</b><b>    this.context.AttachTo("Product", product);</b><b>    this.context.LoadProperty(product, "ProductCategory");</b><b>    if (newCategory.Name != product.ProductCategory.Name)</b><b>    {</b><b>        this.context.DeleteLink(product, "ProductCategory", product.ProductCategory);</b><b>        this.context.AttachTo("ProductCategory", newCategory);</b><b>        this.context.AddLink(product, "ProductCategory", newCategory);</b><b>    }</b><b>    this.context.UpdateObject(product);</b><b>    this.context.SaveChanges();</b>}</pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet – <i>Data Services Lab - ProductGateway UpdateProduct VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Public Sub UpdateProduct(ByVal product As Product) Implements IProductGateway.UpdateProduct<b>    Dim newCategory = product.ProductCategory</b><b>    Me.context.AttachTo("Product", product)</b><b>    Me.context.LoadProperty(product, "ProductCategory")</b><b>    If newCategory.Name &lt;&gt; product.ProductCategory.Name Then</b><b>        Me.context.DeleteLink(product, "ProductCategory", product.ProductCategory)</b><b>        Me.context.AttachTo("ProductCategory", newCategory)</b><b>        Me.context.AddLink(product, "ProductCategory", newCategory)</b><b>    End If</b><b>    Me.context.UpdateObject(product)</b><b>    Me.context.SaveChanges()</b>End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> When updating an associated property you have to delete the old binding to that property, and create the new binding before calling to the <b>UpdateObject</b> method.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Add a new product into the database. To do this, add the following code to the <b>AddProduct</b> method.<p>(Code Snippet –<i>Data Services Lab - ProductGateway AddProduct CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public void AddProduct(Product product){<b>    product.rowguid = Guid.NewGuid();</b><b>    this.context.AddObject("Product", product);</b><b>    product.ProductCategory.Product.Add(product);</b><b>    this.context.AttachTo("ProductCategory", product.ProductCategory);</b><b>    this.context.AddLink(product.ProductCategory, "Product", product);</b><b>    this.context.SaveChanges();</b>}</pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet –<i>Data Services Lab - ProductGateway AddProduct VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Public Sub AddProduct(ByVal product As Product) Implements IProductGateway.AddProduct<b>    product.rowguid = Guid.NewGuid()</b><b>    Me.context.AddObject("Product", product)</b><b>    product.ProductCategory.Product.Add(product)</b><b>    Me.context.AttachTo("ProductCategory", product.ProductCategory)</b><b>    Me.context.AddLink(product.ProductCategory, "Product", product)</b><b>    Me.context.SaveChanges()</b>End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> When adding an object related to another object, you also have to bind its object property using the <b>AddLink</b> method. </td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <a name="_Toc236650883" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284152" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_ae762cd2-0cf0-4868-98cf-c41c1ff65b6c.html">Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

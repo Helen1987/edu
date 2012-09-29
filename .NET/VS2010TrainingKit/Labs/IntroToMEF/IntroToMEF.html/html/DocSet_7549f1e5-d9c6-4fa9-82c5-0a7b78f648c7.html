@@ -1,0 +1,185 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Using MEF and Silverlight 4" />
+      <MSHelp:RLTitle Title="Exercise 3: Using MEF and Silverlight 4" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Using MEF and Silverlight 4</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction To Managed Extensibility Framework</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Using MEF and Silverlight 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Latest version of Silverlight 4 will include MEF out of the box. This means all the functionality described in the previous exercises are available for Silverlight 4 applications.</p>
+        <p>Some minor tweaks are required because of the different deployment model of a Silverlight application.</p>
+        <p>In this exercise, you will go through the creation of a Silverlight version of the Cash Maker application reusing most of the code and logic already present in the WPF version of the application.</p>
+        <a name="_Toc281932551" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Convert Extensions to Silverlight</b>
+        </p>
+        <p>In this task, you will convert all the Class Library projects used by the WPF version of the Cash Maker application to Silverlight. You will reuse all the code present in the WPF version by adding links to the existing files.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the <b>ContosoAutomotive.sln</b> solution file. By default, this file is located in the folder <b><i>Source\Ex3\begin</i>(choosing the folder that matches the language of your preference.) </b>Optionally, you can continue working the solution you created in the previous exercise.</li>
+          <li>Because a Silverlight 4 application can only reference Silverlight Class Libraries, you will replicate all the extension and contract definitions for Silverlight 4. You will start adding the Silverlight 4 version of Contoso.Automotive.Common library. To do this, right click on the ContosoAutomotive solution node and select <b>Add</b> | <b>New Project</b>. In the Add New Project dialog, select the <b>Silverlight Class Library</b> project type and enter <b>ContosoAutomotive.Common.SL</b> in the Name field.<p><img src="images\e9d2207b-f629-4cd9-9ea5-fe18bc1afce0.png" /></p><p><b>Figure 17</b><br /><i>Add ContosoAutomotive.Common.SL Silverlight class library project (C#)</i></p><br /><p><img src="images\61ccc1de-74b3-4680-b243-33c2c84bd547.png" /></p><p><b>Figure 18</b><br /><i>Add ContosoAutomotive.Common.SL Silverlight class library project (Visual Basic)</i></p><br /></li>
+          <li>In the New Silverlight Class Library options dialog accept the default settings. Ensure <b>Silverlight 4</b> is selected in the <b>Silverlight Version</b> list.<p><img src="images\7f6eb21c-5571-4d0c-acca-235e7cbd1afa.png" /></p><p><b>Figure 19</b><br /><i>New Silverlight Class Library options dialog </i></p><br /></li>
+          <li>Only in <b>Visual Basic</b>, change the root namespace of the ContosoAutomotive.Common.SL project to ContosoAutomotive.Common. To do this, right click the ContosoAutomotive.Common.SL project node and select Properties. In the <b>Properties</b> page, select the <b>Silverlight</b> tab and change the <b>Root namespace</b> field value to <b>ContosoAutomotive.Common</b>.<p><img src="images\ce8acb44-22ae-4c10-a018-1211b12c2bb4.png" /></p><p><b>Figure 20</b><br /><i>Change Root namespace to ContosoAutomotive.Common (Visual Basic)</i></p></li>
+          <li>Remove the auto-generated class file. To do this, right click on the <b>Class1.cs</b> (C#) or the <b>Class1.vb</b> (Visual Basic) file and select <b>Delete</b>.</li>
+          <li>You will reuse all the code already present in the existing projects by linking the previous class files in the new projects. To do this, right click the ContosoAutomotive.Common.SL project node and select <b>Add</b> | <b>Existing Item</b>. In the Add Existing Item dialog browse one folder up and select all the class files inside the <b>ContosoAutomotive.Common</b> folder. Then, from the Open button drop-down list, select <b>Add As Link</b>.<p><img src="images\e0adda03-7626-41bd-bb5c-224edfa9c5b8.png" /></p><p><b>Figure 21</b><br /><i>Add linked files to the ContosoAutomotive.Common.SL project (C#)</i></p><br /><p><img src="images\ec2313ea-acc1-44b6-a550-626038457d98.png" /></p><p><b>Figure 22</b><br /><i>Add linked files to the ContosoAutomotive.Common.SL project (Visual Basic)</i></p><br /></li>
+          <li>After adding the link to the class files, your solution should like the following image.<p><img src="images\420c30eb-23a1-4530-827e-cabb63407ac6.png" /></p><p><b>Figure 23</b><br /><i>Linked files in the ContosoAutomotive.Common.SL project (C#)</i></p><br /><p><img src="images\6fa63142-1eda-47ba-aabb-7bfb3b575368.png" /></p><p><b>Figure 24</b><br /><i>Linked files in the ContosoAutomotive.Common.SL project (Visual Basic)</i></p><br /></li>
+          <li>Repeat the same process for the ContosoAutomotive.Extensions project creating the ContosoAutomotive.Extensions.SL Silverlight Class Library project. To do this, right click the ContosoAutomotive solution node and select <b>Add</b> | <b>New Project</b>. In the Add New Project dialog, select the <b>Silverlight Class Library</b> project type and enter <b>ContosoAutomotive.Extensions.SL</b> in the name field. Remember to select <b>Silverlight 4</b> in the Silverlight Version list.</li>
+          <li>Add a reference to the MEF library on the ContosoAutomotive.Extensions.SL project. To do this:<ol><li>Select the <b>ContosoAutomotive.Extensions.SL </b>project in the <b>Solution Explorer</b> and select <b>Project | Add Reference</b>…  The <b>Add References</b> dialog appears. </li><li>Select the <b>.NET</b> tab and then select the <b>System.ComponentModel.Composition</b> component. Click the <b>OK</b> button to add a reference to this library.<p><img src="images\03edf7dc-38fb-4ea5-b142-cdc1dde65673.png" /></p><p><b>Figure 1</b><br /><i>Add a Reference to the MEF library.</i></p><br /></li></ol></li>
+          <li>Also, add a reference to the ContosoAutomotive.Common.SL library on the same project. To do this:<ol><li>Select the <b>ContosoAutomotive.Extensions.SL</b> project in the <b>Solution Explorer</b> and select <b>Project | Add Reference</b>…  The <b>Add References</b> dialog appears.</li><li>Select the <b>Projects</b> tab and then select the <b>ContosoAutomotive.Common.SL</b> component. Click the <b>OK</b> button to add a reference to this library.<p><img src="images\f428e7e3-97ad-4a8c-97f1-84c4115466fa.png" /></p><p><b>Figure 1</b><br /><i>Add a Reference to the ContosoAutomotive.Common.SL library.</i></p><br /></li></ol></li>
+          <li>Remove the auto-generated class file <b>Class1.cs</b> (C#) or <b>Class1.vb</b> (Visual Basic) and create a link to all the class files in the <b>ContosoAutomotive.Extensions</b> folder.<p><img src="images\228a83b6-f9f5-4e1f-82c9-6a61298d096c.png" /></p><p><b>Figure 25</b><br /><i>Linked files in the ContosoAutomotive.Common.SL project (C#)</i></p><br /><p><img src="images\cd43b9f7-a6c7-426a-b224-ea2031d34039.png" /></p><p><b>Figure 26</b><br /><i>Linked files in the ContosoAutomotive.Common.SL project (Visual Basic)</i></p></li>
+        </ol>
+        <a name="_Toc281932552" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Create Silverlight Cash Maker UI</b>
+        </p>
+        <p>In this task, you will create a new Silverlight application to reproduce the same user experience we found in the WPF Cash Maker application. </p>
+        <ol>
+          <li>You will start adding a new Silverlight 4 application project to your solution. To do this, right click on the ContosoAutomotive solution node and selecting <b>Add</b> | <b>New project</b>. In the Add New Project dialog, select <b>Silverlight Application</b> as the project type and enter ContosoAutomotive.Silverlight in the project name field.<p><img src="images\001934bf-fa64-48ea-b737-3e0c206352b8.png" /></p><p><b>Figure 27</b><br /><i>Adding Silverlight 4 project (C#)</i></p><br /><p><img src="images\64902539-3ba0-4f5d-86dc-e44f95d85ff2.png" /></p><p><b>Figure 28</b><br /><i>Adding Silverlight 4 project (Visual Basic)</i></p><br /></li>
+          <li>In the New Silverlight Application options dialog accept all defaults. Ensure <b>Silverlight 4</b> is selected in the <b>Silverlight Version</b> list.<p><img src="images\437c5dbe-afc6-4ddb-a9ee-c556b498af00.png" /></p><p><b>Figure 29</b><br /><i>New Silverlight Application options dialog </i></p><br /></li>
+          <li>Copy all the images files from the ContosoAutomotive WPF project into the Silverlight version. To do this, right click on the <b>Images</b> folder in the <b>ContosoAutomotive</b> project and select <b>Copy</b>. Then, right click the <b>ContosoAutomotive.Silverlight</b> project and select <b>Paste</b>.</li>
+          <li>Add a reference to the MEF library on the ContosoAutomotive.Silverlight project. You will include the Initialization assembly as well. To do this:<ol><li>Select the <b>ContosoAutomotive.Silverlight </b>project in the <b>Solution Explorer</b> and select <b>Project | Add Reference</b>…  The <b>Add References</b> dialog appears. </li><li>Select the <b>.NET</b> tab and then select the <b>System.ComponentModel.Composition</b> and the <b>System.ComponentModel.Composition.Initialization</b> components. Click the <b>OK</b> button to add these references to the project.<p><img src="images\ba603fef-d0c0-4767-a8a5-3306b6128509.png" /></p><p><b>Figure 1</b><br /><i>Add a Reference to the MEF library.</i></p><br /></li></ol></li>
+          <li>Add a reference to the System.Windows.Controls.Data and System.Windows.Controls.Data.Input on the ContosoAutomotive.Silverlight project. The Cash Maker UI will use these libraries to show data. To do this:<ol><li>Select the <b>ContosoAutomotive.Silverlight </b>project in the <b>Solution Explorer</b> and select <b>Project | Add Reference</b>…  The <b>Add References</b> dialog appears. </li><li>Select the <b>.NET</b> tab and then select the <b>System.Windows.Controls.Data </b>and the <b>System.Windows.Controls.Data.Input</b> components. Click the <b>OK</b> button to add a reference to this library.<p><img src="images\c6f170e2-d564-48de-bf50-46480ab2371e.png" /></p><p><b>Figure 1</b><br /><i>Add a Reference to the System.Windows.Controls.Data and Data.Input libraries.</i></p><br /></li></ol></li>
+          <li>Also, add a reference to the ContosoAutomotive.Common.SL and ContosoAutomotive.Extensions.SL the library on the ContosoAutomotive.Silverlight project. To do this, right click on the project and select Add Reference. In the <b>Add Reference</b> dialog, select the <b>Projects</b> tab and choose the <b>ContosoAutomotive.Common.SL</b> and <b>ContosoAutomotive.Extensions.SL</b> libraries.</li>
+          <li>Remove the default MainPage.xaml file in order to replace it with the Cash Maker UI. To do this, right click on the <b>MainPage.xaml</b> file and select <b>Delete</b>.</li>
+          <li>Include the prebuilt version of the Cash Maker UI located in the Assets folder. To do this, right click the ContosoAutomotive.Silverlight project node and select <b>Add</b> | <b>Existing item</b>. In the Add Existing Item dialog, browse the <b>Assets</b> folder and selecting the folder that matches the language of your choice add the <b>CashMaker.xaml</b> file. The code behind file will be automatically included as well.<p><img src="images\3d288855-717c-4127-8d1e-c7845b998385.png" /></p><p><b>Figure 30</b><br /><i>Add prebuilt Silverlight Cash Maker UI (C#)</i></p><br /><p><img src="images\3276819b-307a-4cb2-946b-6965edbc6be5.png" /></p><p><b>Figure 31</b><br /><i>Add prebuilt Silverlight Cash Maker UI (Visual Basic)</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The only differences between the version that you were using on the previous step and the recently added from the Assets folder are that the last one uses the Silverlight control (instead of the WPF version of those), and does not have implemented some code that you will add in the following steps.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc281932553" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Update Your Silverlight Application to Load Composable Parts</b>
+        </p>
+        <p>In this task, you will modify a Silverlight 4 application to load composable parts using MEF. You will use the same approach used in the WPF version of the Cash Maker application.</p>
+        <ol>
+          <li>Open the App class in Code View. To do this, right-click on the <b>App.xaml</b> file in the Solution explorer and select <b>View Code</b>.</li>
+          <li>Update the App class to use the MEF library. To do this, add the following statement on top of the using clause list above the <b>App</b> class definition.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.ComponentModel.Composition.Hosting;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System.ComponentModel.Composition.Hosting</b></pre></td></tr></table></span></div><br /></li>
+          <li>You now will modify the Application class to load the new CashMaker UI. In addition, you will prepare you application to load any available Composable Part from the Silverlight package. To do this, replace the code inside the Application_Startup method with the following code.<p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task2 Step3 - Application_Startup CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void Application_Startup(object sender, StartupEventArgs e){<b>    var catalog = new AggregateCatalog(new DeploymentCatalog());</b><b>    var container = new CompositionContainer(catalog);</b><b>    this.RootVisual = container.GetExportedValue&lt;CashMaker&gt;();</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task2 Step3 - Application_Startup VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub Application_Startup(ByVal o As Object, ByVal e As StartupEventArgs) Handles Me.Startup<b>    Dim catalog = New AggregateCatalog(New DeploymentCatalog())</b><b>    Dim container = New CompositionContainer(catalog)</b><b>    Me.RootVisual = container.GetExportedValue(Of CashMaker)()</b>End Sub</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> As you did for the WPF version, you create a container which discovers the composable parts through a Catalog. The main window is also retrieved using the GetExportedValue of the container.</td></tr></table><p /></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Silverlight applications runs and are deployed in a different way that WPF applications, it causes that there is a new catalog on MEF Silverlight version. This exercise uses an Aggregate Catalog (which is also available on the WPF version) including the new Deployment Catalog which download a Silverlight Package (.xap), if it was not downloaded before, and searches for composable parts inside it. As the Deployment Catalog is instantiated without any parameter, it will look for parts inside the Silverlight Package that contains the application. </td></tr></table><p /></div><br /></li>
+          <li>Since the CashMaker class is now a composable part, you will export the class making it available to the composition container. To do this, decorate the <b>CashMaker</b> class with the <b>Export</b> attribute as shown in the code below.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[Export]</b>public partial class CashMaker : UserControl, IPartImportsSatisfiedNotification{...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;Export()&gt;</b>Class CashMaker    Inherits UserControl    Implement IPartImportsSatisfiedNotification...End Class</pre></td></tr></table></span></div><br /></li>
+          <li>Add the collection of Lazy object containing the contract implementations that will be populated by MEF. To do this, add the following code to the <b>CashMaker.xaml.cs</b> (C#) or <b>CashMaker.xaml.vb</b> (Visual Basic) file, just above its constructor.<p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task2 Step5 - SilverlightCarQueries CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[ImportMany(AllowRecomposition = true)]</b><b>public ObservableCollection&lt;Lazy&lt;ICarQuery, IQueryMetadata&gt;&gt; CarQueries { get; set; }</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task2 Step5 - SilverlightCarQueries VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;ImportMany(AllowRecomposition:=True)&gt;</b><b>Public Property CarQueries As ObservableCollection(Of Lazy(Of ICarQuery, IQueryMetadata))</b></pre></td></tr></table></span></div><br /></li>
+          <li>Modify the implementation of the IPartImportsSatisfiedNotification interface and bind the CarQueries collection to the UI by setting the DataContext property of the commandGrid control. To do this, paste the following code inside the CashMaker’s <b>OnImportsSatisfied</b> method.<p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task2 Step5 - OnImportsSatisfied CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public void OnImportsSatisfied(){<b>    this.commandGrid.DataContext = this.CarQueries;</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task2 Step5 - OnImportsSatisfied VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Sub OnImportsSatisfied() Implements IPartImportsSatisfiedNotification. OnImportsSatisfied<b>    Me.commandGrid.DataContext = Me.CarQueries</b>End Sub</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc281932554" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Load Silverlight Extensions Dynamically</b>
+        </p>
+        <p>In this task, you will create a new Silverlight 4 application and setup your application to load MEF parts dynamically by downloading a new Silverlight package. Additionally, you can mix CLR languages and create the new project in different CLR language than your main application.</p>
+        <ol>
+          <li>Create the ContosoAutomotive.Woodgrove.SL project reusing the classes in the ContosoAutomotive.Woodgrove Class Library project selecting a different language for the project than the main application. To do this, right click the ContosoAutomotive solution node and select <b>Add</b> | <b>New Project</b>. In the Add New Project dialog, select the <b>Silverlight Application</b> project type and enter <b>ContosoAutomotive.Woodgrove.SL</b> in the name field.</li>
+          <li>In the New Silverlight Application options dialog select the existing ContosoAutomotive.Silverlight.Web project to host the Silverlight application and ensure <b>Silverlight 4</b> is selected in the <b>Silverlight Version</b> list. Also, remove the<b> Add a test page</b> option in the option section and press <b>OK</b>.<p><img src="images\9df86dfb-88e6-40dd-b31c-95985de9e489.png" /></p><p><b>Figure 32</b><br /><i>New Silverlight Application options dialog </i></p></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> Remember that Silverlight Application projects are packaged into Silverlight Packages (.xap). In the other hand, Silverlight Class Library projects are included inside the application package that references the library. For that reason, you create the ContosoAutomotive.Woodgrove.SL project as a Silverlight application to be able to deploy it in a separated way allowing download it while the Silverlight Main application is running.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>After creating the project remove the auto-generated files <b>App.xaml</b> and <b>MainPage.xaml</b> and create a link to the WoodgroveQuery class files in the <b>ContosoAutomotive.Woodgrove</b> folder.</li>
+          <li>Add a reference to the MEF library on the ContosoAutomotive.Woodgrove.SL project. To do this, right click on the project and select Add Reference. In the <b>Add Reference</b> dialog, select the <b>.Net</b> tab and choose the <b>System.ComponentModel.Composition </b>library.</li>
+          <li>Add a reference to the ContosoAutomotive.Common.SL library on the ContosoAutomotive.Woodgrove.SL project. To do this, right click on the project and select Add Reference. In the <b>Add Reference</b> dialog, select the <b>Projects</b> tab and choose the <b>ContosoAutomotive.Common.SL</b> library.</li>
+          <li>Now, your solution is prepared for creating a Silverlight 4 version of the Cash Maker application.<p><img src="images\fc92321a-3a0e-4bc7-9665-bb129f60d8e2.png" /></p><p><b>Figure 33</b><br /><i>All projects converted to Silverlight Class Library projects (C#)</i></p><br /><p><img src="images\eb793145-160d-4e72-bd74-f8beb96b5b8b.png" /></p><p><b>Figure 34</b><br /><i>All projects converted to Silverlight Class Library projects (Visual Basic)</i></p><br /></li>
+          <li>Modify the ContosoAutomotive.Silverlight application class code to create a catalog to download the new Silverlight package. To do this, replace the catalog definition code inside the <b>Application_Startup</b> method with the following.<p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task4 Step7 - UriDeploymentCatalog CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void Application_Startup(object sender, StartupEventArgs e){<b>    var xapCatalog = new DeploymentCatalog("/ClientBin/ContosoAutomotive.Woodgrove.SL.xap");</b><b>    xapCatalog.DownloadAsync();</b><b>    var catalog = new AggregateCatalog(new DeploymentCatalog(), xapCatalog);</b>    var container = new CompositionContainer(catalog);    this.RootVisual = container.GetExportedValue&lt;CashMaker&gt;();}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex3 Task4 Step7 - UriDeploymentCatalog VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub Application_Startup(ByVal o As Object, ByVal e As StartupEventArgs) Handles Me.Startup<b>    Dim xapCatalog = New DeploymentCatalog("/ClientBin/ContosoAutomotive.Woodgrove.SL.xap")</b><b>    xapCatalog.DownloadAsync()</b><b>    Dim catalog = New AggregateCatalog(New DeploymentCatalog(), xapCatalog)</b>    Dim container = New CompositionContainer(catalog)    Me.RootVisual = container.GetExportedValue(Of CashMaker)()End Sub</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In the code above, a new Deployment Catalog is included to the Aggregate Catalog. Because it is instantiated specifying a url where a Silverlight Package (.xap) is available, it will be in charge of download it and find the composable parts inside it.<br />The call to the DownloadAsync method of the DeploymentCatalog object forces to download the package (it is performed in a separated thread). Take into account that the package will not be downloaded until this method is called.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_c91bbef2-0198-4032-83d8-ac610f38e02d.html">Exercise 3: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

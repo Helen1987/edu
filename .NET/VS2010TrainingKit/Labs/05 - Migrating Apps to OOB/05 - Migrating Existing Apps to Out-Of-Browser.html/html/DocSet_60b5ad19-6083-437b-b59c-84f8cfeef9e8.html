@@ -1,0 +1,135 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Lab 5 – Building an Out-of-Browser Application" />
+      <MSHelp:RLTitle Title="Lab 5 – Building an Out-of-Browser Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Lab 5 – Building an Out-of-Browser Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating Existing Apps to Out-Of-Browser</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Lab 5 – Building an Out-of-Browser Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Silverlight started off as a browser plug-in.  Since then, Silverlight has emerged as a client platform technology that not only includes browser based applications, but is now a desktop platform as well.  This lab is designed to guide Winforms or desktop developers through the process of developing a desktop application in Silverlight.</p>
+        <p>In the lab you'll create a Silverlight web browser.  It will truly be a desktop application.  Along the way you'll learn how to enable Silverlight out-of-browser, detect the context the application is running in, customize the window, and how to interact with Microsoft Excel.</p>
+        <p>You'll start by using an existing application and enabling the out-of-browser feature.  Next, you’ll determine if the application is running on the desktop or in the browser.  You’ll then customize the look of the application.  Finally you’ll learn how to interact with Microsoft Excel. The Silverlight application that you'll create is shown next:</p>
+        <p>
+          <img src="images\8bcf9f64-f547-47fe-94ca-ccef6ed7e118.png" />
+        </p>
+        <p><b>You will benefit from this lab if:</b></p>
+        <ul>
+          <li>You are coming from a Winforms background and are familiar with developing for the desktop and not the web.</li>
+          <li>You’re looking to develop Desktop applications with Silverlight</li>
+          <li>You’re interested in knowing the capabilities of Silverlight Out-of-Browser.</li>
+        </ul>
+        <p><b>You will learn:</b></p>
+        <ul>
+          <li>How to enable Out-of-Browser.</li>
+          <li>How to create custom windows.</li>
+          <li>How to manipulate the application window from code.</li>
+          <li>The possibilities of Elevated Privileges.</li>
+          <li>How to call external applications with the AutomationFactory.</li>
+        </ul>
+        <p><b>Business Requirements for the Silverlight application include:</b></p>
+        <ul>
+          <li>Enabling Out of Browser</li>
+          <li>Display the correct interface based on the context the application is running under </li>
+          <li>Prompt the user to install the application from the web to their desktop</li>
+          <li>Enable elevated privileges</li>
+          <li>Customize the look of your application</li>
+          <li>Enable the exporting of data to Office products</li>
+        </ul>
+        <a name="_Toc274825636" href="#">
+          <span />
+        </a>
+        <p><b>Estimated Time 45 Minutes</b></p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://contoso.com/contracts/hr" elementFormDefault="qualified" targetNamespace="http://contoso.com/contracts/hr" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62305/SubmitApplication.xamlx?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="SubmitJobApplicationRequest">
+    <xs:sequence>
+      <xs:element name="RequestID" type="ser:guid" />
+      <xs:element name="Resume" nillable="true" type="tns:ApplicantResume" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubmitJobApplicationRequest" nillable="true" type="tns:SubmitJobApplicationRequest" />
+  <xs:complexType name="ApplicantResume">
+    <xs:sequence>
+      <xs:element name="Education" nillable="true" type="xs:string" />
+      <xs:element name="Email" nillable="true" type="xs:string" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="NumReferences" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantResume" nillable="true" type="tns:ApplicantResume" />
+  <xs:complexType name="SubmitJobApplicationResponse">
+    <xs:sequence>
+      <xs:element name="ApplicantName" nillable="true" type="xs:string" />
+      <xs:element name="ApplicationID" type="xs:int" />
+      <xs:element name="ResponseText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubmitJobApplicationResponse" nillable="true" type="tns:SubmitJobApplicationResponse" />
+</xs:schema>

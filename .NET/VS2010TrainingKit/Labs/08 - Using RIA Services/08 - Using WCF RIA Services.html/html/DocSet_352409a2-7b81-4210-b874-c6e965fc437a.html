@@ -1,0 +1,145 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Creating the User Interface" />
+      <MSHelp:RLTitle Title="Exercise 2: Creating the User Interface" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Creating the User Interface</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using WCF RIA Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Creating the User Interface</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll add controls to a Silverlight user interface and add code to call the domain service created in the previous exercise. Throughout the exercise you'll see how data from a domain service can be accessed and bound to controls using a data context object and see how changes to objects are automatically tracked. You'll also send any changes made in the Silverlight client back to the domain service so that data is updated in the database properly.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This exercise uses the DataForm control available in the Silverlight Toolkit. If you don't currently have the Silverlight Toolkit installed, download and install it from http://silverlight.codeplex.com before continuing.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <ol>
+          <li>Highlight the <b>UsingRIAServices</b> project and click the <b>Show All Files</b> icon immediately above the solution name in the Solution Explorer.<p><img src="images\e100b5cb-5a0d-42cb-8213-d8bfe66f86f1.png" /></p><p><b>Figure 5</b><br /><i>Show All Files</i></p></li>
+          <li>Notice that a <b>Generated_Code</b> folder appears that contains the code generated by WCF RIA Services.<p><img src="images\dfda9eb5-4df9-4801-bc53-617442734713.png" /></p><p><b>Figure 6</b><br /><i>Generated Code</i></p></li>
+          <li>Open the <b>UsingRIAServices.Web.g</b> file and take a moment to explore the classes that are in it. Locate the class named <b>AdventureWorksLTDomainContext</b> in the file. This class acts as the "proxy" to communicate from the Silverlight client to the domain service.</li>
+          <li>Open <b>Home.xaml</b> (located in the <b>Views</b> folder of the <b>UsingRIAServices</b> project) in the Visual Studio 2010 designer window and perform the following steps. The layout of the controls on the user interface is shown at the beginning of this lab.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Error: Note format was corrupted. Title should be bold.The user interface that you'll create in this task is the same as the one created in the WCF Services lab. If you've already completed that lab, feel free to copy the XAML from this lab's Completed folder and paste it into Home.xaml.  You can then skip to Exercise 3.</td></tr></table><p /></div><ol><li>Change the <b>TextBlock's Text </b>property from <b>Home</b> to <b>Customer Orders </b>(you can do this through the Properties window by resetting the existing Text property value or by typing it directly in the XAML)</li><li>Delete the <b>TextBlock</b> with a value of <b>Home page content</b></li><li>Add a <b>ComboBox</b> control under the <b>TextBlock</b> and give it a name of <b>CustomersComboBox</b></li><li>Drag a <b>DataGrid</b> control from the ToolBox and place it under the <b>ComboBox</b>. Give it a name of <b>OrdersDataGrid</b></li><li>Ensure that the <b>DataGrid</b> control's <b>AutoGenerateColumns</b> property is set to <b>False</b></li><li>Set the <b>DataGrid</b> control's <b>IsReadOnly</b> property to <b>True</b></li></ol></li>
+          <li>Select the <b>DataGrid</b> in the designer and locate its <b>Columns</b> property in the Properties window. Click the ellipsis button to the right of the <b>Columns</b> property to open up the collection editor dialog.</li>
+          <li>From the dialog window's <b>Select item</b> drop-down list select <b>DataGridTextColumn</b> and click <b>Add</b>. Add a total of 4 columns as shown next:</li>
+          <br />
+          <p>
+            <img src="images\c48ca5e9-daf1-4744-aa35-a8c047c38651.png" />
+          </p>
+          <p>
+            <b>Figure 7</b>
+            <br />
+            <i>DataGrid Collection Editor</i>
+          </p>
+          <li>Select each <b>DataGridTextColumn</b> and change its <b>Header</b> property in the Properties section of the dialog window to one of the following values (Order Date would be assigned to the first column and so on):</li>
+          <li>Order DateShip MethodSub TotalTotal Due</li>
+          <li>Switch to the XAML editor and locate all of the <b>DataGridTextColumns</b> elements that have been added.</li>
+          <li>Add the appropriate <b>Binding</b> attribute shown below to each <b>DataGridTextColumn</b> based upon the column's header text:<p>Binding="{Binding OrderDate,StringFormat=d}"</p><p>Binding="{Binding ShipMethod}"</p><p>Binding="{Binding SubTotal,StringFormat=C}"</p><p>Binding="{Binding TotalDue,StringFormat=C}"</p></li>
+          <li> Add the following template into the <b>ComboBox</b> control using the XAML editor:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;ComboBox.ItemTemplate&gt;    &lt;DataTemplate&gt;        &lt;StackPanel Orientation="Horizontal"&gt;            &lt;TextBlock Text="{Binding FirstName}" /&gt;            &lt;TextBlock Text="{Binding LastName}" Margin="5,0,0,0" /&gt;        &lt;/StackPanel     &lt;/DataTemplate&gt;&lt;/ComboBox.ItemTemplate&gt;</pre></td></tr></table></span></div></li>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

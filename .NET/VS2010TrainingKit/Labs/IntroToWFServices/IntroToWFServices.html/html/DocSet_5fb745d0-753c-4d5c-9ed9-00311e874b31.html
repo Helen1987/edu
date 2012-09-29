@@ -1,0 +1,172 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow Services using .NET Framework 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Windows Workflow Foundation (WF4) in .NET Framework 4 introduces a new way to create web services that combines the power of Windows Communication Foundation (WCF), and the flexibility of WF4. In this lab, you will learn how to use the WF4 messaging activities to implement an HR business workflow scenario. You will also experience the improved hosting, deployment, tracking and troubleshooting capabilities of the new Windows Server AppFabric.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\1850cf79-701b-474c-97c8-e9dc304de6ed.png" />
+                <b> Do I have to do all the exercises?</b>
+                <br />This lab is long. To do all of it will probably take close to 2 hours. The lab is designed so that each exercise can be done independently. Just open the solution found under the Begin folder for the exercise. For example, if you wanted to learn how Windows Server AppFabric makes it easier to deploy an application you would start with Exercise 5 and open the solution from the <b>Source\Ex5 \Begin (choosing the folder that matches the language of your preference)</b> folder.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>Contoso has a business process for filling the open job requisitions in the company. The process will be divided in three tiers: a smart client application, a web site, a middle-tier workflow service, and a data layer.</p>
+        <ol>
+          <li>The applicant submits an application to a workflow service using a Windows Forms client app</li>
+          <li>The workflow service screens the applicant’s education background by calling an Education service</li>
+          <li>If the education screening passes, a human reviewer will receive an email with a link to the website to review the application</li>
+          <li>The web site will call the workflow service to pass the result of the human review</li>
+          <li>The applicant is notified by an email and a callback to the client application</li>
+        </ol>
+        <p>
+          <img src="images\fa0b693b-f700-43c9-8903-0f8f2a8b0391.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Services Diagram for the lab solution</i>
+        </p>
+        <br />
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to:</p>
+        <ul>
+          <li>Use Messaging activities to send data in and out of workflows</li>
+          <li>Configure the Messaging activities for a specific scenario</li>
+          <li>Invoke Add Service Reference to create activities that consume another service</li>
+          <li>Utilize Activity Templates to create pre-configured request-reply patterns</li>
+          <li>Set up Content Based Correlation to correlate messages from the same client</li>
+        </ul>
+        <a name="_Setup" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010 –  <a href="http://msdn.microsoft.com/en-us/vstudio/dd582936.aspx">Download</a></li>
+          <li>Microsoft .NET Framework 4 – <a href="http://msdn.microsoft.com/en-us/vstudio/dd582936.aspx">Download</a></li>
+          <li>SQL Server 2008 Express (included with Visual Studio 2010) – <a href="http://www.microsoft.com/express/Database/">Download</a></li>
+          <li>Microsoft Outlook or Windows Live Mail Client – <a href="http://download.live.com/">Download</a></li>
+          <li>Windows Server AppFabric – Download using the Web Platform Installer – <a href="http://go.microsoft.com/fwlink/?LinkID=169435">Donwload</a></li>
+        </ul>
+        <h1 class="heading">Exercises</h1>
+        <p>This Hands-On Lab comprises the following exercises:</p>
+        <ol>
+          <li>Submit Application Service</li>
+          <li>Email Notification</li>
+          <li>Applicant Screening</li>
+          <li>Deploy the Solution</li>
+          <li>Troubleshooting</li>
+        </ol>
+        <h1 class="heading">Starting Materials</h1>
+        <p>This Hands-On Lab includes the following starting materials.</p>
+        <ul>
+          <li><b>Visual Studio solutions.</b> Depending on the exercise you will find Visual Studio solutions that you can use as starting point for the exercises.</li>
+        </ul>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>
+                <img src="images\8cf1d808-1987-454e-8c5e-10f36e66184f.png" />
+                <b> What if I get stuck?</b>
+                <br />The source code that accompanies this hands-on lab includes an end folder where you can find a Visual Studio solution with the code that you would obtain if you complete the steps in each exercise. You can use this solution as a guide if you need additional help working through the exercises. <br />Remember to build the solutions before opening any file using the workflow designer.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_d799e30d-6080-451e-9e89-ca9e360c3f4a.html">Setup</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Analyzing Test Runs" />
+      <MSHelp:RLTitle Title="Exercise 2: Analyzing Test Runs" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Analyzing Test Runs</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Test Case Management with Microsoft Test Manager 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Analyzing Test Runs</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use the Test activity to analyze test runs.</p>
+        <ol>
+          <li>In Microsoft Test Manager, select the <b>Test</b> tab to open the test activity used by testers. By default, the <b>Run Tests</b> window is loaded.</li>
+          <li>Select the <b>test suite 7</b> node to view the test runs and their states. Note that the test case with ID = 41 is represented three times, one for each configuration that has been configured for it.<p><img src="images\b962be20-4b9d-4894-875e-5c35fb3f00ec.png" /></p><p><b>Figure 21</b><br /><i>Viewing test runs for a test suite [your screen may look different]</i></p></li>
+          <li>Select the <b>test suite 8</b> node to view its test runs. Note that two of the test cases are listed as being blocked. <b>Blocking</b> a test case is an action that can be performed by the tester to indicate that they are unable to perform the test case, perhaps due to something such as a user story not being implemented yet or a dependency requirement not working. For example, if the test case is to create an account on a Web application, and some other related component prevents the tester from even attempting the action, the tester can indicate that they are blocked.<p><img src="images\4210146b-d03d-4e4e-a14c-f5e93a455cb0.png" /></p><p><b>Figure 22</b><br /><i>Blocked test case</i></p></li>
+          <li>Select the <b>Analyze Test Runs</b> link and select the <b>Show Manual Runs</b> button to view the historical test runs for the current test plan. You may need to change the <b>Start date range</b> to <b>All </b>in order to see some test runs.<p><img src="images\2fec4bb5-fe55-436c-a172-747f1f32e90a.png" /></p><p><b>Figure 23</b><br /><i>Analyze Test Runs window</i></p></li>
+          <li>Open the test run with <b>ID = 21</b> by double-clicking on it. A summary shows start and completion timestamps, type, build version, and so on. Expand the <b>Tests</b> area to expose the results of the test run for the associated test cases.<p><img src="images\cc1c4736-9da7-4be9-ad1d-472812db7538.png" /></p><p><b>Figure 24</b><br /><i>Results of a test run</i></p></li>
+          <li>Open one of the test results for the test case with <b>ID = 41</b>. Note that there are a number of attachments that were collected during the test such as system information and a video of the manual test.<p><img src="images\85a20d99-575c-4032-84c3-042629741530.png" /></p><p><b>Figure 25</b><br /><i>Test results example</i></p></li>
+          <li>Close the test results window by selecting the <b>X</b> in the top-right corner of the test results window. Be careful not to close the Test Manager application.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_ba941802-a10d-4404-9e3e-152c1832acad.html">Exercise 3: Selecting Builds to Test Against</a>
+        </p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

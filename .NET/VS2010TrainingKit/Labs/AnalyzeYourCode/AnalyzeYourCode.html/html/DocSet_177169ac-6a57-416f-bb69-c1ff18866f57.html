@@ -1,0 +1,113 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Introduction to Architecture Explorer" />
+      <MSHelp:RLTitle Title="Exercise 1: Introduction to Architecture Explorer" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Introduction to Architecture Explorer</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using the Architecture Explorer in Visual Studio 2010 Ultimate to Analyze Your Code</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Introduction to Architecture Explorer</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use the Architecture Explorer tool to navigate project source structure and to generate DGML diagrams that help illuminate subsets of that chosen structure. </p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Visual Studio from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>In Source Control Explorer (<b>View | Other Windows | Source Control Explorer</b>), navigate to <b>Tailspin Toys | Development | Iteration 2</b> and double-click on the <b>TailspinToys.sln</b> file to open the Tailspin Toys solution.</li>
+          <li>Rebuild the solution (<b>Build | Rebuild Solution</b> from the main menu). This step may take a few minutes to complete.</li>
+          <li>Close the <b>Output</b> window after the build has successfully completed.</li>
+          <li>Load Architecture Explorer (<b>View | Architecture Explorer</b>). Architecture Explorer allows you to navigate the types and methods from code starting from either a class view or a solution view.<p><img src="images\ac920d2a-0a73-4134-aeab-bf897389f58d.png" /></p><p><b>Figure 1</b><br /><i>Initial view of Architecture Explorer</i></p></li>
+          <li>Select the <b>Class View</b> option from Architecture Explorer to view all of the namespaces that are part of the TailspinToys solution. From this point on, clicking on an item from the far right pane will allow you to drill down further into types and members.<p><img src="images\e6843cc9-275b-44b9-8315-65db729a7da6.png" /></p><p><b>Figure 2</b><br /><i>Class view showing namespaces from the TailspinToys solution</i></p></li>
+          <li>Scroll down to find the <b>Tailspin.Admin.App</b> namespace and select it to load its types.<p><img src="images\9271391d-ebf1-49a0-b785-649189226c9f.png" /></p><p><b>Figure 3</b><br /><i>Viewing types for Tailspin.Admin.App namespace</i></p></li>
+          <li>Select the <b>ProductRelationship</b> class type to load its members.<p><img src="images\108f3723-69cd-4757-b7a6-f4fd286a8d3d.png" /></p><p><b>Figure 4</b><br /><i>Viewing members of the ProductRelationship class</i></p></li>
+          <li>Select the <b>Product</b> property member to see that it contains two methods.<p><img src="images\946969bb-9a89-4b16-a636-6150d84eb7ab.png" /></p><p><b>Figure 5</b><br /><i>Viewing methods that implement the Product property</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This step illustrates that Architecture Explorer is operating on compiled code using reflection. As you will see later on in this lab, you can explore compiled .NET code directly from compiled assemblies.</td></tr></table><p /></div></li>
+          <li>Select the <b>get_Product</b> method. <p><img src="images\ee4dda16-96bb-4366-863c-c1ce92f9d7ec.png" /></p><p><b>Figure 6</b><br /><i>Selecting get_Product exposing vertical Calls bar</i></p></li>
+          <li>Each level we drill down into starting with Types has a vertical bar that exposes filtering, grouping, and other commands. Select the vertical <b>Calls</b> bar to expose these options. <p><img src="images\6618014a-b48f-409c-9d5f-5b297010951b.png" /></p><p><b>Figure 7</b><br /><i>Options available when working with type and member nodes</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The figure above is not an exact representation of what you will see. You will have to scroll through to see all of these options.</td></tr></table><p /></div></li>
+          <li>Select the <b>Return Types</b> option found under Outbound Navigation in order to show the return type for get_Product.<p><img src="images\c3e2d9f6-b9df-42b7-b6fb-4b9860e0587f.png" /></p><p><b>Figure 8</b><br /><i>Finding return type of get_Product</i></p></li>
+          <li>Select the <b>Product</b> return type to display its members. Note that we are now navigating the Product type, but we still have the historical steps of our navigation to look through also.<p><img src="images\92e55cbb-e889-4c35-a887-bf997bd871f7.png" /></p><p><b>Figure 9</b><br /><i>Viewing members of the Product type</i></p></li>
+          <li> Select the vertical <b>Members</b> bar immediately to the left of the Product members list and scroll down to the <b>Inbound Navigation</b> section.<p><img src="images\1c872113-31a1-4d7f-975a-65063b2f26cc.png" /></p><p><b>Figure 10</b><br /><i>Viewing options for Product members</i></p></li>
+          <li>Select the <b>All Inbound</b> navigation option to see all calls that reference the Product type.<p><img src="images\ee77cee0-7544-48b5-8a42-5bae90fc678d.png" /></p><p><b>Figure 11</b><br /><i>Viewing incoming references to the Product type</i></p></li>
+          <li>Although this may seem redundant from a navigation perspective, select the <b>Product</b> class type from the list of inbound references.  Once again, you will see get_Product and set_Product listed. </li>
+          <li>Select the <b>Create New Graph</b> button from the left side of Architecture Explorer. This will create a new DGML diagram showing the entire navigation path that you manually took up until this point.<p><img src="images\fb6c0f81-880e-4b0d-97e2-0227dedad388.png" /></p><p><b>Figure 12</b><br /><i>Create New Graph button location</i></p><p><img src="images\7e226f87-f50f-4a03-80d3-d2d1385e6589.png" /></p><p><b>Figure 13</b><br /><i>DGML representation of manual navigation performed in Architecture Explorer</i></p></li>
+          <li>Since this is a DGML diagram, we can use all of the standard tools to view it and add or remove nodes. Select the <b>TailspinToys</b> node and press the <b>Delete</b> key to remove it from the diagram.</li>
+          <li>Return to Architecture Explorer and find the <b>set_Product</b> method that is contained within the Product class. Drag and drop <b>set_Product</b> onto the DGML diagram.<p><img src="images\c567f3b9-1ea7-485d-939b-617dccdcf11e.png" /></p><p><b>Figure 14</b><br /><i>Adding set_Product to the DGML diagram</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>You can view the source for a type by right clicking on it and selecting View Content.</td></tr></table><p /></div></li>
+          <li>Clear the selected columns in Architecture Explorer by selecting the <b>Clear Columns</b> button.<p><img src="images\933d3a1c-2c51-49e9-ae48-29390f69da85.png" /></p><p><b>Figure 15</b><br /><i>Clear Columns button location</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_54f53f45-5445-4d4b-abee-144172477fc8.html">Exercise 2: Analyzing Project Structure using Architecture Explorer and DGML</a>
+        </p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

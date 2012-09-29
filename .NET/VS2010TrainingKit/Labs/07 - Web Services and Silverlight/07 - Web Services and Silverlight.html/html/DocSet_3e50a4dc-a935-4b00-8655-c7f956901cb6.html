@@ -1,0 +1,150 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Lab 07: Working with WCF Services in Silverlight Applications" />
+      <MSHelp:RLTitle Title="Lab 07: Working with WCF Services in Silverlight Applications" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Lab 07: Working with WCF Services in Silverlight Applications</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Services and Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Lab 07: Working with WCF Services in Silverlight Applications</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Windows Communication Foundation (WCF) provides an excellent framework for exchanging data across network boundaries. It can be used to exchange data using standards-based Web Service specifications such as Simple Object Access Protocol (SOAP), Web Service Description Language (WSDL) and WS-I* standards.  Any development framework capable of supporting Web Service standards can be used to call a WCF service including non-.NET frameworks.</p>
+        <p>To create a WCF service you define the ABCs for the service including the Address, Binding and Contract.  The Address defines the URI of the service that a client uses to talk with it.  You can think of it as being similar to a phone number or street address.  The Binding defines the protocol to use while talking with the service. WCF supports several different protocols such as HTTP, TCP, named pipes and more.  Finally, the contract defines the service's Application Programming Interface (API) including the data it can send and receive. The contract includes service operation names, data types used, as well as additional details.</p>
+        <p>WCF is a key player in Silverlight applications that need to access and manipulate data. Although standard WCF service projects can be created a used with Silverlight, The Silverlight Tools for Visual Studio 2010 provides a <i>Silverlight-Enabled WCF Service</i> project template that can be used to create service classes.  The template configures services to use binary message encoding combined with the HTTP protocol which provides excellent performance. A WCF service can be called directly from a Silverlight application using a proxy object that is typically created directly in Visual Studio.</p>
+        <p>In this lab you'll learn how to create a Silverlight-Enabled WCF Service and define operations.  You'll also examine the default configuration for Silverlight-enabled services and create a proxy object that can be used to communicate with a service from a Silverlight client. A bonus exercise is also included that demonstrates how to debug WCF service calls using a tool called Fiddler.  The user interface that you'll build throughout the lab is shown next:</p>
+        <p>
+          <img src="images\ec6c1529-9118-4eca-9522-1a88f5fe16f6.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>User Interface Example</i>
+        </p>
+        <a name="_Toc275958395" href="#">
+          <span />
+        </a>
+        <a name="_Toc276335816" href="#">
+          <span />
+        </a>
+        <p>
+          <b>You Will Benefit from this Lab if:</b>
+        </p>
+        <ul>
+          <li>You need to integrate distributed data into a Silverlight application</li>
+          <li>You're interested in learning more about Windows Communication Foundation fundamentals</li>
+          <li>You're interested in learning how to extend proxy objects using partial classes</li>
+        </ul>
+        <br />
+        <a name="_Toc275958396" href="#">
+          <span />
+        </a>
+        <a name="_Toc276335817" href="#">
+          <span />
+        </a>
+        <p>
+          <b>You Will Learn:</b>
+        </p>
+        <ul>
+          <li>How to create a Silverlight-Enabled WCF Service</li>
+          <li>How to define service operations</li>
+          <li>Best practices for adding code into service operations</li>
+          <li>How to create a proxy object that can be used to call a WCF service</li>
+          <li>How to make asynchronous calls from a Silverlight client to a WCF service</li>
+          <li>How and why to use the IEditableObject interface</li>
+        </ul>
+        <br />
+        <a name="_Toc275958397" href="#">
+          <span />
+        </a>
+        <a name="_Toc276335818" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Business Requirements for the Silverlight application include:</b>
+        </p>
+        <ul>
+          <li>Create a new Silverlight Navigation Application</li>
+          <li>Create an Entity Framework 4 model</li>
+          <li>Create a Silverlight-Enabled WCF Service</li>
+          <li>Customize service methods</li>
+          <li>Create a Silverlight proxy object in Visual Studio</li>
+          <li>Build a user interface</li>
+          <li>Use a proxy object to call a WCF Service</li>
+          <li>Add IEditableObject functionality to a proxy generated class </li>
+        </ul>
+        <br />
+        <p><b>Estimated Time: 60 minutes</b></p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

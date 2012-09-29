@@ -1,0 +1,25 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Browse Albums";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+
+@MyHelpers.ShowTime()
+
+@{
+      var image = new WebImage(@"~\Content\Images\home-showcase.png");
+      image = image.AddImageWatermark(@"~\Content\Images\logo.png", horizontalAlign: "Left", verticalAlign: "Top");
+      var imagePath = @"Content/Images/newimage.png";
+      var saveImagePath = @"~\Content\Images\newimage.png";
+      image.Save(saveImagePath);
+}
+
+<img src="@imagePath" alt="image with watermark"/>
+
+@*
+    <div>
+        I'm inside a comment
+    </div>
+*@
+

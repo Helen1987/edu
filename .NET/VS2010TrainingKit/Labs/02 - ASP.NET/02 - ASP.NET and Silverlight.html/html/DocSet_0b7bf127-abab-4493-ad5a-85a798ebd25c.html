@@ -1,0 +1,130 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Exploring an ASP.NET Web Forms Application" />
+      <MSHelp:RLTitle Title="Exercise 1: Exploring an ASP.NET Web Forms Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Exploring an ASP.NET Web Forms Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating an ASP.NET Web Forms Application to Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Exploring an ASP.NET Web Forms Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Estimated Time: 45 minutes</p>
+        <p> In this exercise you'll open an existing Visual Studio 2010 solution and walk through code found in a WCF and ASP.NET project.  The main goal of the exercise is to get acquainted with an existing ASP.NET application and supporting code to better understand what code can be re-used during the migration to Silverlight. Throughout the exercise you'll view data access code that relies on Entity Framework 4, examine a WCF service contract and run the ASP.NET project to explore the functionality it offers. To get started, follow the steps below.</p>
+        <ol>
+          <li>Open Visual Studio 2010 and then select <b>File  Open Project/Solution</b> from the menu.</li>
+          <li>Open the following Visual Studio solution file:<table style=""><tr valign="top"><th><p>Language</p></th><th><p>Lab Files Location</p></th></tr><tr valign="top"><td><p>C#</p></td><td><p>/MigratingToSilverlight/Starting Point/C#/CustomerViewer/CustomerViewer.sln</p></td></tr><tr valign="top"><td><p>Visual Basic</p></td><td><p>/MigratingToSilverlight/Starting Point/VB/CustomerViewer/CustomerViewer.sln</p></td></tr></table></li>
+          <li>The following projects are available in the solution:<ul><li><b>CustomerService.Model</b> – Contains entities and data repository classes used to access an AdventureWorks LT database.</li><li><b>CustomersService</b> – A WCF service application that exposes entities to various applications.</li><li><b>CustomerViewer </b>– A Windows Forms project that consumes data from a WCF service.</li><li><b>CustomerViewer.Web</b> – An ASP.NET Web Forms project that uses jQuery to make RESTful calls to a WCF service.</li></ul></li>
+          <p>
+            <img src="images\f02a3342-711d-4743-9593-505efbeec013.png" />
+          </p>
+          <p>
+            <b>Figure 2</b>
+            <br />
+            <i>Solution Explorer</i>
+          </p>
+          <li>Right-click on <b>CustomerService.svc</b> in the <b>CustomersService</b> project and select <b>View in Browser</b> from the menu. This will start a local WCF server and show a test page.</li>
+          <li>Back in Visual Studio, right-click on the <b>CustomerViewer.Web</b> project and select <b>Set as StartUp Project</b> from the menu.</li>
+          <li>Run the application by pressing <b>F5</b>. The first time the application runs there will be short delay before data is loaded.</li>
+          <li>Once data loads, notice that customers appear in the DropDownList control. Once a customer is selected the details are shown in the form allowing customer data to be updated or deleted using AJAX techniques.</li>
+          <li>Close the application and locate the <b>CustomerService.Model</b> project.  Double-click the <b>AdventureWorksLT.edmx</b> file to see the Entity Framework 4 model that's exposed. The entity model contains a Customer object that is used by the ASP.NET application.</li>
+          <li>Open <b>CustomerRepository file</b> in the <b>Repository</b> folder and take a moment to look through the code that interacts with the entity model (you might also want to look at the base class named RepositoryBase). This class is responsible for all communication with Entity Framework and acts as a re-useable repository layer in the application.</li>
+          <li>Locate the <b>CustomerService</b> project and view <b>ICustomerService</b> in the editor to see the operations it exposes. The operations are used to load Customer objects and handle update and delete operations. Some of the operations support RESTful calls.  The ASP.NET project currently uses a WCF service proxy object as well as jQuery to communicate with the different service operations.  Service calls are forwarded from the service to the CustomerRepository class examined earlier.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>:<b> </b>WCF services work well in environments where data must be exposed to different types of clients without requiring a specific technology or framework. The application shown in this lab uses WCF services to promote data re-use, allow different types of clients to consume data including ASP.NET and jQuery, and provide a standards-compliant way to access data. </td></tr></table><p /></div></li>
+          <li>Locate the <b>CustomerViewer.Web</b> project, right-click on <b>Default.aspx</b> and select <b>View Code</b> from the menu. Take a moment to explore the code and note the following:<ul><li>A WCF service proxy is used to call a service that supplies customer data</li><li>If an error occurs loading customer data, a script is sent to the client and used to display an alert</li></ul></li>
+          <li>Open <b>Default.aspx</b> and note the following features:<ul><li>A stylesheet named <b>Default.css</b> is used to add CSS styles into the page</li><li>A script named <b>Default.js</b> is loaded by the page</li><li>div tags are used to arrange HTML controls in the page</li></ul></li>
+          <li>Open <b>Scripts/Default.js</b> and take a moment to look through the jQuery code (note that the jQuery script is defined in <b>Site.master</b>). You'll see the following features:<ul><li>jQuery selectors are used to locate controls in the DOM and access their values</li><li><b>jQuery</b><b>AJAX</b> functions such as getJSON are used to communicate with a cross-domain WCF service (JSONP is used in this application since the cross-domain service is trusted) </li></ul></li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

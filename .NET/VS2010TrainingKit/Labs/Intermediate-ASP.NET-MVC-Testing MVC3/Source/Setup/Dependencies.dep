@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DependencyCheckerConfiguration>
+
+  <title>ASP.NET MVC Testing Lab</title>
+  <!--<image>.\Resources\customLogo.png</image>-->
+
+  <previews>
+    <title>Steps Summary</title>
+    <preview name="Check dependencies" description="Check prerequisites for the ASP.NET MVC Testing lab"></preview>
+    <preview name="Install Visual Studio code snippets" description="Launch the Visual Studio installer to install the code snippets"></preview>
+  </previews>
+
+  <tasks>
+    <task description="Launch the Visual Studio installer to install the code snippets" scriptName=".\scripts\tasks\installVSCodeSnippets.cmd" displayConsole="true"/>
+  </tasks>
+
+  <dependencies>
+    <os type="Vista" buildNumber="6000">
+      <dependency
+                      value=".\scripts\Dependencies\Check\CheckVistaSP1.ps1"
+                      enabled="true"
+                      optional="false"
+                      required="true"
+                      title="Windows Vista SP1"
+                      explanation="ASP.NET MVC Testing lab requires Windows Vista Service Pack 1"
+                      scriptName=""
+                      downloadUrl="http://www.microsoft.com/downloads/details.aspx?FamilyID=f559842a-9c9b-4579-b64a-09146a0ba746" />
+    </os>
+
+    <os type="Vista;Server" buildNumber="6001;6002;7100;7600;7601">
+      <dependency
+                      value=".\scripts\Dependencies\Check\CheckVS2010ProfOrSup.ps1"
+                      enabled="true"
+                      optional="false"
+                      required="true"
+                      title="Microsoft Visual Studio 2010"
+                      explanation="ASP.NET MVC Testing lab requires Microsoft Visual Studio 2010"
+                      scriptName=""
+                      downloadUrl="http://www.microsoft.com/visualstudio/en-us/products/2010/default.mspx" />
+
+      <dependency
+                     value=".\scripts\Dependencies\Check\CheckNET4.ps1"
+                     enabled="true"
+                     optional="false"
+                     required="true"
+                     title=".NET Framework 4.0"
+                     explanation="ASP.NET MVC Testing lab requires .NET Framework 4.0"
+                     scriptName=""
+                     downloadUrl="http://www.microsoft.com/visualstudio/en-us/products/2010/default.mspx" />
+
+      <dependency
+                     value=".\scripts\Dependencies\Check\CheckSQL2005or2008.ps1"
+                     enabled="true"
+                     optional="false"
+                     required="true"
+                     title="Microsoft SQL Server 2005 or 2008 Express"
+                     explanation="ASP.NET MVC Testing lab requires SQL Server 2005 or 2008 Express"
+                     scriptName=""
+                     downloadUrl="http://www.microsoft.com/express/sql/download/" />
+
+
+    </os>
+  </dependencies>
+  <errorMessages>
+    <errorMessage error="OperatingSystemNotSupported">
+      <![CDATA[<p><b>The automatic set up can not proceed.</b></br>The lab you are trying to set up has not been tested in your environment, and some features may not work as expected.</br>You can configure your environment manually installing the prerequisites shown in the lab's overview.</p><p><b>Tested Environments: </b>Windows Vista, Windows 7, Windows 2008 and Windows 2008 R2</p><br/>]]>
+    </errorMessage>
+  </errorMessages>
+</DependencyCheckerConfiguration>

@@ -1,0 +1,227 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Packaging and Deploying Web Applications for the Visual Studio Development Web Server" />
+      <MSHelp:RLTitle Title="Exercise 3: Packaging and Deploying Web Applications for the Visual Studio Development Web Server" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Packaging and Deploying Web Applications for the Visual Studio Development Web Server</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Development in Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Packaging and Deploying Web Applications for the Visual Studio Development Web Server</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Most web sites need a lot of artifacts and resources to function properly. Deploying all of these correctly is not a trivial task. Visual Studio 2010 contains a new feature which allows you to create a ZIP file called  <b>Web Package</b> which is a self-describing entity containing all the assets and resources that should be deployed to the server by MSDeploy.</p>
+        <p>In this exercise, you will use this new feature to deploy the web application to the VS Development Web Server.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To complete the tasks in this exercise, you must have completed all the tasks in Exercise 2, or use the solution from the <b><i>%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex03-PackageDeployDevServer\begin\C#\HTMLLab</i></b>folder.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc282089429" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Opening the Project Properties Publish Page and Creating a Package</b>
+        </p>
+        <p>In this task, you will open the product properties page and examine some of the features and settings available.</p>
+        <ol>
+          <li>Open project property pages by right-clicking the HTMLLab project and selecting <b>Properties</b> from the menu. Click the <b>Package/Publish Web</b> tab.</li>
+          <li>Verify that the active build configuration is set to <b>Staging</b> from the build option menu.<p><img src="images\635d81e1-ea24-4d17-bfc7-c7296b7950ab.png" /></p><p><b>Figure 1</b><br /><i>Verifying the Active Build Configuration</i></p><br /></li>
+          <li>Select the <b>Create deployment package as a zip file</b> option, if it is not already selected. Note the path in <b>Package Location</b>. This is where the package will be placed after it is built.<p><img src="images\44fe1ce5-1cdb-446c-89c5-c1cff4d0d789.png" /></p><p><b>Figure 26</b><br /><i>Create package as ZIP file and output path</i></p><br /></li>
+          <li>Using Windows Explorer, navigate to the <b>HTMLLab</b> project directory and then to the <b>obj</b> folder and delete all the content of the folder, if the folder exists.</li>
+          <li>Select the <b>Project</b> menu and click <b>Build Deployment Package</b>. In the <b>Output</b> window observe that the build and publish process have succeeded.<p><img src="images\50460a0f-54d5-4ebb-b26b-212be35ae0e9.png" /></p><p><b>Figure 27</b><br /><i>Successful build and publish</i></p><br /></li>
+          <li>Using Windows Explorer, browse to the relative path specified in the package location textbox referenced above. Note a newly created folder for the selected configuration. Double-click the folder. Double-click the <b>Package</b> folder to open it.<p><img src="images\af26e0c6-e49d-44f4-8753-a05382f97d1f.png" /></p><p><b>Figure 28</b><br /><i>Packaged web application</i></p><br /></li>
+          <li>Note that this folder contains the following items:<ul><li>HTMLLab.deploy.cmd – It is a batch file generated by Visual Studio to help with the installation of the web application on the destination server.</li><li>HTMLLab.deploy-readme.txt – contains detailed information about how you can parameterize the deployment using Web Deploy (msdeploy.exe).</li><li>HTMLLab.SetParameters.xml –This file provides the installation path. By default, this file points to the path specified in the application name to use in the destination server textbox. If you choose to install the package elsewhere, you will need to change the path in this file.</li><li>HTMLLab.SourceManifest.xml –Visual Studio uses this file internally to create the package. The lab ignores this file.</li><li>HTMLLab.zip – The deployable web package.</li></ul></li>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> In most situations, you will be deploying your application to a different machine than the one in which you built the package. In those cases, the three files that you will need to move to the target machine are the <i>ProjectName.deploy.cmd</i>, <i>ProjectName.SetParameters.xml</i>, and <i>ProjectName.zip</i> files.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <a name="_Toc282089430" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Preparing the Web Server for Deployment</b>
+        </p>
+        <p>In this task, you will create a new application on the web server to which this application is to be deployed.</p>
+        <ol>
+          <li>Using Windows Explorer, create a new folder “C:\HTMLWebApp”.</li>
+          <li>Browse to <b>Start</b> | <b>All Programs</b> | <b>Accessories</b>, and click <b>Run</b>. In the <b>Run</b> box type: “inetmgr” and press <b>ENTER</b> to bring up <b>Internet Information Services (IIS) Manager</b>.</li>
+          <li>In the <b>Connections</b> pane, located on the left, expand the node for the local machine. Within that node, expand the node for <b>Sites</b>. You should now see a list of web sites:<p><img src="images\dae05407-78c4-4ff0-96fa-a2b60e95cf70.png" /></p><p><b>Figure 29</b><br /><i>List of local web sites</i></p><br /></li>
+          <li>Right-click the <b>Default Web</b><b>Site</b> and select <b>Add Application</b>.</li>
+          <li>In the <b>Add Application</b> dialog set the Alias to <b>HTMLWebApp</b>, and the <b>Physical path</b> to <b>C:\HTMLWebApp</b>. Take note of the <b>Physical path</b> as you will be deploying the package there. Click the <b>OK</b> button to close the dialog.<p><img src="images\be62328b-7f11-474e-9728-d868d84485b5.png" /></p><p><b>Figure 30</b><br /><i>List of local web sites</i></p><br /></li>
+          <li>In <b>IIS Manager</b>, right-click the new <b>HTMLWebApp</b> Web Application, point to <b>Manage Application</b> and select <b>Advanced Settings</b>. The <b>Advanced Settings</b> dialog will be displayed.<p><img src="images\4003ef55-0a9c-4e9a-aced-0c99133c9668.png" /></p><p><b>Figure 31</b><br /><i>Web application Advanced Settings</i></p><br /><p>Note that the <b>Application Pool</b> is set to <b>DefaultAppPool</b>.</p></li>
+          <li>Select <b>Application Pool</b>, and then click the ellipsis button next to the <b>DefaultAppPool</b> to bring up the <b>Select Application Pool</b> dialog.<p><img src="images\8c7e922c-0ba2-41b2-9b46-14f0ad76ca70.png" /></p><p><b>Figure 32</b><br /><i>Select Application Pool</i></p><br /></li>
+          <li>Using the dropdown list box labeled <b>Application pool</b> select <b>ASP.NET v4.0</b>. Click <b>OK</b> to close the <b>Select Application Pool</b> dialog. Click <b>OK</b> to close the <b>Advanced Settings</b> dialog.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><br /><img src="images\4abd583e-3571-4acf-8ebf-add2e9886043.png" />   Watch Out<br />If IIS was not enabled during the Visual Studio 2010 installation you may need to install ASP.NET into IIS by running the following command from a Visual Studio 2010 Command Prompt with administrator privileges: <b><i>aspnet_regiis.exe –iru</i></b>. After doing this, you will need to close and reopen IIS Manager to see “ASP.NET V4.0”.<br />If you do not see a <b>Deploy</b> menu option it could mean that IIS Web Deployment Tool is not installed or may need to be reconfigured. To fix this you should do the following:<br /> – Download the IIS Web Deployment tool from <a href="http://www.iis.net/extensions/WebDeploymentTool">http://www.iis.net/extensions/WebDeploymentTool</a><br /> – Start the setup<br />If setup shows you the Change /Repair / Remove screen, select Change and install the IIS Manager UI module.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282089431" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Deploying the Package</b>
+        </p>
+        <p>In this task, you will deploy the package to the web application created in the previous task.</p>
+        <ol>
+          <li>To deploy the package to the earlier specified physical location, you will need to change the <b>HTMLLab.SetParameters.xml</b> file. In Windows Explorer, select the <b>HTMLLab.SetParameters.xml</b> file and open it with Visual Studio. The current file content should appear similar to the following.</li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>XML</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;parameters&gt;  &lt;setParameter name="IIS Web Application Name" value="Default Web Site/HTMLLab_deploy" /&gt;  &lt;setParameter name="LoggingConnectionString-Web.config Connection String" value="Server=(local);Database=Logging;Integrated Security=SSPI" /&gt;&lt;/parameters&gt;</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <ol>
+          <li>Replace the <b>ISS Web Application Name</b> element with the following:</li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>XML</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>&lt;setParameter name="IIS Web Application Name" value="Default Web Site/HTMLWebApp" /&gt;</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> The HTMLLab.SetParameters.xml file should be located in the <b>obj\Staging\Package</b> folder of the HTMLLab project.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Click <b>File</b> | <b>Save</b> to save the HTMLLab.SetParameters.xml file.</li>
+          <li>Next, you will deploy the application in Trial mode.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Trial</b> or <b>What If</b> mode does not actually perform the deployment, but shows you what will happen if you install the package. This is very useful in situations where you are handing off your package to a deployment team or server administrator. The team or administrator can then run the package in <b>What If</b> mode to see the impact on the server.</td></tr></table><p /></div><br /></li>
+          <li>Browse to <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Visual Studio Tools</b>. Right-click <b>Visual Studio Command Prompt (2010)</b> and select <b>Run as administrator</b> to open the command prompt.</li>
+          <li>At the command prompt, change the current directory to <b>C:\Program Files\IIS\Microsoft Web Deploy\</b> by typing:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>cd "C:\Program Files\IIS\Microsoft Web Deploy\"</b></pre></td></tr></table></span></div><br /></li>
+          <li>Execute the HTMLLab.deploy.cmd batch file with the <b>/t</b> (for Trial) flag. For example, if you are still using the HTMLLab project from Exercise 1, type:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>"%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab\obj\Staging\Package\HTMLLab.deploy.cmd" /t</b></pre></td></tr></table></span></div><br /><p><img src="images\d94a6985-3d85-46ff-b161-399020cd2e16.png" /></p><p><b>Figure 33</b><br /><i>Executing the deployment command batch file in Trial mode</i></p><br /></li>
+          <li>Examine the output of the Trial deployment.<p><img src="images\422767b2-cc6e-47be-b86f-d03889c41ae3.png" /></p><p><b>Figure 34</b><br /><i>Results of the Trial deployment</i></p><br /><p>MSDeploy has added five additional files to the specified location.</p></li>
+          <li>Execute the deployment by re-running this HTMLLab.deploy.cmd batch file. In this instance remove the <b>/t</b> (trail) flag and replace it with the <b>/y</b> (for Yes) flag by typing:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CMD</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>"%TrainingKitInstallFolder%\Labs\WebDevelopment\Source\Ex01-HTMLCodeSnippets\begin\C#\HTMLLab\obj\Staging\Package\HTMLLab.deploy.cmd" /y</b></pre></td></tr></table></span></div><br /><p><img src="images\5e03d56f-2423-4acb-9af9-57cebd4d7e38.png" /></p><p><b>Figure 35</b><br /><i>Executing the deployment command batch file in Yes mode</i></p><br /></li>
+          <li>Examine the output of the deployment.<p><img src="images\3025c0e5-c3fd-4e3a-a050-60e2c36df602.png" /></p><p><b>Figure 36</b><br /><i>Executing the deployment command batch file in Yes mode</i></p><br /><p>MSBuild has deployed the package to the specified physical location.</p><p><img src="images\4d789876-e3bb-4a82-bd3e-b5ba541f535f.png" /></p><p><b>Figure 37</b><br /><i>Deployed web application package</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_f8ac34c2-e772-4118-bf22-0f556d3073ed.html">Exercise 3: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

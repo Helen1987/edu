@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <automobiles>
+    <make id="hon" name="HONDA">
+      <model id="1" bookValue="20000">ACCORD EX</model>
+      <model id="2" bookValue="21000">ACCORD HYBRID</model>
+      <model id="3" bookValue="17000">ACCORD LX</model>
+      <model id="4" bookValue="25000">ACCORD SE</model>
+      <model id="5" bookValue="27000">ACCORD VP</model>
+      <model id="6" bookValue="17000">CIVIC DX</model>
+      <model id="7" bookValue="19000">CIVIC EX</model>
+      <model id="8" bookValue="21000">CIVIC GX</model>
+      <model id="9" bookValue="22000">CIVIC HYBRID</model>
+      <model id="10" bookValue="22500">CIVIC LX</model>
+      <model id="11" bookValue="23000">CIVIC SI</model>
+      <model id="12" bookValue="25000">CR-V EX</model>
+      <model id="13" bookValue="26000">CR-V LX</model>
+      <model id="14" bookValue="18000">FIT</model>
+      <model id="15" bookValue="19000">FIT SPORT</model>
+      <model id="16" bookValue="20000">ODYSSEY EX</model>
+      <model id="17" bookValue="21000">ODYSSEY LX</model>
+      <model id="18" bookValue="23000">ODYSSEY TOURING</model>
+      <model id="19" bookValue="22000">PILOT EX</model>
+      <model id="20" bookValue="23000">PILOT LX</model>
+    </make>
+    <make id="hyu" name="HYUNDAI">
+      <model id="29" bookValue="20000">ACCENT GLS</model>
+      <model id="30" bookValue="21000">ACCENT GS</model>
+      <model id="31" bookValue="22000">ACCENT SE</model>
+      <model id="32" bookValue="23000">AZERA GLS</model>
+      <model id="33" bookValue="24000">AZERA SE/AZERA LIMITED</model>
+      <model id="34" bookValue="25000">ELANTRA GLS/SE/LIMITED</model>
+      <model id="35" bookValue="26000">ENTOURAGE GLS/SE/LIMITED</model>
+      <model id="36" bookValue="23000">SANTA FE GLS</model>
+      <model id="37" bookValue="24000">SANTA FE GLS AWD</model>
+      <model id="38" bookValue="25000">SANTA FE SE AWD/SANTA FE LTD AWD</model>
+      <model id="39" bookValue="26000">SANTA FE SE/SANTA FE LIMITED</model>
+      <model id="40" bookValue="28000">SONATA GLS</model>
+      <model id="41" bookValue="29000">SONATA SE/SONATA LIMITED</model>
+      <model id="42" bookValue="32000">TIBURON GS</model>
+      <model id="43" bookValue="33000">TIBURON GT/GT LIMITED/SE</model>
+    </make>
+    <make id="saa" name="SAAB">
+      <model id="50" bookValue="30000">9-3 2.0T</model>
+      <model id="51" bookValue="32000">9-3 AERO</model>
+      <model id="52" bookValue="34000">9-5 2.3T</model>
+      <model id="53" bookValue="36000">9-5 AERO</model>
+      <model id="54" bookValue="38000">9-7X AWD</model>
+    </make>
+    <make id="toy" name="TOYOTA">
+      <model id="55" bookValue="25000">4RUNNER LIMITED</model>
+      <model id="56" bookValue="28000">4RUNNER SR5/SPORT EDITION</model>
+      <model id="57" bookValue="30000">AVALON XL/TOURING/XLS/LIMITED</model>
+      <model id="58" bookValue="28000">CAMRY CE/LE/SE/XLE</model>
+      <model id="59" bookValue="29000">CAMRY HYBRID</model>
+      <model id="60" bookValue="30000">CAMRY SOLARA SE/SPORT/SLE</model>
+      <model id="61" bookValue="24000">COROLLA CE/S/LE</model>
+      <model id="62" bookValue="25000">FJ CRUISER</model>
+      <model id="63" bookValue="26000">HIGHLANDER BASE HYBRID/LTD HYBRID</model>
+      <model id="64" bookValue="28000">HIGHLANDER BASE/HIGHLANDER LIMITED</model>
+      <model id="65" bookValue="32000">LAND CRUISER</model>
+      <model id="66" bookValue="34000">MATRIX BASE/MATRIX XR</model>
+      <model id="67" bookValue="38000">PRIUS BASE/PRIUS TOURING</model>
+      <model id="68" bookValue="22000">RAV4</model>
+      <model id="69" bookValue="23000">RAV4 LIMITED</model>
+      <model id="70" bookValue="25000">RAV4 SPORT</model>
+      <model id="71" bookValue="27000">SIENNA CE/SIENNA LE</model>
+      <model id="72" bookValue="28000">SIENNA CE/SIENNA LE</model>
+      <model id="73" bookValue="29000">SIENNA LE AWD</model>
+      <model id="74" bookValue="30000">SIENNA LE AWD</model>
+      <model id="75" bookValue="31000">SIENNA XLE AWD/XLE LIMITED AWD</model>
+      <model id="76" bookValue="32000">SIENNA XLE AWD/XLE LIMITED AWD</model>
+      <model id="77" bookValue="33000">SIENNA XLE/SIENNA XLE LIMITED</model>
+      <model id="78" bookValue="34000">SIENNA XLE/SIENNA XLE LIMITED</model>
+    </make>
+    <make id="vol" name="VOLVO">
+      <model id="88" bookValue="32000">C70 T5</model>
+      <model id="89" bookValue="34000">S40 2.4I</model>
+      <model id="90" bookValue="35000">S40 T5</model>
+      <model id="91" bookValue="38000">S40 T5 AWD</model>
+      <model id="92" bookValue="39000">S60 2.5T</model>
+      <model id="93" bookValue="40000">S60 2.5T AWD</model>
+      <model id="94" bookValue="41000">S60 R AWD</model>
+      <model id="95" bookValue="42000">S60 T5</model>
+      <model id="96" bookValue="43000">S80 3.2</model>
+      <model id="97" bookValue="44000">S80 V8 AWD</model>
+      <model id="98" bookValue="47000">V50 2.4I</model>
+      <model id="99" bookValue="48000">V50 T5</model>
+      <model id="100" bookValue="49000">V50 T5 AWD</model>
+      <model id="101" bookValue="50000">V70 2.4</model>
+      <model id="102" bookValue="51000">V70 2.5T</model>
+      <model id="103" bookValue="52000">V70 R AWD</model>
+      <model id="104" bookValue="55000">XC70 2.5T AWD</model>
+      <model id="105" bookValue="58000">XC90 3.2</model>
+      <model id="106" bookValue="60000">XC90 3.2 AWD</model>
+      <model id="107" bookValue="62000">XC90 V8 AWD</model>
+      <model id="108" bookValue="64000">XC90 V8 AWD SPORT</model>
+    </make>
+    <make id="aud" name="AUDI">
+      <model id="109" bookValue="25000">A3 2.0T</model>
+      <model id="110" bookValue="28000">A3 3.2 QUATTRO S-LINE</model>
+      <model id="111" bookValue="29000">A4 2.0T</model>
+      <model id="112" bookValue="30000">A4 2.0T AVANT QUATTRO</model>
+      <model id="113" bookValue="31000">A4 2.0T AVANT QUATTRO S-LINE</model>
+      <model id="114" bookValue="31500">A4 2.0T QUATTRO</model>
+      <model id="115" bookValue="32000">A4 2.0T QUATTRO S-LINE</model>
+      <model id="116" bookValue="32500">A4 2.0T S-LINE</model>
+      <model id="117" bookValue="33000">A4 3.2</model>
+      <model id="118" bookValue="33500">A4 3.2 AVANT QUATTRO</model>
+      <model id="119" bookValue="34000">A4 3.2 AVANT QUATTRO S-LINE</model>
+      <model id="120" bookValue="34500">A4 3.2 QUATTRO</model>
+      <model id="121" bookValue="35000">A4 3.2 QUATTRO S-LINE</model>
+      <model id="122" bookValue="35500">A4 3.2 S-LINE</model>
+      <model id="123" bookValue="38000">A6 3.2</model>
+      <model id="124" bookValue="39000">A6 3.2 AVANT QUATTRO</model>
+      <model id="125" bookValue="40000">A6 3.2 AVANT QUATTRO S-LINE</model>
+      <model id="126" bookValue="41000">A6 3.2 QUATTRO</model>
+      <model id="127" bookValue="41500">A6 3.2 QUATTRO S-LINE</model>
+      <model id="128" bookValue="42000">A6 3.2 S-LINE</model>
+      <model id="129" bookValue="44000">A6 4.2 QUATTRO</model>
+      <model id="130" bookValue="45000">A6 4.2 QUATTRO S-LINE</model>
+      <model id="131" bookValue="48000">A8 L QUATTRO</model>
+      <model id="132" bookValue="50000">A8 QUATTRO</model>
+      <model id="133" bookValue="55000">Q7 QUATTRO</model>
+      <model id="134" bookValue="58000">Q7 QUATTRO S-LINE</model>
+      <model id="135" bookValue="60000">RS4 QUATTRO</model>
+      <model id="136" bookValue="62000">S4 AVANT QUATTRO</model>
+      <model id="137" bookValue="64000">S4 QUATTRO</model>
+      <model id="138" bookValue="68000">S6 QUATTRO</model>
+      <model id="139" bookValue="70000">S8 QUATTRO</model>
+    </make>
+    <make id="bmw" name="BMW">
+      <model id="140" bookValue="32000">328I</model>
+      <model id="141" bookValue="33500">328XI AWD</model>
+      <model id="142" bookValue="35000">335I</model>
+      <model id="143" bookValue="35500">335XI AWD</model>
+      <model id="144" bookValue="36000">525I</model>
+      <model id="145" bookValue="36500">525XI AWD</model>
+      <model id="146" bookValue="37000">530I</model>
+      <model id="147" bookValue="38000">530XI AWD</model>
+      <model id="148" bookValue="39000">550I</model>
+      <model id="149" bookValue="40000">650I</model>
+      <model id="150" bookValue="41000">750I</model>
+      <model id="151" bookValue="42000">750LI</model>
+      <model id="152" bookValue="45000">760LI</model>
+      <model id="153" bookValue="50000">M5</model>
+      <model id="154" bookValue="60000">M6</model>
+      <model id="155" bookValue="60000">X3 3.0SI AWD</model>
+      <model id="156" bookValue="62000">X5 3.0SI AWD</model>
+      <model id="157" bookValue="64000">X5 4.8I AWD</model>
+      <model id="158" bookValue="65000">Z4 3.0I</model>
+      <model id="159" bookValue="66000">Z4 3.0SI</model>
+      <model id="160" bookValue="68000">Z4 M</model>
+    </make>
+    <make id="for" name="FORD">
+      <model id="161" bookValue="25000">CROWN VICTORIA</model>
+      <model id="162" bookValue="26000">CROWN VICTORIA LX BASE/LX SPORT</model>
+      <model id="163" bookValue="27000">CROWN VICTORIA POLICE INTERCEPTOR</model>
+      <model id="164" bookValue="28000">ECONOLINE VAN E-150</model>
+      <model id="165" bookValue="29000">ECONOLINE VAN E-250</model>
+      <model id="166" bookValue="30000">ECONOLINE VAN E-350 SUPER DUTY</model>
+      <model id="167" bookValue="31000">ECONOLINE WAGON E-150</model>
+      <model id="168" bookValue="32000">ECONOLINE WAGON E-350 SUPER DUTY</model>
+      <model id="169" bookValue="32500">EDGE SE</model>
+      <model id="170" bookValue="33000">EDGE SE AWD</model>
+      <model id="171" bookValue="33500">EDGE SEL</model>
+      <model id="172" bookValue="34000">EDGE SEL AWD</model>
+      <model id="173" bookValue="34500">EDGE SEL PLUS</model>
+      <model id="174" bookValue="35000">EDGE SEL PLUS AWD</model>
+      <model id="175" bookValue="30000">ESCAPE HYBRID</model>
+      <model id="176" bookValue="31000">ESCAPE LIMITED</model>
+      <model id="177" bookValue="32000">ESCAPE XLS</model>
+      <model id="178" bookValue="33000">ESCAPE XLT/ESCAPE XLT SPORT</model>
+      <model id="179" bookValue="34000">EXPEDITION EDDIE BAUER</model>
+      <model id="180" bookValue="35000">EXPEDITION EL EDDIE BAUER</model>
+      <model id="181" bookValue="36000">EXPEDITION EL LIMITED</model>
+      <model id="182" bookValue="37000">EXPEDITION EL XLT/EXPEDITION EL SSV</model>
+      <model id="183" bookValue="38000">EXPEDITION LIMITED</model>
+      <model id="184" bookValue="39000">EXPEDITION XLT</model>
+      <model id="185" bookValue="40000">EXPEDITION XLT/EXPEDITION SSV</model>
+      <model id="186" bookValue="34000">EXPLORER EDDIE BAUER</model>
+      <model id="187" bookValue="34500">EXPLORER LIMITED</model>
+      <model id="188" bookValue="35000">EXPLORER SPORT TRAC LIMITED</model>
+      <model id="189" bookValue="38000">EXPLORER SPORT TRAC XLT</model>
+      <model id="190" bookValue="39000">EXPLORER XLT</model>
+      <model id="191" bookValue="30000">F-150 REGULAR CAB</model>
+      <model id="192" bookValue="31000">F-150 SUPERCAB</model>
+      <model id="193" bookValue="32000">F-150 SUPERCREW</model>
+      <model id="194" bookValue="33000">F-250 SUPER DUTY CREW CAB</model>
+      <model id="195" bookValue="34000">F-250 SUPER DUTY REGULAR CAB</model>
+      <model id="196" bookValue="35000">F-250 SUPER DUTY SUPERCAB</model>
+      <model id="197" bookValue="36000">F-350 SUPER DUTY DRW CREW CAB</model>
+      <model id="198" bookValue="37000">F-350 SUPER DUTY DRW REGULAR CAB</model>
+      <model id="199" bookValue="38000">F-350 SUPER DUTY DRW SUPERCAB</model>
+      <model id="200" bookValue="39000">F-350 SUPER DUTY SRW CREW CAB</model>
+      <model id="201" bookValue="40000">F-350 SUPER DUTY SRW REGULAR CAB</model>
+      <model id="202" bookValue="41000">F-350 SUPER DUTY SRW SUPERCAB</model>
+      <model id="203" bookValue="42000">FIVE HUNDRED LIMITED</model>
+      <model id="204" bookValue="43000">FIVE HUNDRED LIMITED AWD</model>
+      <model id="205" bookValue="44000">FIVE HUNDRED SEL</model>
+      <model id="206" bookValue="45000">FIVE HUNDRED SEL AWD</model>
+      <model id="207" bookValue="36000">FOCUS ZX3 S/SE/SES</model>
+      <model id="208" bookValue="37000">FOCUS ZX4 S/SE/SES</model>
+      <model id="209" bookValue="38000">FOCUS ZX4 ST</model>
+      <model id="210" bookValue="39000">FOCUS ZX5 S/SE/SES</model>
+      <model id="211" bookValue="40000">FOCUS ZXW SE/SES</model>
+    </make>
+    <make id="vwg" name="VOLKSWAGEN">
+      <model id="232" bookValue="23000">EOS</model>
+      <model id="233" bookValue="25000">GTI</model>
+      <model id="234" bookValue="27000">JETTA</model>
+      <model id="235" bookValue="28000">JETTA GLI</model>
+      <model id="235" bookValue="29000">JETTA WOLFSBURG EDITION</model>
+      <model id="236" bookValue="30000">NEW BEETLE</model>
+      <model id="237" bookValue="31000">PASSAT 2.0T</model>
+      <model id="238" bookValue="32000">PASSAT 3.6L</model>
+      <model id="239" bookValue="33000">PASSAT 3.6L 4MOTION AWD</model>
+      <model id="240" bookValue="28000">RABBIT</model>
+      <model id="241" bookValue="40000">TOUAREG AWD</model>
+    </make>
+    <make id="lex" name="LEXUS">
+      <model id="242" bookValue="40000">ES 350</model>
+      <model id="243" bookValue="42000">GS 350</model>
+      <model id="244" bookValue="43000">GS 350 AWD</model>
+      <model id="245" bookValue="44000">GS 430</model>
+      <model id="246" bookValue="45000">GS 450H (GS HYBRID)</model>
+      <model id="247" bookValue="46000">GX 470</model>
+      <model id="248" bookValue="47000">IS 250</model>
+      <model id="249" bookValue="48000">IS 250 AWD</model>
+      <model id="250" bookValue="49000">IS 350</model>
+      <model id="251" bookValue="50000">LS 460</model>
+      <model id="252" bookValue="51000">LS 460 L</model>
+      <model id="253" bookValue="53000">LX 470 BASE/LX 470 LIMITED EDITION</model>
+      <model id="254" bookValue="54000">RX 350</model>
+      <model id="255" bookValue="55000">RX 350 AWD</model>
+      <model id="256" bookValue="56000">RX 400H (RX HYBRID)</model>
+      <model id="257" bookValue="58000">RX 400H (RX HYBRID) AWD</model>
+      <model id="258" bookValue="60000">SC 430</model>
+    </make>
+    <make id="che" name="CHEVROLET">
+      <model id="298" bookValue="20000">AVALANCHE</model>
+      <model id="299" bookValue="22000">AVEO LT</model>
+      <model id="300" bookValue="24000">AVEO SVM/AVEO LS</model>
+      <model id="301" bookValue="25000">COBALT LS</model>
+      <model id="302" bookValue="26000">COBALT LT</model>
+      <model id="303" bookValue="27000">COBALT LTZ</model>
+      <model id="304" bookValue="28000">COBALT SS</model>
+      <model id="305" bookValue="29000">COBALT SS SUPERCHARGED</model>
+      <model id="306" bookValue="28000">COLORADO CREW CAB</model>
+      <model id="307" bookValue="29000">COLORADO EXTENDED CAB</model>
+      <model id="308" bookValue="30000">COLORADO REGULAR CAB</model>
+      <model id="309" bookValue="38000">CORVETTE</model>
+      <model id="310" bookValue="40000">CORVETTE Z06</model>
+      <model id="311" bookValue="30000">EQUINOX LS</model>
+      <model id="312" bookValue="32000">EQUINOX LS AWD</model>
+      <model id="313" bookValue="33000">EQUINOX LT</model>
+      <model id="314" bookValue="34000">EQUINOX LT AWD</model>
+      <model id="315" bookValue="34000">EXPRESS G1500 BASE/LS/LT</model>
+      <model id="316" bookValue="35000">EXPRESS G1500 BASE/LS/LT AWD</model>
+      <model id="317" bookValue="36000">EXPRESS G2500 BASE/LS/LT</model>
+      <model id="318" bookValue="37000">EXPRESS G3500 BASE/LS/LT</model>
+      <model id="319" bookValue="40000">HHR LS</model>
+      <model id="320" bookValue="41000">HHR LT</model>
+      <model id="321" bookValue="42000">HHR PANEL</model>
+      <model id="322" bookValue="31000">IMPALA LS</model>
+      <model id="323" bookValue="32000">IMPALA LT</model>
+      <model id="324" bookValue="33000">IMPALA LTZ</model>
+      <model id="325" bookValue="34000">IMPALA POLICE</model>
+      <model id="326" bookValue="35000">IMPALA SS</model>
+      <model id="327" bookValue="25000">MALIBU LS</model>
+      <model id="328" bookValue="26000">MALIBU LT</model>
+      <model id="329" bookValue="27000">MALIBU LTZ</model>
+      <model id="330" bookValue="28000">MALIBU MAXX LS</model>
+      <model id="331" bookValue="29000">MALIBU MAXX LT</model>
+      <model id="332" bookValue="30000">MALIBU MAXX LTZ</model>
+      <model id="333" bookValue="31000">MALIBU MAXX SS</model>
+      <model id="334" bookValue="32000">MALIBU SS</model>
+      <model id="335" bookValue="34000">MONTE CARLO LS</model>
+      <model id="336" bookValue="35000">MONTE CARLO LT</model>
+      <model id="337" bookValue="36000">MONTE CARLO SS</model>
+      <model id="338" bookValue="38000">SILVERADO 1500 CREW CAB</model>
+      <model id="339" bookValue="40000">SILVERADO 1500 EXTENDED CAB</model>
+      <model id="340" bookValue="41000">SILVERADO 1500 REGULAR CAB</model>
+      <model id="341" bookValue="42000">SILVERADO 2500HD CREW CAB</model>
+      <model id="342" bookValue="44000">SILVERADO 2500HD EXTENDED CAB</model>
+      <model id="343" bookValue="45000">SILVERADO 2500HD REGULAR CAB</model>
+    </make>
+    <make id="chr" name="CHRYSLER">
+      <model id="366" bookValue="20000">300</model>
+      <model id="367" bookValue="21000">300 TOURING</model>
+      <model id="368" bookValue="22000">300 TOURING AWD</model>
+      <model id="369" bookValue="23000">300C</model>
+      <model id="370" bookValue="24000">300C AWD</model>
+      <model id="371" bookValue="25000">300C SRT-8</model>
+      <model id="372" bookValue="26000">ASPEN LIMITED</model>
+      <model id="373" bookValue="28000">CROSSFIRE</model>
+      <model id="374" bookValue="29000">CROSSFIRE LIMITED</model>
+      <model id="375" bookValue="30000">PACIFICA</model>
+      <model id="376" bookValue="31000">PACIFICA AWD</model>
+      <model id="377" bookValue="32000">PACIFICA LIMITED</model>
+      <model id="378" bookValue="33000">PACIFICA LIMITED AWD</model>
+      <model id="379" bookValue="34000">PACIFICA TOURING</model>
+      <model id="380" bookValue="35000">PACIFICA TOURING AWD</model>
+      <model id="381" bookValue="28000">PT CRUISER</model>
+      <model id="382" bookValue="29000">PT CRUISER CONVERTIBLE</model>
+      <model id="383" bookValue="30000">PT CRUISER GT TURBO</model>
+      <model id="384" bookValue="31000">PT CRUISER GT TURBO CONVERTIBLE</model>
+      <model id="385" bookValue="32000">PT CRUISER LIMITED</model>
+      <model id="386" bookValue="33000">PT CRUISER LIMITED TURBO</model>
+      <model id="387" bookValue="34000">PT CRUISER TOURING</model>
+      <model id="388" bookValue="35000">PT CRUISER TOURING CONVERTIBLE</model>
+      <model id="389" bookValue="36000">PT CRUISER TOURING TURBO CONV</model>
+      <model id="390" bookValue="35000">SEBRING</model>
+      <model id="391" bookValue="38000">SEBRING LIMITED</model>
+      <model id="392" bookValue="39000">SEBRING TOURING</model>
+    </make>
+    <make id="dod" name="DODGE">
+      <model id="397" bookValue="23000">CALIBER R/T</model>
+      <model id="398" bookValue="24000">CALIBER R/T AWD</model>
+      <model id="399" bookValue="25000">CALIBER SE</model>
+      <model id="400" bookValue="26000">CALIBER SXT</model>
+      <model id="401" bookValue="31000">CARAVAN C/V</model>
+      <model id="402" bookValue="32000">CARAVAN SE</model>
+      <model id="403" bookValue="33000">CARAVAN SXT</model>
+      <model id="404" bookValue="34000">CHARGER R/T</model>
+      <model id="405" bookValue="35000">CHARGER R/T AWD</model>
+      <model id="406" bookValue="36000">CHARGER SE/CHARGER SXT</model>
+      <model id="407" bookValue="37000">CHARGER SRT-8</model>
+      <model id="408" bookValue="38000">CHARGER SXT AWD</model>
+      <model id="409" bookValue="23000">DAKOTA LARAMIE</model>
+      <model id="410" bookValue="24000">DAKOTA SLT</model>
+      <model id="411" bookValue="25000">DAKOTA ST</model>
+      <model id="412" bookValue="26000">DURANGO LIMITED</model>
+      <model id="413" bookValue="28000">DURANGO SLT</model>
+      <model id="414" bookValue="29000">DURANGO SXT</model>
+      <model id="415" bookValue="30000">GRAND CARAVAN C/V</model>
+      <model id="416" bookValue="31000">GRAND CARAVAN SE</model>
+      <model id="417" bookValue="31000">GRAND CARAVAN SXT/SXT SPECIAL EDT</model>
+      <model id="418" bookValue="33000">NITRO R/T</model>
+      <model id="419" bookValue="33500">NITRO SLT</model>
+      <model id="420" bookValue="35000">NITRO SXT</model>
+      <model id="421" bookValue="40000">SPRINTER 2500</model>
+      <model id="422" bookValue="41000">SPRINTER 3500</model>
+    </make>
+    <make id="mer" name="MERCEDES BENZ">
+      <model id="439" bookValue="33000">C230 SPORT</model>
+      <model id="440" bookValue="34000">C280</model>
+      <model id="441" bookValue="35000">C280 4MATIC AWD</model>
+      <model id="442" bookValue="36000">C350 4MATIC AWD</model>
+      <model id="443" bookValue="37000">C350 SPORT</model>
+      <model id="444" bookValue="38000">CL550</model>
+      <model id="445" bookValue="39000">CL600</model>
+      <model id="446" bookValue="40000">CLK350</model>
+      <model id="447" bookValue="41000">CLK550</model>
+      <model id="448" bookValue="42000">CLK63 AMG</model>
+      <model id="449" bookValue="44000">CLS550</model>
+      <model id="450" bookValue="45000">CLS63 AMG</model>
+      <model id="451" bookValue="46000">E320 BLUETEC</model>
+      <model id="452" bookValue="47000">E350</model>
+      <model id="453" bookValue="48000">E350 4MATIC AWD</model>
+      <model id="454" bookValue="49000">E550</model>
+      <model id="455" bookValue="50000">E550 4MATIC AWD</model>
+      <model id="456" bookValue="51000">E63 AMG</model>
+      <model id="457" bookValue="52000">G500 4MATIC AWD</model>
+      <model id="458" bookValue="54000">G55 AMG 4MATIC AWD</model>
+      <model id="459" bookValue="55000">GL320 CDI 4MATIC AWD</model>
+      <model id="460" bookValue="56000">GL450 4MATIC AWD</model>
+      <model id="461" bookValue="57000">ML320 CDI 4MATIC AWD</model>
+      <model id="462" bookValue="58000">ML350 4MATIC AWD</model>
+      <model id="463" bookValue="60000">ML500 4MATIC AWD</model>
+      <model id="464" bookValue="61000">ML63 4MATIC AWD</model>
+      <model id="465" bookValue="62000">R320 CDI 4MATIC AWD</model>
+      <model id="466" bookValue="64000">R350 4MATIC AWD</model>
+      <model id="467" bookValue="65000">R500 4MATIC AWD</model>
+      <model id="468" bookValue="66000">R63 AMG 4MATIC AWD</model>
+      <model id="469" bookValue="67000">S550</model>
+      <model id="470" bookValue="68000">S550 4MATIC AWD</model>
+      <model id="471" bookValue="69000">S600</model>
+      <model id="472" bookValue="70000">S65 AMG</model>
+      <model id="473" bookValue="71000">SL55 AMG</model>
+      <model id="474" bookValue="72000">SL550</model>
+      <model id="475" bookValue="73000">SL600</model>
+      <model id="476" bookValue="74000">SL65 AMG</model>
+      <model id="477" bookValue="75000">SLK280</model>
+      <model id="478" bookValue="78000">SLK55 AMG</model>
+    </make>
+    <make id="por" name="PORSCHE">
+      <model id="480" bookValue="40000">911 CARRERA BASE/911 CARRERA 4</model>
+      <model id="481" bookValue="42000">911 CARRERA S/911 CARRERA 4S</model>
+      <model id="482" bookValue="45000">911 GT3/911 GT3 RS</model>
+      <model id="483" bookValue="48000">911 TARGA 4</model>
+      <model id="484" bookValue="50000">911 TARGA 4S</model>
+      <model id="485" bookValue="55000">911 TURBO</model>
+      <model id="486" bookValue="0">BOXSTER (BAD DATA)</model>
+      <model id="487" bookValue="48000">BOXSTER S</model>
+      <model id="488" bookValue="52000">CAYMAN</model>
+      <model id="489" bookValue="54000">CAYMAN S</model>
+    </make>
+  </automobiles>
+  <bodystyles>
+    <option id="1" factor="0.90">4 Door Sedan</option>
+    <option id="2" factor="0.94">2 Door Coupe</option>
+    <option id="3" factor="1">Other</option>
+  </bodystyles>
+  <braketypes>
+    <option id="1" factor="1.1">None</option>
+    <option id="2" factor="1">2 Wheel</option>
+    <option id="3" factor="0.9">4 Wheel</option>
+  </braketypes>
+  <safetyequipment>
+    <option id="1" factor="1.2">None</option>
+    <option id="3" factor="1.1">Non-Motorized Seat Belts</option>
+    <option id="2" factor="1">Motorized Seat Belts</option>
+    <option id="4" factor="1">Driver Air Bag</option>
+    <option id="5" factor="0.95">Full Front Air Bags</option>
+    <option id="6" factor="0.9">Full Front Factory Removable</option>
+    <option id="7" factor="0.85">Full Front w/Side Impact Bags</option>
+  </safetyequipment>
+  <antitheftdevices>
+    <option id="1" factor="1.3">None</option>
+    <option id="2" factor="1.2">1 - Ignition or Starter Cut-Off</option>
+    <option id="4" factor="1.1">2 - Passive Alarm</option>
+    <option id="3" factor="1">3 - Active Alarm</option>
+    <option id="5" factor="0.95">4 - Vehicle Recovery System</option>
+  </antitheftdevices>
+</root>

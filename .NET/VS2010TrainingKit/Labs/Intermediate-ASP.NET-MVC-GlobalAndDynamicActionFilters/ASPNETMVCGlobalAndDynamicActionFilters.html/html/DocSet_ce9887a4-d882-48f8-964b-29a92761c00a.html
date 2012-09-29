@@ -1,0 +1,138 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Creating a Global Dynamic Filter" />
+      <MSHelp:RLTitle Title="Exercise 2: Creating a Global Dynamic Filter" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Creating a Global Dynamic Filter</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Global and Dynamic Action Filters</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Creating a Global Dynamic Filter</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to create a global dynamic filter that will get executed or not depending on the context. This means that you could set any filter as global, but use it only for the controllers or actions that satisfy a certain condition. For that purpose you will implement <b>GetFilters</b> method in your custom filter provider to add your own logic behind the filter retrieval.</p>
+        <a name="_Toc282146890" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Filter Provider</b>
+        </p>
+        <p>In this task, you learn how custom Filter Providers manage the global behavior of any MVC Filter. You will create a custom Filter Provider that stores the controller actions to log and applies the filter when an action is in the list.</p>
+        <ol>
+          <li>Open <b>Begin</b> solution from <b>\Ex02 – Global Dynamic Filter\Begin</b>.</li>
+          <li>Create a new C# class in <b>Filters</b> folder and rename it <b>ActionLogFilterProvider.cs</b>.</li>
+          <li>Add the reference to the <b>System.Web.Mvc</b> namespace.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;<b>using System.Web.Mvc;</b>namespace MvcMusicStore.Filters{    public class ActionLogFilterProvider    {    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Make <b>ActionLogFilterProvider</b> implement the interface <b>IFilterProvider</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public class ActionLogFilterProvider : IFilterProvider</pre></td></tr></table></span></div><br /></li>
+          <li>Define the internal class <b>ControllerAction</b> inmediatly after <b>ActionLogFilterProvider</b> class definition that will have a controller and action names as the members.<p>(Code Snippet – ASP.NET Global and Dynamic Action Filters – Ex2 ControllerAction – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;namespace MvcMusicStore.Filters{    public class ActionLogFilterProvider    {    }<b>    internal class ControllerAction</b><b>    {</b><b>        internal string ControllerName { get; set; }</b><b>        internal string ActionName { get; set; }</b><b>    }</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Then define a list of <b>ControllerAction </b>elements as new <b>ActionLogFilter</b> property:<p>(Code Snippet – ASP.NET Global and Dynamic Action Filters – Ex2 Actions List – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;namespace MvcMusicStore.Filters{    public class ActionLogFilterProvider : IFilterProvider    {<b>        private IList&lt;ControllerAction&gt; actions = new List&lt;ControllerAction&gt;();</b>    }    internal class ControllerAction    {        internal string ControllerName { get; set; }        internal string ActionName { get; set; }    }}</pre></td></tr></table></span></div><br /></li>
+          <li>Create an <b>Add</b> method to <b>ActionLogFilterProvider</b> class to store in the list all the controllers and actions that will be logged:<p>(Code Snippet – ASP.NET Global and Dynamic Action Filters – Ex2 Add Method – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…private IList&lt;ControllerAction&gt; actions = new List&lt;ControllerAction&gt;();<b>public void Add(string controllername, string actionname)</b><b>{</b><b>    actions.Add(new ControllerAction() { ControllerName = controllername, ActionName = actionname });</b><b>}</b>…</pre></td></tr></table></span></div><br /></li>
+          <li>Implement in <b>ActionLogFilterProvider</b> class the method <b>GetFilters </b>that will read the list of controller actions and evaluate which ones apply to the filter.<p>(Code Snippet – ASP.NET Global and Dynamic Action Filters – Ex2 GetFilters – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>…<b>public IEnumerable&lt;Filter&gt; GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)</b><b>{</b><b>    foreach (ControllerAction action in actions)</b><b>        if ((action.ControllerName == actionDescriptor.ControllerDescriptor.ControllerName || action.ControllerName == "*")</b><b>            &amp;&amp; (action.ActionName == actionDescriptor.ActionName || action.ActionName == "*")) {</b><b>                yield return new Filter(new ActionLogFilterAttribute(), FilterScope.First, null);</b><b>            break;</b><b>        }</b><b>    yield break;</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b> </b>This implementation of <b>GetFilters</b> method checks if the controller name and the action name are in the list and returns a new instance of the custom action filter class <b>ActionLogFilterAttribute</b>. You could also use the <b>Controller Context</b> parameter to add more complex logic to this method.<br />The <b>"*" </b>will be used as a wildcard for not filtering by a controller name or an action name. You can find <b>ControllerContext </b>class reference in this article at <a href="http://msdn.microsoft.com/en-us/library/dd492673.aspx">msdn</a>.</td></tr></table><p /></div><br /></li>
+          <li>Your filter provider class should finally look like this:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;namespace MvcMusicStore.Filters{    public class ActionLogFilterProvider : IFilterProvider    {        private IList&lt;ControllerAction&gt; actions = new List&lt;ControllerAction&gt;();        public void Add(string controllername, string actionname)        {            actions.Add(new ControllerAction() { ControllerName = controllername, ActionName = actionname });        }        public IEnumerable&lt;Filter&gt; GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)        {            foreach (ControllerAction action in actions)                if ((action.ControllerName == actionDescriptor.ControllerDescriptor.ControllerName || action.ControllerName == "*")                    &amp;&amp; (action.ActionName == actionDescriptor.ActionName || action.ActionName == "*"))                {                    yield return new Filter(new ActionLogFilterAttribute(), FilterScope.First, null);                    break;                }            yield break;        }    }    internal class ControllerAction    {        internal string ControllerName { get; set; }        internal string ActionName { get; set; }    }}</pre></td></tr></table></span></div><br /><p>In the following step you will add this provider to the global filter provider collection.</p></li>
+        </ol>
+        <a name="_Toc282146891" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Registering a Global Filter</b>
+        </p>
+        <p>In this task, you will register a custom filter provider as global in the <b>Global.asax.cs</b>.</p>
+        <ol>
+          <li>Add an instance of your filter provider into <b>MVC FilterProvider</b> collection, in the method <b>RegisterGlobalFilters </b>at <b>Global.asax.cs</b> class:<p>(Code Snippet – ASP.NET Global and Dynamic Action Filters – Ex2 LogProviders – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public static void RegisterGlobalFilters(GlobalFilterCollection filters){    filters.Add(new HandleErrorAttribute());<b>    ActionLogFilterProvider provider = new ActionLogFilterProvider();</b><b>    provider.Add("Account", "LogOn");</b><b>    provider.Add("Store", "*");</b><b>    provider.Add("*", "Index");</b><b>    FilterProviders.Providers.Add(provider);</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>ActionLogFilterProvider </b>Add method receives the controller name and the action name parameters of the elements that will perform logging. In this solution the elements are:<br /><b>1.  “Account” ,“LogOn”: </b>By sending the controller and the view you add logging to a specific functionality<br /><b>2. “Store”, “*”: </b>Using the wildcard “*” at action name, All the actions from “Store” are logged<br /><b>3.  “*”, “index”: </b>Using the wildcard “*” at controller name, All actions “index” at any controller are logged</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282146892" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Running the Application</b>
+        </p>
+        <p>In this task, you will check that the controllers added to the filter provider list are actually performing the log.</p>
+        <ol>
+          <li>Press <b>F5 </b>to run the application.</li>
+          <li>Browse to <b>/ActionLog </b>to see the initial status of the log:<p><img src="images\854a3153-b41a-4625-897d-3d6edba96e32.png" /></p><p><b>Figure 3</b><br /><i>ActionLogView Initial state</i></p><br /></li>
+          <li>Browse <b>/StoreManager </b>to see the <b>LogOn </b>view, which is selected for the log filter.</li>
+          <li>Browse <b>/Account/Register</b> view, which is not selected for the log filter.</li>
+          <li>Browse <b>/ActionLog</b> and press <b>F5</b> to see the logged information:<p><img src="images\ca78d66c-d2e1-4f96-ae95-d434d8a21cc7.png" /></p><p><b>Figure 4</b><br /><i>ActionLogView: logged activity only for the selected views</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_a1ed5bf4-f43f-4672-85d1-dbc7f27929db.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

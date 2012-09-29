@@ -1,0 +1,45 @@
+﻿// ----------------------------------------------------------------------------------
+// Microsoft Developer & Platform Evangelism
+// 
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// 
+// THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
+// EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES 
+// OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+// ----------------------------------------------------------------------------------
+// The example companies, organizations, products, domain names,
+// e-mail addresses, logos, people, places, and events depicted
+// herein are fictitious.  No association with any real company,
+// organization, product, domain name, email address, logo, person,
+// places, or events is intended or should be inferred.
+// ----------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace FabrikamInsurance.Models
+{
+    public static class Helpers
+    {
+        public static IEnumerable<SelectListItem> AsSelectList(this IEnumerable<KeyValuePair<string, string>> list)
+        {
+            return from item in list
+                   select new SelectListItem() { Value = item.Key, Text = item.Value };
+        }
+
+        public static IEnumerable<SelectListItem> AsSelectList(this IEnumerable<Factor> list)
+        {
+            return from item in list
+                   select new SelectListItem() { Value = item.Id, Text = item.Name };
+        }
+
+        public static IEnumerable<SelectListItem> AsSelectList(this IEnumerable<int> list)
+        {
+            return from item in list
+                   select new SelectListItem() { Value = item.ToString(), Text = item.ToString() };
+        }
+    }
+}

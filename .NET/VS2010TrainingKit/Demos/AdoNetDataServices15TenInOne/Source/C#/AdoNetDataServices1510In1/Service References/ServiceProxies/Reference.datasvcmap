@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c2f7fb5-044a-436f-af06-e268bdb15c7f" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3918/RowCount/RowCountService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="d0d17bff-6a35-41db-8b07-2365c5ff86cd" SourceId="1" SourceUrl="http://localhost:3918/RowCount/RowCountService.svc" />
+  </Metadata>
+  <Extensions />
+</ReferenceGroup>

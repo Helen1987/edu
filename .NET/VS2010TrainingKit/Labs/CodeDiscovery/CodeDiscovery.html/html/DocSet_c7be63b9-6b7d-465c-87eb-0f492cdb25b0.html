@@ -1,0 +1,120 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Dependency Graph Generation and Navigation" />
+      <MSHelp:RLTitle Title="Exercise 1: Dependency Graph Generation and Navigation" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Dependency Graph Generation and Navigation</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Code Discovery using the Architecture Tools in Visual Studio 2010 Ultimate</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Dependency Graph Generation and Navigation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to generate a dependency graph that shows relationships between application assembly types (such as calls, inherits from, returns, and so on), generated generic types, and external assembly types. Relationship navigation and zooming will also be introduced.</p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Visual Studio from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>In Source Control Explorer (<b>View | Other Windows | Source Control Explorer</b>), navigate to <b>Tailspin Toys | Development | Iteration 2</b> and double-click on the <b>TailspinToys.sln</b> file to open the Tailspin Toys solution.</li>
+          <li>Rebuild the solution (<b>Build | Rebuild Solution</b> from the main menu). This step may take a few minutes to complete.</li>
+          <li>From the main menu, navigate to <b>Architecture | Generate Dependency Graph</b> to expose the four options available (<i>By Assembly</i>, <i>By Namespace</i>, <i>By Class</i>, and <i>Custom</i>).<p><img src="images\c3bce1c7-d2ff-4f4c-ae58-d2c1f9c553bc.png" /></p><p><b>Figure 1</b><br /><i>Dependency graph options</i></p></li>
+          <li>Select <b>Custom… </b>and take note of the various levels of detail that can be included in the generated dependency graph. Note that a sample preview is generated showing the general graph structure for the currently selected options.<br /><p><img src="images\bf5108f9-93f5-4af7-b9c4-bbab48c74b23.png" /></p><p><b>Figure 2</b><br /><i>Including Assemblies for dependency graph</i></p><p><img src="images\1fdcf817-5332-4c4e-8711-174fe09a5372.png" /></p><p><b>Figure 3</b><br /><i>Including Assemblies, Namespaces, Types, and Methods for dependency graph</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>It is also possible to include/exclude types and methods by access modifier (public, protected, private). Click on the down arrow next to the Access Filter heading if you want to see these options.</td></tr></table><p /></div></li>
+          <li>Select the <b>Cancel</b> button to close the Generate Dependency Graph window.</li>
+          <li>Generate a dependency graph by assembly (<b>Architecture | Generate Dependency Graph | By Assembly</b>).<p><img src="images\1a27931a-5f80-4fbe-8001-de2356c0d271.png" /></p><p><b>Figure 4</b><br /><i>Generating dependency graph by assembly</i></p></li>
+          <li>The result of the graph generation is a DGML document (Directed Graph Markup Language) which you can work with using Visual Studio 2010 as well as other standard tools. Look at the <b>Output</b> window to get an idea of the steps taken to generate dependency graphs.<p><img src="images\dcaf7195-5f21-4007-8263-c33e7643cdbd.png" /></p><p><b>Figure 5</b><br /><i>Output from dependency graph generation</i></p></li>
+          <li>Close the Output window to provide more room for the dependency graph. The graph is currently in a fully collapsed state so that you can see all of the assemblies at once. Gray lines of varying thicknesses represent the magnitude of relationship interdependencies between assemblies, with thicker lines equating to more relationships.<p><img src="images\b1be026a-b7e6-4f25-bba7-c32ca390b7b6.png" /></p><p><b>Figure 6</b><br /><i>Generated dependency graph showing output assemblies and dependencies</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In addition to the output assemblies, groups named <b>Externals</b> and <b>Generics</b> are created. The Externals group includes all externally referenced assemblies whereas Generics includes the generic types generated.</td></tr></table><p /></div></li>
+          <li>Expand the <b>Generics</b> group by clicking the down arrow.<p><img src="images\23186d79-de28-47d5-a7d3-daa9c07aa531.png" /></p><p><b>Figure 7</b><br /><i>Down arrow location</i></p></li>
+          <li>Use the <b>Zoom</b> drop down from the <b>Directed Graph</b> toolbar to zoom to <b>100%</b>. This allows us to see more details on the generic types.<p><img src="images\bbeeba31-337c-48de-9b23-ac5e28d8ec3f.png" /></p><p><b>Figure 8</b><br /><i>Location of Zoom drop down</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Zooming can also be done with the <b>+</b> and <b>–</b> magnifying glass icons next to the Zoom drop down, or alternatively using <b>Ctrl + mouse scroll wheel</b>.</td></tr></table><p /></div></li>
+          <li>Left-click on the <b>ICollection&lt;Image&gt;</b> box to show the relationship lines (in blue). Next, hover the mouse cursor over the relationship lines until you find the one with a <b>Target Node</b> of <b>Image</b>.<p><img src="images\8c270cc0-f99a-4fc7-a0e3-3b168ce05dd5.png" /></p><p><b>Figure 9</b><br /><i>Relationship line showing that the target node is of type Image</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The generated dependency graph views that you see may be different from the screenshots shown in this lab manual. You may need to perform additional zooming, scrolling, and visually searching for objects specified in the lab steps.</td></tr></table><p /></div></li>
+          <li>Click on the arrow to navigate to the target node (<b>Image</b>).<p><img src="images\9a3d1957-f477-413a-abe9-2390a1b3fc5a.png" /></p><p><b>Figure 10</b><br /><i>Location of target node navigation button</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The navigation control that appears when hovering over a blue relationship line exposes three actions. The two arrows navigate to either the source or the target node of the relationship (depending upon context). The + button will help you generate a new graph with just the source and target nodes.</td></tr></table><p /></div></li>
+          <li>After the graph is re-built and displayed, the <b>Image</b> class will be shown with all of its relationship lines. <p><img src="images\818331b8-bf35-48d8-9cb3-0a9f083c4802.png" /></p><p><b>Figure 11</b><br /><i>Zoomed in to Image class</i></p></li>
+          <li><b>Zoom to fit</b> the dependency graph to the visible screen (Zoom drop down).<p><img src="images\fd1a0055-be09-4a95-bfb1-bff78d655d0e.png" /></p><p><b>Figure 12</b><br /><i>Relationship between Image class from Tailspin.Model namespace (bottom-right red circle) and ICollection&lt;Image&gt; generic interface (top-left red circle)</i></p></li>
+          <li>Return to the original collapsed view of the dependency graph by <b>right-clicking </b>and selecting <b>Group | Collapse All</b>.<p><img src="images\fcb29fee-56b3-4d0d-b8c5-dcaf3c8fa822.png" /></p><p><b>Figure 13</b><br /><i>Context menu showing Collapse All option</i></p></li>
+          <li>Expand the <b>Externals</b> node from the dependency graph to expose the external assemblies used by the Tailspin application.</li>
+          <li>Zoom into and expand the <b>System.Web.dll </b>node within the Externals group so that you can see all namespaces containing types used by the Tailspin application.<p><img src="images\3c4b00a8-7a7d-43bf-ad02-d962206f1b9f.png" /></p><p><b>Figure 14</b><br /><i>View of System.Web.dll node from dependency graph</i></p></li>
+          <li>Find and select the<b> System.Web.Routing</b> and<b> System.Web.UI</b> nodes by left-clicking and dragging a selection box around them, or alternatively by using the Ctrl-click selection method.<p><img src="images\58cc7612-c63a-4850-809e-7b25a8486483.png" /></p><p><b>Figure 15</b><br /><i>Two namespace nodes selected from dependency graph</i></p></li>
+          <li>Find the relationship line with a source node of Application_Start and a target node of get_Routes. Use the navigation control to navigate to the source <b>Application_Start</b> node. This action will expand the Tailspin.Web.dll and select the MvcApplication class node.<p><img src="images\33e167aa-772f-4a44-9aa9-4d73071ed402.png" /></p><p><b>Figure 16</b><br /><i>Location of navigation button that is linked to Application_Start</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Relationship lines are sometimes displayed on top of each another, making it difficult to select a specific one. To fix this, zoom in until the lines are differentiated or use the graph layout buttons to the right of the Zoom drop down in the Directed Graph toolbar.</td></tr></table><p /></div></li>
+          <li>Navigating to the Application_Start node takes you to a drilled-in view by expanding the Tailspin.Web.dll assembly, the Tailspin.Web namespace, the MvcApplication class, and finally the Application_Start method.<p><img src="images\9b72244d-1d4f-4641-aa16-4dc438955ee0.png" /></p><p><b>Figure 17</b><br /><i>Result of navigation to Application_Start node</i></p></li>
+          <li>Return to the original collapsed view of the dependency graph by <b>right-clicking </b>and selecting <b>Group | Collapse All</b>.</li>
+          <li><b>Zoom to fit</b> the dependency graph to the visible screen (Zoom drop down).</li>
+          <li>Expand the <b>Externals</b> node from the dependency graph to expose the external assemblies used by the Tailspin application.</li>
+          <li>Zoom into and expand the<b> System.Web.dll </b>node within the Externals group so that you can see all namespaces containing types used by the Tailspin application.</li>
+          <li>Expand the <b>System.Web.UI</b> namespace node to view all of the types used by the Tailspin application.<p><img src="images\7bf17ebe-10e7-4762-ba3e-ed099a5b6557.png" /></p><p><b>Figure 18</b><br /><i>Types from System.Web.UI namespace used by the Tailspin application</i></p></li>
+          <li>Expand the <b>Page</b> class to view all of the methods used by the Tailspin application.<p><img src="images\eedab9ac-d9da-4a30-93cb-f367556a8224.png" /></p><p><b>Figure 19</b><br /><i>Methods from the Page class used by the Tailspin application</i></p></li>
+          <li>Select the <b>get_Request</b> node within the Page class and locate the relationship line with source node <b>Page_Load</b>. This relationship line shows us exactly how we are using the external Page class from the Tailspin application.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_50abc691-156f-415b-84df-aa9310a51d6a.html">Exercise 2: Working with Graph Nodes and Grouping</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

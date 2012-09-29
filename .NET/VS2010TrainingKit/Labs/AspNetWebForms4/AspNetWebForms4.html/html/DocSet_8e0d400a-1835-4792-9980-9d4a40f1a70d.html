@@ -1,0 +1,232 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Controlling Server Control ClientIDs" />
+      <MSHelp:RLTitle Title="Exercise 2: Controlling Server Control ClientIDs" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Controlling Server Control ClientIDs</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ASP.NET Web Forms 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Controlling Server Control ClientIDs</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to control the client side IDs that are generated from ASP.NET server controls by the framework. Previously the framework would modify the client side IDs to uniquely identify each control. This sometimes left you with the ID you defined in markup or sometimes left you with something that looks like this, "ctl00_MasterPageBody_ctl01_Textbox1".</p>
+        <p>The modification of the client side id property works great to ensure that each element is uniquely identified, however, to anyone that has tried to do any sort of client side scripting this becomes very frustrating. Chances are that if you have worked in ASP.NET for any time at all you have run into this issue. The problem is that until runtime you do not know what the client side ID could be, making it difficult to do any kind of client side scripting. In addition, any modification of the page, adding removing controls, can result in a different client side ID being generated.</p>
+        <p>Again, if you have worked with ASP.NET for any amount of time you know there is a work around for this issue. Each control has a property called <b>ClientID</b> that is a read only and supplies the unique client side ID. You could use this in a code behind when dynamically adding scripts or more commonly use inline code (old ASP style) to supply the value to and client side scripts.</p>
+        <div class="code">
+          <span codeLanguage="other">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>JavaScript</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>&lt;script type="text/javascript"&gt;    function DoSomething(){        alert('&lt;%= Control.ClientID %&gt;');    }&lt;/script&gt;</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <p>ASP.NET 4 Web Forms addresses this need by providing four ClientID ‘modes’, giving the user everything from existing behavior to full control. The controls ID property is modified according to the <b>ClientIDMode</b> mode and then used as the client side id.</p>
+        <p>The four modes are:</p>
+        <ul>
+          <li><b>AutoID:</b> The default value if <b>ClientIDMode</b> is not set anywhere in the control hierarchy. This causes client side IDs to behave the way they did in version 2.0 (3.0 and 3.5 did not change this code path) of the framework. This mode will generate an ID similar to "ctl00_MasterPageBody_ctl01_Textbox1".</li>
+          <li><b>Inherit:</b> This is the default behavior for every control. This looks to the controls parent to get its value for <b>ClientIDMode</b>. You do not need to set this on every control as it is the default, this is used only when the <b>ClientIDMode</b> has been changed and the new desired behavior is to inherit from the controls parent.</li>
+          <li><b>Static:</b> This mode does exactly what you think it would; it makes the client side ID static. Meaning that what you put for the ID is what will be used for the client side ID. Warning, this means that if a static <b>ClientIDMode</b> is used in a repeating control the developer is responsible for ensuring client side ID uniqueness.</li>
+          <li><b>Predictable:</b> This mode is used when the framework needs to ensure uniqueness but it needs to be done so in a predictable way. The most common use for this mode is on databound controls. The framework will traverse the control hierarchy prefixing the supplied ID with its parent control ID until it reaches a control in the hierarchy whose <b>ClientIDMode</b> is defined as static. In the event that the control is placed inside a databound control a suffix with a value that identifies that instance will also be added to the supplied ID. The <b>ClientIDRowSuffix</b> property is used to control the value that will be used as a suffix. This mode will generate an ID similar to "Gridview1_Label1_0".</li>
+        </ul>
+        <p>For more information, see <a href="docSet_#_TOC3_5">Setting Client IDs</a>. </p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To verify that each step is correctly performed, it is recommended to build the solution at the end of each task.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141331" href="#">
+          <span />
+        </a>
+        <a name="_Toc223343086" href="#">
+          <span />
+        </a>
+        <a name="_Toc280375246" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Assigning Static ClientID to ASP.NET Controls</b>
+        </p>
+        <p>In this task, you will enable the <b>Static</b><b>ClientID</b> mode in several ASP.NET controls within the web application. By doing this, you will be able to reference them seamlessly from client-side code, and from a CSS in future steps.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 as an Administrator. Right-click on <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.and select Run as administrator.</li>
+          <li>Open the solution file <b>WebFormsSampleApp.sln</b> located under<b> \Ex02-ClientId\begin\ (Choosing the folder that matches the language of your preference)</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The lab scenario consists of a single page that lists the products filtered by category from <b>AdventureWorksLT</b> database, allowing the user to add them to a cart and then submit them by clicking Check Out. The <b>AdventureWorksLT.mdf</b> file must be copied from <b>\AspNetWebForms4\Source\Assets</b> folder to the <b>App_Data</b> folder of this project.<br /><img src="images\1f1d5314-edbd-4355-9748-d5f03cb2ad89.png" /></td></tr></table><p /></div><br /><p><img src="images\af8d85c2-8446-4a7f-b372-15922b619b7f.png" /></p><p><b>Figure 11</b><br /><i>Viewing the Web Application in Solution Explorer (C#)</i></p><br /><p><img src="images\42a0f334-ad9e-4f56-9b96-454f1b0815a5.png" /></p><p><b>Figure 12</b><br /><i>Viewing the Web Application in Solution Explorer (VB)</i></p><br /></li>
+          <li>Open the <b>ShoppingCart</b> user control in <b>Source</b> mode. To do this, in <b>Solution Explorer</b>, right-click the <b>ShoppingCart.ascx</b> file under the <b>UserControls</b> folder, and select <b>View Markup</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This is the shopping cart where the user will be placing orders. This user control when rendered will have the ability to expand and collapse by taking advantage of the <b>ClientID</b> property (<b>Static</b> mode) via client side script.</td></tr></table><p /></div><br /></li>
+          <li>Enable <b>ClientID</b><b>Static</b> mode in <b>ShopCartCollapsed</b> ASP.NET <b>Panel</b>. To do this, replace the current <b>ShopCartCollapsed asp:Panel</b> definition with the following highlighted code.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This <b>Panel </b>will be rendered to the client as a div with the same <b>Id</b> as the server control, in this case, <b>ShopCartCollapsed</b>.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;asp:Panel ID="ShopCartCollapsed" ClientIDMode="Static" runat="server"&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Do the same as in the previous step but with the <b>ShopCartExpanded</b> ASP.NET <b>Panel</b>.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;asp:Panel ID="ShopCartExpanded" ClientIDMode="Static" runat="server"&gt;</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc280375247" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Assigning Predictable ClientID to ASP.NET Controls</b>
+        </p>
+        <p>In this task, you will assign the <b>Predictable</b><b>ClientID</b> mode to the product list items that are retrieved from the database, setting the product id as the <b>ClientIDRowSuffix</b>.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>Note:</b> ASP.NET previously generated its unique IDs to prevent ID collisions, and the most common place for these types of collisions was inside databound controls. <b>Predictable</b> mode was principally designed to tackle this problem while working with databound controls.<br /><b>Predictable</b> mode output follows the pattern <b>[Prefix]_[ID]_[Suffix]</b>, where each parameter represents the following:<br /> - <b>Prefix:</b> Underscore-separated list of all parent controls with an explicit ID/ClientID<br /> - <b>ID:</b> The repeated item server control Id<br /> - <b>Suffix:</b> An optional auto-incrementing number used for repeated items (only applicable when using an <b>IDataKeysControl</b>). This parameter is assigned by setting the <b>ClientIDRowSuffix</b> property of the databound server control (not on the repeated items). If this property is not set or is not available, the row index will be used in its place.<br />Setting the <b>ClientIDRowSuffix </b>property is only supported by controls that implements a new interface called <b>IDataKeysControl</b> (currently implemented by <b>GridView</b> and <b>ListView</b>). This interface provides the ability to set the <b>ClientIDRowSuffix</b> of a child element whose value is based on the data keys of each row.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Assign the <b>ClientIDRowSuffix</b> property to the <b>ListView</b> that shows the items that were placed in the shopping cart. To do this, open <b>ShoppingCart.ascx</b> in <b>Source</b> mode, locate the <b>ShoppingCartItemsLists ListView</b>, and replace the current control definition with the following highlighted code.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>ProductId</b> is a property of the class which items will be repeated (<b>ShoppingCartItem</b>), and is automatically inserted into the data keys collection when the data source is bound.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;asp:ListView ID="ShoppingCartItemsLists" runat="server" ClientIDMode="Static" ClientIDRowSuffix="ProductId"&gt;</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> There are three ways to use the <b>Predictable</b> mode, each one of these is defined through the <b>ClientIDRowSuffix</b> property that specifies the suffix for each instance.<br />1- With no <b>ClientIDRowSuffix</b> defined. This is also the behavior for databound controls without a data keys collection (for example, <b>Repeater</b> Control). To construct the <b>ClientId</b>, ASP.NET will suffix the ID with the row index.<br />2- With a <b>ClientIDRowSuffix</b> defined. It looks in the databound server control’s data keys collection for the value, and then suffixes the ID with that value.<br />3- With a <b>ClientIDRowSuffix</b> defined, but using a compound value instead of just one value. Exhibits the same behavior as with one value, but it will suffix the ID with both concatenated values. (For example, ClientIDRowSuffix="ID, Name").</td></tr></table><p /></div><br /></li>
+          <li>Bound the cart items to the <b>ShoppingCartItemLists</b> control. To do this, open the <b>ShoppingCart.ascx</b> code-behind file, and add the following highlighted code at the bottom of the <b>Page_PreRender</b> method of the <b>ShoppingCartControl</b> class.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you browse the <b>ShoppingCartItem </b>class you will view the <b>ProductId</b> property that is used to set the <b>ClientIDRowSuffix </b>property of the <b>ListView</b>.</td></tr></table><p /></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Page_PreRender method – C#)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Page_PreRender(object sender, EventArgs e){    ShoppingCart cart = ShoppingCartFactory.GetInstance();    ExpandedItemsCountLabel.Text = cart.TotalItems.ToString();    CollapsedItemsCountLabel.Text = cart.TotalItems.ToString();    ExpandedTotalLabel.Text = cart.Subtotal.ToString("c");    CollapsedTotalLabel.Text = cart.Subtotal.ToString("c");    this.ShopCartExpandedEmpty.Visible = cart.TotalItems == 0;    this.ShopCartExpandedNonEmpty.Visible = cart.TotalItems != 0;<b>    ShoppingCartItemsLists.DataSource = cart.Items;</b><b>    ShoppingCartItemsLists.DataBind();</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Page_PreRender method – VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>VB</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Protected Sub Page_PreRender(ByVal sender As Object, ByVal e As EventArgs)    Dim cart As ShoppingCart = ShoppingCartFactory.GetInstance()    ExpandedItemsCountLabel.Text = cart.TotalItems.ToString()    CollapsedItemsCountLabel.Text = cart.TotalItems.ToString()    ExpandedTotalLabel.Text = cart.Subtotal.ToString("c")    CollapsedTotalLabel.Text = cart.Subtotal.ToString("c")    Me.ShopCartExpandedEmpty.Visible = cart.TotalItems = 0    Me.ShopCartExpandedNonEmpty.Visible = cart.TotalItems &lt;&gt; 0<b>    ShoppingCartItemsLists.DataSource = cart.Items</b><b>    ShoppingCartItemsLists.DataBind()</b>End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Enable <b>Predictable</b><b>ClientId</b> mode in the child elements of the shopping cart <b>ListView</b>. To do this, switch back to the markup view of the ShoppingCartControl user control and replace the current <b>Quantity</b> and <b>TotalPrice</b><b>asp:Labels</b> definition contained in the <b>ShoppingCartItemLists ListView</b>, with the following highlighted code.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> These labels will be rendered to the client as divs, once for each item in the shopping cart. For example, the <b>ClientId</b> of the <b>Quantity</b> label will be something like "ctrl0_Quantity_12", where 12 is the <b>ProductId</b> and ctrl0 is the parent control id.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:ListView ID="ShoppingCartItemsLists" runat="server" ClientIDMode="Static" ClientIDRowSuffix="ProductId"&gt;    &lt;ItemTemplate&gt;        &lt;asp:Panel ID="ShoppingCartItem" ClientIDMode="Static" runat="server"&gt;            &lt;div class="productColumn"&gt;<b>                &lt;asp:Label ID="Quantity" ClientIDMode="Predictable" runat="server"&gt;</b>&lt;%#Eval("ProductName")%&gt;&amp;nbsp;(&lt;%#Eval("Quantity")%&gt;)&lt;/asp:Label&gt;            &lt;/div&gt;            &lt;div class="priceColumn"&gt;<b>               &lt;asp:Label ID="TotalPrice" ClientIDMode="Predictable" runat="server"&gt;</b>&lt;%# string.Format(System.Globalization.CultureInfo.CurrentUICulture, "{0:c}", Eval("TotalPrice"))%&gt;&lt;/asp:Label&gt;            &lt;/div&gt;        &lt;/asp:Panel&gt;    &lt;/ItemTemplate&gt;&lt;/asp:ListView&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc223343087" href="#">
+          <span />
+        </a>
+        <a name="_Toc280375248" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Assigning Inherit ClientID to ASP.NET Controls</b>
+        </p>
+        <p>In this task, you will assign the <b>Inherit</b><b>ClientID</b> mode to a <b>Panel</b> server control contained in the shopping cart. This will let the control inherit the <b>ClientIdMode</b> from the first parent server control that implements the <b>INamingContainer</b> interface (in this case the <b>ShoppingCart</b> User Control).</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> The <b>INamingContainer</b> interface identifies a container control that creates a new ID namespace within a <b>Page</b> object's control hierarchy. Any control that implements this interface creates a new namespace in which all child control ID attributes are guaranteed to be unique within an entire application. This is a marker interface only.<br />For more information, see <a href="http://msdn.microsoft.com/en-us/library/system.web.ui.inamingcontainer.aspx">INamingContainer</a> interface.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Define the <b>ClientIDMode</b> of the parent <b>ShoppingCart</b> user control that will be inherited by the child <b>Panel</b> server control. To do this, open the <b>UI.Master</b> page in <b>Source</b> mode, and replace the current <b>ShoppingCart1</b> user control definition with the following highlighted code<b>.</b><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...<b>&lt;uc1:ShoppingCart ID="ShoppingCart1" runat="server" ClientIDMode="Static" /&gt;</b>...</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If no<b> ClientIDMode</b> had been set, all its child control would have inherited<b> </b>the default<b> ClientIDMode</b> which is <b>AutoID</b>.</td></tr></table><p /></div><br /></li>
+          <li>Enable <b>Inherit</b><b>ClientId</b> mode in the child <b>Panel</b> server control. To do this, open <b>ShoppingCart.ascx</b> in <b>Source</b> mode, and replace the current <b>ShopCartExpandedNonEmpty</b><b>asp:Panel</b> definition with the following highlighted code.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...<b>&lt;asp:Panel ID="ShopCartExpandedNonEmpty" ClientIDMode="Inherit" runat="server"&gt;</b>    &lt;p class="items"&gt;        &lt;span&gt;Your cart items:&lt;/span&gt;    &lt;/p&gt;...</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: There are two other possible ways to set the <b>ClientIdMode</b>:<br />- At <b>Page</b> level: Defines the default <b>ClientIdMode</b> for all controls within the current page. For example: <br />&lt;%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" ClientIdMode="Static"%&gt;<br /><br />- At <b>Web.config</b> level: It is also possible to set the <b>ClientIdMode</b> in the config section at either machine or application level. For example, this defines the default <b>ClientIdMode</b> for all controls within all pages in the application:<br />                         &lt;system.web&gt;<br />                              &lt;pages clientIdMode="Predictable"&gt;&lt;/pages&gt;<br />                         &lt;/system.web&gt;</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc280375249" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Targeting Static ClientIDs via CSS and JavaScript</b>
+        </p>
+        <ol>
+          <li>In this task, you will take advantage of the static <b>ClientID</b> mode, by manipulating the rendered control with the static <b>ClientID</b> through JavaScript, and by applying CSS styles directly to the Id rather than creating an unnecessary CssClass.</li>
+          <li>Apply styles to the controls with static <b>ClientID</b>s. To do this, open the <b>main.css</b> file located under <b>Styles</b> folder, and add the following highlighted code:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>ShopCartCollapsed</b> and<b> ShopCartExpanded</b> ID attributes are being referenced<b> </b>applying ID selectors rather than Class selectors. The essential difference is that while class selectors apply to one or more elements on a page, ID selectors apply to exactly one element. For more information, see <a href="docSet_#id-selectors">http://www.w3.org/TR/CSS21/selector.html#id-selectors</a>.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>CSS</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>#ShopCartCollapsed {</b><b>    display: none;</b><b>    background-color: #00FF80;</b><b>    padding: 10px 15px;</b><b>    height: 10px;</b><b>    background: url(../Images/shopcart_collapsed_bg.png) no-repeat top left;</b><b>}</b><b>#ShopCartCollapsed p.summary span {</b><b>    position: relative; top:-4px;</b><b>}</b><b>#ShopCartCollapsed a.checkoutLink {</b><b>    position: absolute; top: 6px; right: 8px;</b><b>}</b><b>#ShopCartExpanded {</b><b>    display: none;</b><b>    padding: 10px 15px;</b><b>    height: 90px;</b><b>    background: url(../Images/shopcart_bg.gif) no-repeat top left;</b><b>}</b><b>#ShopCartExpanded p.items { </b><b>    font-size: 11px;</b><b>    color: #666;</b><b>}</b><b>#ShopCartExpanded ul.items {</b><b>    height:60px;overflow:auto;</b><b>    margin: 0; padding: 0; list-style: none;</b><b>}</b><b>#ShopCartExpanded ul.items li  {</b><b>    display: inline; margin: 0; padding: 0; </b><b>}</b><b>#ShopCartExpanded div.ShoppingCartItem {</b><b>    display: block;</b><b>}</b><b>#ShopCartExpanded div.productColumn {</b><b>    float: left;</b><b>    width: 150px;</b><b>}</b><b>#ShopCartExpanded div.priceColumn {</b><b>    float: right;</b><b>    width: auto;</b><b>}</b><b>#ShopCartExpanded p.summary span {</b><b>    position: relative; top:+6px;</b><b>}</b><b>#ShopCartExpanded p.empty {</b><b>    text-align: center;</b><b>    font-weight: bold; color: #50d48f;</b><b>    padding-top: 15px;</b><b>}</b><b>#ShopCartExpanded a.checkoutLink {</b><b>    position: absolute; top: 89px; right: 8px;</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Implement the necessary JavaScript code to create the effects for the Shopping Cart using JQuery. To do this, open the <b>shoppingCart.Effects.js</b> file located under <b>Scripts</b> folder, and follow these steps:<ol><li>Add the following highlighted code to <b>CollapseCart</b> function:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JS</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function CollapseCart(withAnimation) {<b>    if (withAnimation) {</b><b>        $("#ShopCartExpanded").hide();</b><b>        $("#ShopCartCollapsed").show("slow");</b><b>    }</b><b>    else {</b><b>        $("#ShopCartExpanded").css("display", "none");</b><b>        $("#ShopCartCollapsed").css("display", "block");</b><b>    }</b><b>    $("#ShoppingCartState").val("collapsed");</b>}</pre></td></tr></table></span></div></li><br /><li>Add the following highlighted code to <b>ExpandCart</b> function:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JS</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>function ExpandCart(withAnimation) {<b>    if (withAnimation) {</b><b>        $("#ShopCartCollapsed").hide();</b><b>        $("#ShopCartExpanded").show("slow");</b><b>    }</b><b>    else {</b><b>        $("#ShopCartCollapsed").css("display", "none");</b><b>        $("#ShopCartExpanded").css("display", "block");</b><b>    }</b><b>    $("#ShoppingCartState").val("expanded");</b>}</pre></td></tr></table></span></div></li><br /><li>Add the following highlighted code to <b>$(document).ready</b> function:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>JS</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>$(document).ready(function() {    // Preload expanded Shopping Cart background image    $("&lt;img&gt;").attr("src", "Images/shopcart_bg.gif");<b>    $("#ShopCartCollapsed").click(function() { ExpandCart(true) });</b><b>    $("#ShopCartExpanded").click(function() { CollapseCart(true) });</b>    if ($("#ShoppingCartState").val() == "expanded") {        ExpandCart(false);    }    else {        CollapseCart(false);    }});</pre></td></tr></table></span></div></li><br /></ol></li>
+          <li>Add a reference to <b>ShoppingCart.Effects.js</b> in <b>Default.aspx</b>. To do this, open <b>Default.aspx</b> in <b>Source</b> mode, and add the following highlighted code inside the first <b>asp:Content</b> tag.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;%@ MasterType TypeName="WebFormsSampleApp.Master.UI" %&gt;&lt;asp:Content ContentPlaceHolderID="HeadContentPlaceHolder" runat="server"&gt;    &lt;link type="text/css" rel="Stylesheet" media="screen" href="/Styles/products.css" /&gt;<b>    &lt;script type="text/javascript" src="/Scripts/shoppingCart.Effects.js"&gt;&lt;/script&gt;</b>&lt;/asp:Content&gt;...</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_5f844b66-6b37-46c4-9c98-125bc1879ae3.html">Exercise 2: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

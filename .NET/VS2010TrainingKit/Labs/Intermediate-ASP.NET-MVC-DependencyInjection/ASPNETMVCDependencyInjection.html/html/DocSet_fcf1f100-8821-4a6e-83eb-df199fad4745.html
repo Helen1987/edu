@@ -1,0 +1,173 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Injecting a View" />
+      <MSHelp:RLTitle Title="Exercise 2: Injecting a View" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Injecting a View</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Dependency Injection</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Injecting a View</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to apply Dependency Injection into a View by using new MVC 3 Features for Unity Integration. In order to do that, you will call a custom service inside the Store Browse View that shows a message with an image below. The service will introduce a new dependency inside the view as it has to be initialized in a point.</p>
+        <p>Then, you will integrate the project with Unity Application Block and create a Custom Dependency Resolver to inject the dependencies.</p>
+        <br />
+        <a name="_Toc282507719" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a View that Consumes a Service</b>
+        </p>
+        <p>In this task, you will create a view that performs a service call to generate a new dependence. The mentioned service is a simple messaging service example that is included in this solution.</p>
+        <ol>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at <b>Source\Ex02-Injecting View\Begin</b>.</li>
+          <li>Include <b>MessageService.cs</b> and <b>IMessageService.cs</b> classes from <b>Source\Assets\MessageService</b> folder inside <b>/Services </b>folder.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>IMessageService</b> interface defines two properties that are implemented by the <b>MessageService</b> class. These properties are <b>Message</b> and <b>ImageUrl</b> and are defined to hold the message and Url of the image to be displayed.</td></tr></table><p /></div><br /></li>
+          <li>Create the folder <b>/Pages </b>at project root, and then add the class <b>MyBasePage.cs</b> from <b>Source\Assets\BasePage. </b>The base page you will inherit from has the following structure:<p>(Code Snippet – ASP.NET MVC Dependency Injection  –  Ex02 Injecting Views – MyBasePage – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System;</b><b>using System.Collections.Generic;</b><b>using System.Linq;</b><b>using System.Web;</b><b>using Microsoft.Practices.Unity;</b><b>using MvcMusicStore.Services;</b><b>namespace MvcMusicStore.Pages</b><b>{</b><b>    public class MyBasePage : System.Web.Mvc.ViewPage&lt;MvcMusicStore.ViewModels.StoreBrowseViewModel&gt;</b><b>    {</b><b>        [Dependency]</b><b>        public IMessageService MessageService { get; set; }</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>On behalf of a technical reason coming from the <b>ASP.NET</b> engine, the <b>dependency </b>at <b>IMessageService</b> interface can’t be included into the respective <b>View Model</b> Class.<br />The class <b>MyBasePage</b> intercepts the relationship between the View and the View-Model so the dependency injection at MessageService can now be inherited by the View.</td></tr></table><p /></div><br /></li>
+          <li>Open <b>Browse.aspx</b> view from <b>/Views/Store </b>project folder, and make it inherit from <b>MyBasePage.cs</b>:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="MvcMusicStore.Pages.MyBasePage" %&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Include in <b>Browse</b> view a call to <b>MessageService, </b>that will display an image and a message retrieved by the service:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="MvcMusicStore.Pages.MyBasePage" %&gt;&lt;asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server"&gt;    Browse Albums&lt;/asp:Content&gt;&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;<b>&lt;div&gt;</b><b>&lt;%= this.MessageService.Message %&gt;</b><b>&lt;br /&gt;</b><b>&lt;img alt="&lt;%: this.MessageService.Message %&gt;"src="&lt;%: this.MessageService.ImageUrl %&gt;" /&gt;</b><b>&lt;/div&gt;</b>…</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282507720" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Including a Custom Dependency Resolver and a Custom View Page Activator</b>
+        </p>
+        <p>In the previous task, you injected a new dependency inside a view to perform a service call inside it. Now, you will start solving that dependence by implementing the new MVC 3 Dependency Injection Interfaces <b>IViewPageActivator</b> and <b>IDependencyResolver</b>.</p>
+        <p>You will include in the solution an implementation of <b>IDependencyResolver</b> that will deal with service retrieval by using Unity. Then you will include another custom implementation of <b>IViewPageActivator</b> interface that will solve the creation of Views.</p>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td><b>Note: MVC 3 </b>implementation for Dependency Injection had simplified the interfaces for service registration. <b>IDependencyResolver </b>and <b>IViewPageActivator </b>are a part of the new MVC3 features for Dependency Injection.<br /><b>- IDependencyResolver </b>interface replaces the previous IMvcServiceLocator. Implementers of IDependencyResolver must return an instance of the service or a service collection.<br /><b>    public interface IDependencyResolver {</b><br /><b>        object GetService(Type serviceType);</b><br /><b>        IEnumerable&lt;object&gt; GetServices(Type serviceType);</b><br /><b>    }</b><br /><br /><b>- IViewPageActivator</b> interface provides more fine-grained control over how view pages are instantiated via dependency injection. The classes that implement <b>IViewPageActivator</b> interface must create the instance of a view having context information.<br /><b>    public interface IViewPageActivator {</b><br /><b>        object Create(ControllerContext controllerContext, Type type);</b><br /><b>    }</b></td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Copy the class <b>CustomViewPageActivator.cs </b>from <b>/Sources/Assets </b>to the<b> Factories </b>folder. This class implements the <b>IViewPageActivator</b> interface to hold the Unity Container.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#  - CustomViewPageActivator</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using Microsoft.Practices.Unity;namespace MvcMusicStore.Factories{    public class CustomViewPageActivator : IViewPageActivator    {        IUnityContainer container;        public CustomViewPageActivator(IUnityContainer container)        {            this.container = container;        }        public object Create(ControllerContext controllerContext, Type type)        {            return this.container.Resolve(type);        }    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>CustomViewPageActivator</b> is responsive for managing the creation of a view by using a Unity container.</td></tr></table><p /></div><br /></li>
+          <li>Add the class <b>UnityDependencyResolver.cs, </b>which is included in the folder <b>/Sources/Assets</b>, in the project folder <b>/Factories.</b><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C# - UnityDependencyResolver.cs</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.Web.Mvc;using Microsoft.Practices.Unity;namespace MvcMusicStore.Factories{<b>    public class UnityDependencyResolver : IDependencyResolver</b>    {        IUnityContainer container;        IDependencyResolver resolver;        public UnityDependencyResolver(IUnityContainer container, IDependencyResolver resolver)        {            this.container = container;            this.resolver = resolver;        }        public object GetService(Type serviceType)        {            try            {                return this.container.Resolve(serviceType);            }            catch            {                return this.resolver.GetService(serviceType);            }        }        public IEnumerable&lt;object&gt; GetServices(Type serviceType)        {            try            {                return this.container.ResolveAll(serviceType);            }            catch            {                return this.resolver.GetServices(serviceType);            }        }    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>UnityDependencyResolver</b> class is a custom DependencyResolver for Unity. When a service can’t be found inside the Unity container, base resolver is invocated.  </td></tr></table><p /></div><br /></li>
+        </ol>
+        <p>In the following task both implementations will be registered, to let the model know where to locate the services and where to create the views.</p>
+        <a name="_Toc282507721" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Registering for Dependency Injection in Global.asax.cs Application_Start</b>
+        </p>
+        <p>In this task, you will put all the previous things together to make Dependency Injection Work.</p>
+        <p>Up to now you have the following elements:</p>
+        <ul>
+          <li>A<b> Browse </b>View<b> </b>that inherits from <b>MyBaseClass</b> and consumes MessageService.</li>
+          <li>An intermediate <b>MyBaseClass</b> class that has dependency injection declared for the service interface.</li>
+          <li>A <b>MessageService</b> service and its Interface <b>IMessageService</b>.</li>
+          <li>A custom dependency resolver for Unity: <b>UnityDependencyResolver</b>,<b> </b>that deals with service retrieval.</li>
+          <li>A View Page activator: <b>CustomViewPageActivator,</b> that creates the page.</li>
+        </ul>
+        <p>To inject Browse View, you will now register the custom dependency resolver into the Unity container.</p>
+        <ol>
+          <li>Open <b>Global.asax.cs</b> at project root.</li>
+          <li>Register an instance of <b>MessageService</b> into Unity container that will initialize the service:<p>(Code Snippet – ASP.NET MVC Dependency Injection  – Ex02 Injecting a View – GlobalAsax Registration – Csharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Application_Start(){    AreaRegistration.RegisterAllAreas();    RegisterGlobalFilters(GlobalFilters.Filters);    RegisterRoutes(RouteTable.Routes);    var container = new UnityContainer();    container.RegisterType&lt;IStoreService, StoreService&gt;();    container.RegisterType&lt;IController, StoreController&gt;("Store");    var factory = new UnityControllerFactory(container);    ControllerBuilder.Current.SetControllerFactory(factory);<b>    container.RegisterInstance&lt;IMessageService&gt;(new MessageService { </b><b>        Message = "You are welcome to our Web Camps Training Kit!",</b><b>        ImageUrl = "/Content/Images/logo-webcamps.png"    </b><b>    });</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Register <b>CustomViewPageActivator</b> as a view page activator into Unity container:<p>(Code Snippet – ASP.NET MVC Dependency Injection – Ex02 Injecting a View – GlobalAsax Registration 2 – Csharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Application_Start(){…    container.RegisterInstance&lt;IMessageService&gt;(new MessageService {         Message = "You are welcome to our Web Camps Training Kit!",        ImageUrl = "/Content/Images/logo-webcamps.png"        });<b>    container.RegisterType&lt;IViewPageActivator, CustomViewPageActivator&gt;(new InjectionConstructor(container));</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Replace MVC 3 default dependency resolver with an instance of <b>UnityDependencyResolver</b>:<p>(Code Snippet – ASP.NET MVC Dependency Injection – Ex02 Injecting a View – GlobalAsax Registration 3 – Csharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Application_Start(){    AreaRegistration.RegisterAllAreas();    RegisterGlobalFilters(GlobalFilters.Filters);    RegisterRoutes(RouteTable.Routes);    var container = new UnityContainer();    container.RegisterType&lt;IStoreService, StoreService&gt;();    container.RegisterType&lt;IController, StoreController&gt;("Store");    var factory = new UnityControllerFactory(container);    ControllerBuilder.Current.SetControllerFactory(factory);    container.RegisterInstance&lt;IMessageService&gt;(new MessageService {         Message = "You are welcome to our Web Camps Training Kit!",        ImageUrl = "/Content/Images/logo-webcamps.png"        });    container.RegisterType&lt;IViewPageActivator, CustomViewPageActivator&gt;(new InjectionConstructor(container));<b>    IDependencyResolver resolver = DependencyResolver.Current;</b><b>    IDependencyResolver newResolver = new UnityDependencyResolver(container, resolver);</b><b>    DependencyResolver.SetResolver(newResolver);</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>ASP.NET MVC3 provides a default dependency resolver class. To work with custom dependency resolvers as the one we have created for unity, this resolver has to be replaced.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282507722" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application</b>
+        </p>
+        <p>In this task, you will run the application to verify that the Store Browser consumes the service and shows the image and the message retrieved by it:</p>
+        <ol>
+          <li>Press <b>F5</b> to run the application, where Home page will load.</li>
+          <li>Browse to <b>/Store </b>and enter to any of the genres that are shown below. In this example, we enter to “<b>Rock</b>”:<p><img src="images\c80345c5-3c63-4fd2-aac4-048526258b41.png" /></p><p><b>Figure 1</b><br /><i>MVC Music Store - View Injection</i></p><br /></li>
+          <li>Close the browser.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_6b4dc864-a7d0-40e2-bfd6-fff47a33559d.html">Exercise 3: Injecting Action Filters</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 5: Troubleshooting" />
+      <MSHelp:RLTitle Title="Exercise 5: Troubleshooting" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 5: Troubleshooting</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow Services using .NET Framework 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 5: Troubleshooting</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>What happens when a workflow encounters an error? If the workflow is responding to a web service message it can send a SOAP fault to let the caller know there was an error. But if the workflow is doing work after it sent a response you need a way to find out what went wrong so you can take action. What would happen if your SubmitApplication workflow was unable to send the Request Human Screening email? In this exercise, you will force an error that simulates a mail failure then use AppFabric to troubleshoot and correct the problem.</p>
+        <a name="_Toc246389220" href="#">
+          <span />
+        </a>
+        <a name="_Toc244311003" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002958" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 4. Alternatively, you can follow the following steps to begin with Exercise 5.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for <b>Exercise 5</b> located under the <b>\Source\Ex5\Begin</b> folder (choosing the folder that matches the language of your preference.) Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc246389221" href="#">
+          <span />
+        </a>
+        <a name="_Toc244311004" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002959" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Simulating an Error Condition</b>
+        </p>
+        <ol>
+          <li>Using <b>Windows Explorer</b>, rename the <b>C:\Mailbox</b> folder to <b>C:\Mailbox2</b> and delete any mail messages in the folder. When the workflow tries to send the email it will now fail at this step.</li>
+          <li>Switch back to <b>Visual Studio 2010</b>, right-click on the <b>HRClient</b> project and select <b>Set as StartUp Project</b>.</li>
+          <li>Press <b>CTRL+F5</b> to start the <b>HRClient</b> project without debugging.</li>
+          <li>In the <b>Contoso HR Tool</b> set the <b>Education</b> to <b>Masters,</b> and click the <b>Submit</b> button. After a few moments you should see a confirmation message that the resume is being processed. From the client perspective it appears that everything is working.</li>
+          <li>In <b>IIS Manager</b> expand the <b>Default Web Site</b>, and select the <b>HRApplicationServices</b> application in the tree. Double-click the <b>AppFabric Dashboard</b> icon.</li>
+          <li>In the <b>Persisted WF Instances</b> section at the top of the Dashboard you should see 1 instance in the <b>Suspended</b> state. Click the <b>1</b> to go to the <b>Persisted WF Instances</b> page.<p><img src="images\d2b43b67-8c05-4a02-ac03-d1fbc213f1bf.png" /></p><p><b>Figure 55</b><br /><i>You should see a suspended instance</i></p><br /></li>
+          <li>Select the one suspended instance in the list, and look at the <b>Details</b> pane at the bottom.</li>
+          <li>Click the <b>Errors</b> tab. You should see <b>Failure sending mail</b>.<p><img src="images\d60c8e7d-518b-43b7-bd03-095c43e82a0f.png" /></p><p><b>Figure 56</b><br /><i>Errors tab explains why the workflow was suspended</i></p><br /></li>
+          <li>At this point, you know the problem has something to do with a failure to send email. To get more information about the error right-click the suspended instance, and select the <b>View Tracked Events</b> action.<p><img src="images\7ac8ebae-cc0a-4a52-9793-166326984f57.png" /></p><p><b>Figure 57</b><br /><i>To get more detail, view tracked events</i></p><br /></li>
+          <li>You will see some <b>Warning</b> and <b>Error</b> events in the list. Click on these, and then the <b>Errors</b> tab to see more information about the error.<p><img src="images\e8dcd4e4-75b1-4d5a-93c5-b13e5848eaae.png" /></p><p><b>Figure 58</b><br /><i>The WorkflowInstanceAbort record showing the cause of the failure</i></p><br /></li>
+          <li>You can see from the error that the mail system could not find the path C:\Mailbox because you renamed it earlier to C:\Mailbox2.</li>
+        </ol>
+        <a name="_Toc244311005" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002960" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Correcting the Error and Resuming the Workflow</b>
+        </p>
+        <ol>
+          <li>Switch back to <b>Windows Explorer</b>, and rename the <b>C:\Mailbox2</b> folder to <b>C:\Mailbox</b>.</li>
+          <li>Switch to the <b>IIS Manager</b>, and click the back button to return to the <b>Persisted WF Instances </b>page.<p><img src="images\eadd1dd3-8463-4901-9aea-1474a6f32063.png" /></p><p><b>Figure 59</b><br /><i>Click the back button to return to the Persisted WF Instances page</i></p><br /></li>
+          <li>Right-click the suspended instance, and select the <b>Resume</b> action. This will queue the command to resume the instance from its last persist point.<p><img src="images\5a88e63d-1b9a-4b0e-9791-543ef3592d63.png" /></p><p><b>Figure 60</b><br /><i>Resume the suspended instance</i></p><br /></li>
+          <li>Wait a few seconds, and click the <b>Refresh</b> button. You should see an empty list because the workflow resumed and completed.</li>
+          <li>Return to the <b>AppFabric Dashboard</b> and refresh it. You should now see 1 persisted WF instance in the <b>Active</b> or <b>Idle</b> state depending upon how long it takes you to view it.</li>
+          <li>In <b>Windows Explorer</b> go to <b>C:\Mailbox</b> and find the latest message. Open it, and click the link to review the application.</li>
+          <li>In the review web page click the <b>Hire</b> or <b>No hire</b> button. This will send a message to the SubmitApplication workflow using the HumanScreeningCompleted operation.</li>
+          <li>In the C:\Mailbox folder you should see another message with the result.</li>
+          <li>Switch back to <b>IIS Manager</b>, and refresh the <b>AppFrabric Dashboard</b>. You should see the Completions count incremented by 1. Click <b>Completions:</b> you will be able to review the statistics about the Submit Application workflow as shown.<p><img src="images\46b9641c-139a-49ed-93fa-a37e895ed96d.png" /></p><p><b>Figure 61</b><br /><i>The completed workflow</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_538790aa-badd-494f-8f49-693be0a82003.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

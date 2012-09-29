@@ -1,0 +1,119 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Managing Iteration Work Items and Team Capacity" />
+      <MSHelp:RLTitle Title="Exercise 2: Managing Iteration Work Items and Team Capacity" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Managing Iteration Work Items and Team Capacity</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Planning your Projects with Team Foundation Server 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Managing Iteration Work Items and Team Capacity</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to take a user story and break it down into individual tasks that can be assigned to appropriate team members based on skill and available work capacity. This will all be done within the context of Iteration 3.</p>
+        <ol>
+          <li>In <b>Team Explorer</b>, navigate to the <b>Iteration 3 Backlog.xlsm</b> workbook under <b>Tailspin Toys | Documents | Shared Documents | Iteration 3</b>. <b>Double-click</b> on <b>Iteration 3 Backlog.xlsm</b> to open it Excel, selecting the <b>OK</b> button when prompted.</li>
+          <li>To make sure that the data accurately reflects the current state in Team Foundation Server (TFS), select the <b>Refresh</b> button within the <b>Team</b> tab in Excel.</li>
+          <li>Select the<b> Edit Workbook</b> button to exit read-only mode.<p><img src="images\755a5a68-52e3-4e4c-b3a7-df3891b167b6.png" /></p><p><b>Figure 1</b><br /><i>Edit Workbook button location</i></p></li>
+          <li>This worksheet shows a hierarchical view of the work items that are currently associated with Iteration 3. For example, the first user story item shows that there are three associated child tasks under it. Hierarchical work item relationships, which are new to Team Foundation Server 2010, include parent/child, successor/predecessor, tests/tested by, etc.</li>
+          <li>The first three user stories listed have already been assigned child tasks and delegated to available employees. Now we will flesh out the last user story by adding additional tasks. Select the cell associated with the last User Story work item (<b>ID = 15</b>) and the <b>Title 1</b> column.<p><img src="images\268dbc84-020b-4083-8b8f-a77396ce9f12.png" /></p><p><b>Figure 2</b><br /><i>Selecting the title for the last user story</i></p></li>
+          <li>Under the Team tab, select the <b>Add Child</b> button <b>3</b> times. You should now see three new placeholder rows appear.<p><img src="images\8ce87c46-ebf7-4c8c-9d0d-591e2edaf3ce.png" /></p><p><b>Figure 3</b><br /><i>Adding three new work item children</i></p></li>
+          <li>Change the <b>Work Item Type</b> for each new row to <b>Task</b>.<p><img src="images\856da8b7-0ac7-4e84-b99c-f232397156d4.png" /></p><p><b>Figure 4</b><br /><i>Changing work item type to Task</i></p></li>
+          <li>In the <b>Title 2</b> column for the first new task, enter “<b>Create stored procedure for password reset</b>”. For the second task enter “<b>Design password reset UI</b>”, and finally for the last task enter “<b>Implement password reset UI</b>”. Entering the new titles under the Title 2 column will make them children of the user story above them.<p><img src="images\c5241077-0f43-400e-95a7-577eeeab703f.png" /></p><p><b>Figure 5</b><br /><i>Adding titles for new task work items</i></p></li>
+          <li>Now we will assign the new tasks to appropriate team members. Assign the first new task to <b>Doris</b>, the second to <b>April</b>, and the third to <b>Abu</b>.<p><img src="images\f23f476f-03ab-4be6-889a-eaba94d0901f.png" /></p><p><b>Figure 6</b><br /><i>Assigning team members to task work items</i></p></li>
+          <li>The <b>Remaining Work</b> column represents the number of hours remaining for the task. Enter <b>2</b>, <b>3</b>, and <b>6</b> the new tasks.<p><img src="images\082d2caf-5504-4379-9c80-fd2c4177dbdb.png" /></p><p><b>Figure 7</b><br /><i>Assigning remaining work hours to task work items</i></p></li>
+          <li>Scroll over to the <b>Area Path </b>column and enter <b>Database</b>, <b>Web site</b>, and <b>Web site</b> for the new tasks.<p><img src="images\4f86dfa2-2ba4-4c45-a6fa-2e078c49200a.png" /></p><p><b>Figure 8</b><br /><i>Changing development area for task work items</i></p></li>
+          <li>Finally, assign all tasks to Iteration 3, even the tasks that were already in place. The easiest method to accomplish this is to copy the first cell (Ctrl+C) that shows Interation 3, select the remaining cells in the Iteration Path column, and then paste (Ctrl+V).<p><img src="images\d4840ffd-8627-465b-9da0-40831e40ba0f.png" /></p><p><b>Figure 9</b><br /><i>Changing task work items to Iteration 3</i></p></li>
+          <li>Place the cursor somewhere within the table and then select <b>Publish</b> from the Team tab in Excel. This will create the new tasks as children of the last user story within TFS.</li>
+          <li>Now that we have defined the tasks that make up the last user story, we will spend some time making sure that the right team members are assigned to each task and make sure we have not taken on too much work. Start by navigating to the <b>Settings</b> worksheet.<p><img src="images\75d0ce56-575c-43d7-830e-84e23602dc11.png" /></p><p><b>Figure 10</b><br /><i>Initial view of Settings worksheet</i></p></li>
+          <li>For Iteration, select <b>Iteration 3</b>.<p><img src="images\545a385e-5e17-4f74-af40-bb9f97f531e1.png" /></p><p><b>Figure 11</b><br /><i>Selecting Iteration 3</i></p></li>
+          <li>For <b>Start Date</b> and <b>End Date</b>, enter the same dates that you did in the previous exercise. This should be next Monday through Friday.<p><img src="images\91fc91d1-c76b-4735-a166-796aa7214aaf.png" /></p><p><b>Figure 12</b><br /><i>Entering Start and End Date</i></p></li>
+          <li>Go to the <b>Capacity</b> worksheet, find the <b>Individual Capacity</b> section, and select the three team members that will be working on tasks for Iteration 3, namely <b>Abu</b>, <b>April</b>, and <b>Doris</b>. We don’t select Michael because he is the project manager and is just responsible for the user stories.<p><img src="images\32de6f7c-5f29-4abe-b4c9-4b0f333ff5e5.png" /></p><p><b>Figure 13</b><br /><i>Entering team members assigned to Iteration 3</i></p></li>
+          <li>Under the <b>Hours/Day</b> column, which represents the estimated hours per day that each team member will devote to this project, enter <b>5</b> for all three team members.<p><img src="images\26c044e9-eb2f-4c77-a6ef-9f9974f0a8b4.png" /></p><p><b>Figure 14</b><br /><i>Current team and individual capacity for Iteration 3</i></p></li>
+          <li>Note that the Individual Capacity chart shows that Abu and Doris are under-utilized, whereas April is near max work capacity. Let’s offload some of April’s work to Abu. Return to the <b>Iteration Backlog </b>worksheet and re-assign the “Implement web front-end for viewing all open orders” (ID = 33) from <b>April</b> to <b>Abu</b>.<p><img src="images\775d6598-2375-45ef-a1dc-1c620ec38bff.png" /></p><p><b>Figure 15</b><br /><i>Re-distributing work between team members</i></p></li>
+          <li>Switch back to the <b>Capacity</b> worksheet to see that the workload distribution looks better.<p><img src="images\9a55e121-611a-4318-b339-f0284cfe0d43.png" /></p><p><b>Figure 16</b><br /><i>Individual capacity graph looks good</i></p></li>
+          <li>This workbook also allows you to account for holidays and other work interruptions that have an effect on team capacity. Open the <b>Interruptions</b> worksheet and add an entry under Holidays for an upcoming company meeting next Friday. This will apply to the entire team.<p><img src="images\5b4bbf46-8f3c-4bd8-923d-c0970f9c4b0e.png" /></p><p><b>Figure 17</b><br /><i>Team interruption</i></p></li>
+          <li>Under <b>Planned Interruptions</b>, add an entry for <b>April</b> as she will be attending the <b>MIX Web Design Conference</b> next Thursday and Friday. Note that the <b>Days</b> column is the expected 2 days. The <b>Remaining Days</b> column is 1 because it is already taking into account the company meeting that applies to the team.<p><img src="images\883a0ab6-c775-4009-bc5e-ba93c5831026.png" /></p><p><b>Figure 18</b><br /><i>Individual interruption</i></p></li>
+          <li>Switch back to the <b>Capacity</b> worksheet to see the effect of these scheduled interruptions. Note that April is now over capacity.<p><img src="images\b33dc01c-5a5d-4565-924c-05f5e6a99527.png" /></p><p><b>Figure 19</b><br /><i>Individual capacity showing overworked team member</i></p></li>
+          <li>One potential remedy to offload some work from April would be to shift some of it to Doris, who currently has some extra capacity. Rather than doing that this time, consider the scenario where Doris does not have the skills necessary to take on the work that is assigned to April. Return to the <b>Iteration Backlog</b> worksheet and change the last four tasks (corresponding to the last four rows) so that their <b>Iteration Path</b> is set to the <b>Backlog</b>.<p><img src="images\52054755-a0ee-4912-a42d-a82bf4b0ad77.png" /></p><p><b>Figure 20</b><br /><i>Returning tasks to the backlog</i></p></li>
+          <li>Now that we have deferred some work to the backlog, the team should be able to complete the assigned tasks with the available capacity. Return to the <b>Capacity</b> worksheet one last time to verify this.<p><img src="images\00a7900a-ae6a-47cb-a703-519175bae723.png" /></p><p><b>Figure 21</b><br /><i>Team and individual capacity looks good</i></p></li>
+          <li>Save the changes made to the work items by returning to the <b>Iteration Backlog</b> worksheet, placing the cursor somewhere within the table, and selecting the <b>Publish</b> button.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Burndown worksheet contains a chart that you can use to track work progress during the iteration. As tasks are completed, you can come here to get an idea of iteration progress.</td></tr></table><p /></div><p><img src="images\4eed7cbb-b0e7-48ca-900f-93a391c47a61.png" /></p><p><b>Figure 22</b><br /><i>Burndown worksheet</i></p></li>
+          <li>Close Excel and save changes when prompted to return to Visual Studio.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_385b8b9b-26ef-427a-b6a3-352b8d9e5f3e.html">Exercise 3: Working with Hierarchical Work Items in Visual Studio and Project</a>
+        </p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

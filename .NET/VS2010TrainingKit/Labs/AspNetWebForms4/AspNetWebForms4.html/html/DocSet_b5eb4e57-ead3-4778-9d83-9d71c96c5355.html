@@ -1,0 +1,100 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Verification" />
+      <MSHelp:RLTitle Title="Exercise 4: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ASP.NET Web Forms 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In order to verify that you have correctly performed all steps of exercise four, proceed as follows:</p>
+        <a name="_Toc244328469" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Verification 1</h3>
+        <p>In this verification, you will see how the page size is reduced while taking granular ViewState control in your application. You will place some orders and browse some categories, to finally compare the rendered page size between the one using granular ViewState, and the other with ViewState enabled at the Page level. For the latter one, you will use the unaltered begin solution of this exercise, which does not implement granular ViewState yet.</p>
+        <ol>
+          <li>Start a new instance of the <b>WebFormsSampleApp</b> project. To do this, in <b>Solution Explorer</b> right-click <b>WebFormsSampleApp</b> project, point to <b>Debug</b> and select <b>Start new instance</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If the dialog <b>Debugging Not Enabled</b> appears, select <b>Modify the Web.config file to enable debugging</b> and click <b>OK</b>.</td></tr></table><p /></div><br /><p><img src="images\62220cb4-21ec-4c02-8803-290c397d5349.png" /></p><p><b>Figure 23</b><br /><i>Viewing the Default page</i></p><br /></li>
+          <li>Place one or more products into the shopping cart by clicking the plus (<img src="images\ae3066da-e4c8-44a8-84fa-b2d8be730684.png" />) symbol next to them.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Make sure to add the same products for both applications (with granular ViewState and without) so as to have a consistent page size comparison.</td></tr></table><p /></div><br /><p><img src="images\8b5f38c7-d21b-4cd6-b996-3bb3baf2813e.png" /></p><p><b>Figure 24</b><br /><i>Placing an order into the shopping cart</i></p><br /></li>
+          <li>Browse one or more categories by clicking the links on the <b>CATEGORIES</b> header.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Make sure to browse the same categories both applications (with granular ViewState and without) so as to have a consistent page size comparison.</td></tr></table><p /></div><br /><p><img src="images\2cca36bc-f5af-48c5-90f2-781e2f9f1125.png" /></p><p><b>Figure 25</b><br /><i>Browsing to Component category</i></p><br /></li>
+          <li>Open the unaltered begin solution of this exercise (without Granular ViewState), and perform the same exact steps going from 1 to 3.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Both browsers should display the same rendered pages with no apparent difference. The subtle difference resides on how ViewState is stored for each page. The page with Granular ViewState with have less bytes spent on saving ViewState, resulting on a more lightweight html rendered to the user.</td></tr></table><p /></div><br /></li>
+          <li>Inspect both pages’ html source to notice the difference in length of the encoded <b>ViewState</b> hidden field for both pages. To do this, right-click over each page on your browser, and select <b>View Source</b>. Locate the tag show in the following figure, and compare its length.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The following figure shows the html source for both pages. The HTML source at the top belongs to the Granular ViewState page, while the bottom one belongs to the ViewState at page level.<br />In this case, where the page is relatively small, the difference in bytes between both pages was about 2KB (a 10% of the total page size). In larger pages, the difference would become more significant, causing negative effects in the overall application performance.</td></tr></table><p /></div><br /><p><img src="images\cf74deb1-d8c8-4637-ac34-1085843bc593.png" /></p><p><b>Figure 26</b><br /><i>Viewing the length differences between both ViewState values (Top – Granular View State ; Bottom – ViewState at Page level)</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e388662e-84b7-48c1-ab98-2a8efe8ac1aa.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,428 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+    Microsoft SharePoint Developers Tools 2010 - Web Parts Templates
+  </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Adding a SharePoint WebPart</li>
+          <li>Adding a SharePoint Visual WebPart</li>
+          <li>Test SharePoint Feature</li>
+        </ol>
+        <a name="_Toc281840480" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Adding a SharePoint WebPart</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open <b>Microsoft Visual Studio 2010</b> from Start | All Programs.</li>
+                <li>Create a new Empty SharePoint project, name it <b>MetroWebParts</b>.</li>
+                <li>Set the Site Url to a site already created. For example, http://localhost/sites/SharePointToolsDemo.</li>
+                <li>Select the Deploy as a farm solution option in the SharePoint Customization Wizard.</li>
+                <li>Click Finish.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>First, we will create a new Empty Sharepoint project. To do this, in the New Project dialog, we will choose the <b>Empty SharePoint Project</b> template located in the <b>SharePoint</b> category and use the default values just for simplicity.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\63fdc6ca-d500-43b4-b85b-be6af1bbd79d.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Add the Images SharePoint mapped folder to the project by right-clicking on the project node, pointing to <b>Add</b>, and selecting <b>SharePoint “Images” Mapped Folder</b>.</li>
+                <li>Right-click on the <b>MetroWebParts</b> folder and select <b>Add Existing Item</b>. Then browse to the <b>Assets</b> folder of this demo, and select the FeatureIcon.gif and WebPartIcon.gif image files.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>We will add an Image mapped folder to our SharePoint project. The files located in this folder will be deployed inside the SharePoint Images folder.</li>
+                <li>This will automatically create the <b>MetroWebParts</b> folder. </li>
+                <li>SharePoint Tools helps to ensure best practices with <b>SharePoint</b> development. When adding image files to your project, you should not add them directly inside the Images folder. Instead, add them to the inner directory in this case named <b>MetroWebParts</b> to avoid file name conflicts with the image deployed by <b>SharePoint</b> in the Images directory.</li>
+                <li>In this step, we will add a couple of images to this folder.</li>
+              </ul>
+            </td>
+            <td>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open the feature included in the Features folder by right-clicking on it and opening the Feature designer.</li>
+                <li>Change the scope to <b>Site</b>.</li>
+                <li>In the Properties window, edit the <b>Image Url</b> property and set it to <b>MetroWebParts\FeatureIcon.gif</b> to use the recently added image file.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now we will create a feature, by right-clicking the Features folder and selecting <b>Add Feature</b>.</li>
+                <li>We will change the feature scope to <b>Site.</b> A Scope setting of Site results in activation at the site collection level. The change of the feature's Scope setting to Site is required because Web Parts deployment requires a feature that activates at site collection scope in order to deploy Web Part description files properly.</li>
+                <li>Let’s associate the icon we added previously to this feature. To do this, we have to go to the <b>Properties</b> window and set the <b>Image Url</b> property.</li>
+                <li>The Image URL is relative to the <b>Images </b>mapped<b> </b>folder.</li>
+              </ul>
+            </td>
+            <td>
+              <br />
+              <p>
+                <img src="images\0ca131bd-eb56-4954-ab94-05e85d86f40b.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Add a new <b>SharePoint Web Part</b> by right-clicking on the project node and using the <b>Add New Item</b> context menu. Name it <b>SimpleWebPart.</b></li>
+                <li>Edit the elements.xml and change the <b>Group</b> property of the <b>File</b> element to <b>MetroWebParts</b>.</li>
+                <li>Edit the .webpart file of the Web Part by double-clicking it. Modify the <b>Title</b> property to <b>Simple DemoWeb Part</b> and the <b>Description</b> property to <b>A simple SharePoint 2010 Web Part</b>.</li>
+                <li>Include the <b>ChromeType</b>, <b>CatalogIconImageUrl</b> and <b>TitleIconImageUrl</b> properties by pasting the following code.</li>
+              </ol>
+              <div class="code">
+                <span codeLanguage="other">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <th>
+                      </th>
+                      <th>
+                        <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                          <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <pre>&lt;property name="ChromeType" type="chrometype"&gt;TitleAndBorder&lt;/property&gt;&lt;property name="CatalogIconImageUrl" type="string"&gt;_layouts/images/MetroWebParts/WebPartIcon.gif&lt;/property&gt;&lt;property name="TitleIconImageUrl" type="string"&gt;_layouts/images/MetroWebParts/WebPartIcon.gif&lt;/property&gt;</pre>
+                      </td>
+                    </tr>
+                  </table>
+                </span>
+              </div>
+            </td>
+            <td>
+              <ul>
+                <li>Now, we will create a new Web Part, called <b>SimpleWebPart</b>. This is done through the <b>Add New Item</b> window.</li>
+                <li>Then, we will edit the elements.xml and change the <b>Group</b> property of the <b>File</b> element to something more meaningful like “<b>MetroWebParts</b>”.</li>
+                <li>Then in the .webpart file of the WebPart we will change the Title and Description properties.</li>
+                <li>Additionally, we will add the <b>ChromeType</b>, the <b>CatalogIconImageUrl</b> and the <b>TitleIconImageUrl</b> properties.</li>
+                <li>After performing these steps we have our first Web Part created.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\48bb0a92-b692-4a61-99bf-fa90ddc04e3a.png" />
+              </p>
+              <p>
+                <img src="images\56fdeec9-43eb-4479-8a0a-bc76da78c33e.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281840481" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – Adding a SharePoint Visual WebPart</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Add a new <b>SharePoint Visual Web Part</b> by right-clicking on the project node and using the <b>Add New Item</b> context menu. Name it <b>SiteExplorer.</b></li>
+                <li>Edit the elements.xml and change the <b>Group</b> property of the <b>File</b> element to <b>MetroWebParts</b>.</li>
+                <li>Edit the .webpart file of the Web Part by double-clicking it. Modify the <b>Title</b> property to <b>Site Explorer</b> and the <b>Description</b> property to <b>A SharePoint 2010 Web Part, which displays the hierarchical virtual file system for the current site</b>.</li>
+                <li>Include the <b>ChromeType</b>, <b>CatalogIconImageUrl</b> and <b>TitleIconImageUrl</b> properties by pasting the following code.</li>
+              </ol>
+              <div class="code">
+                <span codeLanguage="other">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <th>
+                      </th>
+                      <th>
+                        <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                          <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <pre>&lt;property name="ChromeType" type="chrometype"&gt;TitleAndBorder&lt;/property&gt;&lt;property name="CatalogIconImageUrl" type="string"&gt;_layouts/images/MetroWebParts/WebPartIcon.gif&lt;/property&gt;&lt;property name="TitleIconImageUrl" type="string"&gt;_layouts/images/MetroWebParts/WebPartIcon.gif&lt;/property&gt;</pre>
+                      </td>
+                    </tr>
+                  </table>
+                </span>
+              </div>
+            </td>
+            <td>
+              <ul>
+                <li>Now we will create a SharePoint Visual Web Part, called <b>SiteExplorer</b>.</li>
+                <li>One of the new project templates in Visual Studio 2010 is the <b>Visual Web Part</b> project template, which enables developers to visually design a Web Part that can be deployed to SharePoint.</li>
+                <li>We will edit the same properties as we did it in the simple Web Part, that is, changing the <b>Group</b> property of the <b>File</b> element in the elements.xml file; changing the <b>Title</b> and <b>Description</b> properties, and adding the <b>ChromeType</b>, <b>CatalogIconImageUrl</b> and <b>TitleIconImageUrl</b> properties.</li>
+                <li />
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\d606c45e-3851-43e1-b9fd-ad8f7af5dc12.png" />
+              </p>
+              <p>
+                <img src="images\88c05aa9-2854-492d-8b33-971ed809bd0b.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open the <b>SiteExplorerUserControl.ascx</b> file of the Template, by double-clicking it.</li>
+                <li>Add a <b>SharePoint TreeView</b> to the user control by dragging it from the <b>Toolbox</b>.  Change the <b>ID</b> property of it to <b>treeSiteFiles</b>.</li>
+                <li>Open a Windows Explorer window, and browse to the project folder.</li>
+                <li>Replace the <b>SiteExplorerUserControl.ascx.cs</b> file, located in \Source\{Language}\MetroWebParts\SiteExplorer folder, with the one located in the \Source\Assets folder.</li>
+                <li>Show the <b>OnPreRender</b> method.</li>
+                <li>Show the using <b>Microsoft.SharePoint</b> using statement.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s add a <b>SharePoint TreeView</b> to the user control included in the Web Part, by dragging it from the <b>Toolbox</b>.</li>
+                <li>Now we will add the code necessary to make this work, by replacing the empty code file, with a complete one. So let’s open it, and see its content.</li>
+                <li>Notice that the <b>OnPreRender</b> method is overridden. This method loads the <b>TreeView</b> with the hierarchical virtual file system for the current site.</li>
+                <li>Note that the <b>Microsoft.SharePoint</b> namespace is referenced. This namespace provides types and members for working with a top-level site and its subsites or lists.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\e699944c-7013-40a4-b677-830cce451ec6.png" />
+              </p>
+              <p>
+                <img src="images\a1e38a5f-9f79-47bf-8479-7c1ce36dc88b.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281840482" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #3 – Test SharePoint Feature</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Change the <b>Active Deployment Configuration</b> to <b>No Activation</b> using the <b>SharePoint</b> tab in the <b>Project</b> properties page.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, we will see the specific configuration for this SharePoint project.</li>
+                <li>In the <b>Active Deployment Configuration</b> combo box we will change the selected item from <b>Default</b> to <b>No Activation</b>.</li>
+                <li>Each configuration consists of one or more Deployment Steps, and each step may execute one or more actions and/or SharePoint Commands.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\883d0e1e-8a3e-481a-a525-a2da7c5fbb62.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right-click the project node and click <b>Deploy</b>. Review the Output window to see the details.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>By right-clicking the SharePoint project node you will notice three new actions can be performed: Deploy, Package and Retract.</li>
+                <li>Let’s deploy the site, and we will look at the <b>Output</b> window to see the details.</li>
+                <li>At this point, the solution package for the project has been deployed on the local SharePoint. Let's test out our work by trying to activate the Features we defined inside the project.</li>
+              </ul>
+            </td>
+            <td>
+              <br />
+              <p>
+                <img src="images\2cc1498b-0c9e-4322-a767-8495a01bb7d2.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open I<b>nternet Explorer</b> and browse to the configured SharePoint site’s home page: http://localhost/sites/SharePointToolsDemo.</li>
+                <li>Click <b>Site Actions</b> - <b>Site Settings</b> to navigate to the <b>Site Settings</b> page. </li>
+                <li>Inside the <b>Site Collection Administration</b> section of the <b>Site Settings</b> page, click the <b>Site collection features</b> link to navigate to the <b>Site Collection Administration</b> &gt; <b>Features</b> page. </li>
+                <li>Locate the feature you have been working on with a title of <b>MetroWebParts</b> and click the <b>Activate</b> button. </li>
+                <li>Click the <b>Home</b> button to return to the Home page.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s open the site in Internet Explorer and activate the feature we created.</li>
+                <li>To activate the feature that contains the Web Parts, we have to go to <b>Site Actions – Site Settings</b>.</li>
+                <li>In the <b>Site Settings</b> section, click the <b>Site Collection Features</b> in the <b>Site Collection Administration</b> section.</li>
+                <li>Let’s look for the feature we created, and activate it.</li>
+                <li>Finally, if you return to the Home Page to create a new page that contains the Web Parts created recently.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\f721eb3e-f142-4226-9156-8d4226054d21.png" />
+              </p>
+              <p>
+                <img src="images\e5f7d18c-cb36-4af9-9246-fb083bbadb9b.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Using the <b>Page</b> ribbon in the site’s home page, select the <b>Edit Page</b> command to edit the home page and add the created web parts.</li>
+                <li>Click the <b>Add Web Part</b> button located in the <b>Right</b> frame.</li>
+                <li>Select the <b>MetroWebParts</b> category and check the two created Web Parts are present.</li>
+                <li>Add a <b>SimpleWebPart</b> element by clicking <b>Add</b>.</li>
+                <li>Click the <b>Add Web Part</b> button located in the <b>Left</b> frame. This time add a <b>Site Explorer</b> web part.</li>
+                <li>Click the <b>Stop Editing</b> command to check the new site’s home page look and feel.</li>
+                <li>Click and use the Site Explorer Visual Web Part.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s edit the home page to include the Web Parts we have just created.</li>
+                <li>To do this, we are going to edit the home page, by using the Edit Page command located in the .</li>
+                <li>Notice that there are two frames, where you can put content: the <b>Left</b> and the <b>Right</b> one. There are <b>Add Web Part</b> buttons in each of these frames. Every time you click one, you can add a Web Part. We will add the Site Explorer Visual Web Part to the left frame and the <b>SimpleWebPart</b> to the right frame.</li>
+                <li>Once this is done, we will stop editing the page to see it in action.</li>
+                <li>Finally, we will try the Site Explorer web part to see its functionality by exploring the web server hierarchical structure.</li>
+                <br />
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b994ffb6-de8a-462e-987e-33255df4445e.png" />
+              </p>
+              <p>
+                <img src="images\2cdad8d6-21ab-4f9d-83d0-6d792f02285d.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

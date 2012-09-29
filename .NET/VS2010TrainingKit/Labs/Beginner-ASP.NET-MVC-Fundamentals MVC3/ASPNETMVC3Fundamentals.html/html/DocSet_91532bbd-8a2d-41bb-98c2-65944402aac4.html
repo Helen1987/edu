@@ -1,0 +1,172 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 5: Creating a View Model" />
+      <MSHelp:RLTitle Title="Exercise 5: Creating a View Model" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 5: Creating a View Model</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Fundamentals</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 5: Creating a View Model</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>So far you made your Views display hardcoded HTML, but in order to create dynamic web applications, the View template should receive information from the Controller. One common technique to be used for that purpose is the <b>ViewModel</b> pattern, which allows a Controller to package up all the information needed to generate the appropriate HTML response.</p>
+        <p>In this exercise, you will learn how to create a ViewModel class and add the needed properties: in this case the number of genres in the store and a list of those genres. Also, you will update the StoreController to use the created ViewModel and finally you will create a new View template that will display the mentioned properties in the page.</p>
+        <a name="_Toc282507924" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a ViewModel Class</b>
+        </p>
+        <p>In this task, you will create a ViewModel class that will implement the Store genre listing scenario.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex05-CreatingAViewModel\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>. Alternatively, you may continue with the solution that you obtained after completing the previous exercise.</li>
+          <li>Create a <b>ViewModels</b> folder to hold the ViewModel. To do this, right-click the top-level <b>MvcMusicStore</b> project, select <b>Add</b> and then <b>New Folder</b>.<p><img src="images\aab3b63a-e70d-4274-a99e-ff80614c8563.png" /></p><p><b>Figure 30</b><br /><i>Adding a new folder</i></p><br /></li>
+          <li>Name the folder <b>ViewModels</b>.<p><img src="images\50dfbabc-bc72-40cd-9091-9c12eb7b08e6.png" /></p><p><b>Figure 31</b><br /><i>ViewModels folder in Solution Explorer</i></p><br /></li>
+          <li>Create a <b>ViewModel</b> class. To do this, right-click on the <b>ViewModels</b> folder recently created, select <b>Add</b> and then <b>Class</b>.<p><img src="images\1c1bcec3-bd79-4b28-9fb4-3addddcc577e.png" /></p><p><b>Figure 32</b><br /><i>Adding a new Class</i></p><br /></li>
+          <li>Name the class <b>StoreIndexViewModel</b> and click <b>Add</b>.<a name="_GoBack" href="#"><span /></a><p><img src="images\b1fa8cd6-e1d4-4673-8a39-d50a3a30c569.png" /></p><p><b>Figure 33</b><br /><i>Creating StoreIndexViewModel class</i></p><br /></li>
+        </ol>
+        <a name="_Toc282507925" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding Properties to the ViewModel class</b>
+        </p>
+        <p>There are two pieces of information to be passed from the StoreController to the View template in order to generate the HTML response wanted: the number of genres in the store and a list of those genres.</p>
+        <p>In this task, you will add those 2 properties to the <b>StoreIndexViewModel</b> class: <b>NumberOfGenres</b> (an integer) and <b>Genres</b> (a list of strings).</p>
+        <ol>
+          <li>Add <b>NumberOfGenres</b> and <b>Genres</b> properties to the <b>StoreIndexViewModel </b>class. To do this, add the following 2 lines to the class definition:<p>(Code Snippet – ASP.NET MVC 3.0  Fundamentals – Ex5 StoreIndexViewModel properties – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public class StoreIndexViewModel{<b>  public int NumberOfGenres { get; set; }</b><b>  public List&lt;string&gt; Genres { get; set; }</b>}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: The <b>{ get; set; }</b> notation makes use of C#’s auto-implemented properties feature. It provides the benefits of a property without requiring us to declare a backing field.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282507926" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Updating StoreController to use the StoreIndexViewModel</b>
+        </p>
+        <p>The <b>StoreIndexViewModel </b>class encapsulates the information needed to pass from <b>StoreController</b>’s <b>Index</b> method to a View template in order to generate a response.</p>
+        <p>In this task, you will update the <b>StoreController</b> to use the <b>StoreIndexViewModel</b>.</p>
+        <ol>
+          <li>Open <b>StoreController</b> class. <p><img src="images\73e41ea7-91c4-46ac-ac56-15b128ccc4ed.png" /></p><p><b>Figure 34</b><br /><i>Opening StoreController class</i></p><br /></li>
+          <li>In order to use the <b>StoreIndexViewModel</b> class from the <b>StoreController</b>, add the following namespace to the top of the <b>StoreController </b>code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex5 StoreIndexViewModel using ViewModels – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using MvcMusicStore.ViewModels;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Change the <b>StoreController</b>’s <b>Index</b> action method so that it creates and populates a <b>StoreIndexViewModel</b> object and then passes it off to a View template to generate an HTML response with it.<br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In Lab “ASP.NET MVC Models and Data Access” you will write code that retrieves the list of store genres from a database.  In the following code, you will create a <b>List</b> of dummy data genres that will populate the <b>StoreIndexViewModel</b>.<br />After creating and setting up the <b>StoreIndexViewModel</b> object, it will be passed as an argument to the <b>View</b> method. This indicates that the View template will use that object to generate an HTML response with it.</td></tr></table><p /></div><br /></li>
+          <li>Replace the <b>Index</b> method with the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex5 StoreController Index method – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public ActionResult Index()</b><b>{</b><b>    // Create a list of genres</b><b>    var genres = new List&lt;string&gt; {"Rock", "Jazz", "Country", "Pop", "Disco"};</b><b>    // Create our view model</b><b>    var viewModel = new StoreIndexViewModel { </b><b>        NumberOfGenres = genres.Count(),</b><b>        Genres = genres</b><b>    };</b><b>    return View(viewModel);</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you’re unfamiliar with C#, you may assume that using <b>var</b> means that the <b>viewModel </b>variable is late-bound. That’s not correct – the C# compiler is using type-inference based on what you assign to the variable to determine that <b>viewModel</b> is of type <b>StoreIndexViewModel</b>. Also, by compiling the local <b>viewModel</b> variable as a <b>StoreIndexViewModel</b> type you get compile-time checking and Visual Studio code-editor support.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282507927" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Creating a View Template that Uses StoreIndexViewModel</b>
+        </p>
+        <p>In this task, you will create a View template that will use a StoreIndexViewModel object passed from the Controller to display a list of genres.</p>
+        <ol>
+          <li>Before creating the new View template, let’s build the project so that the <b>Add View Dialog</b> knows about the <b>StoreIndexViewModel </b>class. Build the project by selecting the <b>Debug</b> menu item and then <b>Build MvcMusicStore</b>.<p><img src="images\7a6e294d-2584-46a9-85ee-6d5512b8c0c9.png" /></p><p><b>Figure 35</b><br /><i>Building the project</i></p><br /></li>
+          <li>Create a new View template. To do that, right-click inside the <b>Index</b> method and select <b>Add View.</b><p><img src="images\692e0e71-f445-413e-b034-0d8c8dc428ba.png" /></p><p><b>Figure 36</b><br /><i>Adding a View</i></p><br /></li>
+          <li>Because the <b>Add View Dialog</b> was invoked from the <b>StoreController</b>, it will add the View template by default in a \Views\Store\Index.aspx file.  The view will be based on the Site.Master MasterPage template. Check the <b>Create a strongly-typed-view</b> checkbox and then select the <b>StoreIndexViewModel</b> as the <b>Model class</b>. Also, make sure that the View engine selected is <b>ASPX (C#)</b>. Click <b>Add</b>.<p><img src="images\32b800be-71bd-40fe-b9e0-e65df5c769ad.png" /></p><p><b>Figure 37</b><br /><i>Add View Dialog</i></p><br /><p>The \Views\Store\Index.aspx View template file is created and opened. Based on the information provided to the <b>Add View</b> dialog in the last step, the View template will expect a <b>StoreIndexViewModel</b> instance as the data to use to generate an HTML response. You will notice that by seeing that the template inherits a <b>ViewPage&lt;MusicStore.ViewModels.StoreIndexViewModel&gt;</b>.</p></li>
+        </ol>
+        <a name="_Toc282507928" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Updating the View Template</b>
+        </p>
+        <p>In this task, you will update the View template created in the last task to output the number of genres and their names within the page.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> You will use &lt;%: %&gt; syntax (often referred to as “code nuggets”) to execute code within the View template. There are two main ways you will see this used:<br />1. Code enclosed within &lt;% %&gt; will be executed<br />2. Code enclosed within &lt;%: %&gt; will be executed, and the result will be output to the page</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>In the Index.aspx file, replace the code inside the <b>Content2</b> ASP.NET Content control with the following:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;<b>    &lt;h3&gt; Browse Genres&lt;/h3&gt;</b><b>    &lt;p&gt; Select from &lt;%: Model.NumberOfGenres %&gt; genres&lt;/p&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> As soon as you finish typing the period after the word <b>Model</b>, Visual Studio’s Intellisense feature supplies you with a list of possible properties and methods to choose from.<br /><img src="images\18db4177-80b4-4821-bfe9-dc10293d34ca.png" /><br /><b>Figure 38</b><br /><i>Getting Model properties and methods with Visual Studio’s IntelliSense</i><br /><br />The <b>Model</b> property references the <b>StoreIndexViewModel</b> object that the Controller passed to the View template.  This means that you can access all of the data passed the Controller to the View template via the <b>Model</b> property, and format it into an appropriate HTML response within the View template.<br />You can just select the <b>NumberOfGenres</b> property from the Intellisense list rather than typing it in and then it will auto-complete it by pressing the <b>tab key</b>.</td></tr></table><p /></div><br /></li>
+          <li>Loop over the genre list in the <b>StoreIndexViewModel </b>and create an HTML <b>&lt;ul&gt;</b> list using a <b>foreach</b> loop. Also change the code inside <b>Content1 </b>ASP.NET Content control with a simple text: <b>Store Genres.</b><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage&lt;MvcMusicStore.ViewModels.StoreIndexViewModel&gt;" %&gt;&lt;asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server"&gt;<b>Store Genres</b>&lt;/asp:Content&gt;&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;    &lt;h3&gt;Browse Genres&lt;/h3&gt;    &lt;p&gt;Select from &lt;%: Model.NumberOfGenres %&gt; genres&lt;/p&gt;<b>&lt;ul&gt;</b><b>        &lt;% foreach (string genreName in Model.Genres) { %&gt;</b><b>           &lt;li&gt;</b><b>            &lt;%: genreName %&gt;</b><b>           &lt;/li&gt;</b><b>        &lt;% } %&gt;</b><b>    &lt;/ul&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Press <b>F5</b> to run the Application and browse <b>/Store</b>. You will see the list of genres passed in the <b>StoreIndexViewModel </b>object from the <b>StoreController </b>to the View template.<p><img src="images\d417a60e-3a8c-4cc1-8741-520ac60de77a.png" /></p><p><b>Figure 39</b><br /><i>View displaying a list of genres</i></p><br /></li>
+          <li>Close the browser.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_7f18ed10-9bf3-4318-b733-99b3db48fe13.html">Exercise 6: Using Parameters in View</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

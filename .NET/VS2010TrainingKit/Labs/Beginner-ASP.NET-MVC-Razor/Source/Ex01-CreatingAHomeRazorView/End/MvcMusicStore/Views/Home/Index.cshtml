@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/Site.cshtml";
+
+    PageData["ApplicationTitle"] = "ASP.NET MVC 3 MUSIC STORE – Razor Style";
+}
+
+@section header {
+   <h3>Welcome</h3>
+}
+
+<h2>This is the Home Page</h2>
+
+@{
+    var myname = "MVC Music Store";
+    <div>
+        My name is @myname
+    </div>
+}
+
+@{
+    var now = DateTime.Now;
+    <text>
+        Now is @now
+    </text>
+}
+
+<div>
+@{
+    var engine = "Razor";
+    @: I'm using @engine engine.
+}
+</div>
+
+@*
+    <div>
+        I'm inside a comment
+    </div>
+*@

@@ -1,0 +1,345 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+        Microsoft SharePoint Developers Tools 2010 - Project Templates
+      </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Creating a SharePoint project</li>
+          <li>Feature Event Receiver</li>
+        </ol>
+        <a name="_Toc281917273" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Creating a SharePoint Project</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Create a new Empty SharePoint project.</li>
+                <li>Set the Site Url to a site already created. For example, <a href="http://localhost/sites/SharePointToolsDemo">http://localhost/sites/SharePointToolsDemo</a>.</li>
+                <li>Select the <b>Deploy as a farm solution</b> option in the <b>SharePoint Customization Wizard</b>.</li>
+                <li>Click <b>Finish</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>First, we will create a new Empty Sharepoint project. To do this, in the New Project dialog, we will choose the <b>Empty SharePoint Project</b> template located in the <b>SharePoint</b> category and use the default values just for simplicity.</li>
+                <li>The Customization Wizard will appear. Here, you can specify the site that will be used for debugging and the trust level for the Sharepoint solution. We will choose the farm solution deployment option. Farm Solutions are hosted in the IIS worker process, and run code that can affect the whole farm.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\947796ec-37f0-4990-b494-564ed86d7bc4.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, show SharePoint special folders: <b>Features</b> and <b>Package</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Once the new project has been created, you should be able to observe it has four nodes: Properties, References, Features and Package.</li>
+                <li> While the first two nodes are standard on all Visual Studio projects, the Features node and the Package node are unique to projects created with the Visual Studio 2010 SharePoint Tools.</li>
+                <li>These nodes are for exclusive use of the SharePoint Project template and cannot be renamed, deleted, cut, copied, or dragged off from the project. </li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\30eba203-0770-47fe-ba1b-37d7f9bb49de.png" />
+              </p>
+              <br />
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Add a new feature by right-clicking the <b>Features</b> node and selecting <b>Add Feature</b>.</li>
+                <li>Rename the recently created feature to <b>Main</b>.</li>
+                <li>Open the Main feature in the feature designer. Use the feature designer to change the feature’s Title, Description and Scope using the following values: <ul><li><b>Title</b>: Custom Web Parts</li><li><b>Description</b>: My very first project using the Visual Studio 2010 Tools</li><li><b>Scope</b>: Site</li></ul></li>
+                <li>Save the modifications.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The Features node contains one or more SharePoint project features. A feature is a container of extensions for SharePoint. After a feature is deployed to SharePoint server, it can be included in site definitions or activated individually by SharePoint administrators on SharePoint sites.</li>
+                <li>Let’s add a new feature. The feature designer will open and we can configure some feature attributes in it.</li>
+                <li>A Scope setting of <b>Web</b> results in site-level activation of the feature while a Scope setting of <b>Site</b> results in activation at the site collection level. The change of the feature's Scope setting to <b>Site</b> is required because Web Parts deployment requires a feature that activates at site collection scope in order to deploy Web Part description files properly.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\47738883-29a5-4210-a9c6-2ddd93d3e00f.png" />
+              </p>
+              <p>
+                <img src="images\d1211d84-9f5a-4937-8ddc-83bf84a99661.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Review the package node and the Package designer.</li>
+                <li>Click the <b>Edit</b> feature link in the Package designer to open the <b>Features Designer</b>.</li>
+                <li>Right-click the project name and click Package.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, let’s review the <b>Package</b> node. To open it, double-click it.</li>
+                <li>The Package node contains a single file that serves as the distribution mechanism for the SharePoint project. This file, known as a solution package, is .CAB-based with a .WSP extension. A solution package is a deployable, reusable file that contains a set of features, site definitions, and assemblies that apply to SharePoint sites, and that you can enable or disable individually. The Package node also always contains a file that is named Package.wspdef, an XML definition file for the package. </li>
+                <li>Once a package is deployed to the SharePoint server, the SharePoint administrator can install it and activate its features.</li>
+                <li>By using the Package Designer, you can create and customize deployment packages. For example, you can add SharePoint project items and Features, reset the IIS server, set Feature activation scopes, and identify Feature dependencies. The designer also generates a manifest, an XML file that describes each package.</li>
+                <li>If you look at the Items in Package feature, you can see the feature created previously. Clicking the <b>Edit</b> link, will open the <b>Feature Designer</b>.</li>
+                <li>Finally, to generate this package, you just have to right-click the project name, and select <b>Package</b>.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\33be745f-0c8c-4986-a315-f336f1f3333f.png" />
+              </p>
+              <br />
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281917274" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – Feature Event Receiver</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In the <b>Solution Explorer</b>, right-click on the Main feature node, and choose <b>Add Event Receiver</b>, to add an event receiver to the selected feature.</li>
+                <li>Show the code of the <b>Event Receiver</b> class and the commented methods for the key events.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, let’s add a <b>Feature Event Receiver</b> to the <b>Main</b> feature.</li>
+                <li>An Event Receiver specifies a server-side code routine that is called as part of four key events in the lifetime of a Feature: installation, activation, deactivation, and removal.</li>
+                <li>This action will create the Event Receiver class associated to that feature. Notice that there are commented stub methods for every key event. Therefore, you can uncomment the desired method and write your own code.</li>
+              </ul>
+            </td>
+            <td>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open the completed solution, located in <b>Source\{Language}</b>, where <b>{Language}</b> can be the language of your preference.</li>
+                <li>Open the <b>Main.EventReceiver</b> class located in the <b>Features\Main</b> node.</li>
+                <li>Show the <b>GUID</b> attribute.</li>
+                <li>Show the <b>FeatureActivated</b> and <b>FeatureDeactivating</b> methods that implement code to update the site’s title.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>In order to speed up this demo, we will open another project with the same structure but with code written in some of these events.</li>
+                <li>In addition, a GUID attribute has been applied to the receiver class to give a unique identifier. Do not remove the GUID from the class because it will be used behind the scenes by the SPT during the packaging process.</li>
+                <li>Let’s look at the <b>FeatureActivated</b> method. It first obtains a <b>SPWeb</b> reference to the top-level from the <b>SPSite</b> to get the current value of the <b>Title</b> property. It stores the value as a name/value pair inside the SPWeb.Properties collection and then modifies it to the new value “VS 2010 SPT Rocks”.</li>
+                <li>Finally, in the <b>FeatureDeactivation</b> method, the original title is restored.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\f419551c-78e5-42cb-9588-b9535aec9492.png" />
+              </p>
+              <p>
+                <img src="images\27359817-0cad-41e2-a62c-36fd6ed7d7b2.png" />
+              </p>
+              <p>
+                <img src="images\3247aa71-bc09-4608-9d44-ae2f41bc8869.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Change the <b>Active Deployment Configuration</b> to <b>No Activation</b> using the <b>SharePoint</b> tab in the <b>Project</b> properties page.</li>
+                <li>Save the configuration.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now, we will see the specific configuration for SharePoint projects.</li>
+                <li>Note that there are two text boxes that allow you to add command-line instructions, which will execute either just before or directly after the SPT deploy steps, are processed. You are not going to add anything to either of the two top text boxes. </li>
+                <li>In the Active Deployment Configuration combo we will change the selected item from <b>Default</b> to <b>No Activation</b>.</li>
+                <li>If you select any configuration in the <b>Edit Configuration</b> list, you will see its description and you can edit the configuration. </li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\ca3317fc-813a-4ed4-9dc1-d7be9b95ae10.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Right-click the project node and click <b>Deploy</b>. Review the Output window to see the details.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>By right-clicking the SharePoint project node you will notice three new actions can be performed: Deploy, Package and Retract. We already comment around the Package action, which generates the .WSP file. You can also Deploy and Retract (remove) your Package from the configured SharePoint Server directly from the contextual menu.</li>
+                <li>Let’s deploy the site, and we will look at the Output window to see the details.</li>
+                <li>At this point, the solution package for the project has been deployed on the local SharePoint. Let's test out our work by trying to activate the feature we defined inside the project.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\8d27b511-54c9-4907-ae90-5ff83c92f508.png" />
+              </p>
+              <p>
+                <img src="images\9381c531-20f4-4683-bda0-7293f14ad260.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Add a breakpoint to the <b>FeatureActivated</b> method in the Event Receiver class created in a previous step.</li>
+                <li>Click the <b>Start Debugging (F5)</b> button in Visual Studio 2010.</li>
+                <li>Click Site Actions - Site Settings to navigate to the Site Settings page. </li>
+                <li>Inside the Site Collection Administration section of the <b>Site Settings</b> page, click the <b>Site collection features</b> link to navigate to the Site Collection Administration &gt; Features page. </li>
+                <li>Locate the feature you have been working on with a title of <b>CustomWebParts</b> and click the Activate button. </li>
+                <li>When Visual Studio gets the focus due to the breakpoint, press <b>F5</b> to continue.</li>
+                <li>Click the <b>Home</b> button to return to the Home page.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>We will also add a breakpoint in the <b>FeatureActivated</b> method and run the solution using Visual Studio Debug button.</li>
+                <li>Let’s run the site and activate the feature we created. To do this, we have to go to Site Actions – Site Settings.</li>
+                <li>In the Site Settings section, click the Site Collection Features in the Site Collection Administration section.</li>
+                <li>Let’s look for the feature we created, and activate it.</li>
+                <li>At this point, the focus will return to Visual Studio, because the breakpoint was caught. You can press F5 to continue or F11 to debug the method line by line.</li>
+                <li>Finally, if you return to the Home Page, you will see that the feature changed the Title to “VS 2010 SPT Rocks”.</li>
+                <li>If you deactivate the feature, the home title will return to the original value.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\388b59f9-2a15-4c3d-824a-22fa8b517dbc.png" />
+              </p>
+              <br />
+              <p>
+                <img src="images\e6c2fd04-d4c3-480e-bee9-580ebb286a6f.png" />
+              </p>
+              <p>
+                <img src="images\2a8af58c-1d80-4462-bb01-eafef90d5acc.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleDataStructures", "SimpleDataStructures\SimpleDataStructures.vbproj", "{817BD5B7-4F81-4BC0-8357-4F13020D1253}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleDataStructures.Tests", "SimpleDataStructures.Tests\SimpleDataStructures.Tests.vbproj", "{0C6C1F88-B743-4BEE-A061-95E904A5AE5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3E337B9-D406-4995-BE6D-AEFFB1FAFF5F}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SimpleDataStructures.vsmdi = SimpleDataStructures.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SimpleDataStructures.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{817BD5B7-4F81-4BC0-8357-4F13020D1253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817BD5B7-4F81-4BC0-8357-4F13020D1253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817BD5B7-4F81-4BC0-8357-4F13020D1253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817BD5B7-4F81-4BC0-8357-4F13020D1253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6C1F88-B743-4BEE-A061-95E904A5AE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6C1F88-B743-4BEE-A061-95E904A5AE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6C1F88-B743-4BEE-A061-95E904A5AE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6C1F88-B743-4BEE-A061-95E904A5AE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

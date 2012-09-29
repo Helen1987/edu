@@ -1,0 +1,108 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Managing User Stories" />
+      <MSHelp:RLTitle Title="Exercise 1: Managing User Stories" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Managing User Stories</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Planning your Projects with Team Foundation Server 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Managing User Stories</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use the Product Backlog workbook to work with user story work items from Team Foundation Server. User stories are single sentences that describe actions that the user can take and are typically written when starting a software project.</p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Visual Studio from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>In <b>Team Explorer</b>, expand the <b>Tailspin Toys</b> project node, followed by the <b>Documents </b>and<b> Shared Documents</b> folders so that you can see the <b>Product Planning.xlsm</b> workbook.<p><img src="images\b213ee4e-994d-4fb0-bdbe-f3fde18e113f.png" /></p><p><b>Figure 1</b><br /><i>Product Planning workbook location</i></p></li>
+          <li>The new Product Planning workbook enables you to manage your backlog of product work items from within Microsoft Excel. <b>Double-click</b> on<b> Product Planning.xlsm</b> to open it, selecting the <b>OK</b> button when prompted.<p><img src="images\34ae50cc-3812-480c-bcbf-f31cabe30463.png" /></p><p><b>Figure 2</b><br /><i>File download confirmation dialog box</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>When prompted to enter a product key, select the <b>Continue</b> button followed by the <b>No</b> button to continue using the trial version. Check the task bar as this prompt may be in the background.</td></tr></table><p /></div></li>
+          <li>To make sure that the data accurately reflects the current state in Team Foundation Server (TFS), select the <b>Refresh</b> button within the <b>Team</b> tab in Excel.<p><img src="images\dac0a035-4025-44da-be52-df46955e60f2.png" /></p><p><b>Figure 3</b><br /><i>Refresh button location</i></p></li>
+          <li>The Product Planning workbook, which shows all of the existing user stories, is initially loaded in read-only mode. Each user story is represented as a work item in TFS. Select the <b>Edit Workbook</b> button near the top of the workbook.<p><img src="images\bb06fe01-dc65-4c60-80d2-7e1f1b686e63.png" /></p><p><b>Figure 4</b><br /><i>Edit Workbook button location</i></p></li>
+          <li>Note that each user story represented here has a state and iteration assigned to it. All of the user stories associated with Iteration 1 have already been completed, the three user stories associated with Iteration 2 are currently in progress or resolved, and the rest are assigned to the backlog.<p><img src="images\4477f81d-a3ba-4e3d-a843-a7939562a573.png" /></p><p><b>Figure 5</b><br /><i>Initial state for State and Iteration Path columns</i></p></li>
+          <li>Select the <b>Iterations</b> worksheet (tab near bottom of workbook). This worksheet helps define iterations and balance the workload between those iterations. The <b>Planned</b> and <b>Delivered</b> columns represent the quantity of work that we planned to complete and the quantity of work actually completed during the iteration, where work is measured in story points. While planning a new iteration, we can take into account the planned and delivered work from previous iterations in order to help assign an appropriate level of work for future iterations.<p><img src="images\97b8f7b4-3be8-4d99-896e-bba89998151a.png" /></p><p><b>Figure 6</b><br /><i>Initial state of Iteration planning worksheet</i></p></li>
+          <li>Now let’s start planning a new iteration. Under the <b>Story Points per Iteration</b> heading, find the row for Iteration 3 and enter a <b>Start Date</b> for next Monday. It is important that this date be in the future. Enter the <b>End Date</b> for the end of that week (the following Friday). Finally, enter <b>3</b> for team size.<p><img src="images\7863f7ee-3bb4-42ff-a204-d4c8124f63f1.png" /></p><p><b>Figure 7</b><br /><i>Adding Iteration 3</i></p></li>
+          <li>The next step is to start assigning active customer story tasks to the new iteration. Return to the <b>Product Backlog</b> worksheet and assign the first three Backlog items to <b>Iteration 3</b>. Note that each customer story has story points assigned to it. These points, which represent a rough order of magnitude estimate for the amount of work anticipated, are used later on to help load balance the planned development iterations.<p><img src="images\9bf8fe98-cac1-438e-9cf4-b9a3476e400d.png" /></p><p><b>Figure 8</b><br /><i>Backlog work items changed to Iteration 3</i></p></li>
+          <li>Switch back to the <b>Iterations</b> worksheet to see what the workload is looking like in comparison with previous iterations. The three user story tasks that we added to the new iteration account for <b>10 </b>story points, which is less than the 14 that were scheduled with the team size for Iteration 2, and less than the 20 that were delivered on with a slightly larger team during Iteration 1. <p><img src="images\14d73d03-b4ae-4953-a508-02f481253770.png" /></p><p><b>Figure 9</b><br /><i>Iteration Planning worksheet showing Iteration 3 work load</i></p></li>
+          <li>It looks like we have more capacity, so let’s assign some more work to Iteration 3. Return to the Product Backlog worksheet and find the backlogged user story with an <b>ID</b> of <b>15</b>. This user story is worth <b>4</b> story points, which would bring the total story points for Iteration 3 up to where we want it. Note that some other backlogged user stories were skipped over because their story points indicate that they would be too much work for this iteration.</li>
+          <li>Change the <b>Iteration Path</b> for user story <b>ID = 15</b> to <b>Iteration 3</b>.</li>
+          <li>Switch back to the Iterations worksheet and note that Iteration 3 does indeed show that we are taking on the right amount of work considering the story points, size of team, and length of iteration.<p><img src="images\e79880ea-351e-4d1b-83a5-89ccedd6baa4.png" /></p><p><b>Figure 10</b><br /><i>Iteration Planning worksheet showing updated Iteration 3 work load</i></p></li>
+          <li>Note that the <b>Product Planning</b> workbook also has an <b>Interruptions</b> worksheet that allows you to account for holidays or other day-long events for the entire team. This data is represented in the <b>Days</b> column of the <b>Iterations</b> worksheet if it falls within an iteration date range.<p><img src="images\37939b9e-ae09-4cbf-8602-2727a0d9cc97.png" /></p><p><b>Figure 11</b><br /><i>Interruptions worksheet for Product Planning workbook</i></p></li>
+          <li>Now that we have modified the user stories and completed our new iteration planning, we should save the changes to TFS. Return to the <b>Product Backlog</b> worksheet, click anywhere in the table to put the cursor there, and then select <b>Publish </b>from the Team tab in Excel.<p><img src="images\b429ab0e-62e3-4ef3-897e-8107f3f768d9.png" /></p><p><b>Figure 12</b><br /><i>Publish button location</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>It may take a moment for the changes to be published to TFS.</td></tr></table><p /></div></li>
+          <li>Now that we are done working with the Product Planning workbook, close it and <b>save</b> the changes when prompted.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_2ad8432d-49bb-41b9-a09c-c3e42b7e4cf8.html">Exercise 2: Managing Iteration Work Items and Team Capacity</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

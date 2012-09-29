@@ -1,0 +1,124 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Lab 08: Using WCF RIA Services" />
+      <MSHelp:RLTitle Title="Lab 08: Using WCF RIA Services" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Lab 08: Using WCF RIA Services</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using WCF RIA Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Lab 08: Using WCF RIA Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Silverlight provides a flexible framework for working with distributed data retrieved from different types of services but does require developers to understand asynchronous programming and handle callback operations. Applications that allow users to update, insert and delete data also require developers to perform their own client-side object tracking and to write client and server-side code to validate data. While each of these tasks can be addressed with different coding techniques, using a framework that simplifies these types of tasks can lead to greater overall productivity and fewer bugs.</p>
+        <p>WCF RIA Services provides a distributed data exchange framework that builds upon existing functionality in Windows Communication Foundation (WCF) to allow data to be exchanged between a Silverlight client and a server.  It provides developers with a simplified way to work with the asynchronous programming model, track object state within Silverlight applications, share validation code between client and server projects, build client-side proxy objects, plus more. </p>
+        <p>In this lab you'll create a WCF RIA Services domain service class and call it from a Silverlight application.  You'll also learn how data annotations can be applied to metadata classes to validate object properties and share validation logic across client and server. A bonus exercise is also included to show how WCF RIA Services can be used with custom patterns such as the repository pattern. The application that you'll work with in the lab exercises is shown next:</p>
+        <p>
+          <img src="images\d9ab29b6-3fe9-46fd-91e8-c74717e853c7.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>Customer Orders Application</i>
+        </p>
+        <p><b>You Will Benefit from this Lab if:</b></p>
+        <ul>
+          <li>You're interested in building Silverlight applications that take advantage of WCF RIA Services</li>
+          <li>You're interested in learning how to create a domain service and call it from a Silverlight client</li>
+          <li>You want to share validation logic between a client and a server</li>
+        </ul>
+        <p><b>You Will Learn:</b></p>
+        <ul>
+          <li>How to create an Entity Framework 4 model</li>
+          <li>How to create a WCF RIA Services domain service using the built-in Visual Studio 2010 wizard</li>
+          <li>How to customize domain service methods</li>
+          <li>How to call a domain service from a Silverlight client</li>
+          <li>How to share validation logic between the client and server</li>
+        </ul>
+        <p><b>Business Requirements for the Silverlight application include:</b></p>
+        <ul>
+          <li>Create a new Silverlight Business Application</li>
+          <li>Create a new Entity Framework 4 Model</li>
+          <li>Create a WCF RIA Services domain service class</li>
+          <li>Customize domain service class methods</li>
+          <li>Build a user interface</li>
+          <li>Add code to call the domain service using the generated domain context class</li>
+          <li>Add code to send updates from the Silverlight client to the domain service</li>
+          <li>Create a custom data validation class</li>
+          <li>Add data validation attributes to validate data and share the validation logic between the service and Silverlight client projects</li>
+        </ul>
+        <br />
+        <p><b>Estimated Time: 45 minutes</b></p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Export Data to Excel, Word, and more" />
+      <MSHelp:RLTitle Title="Exercise 4: Export Data to Excel, Word, and more" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Export Data to Excel, Word, and more</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating Existing Apps to Out-Of-Browser</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Export Data to Excel, Word, and more</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>As mentioned above, enabling Elevated Privileges opens up a world of possibilities.  One feature is the AutomationFactory.  This enables you to call COM components from Silverlight.  In our application we are going to enable the user to export their Bookmarks into Excel, Word, or e-mail them with Outlook.</p>
+        <ol>
+          <li>In MainPage.xaml uncomment lines 128-152.  This is the ExportPanel that contains four buttons as seen below.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;Border x:Name="ExportPanel" BorderThickness="0,2,0,0" BorderBrush="#FF666666" Margin="0,2,0,0" Grid.Row="1" Height="57" &gt;        &lt;Border.Background&gt;                &lt;LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"&gt;                        &lt;GradientStop Color="#FFDADADA"/&gt;                        &lt;GradientStop Color="#FFA5A5A5" Offset="1"/&gt;                &lt;/LinearGradientBrush&gt;        &lt;/Border.Background&gt;        &lt;Grid HorizontalAlignment="Center"&gt;                &lt;TextBlock TextWrapping="Wrap" Text="EXPORT BOOKMARKS TO" d:LayoutOverrides="Height" Foreground="#FF181818" HorizontalAlignment="Center" Margin="2,2,0,0" TextOptions.TextHintingMode="Animated" VerticalAlignment="Top" /&gt;                &lt;StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Bottom" Height="35" Margin="2,0,0,2"&gt;                                &lt;Button x:Name="ExcelButton" Margin="0,0,5,0"&gt;                                        &lt;Image Source="Images/Excel.png" Stretch="Fill"/&gt;                                &lt;/Button&gt;                                &lt;Button x:Name="WordButton" Margin="0,0,5,0"&gt;                                        &lt;Image Source="Images/Word.png" Stretch="Fill"/&gt;                                &lt;/Button&gt;                                &lt;Button x:Name="OutlookButton" Margin="0,0,5,0"&gt;                                        &lt;Image Source="Images/Outlook.png" Stretch="Fill"/&gt;                                &lt;/Button&gt;                                &lt;Button x:Name="PowerPointButton" Margin="0"&gt;                                &lt;Image Source="Images/notepad.png" Stretch="Fill"/&gt;                        &lt;/Button&gt;                &lt;/StackPanel&gt;        &lt;/Grid&gt;&lt;/Border&gt;</pre></td></tr></table></span></div><p><img src="images\d291fe2c-f854-4c44-a90a-fd6ddb5db4d4.png" /></p><p><b>Figure  1</b><br /><i>Export Panel </i></p></li>
+          <li>The ExportPanel contains four buttons: one for exporting to Excel, Word, creating an e-mail with Outlook, and a button to open Notepad.  In MainPage.xaml.cs we’ll add Click event handlers for all four buttons.  First, in the constructor, register the Click events for each button:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Register Click events for the Export buttonsthis.ExcelButton.Click += new RoutedEventHandler(ExcelButton_Click);this.WordButton.Click += new RoutedEventHandler(WordButton_Click);this.OutlookButton.Click += new RoutedEventHandler(OutlookButton_Click);this.PowerPointButton.Click += new RoutedEventHandler(PowerPointButton_Click);</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>'Register Click events for the Export buttonsAddHandler ExcelButton.Click, AddressOf ExcelButton_ClickAddHandler WordButton.Click, AddressOf WordButton_ClickAddHandler OutlookButton.Click, AddressOf OutlookButton_ClickAddHandler PowerPointButton.Click, AddressOf PowerPointButton_Click</pre></td></tr></table></span></div></li>
+          <li>For exporting to Excel copy and paste the below event handler into MainPage.xaml.cs.  Here we’re using the AutomationFactory to create an instance of Excel.  Then we construct a worksheet.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void ExcelButton_Click(object sender, RoutedEventArgs e){        dynamic excel = AutomationFactory.CreateObject("Excel.Application");        excel.Visible = true;        dynamic workbook = excel.workbooks;        workbook.Add();        dynamic sheet = excel.ActiveSheet;        dynamic cell = null;        int i = 1;        // Populate the excel sheet        foreach (var item in (LayoutRoot.DataContext as Bookmarks).Sites)        {                cell = sheet.Cells[i, 1];                cell.Value = item.Title;                cell = sheet.Cells[i, 2];                cell.Value = item.Uri;                cell.ColumnWidth = 100;                i++;        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub ExcelButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        Dim excel As Object = AutomationFactory.CreateObject("Excel.Application")excel.Visible = True        Dim workbook As Object = excel.workbooks workbook.Add()        Dim sheet As Object = excel.ActiveSheet        Dim cell As Object = Nothing        Dim i As Integer = 1        ' Populate the excel sheet        For Each item In (TryCast(LayoutRoot.DataContext, Bookmarks)).Sites  cell = sheet.Cells(i, 1)                cell.Value = item.Title                cell = sheet.Cells(i, 2)                cell.Value = item.Uri                cell.ColumnWidth = 100                i += 1        Next itemEnd Sub</pre></td></tr></table></span></div><p><img src="images\ac6aa504-9ab1-4e7c-bf7d-49507d9566b1.png" /></p><p><b>Figure  2</b><br /><i>Instance of Excel Page</i></p></li>
+          <li>For exporting to Word  copy and paste the below event handler into MainPage.xaml.cs.  Here we’re using the AutomationFactory to create an instance of Word.  Then we construct a write data to the newly created page in Word.  The interesting piece about this call to word is the last line where the SaveAs method is called.  Calling this method saves the word doc to your Documents folder.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void WordButton_Click(object sender, RoutedEventArgs e){        if (AutomationFactory.IsAvailable)        {                dynamic word = AutomationFactory.CreateObject("Word.Application");                word.Visible = true;                word.Documents.Add();                word.Selection.TypeText("Bookmarks");                word.Selection.TypeText(string.Format("Exported at: {0}", DateTime.Today.ToShortDateString()));                word.Selection.TypeParagraph();                foreach (var item in (LayoutRoot.DataContext as Bookmarks).Sites)                {                        word.Selection.TypeText(string.Format("{0} \vURL: {1}\v", item.Title, item.Uri));                }                word.ActiveDocument.SaveAs("BookmarksFromSL");        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub WordButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        If AutomationFactory.IsAvailable Then                Dim word As Object = AutomationFactory.CreateObject("Word.Application")                word.Visible = True                word.Documents.Add()                word.Selection.TypeText("Bookmarks")                word.Selection.TypeText(String.Format("Exported at: {0}",Date.Today.ToShortDateString()))                word.Selection.TypeParagraph()                For Each item In (TryCast(LayoutRoot.DataContext, Bookmarks)).Sites                        word.Selection.TypeText(String.Format("{0} " &amp; vbVerticalTab &amp; "URL: {1}" &amp; vbVerticalTab, item.Title, item.Uri))                Next item                word.ActiveDocument.SaveAs("BookmarksFromSL")                End IfEnd Sub</pre></td></tr></table></span></div><p><img src="images\6cb2c6cb-3e9b-4ecd-ac1b-68e0012c1111.png" /></p><p><b>Figure  3</b><br /><i>Instance of Word Page</i></p></li>
+          <li>For calling to Outlook copy and paste the below event handler into MainPage.xaml.cs.  Here we’re using the AutomationFactory to create an instance of Outlook and then construct an e-mail. <div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void OutlookButton_Click(object sender, RoutedEventArgs e){        if (AutomationFactory.IsAvailable)        {                dynamic outlook = AutomationFactory.CreateObject("Outlook.Application");                dynamic mail = outlook.CreateItem(0);                mail.To = "me@myname.com";                mail.Subject = "My Bookmarks";                StringBuilder sb = new StringBuilder();                foreach (var item in (LayoutRoot.DataContext as Bookmarks).Sites)                {                        sb.Append(string.Format("{0} \vURL: {1}\v\v", item.Title, item.Uri));                }                mail.Body = sb.ToString();                mail.Display();        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub OutlookButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        If AutomationFactory.IsAvailable Then                Dim outlook As Object = AutomationFactory.CreateObject("Outlook.Application")                Dim mail As Object = outlook.CreateItem(0)                mail.To = "me@myname.com"                mail.Subject = "My Bookmarks"                Dim sb As New StringBuilder()                For Each item In (TryCast(LayoutRoot.DataContext, Bookmarks)).Sites                        sb.Append(String.Format("{0} " &amp; vbVerticalTab &amp; "URL: {1}" &amp; vbVerticalTab &amp; vbVerticalTab, item.Title, item.Uri))                Next item                mail.Body = sb.ToString()                mail.Display()        End IfEnd Sub</pre></td></tr></table></span></div><p><img src="images\9a72bb2d-d5e8-493c-8142-0ace83524816.png" /></p><p><b>Figure  4</b><br /><i>Instance of Outlook Page</i></p></li>
+          <li>Finally, the last button doesn’t necessarily export the Bookmarks, rather it open Notepad.  This is more or less to demonstrate a call to a non Office product.  Using the WScript.Shell you could call a number of other external programs.   So here’s your freebie.  Enjoy, but make sure to play nice when working with Elevated Privileges and Out-of-Browser.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void PowerPointButton_Click(object sender, RoutedEventArgs e){        if (AutomationFactory.IsAvailable)        {                dynamic cmd = AutomationFactory.CreateObject("WScript.Shell");                cmd.Run(@"c:\windows\notepad.exe", 1, true);        }}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Private Sub PowerPointButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        If AutomationFactory.IsAvailable Then                Dim cmd As Object = AutomationFactory.CreateObject("WScript.Shell")                cmd.Run("c:\windows\notepad.exe", 1, True)        End IfEnd Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <p>
+            <img src="images\8cef91ea-6d25-4d8f-9e97-0f59f0b11236.png" />
+          </p>
+          <p>
+            <b>Figure  5</b>
+            <br />
+          </p>
+          <p>
+            <b>Open Notepad</b>
+            <br />
+          </p>
+        </ol>
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

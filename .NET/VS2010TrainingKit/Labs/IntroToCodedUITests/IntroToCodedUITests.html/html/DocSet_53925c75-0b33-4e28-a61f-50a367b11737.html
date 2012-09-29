@@ -1,0 +1,110 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Introduction to Code Generation from Action Recordings" />
+      <MSHelp:RLTitle Title="Exercise 1: Introduction to Code Generation from Action Recordings" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Introduction to Code Generation from Action Recordings</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Coded UI Tests with Visual Studio 2010 Ultimate</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Introduction to Code Generation from Action Recordings</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will be introduced to the Visual Studio 2010 code generation features that allow testers to quickly and easily create coded UI tests directly from existing action recordings.  Action recordings contain the steps taken during manual testing of an application. To learn more about manual testing and action recordings, please see the “<i>Authoring and Running Manual Tests with Visual Studio 2010 using Microsoft Test Manager</i>” lab.</p>
+        <ol>
+          <li>Log in as <b>Abu Obeida Bakhach (Dev)</b> if you have not already done so. The password is P2ssw0rd (capital letter P, the number two, the letter s, the letter s, the letter w, the number zero, the letter r, and the letter d). Please see “Working with the Visual Studio 2010 RTM Virtual Machine” for instructions on how to log into the VM.</li>
+          <li>Open Microsoft Visual Studio from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Start a new testing project (<b>File | New | Project…</b>).</li>
+          <li>In the New Project window, select the <b>Test Project</b> template from <b>Visual C# | Test</b> and select the <b>OK</b> button to create the test project.<p><img src="images\50ac2b62-e22f-4e98-9d6b-59174b6926ad.png" /></p><p><b>Figure 1</b><br /><i>Creating a Test project</i></p></li>
+          <li>Close the window showing UnitTest1.cs.</li>
+          <li>In <b>Solution Explorer</b>, right-click on the <b>TestProject1</b> project node and select <b>Add | Coded UI Test…</b> from the context menu.<p><img src="images\42bc031f-090e-4fa1-9198-fff938fbf903.png" /></p><p><b>Figure 2</b><br /><i>Creating a Coded UI Test</i></p></li>
+          <li>There are two ways to generate code for this new coded UI test. The first and default option is to use the <b>Coded UI Test Builder</b>, which allows you to generate test code by manually walking through a test scenario. The second option is to use an <b>existing action recording</b>. Select the second option to use an existing action recording and select the <b>OK</b> button to continue.<p><img src="images\f204959f-a470-40bb-b534-0e2127638eb0.png" /></p><p><b>Figure 3</b><br /><i>Using an existing action recording for test generation</i></p></li>
+          <li>In the Work Items Picker window, select the <b>Tailspin Toys</b> project.</li>
+          <li>In the Work Items Picker window, select the <b>IDs</b> radio button and enter <b>41</b>. This is the ID of a test case in the Tailspin Toys project that contains an action recording.</li>
+          <li>Select the <b>Find</b> button to execute the work item query. Note that for the purposes of this lab, we assume that the ID is already known.<p><img src="images\5a006a64-b116-4857-9901-057793c42146.png" /></p><p><b>Figure 4</b><br /><i>Finding a test case with action recording</i></p></li>
+          <li>Select the <b>OK</b> button to generate a coded UI test from the test case action recording.</li>
+          <li>Navigate to the <b>CodedUITestMethod1</b> method in the generated CodedUITest1.cs file. Each line represents a step from the action recording used during test generation.</li>
+          <li>Right-click on the first method call in the CodedUITestMethod1 method and select <b>Go To Definition</b>. This will load the <b>UIMap</b> class from the UIMap.Designer.cs file which contains the generated test logic. This generated method launches Internet Explorer and navigates to a specified URL.<p><img src="images\fb6d4345-c178-4d8d-8a86-be5cea587222.png" /></p><p><b>Figure 5</b><br /><i>Navigating to test logic</i></p></li>
+          <li>Scroll down to the <b>ClickFourthCoffeeFlyer</b> method within the UIMap class. This generated method tests clicking on a “Fourth Coffee Flyer” hyperlink that is in the Tailspin Toys Web application.<p><img src="images\eaf8eed5-0c6d-4432-9c15-9f1f69eeb979.png" /></p><p><b>Figure 6</b><br /><i>Generated test method example</i></p></li>
+          <li>The <b>ClickFourthCoffeeFlyer</b> test method does not specify the hyperlink parameters directly, but rather refers to the “UIBlankPageWindowsInteWindow.UIHomeTailspinToysDocument1.UIFourthCoffeeFlyerHyperlink” property. <b>Navigate</b> to the definition of the <b>UIFourthCoffeeFlyerHyperlink</b> property to see how it is implemented. <p><img src="images\3c7e189b-68d6-49e3-bd9d-a6366fb6ef12.png" /></p><p><b>Figure 7</b><br /><i>Definition of SignInHyperlink property</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The HtmlHyperlink instance that is created for the UIFourthCoffeeFlyerHyperlink property has a number of search and filter properties applied that aid the test framework in locating the correct HTML hyperlink. In the event that the Web application changes some of the link properties, such as the inner text, the test harness may still be able to find the hyperlink using the remaining search properties.</td></tr></table><p /></div></li>
+          <li>Close the UIMap.Designer.cs file to return to the CodedUITest1.cs file.</li>
+          <li><b>Right-click</b> somewhere within the CodedUITest1.cs source file and select <b>Run Tests</b>. Important: do not touch the mouse or keyboard during the tests.<p><img src="images\c410f4ed-7970-48ca-a8ab-2a9bb7ed1264.png" /></p><p><b>Figure 8</b><br /><i>Location of Run Tests command</i></p></li>
+          <li>As the tests run, an instance of Internet Explorer will be opened and actions automatically taken as they are defined in the coded UI test. The test will be run more than once because the original manual test that this coded UI test was generated from had multiple rows of test parameters.<p><img src="images\5241bed4-8983-4f66-b302-f340f20e677a.png" /></p><p><b>Figure 9</b><br /><i>Example of coded UI test running</i></p></li>
+          <li>Verify that the test passed by viewing the Test Results window. In this case, however, we are not performing any validation after any of the steps.<p><img src="images\8fcd85e0-0354-4f1a-aa9f-54705ed252b1.png" /></p><p><b>Figure 10</b><br /><i>Test Results window showing Passed test</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_52e9daa8-ff96-4b85-aff0-235cc3347bb5.html">Exercise 2: Introduction to Code Generation using Coded UI Test Builder</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

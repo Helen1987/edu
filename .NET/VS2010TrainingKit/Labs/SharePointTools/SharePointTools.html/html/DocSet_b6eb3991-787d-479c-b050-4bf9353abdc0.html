@@ -1,0 +1,181 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a SharePoint 2010 Project" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a SharePoint 2010 Project" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a SharePoint 2010 Project</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Microsoft SharePoint 2010 Developer Tools</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a SharePoint 2010 Project</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In the first exercise, you will create an empty project and focus on the aspects of the Visual Studio 2010 SharePoint Tools that are common across all projects created with this toolset. Most of your work will involve changing the properties of the project and properties of the project's main feature.</p>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc281415904" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Navigating the new Site Collection</b>
+        </p>
+        <p>In this task, you will verify that an empty SharePoint Site Collection was created using the Configuration Wizard application.</p>
+        <ol>
+          <li>Launch the Internet Explorer and navigate to the top-level site at <b>http://localhost/sites/SharePointToolsLab</b>. You should observe that the newly-created site is a Blank site. This is the site you will use to test and debug the project you will develop throughout this entire lab exercise.<p><img src="images\82b1e8bb-3a45-4bfa-9bdc-a6ca4e7defa1.png" /></p><p><b>Figure 1</b><br /><i>SharePoint Blank Site Collection</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you haven’t already done so, run the <b>Configuration Wizard</b> for the Lab to create the new site collection that will be used to test and debug the code you will be writing in this lab. Remember to change the site URL if you modified it in the setup scripts.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc281415905" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating a New SharePoint Project</b>
+        </p>
+        <p>In this task, you will use the templates included in Visual Studio 2010 to create an Empty SharePoint project.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>On the <b>File</b> menu, point to <b>New</b>, and click <b>Project</b>.</li>
+          <li>In the <b>New Project</b> dialog box make sure that <b>.NET Framework 3.5 </b>is selected and select either <b>Visual C#</b> or <b>Visual Basic,</b> then select <b>SharePoint</b> – <b>2010</b> in the Installed Templates list and the <b>Empty SharePoint Project</b> type. You may set the location to the <b>Source\Ex1-CreatingSharePointProject\begin</b> (choosing the folder that matches the language of your preference) which is the provided folder for this lab.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> .NET Framework 4.0 is currently not supported by SharePoint 2010 and the SharePoint Project template will set the target framework attribute to .NET Framework 3.5.</td></tr></table><p /></div><br /></li>
+          <li>Change the <b>Name</b> to <b>ContosoWebParts</b> and click <b>OK</b>.<p><img src="images\4e57d482-0e8d-43d1-86b8-e9108369e69d.png" /></p><p><b>Figure 2</b><br /><i>New Empty SharePoint Project (C#)</i></p><br /><p><img src="images\34330b7f-aabb-4e20-b756-c21f54b47954.png" /></p><p><b>Figure 3</b><br /><i>New Empty SharePoint Project (VB)</i></p><br /></li>
+          <li>When the <b>SharePoint Customization Wizard</b> prompts you for a local debugging site, enter <b>http://localhost/sites/SharePointToolsLab</b> and change the trust level to <b>Deploy as a farm solution</b> and then click <b>Finish</b>.<p><img src="images\46d00b5e-053b-47e2-b8dc-3eafa1844e00.png" /></p><p><b>Figure 4</b><br /><i>SharePoint Customization Wizard</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Sanboxed solution has certain restrictions, such as being unable to access filesystem, even during deployment. The deployment of ASCX files is not allowed in a sandbox solution, since your project will contain a user control, you need to create a farm solution. For more information on Sandboxed solutions please visit: <a href="http://msdn.microsoft.com/en-us/magazine/ee335711.aspx">http://msdn.microsoft.com/en-us/magazine/ee335711.aspx</a></td></tr></table><p /></div><br /></li>
+          <li>Once the new project has been created, you should be able to observe it has four nodes: <b>Properties</b>, <b>References</b>, <b>Features</b> and <b>Package</b>. While the first two nodes are standard on all Visual Studio projects, the Features node and the Package node are unique to projects create with the Visual Studio 2010 SharePoint Tools.<p><img src="images\d328d408-2ffb-4911-bb42-e966895ba340.png" /></p><p><b>Figure 5</b><br /><i>SharePoint Project solution structure (C#)</i></p><br /><p><img src="images\9dc82542-2f9b-4fcc-b35d-dd947a5f6089.png" /></p><p><b>Figure 6</b><br /><i>SharePoint Project solution structure (VB)</i></p><br /></li>
+        </ol>
+        <a name="_Toc281415906" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a new Feature</b>
+        </p>
+        <p>In this task, you will add a new Feature to your project which is a core element to all SharePoint project.</p>
+        <ol>
+          <li>Add a new feature to the project. To do this, right-click on the <b>Features</b> node and select the <b>Add Feature</b> option.<p><img src="images\6a14c837-994b-40b7-bfee-a274da932338.png" /></p><p><b>Figure 7</b><br /><i>Add New Feature (C#)</i></p><br /><p><img src="images\eda5dfbd-c1dc-4315-ad54-c976c164ce4c.png" /></p><p><b>Figure 8</b><br /><i>Add New Feature (VB)</i></p><br /></li>
+          <li>Rename the recently created feature to Main. To do this, right-click on the node for the default feature added named <b>Feature1</b> and click <b>Rename</b>. Rename this feature to <b>Main</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you are following the lab using the C# version, there is currently a bug that won’t allow you to rename the feature if you have a “#“ symbol in the path. (for example <b>End\C#\)</b>.<br />As a workaround, copy your solution to another folder and you will then be able to rename the feature.</td></tr></table><p /></div><br /></li>
+          <li>Open the <b>Main</b> feature in the feature designer. Use the feature designer to change the feature’s <b>Title</b>, <b>Description</b> and <b>Scope</b> using the following values:<ul><li>Title: <b>Contoso Web Parts</b></li><li>Description: <b>My very first project using the Visual Studio 2010 Tools</b></li><li>Scope: <b>Site</b></li></ul></li>
+          <p>
+            <img src="images\08d1e59c-673e-42e2-9da2-76d906274f75.png" />
+          </p>
+          <p>
+            <b>Figure 9</b>
+            <br />
+            <i>Feature Designer</i>
+          </p>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> A <b>Scope</b> setting of Web results in site-level activation of the feature while a <b>Scope</b> setting of Site results in activation at the site collection level. The change of the feature's <b>Scope</b> setting to <b>Site</b> is required due to the fact that Web Parts deployment requires a feature which activates at site collection scope in order to properly deploy Web Part description files.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <a name="_Toc281415907" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Adding Images to Your Project</b>
+        </p>
+        <p>In this task, you will add a few images into your project so they are deployed inside the SharePoint Images folder. To do this, proceed as follows:</p>
+        <ol>
+          <li>In the Solution Explorer, right-click the <b>ContosoWebParts</b> project, point to <b>Add</b> and choose the <b>SharePoint "Images" Mapped Folder</b> command to add an Images Mapped Folder to your project.<p><img src="images\f0377fdc-922b-4904-b196-127ad6ff4024.png" /></p><p><b>Figure 10</b><br /><i>Add SharePoint “Images” Mapped Folder (C#)</i></p><br /><p><img src="images\16e28bd5-d306-48e1-aeb0-96671beee131.png" /></p><p><b>Figure 11</b><br /><i>Add SharePoint “Images” Mapped Folder (VB)</i></p><br /></li>
+          <li>You will now see that there is an <b>Images</b> directory inside your project. Also, you will find a child folder inside it, with the same name as the project <b>ContosoWebParts</b>.<p><img src="images\0f9e152f-9b0b-40cf-b1c3-01d8eb81b49f.png" /></p><p><b>Figure 12</b><br /><i>SharePoint Images Folder (C#)</i></p><br /><p><img src="images\83d94067-dbcf-40d0-bf78-251168cd605e.png" /></p><p><b>Figure 13</b><br /><i>SharePoint Images Folder (VB)</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> SharePoint Tools helps to ensure best practices with SharePoint development. When adding image files to your project, you should not add them directly inside the Images folder. Instead, add them to the inner directory in this case named <b>ContosoWebParts</b> to avoid file name conflicts with the image deployed by SharePoint in the Images directory.</td></tr></table><p /></div><br /></li>
+          <li>Next, you will add images to the site’s images folder. To do this, right-click the <b>ContosoWebParts</b> folder under the <b>Images</b> folder, point to <b>Add</b> and click <b>Existing Item</b>. In the Add Existing Item dialog, browse to <b>Source\Assets</b> folder and select all three <b>GIF</b> files in the folder.<ul><li>FeatureIcon.gif </li><li>SiteIcon.gif</li><li>WebPartIcon.gif.</li></ul></li>
+          <p>
+            <img src="images\bbe2b9a1-f33c-4130-91f6-a5bc07d13cf5.png" />
+          </p>
+          <p>
+            <b>Figure 14</b>
+            <br />
+            <i>Images added to the SharePoint “Images” Folder (C#)</i>
+          </p>
+          <br />
+          <p>
+            <img src="images\749fc237-8aa7-4393-bc29-ee3016d70a52.png" />
+          </p>
+          <p>
+            <b>Figure 15</b>
+            <br />
+            <i>Images added to the SharePoint “Images” Folder (VB)</i>
+          </p>
+          <br />
+          <li>The first GIF file that you will put to use is the <b>FeatureIcon.gif</b> by modifying the Image Url property of the <b>Main</b> feature. To do this:<ol><li>Open the <b>Main</b> feature in the feature designer and make sure it is the active window.</li><li>Press <b>F4 </b>to open<b> </b>the Properties Window.</li><li>Update the <b>Image Url</b> property with an URL pointing to the <b>FeatureIcon.gif</b> image.<p><img src="images\c7ce58f1-bba6-4d7c-8754-25576b806e7a.png" /></p><p><b>Figure 16</b><br /><i>Feature Image Url</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The Image URL is relative to the <b>Images</b> mapped folder.</td></tr></table><p /></div><br /></li></ol></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_70f50e5c-33e1-4ce0-97e6-5558d7e74094.html">Exercise 2: Feature Event Receiver</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

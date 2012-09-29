@@ -1,0 +1,113 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Create a State" />
+      <MSHelp:RLTitle Title="Exercise 1: Create a State" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Create a State</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Great UX with Blend</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Create a State</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>A visual state represents the visual appearance of controls in a given state.  For example, take a Button.  It has a MouseOver state, Pressed state, and a Disabled state.  In each state there is a definition of how the control should look in that state.   What you may not know is that you can create your own states.  </p>
+        <p>In this exercise you will create an opened and closed state for the menu in the starter solution.  You will also configure the time it takes to transition between states resulting in an animation transition.  Finally, you will add easing to the animation.  Although a small touch, easing makes the animation feel more natural to the user. </p>
+        <ol>
+          <li>Use a pre-baked UI.  The UI will be a menu that we’ll have the student expand and collapse. The goal of this lab is to add interactivity without any code.<p><img src="images\1544433e-e3db-40e5-b618-2ea61eade94f.png" /></p><p><b>Figure 2</b><br /><i>UI example</i></p></li>
+          <li>We’re going to focus on opening and closing the menu.  A fairly small task that could be accomplished with code by toggling the Visibility attribute, however the power of Silverlight is enabling you to create interactive experiences in little time and little risk to your code base.</li>
+          <li>In order to create the opening and closing of the menu, you need to define two states.  Do this by opening the States panel; click the Add a State Group button.  Name the State Group MenuStates.  Now add two states, MenuExpanded and MenuMinimized, by clicking the Add a State Button.<p><img src="images\9f709e40-70e2-4b67-bc3d-f7cb4e71fd27.png" /></p><p><b>Figure 3</b><br /><i>Add states</i></p></li>
+          <li>Now the states are defined, next you need to define what happens when the UI is in that state.  In the States panel select the MenuMinimized State and change the Opacity, ScaleX and ScaleY of the Menu Panel.<p><img src="images\7266e63f-03f6-4bf4-9490-106a155402fd.png" /></p><p><b>Figure 4</b><br /><i>MenuMinimized State</i></p><p><img src="images\32c90f11-b3f9-48ca-8eaa-7079a9802fa8.png" /></p><p><b>Figure 5</b><br /><i>Change Properties</i></p></li>
+          <li>Select the MenuExpanded State and set the Opacity, ScaleX, and ScaleY back to the original size (if the value is already set, then click the small advanced button and select Record Value<p><img src="images\b43927e3-3ff7-4634-ae9d-c430317546d2.png" /></p><p><b>Figure 6</b><br /><i>MenuExpanded state</i></p></li>
+          <li>At this point you have defined what the UI looks like in each state.  There are a couple more properties you can set to improve the experience.  The first is timing.  In the States panel change the time from 0 to .36 seconds.  This will interpolate the changed values.<p><img src="images\36bcb04c-138c-4e17-80f8-e6a65c39a289.png" /></p><p><b>Figure 7</b><br /><i>Set Time</i></p></li>
+          <li>Add easing makes the animations for more natural.  By default the animations are linear, making the transitions mechanic.  Although subtle, easing makes a big difference.<p><img src="images\d0e3181d-aa9a-475d-a91d-4a7e1ede0bf5.png" /></p><p><b>Figure 8</b><br /><i>Easing function</i></p></li>
+          <li>Finally, to see the transition in action, click the preview button and click between states.  Running the application won’t produce anything since the states have not been wired up.  The next section will discover how to use behaviors, instead of code, to change the states.<p><img src="images\603f0d05-030b-4c9c-ba2a-d33bfefac3b5.png" /></p><p><b>Figure 9</b><br /><i>Preview Button</i></p></li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

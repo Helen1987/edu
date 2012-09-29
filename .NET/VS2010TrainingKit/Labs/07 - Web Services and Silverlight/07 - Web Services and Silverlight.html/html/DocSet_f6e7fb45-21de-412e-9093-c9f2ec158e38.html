@@ -1,0 +1,225 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Calling a WCF Service from a Silverlight Client" />
+      <MSHelp:RLTitle Title="Exercise 2: Calling a WCF Service from a Silverlight Client" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Calling a WCF Service from a Silverlight Client</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Web Services and Silverlight</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Calling a WCF Service from a Silverlight Client</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll create a WCF service proxy, add controls to a Silverlight user interface and add code to call the WCF service created in the previous exercise. Throughout the exercise you'll see how data from a Web Service can be accessed and bound to controls asynchronously. You'll also push changes made in the Silverlight client back to the WCF service so that data is updated in the database properly.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> This exercise uses the DataForm control available in the Silverlight Toolkit. If you don't currently have the Silverlight Toolkit installed download and install it from http://silverlight.codeplex.com before continuing.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <a name="_Toc275958401" href="#">
+          <span />
+        </a>
+        <a name="_Toc276335822" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Create a WCF service proxy</b>
+        </p>
+        <ol>
+          <li>Right-click on the <b>UsingWCFServices</b> project (the Silverlight project) and select <b>Add Service Reference</b>. Once the wizard loads click the <b>Discover</b> button to locate the service created in the previous exercise.</li>
+          <li>Drill-down into <b>CustomersService</b> to see its service operations and change the value in the <b>Namespace</b> text box at the bottom of the wizard to <b>WebServiceProxies</b>.  Click <b>OK </b>to create the proxy object.<p><img src="images\c7f07e68-649a-4e45-9f1c-de16baa327d0.png" /></p><p><b>Figure 1</b><br /><i>Add Service Reference Dialog</i></p></li>
+          <li>You will see a proxy object added into the <b>UsingWCFServices</b> project as well as a new file named <b>ServiceReferences.ClientConfig</b>.<p><img src="images\c857feed-7b69-45a8-90b7-84de1e323993.png" /></p><p><b>Figure 2</b><br /><i>ClientConfig file</i></p></li>
+          <li>Open <b>ServiceReferences.ClientConfig</b> in the code editor and locate the <b>endpoint</b><b>element's</b><b>address</b> attribute. The service proxy class reads this value to know how to communicate with the service.  An example endpoint is shown next (note that the address attribute's port may be different in your file):<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;endpoint address="http://localhost:37156/Services/CustomersService.svc"    binding="customBinding"     bindingConfiguration="CustomBinding_CustomersService"    contract="CustomersService.Proxies.CustomersService"     name="CustomBinding_CustomersService" /&gt;</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> When you move a Silverlight project XAP file between development, test and production servers you'll need to update the address attribute in ServiceReferences.ClientConfig before compiling the project so that it points to the correct WCF service URI. Alternatively, a proxy object can programmatically be assigned the URI to use which can be useful in more dynamic environments.</td></tr></table><p /></div></li>
+          <li>Open <b>Home.xaml</b> located in the <b>Views</b> folder of the <b>UsingWCFServices</b> project in the Visual Studio 2010 designer window and perform the following steps. The layout of the controls that you'll add on the user interface is shown next:<p><img src="images\f239fb4f-d5d1-4769-bc03-967b7d97fc9c.png" /></p><p><b>Figure 3</b><br /><i>Controls added to Home.xaml</i></p><ol><li>Change the <b>TextBlock</b> from <b>Home</b> to <b>Customer Orders </b>(you can do this through the Properties window by resetting the existing Text property value or by typing it directly in the XAML)</li><li>Delete the <b>TextBlock</b> with a value of <b>Home page content</b></li><li>Add a <b>ComboBox</b> control under the <b>TextBlock</b> and give it a name of <b>CustomersComboBox</b></li><li>Drag a <b>DataGrid</b> control from the ToolBox and place it under the <b>ComboBox</b>. Give it a name of <b>OrdersDataGrid</b></li><li>Ensure that the <b>DataGrid</b> control's <b>AutoGenerateColumns</b> property is set to <b>False</b></li><li>Set the <b>DataGrid</b> control's <b>IsReadOnly</b> property to <b>True</b></li></ol></li>
+          <li>Select the <b>DataGrid</b> in the designer and locate its <b>Columns</b> property in the Properties window. Click the ellipsis button to the right of the <b>Columns</b> property to open up the collection editor dialog.</li>
+          <li>From dialog window's <b>Select item</b> drop-down list select <b>DataGridTextColumn</b> and click <b>Add</b>. Add a total of 4 columns as shown next:<p><img src="images\033a4c73-5b22-4544-a457-754ace044b22.png" /></p><p><b>Figure 4</b><br /><i>The Collection Editor Dialog</i></p></li>
+          <li>Select each <b>DataGridTextColumn</b> and change its <b>Header</b> property in the Properties section of the dialog window to one of the following values (Order Date would be assigned to the first column and so on):<table style=""><tr valign="top"><th><p>Header Property</p></th></tr><tr valign="top"><td><p>Order Date</p></td></tr><tr valign="top"><td><p>Ship Method</p></td></tr><tr valign="top"><td><p>Sub Total</p></td></tr><tr valign="top"><td><p>Total Due</p></td></tr></table></li>
+          <li />
+          <li>Switch to the XAML editor and locate all of the <b>DataGridTextColumns</b> elements that have been added.</li>
+          <li>Add the appropriate <b>Binding</b> attribute shown below to each <b>DataGridTextColumn</b> element based upon the column's header text:<table style=""><tr valign="top"><th><p>Header Value</p></th><th><p>Binding to Add</p><br /></th></tr><tr valign="top"><td><p>Order Date</p></td><td><p>Binding="{Binding OrderDate,StringFormat=d}"</p></td></tr><tr valign="top"><td><p>Ship Method</p></td><td><p>Binding="{Binding ShipMethod}"</p></td></tr><tr valign="top"><td><p>Sub Total</p></td><td><p>Binding="{Binding SubTotal,StringFormat=C}"</p></td></tr><tr valign="top"><td><p>Total Due</p></td><td><p>Binding="{Binding TotalDue,StringFormat=C}"</p></td></tr></table></li>
+          <li />
+          <li>Add the following template into the <b>ComboBox</b> control using the XAML editor:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;ComboBox.ItemTemplate&gt;    &lt;DataTemplate&gt;        &lt;StackPanel Orientation="Horizontal"&gt;            &lt;TextBlock Text="{Binding FirstName}" /&gt;            &lt;TextBlock Text="{Binding LastName}" Margin="5,0,0,0" /&gt;        &lt;/StackPanel&gt;                                &lt;/DataTemplate&gt;&lt;/ComboBox.ItemTemplate&gt;</pre></td></tr></table></span></div></li>
+          <li />
+          <li>Handle the <b>ComboBox</b> control's <b>SelectionChanged</b> event by double-clicking on the control in the designer. </li>
+          <li>Add the following code above the <b>Home</b> class's constructor to create an instance of the <b>CustomersServiceClient </b>proxy class that will be used to call the WCF service. You'll need to resolve the appropriate namespace.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CustomersServiceClient _Proxy = new CustomersServiceClient();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Dim _Proxy as New CustomersServiceClient()</pre></td></tr></table></span></div></li>
+          <li />
+          <li>Locate the <b>OnNavigatedTo</b> event handler and add the following code to wire asynchronous calls to the WCF service to callback methods and call the <b>GetCustomersAync</b> method:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>_Proxy.GetCustomersCompleted +=   (s, args) =&gt; CustomersComboBox.ItemsSource = args.Result;_Proxy.GetOrdersByCustomerIDCompleted +=   (s, args) =&gt; OrdersDataGrid.ItemsSource = args.Result;_Proxy.UpdateSalesOrderHeaderCompleted += (s,args) =&gt;{    //Check returned OperationStatus object for status    string errorMsg = (args.Result.Status) ? "succeeded" : "failed";    MessageBox.Show("Update " + errorMsg);};_Proxy.GetCustomersAsync();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>AddHandler _Proxy.GetCustomersCompleted, _  Sub(s, args) CustomersComboBox.ItemsSource = args.ResultAddHandler _Proxy.GetOrdersByCustomerIDCompleted, _  Sub(s, args) OrdersDataGrid.ItemsSource = args.ResultAddHandler _Proxy.UpdateSalesOrderHeaderCompleted, Sub(s,args)    'Check returned OperationStatus object for status    Dim errorMsg As String = If(args.Result.Status, "succeeded", "failed")    MessageBox.Show("Update " &amp; errorMsg)End Sub_Proxy.GetCustomersAsync()</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This code hooks proxy object events to event handlers to handle asynchronous calls to the WCF service.  It then calls the GetCustomersAsync method to initiate the call to the WCF service. </td></tr></table><p /></div></li>
+          <li>Add code in the <b>ComboBox</b> control's <b>SelectionChanged</b> event handler to perform the following steps:<ol><li>Get the selected <b>CustomerID</b> from the <b>ComboBox</b></li><li>Call the WCF service's <b>GetOrdersByCustomerID </b>method using the <b>_Proxy</b> object.</li></ol></li>
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>int custID = ((Customer)CustomersComboBox.SelectedItem).CustomerID;_Proxy.GetOrdersByCustomerIDAsync(custID);</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Dim custID As Integer = (CType(CustomersComboBox.SelectedItem, _  Customer)).CustomerID_Proxy.GetOrdersByCustomerIDAsync(custID)</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <li />
+          <li>Run the project and test the Silverlight application in the browser.  As a customer is selected one or more orders will show in the <b>DataGrid</b> control.</li>
+          <li>Switch back to <b>Home.xaml</b> and drag a <b>DataForm</b> control from the ToolBox and place it under the <b>DataGrid</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> As mentioned at the beginning of this exercise, the DataForm control is part of the Silverlight Toolkit which will need to be installed to complete this exercise. The Silverlight Toolkit is available at http://silverlight.codeplex.com.</td></tr></table><p /></div></li>
+          <li>Add the following attributes on the <b>DataForm</b> element by editing the XAML (or by using the Properties window). <table style=""><tr valign="top"><th><p>Attribute/Property</p></th><th><p>Value</p></th></tr><tr valign="top"><td><p>Name</p></td><td><p>OrderDataForm</p></td></tr><tr valign="top"><td><p>CurrentItem</p></td><td><p>{Binding Path=SelectedItem,ElementName=OrdersDataGrid}</p></td></tr><tr valign="top"><td><p>AutoEdit</p></td><td><p>False</p></td></tr><tr valign="top"><td><p>AutoCommit</p></td><td><p>False</p></td></tr><tr valign="top"><td><p>CommandButtonsVisibility</p></td><td><p>Edit, Commit, Cancel</p></td></tr></table></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> An example of using the Properties window to modify the CurrentItem property is shown next (you can certainly type in the XAML as opposed to doing this visually). Binding a XAML element such as CurrentItem to another XAML element's property is referred to as <i>element to element binding</i>.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <p>
+            <img src="images\3a88464f-76c7-440c-a62c-8ddc9013e38b.png" />
+          </p>
+          <p>
+            <b>Figure 5</b>
+            <br />
+            <i>Binding to SelectedItem</i>
+          </p>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> In this exercise the DataForm will be used to show all properties of the SalesOrderHeader object.  In a real-life application you'd want to constrain the data shown by the DataForm control and eliminate any unnecessary fields that the user won't use.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <li>Add the appropriate XAML and code to handle the <b>DataForm's</b><b>EditEnded</b> event.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you need help with this step refer to the code in this lab's Completed folder. To handle the event you can type it into the XAML on the DataForm element and then navigate to the event handler or highlight the control in the designer, view the Properties window, click the lightning bolt icon at the top of the window and then double-click the event.</td></tr></table><p /></div></li>
+          <li>Within the <b>EditEnded</b> event handler add the following code to push any changes made back to the WCF service:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>if (e.EditAction == DataFormEditAction.Commit){    var order = OrderDataForm.CurrentItem as SalesOrderHeader;    _Proxy.UpdateSalesOrderHeaderAsync(order);}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>If e.EditAction = DataFormEditAction.Commit Then    Dim order = CType(OrderDataForm.CurrentItem, SalesOrderHeader)    _Proxy.UpdateSalesOrderHeaderAsync(order)End If</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This code will be called when the user clicks the OK or Cancel buttons on the DataForm control while editing a SalesOrderHeader object.</td></tr></table><p /></div></li>
+          <li>Run the project and perform the following tasks in the Silverlight application:<ol><li>Select a customer and then click on an order in the <b>DataGrid</b></li><li>Select the edit icon in the <b>DataForm</b> (click the pencil icon in the upper-right hand corner of the control) to switch to edit mode</li><li>Change the value for the <b>Comment</b> field in the <b>DataForm</b> to any value you'd like and click the <b>OK</b> button.  You will see a success message.</li><li>Refresh the browser and navigate to the same customer order.  Ensure that the comment you modified appears.</li></ol></li>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> The code only allows the current item being edited in the DataForm control to be saved and doesn't allow multiple items to be saved as a batch. The next lab covering WCF RIA Services will show a built-in way to track object changes and submit a batch of changed objects back to the server.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

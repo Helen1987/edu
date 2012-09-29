@@ -1,0 +1,168 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Creating a View" />
+      <MSHelp:RLTitle Title="Exercise 4: Creating a View" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Creating a View</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Fundamentals</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Creating a View</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>So far you have been returning strings from controller actions. Although that’s a useful way of understanding how controllers work, it’s not how you’d want to build a real web application. Views are components that provide a better approach for generating HTML back to the browser with the use of template files.</p>
+        <p>In this exercise you will learn how to add a MasterPage to setup a template for common HTML content, a StyleSheet to enhance the look and feel of the site and finally a View template to enable HomeController to return HTML.</p>
+        <a name="_Toc269133523" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507919" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a MasterPage</b>
+        </p>
+        <p>ASP.NET MasterPages are layout files that allow you to setup a template for common HTML to use across the entire website. In this task you will add a MasterPage with a common header with links to the Home page and Store area.</p>
+        <ol>
+          <li>If not already open, start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex04-CreatingAView\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>. Alternatively, you may continue with the solution that you obtained after completing the previous exercise.</li>
+          <li>Add a MasterPage. Because it is a shared resource you will create it under the <b>/Views/Shared</b> folder. To do this, expand the <b>Views</b> folder and right-click the <b>Shared</b> folder. Select <b>Add</b> and then the <b>New Item</b> command.<p><img src="images\98575597-a923-44d8-865c-11b021e7674a.png" /></p><p><b>Figure 21</b><br /><i>Adding a new item</i></p><br /></li>
+          <li>In the <b>Add New Item</b> dialog box select the <b>MVC 3 View Master Page (ASPX)</b> template, located under <b>Visual C#,</b><b>Web</b> template list. Change the name to <b>Site.Master</b> and click <b>Add</b>.<p><img src="images\8d91fc43-2e3c-40f8-9ea5-b56926b47fed.png" /></p><p><b>Figure 22</b><br /><i>Add New Item Dialog</i></p><br /></li>
+          <li>Site.Master file is added. This<b> </b>template contains the HTML container layout for all pages on the site.  It includes the <b>&lt;html&gt;</b> element for the HTML response, as well as the <b>&lt;head&gt;</b> and <b>&lt;body&gt;</b> elements. <b>&lt;asp:ContentPlaceholder&gt;</b> tags within the HTML content identify regions that view templates will be able to fill in with dynamic content.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %&gt;&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;&lt;head runat="server"&gt;    &lt;title&gt;&lt;asp:ContentPlaceHolder ID="TitleContent" runat="server" /&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;        &lt;asp:ContentPlaceHolder ID="MainContent" runat="server"&gt;        &lt;/asp:ContentPlaceHolder&gt;    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Add a common header with links to the Home page and Store area on all pages in the site. In order to do that, add the following code inside the <b>&lt;div&gt;</b> statement.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %&gt;&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" &gt;&lt;head runat="server"&gt;    &lt;title&gt;&lt;asp:ContentPlaceHolder ID="TitleContent" runat="server" /&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;div&gt;<b>        &lt;div id="header"&gt;</b><b>            &lt;h1&gt;ASP.NET MVC MUSIC STORE&lt;/h1&gt;</b><b>            &lt;ul id="navlist"&gt;</b><b>                &lt;li class="first"&gt;&lt;a href="/" id="current"&gt;Home&lt;/a&gt;&lt;/li&gt;</b><b>                &lt;li&gt;&lt;a href="/Store/"&gt;Store&lt;/a&gt;&lt;/li&gt;</b><b>            &lt;/ul&gt;</b><b>        &lt;/div&gt;</b>        &lt;asp:ContentPlaceHolder ID="MainContent" runat="server"&gt;        &lt;/asp:ContentPlaceHolder&gt;    &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Did you know? Visual Studio 2010 has snippets that make it easy to add commonly used code in HTML, code files and more! Try it out by typing <b>&lt;div + tab (twice)</b> to insert a complete <b>div</b> tag.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc269133524" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507920" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding CSS Stylesheet</b>
+        </p>
+        <p>The empty project template includes a very streamlined CSS file which just includes styles used to display validation messages. You will use additional CSS and images (potentially provided by a designer) in order to enhance the look and feel of the site.</p>
+        <p>In this task, you will add a CSS stylesheet to <b>Site.Master</b> to define the styles of the site.</p>
+        <ol>
+          <li>The CSS file and images are included in the Source\Assets\Content of this Lab. In order to add them to the application, drag their content from a <b>Windows Explorer</b> window into the <b>Solution Explorer</b> in Visual Web Developer Express, as shown below:<p><img src="images\19e4e433-0927-491b-8cbe-bb4fac11ba4a.png" /></p><p><b>Figure 23</b><br /><i>Dragging style contents</i></p><br /></li>
+          <li>A warning dialog will appear, asking for confirmation to replace Site.css file. Click <b>Yes</b>.</li>
+          <li>
+            <img src="images\95f15462-68c2-4fa0-a65f-f6bf302b5211.png" />
+            <p>
+              <b>Figure 24</b>
+              <br />
+              <i>Warning Dialog</i>
+            </p>
+            <br />
+          </li>
+          <li>Add a <b>&lt;link&gt;</b> element into the <b>&lt;head&gt;</b> tag of <b>Site.Master</b> file, with a reference to the css file you just added:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;head runat="server"&gt;<b>    &lt;link href="/Content/Site.css" rel="Stylesheet" type="text/css" /&gt;</b>    &lt;title&gt;&lt;asp:ContentPlaceHolder ID="TitleContent" runat="server" /&gt;&lt;/title&gt;&lt;/head&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269133525" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507921" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a View Template</b>
+        </p>
+        <p>In this task, you will add a View template to generate the HTML response that will use the Master Page and CSS added in this exercise.</p>
+        <ol>
+          <li>To use a View template when browsing the site’s home page, first you need to indicate that instead of returning a string, the <b>HomeController Index</b> method should return a <b>View</b>. Open <b>HomeController </b>class<b> </b>and change its<b> Index</b> method to return an <b>ActionResult,</b> and have it return <b>View()</b>.<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex4 HomeController Index - CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public class HomeController : Controller{    //    // GET: /Home/<b>    public ActionResult Index()</b><b>    {</b><b>        return View();</b><b>    }</b>}</pre></td></tr></table></span></div><br /></li>
+          <li>Now, you need to add an appropriate View template. To do this, <b>right-click</b> inside the <b>Index</b> action method and select <b>Add View</b>. This will bring up the Add View dialog.<p><img src="images\34cf13c9-432f-4e8b-b624-4a833bae925a.png" /></p><p><b>Figure 25</b><br /><i>Adding a View from within the Index method</i></p><br /></li>
+          <li>The <b>Add View</b> Dialog appears. It allows generating View template files. By default this dialog pre-populates the name of the View template so that it matches the action method that will use it.  Because you used the <b>Add View</b> context menu within the <b>Index</b> action method of the HomeController, the <b>Add View</b> dialog has <b>Index</b> as the default view name.  Because there is a <b>Site.Master</b> MasterPage template within the project, the dialog also pre-fills that name as the master page template the View should be based on. Click <b>Add</b>.<p><img src="images\6ff22031-324e-4359-8a58-568618489166.png" /></p><p><b>Figure 26</b><br /><i>Add View Dialog</i></p><br /></li>
+          <li>Visual Studio generates an <b>Index.aspx</b> view template inside the Views\Home folder and then opens it.<p><img src="images\01b5e327-45d5-42bb-acbe-5c524c92a368.png" /></p><p><b>Figure 27</b><br /><i>Add View Dialog</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> name and location of the <b>Index.aspx</b> file is relevant and follows the default ASP.NET MVC naming conventions.<br />The folder (\Views\<b>Home</b>) matches the controller name (<b>Home</b>Controller). The View template name (<b>Index</b>), matches the controller action method which will be displaying the View.<br />This way, ASP.NET MVC avoids having to explicitly specify the name or location of a View template when using this naming convention to return a View.</td></tr></table><p /></div><br /></li>
+          <li>The generated View template is based on the <b>Site.master</b> template earlier defined, and contains two <b>&lt;asp:content&gt;</b> sections that enables you to override to fill with the page content. Update the Title to <b>Home</b>, and change the main content to <b>This is the Home Page</b>, as shown in the code below:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server"&gt;<b>    Home</b>&lt;/asp:Content&gt;&lt;asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server"&gt;<b>    &lt;h2&gt;This is the Home Page&lt;/h2&gt;</b>&lt;/asp:Content&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Select <b>MvcMusicStore</b> project in the Solution Explorer and Press <b>F5</b> to run the Application.<p><img src="images\5d13f3ee-4a21-4b01-8190-91662f3d860b.png" /></p><p><b>Figure 28</b><br /><i>MvcMusicStore Project selected in the Solution Explorer</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_eb65c847-924b-4fd0-a1bb-3eb911cdc28f.html">Exercise 4: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

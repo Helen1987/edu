@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Version>1.0</Version>
+  <Author>
+    <Name>RoJacobs</Name>
+  </Author>
+  <Id>IntroToWorkflowServices</Id>
+  <Title>Introduction to Workflow Services in .NET 4</Title>
+  <Description>
+    Have you heard about the new Windows Server AppFabric?  In this episode we take you through the new Beta 2 version of the Introduction to Workflow Services Hands On Lab in .NET 4 which now includes a look at portions of Windows Server Application Fabric.
+  </Description>
+  <Abstract>
+    Have you heard about the new Windows Server AppFabric?  In this episode we take you through the new Beta 2 version of the Introduction to Workflow Services Hands On Lab in .NET 4 which now includes a look at portions of Windows Server Application Fabric.
+  </Abstract>
+  <Url>
+    http://ecn.channel9.msdn.com/o9/ch9/2/7/5/6/0/5/AppFabricWorkflowServicesLab_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/10-4/10-4-Episode-36-Windows-Server-AppFabric-and-Workflow-Services-Lab/Player/" />
+  </CustomProperties>
+</Video>

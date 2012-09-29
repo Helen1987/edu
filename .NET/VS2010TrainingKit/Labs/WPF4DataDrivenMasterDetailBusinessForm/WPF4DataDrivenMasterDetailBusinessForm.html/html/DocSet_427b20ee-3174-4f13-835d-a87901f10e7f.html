@@ -1,0 +1,129 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating the Application’s Data Scaffolding, Making Basic Customizations" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating the Application’s Data Scaffolding, Making Basic Customizations" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating the Application’s Data Scaffolding, Making Basic Customizations</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Building a Data-Driven Master/Detail Business Form in WPF using Visual Studio 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating the Application’s Data Scaffolding, Making Basic Customizations</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will create the databinding scaffolding for your application, and display your first data. You will make some initial customizations of the data sources window’s output.</p>
+        <a name="_Toc222217862" href="#">
+          <span />
+        </a>
+        <a name="_Toc280782391" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a Database to the Project Using Data Sources</b>
+        </p>
+        <ol>
+          <li>Navigate to <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>. </li>
+          <li>Select the <b>File</b> | <b>Open</b> | <b>Project/Solution</b> menu command. In the <b>Open Project</b> dialog, navigate to <b><i>\Ex01-CreatingTheAppDataScaffolding\begin\</i>(choosing the folder that matches the language of your preference)</b> and select Southridge.sln file.</li>
+          <li>Open the <b>Window1.xaml</b> file by double-clicking on the file in the Solution Explorer.</li>
+          <li>Select the root window (be careful that you have the Window not the Grid selected – you can tell what is selected by checking the property browser window or the document outline window in Visual Studio). Use the Property Browser to set the <b>Width</b> of the window to 800 and the <b>Height</b> to 600.<p><img src="images\41c7c19f-2068-45d6-8c19-32bc9156d282.png" /></p><p><b>Figure 1</b><br /><i>Updating Window1 Height and Width-  C#</i></p><br /><p><img src="images\9d7610ae-9e9d-4f1b-9514-e89b0e0b6d65.png" /></p><p><b>Figure 2</b><br /><i>Updating Window1 Height and Width-  Visual Basic</i></p><br /></li>
+          <li>Open the Data Sources window by clicking <b>Data</b> | <b>Show Data Sources</b> menu option.</li>
+          <li>Create a new Data Source by clicking the <b>Add New Data Source</b> hyperlink in the Data Sources window.<p><img src="images\42d9944a-41ac-402d-b7f9-e373dc69fd7e.png" /></p><p><b>Figure 3</b><br /><i>Data Sources</i></p><br /></li>
+          <li>Choose the Data Source Type of <b>Database</b>. Click <b>Next</b>.</li>
+          <li>Choose <b>DataSet</b> as the Database Model and click <b>Next</b>.</li>
+          <li>Click <b>New Connection…</b> and choose the following options:<ol><li><b>Data source</b>: Microsoft SQL Server Database File</li><li><b>Database file name</b>: \Assets\Southridge.mdf</li><li><b>Log on to server</b>: Use Windows Authentication</li></ol></li>
+          <li>Click <b>Next</b>. Click <b>Yes</b> to copy the file to your local project.</li>
+          <li>Click <b>Next</b>, keeping the default connection string name.</li>
+          <li>On the Choose Your Database Objects screen:<ol><li>Under <b>Tables</b> | <b>Listings</b>, check <b>MLS</b>, <b>Title</b>, <b>Price</b> and <b>PrimaryPhoto</b></li><li>Check <b>Tables</b> | <b>Neighborhoods</b></li><li>Check <b>Tables</b> | <b>Viewings</b></li></ol></li>
+          <li>Click <b>Finish</b>.</li>
+          <li>You should now see the Data Sources window populated already with database schema. You will also see the related XSD strongly typed DataSet in the Solution Explorer.</li>
+          <li>Build the solution – you should see no build errors.</li>
+        </ol>
+        <a name="_Toc280782392" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Using Data Sources to Add Data-Bound Controls to the Window</b>
+        </p>
+        <ol>
+          <li>In the Data Sources window, click the <b>Listings</b> dropdown and select <b>Details</b>.<p><img src="images\f1869974-d151-4f40-b01b-1ab09588ba82.png" /></p><p><b>Figure 4</b><br /><i>Listings Details</i></p><br /></li>
+          <li>Drag and drop from the Listing dropdown onto Windows1.</li>
+          <li>Note that the Data-Bindings and Controls are created automatically. Inspect the XAML that was created for you and observe its relationship to the SouthridgeDataSet data source.<p><img src="images\fd739e9f-4d9b-4237-9b90-d44828056e05.png" /></p><p><b>Figure 5</b><br /><i>Listing Details in WPF Designer – C#</i></p><br /><p><img src="images\aa1e0384-40ae-4284-b60b-a56e94c6e001.png" /></p><p><b>Figure 6</b><br /><i>Listing Details in WPF Designer – Visual Basic</i></p><br /></li>
+          <li>On the Design pane, delete the Primary Photo <b>Label</b> and <b>Textbox</b>.</li>
+          <li>Drag and drop and <b>Image</b> control from the <b>Toolbox</b> and place to the right of the details grid.</li>
+          <li>In the <b>Data Sources</b> window, expand the <b>Listings</b> table and then drag and drop the PrimaryPhoto field onto the <b>Image</b> control. This will “paint” the data binding information on to the control.<p><img src="images\c6c69c7a-5092-4c06-aa64-82a8fb0ac902.png" /></p><p><b>Figure 7</b><br /><i>Adding an Image Control</i></p><br /></li>
+          <li>Press CTRL+F5 to run the application. You should see data appearing from the first row in the database, and a picture showing.<p><img src="images\0b456a8c-1d10-4497-bd5f-c2f6e6fac534.png" /></p><p><b>Figure 8</b><br /><i>Running the Application</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_42a4cd6c-881f-47d3-bd6a-628ec4360963.html">Exercise 2: Creating Master-Detail Data Scaffolding, Making More Detailed Customizations</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

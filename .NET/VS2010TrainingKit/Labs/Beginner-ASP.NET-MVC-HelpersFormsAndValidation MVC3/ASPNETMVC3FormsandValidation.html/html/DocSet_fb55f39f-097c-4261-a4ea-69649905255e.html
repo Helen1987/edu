@@ -1,0 +1,174 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Adding an HTML Helper" />
+      <MSHelp:RLTitle Title="Exercise 2: Adding an HTML Helper" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Adding an HTML Helper</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Helpers, Forms and Validation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Adding an HTML Helper</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>The StoreManager Index page has one potential issue: Title and Artist Name properties can both be long enough to throw off the table formatting. In this exercise you will learn how to add a custom HTML helper to truncate that text.</p>
+        <p>In the following figure, you can see how the format is modified because of the length of the text.</p>
+        <p>
+          <img src="images\419d51fc-59a8-48ab-8e4d-439da38ec714.png" />
+        </p>
+        <p>
+          <b>Figure 6</b>
+          <br />
+          <i>Browsing the list of Albums with not truncated text</i>
+        </p>
+        <br />
+        <a name="_Toc269995197" href="#">
+          <span />
+        </a>
+        <a name="_Toc282517411" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Extending the HTML Helper</b>
+        </p>
+        <p>In this task, you will add a new method <b>Truncate</b> to the <b>Html </b>object exposed within ASP.NET MVC Views. To do this, you will implement an <b>extension method</b> to the built-in <b>System.Web.Mvc.HtmlHelper</b> class provided by ASP.NET MVC.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>To read more about <b>extension methods</b>, please visit this <a href="http://msdn.microsoft.com/en-us/library/bb383977.aspx">msdn article.</a></td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>. </li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex02-AddingAnHTMLHelper\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>Add a new directory <b>Helpers</b> to place the new extension method. To do this, in the Solution Explorer, right-click the <b>MvcMusicStore </b>project, then <b>Add</b>, and <b>New Folder.</b><p><img src="images\dad09877-842f-4f1b-926a-71f048535606.png" /></p><p><b>Figure 7</b><br /><i>Adding Helpers folder</i></p><br /></li>
+          <li>Rename the folder to <b>Helpers</b>.<p><img src="images\8a3b3f7f-f420-42b8-a483-c71f47354e39.png" /></p><p><b>Figure 8</b><br /><i>Helpers folder</i></p><br /></li>
+          <li>Add a new class <b>HtmlHelpers</b> in the <b>Helpers</b> folder. To do this, right-click the <b>Helpers</b> folder, select <b>Add </b>and then <b>Class</b>. In the <b>Add New Item</b> dialog, change the name to <b>HtmlHelpers.cs</b> and click <b>Add</b>.<p><img src="images\ad57ee33-c54f-4e5c-9392-1e02ea276f96.png" /></p><p><b>Figure 9</b><br /><i>Adding HtmlHelpers.cs class</i></p><br /></li>
+          <li>Add a using directive to <b>System.Web.Mvc </b>and a new method to the class. Because of extension methods definition, HtmlHelpers and the new method need to be static. Replace with the following code:<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex2 TruncateMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;<b>using System.Web.Mvc;</b><b>namespace MvcMusicStore.Helpers</b><b>{</b><b>    public static class HtmlHelpers</b><b>    {</b><b>        public static string Truncate(this HtmlHelper helper, string input, int length)</b><b>        {</b><b>            if (input.Length &lt;= length)</b><b>            {</b><b>                return input;</b><b>            }</b><b>            else</b><b>            {</b><b>                return input.Substring(0, length) + "...";</b><b>            }</b><b>        }</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This <b>Truncate </b>method will truncate a text if it is longer than the <b>length </b>parameter, adding a <b>… </b>for the remainder. If the text is shorter, the text will remain as is.<br />You may notice that the first parameter in the <b>Truncate </b>method<b> </b>includes a <b>this</b>. This is the way of defining the method as an extension method to the <b>HtmlHelpers</b> class. This will allow all <b>HtmlHelpers</b> class instances to use the <b>Truncate</b> method as if it was a class method. For example the implementation you will see in Task 3: <b>Html.Truncate(item.Title, 25)</b>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269995198" href="#">
+          <span />
+        </a>
+        <a name="_Toc282517412" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Registering the HTML Helper</b>
+        </p>
+        <p>In this task, you will register the HTML Helper with the application by modifying the application’s <b>Web.config</b> file.</p>
+        <ol>
+          <li>Open the <b>Web.config</b> file from the Solution Explorer.</li>
+          <li>Add a reference to the <b>MvcMusicStore.Helpers</b> namespace in the <b>pages</b> section.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;pages&gt;    &lt;namespaces&gt;        &lt;add namespace="System.Web.Mvc" /&gt;        &lt;add namespace="System.Web.Mvc.Ajax" /&gt;        &lt;add namespace="System.Web.Mvc.Html" /&gt;        &lt;add namespace="System.Web.Routing" /&gt;<b>        &lt;add namespace="MvcMusicStore.Helpers" /&gt;</b>    &lt;/namespaces&gt;&lt;/pages&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Another aproach would be to add an import directive in all the pages that need it:<br />&lt;%@ Import Namespace="MvcMusicStore.Helpers" %&gt;.<br />Although, by adding the reference in the Web.config file, it will be available for all pages.<br /><br />You will find more information about import directive in this <a href="http://msdn.microsoft.com/en-us/library/eb44kack(VS.71).aspx">msdn article</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc269995199" href="#">
+          <span />
+        </a>
+        <a name="_Toc282517413" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Truncating Text in the Page</b>
+        </p>
+        <p>In this task, you will use the <b>Truncate</b> method to truncate the text in the View template.</p>
+        <ol>
+          <li>Open StoreManager’s Index View. To do this, in the Solution Explorer expand the <b>Views</b> folder, then the <b>StoreManager</b> and open the <b>Index.aspx</b> file.</li>
+          <li>Replace the lines that show the Album’s <b>Title</b> and <b>Artist Name</b>. To do this, replace the following lines:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;% foreach (var item in Model) { %&gt;    &lt;tr&gt;        &lt;td&gt;            &lt;%: Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) %&gt; |            &lt;%: Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })%&gt;        &lt;/td&gt;<b>        &lt;td&gt;&lt;%: Html.Truncate(item.Title, 25) %&gt;&lt;/td&gt;</b><b>        &lt;td&gt;&lt;%: Html.Truncate(item.Artist.Name, 25) %&gt;&lt;/td&gt;</b>        &lt;td&gt;&lt;%: item.Genre.Name %&gt;&lt;/td&gt;    &lt;/tr&gt;&lt;% } %&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269995200" href="#">
+          <span />
+        </a>
+        <a name="_Toc282517414" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Index</b> View template truncates the Album’s Title and Artist Name.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager</b> to verify that long texts in the <b>Title</b> and <b>Artist </b>column<b> </b>are truncated.<p><img src="images\4f4dee5c-ed49-4c61-932d-5fb3ac6b398c.png" /></p><p><b>Figure 10</b><br /><i>Truncated Titles and Artist Names</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_650eccae-ca52-4451-a5d3-cd41959991bd.html">Exercise 3: Creating the Edit View</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

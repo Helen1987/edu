@@ -1,0 +1,184 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a WCF RIA Services Domain Service" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a WCF RIA Services Domain Service" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a WCF RIA Services Domain Service</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using WCF RIA Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a WCF RIA Services Domain Service</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll create a new Silverlight Business Application that has WCF RIA Services features built-in.  You'll then create an Entity Framework 4 model in the web project and create a domain service based upon the model. Once the domain service is created you'll customize methods to return more constrained results using LINQ.</p>
+        <ol>
+          <li>Create a new <b>Silverlight Business Application</b> in Visual Studio 2010 named <b>UsingRIAServices</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Silverlight Business Application template builds upon functionality available in the Silverlight Navigation Application template and also adds WCF RIA Service specific functionality.</td></tr></table><p /></div></li>
+          <li>Right-click on the <b>UsingRIAServices.Web</b> project's <b>App_Data</b> folder and select <b>Add  Existing Item</b> from the menu. Add the following file:</li>
+          <li>RIAServices/Starting Point/AdventureWorksLT_Data.mdf</li>
+          <li>Add a new <b>ADO.NET Entity Data Model</b> into the <b>WCFRIAServices.Web/Model</b> folder named <b>AdventureWorksLT.edmx</b>. Add it within the <b>Models</b> folder.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The ADO.NET Entity Data Model template can be found in the Data section. Alternatively, you can use Visual Studio 2010's <i>Search Installed Templates</i> feature in the upper-right corner of the dialog window to search for the template as well.</td></tr></table><p /></div></li>
+          <li>Select <b>Generate from database</b> from the options and click the <b>Next</b> button.<p><img src="images\482f92a6-cd9c-4018-be3c-5971b2abc8ee.png" /></p><p><b>Figure 2</b><br /><i>Entity Data Model Wizard</i></p></li>
+          <li>Select <b>AdventureWorksLT_Data.mdf</b> from the drop-down box and click <b>Next.</b></li>
+          <li>Expand the <b>Tables</b> node and select the <b>Customer</b>, <b>Product</b>, <b>SalesOrderDetail, </b>and<b> SalesOrderHeader</b> tables as shown next and then click <b>Finish.</b></li>
+          <br />
+          <p>
+            <img src="images\30481b19-bf82-4209-8651-d845e3c00a58.png" />
+          </p>
+          <p>
+            <b>Figure 3</b>
+            <br />
+            <i>Choose Your Database Objects Dialog</i>
+          </p>
+          <li>Build the solution</li>
+          <li>Add a new <b>Domain Service</b><b>Class</b> into the <b>UsingRIAServices.Web/Services</b> folder and name it <b>AdventureWorksLTDomainService.cs</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The Domain Service Class template is located in the Web templates section that's available when adding new items into a project.</td></tr></table><p /></div></li>
+          <li>Once the <b>Add New Domain Service Class</b> wizard appears check the checkbox next to the <b>Customer</b> and <b>SalesOrderHeader</b> entities and enable editing for the <b>SalesOrderHeader</b> entity as shown next:</li>
+          <br />
+          <p>
+            <img src="images\e05e3389-b7b2-464e-80ea-d41ef4b911f5.png" />
+          </p>
+          <p>
+            <b>Figure 4</b>
+            <br />
+            <i>Add New Domain Service Class Dialog</i>
+          </p>
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>Ensure that you leave the <i>Generate associated classes for metadata</i> checkbox selected. You'll explore this feature later in the lab and use it to add data validation rules into the solution. Notice that the Product and SalesOrderDetail entities aren't checked. Since they won't be used in this application there's no reason to expose them through a WCF RIA Services domain service. You should only expose objects that your application explicitly needs.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <li>Take a moment to examine the <b>AdventureWorksLTDomainService</b> class that is created.  Notice that it is decorated with the <b>EnableClientAccess</b> attribute. This attribute allows Silverlight clients to call it and has several methods added into it to query the entities selected earlier with the wizard.</li>
+          <li>Locate <b>GetCustomers</b> in the domain service and change the code to the following to constrain the query to select customers that have orders and sort customers by last name.</li>
+          <br />
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>return from c inObjectContext.Customersjoin o inObjectContext.SalesOrderHeadersonc.CustomerIDequalso.CustomerIDorderbyc.LastNameselect c;</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Return From c In ObjectContext.Customers _       Join o In ObjectContext.SalesOrderHeaders _       On c.CustomerID Equals o.CustomerID _       Order By c.LastName _       Select c</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <li />
+          <li>Rename the <b>GetSalesOrderHeaders </b>method to <b>GetOrdersByCustomerID </b>and change the method signature to accept a single <b>Integer</b> parameter named <b>customerID</b>.  </li>
+          <li>Replace the body of the <b>GetOrdersByCustomerID</b> method with the following code:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>return ObjectContext.SalesOrderHeaders  .where(so =&gt; so.CustomerID == customerID);</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Return ObjectContext.SalesOrderHeaders.Where(Function(so) _  so.CustomerID = customerID)</pre></td></tr></table></span></div></li>
+          <li />
+          <li>Build the solution before continuing.</li>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

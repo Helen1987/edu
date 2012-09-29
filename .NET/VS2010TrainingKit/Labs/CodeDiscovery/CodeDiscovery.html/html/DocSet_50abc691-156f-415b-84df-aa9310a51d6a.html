@@ -1,0 +1,101 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Working with Graph Nodes and Grouping" />
+      <MSHelp:RLTitle Title="Exercise 2: Working with Graph Nodes and Grouping" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Working with Graph Nodes and Grouping</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Code Discovery using the Architecture Tools in Visual Studio 2010 Ultimate</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Working with Graph Nodes and Grouping</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to reduce dependency graph complexity by removing unwanted nodes, adjusting the grouping of nodes, and modifying graph node properties.</p>
+        <ol>
+          <li>Return to the original collapsed view of the dependency graph by <b>right-clicking </b>and selecting <b>Group | Collapse All</b>.</li>
+          <li>Zoom to fit the dependency graph to the visible screen (Zoom drop down).</li>
+          <li>Expand the <b>Externals</b> node from the dependency graph to expose the external assemblies used by the Tailspin application.</li>
+          <li>Select both of the <b>mscorlib.dll</b> assembly nodes and press the <b>Delete</b> key to remove them from the graph. The rationale behind removing this node, as well as many other commonly used external assemblies and types, might be that it adds too much noise to the graph and makes it difficult to navigate efficiently.<p><img src="images\6b14ab17-80f6-45aa-8b8f-da49fcd355f4.png" /></p><p><b>Figure 20</b><br /><i>Location of mscorlib.dll</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Multiple nodes labeled mscorlib.dll exist because the application references two different versions of the assembly.</td></tr></table><p /></div></li>
+          <li><b>Delete</b> both<b> System.dll</b> nodes from the Externals group as well.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The gray relationship lines connected to the Externals group stop at the boundary of the group. The purpose of this is to reduce the visual complexity of the dependency graph. If you remove the Externals grouping, you will be able to see all the direct relationship lines between external and internal assemblies as well as more detail between assemblies currently grouped within Externals.</td></tr></table><p /></div></li>
+          <li>Select the Externals group, right-click and select <b>Group | Remove Group</b>. This will remove the grouping but not the graph nodes contained within.<p><img src="images\7d875872-8ef0-41cd-b6a2-4d4fb680e8f4.png" /></p><p><b>Figure 21</b><br /><i>Removing the Externals group</i></p></li>
+          <li><b>Zoom to fit</b> the dependency graph to the visible screen (Zoom drop down).</li>
+          <li><b>Delete</b> the <b>Tailspin.Test.Model.dll</b> node from the graph. We should remove this node to get a better idea of how the deployed application works.<p><img src="images\a9e7d122-0bb2-4241-aa32-91f06cfdc1c8.png" /></p><p><b>Figure 22</b><br /><i>Simplified assembly dependency graph</i></p></li>
+          <li>Although the removal of the Externals group gives us a better idea of what is going on, it makes it difficult to distinguish between the application assemblies and those that were previously grouped as Externals. This can be fixed by adding a node property to give external assemblies a different color. Click the <b>Add</b> drop down from the Legend panel shown in the top-right corner of the graph and select <b>Node Property | IsExternal</b>.<p><img src="images\526666ef-b613-47ef-a45b-1c1ca7b0b4e2.png" /></p><p><b>Figure 23</b><br /><i>Creating a node property that targets IsExternal</i></p></li>
+          <li>The IsExternal node property is added to the Legend panel. Locate the <b>IsExternal</b> drop down and select the <b>Background…</b> option to load the Color Set Picker window.<p><img src="images\00bdc0dc-5bb8-4a14-b3d2-91774c1f3f83.png" /></p><p><b>Figure 24</b><br /><i>Changing the Background color for nodes depending upon the IsExternal state</i></p></li>
+          <li>In the <b>Color Set Picker</b> window, select the <b>True</b> drop down and pick the color <b>red</b> (or another color other than blue).</li>
+          <li>Select the <b>OK</b> button to confirm the selection.<p><img src="images\8ed86267-aafe-41db-a5d0-10784a6e4d16.png" /></p><p><b>Figure 25</b><br /><i>Dependency graph showing external assembly nodes in red</i></p></li>
+        </ol>
+        <br />
+        <p>To give feedback please write to <a href="docSet_mailto:VSKitFdbk@microsoft.com">VSKitFdbk@Microsoft.com</a></p>
+        <p>Copyright © 2010 by Microsoft Corporation. All rights reserved.</p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

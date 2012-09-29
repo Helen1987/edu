@@ -1,0 +1,774 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head id="ctl00_head">
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta name="WT.pagetype" content="topicpage" />
+    <title>Visual Studio 2010 and .NET Framework 4 Training Kit</title>
+    <link href="styles/vs2010.css" type="text/css" rel="stylesheet" />
+    <link href="styles/main.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="scripts/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="scripts/common.js"></script>
+
+</head>
+<body>
+       <!-- Dependency Checker installation checker-->
+     <embed id="dcDetectorMoz" type="application/dc-plugin" style="height:0px;width:0px"></embed>
+     <object id="dcDetectorIE" classid="CLSID:4A5C71B6-C5C0-41EB-8917-16014CDF375B" style="height:0px;width:0px"></object>
+   <!-- End  Dependency Checker installation checker-->
+	 <!-- START SECURITY MESSAGE -->
+    <div id="securityMessageContainer">
+        <div id="securityMessage">
+            <p>
+                <img src="images/exclamation.png" class="exclamation" />
+                This Training Kit requires the execution of JavaScript for navigating the contents
+                and watching videos. If you are viewing this page in Internet Explorer locally on
+                your computer, please click the security message at the top of this window and click
+                Yes in the resulting dialog.
+            </p>
+            <img src="images/securityMessage.png" id="securityMessageImage" />
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#securityMessageContainer").hide();
+    </script>
+
+
+
+    <div id="background">
+        <div id="contents" class="wocn">
+        
+            			
+		      	<!--//////////////////////////////-->
+            <!--///// TASKBAR NAVIGATION /////-->
+            <!--//////////////////////////////-->
+            <div id="taskbarNav">
+              <a href="default.htm" id="wocn">
+                <img src="images/VSLogo_small.png" alt="" />
+              </a>
+              <a href="Labs.htm" id="topic_1">
+                <div class="centerdiv">Labs</div>
+              </a>
+              <a href="Presentations.htm" id="topic_2">
+                <div class="centerdiv">Presentations</div>
+              </a>
+              <a href="Demos.htm" id="topic_3">
+                <div class="centerdiv">Demos</div>
+              </a>
+
+              <a href="Videos.htm" id="rsc">
+                <div class="centerdiv">Videos</div>
+              </a>
+              <a href="prerequisites.htm" id="prq">
+                <div class="centerdiv">Prerequisites</div>
+              </a>
+            </div>
+            <!--/ #taskbarNav -->
+            
+            <!--////////////////////////////////-->
+            <!--///// INTRODUCTORY SECTION /////-->
+            <!--////////////////////////////////-->
+            <div id="introContent">
+                <h2>
+                    Visual Studio 2010 and .NET Framework 4 Training Kit</h2>
+                <p>
+                    March 2011 Release</p>
+            </div>
+            <div id="wideLayout" class="topicPage">
+            
+                            <!--/////////////////////////////-->
+                <!--////// SIDEBAR MODULES //////-->
+                <!--/////////////////////////////-->
+                <div id="CreativityunleashedModules" class="sidebarResources" style="display: none;">
+                    <div style="text-align:right;"><a href="javascript:ShowAllContent()">Show All Content</a></div>
+					
+										<h3>Videos</h3>
+                    <ul>
+															<li><a href="Videos.htm#IntroToWorkflowServices"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Introduction to Workflow Services in .NET 4</span> </a></li>                        
+		                                            </ul>
+										<h3>Presentations</h3>
+                    <ul>
+															<li><a href="Presentations.htm#WindowsPresentationFoundation4"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />What's New in Windows Presentation Foundation 4</span> </a></li>                        
+		                        									<li><a href="Presentations.htm#IntroNetRiaServices"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Introduction to .NET RIA Services</span> </a></li>                        
+		                        									<li><a href="Presentations.htm#ParallelComputingForManagedDevs"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Parallel Computing for Managed Developers</span> </a></li>                        
+		                                            </ul>
+										<h3>Demos</h3>
+                    <ul>
+															<li><a href="Demos.htm#HelloVisualStudio2010"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />
+        Hello Visual Studio 2010
+  </span> </a></li>                        
+		                                            </ul>
+										<h3>Labs</h3>
+                    <ul>
+															<li><a href="Labs.htm#WPF4DataDrivenMasterDetailBusinessForm"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Building a Data-Driven Master/Detail Business Form in WPF using Visual Studio 2010</span> </a></li>                        
+		                        									<li><a href="Labs.htm#ParallelExtensions"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Parallel Extensions: Building Multicore Applications with .NET</span> </a></li>                        
+		                        									<li><a href="Labs.htm#PlanningYourProjects"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Planning your Projects with Team Foundation Server 2010</span> </a></li>                        
+		                                            </ul>
+					                </div>
+				                   <!--/////////////////////////////-->
+                <!--////// SIDEBAR MODULES //////-->
+                <!--/////////////////////////////-->
+                <div id="SimplicitythroughintegrationModules" class="sidebarResources" style="display: none;">
+                    <div style="text-align:right;"><a href="javascript:ShowAllContent()">Show All Content</a></div>
+					
+										<h3>Videos</h3>
+                    <ul>
+															<li><a href="Videos.htm#FixingPIAPainsWithTypeEquivalence"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Fixing PIA Pains with Type Equivalence</span> </a></li>                        
+		                        									<li><a href="Videos.htm#DataDrivenWebApplications"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Simplifying Data-Driven Web Applications</span> </a></li>                        
+		                        									<li><a href="Videos.htm#IntroToWorkflowServices"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Introduction to Workflow Services in .NET 4</span> </a></li>                        
+		                                            </ul>
+										<h3>Presentations</h3>
+                    <ul>
+															<li><a href="Presentations.htm#IntroductiontoASP.NETMVC"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Introduction to ASP.NET MVC</span> </a></li>                        
+		                        									<li><a href="Presentations.htm#WhatsNewInASP.NETWebForms4"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Whats New In ASP.NET Web Forms 4</span> </a></li>                        
+		                        									<li><a href="Presentations.htm#WebDeploymentwithVisualStudio2010"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Web Deployment with Visual Studio 2010</span> </a></li>                        
+		                                            </ul>
+										<h3>Labs</h3>
+                    <ul>
+															<li><a href="Labs.htm#IntroToFSharp"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction To F#</span> </a></li>                        
+		                        									<li><a href="Labs.htm#WebDevelopment"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Web Development in Visual Studio 2010</span> </a></li>                        
+		                        									<li><a href="Labs.htm#IntroToWF"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction to Workflow 4</span> </a></li>                        
+		                        									<li><a href="Labs.htm#AnalyzeYourCode"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Using the Architecture Explorer in Visual Studio 2010 Ultimate to Analyze Your Code</span> </a></li>                        
+		                        									<li><a href="Labs.htm#ImproveCodeQuality"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Using Code Analysis with Visual Studio 2010 to Improve Code Quality</span> </a></li>                        
+		                        									<li><a href="Labs.htm#CodeDiscovery"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Code Discovery using the Architecture Tools in Visual Studio 2010 Ultimate</span> </a></li>                        
+		                        									<li><a href="Labs.htm#UnderstandClassCoupling"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Understanding Class Coupling with Visual Studio 2010 Ultimate</span> </a></li>                        
+		                                            </ul>
+					                </div>
+				                   <!--/////////////////////////////-->
+                <!--////// SIDEBAR MODULES //////-->
+                <!--/////////////////////////////-->
+                <div id="QualitycodeensuredModules" class="sidebarResources" style="display: none;">
+                    <div style="text-align:right;"><a href="javascript:ShowAllContent()">Show All Content</a></div>
+					
+										<h3>Videos</h3>
+                    <ul>
+															<li><a href="Videos.htm#SoftwareTesting1"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Software Testing with Microsoft Visual Studio 2010: Part 1, an Introduction</span> </a></li>                        
+		                        									<li><a href="Videos.htm#SoftwareTesting2"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Software Testing with Microsoft Visual Studio 2010: Part 2, Making it Real</span> </a></li>                        
+		                                            </ul>
+										<h3>Presentations</h3>
+                    <ul>
+															<li><a href="Presentations.htm#WhatsNewInC4andVisualBasic10"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />What's New In C# 4 and Visual Basic 10</span> </a></li>                        
+		                                            </ul>
+										<h3>Labs</h3>
+                    <ul>
+															<li><a href="Labs.htm#TestDrivenDevelopment"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Visual Studio 2010: Test Driven Development</span> </a></li>                        
+		                        									<li><a href="Labs.htm#Dev10Office"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Visual Studio 2010: Office Programmability</span> </a></li>                        
+		                        									<li><a href="Labs.htm#IntroToFSharp"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction To F#</span> </a></li>                        
+		                        									<li><a href="Labs.htm#AnalyzeYourCode"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Using the Architecture Explorer in Visual Studio 2010 Ultimate to Analyze Your Code</span> </a></li>                        
+		                        									<li><a href="Labs.htm#ImproveCodeQuality"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Using Code Analysis with Visual Studio 2010 to Improve Code Quality</span> </a></li>                        
+		                        									<li><a href="Labs.htm#AuthoringAndRunningManualTests"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Authoring and Running Manual Tests using Microsoft Test Manager 2010</span> </a></li>                        
+		                        									<li><a href="Labs.htm#IntroToCodedUITests"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction to Coded UI Tests with Visual Studio 2010 Ultimate</span> </a></li>                        
+		                        									<li><a href="Labs.htm#IntroToTestCaseManagement"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction to Test Case Management with Microsoft Test Manager 2010</span> </a></li>                        
+		                                            </ul>
+					                </div>
+				                   <!--/////////////////////////////-->
+                <!--////// SIDEBAR MODULES //////-->
+                <!--/////////////////////////////-->
+                <div id="OneSetofSkillsModules" class="sidebarResources" style="display: none;">
+                    <div style="text-align:right;"><a href="javascript:ShowAllContent()">Show All Content</a></div>
+					
+										<h3>Videos</h3>
+                    <ul>
+															<li><a href="Videos.htm#DataDrivenWebApplications"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Simplifying Data-Driven Web Applications</span> </a></li>                        
+		                        									<li><a href="Videos.htm#ServerDrivenPagingADONETDataServices"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Server-Driven Paging with ADO.NET Data Services</span> </a></li>                        
+		                                            </ul>
+										<h3>Labs</h3>
+                    <ul>
+															<li><a href="Labs.htm#AspNetWebForms4"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction to ASP.NET Web Forms 4</span> </a></li>                        
+		                        									<li><a href="Labs.htm#WPF4DataDrivenMasterDetailBusinessForm"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Building a Data-Driven Master/Detail Business Form in WPF using Visual Studio 2010</span> </a></li>                        
+		                                            </ul>
+					                </div>
+				                   <!--/////////////////////////////-->
+                <!--////// SIDEBAR MODULES //////-->
+                <!--/////////////////////////////-->
+                <div id="SpeedtoSolutionModules" class="sidebarResources" style="display: none;">
+                    <div style="text-align:right;"><a href="javascript:ShowAllContent()">Show All Content</a></div>
+					
+										<h3>Videos</h3>
+                    <ul>
+															<li><a href="Videos.htm#DataDrivenWebApplications"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Simplifying Data-Driven Web Applications</span> </a></li>                        
+		                        									<li><a href="Videos.htm#ServerDrivenPagingADONETDataServices"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Server-Driven Paging with ADO.NET Data Services</span> </a></li>                        
+		                        									<li><a href="Videos.htm#LapAroundALM"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />A Lap Around Visual Studio 2010 Application Lifecycle Management</span> </a></li>                        
+		                                            </ul>
+										<h3>Presentations</h3>
+                    <ul>
+															<li><a href="Presentations.htm#WhatsNewInEntityFramework4"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Whats New In Entity Framework 4</span> </a></li>                        
+		                        									<li><a href="Presentations.htm#WhatsNewInADONETDataServices1.5"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Whats New In ADONET Data Services 1.5</span> </a></li>                        
+		                                            </ul>
+										<h3>Labs</h3>
+                    <ul>
+															<li><a href="Labs.htm#ADONetDataServices"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction to ADO.NET Data Services</span> </a></li>                        
+		                                            </ul>
+					                </div>
+				                   <!--/////////////////////////////-->
+                <!--////// SIDEBAR MODULES //////-->
+                <!--/////////////////////////////-->
+                <div id="InteroperabilityModules" class="sidebarResources" style="display: none;">
+                    <div style="text-align:right;"><a href="javascript:ShowAllContent()">Show All Content</a></div>
+					
+										<h3>Videos</h3>
+                    <ul>
+															<li><a href="Videos.htm#FixingPIAPainsWithTypeEquivalence"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Fixing PIA Pains with Type Equivalence</span> </a></li>                        
+		                                            </ul>
+										<h3>Presentations</h3>
+                    <ul>
+															<li><a href="Presentations.htm#WhatsNewInC4andVisualBasic10"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />What's New In C# 4 and Visual Basic 10</span> </a></li>                        
+		                        									<li><a href="Presentations.htm#IntroductiontotheManagedExtensibilityFramework"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Introduction to the Managed Extensibility Framework</span> </a></li>                        
+		                                            </ul>
+										<h3>Labs</h3>
+                    <ul>
+															<li><a href="Labs.htm#WhatsNewInWCF4"><span class="resourceTitle"><img class="bullet" src="images/green.png" />What's New in WCF 4?</span> </a></li>                        
+		                        									<li><a href="Labs.htm#IntroToMEF"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction To Managed Extensibility Framework</span> </a></li>                        
+		                        									<li><a href="Labs.htm#TestDrivenDevelopment"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Visual Studio 2010: Test Driven Development</span> </a></li>                        
+		                        									<li><a href="Labs.htm#Dev10Office"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Visual Studio 2010: Office Programmability</span> </a></li>                        
+		                        									<li><a href="Labs.htm#IntroToFSharp"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Introduction To F#</span> </a></li>                        
+		                                            </ul>
+					                </div>
+				   
+                <div id="AllContent" class="sidebarResources"  style="display: none;">
+                    
+				<script language="javascript">
+				    function ExpandResources(name) {
+				        $('#' + name + 'Collapsed').hide();
+				        $('#' + name + 'Expanded').show();
+				    }
+
+				    function CollapseResources(name) {
+				        $('#' + name + 'Expanded').hide();
+				        $('#' + name + 'Collapsed').show();
+				    }
+				</script>
+
+				<h3>Visual Studio 2010</h3>
+				<ul>
+					<li><a href="http://msdn.microsoft.com/vstudio/default.aspx" target="_blank"><span class="resourceTitle">Download Visual Studio 2010</span></a></li>
+				</ul>
+
+				<h3>Additional Resources</h3>
+				<ul>
+					<li><a href="http://msdn.microsoft.com/VS2010TrainingCourse" target="_blank"><span class="resourceTitle">Visual Studio 2010 Training Course</span></a></li>
+					<li><a href="http://channel9.msdn.com" target="_blank"><span class="resourceTitle">Channel 9</span></a></li>
+				</ul>
+
+				<h3>Event Agendas</h3>
+				<ul>
+					<li><a href="Assets/ThreeDayWorkshop.docx"><span class="resourceTitle">3-Day Workshop Sample Agenda</span></a></li>
+				</ul>
+			
+							
+					<div id="OverviewCollapsed">
+	    				<h3><a href="javascript:ExpandResources('Overview');"><img src="images/ArrowUp.png" align="bottom" /> Overview</h3></a>
+					</div>
+					
+					<div id="OverviewExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('Overview');"><img src="images/ArrowDown.png" align="bottom" /></a> Overview</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#LapAroundNetFramework4"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Lap Around the .NET Framework 4</span></a></li>
+															<li><a href="Presentations.htm#WhatsNewInVs2010"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />What's New In Visual Studio 2010</span></a></li>
+													</ul>
+												
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#HelloVisualStudio2010"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+        Hello Visual Studio 2010
+  </span></a></li>
+													</ul>	    				
+																	</div>
+								
+					<div id="CLRCollapsed">
+	    				<h3><a href="javascript:ExpandResources('CLR');"><img src="images/ArrowUp.png" align="bottom" /> Common Language Runtime</h3></a>
+					</div>
+					
+					<div id="CLRExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('CLR');"><img src="images/ArrowDown.png" align="bottom" /></a> Common Language Runtime</h3>
+					
+	    										
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#SystemThreadingBarrier"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+	  System.Threading.Barrier Demo
+  </span></a></li>
+															<li><a href="Demos.htm#CodeContracts"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+	  Code Contracts Demo
+  </span></a></li>
+															<li><a href="Demos.htm#SystemThreadingCountdownEvent"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+	  System.Threading.CountdownEvent Demo
+  </span></a></li>
+													</ul>	    				
+																	</div>
+								
+					<div id="ManagedLanguagesCollapsed">
+	    				<h3><a href="javascript:ExpandResources('ManagedLanguages');"><img src="images/ArrowUp.png" align="bottom" /> Managed Languages</h3></a>
+					</div>
+					
+					<div id="ManagedLanguagesExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('ManagedLanguages');"><img src="images/ArrowDown.png" align="bottom" /></a> Managed Languages</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#WhatsNewInC4andVisualBasic10"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />What's New In C# 4 and Visual Basic 10</span></a></li>
+													</ul>
+												
+												<ul>
+															<li><a href="Videos.htm#FixingPIAPainsWithTypeEquivalence"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: Fixing PIA Pains with Type Equivalence</span></a></li>
+													</ul>
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#ManagedLanguages10-in-1"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+    Managed Languages 10-in-1
+  </span></a></li>
+													</ul>	    				
+																		<ul>
+															<li><a href="Labs.htm#IntroToFSharp"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction To F#</span></a></li>
+															<li><a href="Labs.htm#Dev10Office"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Visual Studio 2010: Office Programmability</span></a></li>
+															<li><a href="Labs.htm#TestDrivenDevelopment"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Visual Studio 2010: Test Driven Development</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="ASPNETCollapsed">
+	    				<h3><a href="javascript:ExpandResources('ASPNET');"><img src="images/ArrowUp.png" align="bottom" /> ASP.NET 4</h3></a>
+					</div>
+					
+					<div id="ASPNETExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('ASPNET');"><img src="images/ArrowDown.png" align="bottom" /></a> ASP.NET 4</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#IntroductiontoASP.NETMVC"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Introduction to ASP.NET MVC</span></a></li>
+															<li><a href="Presentations.htm#WhatsNewInASP.NETWebForms4"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Whats New In ASP.NET Web Forms 4</span></a></li>
+															<li><a href="Presentations.htm#WebDeploymentwithVisualStudio2010"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Web Deployment with Visual Studio 2010</span></a></li>
+													</ul>
+												
+												<ul>
+															<li><a href="Videos.htm#DataDrivenWebApplications"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: Simplifying Data-Driven Web Applications</span></a></li>
+													</ul>
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#AdventureWorksusingAJAX"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+          AdventureWorks using AJAX
+      </span></a></li>
+													</ul>	    				
+																		<ul>
+															<li><a href="Labs.htm#AspNetWebForms4"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction to ASP.NET Web Forms 4</span></a></li>
+															<li><a href="Labs.htm#WebDevelopment"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Web Development in Visual Studio 2010</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVC3Fundamentals"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Fundamentals</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVC3FormsandValidation"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Helpers, Forms and Validation</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVC3ModelsAndDataAccess"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Models and Data Access</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVC3Razor"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Razor</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVC3CustomActionFilters"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Custom Action Filters</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVCCustomValidation"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Custom Validation</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVCDependencyInjection"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Dependency Injection</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVCGlobalAndDynamicActionFilters"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Global and Dynamic Action Filters</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVCNuGet"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 NuGet</span></a></li>
+															<li><a href="Labs.htm#ASPNETMVC3Testing"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: ASP.NET MVC 3 Testing</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="WindowsCollapsed">
+	    				<h3><a href="javascript:ExpandResources('Windows');"><img src="images/ArrowUp.png" align="bottom" /> Windows</h3></a>
+					</div>
+					
+					<div id="WindowsExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('Windows');"><img src="images/ArrowDown.png" align="bottom" /></a> Windows</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#WindowsPresentationFoundation4"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />What's New in Windows Presentation Foundation 4</span></a></li>
+													</ul>
+												
+						
+
+	    																<ul>
+															<li><a href="Labs.htm#WPF4DataDrivenMasterDetailBusinessForm"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Building a Data-Driven Master/Detail Business Form in WPF using Visual Studio 2010</span></a></li>
+															<li><a href="Labs.htm#Win7TaskbarMFC"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Taskbar with Visual C++ and MFC</span></a></li>
+															<li><a href="Labs.htm#Win7MultiTouchGestureMFC"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Multitouch Gestures with MFC - Native</span></a></li>
+															<li><a href="Labs.htm#Win7MultitouchMFC"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Multitouch WMTouch with MFC - Native</span></a></li>
+															<li><a href="Labs.htm#Win7RibbonMFC"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Ribbon with MFC - Native</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="WFCollapsed">
+	    				<h3><a href="javascript:ExpandResources('WF');"><img src="images/ArrowUp.png" align="bottom" /> Windows Workflow</h3></a>
+					</div>
+					
+					<div id="WFExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('WF');"><img src="images/ArrowDown.png" align="bottom" /></a> Windows Workflow</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#AppFabricAndWorkflow"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Workflow Services and Windows Server AppFabric</span></a></li>
+													</ul>
+												
+												<ul>
+															<li><a href="Videos.htm#IntroToWindowsWorflow"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: Introduction to Windows Workflow in .NET 4</span></a></li>
+															<li><a href="Videos.htm#IntroToWorkflowServices"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: Introduction to Workflow Services in .NET 4</span></a></li>
+													</ul>
+						
+
+	    																<ul>
+															<li><a href="Labs.htm#IntroToWF"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction to Workflow 4</span></a></li>
+															<li><a href="Labs.htm#IntroToWFServices"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction to Workflow Services using .NET Framework 4</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="WCFCollapsed">
+	    				<h3><a href="javascript:ExpandResources('WCF');"><img src="images/ArrowUp.png" align="bottom" /> Windows Communication Foundation</h3></a>
+					</div>
+					
+					<div id="WCFExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('WCF');"><img src="images/ArrowDown.png" align="bottom" /></a> Windows Communication Foundation</h3>
+					
+	    										
+												<ul>
+															<li><a href="Videos.htm#IntroToWCFRoutingService"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: The New WCF Routing Service</span></a></li>
+															<li><a href="Videos.htm#WCFServiceDiscoveryVideo"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: WCF Service Discovery</span></a></li>
+													</ul>
+						
+
+	    																<ul>
+															<li><a href="Labs.htm#WhatsNewInWCF4"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: What's New in WCF 4?</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="OfficeAndSharePointCollapsed">
+	    				<h3><a href="javascript:ExpandResources('OfficeAndSharePoint');"><img src="images/ArrowUp.png" align="bottom" /> Office and SharePoint</h3></a>
+					</div>
+					
+					<div id="OfficeAndSharePointExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('OfficeAndSharePoint');"><img src="images/ArrowDown.png" align="bottom" /></a> Office and SharePoint</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#OfficeUICustomization"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Office 2010 UI Customization</span></a></li>
+															<li><a href="Presentations.htm#SharePointDevelopment"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />SharePoint Development with Visual Studio 2010</span></a></li>
+													</ul>
+												
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#Office2010CustomTaskPanes"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+    Microsoft Office 2010 Custom Task Panes
+  </span></a></li>
+															<li><a href="Demos.htm#Office2010OutlookFormRegions"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+        Microsoft Office 2010 Outlook Form Regions
+      </span></a></li>
+															<li><a href="Demos.htm#Office2010PublishingAddIn"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+        Microsoft Office 2010 Publishing Add-In
+  </span></a></li>
+															<li><a href="Demos.htm#Office2010UICustomization"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+        Microsoft Office 2010 UI Customization
+      </span></a></li>
+															<li><a href="Demos.htm#SharePointToolsExtensibility"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+        Extending SharePoint 2010 Tools in Visual Studio 2010
+      </span></a></li>
+															<li><a href="Demos.htm#SharePointTools2010Project"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+        Microsoft SharePoint Developers Tools 2010 - Project Templates
+      </span></a></li>
+															<li><a href="Demos.htm#SharePointToolsWebParts"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+    Microsoft SharePoint Developers Tools 2010 - Web Parts Templates
+  </span></a></li>
+													</ul>	    				
+																		<ul>
+															<li><a href="Labs.htm#OfficeUICustomizationLab"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Microsoft Office 2010 UI Customization</span></a></li>
+															<li><a href="Labs.htm#SharePointTools"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Microsoft SharePoint 2010 Developer Tools</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="SilverlightCollapsed">
+	    				<h3><a href="javascript:ExpandResources('Silverlight');"><img src="images/ArrowUp.png" align="bottom" /> Silverlight</h3></a>
+					</div>
+					
+					<div id="SilverlightExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('Silverlight');"><img src="images/ArrowDown.png" align="bottom" /></a> Silverlight</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#IntroNetRiaServices"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Introduction to .NET RIA Services</span></a></li>
+													</ul>
+												
+						
+
+	    																<ul>
+															<li><a href="Labs.htm#WinForms_and_Silverlight"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Migrating a Windows Forms Application to Silverlight</span></a></li>
+															<li><a href="Labs.htm#ASP.NET_and_Silverlight"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Migrating an ASP.NET Web Forms Application to Silverlight</span></a></li>
+															<li><a href="Labs.htm#PanelsXAMLControls"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Working with Panels, XAML, and Controls</span></a></li>
+															<li><a href="Labs.htm#Data_Binding"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Silverlight Data Binding</span></a></li>
+															<li><a href="Labs.htm#OOB"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Migrating Existing Apps to Out-Of-Browser</span></a></li>
+															<li><a href="Labs.htm#Blend"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Great UX with Blend</span></a></li>
+															<li><a href="Labs.htm#WebServices"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Web Services and Silverlight</span></a></li>
+															<li><a href="Labs.htm#RIA"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Using WCF RIA Services</span></a></li>
+															<li><a href="Labs.htm#OOBDeepDive"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Deep Dive into Out of Browser</span></a></li>
+															<li><a href="Labs.htm#MVVM"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Using the MVVM Pattern in Silverlight Applications</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="DataAccessCollapsed">
+	    				<h3><a href="javascript:ExpandResources('DataAccess');"><img src="images/ArrowUp.png" align="bottom" /> Data Access</h3></a>
+					</div>
+					
+					<div id="DataAccessExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('DataAccess');"><img src="images/ArrowDown.png" align="bottom" /></a> Data Access</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#WhatsNewInEntityFramework4"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Whats New In Entity Framework 4</span></a></li>
+															<li><a href="Presentations.htm#WhatsNewInADONETDataServices1.5"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Whats New In ADONET Data Services 1.5</span></a></li>
+													</ul>
+												
+												<ul>
+															<li><a href="Videos.htm#ServerDrivenPagingADONETDataServices"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: Server-Driven Paging with ADO.NET Data Services</span></a></li>
+													</ul>
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#ADONETDataServices15-10-in-1"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+        WCF Data Services 10-in-1
+  </span></a></li>
+													</ul>	    				
+																		<ul>
+															<li><a href="Labs.htm#ADONetDataServices"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction to ADO.NET Data Services</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="ParallelCollapsed">
+	    				<h3><a href="javascript:ExpandResources('Parallel');"><img src="images/ArrowUp.png" align="bottom" /> Parallel Computing</h3></a>
+					</div>
+					
+					<div id="ParallelExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('Parallel');"><img src="images/ArrowDown.png" align="bottom" /></a> Parallel Computing</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#ParallelComputingForManagedDevs"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Parallel Computing for Managed Developers</span></a></li>
+													</ul>
+												
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#ContosoAutomotive"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: ContosoAutomotive Demo</span></a></li>
+															<li><a href="Demos.htm#BabyNames"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+          BabyNames
+      </span></a></li>
+															<li><a href="Demos.htm#Parallel.ForLoop"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+          Parallel.For Loop
+      </span></a></li>
+															<li><a href="Demos.htm#ParallelLINQ"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+          Parallel LINQ (PLINQ)
+      </span></a></li>
+															<li><a href="Demos.htm#SystemThreadingTasks"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+          System.Threading.Tasks
+      </span></a></li>
+													</ul>	    				
+																		<ul>
+															<li><a href="Labs.htm#ParallelExtensions"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Parallel Extensions: Building Multicore Applications with .NET</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="ExtensibilityCollapsed">
+	    				<h3><a href="javascript:ExpandResources('Extensibility');"><img src="images/ArrowUp.png" align="bottom" /> Extensibility</h3></a>
+					</div>
+					
+					<div id="ExtensibilityExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('Extensibility');"><img src="images/ArrowDown.png" align="bottom" /></a> Extensibility</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#IntroductiontotheManagedExtensibilityFramework"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Introduction to the Managed Extensibility Framework</span></a></li>
+													</ul>
+												
+												<ul>
+															<li><a href="Videos.htm#MEFPreview7"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: MEF Preview 7</span></a></li>
+													</ul>
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#IntrotoManagedExtensibilityFramework"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: 
+          Intro to Managed Extensibility Framework
+      </span></a></li>
+													</ul>	    				
+																		<ul>
+															<li><a href="Labs.htm#IntroToMEF"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction To Managed Extensibility Framework</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="ALMCollapsed">
+	    				<h3><a href="javascript:ExpandResources('ALM');"><img src="images/ArrowUp.png" align="bottom" /> Application Lifecycle Management</h3></a>
+					</div>
+					
+					<div id="ALMExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('ALM');"><img src="images/ArrowDown.png" align="bottom" /></a> Application Lifecycle Management</h3>
+					
+	    										
+												<ul>
+															<li><a href="Videos.htm#LapAroundALM"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: A Lap Around Visual Studio 2010 Application Lifecycle Management</span></a></li>
+															<li><a href="Videos.htm#SoftwareTesting1"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: Software Testing with Microsoft Visual Studio 2010: Part 1, an Introduction</span></a></li>
+															<li><a href="Videos.htm#SoftwareTesting2"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: Software Testing with Microsoft Visual Studio 2010: Part 2, Making it Real</span></a></li>
+													</ul>
+						
+
+	    																<ul>
+															<li><a href="Labs.htm#AuthoringAndRunningManualTests"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Authoring and Running Manual Tests using Microsoft Test Manager 2010</span></a></li>
+															<li><a href="Labs.htm#IntroToCodedUITests"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction to Coded UI Tests with Visual Studio 2010 Ultimate</span></a></li>
+															<li><a href="Labs.htm#IntroToTestCaseManagement"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction to Test Case Management with Microsoft Test Manager 2010</span></a></li>
+															<li><a href="Labs.htm#PlanningYourProjects"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Planning your Projects with Team Foundation Server 2010</span></a></li>
+															<li><a href="Labs.htm#BranchingAndMerging"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Branching and Merging Visualization with Team Foundation Server 2010</span></a></li>
+															<li><a href="Labs.htm#DebuggingWithIntelliTrace"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Debugging with IntelliTrace using Visual Studio 2010 Ultimate</span></a></li>
+															<li><a href="Labs.htm#AnalyzeYourCode"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Using the Architecture Explorer in Visual Studio 2010 Ultimate to Analyze Your Code</span></a></li>
+															<li><a href="Labs.htm#ImproveCodeQuality"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Using Code Analysis with Visual Studio 2010 to Improve Code Quality</span></a></li>
+															<li><a href="Labs.htm#CodeDiscovery"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Code Discovery using the Architecture Tools in Visual Studio 2010 Ultimate</span></a></li>
+															<li><a href="Labs.htm#UnderstandClassCoupling"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Understanding Class Coupling with Visual Studio 2010 Ultimate</span></a></li>
+													</ul>
+											</div>
+								
+					<div id="WindowsAzureCollapsed">
+	    				<h3><a href="javascript:ExpandResources('WindowsAzure');"><img src="images/ArrowUp.png" align="bottom" /> Windows Azure</h3></a>
+					</div>
+					
+					<div id="WindowsAzureExpanded" style="display:none;">
+						<h3><a href="javascript:CollapseResources('WindowsAzure');"><img src="images/ArrowDown.png" align="bottom" /></a> Windows Azure</h3>
+					
+	    					    				<ul>
+							
+															<li><a href="Presentations.htm#WindowsAzurePlatformOverview"><span class="resourceTitle"><img class="bullet" src="images/blue.png" />Windows Azure Platform Overview</span></a></li>
+													</ul>
+												
+												<ul>
+															<li><a href="Videos.htm#WhatIsWindowsAzureVideo"><span class="resourceTitle"><img class="bullet" src="images/orange.png" />Video: What is Windows Azure?</span></a></li>
+													</ul>
+						
+
+	    					    				<ul>
+															<li><a href="Demos.htm#HelloWindowsAzureVS2010"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: Hello Windows Azure</span></a></li>
+															<li><a href="Demos.htm#DeployWindowsAzureVS2010"><span class="resourceTitle"><img class="bullet" src="images/purple.png" />Demo: Deploying Windows Azure Services</span></a></li>
+													</ul>	    				
+																		<ul>
+															<li><a href="Labs.htm#IntroToWindowsAzureLabVS2010"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Introduction to Windows Azure</span></a></li>
+															<li><a href="Labs.htm#WindowsAzureDebuggingLab"><span class="resourceTitle"><img class="bullet" src="images/green.png" />Lab: Debugging Applications in Windows Azure</span></a></li>
+													</ul>
+											</div>
+				
+                </div>  
+
+				<script language="javascript">             
+                $('#AllContent').show();
+
+				function ShowTopic(topic)
+				{
+					$('.sidebarResources').hide();
+					$('#' + topic + 'Modules').show();
+				}
+
+				function ShowAllContent()
+				{
+					$('.sidebarResources').hide();
+	                $('#AllContent').show();
+				}					
+				</script>
+
+             
+                
+                
+                <div id="primaryContent">
+                    <div class="primaryContentShadow">
+                    </div>
+
+                    <div class="homepageLinks">                    
+                                <div class="productLogo"><img src="images/VS_h_rgb.png" /></div>  	
+						                        <a href="javascript:ShowTopic('Creativityunleashed')" class="topic">
+                            <!--Home with images-->
+							<!--<img alt="" src="images/CreativityunleashedIcon.png" />-->
+                            <span class="title">Creativity unleashed</span> 
+                            <span class="description">
+								With Visual Studio 2010 you can use prototyping, modeling, and visual design tools to bring your visions to life. Create and share what you imagine and build on the creative strengths of your team. 
+                            </span> 
+                          </a>                          
+                         
+                                                    <a href="javascript:ShowTopic('Simplicitythroughintegration')" class="topic">
+                            <!--Home with images-->
+							<!--<img alt="" src="images/SimplicitythroughintegrationIcon.png" />-->
+                            <span class="title">Simplicity through integration</span> 
+                            <span class="description">
+								Visual Studio 2010 is an integrated environment where developers can use existing skills to model, code, debug, test, and deploy a growing number of application types.  Visual Studio helps simplify common tasks and helps developers explore the depth of the platform.
+                            </span> 
+                          </a>                          
+                         
+                                                    <a href="javascript:ShowTopic('Qualitycodeensured')" class="topic">
+                            <!--Home with images-->
+							<!--<img alt="" src="images/QualitycodeensuredIcon.png" />-->
+                            <span class="title">Quality code ensured</span> 
+                            <span class="description">
+								Visual Studio 2010 provides powerful tools for managing a project, maintaining source code and finding bugs. Testers and developers can use manual and automated testing, and advanced debugging tools to help ensure they are building the right application, the right way.
+                            </span> 
+                          </a>                          
+                         
+                                                            <div class="productLogo"><img src="images/NET_h_rgb.jpg" /></div>  	
+						                        <a href="javascript:ShowTopic('OneSetofSkills')" class="topic">
+                            <!--Home with images-->
+							<!--<img alt="" src="images/OneSetofSkillsIcon.png" />-->
+                            <span class="title">One Set of Skills</span> 
+                            <span class="description">
+								With the Microsoft .NET Framework, developers can easily build applications for many scenarios - from client, browser, and server, to mobile and the cloud.  And with recent shifts toward greater interoperability, developers with other skills, who are less familiar with the .NET Framework, will find the Framework's base set of building block components makes it easier to apply their existing skills to new areas and scenarios.
+                            </span> 
+                          </a>                          
+                         
+                                                    <a href="javascript:ShowTopic('SpeedtoSolution')" class="topic">
+                            <!--Home with images-->
+							<!--<img alt="" src="images/SpeedtoSolutionIcon.png" />-->
+                            <span class="title">Speed to Solution</span> 
+                            <span class="description">
+								Incremental improvements in the .NET Framework help developers spend less time fixing problems and more time building solutions.  Powerful new debugging tools, and built-in components that help customers communicate their needs more clearly, help developers more easily deploy, troubleshoot and virtualize their applications.
+                            </span> 
+                          </a>                          
+                         
+                                                    <a href="javascript:ShowTopic('Interoperability')" class="topic">
+                            <!--Home with images-->
+							<!--<img alt="" src="images/InteroperabilityIcon.png" />-->
+                            <span class="title">Interoperability</span> 
+                            <span class="description">
+								With support for dozens of programming languages, the .NET Framework is evolving toward more flexibility and integration with both Microsoft and non-Microsoft tools and technologies, providing developers with more options to extend business logic and apply new capabilities to their non-Microsoft applications.  The .NET Framework's built-in support for a variety of web services interoperability standards (through RESTful or SOAP based support) and SDKs, means your applications can work with the broadest variety of platforms, databases, LOB applications and emerging web and cloud based standards.
+                            </span> 
+                          </a>                          
+                         
+                                                </div>
+                    <div class="filler">
+                    </div>
+                </div>
+                <!--/ #primaryContent -->
+            </div>
+            <!--/ #wideLayout -->
+            <div id="contentBottom">
+            </div>
+            <div class="clear">
+            </div>
+            
+                          <!--//////////////////-->
+              <!--///// FOOTER /////-->
+              <!--//////////////////-->
+              <div id="footer">
+                <div id="footerTop">
+                </div>
+                <div id="footerContent">
+                  <img id="footerLeft" src="images/dpe_logo.png" alt="Developer and Platform Evangelism" />
+                  <div class="filler">
+                  </div>
+                </div>
+                <div id="footerBottom">
+                </div>
+                <div class="filler">
+                </div>
+              </div>
+        </div>
+        <!--/ #contents -->
+    </div>
+    <!--/ #background -->
+</body>
+</html>
+

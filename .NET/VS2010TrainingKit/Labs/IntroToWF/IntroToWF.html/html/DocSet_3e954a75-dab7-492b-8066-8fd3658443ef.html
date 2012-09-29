@@ -1,0 +1,146 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Refactoring Workflow" />
+      <MSHelp:RLTitle Title="Exercise 2: Refactoring Workflow" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Refactoring Workflow</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Refactoring Workflow</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Even though you have a working application, you might want to make a few improvements. In this exercise, as <b>Workflow1</b> is not a very descriptive name, you will change it to <b>SayHello</b> and see how the changes to the workflow name affect the rest of the program.</p>
+        <a name="_Toc244412387" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935095" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 1. Alternatively, you can follow the following steps to begin with Exercise 2.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 2 located under the <b>Source\Ex2-Refactoring\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc243285435" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388952" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412388" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935096" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Renaming Workflow1 to SayHello</b>
+        </p>
+        <ol>
+          <li>To change the name of the workflow defined in <b>Workflow1.xaml</b>, Open it<b> </b>with the workflow designer and click on an empty area the designer surface. This will allow you to change the properties of the workflow.<p><img src="images\5b6765bb-5136-46bd-bcc0-329b5491fdc1.png" /></p><p><b>Figure 6</b><br /><i>Click on an empty area of the designer surface so you can set the name of the workflow</i></p><br /></li>
+          <li>In the Properties window, set the <b>Name</b> property of the Workflow to <b>HelloWorkflow.SayHello</b> (C#) or <b>SayHello</b> (VB).<p><img src="images\aa291be7-b45f-44ea-a465-df6f1adff843.png" /></p><p><b>Figure 7</b><br /><i>Set the Name property of the workflow (C#)</i></p><br /><p><img src="images\53321c6b-722c-4c9b-86e5-01db71ed9daf.png" /></p><p><b>Figure 8</b><br /><i>Set the Name property of the workflow (VB)</i></p><br /></li>
+          <li>While it is not required, it is a good idea for the name of the .xaml file to match the name of the activity contained in it. In Solution Explorer, right-click <b>Workflow1.xaml</b>, select <b>Rename</b> and type <b>SayHello.xaml</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\4d391cc2-dc35-4bbd-892f-b63f9ab364d5.png" /><b>  Watch Out</b><br />When you rename C# or Visual Basic files, Visual Studio asks you if you want refactoring to change the name of the class also. It does not do this when renaming XAML files, so if you want to change the name of the workflow also you need to do this manually. </td></tr></table><p /></div><br /></li>
+          <li>Press <b>CTRL</b>+<b>SHIFT</b>+<b>B</b> to build the solution. It will fail to compile because you changed the name of the workflow.<p><img src="images\783d2fc7-21b9-45a7-8091-3679668e90a2.png" /></p><p><b>Figure 9</b><br /><i>The workflow fails to compile (C#)</i></p><br /><p><img src="images\bff15044-be7d-482d-9649-87ed30342812.png" /></p><p><b>Figure 10</b><br /><i>The workflow fails to compile (VB)</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\26fda985-cf45-4ebf-bc26-26d4af578a22.png" /><b>Why does the application fail to compile when I change the workflow name?</b><br />Your workflow is actually a class declared in XAML that inherits from <b>System.Activities.Activity</b>. The name of the workflow is the name of the class.  When you set the Name property, you changed the name of the class.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc243285436" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388953" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412389" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935097" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Updating the Main Method to Use the New Name</b>
+        </p>
+        <p>WF4 runs a workflow with the <b><i>Workflow Runtime</i></b>. The easiest way to invoke the runtime is to use the <b>WorkflowInvoker</b> class which is what the Workflow Console Application template uses.</p>
+        <ol>
+          <li>To fix the build break, open <b>Program.cs</b> (<b>C#</b>) or <b>Module1.vb </b>(<b>Visual Basic</b>) and modify it to use the new <b>SayHello</b> class name. To do this, locate the <b>WorkflowInvoker.Invoke</b> method call, and modify it to use <b>SayHello</b> instead of <b>Workflow1</b> as shown in the following code (shown in <b>bold</b>).<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>static void Main(string[] args)</b>{<b>WorkflowInvoker.Invoke(new SayHello());</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Shared Sub Main()<b>    WorkflowInvoker.Invoke(New SayHello())</b>End Sub</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\13b5cfe1-8a25-4190-adcd-14525904a0e9.png" /><b>Why does Visual Studio warn me that the type SayHello is not defined?</b><br />If you change Main() before compiling the workflow with the new SayHello name, you may notice a warning about the type SayHello not being defined. The reason for this is that Visual Studio is not aware of types declared in XAML until you build the solution.</td></tr></table><p /></div></li>
+          <br />
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_a32be7b2-4e68-4fd9-8c1e-a77ee9ac97da.html">Exercise 2: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

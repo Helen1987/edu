@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorkflow", "HelloWorkflow\HelloWorkflow.vbproj", "{5525CF3D-D7F4-4282-A487-BDF9246B8DA4}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorkflow.Tests", "HelloWorkflow.Tests\HelloWorkflow.Tests.vbproj", "{EA34F144-02AC-4C14-86B7-5D8D7AC254F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B98B31D-E086-46EB-898D-79C6AB524772}"
+	ProjectSection(SolutionItems) = preProject
+		HelloWorkflow.vsmdi = HelloWorkflow.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorkflow.Activities", "HelloWorkflow.Activities\HelloWorkflow.Activities.vbproj", "{31D849CB-6551-435F-8C40-4536A1A927C9}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorkflow.Activities.Tests", "HelloWorkflow.Activities.Tests\HelloWorkflow.Activities.Tests.vbproj", "{DD601D24-C5C1-4ACE-94E0-F26729704777}"
+EndProject
+Global
+	
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = HelloWorkflow.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5525CF3D-D7F4-4282-A487-BDF9246B8DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5525CF3D-D7F4-4282-A487-BDF9246B8DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5525CF3D-D7F4-4282-A487-BDF9246B8DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5525CF3D-D7F4-4282-A487-BDF9246B8DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA34F144-02AC-4C14-86B7-5D8D7AC254F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA34F144-02AC-4C14-86B7-5D8D7AC254F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA34F144-02AC-4C14-86B7-5D8D7AC254F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA34F144-02AC-4C14-86B7-5D8D7AC254F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31D849CB-6551-435F-8C40-4536A1A927C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D849CB-6551-435F-8C40-4536A1A927C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D849CB-6551-435F-8C40-4536A1A927C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D849CB-6551-435F-8C40-4536A1A927C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD601D24-C5C1-4ACE-94E0-F26729704777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD601D24-C5C1-4ACE-94E0-F26729704777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD601D24-C5C1-4ACE-94E0-F26729704777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD601D24-C5C1-4ACE-94E0-F26729704777}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

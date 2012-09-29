@@ -1,0 +1,148 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	mc:Ignorable="d"
+	x:Class="DesktopDashboard.DataWidget"
+	d:DesignWidth="400" d:DesignHeight="472">
+
+	<Grid x:Name="LayoutRoot">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="DetailsStates">
+				<VisualState x:Name="ChartState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ExcelDataGrid">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="GridState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Chart">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="ImportStates">
+				<VisualState x:Name="ImportState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="progressBar">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="DetailsState">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ImportPanel">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="progressBar">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="Loading">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="progressBar">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<i:Interaction.Triggers>
+			<i:EventTrigger>
+				<ei:GoToStateAction StateName="ImportState"/>
+			</i:EventTrigger>
+		</i:Interaction.Triggers>
+		<Border BorderBrush="#FFB8AE9C" >
+			<Grid Margin="15">
+				<Grid Margin="0,26,0,0">
+					<toolkit:Chart x:Name="Chart" Style="{StaticResource BasicChartStyle}" BorderBrush="#FF4E706D" Foreground="#FF595241" Margin="0">
+						<toolkit:LineSeries
+							Title="Particulate Levels"/>
+					</toolkit:Chart>
+					<sdk:DataGrid AutoGenerateColumns="False" 
+						x:Name="ExcelDataGrid" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" d:LayoutOverrides="Width">
+						<sdk:DataGrid.Columns>
+							<sdk:DataGridTextColumn Binding="{Binding Year}" Header="Year"
+								Width="137"/>
+							<sdk:DataGridTextColumn Binding="{Binding Value}" Header="Value" Width="*"/>
+						</sdk:DataGrid.Columns>
+					</sdk:DataGrid>
+				</Grid>
+				<StackPanel HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Top" Margin="0,3,3,0">
+					<Button Content="CHART" Margin="0,0,4,0" FontFamily="Trebuchet MS" FontSize="10.667" TextOptions.TextHintingMode="Animated" Background="White" Foreground="White" Style="{StaticResource WidgetButtonStyle}" Padding="8,3">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<ei:GoToStateAction StateName="ChartState"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</Button>
+					<Button Content="GRID" FontFamily="Trebuchet MS" FontSize="10.667" TextOptions.TextHintingMode="Animated" Background="White" Foreground="White" Style="{StaticResource WidgetButtonStyle}" Padding="8,3">
+						<i:Interaction.Triggers>
+							<i:EventTrigger EventName="Click">
+								<ei:GoToStateAction StateName="GridState"/>
+							</i:EventTrigger>
+						</i:Interaction.Triggers>
+					</Button>
+				</StackPanel>
+				<TextBlock x:Name="Title" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="3,3,0,0" Foreground="#FF8A0917" FontFamily="Trebuchet MS" FontSize="18.667" TextOptions.TextHintingMode="Animated"/>
+				<Grid x:Name="ImportPanel" AllowDrop="True" Margin="-10">
+					<Rectangle Stroke="#FFACCFCC" RadiusX="6" RadiusY="6" Fill="White" StrokeThickness="4" OpacityMask="Black"/>
+					<StackPanel Orientation="Horizontal" d:LayoutOverrides="Height" VerticalAlignment="Center" HorizontalAlignment="Center">
+						<Path Data="M25.96875,79.68708 L25.96875,90.702705 C25.968748,93.515205 24.578123,94.921455 21.796875,94.921455 C20.421875,94.921455 19.382813,94.569893 18.679688,93.866768 C17.976563,93.163643 17.625,92.108955 17.625,90.702705 L17.53125,79.87458 C13.75,80.09333 10.987162,80.234222 9.4246616,80.234222 C4.5809116,80.234222 2.1590366,78.796722 2.1590366,75.921722 C2.1590366,73.890472 3.109375,72.59333 4.8281255,72.09333 C5.421875,71.93708 13.75,71.74958 17.53125,71.53083 C17.53125,71.53083 17.625,61.233955 17.90625,60.140205 C18.21875,59.015205 18.703125,58.171455 19.359375,57.608955 C20.015625,57.046459 20.859375,56.765209 21.890625,56.765205 C23.078125,56.765209 24.085938,57.148022 24.914063,57.913643 C25.742186,58.679268 26.156248,59.65583 26.15625,60.84333 C26.156248,61.37458 25.875,71.34333 25.875,71.34333 C25.875,71.34333 34.484375,71.24958 35.109375,71.24958 C40.234375,71.24958 42.060001,72.792885 42.416546,75.708664 C42.666206,77.750343 40.916122,78.500351 38.439003,79.394066" HorizontalAlignment="Center" Height="38.155" RenderTransformOrigin="0.5,0.5" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Center" Width="40.282" OpacityMask="Black">
+							<Path.Fill>
+								<SolidColorBrush Color="#FFACCFCC">
+									<SolidColorBrush.RelativeTransform>
+										<MatrixTransform Matrix="Identity"/>
+									</SolidColorBrush.RelativeTransform>
+									<SolidColorBrush.Transform>
+										<MatrixTransform Matrix="Identity"/>
+									</SolidColorBrush.Transform>
+								</SolidColorBrush>
+							</Path.Fill>
+							<Path.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Path.RenderTransform>
+						</Path>
+						<TextBlock TextWrapping="Wrap" Text="Drag and drop a file to import" FontFamily="Trebuchet MS" TextOptions.TextHintingMode="Animated" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Width="72" FontSize="14.667" OpacityMask="Black" Foreground="#FF4E706D"/>
+					</StackPanel>
+				</Grid>
+				<ProgressBar x:Name="progressBar" HorizontalAlignment="Center" Height="21" VerticalAlignment="Center" Width="215" IsIndeterminate="True"/>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

@@ -1,0 +1,141 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 6: Discovery Announcements" />
+      <MSHelp:RLTitle Title="Exercise 6: Discovery Announcements" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 6: Discovery Announcements</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 6: Discovery Announcements</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Most chat applications notify you when other users sign in. This application can discover other users but it would be better if you were notified when other users sign in. Discovery supports this feature with announcements. Using Discovery APIs service can announce their presence on the network; this functionality is used in the chat applications to notify peers of their arrival.</p>
+        <a name="_Toc244159128" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317758" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957327" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 5. Alternatively, you can follow the following steps to begin with Exercise 6.</p>
+        <ol>
+          <li>Open the starting solution for Exercise 6 located under the <b>Source\Ex6-DiscoveryAnnouncements\Begin (choosing the folder that matches the language of your preference.) </b>Use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc232499273" href="#">
+          <span />
+        </a>
+        <a name="_Toc244159129" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317759" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957328" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Enabling Announcement Endpoint</b>
+        </p>
+        <ol>
+          <li>Open the <b>App.config</b> file in the <b>DiscoveryChat</b> project.</li>
+          <li>To take advantage of announcements, you will need to add an announcement endpoint. To do this, locate the <b>DiscoveryBehavior</b> behavior you added earlier in this lab and modify it as shown in the following code.<p><i>(Code Snippet - What is new in WCF4 Lab – DiscoveryBehavior udpEndpoint XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>App.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;behavior name="DiscoveryBehavior"&gt;<b>  &lt;serviceDiscovery&gt;</b><b>    &lt;announcementEndpoints&gt;</b><b>      &lt;endpoint name="udpEndpointName" </b><b>                kind="udpAnnouncementEndpoint"/&gt;</b><b>    &lt;/announcementEndpoints&gt;</b><b>  &lt;/serviceDiscovery&gt;</b>&lt;/behavior&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\bff000a3-2ad8-4aba-98a5-84bc38561780.png" /><b>Announcement Endpoint</b><br />Adding an announcement endpoint to the discovery service behavior creates a default announcement client for the service. This ensures that the service will send an online and offline announcement when the service is opened and closed respectively, the announcements will be sent out on the endpoint specified.</td></tr></table><p /></div><br /></li>
+          <li>Now you need to add an announcement service to your code to receive announcement messages. Open <b>SimpleChat.cs</b> (C#) or <b>SimpleChat.vb</b> (Visual Basic), and declare the following member fields; you can do that after the <b>discoveryClient</b> member declaration.<p><i>(Code Snippet - What is new in WCF4 Lab – AnnouncementService Member CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private AnnouncementService announcementService;</b><b>private ServiceHost announcementServiceHost;</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – AnnouncementService Member VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private announcementService As AnnouncementService</b><b>Private announcementServiceHost As ServiceHost</b></pre></td></tr></table></span></div><br /></li>
+          <li>Create the <b>OpenAnnouncementService</b> method as shown in the following code.<p><i>(Code Snippet - What is new in WCF4 Lab – OpenAnnouncementService Method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void OpenAnnouncementService()</b><b>{</b><b>    this.announcementService = new AnnouncementService();</b><b>    // Add event handlers</b><b>    this.announcementService.OnlineAnnouncementReceived +=</b><b>        new EventHandler&lt;AnnouncementEventArgs&gt;(this.OnOnlineAnnouncement);</b><b>    this.announcementService.OfflineAnnouncementReceived +=</b><b>        new EventHandler&lt;AnnouncementEventArgs&gt;(this.OnOfflineAnnouncement);</b><b>    // Create the service host with a singleton</b><b>    this.announcementServiceHost = new ServiceHost(this.announcementService);</b><b>    // Add the announcement endpoint</b><b>    this.announcementServiceHost.AddServiceEndpoint(new UdpAnnouncementEndpoint());</b><b>    // Open the host async</b><b>    this.announcementServiceHost.BeginOpen(</b><b>        (result) =&gt;</b><b>        {</b><b>            announcementServiceHost.EndOpen(result);</b><b>        },</b><b>        null);</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – OpenAnnouncementService Method VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub OpenAnnouncementService()</b><b>    Me.announcementService = New AnnouncementService()</b><b>    ' Add event handlers</b><b>    AddHandler announcementService.OnlineAnnouncementReceived, AddressOf OnOnlineAnnouncement</b><b>    AddHandler announcementService.OfflineAnnouncementReceived, AddressOf OnOfflineAnnouncement</b><b>    ' Create the service host with a singleton</b><b>    Me.announcementServiceHost = New ServiceHost(Me.announcementService)</b><b>    ' Add the announcement endpoint</b><b>    Me.announcementServiceHost.AddServiceEndpoint(New UdpAnnouncementEndpoint())</b><b>    ' Open the host async</b><b>    Me.announcementServiceHost.BeginOpen(Sub(result) announcementServiceHost.EndOpen(result), Nothing)</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\491e4b94-cb82-4ae6-acf7-b3e64be410b1.png" /><b>Announcement Service</b><br />The self-hosted implementation of the announcement service exposes two different events you might be interested in when using Announcements: <b>OnlineAnnouncementReceived</b> and <b>OfflineAnnouncementReceived</b>. Those events are fired when Online (Hello) and Offline (Bye) announcement messages are received respectively.</td></tr></table><p /></div><br /></li>
+          <li>Now you need to implement the handlers for these announcements. When new users come online, you will add them to the list. Add the <b>OnOnlineAnnouncement</b> method as shown in the following code.<p><i>(Code Snippet - What is new in WCF4 Lab – OnOnlineAnnouncement Method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void OnOnlineAnnouncement(object sender, AnnouncementEventArgs e)</b><b>{</b><b>    EndpointDiscoveryMetadata metadata =</b><b>        e.EndpointDiscoveryMetadata;</b><b>    // You are looking for services that </b><b>    // implement the ISimpleChatService contract</b><b>    FindCriteria criteria =</b><b>        new FindCriteria(typeof(ISimpleChatService));</b><b>    if (criteria.IsMatch(metadata))</b><b>    {</b><b>        if (this.GetUser(metadata.Address.Uri) == null)</b><b>        {</b><b>            this.PopulateUserList(metadata);</b><b>        }</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – OnOnlineAnnouncement Method VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub OnOnlineAnnouncement(ByVal sender As Object, ByVal e As AnnouncementEventArgs)</b><b>    Dim metadata As EndpointDiscoveryMetadata = e.EndpointDiscoveryMetadata</b><b>    ' You are looking for services that </b><b>    ' implement the ISimpleChatService contract</b><b>    Dim criteria As New FindCriteria(GetType(ISimpleChatService))</b><b>    If criteria.IsMatch(metadata) Then</b><b>        If Me.GetUser(metadata.Address.Uri) Is Nothing Then</b><b>            Me.PopulateUserList(metadata)</b><b>        End If</b><b>    End If</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>When users go offline you will remove them and close any active chat windows. Add the <b>OnOfflineAnnouncement</b> method as shown in the following code.<p><i>(Code Snippet - What is new in WCF4 Lab – OnOfflineAnnouncement Method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void OnOfflineAnnouncement(object sender, AnnouncementEventArgs e)</b><b>{</b><b>    EndpointDiscoveryMetadata metadata =</b><b>        e.EndpointDiscoveryMetadata;</b><b>    FindCriteria criteria =</b><b>        new FindCriteria(typeof(ISimpleChatService));</b><b>    if (criteria.IsMatch(metadata))</b><b>    {</b><b>        this.RemoveUser(metadata.Address.Uri);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab – OnOfflineAnnouncement Method VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub OnOfflineAnnouncement(ByVal sender As Object, ByVal e As AnnouncementEventArgs)</b><b>    Dim metadata As EndpointDiscoveryMetadata = e.EndpointDiscoveryMetadata</b><b>    Dim criteria As New FindCriteria(GetType(ISimpleChatService))</b><b>    If criteria.IsMatch(metadata) Then</b><b>        Me.RemoveUser(metadata.Address.Uri)</b><b>    End If</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Locate the <b>OpenServices</b> method, and add a call to <b>OpenAnnouncementService </b>service<b> </b>at the end of the method implementation.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    this.ShowStatus("Opening chat service...");    this.chatServiceHost.BeginOpen(        (result) =&gt;        {            chatServiceHost.EndOpen(result);            this.ShowStatus("Chat service ready");        },        null);<b>    this.OpenAnnouncementService();</b>}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    Me.ShowStatus("Opening chat service...")    Me.chatServiceHost.BeginOpen(Sub(result)                                     chatServiceHost.EndOpen(result)                                     Me.ShowStatus("Chat service ready")                                 End Sub, Nothing)<b>    Me.OpenAnnouncementService()</b>End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_8c487133-4b16-4e14-be9e-b80cc65e8d00.html">Exercise 6: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="MetroWebParts.SiteExplorer, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Site Explorer</property>
+        <property name="Description" type="string">A SharePoint 2010 Web Part which displays the hierarchical virtual file system for the current site.</property>
+        <property name="ChromeType" type="chrometype">TitleAndBorder</property>
+        <property name="CatalogIconImageUrl" type="string">_layouts/images/MetroWebParts/WebPartIcon.gif</property>
+        <property name="TitleIconImageUrl" type="string">_layouts/images/MetroWebParts/WebPartIcon.gif</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

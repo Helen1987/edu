@@ -1,0 +1,158 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating MusicStore ASP.NET MVC Web Application Project" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating MusicStore ASP.NET MVC Web Application Project" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating MusicStore ASP.NET MVC Web Application Project</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Fundamentals</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating MusicStore ASP.NET MVC Web Application Project</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to create an ASP.NET MVC application in Visual Studio 2010 as well as its main folder organization. Additionally, you’ll learn how to add a new Controller and have it display a simple string at the Application screen.</p>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141331" href="#">
+          <span />
+        </a>
+        <a name="_Toc223343086" href="#">
+          <span />
+        </a>
+        <a name="_Toc247341950" href="#">
+          <span />
+        </a>
+        <a name="_Toc259103753" href="#">
+          <span />
+        </a>
+        <a name="_Toc268709022" href="#">
+          <span />
+        </a>
+        <a name="_Toc282507905" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating the ASP.NET MVC Web Application Project</b>
+        </p>
+        <p>In this task, you will create an empty ASP.NET MVC application project using the MVC Visual Studio template.</p>
+        <ol>
+          <li>Start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>.</li>
+          <li>On the <b>File</b> menu, click <b>New Project</b>.</li>
+          <li>In the <b>New Project</b> dialog box select the <b>ASP.NET MVC 3 Web Application</b> project type, located under <b>Visual C#,</b><b>Web</b> template list.</li>
+          <li>Change the <b>Name</b> to <b>MvcMusicStore</b>.</li>
+          <li>Set the location of the solution inside a new <b>Begin</b> folder in this Exercise’s installation folder, for example <b>C:\WebCampsTrainingKit\Labs\Beginner-ASP.NET-MVC-Fundamentals MVC3\Source\Ex01-CreatingMusicStoreProject\Begin</b>. Click <b>OK</b>.<p><img src="images\6f4c7b9c-a354-4f52-9b6b-6d94ef6dec40.png" /></p><p><b>Figure 11</b><br /><i>Create New Project Dialog Box - C#</i></p><br /></li>
+          <li>In the <b>New ASP.NET MVC 3 Project</b> dialog box select the <b>Empty</b> template and make sure that the <b>View engine</b> selected is <b>ASPX</b>. Click <b>OK</b>.<p><img src="images\364482cb-db87-4c49-99ea-029811079660.png" /></p><p><b>Figure 12</b><br /><i>New ASP.NET MVC 3 Project Dialog Box - C#</i></p><br /></li>
+        </ol>
+        <a name="_Toc282507906" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Exploring the Solution Structure</b>
+        </p>
+        <p>The ASP.NET MVC framework includes a Visual Studio project template that helps you create Web applications that are structured to support the MVC pattern. This template creates a new MVC Web application that is configured to have the required folders, item templates, and configuration-file entries.</p>
+        <p>In this task, you will examine the solution structure to understand the involved elements and its relationships. The following folders are included even in an Empty ASP.NET MVC application because the ASP.NET MVC framework by default uses a “convention over configuration” approach and makes some default assumptions based on folder naming conventions.</p>
+        <ol>
+          <li>Once the project is created, review the folder structure that has been created in the Solution Explorer on the right side:<p><img src="images\dc544fb2-8388-4921-b83e-ae19321f3423.png" /></p><p><b>Figure 13</b><br /><i>ASP.NET MVC Folder structure in Solution Explorer</i></p><br /><ol><li><b>Content</b>. This folder is the recommended location to add content files such as cascading style sheet files, images, and so on. In general, the Content folder is used for static files.</li><li><b>Controllers.</b> This folder will contain the controller classes. In an MVC based application, controllers are responsible for handling end user interaction, manipulating the model, and ultimately choosing a view to render to display UI.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The MVC framework requires the names of all controllers to end with "Controller"—for example, HomeController, LoginController, or ProductController.</td></tr></table><p /></div><br /></li><li><b>Models</b>. This folder is provided for classes that represent the application model for the MVC Web application. This usually includes code that defines objects and the logic for interacting with the data store. Typically, the actual model objects will be in separate class libraries. However, when you create a new application, you might include classes and then move them into separate class libraries at a later point in the development cycle.</li><li><b>Scripts</b>. This is the recommended folder to store JavaScript files in your application.</li><li><b>Views</b>. This folder is the recommended location for views, the components responsible for displaying the application's user interface. Views use .aspx, .ascx, .cshtml and .master files, in addition to any other files that are related to rendering views. Views folder contains a folder for each controller; the folder is named with the controller-name prefix. For example, if you have a controller named <b>HomeController</b>, the Views folder will contain a folder named Home. By default, when the ASP.NET MVC framework loads a view, it looks for an .aspx file with the requested view name in the Views\controllerName folder (<b>Views\[ControllerName]\[Action].aspx</b>) or (<b>Views\[ControllerName]\[Action].cshtml</b>) for Razor Views. </li><li><b>Views\Shared. </b>By default, there is also a folder named Shared in the Views folder, which does not correspond to any controller. The Shared folder is used for views that are shared across multiple controllers. For example, you can put the Web application's master page in the Shared folder.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In addition to the folders listed previously, an MVC Web application uses the <b>Global.asax</b> file to set global URL routing defaults, and it uses the <b>Web.config</b> file to configure the application.</td></tr></table><p /></div><br /></li></ol></li>
+        </ol>
+        <a name="_Toc282507907" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Adding a HomeController</b>
+        </p>
+        <p>In ASP.NET applications that do not use the MVC framework, user interaction is organized around pages, and around raising and handling events from those pages. In contrast, user interaction with ASP.NET MVC applications is organized around controllers and their action methods.</p>
+        <p>On the other hand, ASP.NET MVC framework maps URLs to classes that are referred to as controllers. Controllers process incoming requests, handle user input and interactions, execute appropriate application logic and determine the response to send back to the client (display HTML, download a file, redirect to a different URL, etc.). In the case of displaying HTML, a controller class typically calls a separate view component to generate the HTML markup for the request. In an MVC application, the view only displays information; the controller handles and responds to user input and interaction.</p>
+        <p>In this task, you will add a Controller class that will handle URLs to the Home page of the Music Store site.</p>
+        <ol>
+          <li>Right-click the <b>Controllers</b> folder within the Solution Explorer, select <b>Add</b> and then the <b>Controller</b> command:<p><img src="images\470ff051-5b3b-4a28-afcb-524a3569ec23.png" /></p><p><b>Figure 14</b><br /><i>Add a Controller Command</i></p><br /></li>
+          <li>The <b>Add Controller</b> dialog appears. Name the controller <b>HomeController</b> and press <b>Add</b>.<p><img src="images\8af921f7-eeb0-44d5-b629-08859a921b5f.png" /></p><p><b>Figure 15</b><br /><i>Add Controller Dialog</i></p><br /></li>
+          <li>The file <b>HomeController.cs</b> is created in the <b>Controllers</b> folder. In order to have the <b>HomeController </b>return<b> </b>a string on its Index action, replace the <b>Index</b> method with the following code:<p>(Code Snippet – ASP.NET MVC 3.0 Fundamentals – Ex1 HomeController Index – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public string Index()</b><b>{</b><b>  return "Hello from Home";</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282507908" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Running the Application</b>
+        </p>
+        <p>In this task, you will try out the Application in a web browser.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application. The project gets compiled and the ASP.NET Web Server that is built-into Visual Web Developer starts. Visual Web Developer will automatically open a web browser pointing to the web-server URL. This will allow you to try out the web application.<p><img src="images\7df93815-eb83-4c60-b27e-0550a5ed5384.png" /></p><p><b>Figure 16</b><br /><i>Application running in a web browser</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>: ASP.NET Development Server will run the website on a random free port number. In the figure above, the site is running at http://localhost:49161/, so it’s using port 49161. Your port number may vary.</td></tr></table><p /></div><br /></li>
+          <li>Close the browser.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_bb4407b8-9ad2-446e-899e-016901ff826a.html">Exercise 2: Creating a Controller</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

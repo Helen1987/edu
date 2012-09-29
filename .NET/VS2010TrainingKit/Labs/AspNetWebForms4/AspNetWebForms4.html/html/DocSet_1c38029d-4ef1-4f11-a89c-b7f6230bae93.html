@@ -1,0 +1,147 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Granular View State" />
+      <MSHelp:RLTitle Title="Exercise 4: Granular View State" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Granular View State</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ASP.NET Web Forms 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Granular View State</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>WebForms 4 includes the new <b>ViewStateMode</b> property in the <b>Control</b> class to provide a more granular control over the View State. Granular control of View State means that you can turn it off at the page, and just turn it on for the controls you want. Versus turning it on, and turning it off a million places. So it should be much easier to say: I want it off for the page, turn it on for these three controls, and it’s out of your way.</p>
+        <a name="_Toc280375258" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Disabling ViewState on Controls</b>
+        </p>
+        <p>In this task, you will disable ViewState at Page level in Default.aspx, and at Control level in ShoppingCart.ascx. This will make possible to have a granular ViewState control in future steps.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 as an Administrator. Right-click on <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.and select Run as Administrator.</li>
+          <li>Open the solution file <b>WebFormsSampleApp.sln</b> located under <b>\Ex04-ViewState\begin\</b><b>(choosing the folder that matches the language of your preference)</b><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Alternatively, you may continue working with the solution obtained after completing the previous exercise.<br />You will be using this unaltered begin solution in the <a href="docSet_b5eb4e57-ead3-4778-9d83-9d71c96c5355.html">Verification</a>section, so consider working on a copy of this begin solution, in order to conserve the original one intact.</td></tr></table><p /></div><br /></li>
+          <li>Disable ViewState at <b>Page</b> level in <b>Default.aspx</b>. To do this, open <b>Default.aspx</b> in <b>Markup</b> mode, and replace the <b>&lt;% Page %&gt;</b> directive for the following one.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This will result in disabling ViewState for all the child controls in the page. In later steps, you will see how to leverage granular ViewState by enabling it just for the controls that you need within that page.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET (C#)</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;%@ Page Title="Home Page" Language="C#" MasterPageFile="~/UI.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebFormsSampleApp._Default" EnableViewState="false" %&gt;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET (VB)</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;%@ Page Title="Home Page" Language="Vb" MasterPageFile="~/UI.master" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="WebFormsSampleApp._Default" EnableViewState="false" %&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Disable <b>ViewState</b> for the shopping cart user control. To do this, open <b>ShoppingCart.ascx</b> in <b>Markup</b> mode (located under <b>UserControls</b> folder), and replace the <b>&lt;% Control %&gt;</b> directive for the following one.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Enabling <b>ViewStateMode</b> for this control would result in a heavy pay load while rendering the page. To avoid this, you will disable <b>ViewStateMode </b>for this control and all its child controls, and handle them from <b>Session</b>.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET (C#)</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppingCart.ascx.cs" Inherits="WebFormsSampleApp.UserControls.ShoppingCartControl"</b><b>EnableViewState="false" %&gt;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET (VB)</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;%@ Control Language="VB" AutoEventWireup="true" CodeBehind="ShoppingCart.ascx.vb" Inherits="WebFormsSampleApp.UserControls.ShoppingCartControl"</b><b>EnableViewState="false" %&gt;</b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc280375259" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Enabling Granular ViewState on Child Controls</b>
+        </p>
+        <p>In this task, you will modify the way in which some values are stored in ViewState, such as the current category name, the current selected page, and the number of total pages. It is useful to have these values in ViewState for example every time you add an item to the shopping cart, and preserve the exact page state (same category, same page number) after the postback.</p>
+        <p>You will create three hidden controls, one for each value, and you will take advantage of granular ViewState by enabling ViewState for each of them. As a result, these will be the only fields to be stored in the <b>ViewState</b> for the <b>Default.aspx </b>page, reducing the total size of the page, and increasing the application performance.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Until now, you were storing these values in the <b>Default.aspx</b> page’s ViewState, but as this functionality was disabled in the previous task, the ViewState collection for this control is no longer available.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Add three new hidden fields to replace the values that were stored on the <b>Page</b>'s <b>ViewState</b>. To do this, open <b>Default.aspx</b> in <b>Markup</b> mode, and add the following highlighted code to the second <b>&lt;asp:Content&gt;</b> element.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Although you will use these hidden fields’ ViewState to preserve the values between postbacks, you could have also obtained them based on the URL via <b>ASP.NET Routing</b> (as shown in <a href="docSet_8e0d400a-1835-4792-9980-9d4a40f1a70d.html">Exercise 2: Enabling Bi-Directional Routing Support</a> ). However, for practical purposes you will use the hidden field approach in order to show the new <b>ViewStateMode</b> feature.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"&gt;<b>    &lt;asp:HiddenField ID="CategoryNameState" runat="server" ViewStateMode="Enabled" /&gt;</b><b>    &lt;asp:HiddenField ID="TotalPagesState" runat="server" ViewStateMode="Enabled" /&gt;</b><b>    &lt;asp:HiddenField ID="SelectedPageState" runat="server" ViewStateMode="Enabled" /&gt;</b>    &lt;asp:HiddenField ID="ShoppingCartState" ClientIDMode="Static" runat="server" /&gt;...</pre></td></tr></table></span></div><br /></li>
+          <li>Enable ViewState in the hidden field that stores the shopping cart state (indicating if it is expanded or collapsed). To do this, set the <b>ViewStateMode</b> property to <b>Enable</b> in the ShoppingCartState <b>HiddenField</b> declaration as shown in the following code.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>ASP.NET</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;asp:HiddenField ID="ShoppingCartState" ClientIDMode="Static" runat="server" ViewStateMode="Enabled" /&gt;</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc280375260" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Retrieving ViewState Values from Code</b>
+        </p>
+        <p>In this task, you will change the way in which the <b>SelectedCategoryName</b>, <b>TotalPages</b> and <b>SelectedPage</b> properties are getting/setting their values from code. You will also force to reload the product <b>ListView</b> in every postback, as a consequence of having disabled the <b>ViewState</b> for that control.</p>
+        <ol>
+          <li>Replace the getter and setter implementation of the <b>SelectedCategoryName</b>, <b>TotalPages</b> and <b>SelectedPage</b> properties to get/set the value from/to the hidden fields instead of the <b>ViewState</b>. To do this, open <b>Default.aspx</b> code-behind, and replace the current property definitions with the following highlighted code.<p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – GranularViewState Properties – C#)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public string SelectedCategoryName</b><b>{</b><b>    get</b><b>    {</b><b>        if (this.CategoryNameState.Value == null)</b><b>        {</b><b>            this.CategoryNameState.Value = "Bikes";</b><b>        }</b><b>        return this.CategoryNameState.Value;</b><b>    }</b><b>    set</b><b>    {</b><b>        this.CategoryNameState.Value = value;</b><b>    }</b><b>}</b><b>public int TotalPages</b><b>{</b><b>    get</b><b>    {</b><b>        if (TotalPagesState.Value == null)</b><b>        {</b><b>            TotalPagesState.Value = "0";</b><b>        }</b><b>        return Convert.ToInt32(TotalPagesState.Value);</b><b>    }</b><b>    set</b><b>    {</b><b>        TotalPagesState.Value = Convert.ToString(value);</b><b>    }</b><b>}</b><b>public int SelectedPage</b><b>{</b><b>    get</b><b>    {</b><b>        if (this.SelectedPageState.Value == null)</b><b>        {</b><b>            this.SelectedPageState.Value = "1";</b><b>        }</b><b>        return Convert.ToInt32(this.SelectedPageState.Value);</b><b>    }</b><b>    set</b><b>    {</b><b>        this.SelectedPageState.Value = Convert.ToString(value);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – GranularViewState Properties – VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>VB</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Property SelectedCategoryName() As String</b><b>    Get</b><b>        If Me.CategoryNameState.Value Is Nothing Then</b><b>            Me.CategoryNameState.Value = "Bikes"</b><b>        End If</b><b>        Return Me.CategoryNameState.Value</b><b>    End Get</b><b>    Set(ByVal value As String)</b><b>        Me.CategoryNameState.Value = value</b><b>    End Set</b><b>End Property</b><b>Public Property TotalPages() As Integer</b><b>    Get</b><b>        If TotalPagesState.Value Is Nothing Then</b><b>            TotalPagesState.Value = "0"</b><b>        End If</b><b>        Return Convert.ToInt32(TotalPagesState.Value)</b><b>    End Get</b><b>    Set(ByVal value As Integer)</b><b>        TotalPagesState.Value = Convert.ToString(value)</b><b>    End Set</b><b>End Property</b><b>Public Property SelectedPage() As Integer</b><b>    Get</b><b>        If Me.SelectedPageState.Value Is Nothing Then</b><b>            Me.SelectedPageState.Value = "1"</b><b>        End If</b><b>        Return Convert.ToInt32(Me.SelectedPageState.Value)</b><b>    End Get</b><b>    Set(ByVal value As Integer)</b><b>        Me.SelectedPageState.Value = Convert.ToString(value)</b><b>    End Set</b><b>End Property</b></pre></td></tr></table></span></div><br /></li>
+          <li>Reload the product <b>ListView</b> on every postback. To do this, open <b>Default.aspx.cs </b>file, and inside the <b>Page_Load</b> method move the call to the <b>ApplyProductsFilter</b> method outside the <b>if (!PostBack)</b> conditional clause. The resulting method should look like the following:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> While <b>ViewStateMode</b> in <b>Default.aspx</b> was enabled at Page level, all of its child controls were saving <b>ViewState</b> by default including the product <b>ListView</b>. That is why you did not need to reload the products again during postbacks. This incurred substantial increases in the page size rendered to the user.</td></tr></table><p /></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Page_Load Method – C#)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Page_Load(object sender, EventArgs e){<b>    if (!IsPostBack)</b><b>    {</b><b>        this.SelectedCategoryName = GetCategoryName();</b><b>        this.SelectedPage = GetPageIndex();</b><b>    }</b><b>    ApplyProductsFilter();</b><b>    CreatePagerLinks();</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Page_Load Method – VB)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)<b>    If (Not IsPostBack) Then</b><b>        Me.SelectedCategoryName = GetCategoryName()</b><b>        Me.SelectedPage = GetPageIndex()</b><b>    End If</b><b>    ApplyProductsFilter()</b><b>    CreatePagerLinks()</b>End Sub</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In this case, you are re-loading the <b>ListView </b>(going against the database) in every postback because no ViewState was stored for this control.<br />In a more realistic scenario you should evaluate whether it is more convenient to have an extra payload to store the <b>ViewState</b> for the product’s <b>ListView</b>, rather than making a new round-trip to the database to retrieve the values again, or vice versa.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_b5eb4e57-ead3-4778-9d83-9d71c96c5355.html">Exercise 4: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

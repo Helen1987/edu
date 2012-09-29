@@ -1,0 +1,176 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Enabling Bi-Directional Routing Support" />
+      <MSHelp:RLTitle Title="Exercise 3: Enabling Bi-Directional Routing Support" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Enabling Bi-Directional Routing Support</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ASP.NET Web Forms 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Enabling Bi-Directional Routing Support</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to take full advantage of the common <b>ASP.NET Routing</b> engine that allows you to customize the URLs that your application exposes. In addition, you will use the new expression builders that allow generating dynamic URLs that are based on your route definitions, alleviating from having to fixed static links. This feature provides full class support by allowing you to define any custom route to a web form page.</p>
+        <p>By using <b>ASP.NET Routing</b> and the new bi-directional support, users can decouple URLs from a physical Web Form, having friendlier URLs and leveraging the power of search engines to discover and use them.</p>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To verify that each step is correctly performed, it is recommended to build the solution at the end of each task.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <a name="_Toc223351747" href="#">
+          <span />
+        </a>
+        <br />
+        <a name="_Toc225072461" href="#">
+          <span />
+        </a>
+        <a name="_Toc280375252" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Enabling ASP.NET Routing in your Application</b>
+        </p>
+        <p>In this task, you will enable <b>ASP.NET Routing</b> engine in your Web Forms application by adding the <b>UrlRouting</b> HTTP Module, and creating routes to specify the Url pattern to match.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 as an Administrator. Right-click on <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.and select Run as administrator.</li>
+          <li>Open the solution file WebFormsSampleApp.sln located under <b>Ex03-Routing\begin\ (choosing the folder that matches the language of your preference)</b><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Alternatively, you may continue working with the solution obtained after completing the previous exercise.</td></tr></table><p /></div><br /></li>
+          <li>In <b>Web.config</b> file, add the <b>UrlRouting</b> HTTP Module. To do this, add the following highlighted element inside the <b>&lt;httpModules&gt;</b> node.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;system.web&gt;   ...   &lt;httpmodule&gt;<b>        &lt;add name="RoutingModule" type="System.Web.Routing.UrlRoutingModule"/&gt;</b>        &lt;add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/&gt;         &lt;/httpmodule&gt;   ...&lt;system.web&gt;...</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>UrlRoutingModule</b> class is a basic HTTP Module that matches an incoming HTTP request to a route in an ASP.NET application. The module iterates through all the defined routes searching for one that has a URL pattern that matches the format of the HTTP request. When the module finds a matching route, it retrieves the <b>IRouteHandler</b> object for that route. From the route handler, the module gets an <b>IHttpHandler</b> object and uses that as the HTTP handler for the current request.<br />For more information, see <a href="http://msdn.microsoft.com/en-us/library/system.web.routing.urlroutingmodule.aspx">UrlRoutingModule</a> class.</td></tr></table><p /></div><br /></li>
+          <li>In <b>Global.asax</b>, replace all the namespace directives created by default with the following code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System;</b><b>using System.Web.Routing;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>VB</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System</b><b>Imports System.Web.Routing</b></pre></td></tr></table></span></div><br /></li>
+          <li>Specify the routes <b>{category}</b> and <b>{category}/{page}</b> to be handled by the <b>Default.aspx</b> page. To do this, add the following bolded code to the <b>Application_Start</b> method.<p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Application_Start method – C#)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void Application_Start(object sender, EventArgs e){<b>    RouteTable.Routes.Add("Category", new Route("{category}", new PageRouteHandler("~/Default.aspx")));</b><b>    RouteTable.Routes.Add("CategoryAndPage", new Route("{category}/{page}", new PageRouteHandler("~/Default.aspx")));</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Application_Start method - VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>VB</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)<b>    RouteTable.Routes.Add("Category", New Route("{category}", New PageRouteHandler("~/Default.aspx")))</b><b>    RouteTable.Routes.Add("CategoryAndPage", New Route("{category}/{page}", New PageRouteHandler("~/Default.aspx")))</b>End Sub</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>RouteTable</b> class is one of the primary classes in the ASP.NET Routing engine. It is a central location that stores the defined URL routes for an application.<br />You can add routes to the <b>RouteTable</b> by providing a name to identify them, and a concrete implementation of the <b>RouteBase</b> class, in this case the <b>Route</b> class.<br />Routes are URL patterns that are used for processing requests, and can be also used to construct URLs dynamically. The <b>Route</b> class enables you to specify how routing is processed in an ASP.NET application. You create a <b>Route</b> object for each URL pattern that you want to map to a class that can handle requests that correspond to that pattern. <br />The previous code uses the new <b>PageRouteHandler</b> class to map incoming request with a Page. This class is the one that allows the integration of Web Forms and ASP.NET Routing.<br />For more information, see <a href="http://msdn.microsoft.com/en-us/library/system.web.routing.routetable.aspx">RouteTable</a>, <a href="http://msdn.microsoft.com/en-us/library/system.web.routing.routebase.aspx">RouteBase</a> and <a href="http://msdn.microsoft.com/en-us/library/system.web.routing.route.aspx">Route</a> classes.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc223351748" href="#">
+          <span />
+        </a>
+        <a name="_Toc225072462" href="#">
+          <span />
+        </a>
+        <a name="_Toc280375253" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Using RouteUrlExpressionBuilder to Modify Navigation Links</b>
+        </p>
+        <p>In this task, you will modify the navigation links of the application to use the routes defined in the previous task. You are going to take advantage of the new <b>RouteUrlExpressionBuilder</b> by adding bi-directional routing support to your application. This means that you will be able to generate dynamic URLs that are based on your route definitions, making it easier to manage all the registered routes within your ASP.NET pages without having to write fixed static links.</p>
+        <ol>
+          <li>Enable the <b>RouteUrlExpressionBuilder</b> in your application. To do this, in the <b>Web.config</b> file, add the following highlighted <b>&lt;expressionBuilders&gt;</b> node, inside the <b>&lt;compilation&gt;</b> node.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;system.web&gt;   ...   &lt;compilation debug="true" targetFramework="4.0" &gt;<b>      &lt;expressionBuilders&gt;</b><b>         &lt;add expressionPrefix="RouteUrl" type="System.Web.Compilation.RouteUrlExpressionBuilder"/&gt;</b><b>      &lt;/expressionBuilders&gt;</b>   &lt;/compilation&gt;   ...&lt;system.web&gt;...</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Expression builders parse declarative expressions and create code to retrieve values that are bound to a control property. In no-compile scenarios, an expression builder that supports a no-compile feature evaluates the expression during run time.</td></tr></table><p /></div><br /></li>
+          <li>Change the code to generate the category navigation links in the <b>Default.aspx</b> page to use the new defined routes. To do this, in <b>Solution Explorer,</b> double-click <b>Default.aspx</b>, and replace the value of the <b>NavigateUrl</b> attribute of all the category <b>HyperLink</b> controls with the following.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Default.aspx</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;ul id="categoryTabs"&gt;   &lt;li&gt;      &lt;asp:HyperLink runat="server" <b>        NavigateUrl="&lt;%$ RouteUrl:RouteName=Category, category=Bikes %&gt;"</b>        OnLoad="CategoryLink_Load" Text="Bikes" /&gt;      &lt;asp:HyperLink runat="server"<b>        NavigateUrl="&lt;%$ RouteUrl:RouteName=Category, category=Components %&gt;"</b>        OnLoad="CategoryLink_Load" Text="Components" /&gt;      &lt;asp:HyperLink runat="server" <b>        NavigateUrl="&lt;%$ RouteUrl:RouteName=Category, category=Clothing %&gt;"</b>        OnLoad="CategoryLink_Load" Text="Clothing" /&gt;      &lt;asp:HyperLink runat="server" <b>        NavigateUrl="&lt;%$ RouteUrl:RouteName=Category, category=Accessories %&gt;"</b>        OnLoad="CategoryLink_Load" Text="Accessories"/&gt;   &lt;/li&gt;&lt;/ul&gt;...</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> When the page parser encounters an expression that is delimited with the string <b>&lt;%$ %&gt;</b>, it creates an expression builder for the expression based on the prefix in the string. The prefix is the portion of the string that is to the left of the colon (:) and is defined in the <b>Web.config</b>. In this case, the prefix for the <b>RouteUrlExpressionBuilder</b> is <b>RouteUrl</b>.<br />The <b>RouteUrlExpressionBuilder</b> then generates a route previously registered in the <b>RouteTable</b> based on the parameter to the right of the colon (:), in this case, a <b>Category</b> route.</td></tr></table><p /></div><br /></li>
+          <li>Change the code to generate the pager navigation links in the <b>Default.aspx</b> code-behind, to use new defined routes. To do this, in <b>Solution Explorer</b> right-click <b>Default.aspx</b>, select <b>View Code</b>, and replace the last two lines of the <b>CreatePagerLinks</b> method with the following highlighted code.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> As the database retrieves lots of results, is convenient to paginate the results in different pages. Page links are generated dynamically depending on the amount of results retrieved.<br /><img src="images\917d17f1-7d4b-4508-89dc-3319c16a853f.png" /><br />The type of route to create in this case will be <b>CategoryAndName</b>. For example, a possible link could be <b>/Products/3</b>, where <i>Products</i> is the category and <i>3</i> is the page number to retrieve.</td></tr></table><p /></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Create Pager Links – C#)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void CreatePagerLinks(){    for (int i = 1; i &lt;= this.TotalPages; i++)    {        HyperLink link = new HyperLink() { Text = i.ToString() };        if (i == this.SelectedPage)        {            link.CssClass = "currentPage";        }        PagerPanel.Controls.Add(link);<b>        string expression = String.Format("RouteName={0}, category={1}, page={2}", "CategoryAndPage", this.SelectedCategoryName, i);</b><b>        link.NavigateUrl = RouteUrlExpressionBuilder.GetRouteUrl(this, expression);</b>    }}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – ASP.NET 4 Web Forms Lab – Create Pager Links – VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>VB</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub CreatePagerLinks()    For i As Integer = 1 To Me.TotalPages        Dim link As New HyperLink() With {.Text = i.ToString()}        If i = Me.SelectedPage Then            link.CssClass = "currentPage"        End If        PagerPanel.Controls.Add(link)<b>        Dim expression As String = String.Format(CultureInfo.InvariantCulture, "RouteName={0}, category={1}, page={2}", "CategoryAndPage", Me.SelectedCategoryName, i)</b><b>        link.NavigateUrl = RouteUrlExpressionBuilder.GetRouteUrl(Me, expression)</b>    Next iEnd Sub</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You can use the <b>RouteUrlExpressionBuilder</b> directly from your code behind by calling its <b>GetRouteUrl</b> static method. In this way, you can dynamically assign values to your route’s parameters.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc280375254" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Retrieving Route Parameter Values</b>
+        </p>
+        <p>In this task, you will change the behavior in which you retrieve the category name and page index parameters in every post back. As you are now working with routes, these parameters will no longer be available in the <b>QueryString</b> collection. Instead, you will use a new property defined in the <b>Page</b> class called <b>RouteData</b>, which have a key-value collection that includes all the parameters that are part of the route.</p>
+        <ol>
+          <li>Open the <b>Default.aspx</b> code-behind file. To do this, in <b>Solution Explorer</b> right-click <b>Default.aspx</b>, and select <b>View Code</b>.</li>
+          <li>Replace the usage of <b>Request.QueryString</b> collection with the <b>RouteData.Values</b> collection in the <b>GetCategoryName</b> and <b>GetPageIndex</b> methods.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...private string GetCategoryName(){<b>    string category = RouteData.Values["category"] as string;</b>    AdventureWorksRepository repository = new AdventureWorksRepository();    if (category != null)    {        return category;    }    return repository.GetCategories()[0].Name;}private int GetPageIndex(){<b>    string page = RouteData.Values["page"] as string;</b>    if (page != null)        return Convert.ToInt32(page);    return 1;}...</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>VB</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Function GetCategoryName() As String<b>    Dim category As String = TryCast(RouteData.Values("category"), String)</b>    Dim repository As New AdventureWorksRepository()    If category IsNot Nothing Then        Return category    End If    Return repository.GetCategories()(0).NameEnd FunctionPrivate Function GetPageIndex() As Integer<b>    Dim page As String = TryCast(RouteData.Values("page"), String)</b>    If page IsNot Nothing Then        Return Convert.ToInt32(page)    End If    Return 1End Function</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The key-value collection of the <b>RouteData</b> property contains values that are parsed from the URL.<br />For more information, see <a href="http://msdn.microsoft.com/library/system.web.routing.routedata.aspx">RouteData</a> class and its <a href="http://msdn.microsoft.com/library/system.web.routing.routedata_members.aspx">members</a>.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc280375255" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Using RouteValueExpressionBuilder to Retrieve Route Values</b>
+        </p>
+        <p>In this task, you will learn how to obtain the values of the route parameters directly from your ASP.NET page. To show this feature, you will add some messages to the <b>Default.aspx</b> to be displayed every time a requested product is not found, or when a requested page is out of bounds. You are going to take advantage of the new <b>RouteValueExpressionBuilder</b> to get those values from the current route and warn the user with a friendly message.</p>
+        <ol>
+          <li>In <b>Web.config</b> file, add the <b>RouteValueExpressionBuilder</b> to the <b>&lt;expressionBuilders&gt;</b> node.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Web.config</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;system.web&gt;   ...   &lt;compilation debug="true" targetFrameworkMoniker=".NETFramework,Version=v4.0"&gt;      &lt;expressionBuilders&gt;         &lt;add expressionPrefix="RouteUrl" type="System.Web.Compilation.RouteUrlExpressionBuilder"/&gt;<b>         &lt;add expressionPrefix="RouteValue" type="System.Web.Compilation.RouteValueExpressionBuilder" /&gt;</b>      &lt;/expressionBuilders&gt;   &lt;/compilation&gt;   ...&lt;system.web&gt;...</pre></td></tr></table></span></div><br /></li>
+          <li>Add messages for non-existing category and page number in the <b>Default.aspx</b> page using the <b>RouteValue</b> expression builder. To do this, open <b>Default.aspx</b> in <b>Source</b> view, and replace the content of the <b>PageIndexOverflowPanel</b> and <b>NoProductsFoundPanel</b> panels with the following.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If you inspect the code-behind file you will see a method called <b>ApplyProductsFilter</b> that contains the logic to make visible one of these panels accordingly.</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Default.aspx</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;asp:Panel ID="PageIndexOverflowPanel" runat="server" Visible="false"&gt;   &lt;div class="noResults"&gt;<b>      The &lt;strong&gt;&lt;asp:Literal runat="server" Text="&lt;%$ RouteValue:category%&gt;" /&gt;&lt;/strong&gt; category does not have the page &lt;strong&gt;&lt;asp:Literal ID="Literal1" runat="server" Text="&lt;%$ RouteValue:page%&gt;" /&gt;&lt;/strong&gt;.</b>   &lt;/div&gt;&lt;/asp:Panel&gt;&lt;asp:Panel ID="NoProductsFoundPanel" runat="server" Visible="false"&gt;   &lt;div class="noResults"&gt;<b>      No products were found matching the &lt;strong&gt;&lt;asp:Literal runat="server" Text="&lt;%$ RouteValue:category%&gt;" /&gt;&lt;/strong&gt; category you have selected.</b>   &lt;/div&gt;&lt;/asp:Panel&gt;...</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The <b>RouteValueExpressionBuilder</b> allows you to get a route parameter by the name you defined when you registered the route. This name is the one to the right of the colon (:). For example, the expression <b>&lt;%$ RouteValue:category%&gt;</b> can be understood as, give me the value of the parameter whose name is <i>category</i>on the current route.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e629f643-b562-47f1-b7d4-e7186d7c8807.html">Exercise 3: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

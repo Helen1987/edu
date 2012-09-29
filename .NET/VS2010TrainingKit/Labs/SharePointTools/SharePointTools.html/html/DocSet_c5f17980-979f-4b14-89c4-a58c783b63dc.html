@@ -1,0 +1,124 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Creating, Deploying and Testing Web Parts" />
+      <MSHelp:RLTitle Title="Exercise 4: Creating, Deploying and Testing Web Parts" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Creating, Deploying and Testing Web Parts</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Microsoft SharePoint 2010 Developer Tools</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Creating, Deploying and Testing Web Parts</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will add a custom Web Part to your project.</p>
+        <a name="_Toc281415915" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a new Web Part</b>
+        </p>
+        <p>In this task, you will add a Web Part to your project.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ContosoWebParts.sln</b> located under the <b>Source\Ex4-WebParts\begin\ </b>(choosing the folder that matches the language of your preference.) Alternatively, you may continue working with the solution obtained after completing the previous exercise.</li>
+          <li>In the Solution Explorer, right-click on the <b>ContosoWebParts</b> project, point to <b>Add</b> and select <b>New Item</b>.</li>
+          <li>Select the <b>Web Part</b> project item template and give it a name of <b>HelloWebPart</b>.<p><img src="images\8068d198-27ae-4ad5-a811-1aac5f66bfdf.png" /></p><p><b>Figure 32</b><br /><i>New Web Part item (C#)</i></p><br /><p><img src="images\d3c1e22d-84cc-4ccb-8165-ca82727358ca.png" /></p><p><b>Figure 33</b><br /><i>New Web Part item (VB)</i></p><br /></li>
+          <li>Inspect the SharePoint Project Item node for the Web Part named <b>HelloWebPart</b>. You should be able to verify that it contains three SharePoint Project Item files named <b>Elements.xml</b>, <b>HelloWebPart.cs</b> / <b>HelloWebPart.vb</b> and <b>HelloWebPart.webpart</b>.<p><img src="images\6b542f1f-7444-4144-8c46-fe9784b8f9ff.png" /></p><p><b>Figure 34</b><br /><i>Inspecting HelloWebPart element (C#)</i></p><br /><p><img src="images\dc861f5b-7c69-4665-a493-8fc663057fa1.png" /></p><p><b>Figure 35</b><br /><i>Inspecting HelloWebPart element (VB)</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><br />- <b>Elements.xml</b> contains the definition of the elements that form the web part.<br />- <b>HelloWebPart.webpart</b> is an xml file containing metadata that describes the web part.<br />- <b>HelloWebPart.cs</b> or <b>HelloWebPart.vb</b> contains the code required to implement the web part’s functionality.</td></tr></table><p /></div><br /></li>
+          <li>In the Solution Explorer, double-click on the <b>HelloWebPart.webpart</b> file to open it, and perform the following changes:<ol><li>Find the XML element for the <b>Title</b> property and change its value to: <b>The "Hello" Web Part</b>.</li><li>Find the XML element for the <b>Description</b> property and change its value to: <b>A most compelling Web Part</b>.</li><li>Add the following properties after the recently modified Description property.<p><i>(Code Snippet – SharePoint Tools Lab – HelloWebPart Properties)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;property name="ChromeType" type="chrometype"&gt;TitleAndBorder&lt;/property&gt;</b><b>&lt;property name="CatalogIconImageUrl" type="string"&gt;_layouts/images/ContosoWebParts/WebPartIcon.gif&lt;/property&gt;</b><b>&lt;property name="TitleIconImageUrl" type="string"&gt;_layouts/images/ContosoWebParts/WebPartIcon.gif&lt;/property&gt;</b></pre></td></tr></table></span></div></li><br /></ol></li>
+          <li>In the Solution Explorer, double-click on the <b>Elements.xml</b> file to open it.</li>
+          <li>Modify the <b>URL</b> attribute of the <b>File</b> XML element, to ensure that the web part name is unique. To do this, add the text value of "<b>ContosoWebPart_</b>" to the beginning of the URL property value.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Elements xmlns="http://schemas.microsoft.com/sharepoint/" &gt;  &lt;Module Name="HelloWebPart" List="113" Url="_catalogs/wp"&gt;    &lt;File Path="HelloWebPart\HelloWebPart.webpart" Url="ContosoWebParts_HelloWebPart.webpart" Type="GhostableInLibrary"&gt;      &lt;Property Name="Group" Value="Custom" /&gt;    &lt;/File&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Change the value for the <b>Group</b> property to "<b>Contoso Web Parts</b>".<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Elements xmlns="http://schemas.microsoft.com/sharepoint/" &gt;  &lt;Module Name="HelloWebPart" List="113" Url="_catalogs/wp"&gt;    &lt;File Path="HelloWebPart\HelloWebPart.webpart" Url="ContosoWebParts_HelloWebPart.webpart" Type="GhostableInLibrary"&gt;<b>      &lt;Property Name="Group" Value="Contoso Web Parts" /&gt;</b>    &lt;/File&gt;</pre></td></tr></table></span></div><br /><p>Finally, open the source file named <b>HelloWebPart.cs</b> (C#) or <b>HelloWebPart.vb</b> (VB), and replace the class definition with the following code.</p><p><i>(Code Snippet – SharePoint Tools Lab – HelloWebPart Class CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[ToolboxItemAttribute(false)]</b><b>public class HelloWebPart : WebPart</b><b>{</b><b>    public HelloWebPart()</b><b>    {</b><b>    }</b><b>    protected Label outputLabel;</b><b>    protected override void CreateChildControls()</b><b>    {</b><b>        outputLabel = new Label();</b><b>        outputLabel.Text = "Hello Web Part";</b><b>        Controls.Add(outputLabel);</b><b>    }</b><b>    protected override void RenderContents(HtmlTextWriter writer)</b><b>    {</b><b>        base.RenderContents(writer);</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – SharePoint Tools Lab – HelloWebPart Class VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;ToolboxItemAttribute(False)&gt; _</b><b>Public Class HelloWebPart</b><b>    Inherits WebPart</b><b>    Public Sub New()</b><b>    End Sub</b><b>    Protected outputLabel As Label</b><b>    Protected Overrides Sub CreateChildControls()</b><b>        outputLabel = New Label()</b><b>        outputLabel.Text = "Hello Web Part"</b><b>        Controls.Add(outputLabel)</b><b>    End Sub</b><b>    Protected Overrides Sub RenderContents(ByVal writer As System.Web.UI.HtmlTextWriter)</b><b>        MyBase.RenderContents(writer)</b><b>    End Sub</b><b>End Class</b></pre></td></tr></table></span></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc281415916" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Exercise 4: Verification</b>
+        </p>
+        <ol>
+          <li>Run the <b>Deploy</b> command which will retract the previously deployed solution and will deploy the updated solution package.</li>
+          <li>Open Internet Explorer, and browse to <b>http://localhost/sites/SharePointToolsLab</b>. Follow these steps to go through the activation process.<ol><li>Point to <b>Site Actions</b> and select<b> Site Settings</b> to navigate to the Site Settings page.</li><li>Inside the <b>Site Collection Administration</b> section of the Site Settings page, click on the <b>Site collection features</b> link to navigate to the Site Collection Administration &gt; Features page.</li><li>Locate the <b>Contoso Web Parts</b> and <b>activate</b> it.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If it was already active, then deactivate first and then activate it. The key point here is that feature activation is what provisions the .webpart file into the Web Part Gallery which will allow you to test your work.</td></tr></table><p /></div><br /></li></ol></li>
+          <li>Add a test instance of the Web Part you have just created to a Web Part Page. To do this:<ol><li>Navigate to the home page<b> http://localhost/sites/SharePointToolsLab</b>. The ribbon at the top of the page should have a tab titled <b>Page</b>.</li><li>Click on the <b>Page</b> tab and then select the command from the <b>Edit Page</b> button that takes you into the mode for adding, modifying and deleting Web Parts from the page.<p><img src="images\bec207d8-e33a-480b-acbb-3d67e9118219.png" /></p><p><b>Figure 36</b><br /><i>The Edit Page button</i></p><br /></li><li>Click on the <b>Add a Web Part</b> link or make sure the Left Web Part zone is selected (indicated by a different blue color in the left zone) and use the contextual <b>Page Tools</b> ribbon tab.</li><li>Click on the <b>Insert</b> tab on the ribbon and click on the <b>Web Part</b> button.<p><img src="images\83b72918-c9be-4b72-862a-ad8a42beba1a.png" /></p><p><b>Figure 37</b><br /><i>Insert a new Web Part</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> At this point you should see the new SharePoint 2010 UI for adding new Web Parts to a page. You should be able to browse through the standard Web Part Categories such as Lists and Libraries, Authoring and Content Rollup. You should also be able to see a new custom category named Contoso Web Parts which you created when you edited the Group property value inside the <b>elements.xml</b> file.</td></tr></table><p /></div><br /></li><li> Select the <b>Contoso Web Parts</b> category in the left-hand section. In the right-hand section, click on your web part, named <b>The "Hello" Web Part</b>.</li><li>Make sure the dropdown box with the <b>Add Web Part to</b> name,<b> </b>has the <b>Left</b> value, and click the <b>Add</b> button to add the Web Part instance to the page.<p><img src="images\2ba29ab8-78e0-48e6-b25a-5dd027ccd8c2.png" /></p><p><b>Figure 38</b><br /><i>Select a new Web Part to add</i></p><br /></li></ol></li>
+          <li>At this point, you have gone through all the required steps to create, deploy and test a Web Part. The test instance of your Web Part should look like the following screenshot.<p><img src="images\770183f2-dc33-4d5b-8dc3-fdcab7344566.png" /></p><p><b>Figure 39</b><br /><i>Web Part inserted in Home page</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_174c0b9f-43d6-48c3-991f-5491dbc3a29e.html">Exercise 5: Creating a Visual Web Part with AJAX Behavior</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

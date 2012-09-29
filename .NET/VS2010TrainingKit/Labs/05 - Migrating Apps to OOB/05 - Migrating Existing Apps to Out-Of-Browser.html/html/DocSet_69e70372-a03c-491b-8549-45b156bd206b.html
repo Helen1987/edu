@@ -1,0 +1,107 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Detect if running out of Browser" />
+      <MSHelp:RLTitle Title="Exercise 2: Detect if running out of Browser" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Detect if running out of Browser</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Migrating Existing Apps to Out-Of-Browser</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Detect if running out of Browser</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Since there are many features that aren’t available in browser, such as the WebBrowser control, you will need to be able to detect which context, desktop or browser, the application is currently running under.  This exercise shows how to detect if your application is installed, displays a custom prompt asking the user to install you app, and finally how to install from a Button.</p>
+        <ol>
+          <li>Locate and open the InstallPrompt.xaml file.  This UserControl will load if the application is run in the Browser.  Before determining the context of where the browser is being run, we are going to toggle between two states based on if the application is already installed.  The below screenshot shows the two states:<p><img src="images\975b1e21-5e4a-4676-8d7d-723bce5f4cb2.png" /></p><p><b>Figure 1</b><br /><i>Screenshot Example</i></p></li>
+          <li>In InstallPrompt.xaml.cs we are going to toggle the Visibility of both the InstallPanel and AlreadyInstalledPanel, previously defined in the XAML.  The property Application.Current.InstallState contains what state the application is in.  If it’s installed, the value is InstallState.Installed.  Other possible values could be InstallState.NotInstalled, InstallState.Installing, or InstallState.Failed.</li>
+          <li>In the constructor register the loaded event.  In the Loaded event handler check to see if the InstallState is equal to InstallState.Installed.  If true, then display the message indicating the application has already been installed, otherwise show the install button<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public partial class InstallPrompt : UserControl{        public InstallPrompt()        {                InitializeComponent();                this.Loaded += new RoutedEventHandler(InstallPrompt_Loaded);        }        void InstallPrompt_Loaded(object sender, RoutedEventArgs e)        {                if (Application.Current.InstallState == InstallState.Installed)                {                        InstallPanel.Visibility = Visibility.Collapsed;                        AlreadyInstalledPanel.Visibility = Visibility.Visible;                }                else                {                        InstallPanel.Visibility = Visibility.Visible;                        AlreadyInstalledPanel.Visibility = Visibility.Collapsed;                }        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Partial Public Class InstallPrompt                Inherits UserControl        Public Sub New()                InitializeComponent()                AddHandler Loaded, AddressOf InstallPrompt_Loaded                AddHandler InstallButton.Click, AddressOf InstallButton_Click        End Sub        Private Sub InstallPrompt_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)                If Application.Current.InstallState = InstallState.Installed Then                        InstallPanel.Visibility = Visibility.Collapsed                        AlreadyInstalledPanel.Visibility = Visibility.Visible                Else                        InstallPanel.Visibility = Visibility.Visible                        AlreadyInstalledPanel.Visibility = Visibility.Collapsed                End If        End SubEnd Class</pre></td></tr></table></span></div></li>
+          <li>In the InstallPrompt.xaml.cs, add an event handler for the InstallButton’s Click event.  Here we’ll call Application.Current.Install() which brings up the installation prompt<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void InstallButton_Click(object sender, RoutedEventArgs e){        Application.Current.Install();}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub InstallButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)        Application.Current.Install()End Sub</pre></td></tr></table></span></div><p><img src="images\3cbcb492-1dbe-45a4-9667-8e3c9ed5f97d.png" /></p><p><b>Figure  2</b><br /><i>Add event for install Application </i></p><p>Now that we have the InstallPrompt.xaml.cs or InstallPrompt.xaml.vb  checking whether or not to prompt the user to install the application and installing if not currently installed, let’s turn our attention to detecting what context the application is running in.  What we want is if the application is in a web browser we want to show the InstallPrompt screen, otherwise we should show the MainPage.  The way we’re going to do it is by changing the RootVisual based on if the Application is running out of the Browser.</p></li>
+          <li>Open App.xaml.cs.  Find the Startup event and replace the current method with the below code.  Here we’re checking to see if the Application.Current.IsRunningOutOfBrowser is true.  If it’s not then we set the RootVisual to the InstallPrompt.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void Application_Startup(object sender, StartupEventArgs e){        if (Application.Current.IsRunningOutOfBrowser)        {                this.RootVisual = new MainPage();        }        else        {                this.RootVisual = new InstallPrompt();        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub Application_Startup(ByVal sender As Object, ByVal e As StartupEventArgs)        If Application.Current.IsRunningOutOfBrowser Then                Me.RootVisual = New MainPage()        Else                Me.RootVisual = New InstallPrompt()        End IfEnd Sub</pre></td></tr></table></span></div></li>
+          <li>We’re all set.  Set the Web project to the Startup project and run the project.  You should see the InstallPrompt asking you to install. <p><img src="images\d92490f3-8ad4-4276-a0f3-a4699d2a3dbe.png" /></p><p><b>Figure  3</b></p><p class="label"><i>Install appliction</i></p></li>
+          <li>After clicking OK, you application will open in a new Window.  Notice we see the MainPage and not the InstallPrompt?  This is due to the logic we added in the Startup event of App.xaml.cs or App.xaml.vb.<p><img src="images\3c48cb3c-230d-47f4-bfc8-df5a59e67870.png" /></p><p><b>Figure  4</b><br /><i>MainPage example</i></p></li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

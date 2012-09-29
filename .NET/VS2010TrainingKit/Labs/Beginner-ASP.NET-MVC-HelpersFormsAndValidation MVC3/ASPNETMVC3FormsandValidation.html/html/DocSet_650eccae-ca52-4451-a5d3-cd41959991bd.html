@@ -1,0 +1,219 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Creating the Edit View" />
+      <MSHelp:RLTitle Title="Exercise 3: Creating the Edit View" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Creating the Edit View</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Helpers, Forms and Validation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Creating the Edit View</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to create a form to allow store managers to edit an Album. They will browse the <b>/StoreManager/Edit/id</b> URL (<b>id</b> being the unique id of the album to edit), thus making an HTTP-GET call to the server.</p>
+        <p>The Controller Edit action method will retrieve the appropriate Album from the database, create a <b>StoreManagerViewModel</b> object to encapsulate it (along with a list of Artists and Genres), and then pass it off to a View template to render the HTML page back to the user. This page will contain a <b>&lt;form&gt;</b> element with textboxes and dropdowns for editing the Album properties.</p>
+        <p>Once the user updates the Album form values and clicks the <b>Save</b> button, the changes are submitted via an HTTP-POST call back to <b>/StoreManager/Edit/id</b>. Although the URL remains the same as in the last call, ASP.NET MVC identifies that this time it is an HTTP-POST and therefore executes a different Edit action method (one decorated with <b>[HttpPost]</b>).</p>
+        <a name="_Toc282517416" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating the StoreManagerViewModel</b>
+        </p>
+        <p>In order to build and manage the intended Edit form, you will first need to pass to the View template an object with the following:</p>
+        <ol>
+          <li>An Album object that represents the current Album being edited</li>
+          <li>A List of all Genres to populate the Genre dropdown list</li>
+          <li>A List of all Artists to populate the Artist dropdown list</li>
+        </ol>
+        <p>In this task, you will create a new StoreManagerViewModel class to help manage all of the above data. This class will be used within both Edit and Create action methods.</p>
+        <ol>
+          <li>Start Microsoft Visual Web Developer 2010 Express from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 Express </b>| <b>Microsoft Visual Web Developer 2010 Express</b>. </li>
+          <li>In the <b>File</b> menu, choose <b>Open Project</b>. In the Open Project dialog, browse to Source\Ex03-CreatingTheEditView\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>Create the <b>StoreManagerViewModel</b> class. To do this, right-click on the <b>ViewModels</b> folder, select <b>Add</b> and then <b>Class</b>.</li>
+          <li>Change the name to <b>StoreManagerViewModel.cs </b>and click<b> Add.</b><p><img src="images\08f88947-b685-4f8e-8de7-9705c0073c34.png" /></p><p><b>Figure 11</b><br /><i>Creating StoreManagerViewModel class</i></p><br /></li>
+          <li>Add the following using directives:<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex3 using System.Web.Mvc and MvcMusicStore.Models – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;<b>using System.Web.Mvc;</b><b>using MvcMusicStore.Models;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Add the <b>Album</b>, <b>Artists</b> and <b>Genres</b> properties.<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex3 StoreManagerViewModel properties– CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    public class StoreManagerViewModel    {<b>        public Album Album { get; set; }</b><b>        public SelectList Artists { get; set; }</b><b>        public SelectList Genres { get; set; }</b>    }</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You are using <b>System.Web.Mvc</b><b>SelectList</b> for Artists and Genres instead of the <b>System.Collections.Generic</b> List.<br /><b>SelectList</b> is a cleaner way to populate HTML dropdowns and manage things like current selection. Instantiating and later setting up these ViewModel objects in the controller action will make the Edit form scenario cleaner.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282517417" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Implementing the HTTP-GET Edit Action Method</b>
+        </p>
+        <p>In this task, you will implement the HTTP-GET version of the Edit action method to retrieve the appropriate Album from the database, as well as a list of all Genres and Artists. It will package this data up into the StoreManagerViewModel object defined in the last step, which will then be passed to a View template to render the response with.</p>
+        <ol>
+          <li>Open <b>StoreManagerController </b>class. To do this, expand the <b>Controllers</b> folder and double-click <b>StoreManagerController.cs</b>.</li>
+          <li>Add a using directive to <b>MvcMusicStore.ViewModels</b>. In order for the code to compile correctly, add the following <b>using</b> directive:<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex3 using MvcMusicStore.ViewModels – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using MvcMusicStore.Models;<b>using MvcMusicStore.ViewModels;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Replace the <b>HTTP-GET Edit</b> action method with the following code to retrieve the appropriate <b>Album</b> as well as the <b>Genres</b> and <b>Artists</b> lists.<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex3 StoreManagerController HTTP-GET Edit action – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>        //        // GET: /StoreManager/Edit/5        public ActionResult Edit(int id)        {<b>            Album album = storeDB.Albums.Single(a =&gt; a.AlbumId == id);</b><b>            var viewModel = new StoreManagerViewModel()</b><b>            {</b><b>                Album = album,</b><b>                Genres = new SelectList(storeDB.Genres.ToList(), "GenreId", "Name", album.GenreId),</b><b>                Artists = new SelectList(storeDB.Artists.ToList(), "ArtistId", "Name", album.ArtistId)</b><b>            };</b><b>            return View(viewModel);</b>        }</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc282517418" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Creating the Edit View</b>
+        </p>
+        <p>In this task, you will create an Edit View template that will later display the album properties.</p>
+        <ol>
+          <li>Before creating the new View template, you should build the project so that the <b>Add View Dialog</b> knows about the class to use. Build the project by selecting the <b>Debug</b> menu item and then <b>Build MvcMusicStore</b>.<p><img src="images\9bd727ff-c8bc-4038-9876-e67fb4477802.png" /></p><p><b>Figure 12</b><br /><i>Building the project</i></p><br /></li>
+          <li>Create the Edit View. To do this, right-click inside the <b>Edit</b> action method and select <b>Add View</b>.</li>
+          <li>In the Add View dialog, verify that the View Name is <b>Edit</b>. Check the <b>Create a strongly-typed view</b> checkbox and select <b>StoreManagerViewModel (MvcMusicStore.ViewModels) </b>from the<b> View data class</b> drop-down. Select <b>Edit</b> from the <b>View content</b> drop-down. Leave the other fields with their default value and then click <b>Add</b>.<p><img src="images\2a437b64-bb97-4f1d-91b6-5ad414e5f139.png" /></p><p><b>Figure 13</b><br /><i>Adding an Edit View</i></p><br /></li>
+          <li>The generated Edit View template doesn’t include any fields because none of the properties in the StoreManagerViewModel are simple types like strings and integers.<p><img src="images\0a903ebf-c123-4009-ae08-e0f939018c75.png" /></p><p><b>Figure 14</b><br /><i>Edit View without fields</i></p><br /></li>
+        </ol>
+        <a name="_Toc282517419" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Customizing the Edit View</b>
+        </p>
+        <p>In this task, you will change the default View template to display the Album properties.</p>
+        <ol>
+          <li>Add an <b>Html.EditorFor()</b> helper to render a default HTML editing form for the Album. <div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>            &lt;legend&gt;Edit Album&lt;/legend&gt;</b><b>            &lt;%: Html.EditorFor(model =&gt; model.Album, </b><b>                        new { Artists = Model.Artists, Genres = Model.Genres })%&gt;</b>            &lt;p&gt;                &lt;input type="submit" value="Save" /&gt;            &lt;/p&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Html.EditorFor()</b> helper will create a form that will enable the edition of its first parameter, in this case an <b>Album</b>. Additionally, you are passing a second parameter which is optional, that contains the list of <b>Artists</b> and <b>Genres</b>. This will be used later on.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282517420" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Edit</b> View page displays the properties’ values for the album passed as parameter.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager/Edit/388</b> to verify that the properties’ values for the album passed are displayed.<p><img src="images\9378c72b-904d-4ff1-8c59-dccf4cff7c15.png" /></p><p><b>Figure 15</b><br /><i>Browsing Album’s Edit view</i></p><br /></li>
+        </ol>
+        <a name="_Toc282517421" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Creating a Shared Album Editor Template</b>
+        </p>
+        <p>Since the exact same form fields for Album Edit will be needed to handle the Album Create case, in this task you will create a Shared Album Editor template that will take care of both cases with the same code.</p>
+        <ol>
+          <li>Close the browser if needed, to return to the Visual Studio window. Create a folder inside <b>/Views/Shared</b> folder and name it <b>EditorTemplates</b>.<p><img src="images\1853e1d5-23a8-4dc2-be30-e2b4ca461def.png" /></p><p><b>Figure 16</b><br /><i>Adding a new folder</i></p><br /></li>
+          <li>Right-click the <b>EditorTemplates</b> folder, select <b>Add</b> and then <b>View</b>.<p><img src="images\eb5793b1-f90f-4fd0-94de-9630d1a6e633.png" /></p><p><b>Figure 17</b><br /><i>Adding a View template</i></p><br /></li>
+          <li>This will be a Partial View, meaning that it is intended to be displayed inside another view. In the Add View dialog, change the Name to <b>Album</b>. Check the <b>Create a partial view (.ascx)</b> checkbox and the <b>Create a strongly-typed view</b> checkbox. Select <b>Album (MvcMusicStore. Models) </b>from the<b> View data class</b> drop-down and select <b>Edit</b> from the <b>View content</b> drop-down. Leave the other fields with their default value and then click <b>Add</b>.<p><img src="images\69a15667-c89d-446a-8505-f7ba45098ab4.png" /></p><p><b>Figure 18</b><br /><i>Adding a Partial View</i></p><br /></li>
+        </ol>
+        <a name="_Toc282517422" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 7 – Implementing drop-downs on the Album Editor Template</b>
+        </p>
+        <p>In this task, you will add drop-downs to the View template created in the last task, so that the user can select from a list of Artists and Genres.</p>
+        <ol>
+          <li>Replace <b>Album.ascx Partial View</b> code with the following:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>HTML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl&lt;MvcMusicStore.Models.Album&gt;" %&gt;</b><b>&lt;p&gt;</b><b>    &lt;%: Html.LabelFor(model =&gt; model.Title) %&gt;</b><b>    &lt;%: Html.TextBoxFor(model =&gt; model.Title) %&gt;</b><b>    &lt;%: Html.ValidationMessageFor(model =&gt; model.Title) %&gt;</b><b>&lt;/p&gt;            </b><b>&lt;p&gt;</b><b>    &lt;%: Html.LabelFor(model =&gt; model.Price) %&gt;</b><b>    &lt;%: Html.TextBoxFor(model =&gt; model.Price) %&gt;</b><b>    &lt;%: Html.ValidationMessageFor(model =&gt; model.Price) %&gt;</b><b>&lt;/p&gt;            </b><b>&lt;p&gt;</b><b>    &lt;%: Html.LabelFor(model =&gt; model.AlbumArtUrl) %&gt;</b><b>    &lt;%: Html.TextBoxFor(model =&gt; model.AlbumArtUrl) %&gt;</b><b>    &lt;%: Html.ValidationMessageFor(model =&gt; model.AlbumArtUrl) %&gt;</b><b>&lt;/p&gt;            </b><b>&lt;p&gt;</b><b>    &lt;%: Html.LabelFor(model =&gt; model.Artist) %&gt;</b><b>    &lt;%: Html.DropDownList("ArtistId", (SelectList) ViewData["Artists"]) %&gt;</b><b>&lt;/p&gt;            </b><b>&lt;p&gt;</b><b>    &lt;%: Html.LabelFor(model =&gt; model.Genre) %&gt;</b><b>    &lt;%: Html.DropDownList("GenreId", (SelectList) ViewData["Genres"]) %&gt;</b><b>&lt;/p&gt;  </b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> An <b>Html.DropDownList</b> helper has been added to render drop-downs for choosing Artists and Genres. The parameters passed to <b>Html.DropDownList </b>are:<br />1. The name of the form field (<b>“ArtistId”</b>)<br />2. The <b>SelectList</b> of values for the drop-down. <b>ViewData </b>is actually the object taken from the <b>Html.EditorFor </b>second parameter you included in task 4:<br /><br /><b>&lt;%: Html.EditorFor(model =&gt; model.Album, </b><br /><b>                        new { Artists = Model.Artists, Genres = Model.Genres })%&gt;</b><br /><br /><b>Html.EditorFor()</b> helper will create a form that will enable the edition of its first parameter, in this case an <b>Album</b>. Additionally, you are passing a second parameter which is optional, that contains the list of <b>Artists</b> and <b>Genres</b>. This will be used later on.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282517423" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 8 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Edit</b> View page displays drop-downs instead of Artist and Genre ID text fields.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager/Edit/388</b> to verify that it displays drop-downs instead of Artist and Genre ID text fields.<p><img src="images\0f5eea9a-4669-4da7-b7cd-af14a422deb2.png" /></p><p><b>Figure 19</b><br /><i>Browsing Album’s Edit view, this time with dropdowns</i></p><br /></li>
+        </ol>
+        <a name="_Toc282517424" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 9 – Implementing the HTTP-POST Edit action method</b>
+        </p>
+        <p>Now that the Edit View displays as expected, you need to implement the HTTP-POST Edit Action method to save the changes made to the Album.</p>
+        <ol>
+          <li>Close the browser if needed, to return to the Visual Studio window. Open <b>StoreManagerController</b> from the <b>Controllers</b> folder.</li>
+          <li>Replace <b>HTTP-POST Edit</b> action method code with the following (note that the method that must be replaced is overloaded version that receives two parameters):<p>(Code Snippet – ASP.NET MVC 3 Helpers and Forms and Validation – Ex3 StoreManagerController HTTP-POST Edit action – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>        //        // POST: /StoreManager/Edit/5        [HttpPost]        public ActionResult Edit(int id, FormCollection collection)        {<b>            var album = storeDB.Albums.Single(a =&gt; a.AlbumId == id);</b><b>            try</b><b>            {</b><b>                // Save Album</b><b>                UpdateModel(album, "Album");</b><b>                storeDB.SaveChanges();</b><b></b><b>                return RedirectToAction("Index");</b><b>            }</b><b>            catch</b><b>            {</b><b>                // Error occurred - so redisplay the form</b><b>                var viewModel = new StoreManagerViewModel()</b><b>                {</b><b>                    Album = album,</b><b>                    Genres = new SelectList(storeDB.Genres.ToList(), "GenreId", "Name", album.GenreId),</b><b>                    Artists = new SelectList(storeDB.Artists.ToList(), "ArtistId", "Name", album.ArtistId)</b><b>                };</b><b>                return View(viewModel);</b><b>            }</b>        }</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This method will be executed when the user clicks the <b>Save</b> button of the View and performs an HTTP-POST of the form values back to the server to persist them in the database. The decorator <b>[HttpPost]</b> indicates that the method should be used for those HTTP-POST scenarios.<br />The method takes an <b>id</b> (read from the route parameter values) and a <b>FormCollection</b> (read from the HTML Form).<br /><br />The method will perform three steps:<br />1. Load the existing album object from the database with the <b>id</b> passed as parameter<br />2. Try to update the album using the values posted from the client, using the Controller’s built-in <b>UpdateModel</b> method. The <b>UpdateModel</b> method actually relies on the <b>ModelBinder</b> (MVC 2.0) to identify that you are actually updating a <b>StoreManagerViewModel</b> instance. Since that <b>ViewModel</b> holds an <b>Album </b>object and also 2 <b>SelectList</b>s for <b>Artists</b> and <b>Genres</b>, the key <b>“Album” </b>you are including as <b>UpdateModel</b>’s second parameter, refers to the need of updating the <b>“Album”</b> property of the Model.<br />3. Display results back to the user – either by redisplaying the form in case of an error, or by redirecting back to the list of albums in case of a successful update</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc282517425" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 10 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b><b>Edit</b> View page actually saves the updated Album data in the database.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Change the URL to <b>/StoreManager/Edit/388</b>. Change the Album title to <b>Greatest Hits Vol. 1</b> and click on <b>Save</b>. Verify that album’s title actually changed in the list of albums.<p><img src="images\b7d213a9-ee4c-4148-b2be-983c55cf478d.png" /></p><p><b>Figure 20</b><br /><i>Updating an Album</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e08c0110-867f-4def-aa89-2c17ee9397ce.html">Exercise 4: Adding a Create View</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

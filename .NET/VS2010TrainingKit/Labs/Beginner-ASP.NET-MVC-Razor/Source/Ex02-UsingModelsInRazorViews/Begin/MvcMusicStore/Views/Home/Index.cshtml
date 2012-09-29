@@ -1,0 +1,35 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+
+    <h2>This is the Home Page</h2>
+
+	@{
+		var myname = "MVC Music Store";
+		<div>
+			My name is @myname
+		</div>
+	}
+
+	@{
+		var now = DateTime.Now;
+		<text>
+			Current time is @now
+		</text>
+	}
+
+	<div>
+	@{
+		var engine = "Razor";
+		@: I'm using @engine engine
+	}
+	</div>
+
+	@*
+		<div>
+			I'm inside a comment
+		</div>
+	*@

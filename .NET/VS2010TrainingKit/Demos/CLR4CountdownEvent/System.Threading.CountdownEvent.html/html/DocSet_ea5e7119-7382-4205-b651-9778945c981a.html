@@ -1,0 +1,248 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+	  System.Threading.CountdownEvent Demo
+  </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Exploring the CountDownEvent Class</li>
+          <li>The CountDownEvent Class in Action</li>
+        </ol>
+        <a name="_Toc281387845" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Exploring the CountdownEvent Class</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>CountdownEventDemo.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>In the <b>View</b> menu, click <b>Object Browser</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>First, we will explore the <b>CountDownEvent</b> class to see its methods and properties. To do this, we will open the Object Browser and search for this class.</li>
+                <li>The CountdownEvent class is used to wait until a set of tasks are completed in order to continue the execution of a program. That is when the count reaches zero.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\334aaf2b-bf31-4156-ad12-877eedd01d36.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Enter <b>System.Threading.CountDownEvent </b>(<i>C#</i>) or just <b>CountDownEvent</b> (<i>VB</i>) in the Search box and press <b>Enter</b>.</li>
+                <li>Show the following methods and properties of the class.<ul><li>CountdownEvent (<i>C#</i>) / New (<i>VB</i>)</li><li>AddCount</li><li>Reset</li><li>Signal</li><li>Wait</li><li>CurrentCount</li><li>InitialCount</li></ul></li>
+                <li>Close the <b>Object Browser</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s see some members of the CountDownEvent class.</li>
+                <li>The AddCount method increments the current count by one or by the number specified in the parameter.</li>
+                <li>The CountdownEvent constructor creates a new instance of this class and it requires the initial count to be passed as a parameter.</li>
+                <li>The reset method resets the current count to the initial count.</li>
+                <li>The signal method block the current thread until the count reaches zero. Notice that a cancellation token can be passed as a parameter to this method.</li>
+                <li>The Wait method. It signals that one participant thread has arrived at the barrier and waits for all the other participants to reach the barrier as well. The method has several overloads for specifying the timeout, and the cancellation token.</li>
+                <li>Finally, it has some properties, <b>CurrentCount</b> and <b>InitialCount</b>. Each <b>CountdownEvent</b> instance stores both the current and the initial count. The initial count is stored in case a reset is run.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\499f5093-842c-4465-b2b1-d7a5ac3fbee9.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281387846" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – The CountdownEvent Class in Action</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, open the Program.cs file by double-clicking it.</li>
+                <li>Show the static Variables and the <b>Main</b> method.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>The scenario of this demo is a group of twenty customers that do shopping.</li>
+                <li>The customers are generated by the Range method of the Enumerable class.</li>
+                <li>The <b>CountdownEvent</b> instance is initialized with an initial counter of one. Then the counter is incremented using the <b>AddCount</b> method for each customer that want to buy things.</li>
+                <li>When a customer finishes shopping the Signal method is invoked to decrement the current count.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\0f824309-73ba-4cf2-848e-3cb6ec2c884a.png" />
+              </p>
+              <p>
+                <img src="images\64714b3e-0ba6-47a5-a77f-142f9fc5d25d.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll down, and show the <b>BuySomeStuff</b> method.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>This method simulates processing by using the <b>Thread.SpinWait</b> method. After this, it prints a message saying that the customer has finished shopping.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\15bfb65d-f9c2-4611-862c-3ff626f64762.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the end of the Main method and show the final two lines.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Notice that when all the twenty customers are working and additional Signal is sent. This is because the initial count started in one. After this, the <b>Wait</b> method is invoked. At this point, the application will wait until the counter is zero.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\cfebea97-33e9-45f2-a48f-148bd7d04202.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Press <b>F5</b> to run the application.</li>
+                <li>Press any key to close the application when it finishes.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s run the application.</li>
+                <li>Notice that when all customers finished shopping, and thus the current counter reaches zero, the application will continue to the end, printing the ending message.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\c01fb991-a921-430e-bf50-5cbc50aee627.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

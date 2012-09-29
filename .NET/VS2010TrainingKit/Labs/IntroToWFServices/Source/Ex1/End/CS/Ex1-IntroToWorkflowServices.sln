@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices.Data", "HRApplicationServices.Data\HRApplicationServices.Data.csproj", "{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices", "HRApplicationServices\HRApplicationServices.csproj", "{3B32412B-1737-4747-A82D-9F9DC9393112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices.Contracts", "HRApplicationServices.Contracts\HRApplicationServices.Contracts.csproj", "{A9859FE8-AF08-4D69-AACB-5518039DB61C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices.Activities", "HRApplicationServices.Activities\HRApplicationServices.Activities.csproj", "{A219CC00-2A84-4866-9C88-5B888DE8F5D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRClient", "HRClient\HRClient.csproj", "{45C223D7-0170-4AD6-9529-258A54514B9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3B32412B-1737-4747-A82D-9F9DC9393112} = {3B32412B-1737-4747-A82D-9F9DC9393112}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B32412B-1737-4747-A82D-9F9DC9393112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B32412B-1737-4747-A82D-9F9DC9393112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B32412B-1737-4747-A82D-9F9DC9393112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B32412B-1737-4747-A82D-9F9DC9393112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C223D7-0170-4AD6-9529-258A54514B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C223D7-0170-4AD6-9529-258A54514B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C223D7-0170-4AD6-9529-258A54514B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C223D7-0170-4AD6-9529-258A54514B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

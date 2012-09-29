@@ -1,0 +1,1152 @@
+﻿<#@ template language="VB" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.VB.ttinclude"#><#@
+ output extension=".vb"#><#
+' Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Dim code As New CodeGenerationTools(Me)
+Dim ef As New MetadataTools(Me)
+Dim loader As New MetadataLoader(Me)
+Dim region As New CodeRegion(Me)
+
+Dim fileManager As EntityFrameworkTemplateFileManager = EntityFrameworkTemplateFileManager.Create(Me)
+
+Dim inputFile As String = "AdventureWorksLT.edmx"
+Dim ItemCollection As EdmItemCollection = loader.CreateEdmItemCollection(inputFile)
+Dim namespaceName As String = code.VsNamespaceSuggestion()
+
+Dim container As EntityContainer = ItemCollection.GetItems(Of EntityContainer)().FirstOrDefault()
+If container Is Nothing Then
+    Return "' No EntityContainer exists in the model, so no code was generated"
+End If
+
+WriteHeader(fileManager)
+BeginNamespace(namespaceName, code)
+
+#>
+Partial <#=Accessibility.ForType(container)#> Class <#=code.Escape(container)#>
+    Inherits ObjectContext
+    Public Const SettingsConnectionString As String = "name=<#=container.Name#>"
+    Public Const ContainerName As String = "<#=container.Name#>"
+
+<#
+region.Begin("Constructors")
+#>
+
+    Public Sub New()
+        MyBase.New(SettingsConnectionString, ContainerName)
+        Initialize()
+    End Sub
+
+    Public Sub New(ByVal connectionString As String)
+        MyBase.New(connectionString, ContainerName)
+        Initialize()
+    End Sub
+
+    Public Sub New(ByVal connection As EntityConnection)
+        MyBase.New(connection, ContainerName)
+        Initialize()
+    End Sub
+
+    Private Sub Initialize()
+        ' Creating proxies requires the use of the ProxyDataContractResolver and
+        ' may allow lazy loading which can expand the loaded graph during serialization.
+        ContextOptions.ProxyCreationEnabled = False
+        AddHandler ObjectMaterialized, AddressOf HandleObjectMaterialized
+    End Sub
+
+    Private Sub HandleObjectMaterialized(ByVal sender As Object, ByVal e As ObjectMaterializedEventArgs)
+        Dim entity As IObjectWithChangeTracker = TryCast(e.Entity, IObjectWithChangeTracker)
+        If entity IsNot Nothing Then
+            Dim changeTrackingEnabled As Boolean = entity.ChangeTracker.ChangeTrackingEnabled
+            Try
+                entity.MarkAsUnchanged()
+            Finally
+                entity.ChangeTracker.ChangeTrackingEnabled = changeTrackingEnabled
+            End Try
+            Me.StoreReferenceKeyValues(entity)
+        End If
+    End Sub
+<#
+region.End()
+
+region.Begin("ObjectSet Properties")
+
+    For Each entitySet As EntitySet In container.BaseEntitySets.OfType(Of EntitySet)()
+#>
+
+    <#=Accessibility.ForReadOnlyProperty(entitySet)#> ReadOnly Property <#=code.Escape(entitySet)#>() As ObjectSet(Of <#=code.Escape(entitySet.ElementType)#>)
+        Get
+            If <#=code.FieldName(entitySet) #> Is Nothing Then
+                <#=code.FieldName(entitySet)#> = CreateObjectSet(Of <#=code.Escape(entitySet.ElementType)#>)("<#=entitySet.Name#>")
+            End If
+            Return <#=code.FieldName(entitySet)#>
+        End Get
+    End Property
+    Private <#=code.FieldName(entitySet)#> As ObjectSet(Of <#=code.Escape(entitySet.ElementType)#>)
+<#
+    Next
+
+region.End()
+
+region.Begin("Function Imports")
+
+    For Each edmFunction As EdmFunction In container.FunctionImports
+        Dim parameters As IEnumerable(Of FunctionImportParameter)  = FunctionImportParameter.Create(edmFunction.Parameters, code, ef)
+        Dim paramList As String = String.Join(", ", parameters.Select(Function(p) "ByVal " & p.FunctionParameterName & " As " & p.FunctionParameterType).ToArray())
+        If edmFunction.ReturnParameter Is Nothing Then
+            Continue For
+        End If
+        Dim returnTypeElement As String = code.Escape(ef.GetElementType(edmFunction.ReturnParameter.TypeUsage))
+#>
+    <#=Accessibility.ForMethod(edmFunction)#> Function <#=code.Escape(edmFunction)#>(<#=paramList#>) As ObjectResult(Of <#=returnTypeElement#>)
+<#
+        For Each parameter As FunctionImportParameter In parameters
+            If Not parameter.NeedsLocalVariable Then
+                Continue For
+            End If
+#>
+        Dim <#=parameter.LocalVariableName#> As ObjectParameter
+
+        If <#=If(parameter.IsNullableOfT, parameter.FunctionParameterName & ".HasValue", parameter.FunctionParameterName & " IsNot Nothing")#> Then
+            <#=parameter.LocalVariableName#> = New ObjectParameter("<#=parameter.EsqlParameterName#>", <#=parameter.FunctionParameterName#>)
+        Else
+            <#=parameter.LocalVariableName#> = New ObjectParameter("<#=parameter.EsqlParameterName#>", GetType(<#=parameter.RawClrTypeName#>))
+        End If
+<#
+        Next
+#>
+        Return MyBase.ExecuteFunction(Of <#=returnTypeElement#>)("<#=edmFunction.Name#>"<#=code.StringBefore(", ", String.Join(", ", parameters.Select(Function(p) p.ExecuteParameterName).ToArray()))#>)
+    End Function
+<#
+    Next
+
+region.End()
+#>
+End Class
+<#
+EndNamespace(namespaceName)
+
+fileManager.StartNewFile(Path.GetFileNameWithoutExtension(Host.TemplateFile) & ".Extensions.vb")
+BeginNamespace(namespaceName, code)
+WriteApplyChanges(code)
+EndNamespace(namespaceName)
+
+fileManager.Process()
+#>
+<#+
+Private Sub WriteHeader(ByVal fileManager As EntityFrameworkTemplateFileManager, ByVal ParamArray extraUsings As String())
+    fileManager.StartHeader()
+#>
+'------------------------------------------------------------------------------
+' <auto-generated>
+'     This code was generated from a template.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </auto-generated>
+'------------------------------------------------------------------------------
+
+Imports System
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Data.Common
+Imports System.Data.EntityClient
+Imports System.Data.Metadata.Edm
+Imports System.Data.Objects.DataClasses
+Imports System.Data.Objects
+Imports System.Data
+Imports System.Diagnostics
+Imports System.Globalization
+Imports System.Linq
+Imports System.Runtime.CompilerServices
+<#=String.Join(String.Empty, extraUsings.Select(Function(u) "Imports " & u & Environment.NewLine).ToArray())#>
+<#+
+    fileManager.EndBlock()
+End Sub
+
+Private Sub BeginNamespace(ByVal namespaceName As String, ByVal code As CodeGenerationTools)
+    Dim region As CodeRegion = New CodeRegion(Me)
+    If Not String.IsNullOrEmpty(namespaceName) Then
+#>
+Namespace <#=code.EscapeNamespace(namespaceName)#>
+<#+
+        PushIndent(CodeRegion.GetIndent(1))
+    End If
+End Sub
+
+Private Sub EndNamespace(ByVal namespaceName As String)
+    If Not String.IsNullOrEmpty(namespaceName) Then
+        PopIndent()
+#>
+End Namespace
+<#+
+    End If
+End Sub
+
+Private Sub WriteApplyChanges(ByVal code As CodeGenerationTools)
+#>
+Public Module SelfTrackingEntitiesContextExtensions
+    ''' <summary>
+    ''' ApplyChanges takes the changes in a connected set of entities and applies them to an ObjectContext.
+    ''' </summary>
+    ''' <typeparam name="TEntity">Expected type of the ObjectSet</typeparam>
+    ''' <param name="objectSet">The ObjectSet referencing the ObjectContext to which changes will be applied.</param>
+    ''' <param name="entity">The entity serving as the entry point of the object graph that contains changes.</param>
+    <Extension()>
+    Public Sub ApplyChanges(Of TEntity As {Class, IObjectWithChangeTracker})(ByVal objectSet As ObjectSet(Of TEntity), ByVal entity As TEntity)
+        If objectSet Is Nothing Then
+            Throw New ArgumentNullException("objectSet")
+        End If
+
+        objectSet.Context.ApplyChanges(Of TEntity)(objectSet.EntitySet.EntityContainer.Name & "." & objectSet.EntitySet.Name, entity)
+    End Sub
+
+    ''' <summary>
+    ''' ApplyChanges takes the changes in a connected set of entities and applies them to an ObjectContext.
+    ''' </summary>
+    ''' <typeparam name="TEntity">Expected type of the EntitySet</typeparam>
+    ''' <param name="context">The ObjectContext to which changes will be applied.</param>
+    ''' <param name="entitySetName">The EntitySet name of the entity.</param>
+    ''' <param name="entity">The entity serving as the entry point of the object graph that contains changes.</param>
+    <Extension()>
+    Public Sub ApplyChanges(Of TEntity As IObjectWithChangeTracker)(ByVal context As ObjectContext, ByVal entitySetName As String, ByVal entity As TEntity)
+        If context Is Nothing Then
+            Throw New ArgumentNullException("context")
+        End If
+
+        If String.IsNullOrEmpty(entitySetName) Then
+            Throw New ArgumentException("String parameter cannot be null or empty.", "entitySetName")
+        End If
+
+        If entity Is Nothing Then
+            Throw New ArgumentNullException("entity")
+        End If
+
+
+        Dim lazyLoadingSetting As Boolean = context.ContextOptions.LazyLoadingEnabled
+        Try
+            context.ContextOptions.LazyLoadingEnabled = False
+
+            Dim entityIndex As EntityIndex = AddHelper.AddAllEntities(context, entitySetName, entity)
+            Dim allRelationships As New RelationshipSet(context, entityIndex.AllEntities)
+
+            ' Handle Initial Entity State
+
+            For Each changedEntity As IObjectWithChangeTracker In entityIndex.AllEntities.Where(Function(x) x.ChangeTracker.State = ObjectState.Deleted)
+                HandleDeletedEntity(context, entityIndex, allRelationships, changedEntity)
+            Next
+
+            For Each changedEntity As IObjectWithChangeTracker In entityIndex.AllEntities.Where(Function(x) x.ChangeTracker.State <> ObjectState.Deleted)
+                HandleEntity(context, entityIndex, allRelationships, changedEntity)
+            Next
+
+            'Loop through each object state entry
+
+            For Each changedEntity As IObjectWithChangeTracker In entityIndex.AllEntities
+                Dim entry As ObjectStateEntry = context.ObjectStateManager.GetObjectStateEntry(changedEntity)
+
+                Dim entityType As EntityType = context.MetadataWorkspace.GetCSpaceEntityType(changedEntity.GetType())
+
+                For Each navProp As NavigationProperty In entityType.NavigationProperties
+                    Dim relatedEnd As RelatedEnd = entry.GetRelatedEnd(navProp.Name)
+                    If Not DirectCast(relatedEnd.RelationshipSet.ElementType, AssociationType).IsForeignKey Then
+                        ApplyChangesToIndependentAssociation(context, DirectCast(changedEntity, IObjectWithChangeTracker), entry, navProp, relatedEnd, allRelationships)
+                    End If
+                Next
+            Next
+
+            ' Change all the remaining relationships to the appropriate state
+            For Each relationship As RelationshipWrapper In allRelationships
+                context.ObjectStateManager.ChangeRelationshipState(relationship.End0, relationship.End1, relationship.AssociationSet.ElementType.FullName, relationship.AssociationEndMembers(1).Name, relationship.State)
+            Next
+        Finally
+            context.ContextOptions.LazyLoadingEnabled = lazyLoadingSetting
+        End Try
+    End Sub
+
+    Private Sub ApplyChangesToIndependentAssociation(
+        ByVal context As ObjectContext,
+        ByVal changedEntity As IObjectWithChangeTracker,
+        ByVal entry As ObjectStateEntry,
+        ByVal navProp As NavigationProperty,
+        ByVal relatedEnd As IRelatedEnd,
+        ByVal allRelationships As RelationshipSet)
+
+        Dim changeTracker As ObjectChangeTracker = changedEntity.ChangeTracker
+
+        If changeTracker.State = ObjectState.Added Then
+            ' Relationships should remain added so remove them from the list of allRelationships
+            For Each relatedEntity As Object In relatedEnd
+                Dim addedRelationshipEntry As ObjectStateEntry = context.ObjectStateManager.ChangeRelationshipState(changedEntity, relatedEntity, navProp.Name, EntityState.Added)
+
+                allRelationships.Remove(addedRelationshipEntry)
+            Next
+        Else
+            If navProp.ToEndMember.RelationshipMultiplicity = RelationshipMultiplicity.Many Then
+                'Handle removal to FixupCollections
+                Dim collectionPropertyChanges As ObjectList = Nothing
+                If changeTracker.ObjectsRemovedFromCollectionProperties.TryGetValue(navProp.Name, collectionPropertyChanges) Then
+                    For Each removedEntityFromAssociation As Object In collectionPropertyChanges
+                        Dim deletedRelationshipEntry As ObjectStateEntry = context.ObjectStateManager.ChangeRelationshipState(changedEntity, removedEntityFromAssociation, navProp.Name, EntityState.Deleted)
+
+                        allRelationships.Remove(deletedRelationshipEntry)
+                    Next
+                End If
+
+                'Handle addition to FixupCollection
+                If changeTracker.ObjectsAddedToCollectionProperties.TryGetValue(navProp.Name, collectionPropertyChanges) Then
+                    For Each addedEntityFromAssociation As Object In collectionPropertyChanges
+                        Dim addedRelationshipEntry As ObjectStateEntry = context.ObjectStateManager.ChangeRelationshipState(changedEntity, addedEntityFromAssociation, navProp.Name, EntityState.Added)
+
+                        allRelationships.Remove(addedRelationshipEntry)
+                    Next
+                End If
+            Else
+
+                ' Handle original relationship values
+                Dim originalReferenceValue As Object = Nothing
+                If changeTracker.OriginalValues.TryGetValue(navProp.Name, originalReferenceValue) Then
+                    If originalReferenceValue IsNot Nothing Then
+                        'Capture the deletion of association
+                        Dim deletedRelationshipEntry As ObjectStateEntry = context.ObjectStateManager.ChangeRelationshipState(entry.Entity, originalReferenceValue, navProp.Name, EntityState.Deleted)
+
+                        allRelationships.Remove(deletedRelationshipEntry)
+                    End If
+
+                    'Capture the Addition of association
+                    Dim currentReferenceValue As Object = Nothing
+                    For Each o As Object In relatedEnd
+                        currentReferenceValue = o
+                        Exit For
+                    Next
+                    If currentReferenceValue IsNot Nothing Then
+                        Dim addedRelationshipEntry As ObjectStateEntry = context.ObjectStateManager.ChangeRelationshipState(changedEntity, currentReferenceValue, navProp.Name, EntityState.Added)
+
+                        allRelationships.Remove(addedRelationshipEntry)
+                        ' if the current value of the reference is null, then the user must set the entity reference to null
+                        ' which is already being handled by the deletion of the relationship
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+
+    ' Extracts the relationship key information from the ExtendedProperties and OriginalValues records of each ObjectChangeTracker
+    ' This is done by:
+    '  1. Creating any existing relationship specified in the ExtendedProperties
+    '  2. Determine if there was a previous relationship, and if there was create a deleted relationship between the entity and the previous entity or key value
+    Private Sub HandleRelationshipKeys(ByVal context As ObjectContext, ByVal entityIndex As EntityIndex, ByVal allRelationships As RelationshipSet, ByVal entity As IObjectWithChangeTracker)
+        Dim changeTracker As ObjectChangeTracker = entity.ChangeTracker
+        If changeTracker.State = ObjectState.Unchanged OrElse changeTracker.State = ObjectState.Modified OrElse changeTracker.State = ObjectState.Deleted Then
+            Dim entry As ObjectStateEntry = context.ObjectStateManager.GetObjectStateEntry(entity)
+            Dim entityType As EntityType = context.MetadataWorkspace.GetCSpaceEntityType(entity.GetType())
+            Dim relationshipManager As RelationshipManager = context.ObjectStateManager.GetRelationshipManager(entity)
+
+            For Each entityReference As EntityReference In EnumerateSaveReferences(relationshipManager)
+                Dim associationSet As AssociationSet = DirectCast(entityReference.RelationshipSet, AssociationSet)
+                Dim fromEnd As AssociationEndMember = associationSet.AssociationSetEnds(entityReference.SourceRoleName).CorrespondingAssociationEndMember
+                Dim toEnd As AssociationEndMember = associationSet.AssociationSetEnds(entityReference.TargetRoleName).CorrespondingAssociationEndMember
+
+                ' Find if there is a NavigationProperty for this candidate
+                Dim navigationProperty As NavigationProperty = entityType.NavigationProperties.SingleOrDefault( _
+                    Function(x) Equals(x.RelationshipType, associationSet.ElementType) AndAlso _
+                        Equals(x.FromEndMember, fromEnd) AndAlso _
+                        Equals(x.ToEndMember, toEnd))
+
+                ' Only handle relationship keys in one of these cases
+                ' 1. There is no navigation property
+                ' 2. The navigation property has a null current reference value null there are no removes or adds
+                ' 3. The navigation property has a current reference value, but there is no remove
+
+                Dim currentKey As EntityKey = GetSavedReferenceKey(entityIndex, entityReference, entity, navigationProperty, changeTracker.ExtendedProperties)
+
+                ' Get any original value from the change tracking information
+                Dim originalValue As Object = Nothing
+                Dim originalKey As EntityKey = Nothing
+                Dim hasOriginalValue As Boolean = False
+                If changeTracker.OriginalValues IsNot Nothing Then
+                    ' Try to get the original value from the NavigationProperty first
+                    If navigationProperty IsNot Nothing Then
+                        hasOriginalValue = changeTracker.OriginalValues.TryGetValue(navigationProperty.Name, originalValue)
+                    End If
+                    ' Try to get the original value from the reference key second
+                    If Not hasOriginalValue OrElse originalValue Is Nothing Then
+                        originalKey = GetSavedReferenceKey(entityIndex, entityReference, entity, navigationProperty, changeTracker.OriginalValues)
+                    End If
+                End If
+
+                ' Create the current relationship
+                If currentKey IsNot Nothing Then
+                    ' If the key is for a deleted entity, move that key to an originalValue and fixup the entities key values
+                    ' Otherwise create a new relationship
+                    Dim currentEntry As ObjectStateEntry = Nothing
+                    If context.ObjectStateManager.TryGetObjectStateEntry(currentKey, currentEntry) AndAlso currentEntry.Entity IsNot Nothing AndAlso currentEntry.State = EntityState.Deleted Then
+                        entityReference.EntityKey = Nothing
+                        MoveSavedReferenceKey(entityReference, entity, navigationProperty, changeTracker.ExtendedProperties, changeTracker.OriginalValues)
+                        originalKey = currentKey
+                    Else
+                        CreateRelationship(context, entityReference, entry.EntityKey, currentKey, If(originalKey Is Nothing, EntityState.Unchanged, EntityState.Added))
+                    End If
+                Else
+                    ' Find the current key
+                    ' Cannot get the EntityKey directly because this is null when it points to an Added entity
+                    currentKey = entityReference.GetCurrentEntityKey(context)
+                End If
+
+                ' Create the original relationship
+                If originalKey IsNot Nothing Then
+                    ' If the key is for a deleted entity, remember to create a deleted relationship,
+                    ' otherwise use the entityReference to setup the deleted relationship
+                    Dim originalEntry As ObjectStateEntry = Nothing
+                    Dim deletedRelationshipEntry As ObjectStateEntry = Nothing
+                    If context.ObjectStateManager.TryGetObjectStateEntry(originalKey, originalEntry) AndAlso originalEntry.Entity IsNot Nothing AndAlso originalEntry.State = EntityState.Deleted Then
+                        allRelationships.Add(entityReference, entry.Entity, originalEntry.Entity, EntityState.Deleted)
+                    Else
+                        ' To create a deleted relationship to a key, first detach the existing relationship between entry and currentKey
+                        Dim currentRelationshipState As EntityState = DetachRelationship(context, entityReference, entry, currentKey)
+
+                        ' If the relationship is 1 to 0..1, detach the relationship from currentKey to its target (targetKey)
+                        Dim targetRelationshipState As EntityState = EntityState.Detached
+                        Dim targetReference As EntityReference = Nothing
+                        Dim targetKey As EntityKey = Nothing
+                        If originalEntry IsNot Nothing AndAlso
+                           originalEntry.Entity IsNot Nothing AndAlso
+                           originalEntry.RelationshipManager IsNot Nothing AndAlso
+                           associationSet.AssociationSetEnds(fromEnd.Name).CorrespondingAssociationEndMember.RelationshipMultiplicity <> RelationshipMultiplicity.Many Then
+                            targetReference = TryCast(originalEntry.RelationshipManager.GetRelatedEnd(entityReference.RelationshipName, entityReference.SourceRoleName), EntityReference)
+                            targetKey = targetReference.GetCurrentEntityKey(context)
+                            If targetKey IsNot Nothing Then
+                                targetRelationshipState = DetachRelationship(context, targetReference, originalEntry, targetKey)
+                            End If
+                        End If
+
+                        ' Create the deleted relationship between entry and originalKey
+                        deletedRelationshipEntry = CreateRelationship(context, entityReference, entry.EntityKey, originalKey, EntityState.Deleted)
+
+                        ' Set the previous relationship between entry and currentKey back
+                        CreateRelationship(context, entityReference, entry.EntityKey, currentKey, currentRelationshipState)
+
+                        ' Set the previous relationship between originalEntry and targetKey back
+                        If targetKey IsNot Nothing Then
+                            CreateRelationship(context, targetReference, originalEntry.EntityKey, targetKey, targetRelationshipState)
+                        End If
+                    End If
+                    If deletedRelationshipEntry IsNot Nothing Then
+                        ' Remove the deleted relationship from those that need to be processed later in ApplyChanges
+                        allRelationships.Remove(deletedRelationshipEntry)
+                    End If
+                ElseIf currentKey Is Nothing AndAlso originalValue IsNot Nothing AndAlso entityReference.IsDependentEndOfReferentialConstraint() Then
+                    ' the graph won't have this hooked up because there is no current value, but there is an original value,
+                    ' so the relationship processing code will want to delete a relationship.
+                    ' we can add this one so it has a relationship to change to deleted.
+                    context.ObjectStateManager.ChangeRelationshipState(entry.Entity, originalValue, entityReference.RelationshipName, entityReference.TargetRoleName, EntityState.Added)
+                End If
+            Next
+        End If
+    End Sub
+
+    Private Function CreateRelationship(ByVal context As ObjectContext, ByVal entityReference As EntityReference, ByVal fromKey As EntityKey, ByVal toKey As EntityKey, ByVal state As EntityState) As ObjectStateEntry
+        If state <> EntityState.Detached Then
+            Dim associationSet As AssociationSet = DirectCast(entityReference.RelationshipSet, AssociationSet)
+            Dim fromEnd As AssociationEndMember = associationSet.AssociationSetEnds(entityReference.SourceRoleName).CorrespondingAssociationEndMember
+            Dim toEnd As AssociationEndMember = associationSet.AssociationSetEnds(entityReference.TargetRoleName).CorrespondingAssociationEndMember
+
+            ' set the relationship to the original relationship in the unchanged state
+            Debug.Assert(toKey IsNot Nothing, "why/how would we do a delete with a null originalKey?")
+
+            If toKey.IsTemporary Then
+                ' Clear any existing relationship
+                entityReference.EntityKey = Nothing
+
+                ' If the target entity is Added, use Add on RelatedEnd
+                Dim targetEntry As ObjectStateEntry = Nothing
+                context.ObjectStateManager.TryGetObjectStateEntry(toKey, targetEntry)
+                Debug.Assert(targetEntry IsNot Nothing, "Should have found the state entry")
+                DirectCast(entityReference, IRelatedEnd).Add(targetEntry.Entity)
+            Else
+                entityReference.EntityKey = toKey
+            End If
+
+            Dim relationshipEntry As ObjectStateEntry = Nothing
+            Dim found As Boolean = context.TryGetObjectStateEntry(fromKey, toKey, associationSet, fromEnd, toEnd, relationshipEntry)
+            Debug.Assert(found, "Did not find the created relationship.")
+
+            Select Case state
+                Case EntityState.Added
+                Case EntityState.Unchanged
+                    relationshipEntry.AcceptChanges()
+                Case EntityState.Deleted
+                    relationshipEntry.AcceptChanges()
+                    entityReference.EntityKey = Nothing
+            End Select
+            Return relationshipEntry
+        End If
+        Return Nothing
+    End Function
+
+    Private Function DetachRelationship(ByVal context As ObjectContext, ByVal entityReference As EntityReference, ByVal fromEntry As ObjectStateEntry, ByVal toKey As EntityKey) As EntityState
+        Dim currentRelationshipState As EntityState = EntityState.Detached
+
+        If toKey IsNot Nothing Then
+            Dim associationSet As AssociationSet = DirectCast(entityReference.RelationshipSet, AssociationSet)
+            Dim fromEnd As AssociationEndMember = associationSet.AssociationSetEnds(entityReference.SourceRoleName).CorrespondingAssociationEndMember
+            Dim toEnd As AssociationEndMember = associationSet.AssociationSetEnds(entityReference.TargetRoleName).CorrespondingAssociationEndMember
+
+            Dim currentRelationshipEntry As ObjectStateEntry = Nothing
+
+            If context.TryGetObjectStateEntry(fromEntry.EntityKey, toKey, associationSet, fromEnd, toEnd, currentRelationshipEntry) Then
+                currentRelationshipState = currentRelationshipEntry.State
+
+                entityReference.EntityKey = Nothing
+                If currentRelationshipEntry.State = EntityState.Deleted Then
+                    currentRelationshipEntry.AcceptChanges()
+                End If
+                Debug.Assert(currentRelationshipEntry.State = EntityState.Detached, "relationship was not detached")
+            End If
+        End If
+        Return currentRelationshipState
+    End Function
+
+    Private Function CreateReferenceKeyLookup(ByVal keyMemberName As String, ByVal reference As EntityReference, ByVal navigationProperty As NavigationProperty) As String
+        ' use the more usable navigation property name to qualify the member
+        ' if available
+        If navigationProperty IsNot Nothing Then
+            Return String.Format(CultureInfo.InvariantCulture, "{0}.{1}", navigationProperty.Name, keyMemberName)
+        Else
+            Return String.Format(CultureInfo.InvariantCulture, "Navigate({0}.{1}).{2}", reference.RelationshipSet.ElementType.FullName, reference.TargetRoleName, keyMemberName)
+        End If
+    End Function
+
+    ' retrieves the key corresponding to the passed in EntityReference
+    ' these keys can be set during the ObjectMaterialized event or through relationship fixup
+    Private Function GetSavedReferenceKey(
+        ByVal entityIndex As EntityIndex,
+        ByVal reference As EntityReference,
+        ByVal entity As Object,
+        ByVal navigationProperty As NavigationProperty,
+        ByVal values As IDictionary(Of String, Object)) As EntityKey
+
+        Debug.Assert(navigationProperty Is Nothing OrElse Equals(reference.RelationshipSet.ElementType, navigationProperty.RelationshipType), "the reference and navigationProperty should correspond")
+
+        Dim entitySet As EntitySet = DirectCast(reference.RelationshipSet, AssociationSet).AssociationSetEnds(reference.TargetRoleName).EntitySet
+
+        Dim foundKeyMembers As New List(Of EntityKeyMember)(1)
+        Dim foundNone As Boolean = True
+        Dim missingSome As Boolean = False
+        For Each keyMember As EdmMember In entitySet.ElementType.KeyMembers
+            Dim lookupKey As String = CreateReferenceKeyLookup(keyMember.Name, reference, navigationProperty)
+            Dim value As Object = Nothing
+            If values.TryGetValue(lookupKey, value) Then
+                foundKeyMembers.Add(New EntityKeyMember(keyMember.Name, value))
+                foundNone = False
+            Else
+                missingSome = True
+            End If
+        Next
+
+        If foundNone Then
+            ' we didn't find a key
+            Return Nothing
+        ElseIf missingSome Then
+            Throw New InvalidOperationException(
+                String.Format(
+                    CultureInfo.CurrentCulture,
+                    "The OriginalValues or ExtendedProperties collections on the type '{0}' contained only a partial key to satisfy the relationship '{1}' targeting the role '{2}'",
+                    entity.GetType().FullName,
+                    reference.RelationshipName,
+                    reference.TargetRoleName))
+        End If
+
+        Return entityIndex.ConvertEntityKey(New EntityKey(reference.GetEntitySetName(), foundKeyMembers))
+    End Function
+
+    ' Moves the key corresponding to the passed in EntityReference from a source collection to a target collection
+    Private Sub MoveSavedReferenceKey(
+        ByVal reference As EntityReference,
+        ByVal entity As Object,
+        ByVal navigationProperty As NavigationProperty,
+        ByVal sourceValues As IDictionary(Of String, Object),
+        ByVal targetValues As IDictionary(Of String, Object))
+
+        Debug.Assert(navigationProperty Is Nothing OrElse Equals(reference.RelationshipSet.ElementType, navigationProperty.RelationshipType), "the reference and navigationProperty should coorospond")
+
+        Dim entitySet As EntitySet = DirectCast(reference.RelationshipSet, AssociationSet).AssociationSetEnds(reference.TargetRoleName).EntitySet
+
+        Dim missingSome As Boolean = False
+        For Each keyMember As EdmMember In entitySet.ElementType.KeyMembers
+            Dim lookupKey As String = CreateReferenceKeyLookup(keyMember.Name, reference, navigationProperty)
+            Dim value As Object = Nothing
+            If sourceValues.TryGetValue(lookupKey, value) Then
+                If targetValues.ContainsKey(lookupKey) Then
+                    targetValues(lookupKey) = value
+                Else
+                    targetValues.Add(lookupKey, value)
+                End If
+                sourceValues.Remove(lookupKey)
+            Else
+                missingSome = True
+            End If
+        Next
+        If missingSome Then
+            Throw New InvalidOperationException(
+                String.Format(
+                    CultureInfo.CurrentCulture,
+                    " The OriginalValues or ExtendedProperties collections on the type '{0}' contained only a partial key to satisfy the relationship '{1}' targeting the role '{2}'",
+                    entity.GetType().FullName,
+                    reference.RelationshipName,
+                    reference.TargetRoleName))
+        End If
+    End Sub
+
+    Private Function EnumerateSaveReferences(ByVal manager As RelationshipManager) As IEnumerable(Of EntityReference)
+        Return manager.GetAllRelatedEnds().OfType(Of EntityReference)().Where(
+            Function(er) er.RelationshipSet.ElementType.RelationshipEndMembers(er.SourceRoleName).RelationshipMultiplicity <> RelationshipMultiplicity.One AndAlso _
+                Not DirectCast(er.RelationshipSet, AssociationSet).ElementType.IsForeignKey)
+    End Function
+
+    <Extension()>
+    Friend Sub StoreReferenceKeyValues(ByVal context As ObjectContext, ByVal entity As IObjectWithChangeTracker)
+        If entity Is Nothing Then
+            Throw New ArgumentNullException("entity")
+        End If
+
+        Dim entry As ObjectStateEntry = Nothing
+        If Not context.ObjectStateManager.TryGetObjectStateEntry(entity, entry) Then
+            ' must be a no tracking query, the reference key info won't be available
+            Return
+        End If
+
+        Dim relationshipManager As RelationshipManager = entry.RelationshipManager
+        Dim entityType As EntityType = context.MetadataWorkspace.GetCSpaceEntityType(entity.GetType())
+        For Each loopEntityReference As EntityReference In EnumerateSaveReferences(relationshipManager)
+            Dim entityReference As EntityReference = loopEntityReference
+            Dim navigationProperty As NavigationProperty = entityType.NavigationProperties.FirstOrDefault( _
+                Function(n) n.RelationshipType Is entityReference.RelationshipSet.ElementType AndAlso _
+                    n.FromEndMember.Name = entityReference.SourceRoleName AndAlso _
+                    n.ToEndMember.Name = entityReference.TargetRoleName)
+
+            Dim value As Object = entityReference.GetValue()
+            If (navigationProperty Is Nothing OrElse value Is Nothing) AndAlso entityReference.EntityKey IsNot Nothing Then
+                For Each item As EntityKeyMember In entityReference.EntityKey.EntityKeyValues
+                    Dim key As String = CreateReferenceKeyLookup(item.Key, entityReference, navigationProperty)
+                    entity.ChangeTracker.ExtendedProperties.Add(key, item.Value)
+                Next
+            End If
+        Next
+    End Sub
+
+    Private Sub HandleEntity(ByVal context As ObjectContext, ByVal entityIndex As EntityIndex, ByVal allRelationships As RelationshipSet, ByVal entity As IObjectWithChangeTracker)
+        ChangeEntityStateBasedOnObjectState(context, entity)
+        HandleRelationshipKeys(context, entityIndex, allRelationships, entity)
+        UpdateOriginalValues(context, entity)
+    End Sub
+
+    Private Sub HandleDeletedEntity(ByVal context As ObjectContext, ByVal entityIndex As EntityIndex, ByVal allRelationships As RelationshipSet, ByVal entity As IObjectWithChangeTracker)
+        HandleRelationshipKeys(context, entityIndex, allRelationships, entity)
+        ChangeEntityStateBasedOnObjectState(context, entity)
+        UpdateOriginalValues(context, entity)
+    End Sub
+
+    Private Sub UpdateOriginalValues(ByVal context As ObjectContext, ByVal entity As IObjectWithChangeTracker)
+        If entity.ChangeTracker.State = ObjectState.Unchanged OrElse entity.ChangeTracker.State = ObjectState.Added OrElse entity.ChangeTracker.OriginalValues Is Nothing Then
+            ' nothing to do here
+            Exit Sub
+        End If
+
+        ' we only need/want to deal with scalar and complex properties
+
+        Dim entry As ObjectStateEntry = context.ObjectStateManager.GetObjectStateEntry(entity)
+        Dim originalValueRecord As OriginalValueRecord = entry.GetUpdatableOriginalValues()
+        Dim entityType As EntityType = context.MetadataWorkspace.GetCSpaceEntityType(entity.GetType())
+
+        ' walk through each property and see if we have an original value for it
+        ' set it if we do. Walk down through ComplexType properties to set original values
+        ' for each of them also
+        '
+        ' it is expected that the original values will be sparse because we are trying
+        ' to only capture originals for the ones we are required to have (concurency, sproc, condition, more?)
+        For Each edmProperty As EdmProperty In entityType.Properties
+            Dim value As Object = Nothing
+            If TypeOf edmProperty.TypeUsage.EdmType Is PrimitiveType AndAlso entity.ChangeTracker.OriginalValues.TryGetValue(edmProperty.Name, value) Then
+                originalValueRecord.SetValue(edmProperty, value)
+            ElseIf TypeOf edmProperty.TypeUsage.EdmType Is ComplexType Then
+                Dim complexOriginalValues As OriginalValueRecord = originalValueRecord.GetOriginalValueRecord(edmProperty.Name)
+                UpdateOriginalValues(DirectCast(edmProperty.TypeUsage.EdmType, ComplexType), entity.GetType().FullName, edmProperty.Name, entity.ChangeTracker.OriginalValues, complexOriginalValues)
+            End If
+        Next
+    End Sub
+
+    Private Sub UpdateOriginalValues(
+        ByVal complexType As ComplexType,
+        ByVal entityTypeName As String,
+        ByVal propertyPathToType As String,
+        ByVal originalValueSource As IDictionary(Of String, Object),
+        ByVal complexOriginalValueRecord As OriginalValueRecord)
+
+        ' Note that complexOriginalValueRecord may be null
+        ' a null complexOriginalValueRecord will only occur if a null reference is assigned
+        ' to a ComplexType property and then given to ApplyChanges.
+
+        ' walk through each property and see if we have an original value for it
+        ' set it if we do. Walk down through ComplexType properties to set original values
+        ' for each of them also
+        For Each edmProperty As EdmProperty In complexType.Properties
+            Dim value As Object = Nothing
+            Dim propertyPath As String = String.Format(CultureInfo.InvariantCulture, "{0}.{1}", propertyPathToType, edmProperty.Name)
+            If TypeOf edmProperty.TypeUsage.EdmType Is PrimitiveType AndAlso originalValueSource.TryGetValue(propertyPath, value) Then
+                If complexOriginalValueRecord IsNot Nothing Then
+                    complexOriginalValueRecord.SetValue(edmProperty, value)
+                ElseIf value IsNot Nothing Then
+                    Debug.Assert(complexOriginalValueRecord Is Nothing, "we only throw when the value is not null and the recored is null")
+                    Throw New InvalidOperationException(
+                        String.Format(
+                            CultureInfo.CurrentCulture,
+                            "Can not set the original value on the object stored in the property '{0}' on the type '{1}' because the property is null.",
+                            propertyPathToType,
+                            entityTypeName))
+                End If
+            ElseIf TypeOf edmProperty.TypeUsage.EdmType Is ComplexType Then
+                Dim nestedOriginalValueRecord As OriginalValueRecord = Nothing
+                If complexOriginalValueRecord IsNot Nothing Then
+                    nestedOriginalValueRecord = complexOriginalValueRecord.GetOriginalValueRecord(edmProperty.Name)
+                End If
+                ' recurse down the chain of complex types...
+                UpdateOriginalValues(DirectCast(edmProperty.TypeUsage.EdmType, ComplexType), entityTypeName, propertyPath, originalValueSource, nestedOriginalValueRecord)
+            End If
+        Next
+    End Sub
+
+    <Extension()>
+    Private Function GetOriginalValueRecord(ByVal record As OriginalValueRecord, ByVal name As String) As OriginalValueRecord
+        Dim ordinal As Integer = record.GetOrdinal(name)
+        If Not record.IsDBNull(ordinal) Then
+            Return TryCast(record.GetDataRecord(ordinal), OriginalValueRecord)
+        Else
+            Return Nothing
+        End If
+    End Function
+
+    <Extension()>
+    Private Sub SetValue(ByVal record As OriginalValueRecord, ByVal edmProperty As EdmProperty, ByVal value As Object)
+        If value Is Nothing Then
+            Dim entityClrType As Type = DirectCast(edmProperty.TypeUsage.EdmType, PrimitiveType).ClrEquivalentType
+            If entityClrType.IsValueType AndAlso Not (entityClrType.IsGenericType AndAlso GetType(Nullable(Of )) Is entityClrType.GetGenericTypeDefinition()) Then
+                ' Skip setting null original values on non-nullable CLR types because the ObjectStateEntry won't allow this
+                Return
+            End If
+        End If
+
+        Dim ordinal As Integer = record.GetOrdinal(edmProperty.Name)
+        record.SetValue(ordinal, value)
+    End Sub
+
+    Private Sub ChangeEntityStateBasedOnObjectState(ByVal context As ObjectContext, ByVal entity As IObjectWithChangeTracker)
+        Select Case entity.ChangeTracker.State
+            Case (ObjectState.Added)
+                ' No-op: the state entry is already marked as added
+                Debug.Assert(context.ObjectStateManager.GetObjectStateEntry(entity).State = EntityState.Added, "State should have been Added")
+            Case (ObjectState.Unchanged)
+                context.ObjectStateManager.ChangeObjectState(entity, EntityState.Unchanged)
+            Case (ObjectState.Modified)
+                context.ObjectStateManager.ChangeObjectState(entity, EntityState.Modified)
+            Case (ObjectState.Deleted)
+                context.ObjectStateManager.ChangeObjectState(entity, EntityState.Deleted)
+        End Select
+    End Sub
+
+    <Extension()>
+    Private Function GetCSpaceEntityType(ByVal workspace As MetadataWorkspace, ByVal type As Type) As EntityType
+        Dim ospaceEntityType As EntityType = Nothing
+        Dim cspaceEntityType As StructuralType = Nothing
+        Dim resultEntityType As EntityType = Nothing
+        If workspace.TryGetItem(Of EntityType)(type.FullName, DataSpace.OSpace, ospaceEntityType) Then
+            If workspace.TryGetEdmSpaceType(ospaceEntityType, cspaceEntityType) Then
+                resultEntityType = TryCast(cspaceEntityType, EntityType)
+            End If
+        End If
+        If resultEntityType Is Nothing Then
+            Throw New ArgumentException(String.Format(CultureInfo.CurrentCulture, "Unable to find a CSpace type for type {0}", type.FullName))
+        End If
+        Return resultEntityType
+    End Function
+
+    <Extension()>
+    Private Function GetValue(ByVal entityReference As System.Data.Objects.DataClasses.EntityReference) As Object
+        For Each value As Object In entityReference
+            Return value
+        Next
+        Return Nothing
+    End Function
+
+    <Extension()>
+    Private Function GetCurrentEntityKey(ByVal entityReference As System.Data.Objects.DataClasses.EntityReference, ByVal context As ObjectContext) As EntityKey
+        Dim currentKey As EntityKey = Nothing
+        Dim currentValue As Object = entityReference.GetValue()
+        If currentValue IsNot Nothing Then
+            Dim relatedEntry As ObjectStateEntry = context.ObjectStateManager.GetObjectStateEntry(currentValue)
+            currentKey = relatedEntry.EntityKey
+        Else
+            currentKey = entityReference.EntityKey
+        End If
+        Return currentKey
+    End Function
+
+    <Extension()>
+    Private Function GetRelatedEnd(ByVal entry As ObjectStateEntry, ByVal navigationPropertyIdentity As String) As RelatedEnd
+        Dim navigationProperty As NavigationProperty = GetNavigationProperty(entry.ObjectStateManager.MetadataWorkspace.GetCSpaceEntityType(entry.Entity.GetType()), navigationPropertyIdentity)
+        Return TryCast(entry.RelationshipManager.GetRelatedEnd(navigationProperty.RelationshipType.FullName, navigationProperty.ToEndMember.Name), RelatedEnd)
+    End Function
+
+    <Extension()>
+    Private Function GetNavigationProperty(ByVal entityType As EntityType, ByVal navigationPropertyIdentity As String) As NavigationProperty
+        Dim navigationProperty As NavigationProperty = Nothing
+        If Not entityType.NavigationProperties.TryGetValue(navigationPropertyIdentity, False, navigationProperty) Then
+            Throw New InvalidOperationException(
+                String.Format(
+                    CultureInfo.CurrentCulture,
+                    "Could not find navigation property '{0}' in EntityType '{1}'.",
+                    navigationPropertyIdentity,
+                    entityType.FullName))
+        End If
+        Return navigationProperty
+    End Function
+
+    <Extension()>
+    Private Function GetEntitySetName(ByVal relatedEnd As RelatedEnd) As String
+        Dim entitySet As EntitySet = DirectCast(relatedEnd.RelationshipSet, AssociationSet).AssociationSetEnds(relatedEnd.TargetRoleName).EntitySet
+        Return (entitySet.EntityContainer.Name & ".") & entitySet.Name
+    End Function
+
+    <Extension()>
+    Private Function IsDependentEndOfReferentialConstraint(ByVal relatedEnd As RelatedEnd) As Boolean
+        If relatedEnd.RelationshipSet IsNot Nothing Then
+            ' NOTE Referential constraints collection will usually contains 0 or 1 element,
+            ' so performance shouldn't be an issue here
+            For Each constraint As ReferentialConstraint In DirectCast(relatedEnd.RelationshipSet.ElementType, AssociationType).ReferentialConstraints
+                If constraint.ToRole.Name = relatedEnd.SourceRoleName Then
+                    ' Example:
+                    ' Client<C_ID> --- Order<O_ID, Client_ID>
+                    ' RI Constraint: Principal/From <Client.C_ID>, Dependent/To <Order.Client_ID>
+                    ' When current RelatedEnd is a CollectionOrReference in Order's relationships,
+                    ' constarint.ToRole == this._fromEndProperty == Order
+                    Return True
+                End If
+            Next
+        End If
+        Return False
+    End Function
+
+    <Extension()>
+    Private Function TryGetObjectStateEntry(
+        ByVal context As ObjectContext,
+        ByVal fromKey As EntityKey,
+        ByVal toKey As EntityKey,
+        ByVal associationSet As AssociationSet,
+        ByVal fromEnd As AssociationEndMember,
+        ByVal toEnd As AssociationEndMember,
+        ByRef entry As ObjectStateEntry) As Boolean
+
+        entry = Nothing
+        For Each relationshipEntry As ObjectStateEntry In (
+                    From e In context.ObjectStateManager.GetObjectStateEntries(EntityState.Added Or EntityState.Unchanged)
+                    Where e.IsRelationship AndAlso Equals(e.EntitySet, associationSet)
+                    Select e)
+            Dim currentValues As CurrentValueRecord = relationshipEntry.CurrentValues
+            Dim fromOrdinal As Integer = currentValues.GetOrdinal(fromEnd.Name)
+            Dim toOrdinal As Integer = currentValues.GetOrdinal(toEnd.Name)
+            If DirectCast(currentValues.GetValue(fromOrdinal), EntityKey) = fromKey AndAlso DirectCast(currentValues.GetValue(toOrdinal), EntityKey) = toKey Then
+                entry = relationshipEntry
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
+    Private NotInheritable Class AddHelper
+        Private ReadOnly _context As ObjectContext
+        Private ReadOnly _entityIndex As EntityIndex
+
+        ' Used during add processing
+        Private ReadOnly _entitiesToAdd As Queue(Of Tuple(Of String, IObjectWithChangeTracker))
+        Private ReadOnly _entitiesDuringAdd As Queue(Of Tuple(Of ObjectStateEntry, String, IEnumerable(Of Object)))
+
+        Public Shared Function AddAllEntities(ByVal context As ObjectContext, ByVal entitySetName As String, ByVal entity As IObjectWithChangeTracker) As EntityIndex
+            Dim addHelper As New AddHelper(context)
+
+            Try
+                ' Include the root element to start the Apply
+                addHelper.QueueAdd(entitySetName, entity)
+
+                ' Add everything
+                While addHelper.HasMore
+                    Dim entityInSet As Tuple(Of String, IObjectWithChangeTracker) = addHelper.NextAdd()
+                    ' Only add the object if it's not already in the context
+                    Dim entry As ObjectStateEntry = Nothing
+                    If Not context.ObjectStateManager.TryGetObjectStateEntry(entityInSet.Item2, entry) Then
+                        context.AddObject(entityInSet.Item1, entityInSet.Item2)
+                    End If
+                End While
+            Finally
+                addHelper.Detach()
+            End Try
+            Return addHelper.EntityIndex
+        End Function
+
+        Private Sub New(ByVal context As ObjectContext)
+            _context = context
+            AddHandler _context.ObjectStateManager.ObjectStateManagerChanged, AddressOf Me.HandleStateManagerChange
+
+            _entityIndex = New EntityIndex(context)
+            _entitiesToAdd = New Queue(Of Tuple(Of String, IObjectWithChangeTracker))()
+            _entitiesDuringAdd = New Queue(Of Tuple(Of ObjectStateEntry, String, IEnumerable(Of Object)))()
+        End Sub
+
+        Private Sub Detach()
+            RemoveHandler _context.ObjectStateManager.ObjectStateManagerChanged, AddressOf Me.HandleStateManagerChange
+        End Sub
+
+        Private Sub HandleStateManagerChange(ByVal sender As Object, ByVal args As CollectionChangeEventArgs)
+            If args.Action = CollectionChangeAction.Add Then
+                Dim entity As Object = args.Element
+                Dim entry As ObjectStateEntry = _context.ObjectStateManager.GetObjectStateEntry(entity)
+                Dim changeTracker As ObjectChangeTracker = DirectCast(entity, IObjectWithChangeTracker).ChangeTracker
+
+                changeTracker.ChangeTrackingEnabled = False
+                _entityIndex.Add(entry, changeTracker)
+
+                ' Queue removed reference values
+                Dim navPropNames As IEnumerable(Of String) = _context.MetadataWorkspace.GetCSpaceEntityType(entity.GetType()).NavigationProperties.Select(Function(n) n.Name)
+                Dim entityRefOriginalValues As IEnumerable(Of KeyValuePair(Of String, Object)) = changeTracker.OriginalValues.Where(Function(kvp) navPropNames.Contains(kvp.Key))
+                For Each originalValueWithName As KeyValuePair(Of String, Object) In entityRefOriginalValues
+                    If originalValueWithName.Value IsNot Nothing Then
+                        _entitiesDuringAdd.Enqueue(New Tuple(Of ObjectStateEntry, String, IEnumerable(Of Object))(entry, originalValueWithName.Key, New Object() {originalValueWithName.Value}))
+                    End If
+                Next
+
+                ' Queue removed collection values
+                For Each collectionPropertyChangesWithName As KeyValuePair(Of String, ObjectList) In changeTracker.ObjectsRemovedFromCollectionProperties
+                    _entitiesDuringAdd.Enqueue(New Tuple(Of ObjectStateEntry, String, IEnumerable(Of Object))(entry, collectionPropertyChangesWithName.Key, collectionPropertyChangesWithName.Value))
+                Next
+            End If
+        End Sub
+
+        Private ReadOnly Property EntityIndex() As EntityIndex
+            Get
+                Return _entityIndex
+            End Get
+        End Property
+
+        Private ReadOnly Property HasMore() As Boolean
+            Get
+                ProcessNewAdds()
+                Return _entitiesToAdd.Count > 0
+            End Get
+        End Property
+
+        Private Sub QueueAdd(ByVal entitySetName As String, ByVal entity As IObjectWithChangeTracker)
+            If Not _entityIndex.Contains(entity) Then
+                ' Queue the entity so that we can add the 'removed collection' items
+                _entitiesToAdd.Enqueue(New Tuple(Of String, IObjectWithChangeTracker)(entitySetName, entity))
+            End If
+        End Sub
+
+        Private Function NextAdd() As Tuple(Of String, IObjectWithChangeTracker)
+            ProcessNewAdds()
+            Return _entitiesToAdd.Dequeue()
+        End Function
+
+        Private Sub ProcessNewAdds()
+            While _entitiesDuringAdd.Count > 0
+                Dim relatedEntities As Tuple(Of ObjectStateEntry, String, IEnumerable(Of Object)) = _entitiesDuringAdd.Dequeue()
+                Dim relatedEnd As RelatedEnd = relatedEntities.Item1.GetRelatedEnd(relatedEntities.Item2)
+                Dim entitySetName As String = relatedEnd.GetEntitySetName()
+
+                For Each targetEntity As Object In relatedEntities.Item3
+                    QueueAdd(entitySetName, CType(targetEntity, IObjectWithChangeTracker))
+                Next
+            End While
+        End Sub
+    End Class
+
+    Private NotInheritable Class EntityIndex
+        Private ReadOnly _context As ObjectContext
+
+        ' Set of all entities
+        Private ReadOnly _allEntities As HashSet(Of IObjectWithChangeTracker)
+
+        ' Index of the final key that will be used in the context (could be real for non-added, could be temporary for added)
+        ' to the initial temporary key
+        Private ReadOnly _temporaryKeyMap As Dictionary(Of EntityKey, EntityKey)
+
+        Public Sub New(ByVal context As ObjectContext)
+            _context = context
+
+            _allEntities = New HashSet(Of IObjectWithChangeTracker)()
+            _temporaryKeyMap = New Dictionary(Of EntityKey, EntityKey)()
+        End Sub
+
+        Public Sub Add(ByVal entry As ObjectStateEntry, ByVal changeTracker As ObjectChangeTracker)
+            Dim temporaryKey As EntityKey = entry.EntityKey
+            Dim finalKey As EntityKey
+
+            If Not _allEntities.Contains(DirectCast(entry.Entity, IObjectWithChangeTracker)) Then
+                ' Track that this Apply will be handling this entity
+                _allEntities.Add(DirectCast(entry.Entity, IObjectWithChangeTracker))
+            End If
+
+            If changeTracker.State = ObjectState.Added Then
+                finalKey = temporaryKey
+            Else
+                finalKey = _context.CreateEntityKey((temporaryKey.EntityContainerName & ".") & temporaryKey.EntitySetName, entry.Entity)
+            End If
+            If Not _temporaryKeyMap.ContainsKey(finalKey) Then
+                _temporaryKeyMap.Add(finalKey, temporaryKey)
+            End If
+        End Sub
+
+        Public Function Contains(ByVal entity As Object) As Boolean
+            Return _allEntities.Contains(DirectCast(entity, IObjectWithChangeTracker))
+        End Function
+
+        Public ReadOnly Property AllEntities() As IEnumerable(Of IObjectWithChangeTracker)
+            Get
+                Return _allEntities
+            End Get
+        End Property
+
+        ' Converts the passed in EntityKey to the EntityKey that is usable by the current state of ApplyChanges
+        Public Function ConvertEntityKey(ByVal targetKey As EntityKey) As EntityKey
+            Dim targetEntry As ObjectStateEntry = Nothing
+            If Not _context.ObjectStateManager.TryGetObjectStateEntry(targetKey, targetEntry) Then
+                ' If no entry exists, then either:
+                ' 1. This is an EntityKey that is not represented in the set of entities being dealt with during the Apply
+                ' 2. This is an EntityKey that will represent one of the yet-to-be-processed Added entries, so look it up
+                Dim temporaryKey As EntityKey = Nothing
+                If _temporaryKeyMap.TryGetValue(targetKey, temporaryKey) Then
+                    targetKey = temporaryKey
+                End If
+            End If
+            Return targetKey
+        End Function
+
+    End Class
+
+    ' The RelationshipSet builds a list of all relationships from an
+    ' initial set of entities
+    Private NotInheritable Class RelationshipSet
+        Implements IEnumerable(Of RelationshipWrapper)
+        Private ReadOnly _relationships As HashSet(Of RelationshipWrapper)
+        Private ReadOnly _context As ObjectContext
+
+        Public Sub New(ByVal context As ObjectContext, ByVal allEntities As IEnumerable(Of Object))
+            _context = context
+            _relationships = New HashSet(Of RelationshipWrapper)()
+            For Each entity As Object In allEntities
+                Dim entry As ObjectStateEntry = context.ObjectStateManager.GetObjectStateEntry(entity)
+                For Each relatedEnd As IRelatedEnd In entry.RelationshipManager.GetAllRelatedEnds()
+                    If Not DirectCast(relatedEnd.RelationshipSet.ElementType, AssociationType).IsForeignKey Then
+                        For Each targetEntity As Object In relatedEnd
+                            Add(relatedEnd, entity, targetEntity, EntityState.Unchanged)
+                        Next
+                    End If
+                Next
+            Next
+        End Sub
+
+        ' Adds an entry to the index based on a IRelatedEnd
+        Public Sub Add(ByVal relatedEnd As IRelatedEnd, ByVal sourceEntity As Object, ByVal targetEntity As Object, ByVal state As EntityState)
+            Dim wrapper As New RelationshipWrapper(DirectCast(relatedEnd.RelationshipSet, AssociationSet), relatedEnd.SourceRoleName, sourceEntity, relatedEnd.TargetRoleName, targetEntity, state)
+            If Not _relationships.Contains(wrapper) Then
+                _relationships.Add(wrapper)
+            End If
+        End Sub
+
+        ' Removes an entry from the index based on a relationship ObjectStateEntry
+        Public Sub Remove(ByVal relationshipEntry As ObjectStateEntry)
+            Debug.Assert(relationshipEntry.IsRelationship)
+            Dim associationSet As AssociationSet = DirectCast(relationshipEntry.EntitySet, AssociationSet)
+            Dim values As DbDataRecord = If(relationshipEntry.State = EntityState.Deleted, relationshipEntry.OriginalValues, relationshipEntry.CurrentValues)
+            Dim fromOridinal As Integer = values.GetOrdinal(associationSet.ElementType.AssociationEndMembers(0).Name)
+            Dim fromEntity As Object = _context.ObjectStateManager.GetObjectStateEntry(DirectCast(values.GetValue(fromOridinal), EntityKey)).Entity
+            Dim toOridinal As Integer = values.GetOrdinal(associationSet.ElementType.AssociationEndMembers(1).Name)
+            Dim toEntity As Object = _context.ObjectStateManager.GetObjectStateEntry(DirectCast(values.GetValue(toOridinal), EntityKey)).Entity
+
+            If fromEntity IsNot Nothing AndAlso toEntity IsNot Nothing Then
+                Dim wrapper As New RelationshipWrapper(associationSet, associationSet.ElementType.AssociationEndMembers(0).Name, fromEntity, associationSet.ElementType.AssociationEndMembers(1).Name, toEntity, EntityState.Unchanged)
+
+                _relationships.Remove(wrapper)
+            End If
+        End Sub
+
+#Region "IEnumerable"
+
+        Public Function GetEnumerator() As IEnumerator(Of RelationshipWrapper) Implements System.Collections.Generic.IEnumerable(Of RelationshipWrapper).GetEnumerator
+            Return _relationships.GetEnumerator()
+        End Function
+
+        Private Function GetEnumerator1() As System.Collections.IEnumerator Implements System.Collections.IEnumerable.GetEnumerator
+            Return _relationships.GetEnumerator()
+        End Function
+
+#End Region
+
+    End Class
+
+    ' A RelationshipWrapper is used to identify a relationship between two entities
+    ' The relationship is identified by the AssociationSet, and the order of the entities based
+    ' on the roles they play (via AssociationEndMember)
+    Private NotInheritable Class RelationshipWrapper
+        Implements IEquatable(Of RelationshipWrapper)
+        Friend ReadOnly AssociationSet As AssociationSet
+        Friend ReadOnly End0 As Object
+        Friend ReadOnly End1 As Object
+        Friend ReadOnly State As EntityState
+
+        Friend Sub New(ByVal extent As AssociationSet, ByVal role0 As String, ByVal associationEndMember0 As Object, ByVal role1 As String, ByVal associationEndMember1 As Object, ByVal state As EntityState)
+            Debug.Assert(extent IsNot Nothing, "null AssociationSet")
+            Debug.Assert(DirectCast(associationEndMember0, Object) IsNot Nothing, "null associationEndMember0")
+            Debug.Assert(DirectCast(associationEndMember1, Object) IsNot Nothing, "null associationEndMember1")
+
+            AssociationSet = extent
+            Debug.Assert(extent.ElementType.AssociationEndMembers.Count = 2, "only 2 ends are supported")
+
+            Me.State = state
+
+            If extent.ElementType.AssociationEndMembers(0).Name = role0 Then
+                Debug.Assert(extent.ElementType.AssociationEndMembers(1).Name = role1, "a)roleAndKey1 Name differs")
+                End0 = associationEndMember0
+                End1 = associationEndMember1
+            Else
+                Debug.Assert(extent.ElementType.AssociationEndMembers(0).Name = role1, "b)roleAndKey1 Name differs")
+                Debug.Assert(extent.ElementType.AssociationEndMembers(1).Name = role0, "b)roleAndKey0 Name differs")
+                End0 = associationEndMember1
+                End1 = associationEndMember0
+            End If
+        End Sub
+
+        Friend ReadOnly Property AssociationEndMembers() As ReadOnlyMetadataCollection(Of AssociationEndMember)
+            Get
+                Return Me.AssociationSet.ElementType.AssociationEndMembers
+            End Get
+        End Property
+
+        Public Overloads Overrides Function GetHashCode() As Integer
+            Return Me.AssociationSet.Name.GetHashCode() Xor (Me.End0.GetHashCode() + Me.End1.GetHashCode())
+        End Function
+
+        Public Overloads Overrides Function Equals(ByVal obj As Object) As Boolean
+            Return Equals(TryCast(obj, RelationshipWrapper))
+        End Function
+
+        Public Overloads Function Equals(ByVal wrapper As RelationshipWrapper) As Boolean Implements System.IEquatable(Of RelationshipWrapper).Equals
+            Return (Object.ReferenceEquals(Me, wrapper) OrElse
+                ((wrapper IsNot Nothing) AndAlso
+                Object.ReferenceEquals(Me.AssociationSet, wrapper.AssociationSet) AndAlso
+                Object.ReferenceEquals(Me.End0, wrapper.End0) AndAlso
+                Object.ReferenceEquals(Me.End1, wrapper.End1)))
+        End Function
+    End Class
+End Module
+<#+
+End Sub
+#>

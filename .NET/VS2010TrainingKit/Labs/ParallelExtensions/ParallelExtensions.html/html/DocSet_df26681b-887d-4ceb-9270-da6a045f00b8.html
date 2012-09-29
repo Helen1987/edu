@@ -1,0 +1,111 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Use the Generic Task Class to Create and Run Tasks that Return a Value" />
+      <MSHelp:RLTitle Title="Exercise 3: Use the Generic Task Class to Create and Run Tasks that Return a Value" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Use the Generic Task Class to Create and Run Tasks that Return a Value</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Parallel Extensions: Building Multicore Applications with .NET</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Use the Generic Task Class to Create and Run Tasks that Return a Value</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>As you can see, <b>Tasks</b> are useful for launching a unit of functionality in a parallel environment; they also provide a mechanism for returning values as a result of executing the unit.</p>
+        <p>To demonstrate this, you are going to create a new instance of a <b>Task&lt;decimal&gt;</b> and then use the static <b>Task.Factory</b>.<b>StartNew()</b> method to execute the <b>GetPayrollDeduction()</b> method in a manner that allows you to capture its return value.</p>
+        <br />
+        <a name="_Toc210808283" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933634" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Capturing a Task’s Return Value</b>
+        </p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ParallelExtLab.sln</b> located under<b> Source\Ex03-UseTaskResult\begin</b><i>.</i><b>(choosing the folder that matches the language of your preference)</b> Optionally, you can continue working with the solution you created in the previous exercise.</li>
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex3Task1_TaskReturnValue()</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex3Task1_TaskReturnValue();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex3Task1_TaskReturnValue()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex3Task1_TaskReturnValue method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex3 Ex3Task1_TaskReturnValue CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex3Task1_TaskReturnValue()</b><b>{</b><b>    Console.WriteLine("Calling parallel task with return value");</b><b>    var data = Task.Factory.StartNew(() =&gt;</b><b>      PayrollServices.GetPayrollDeduction(employeeData[0]));</b><b>    Console.WriteLine("Parallel task returned with value of {0}",</b><b>        data.Result);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex3 Ex3Task1_TaskReturnValue VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex3Task1_TaskReturnValue()</b><b>    Console.WriteLine("Calling parallel task with return value")</b><b>    Dim data As Task(Of Decimal) = Task.Factory.StartNew(Function() PayrollServices.GetPayrollDeduction(employeeData(0)))</b><b>    Console.WriteLine("Parallel task returned with value of {0}", data.Result)</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The value is captured by inspecting the <b>data.Result</b> property. If the task has completed when the <b>Result</b> property is invoked then it will return the captured value immediately, otherwise it will block the executing code until the task has completed and the value can be retrieved. In the above example, you are accessing the <b>Result</b> property right away, which is not the ideal situation. Where <b>Task&lt;T&gt;</b> becomes very useful is when you are firing off units of works where you will not be retrieving the returned values until a later time.</td></tr></table><p /></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that the task completes and a return value is provided.<p><img src="images\451ec444-f5ca-4a7f-a872-59784748c551.png" /></p><p><b>Figure 12</b><br /><i>Output from running a Task to capture a return value</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_d1ab00c3-ed21-4a03-aadf-ebd11343d33e.html">Exercise 4: Parallelize LINQ Queries using PLINQ</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 10: Hosted Designer" />
+      <MSHelp:RLTitle Title="Exercise 10: Hosted Designer" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 10: Hosted Designer</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 10: Hosted Designer</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>What if you wanted to create a custom activity like the <b>PrePostSequence</b> and have someone else who does not have Visual Studio use it? Many products allow end users to customize workflows. Windows Workflow Foundation 4 allows you to host the designer in an application quite easily. In this exercise, you will host the designer and use your custom activities.</p>
+        <a name="_Toc244412426" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935147" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 9. Alternatively, you can follow the following steps to begin with Exercise 10.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 10 located under the <b>Source\Ex10-HostedDesigner\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc244412427" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935148" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding new WPF Application</b>
+        </p>
+        <ol>
+          <li>Right click on the <b>HelloWorkflow</b> solution and select <b>Add / New Project…</b></li>
+          <li>From the <b>Windows</b> templates Add new WPF Application named <b>HelloDesigner</b></li>
+          <li>Set the <b>HelloDesigner</b> project as the Startup project</li>
+          <li>Add references to the following assemblies<ul><li><b>System.Activities.Presentation</b></li><li><b>System.Activities.Core.Presentation</b></li><li><b>System.Activities</b></li></ul></li>
+          <li>From the Projects tab, add the following assemblies:<ul><li><b>HelloWorkflow.Activities</b></li><li><b>HelloWorkflow.Activities.Designers</b></li></ul></li>
+          <li>Open <b>MainWindow.xaml</b> and modify it as shown<p><i>(Code Snippet - Introduction to WF</i>4<i>Lab</i>–<i>MainWindow XAML CSharp)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML (C#)</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;Window x:Class="HelloDesigner.MainWindow"</b><b>        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</b><b>        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"</b><b>        Title="MainWindow" Height="600" Width="1000"&gt;</b><b>    &lt;Grid&gt;</b><b>        &lt;Grid.RowDefinitions&gt;</b><b>            &lt;RowDefinition Height="4*" /&gt;</b><b>            &lt;RowDefinition Height="*" /&gt;</b><b>        &lt;/Grid.RowDefinitions&gt;</b><b>        &lt;Grid Name="grid1"&gt;</b><b>            &lt;Grid.ColumnDefinitions&gt;</b><b>                &lt;ColumnDefinition Width="Auto" /&gt;</b><b>                &lt;ColumnDefinition Width="4*" /&gt;</b><b>                &lt;ColumnDefinition Width="Auto" /&gt;</b><b>            &lt;/Grid.ColumnDefinitions&gt;</b><b>        &lt;/Grid&gt;</b><b>        &lt;TextBox Grid.Row="1" Name="textXAML"                     VerticalScrollBarVisibility="Visible" /&gt;</b><b>    &lt;/Grid&gt;</b><b>&lt;/Window&gt;</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet - Introduction to WF</i>4<i>Lab</i>–<i>MainWindow XAML VB)</i></p>
+          <div class="code">
+            <span codeLanguage="other">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>XAML (VB)</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>&lt;Window x:Class="MainWindow"</b><b>        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"</b><b>        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"</b><b>        Title="MainWindow" Height="600" Width="1000"&gt;</b><b>    &lt;Grid&gt;</b><b>        &lt;Grid.RowDefinitions&gt;</b><b>            &lt;RowDefinition Height="4*" /&gt;</b><b>            &lt;RowDefinition Height="*" /&gt;</b><b>        &lt;/Grid.RowDefinitions&gt;</b><b>        &lt;Grid Name="grid1"&gt;</b><b>            &lt;Grid.ColumnDefinitions&gt;</b><b>                &lt;ColumnDefinition Width="Auto" /&gt;</b><b>                &lt;ColumnDefinition Width="4*" /&gt;</b><b>                &lt;ColumnDefinition Width="Auto" /&gt;</b><b>            &lt;/Grid.ColumnDefinitions&gt;</b><b>        &lt;/Grid&gt;</b><b>        &lt;TextBox Grid.Row="1" Name="textXAML" </b><b>                 VerticalScrollBarVisibility="Visible" /&gt;</b><b>    &lt;/Grid&gt;</b><b>&lt;/Window&gt;</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Open <b>MainWindow.xaml.cs </b>(C#) or <b>MainWindow.xaml.vb</b></li>
+          <li>Add the following namespace directives<p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>MainWindow Namespaces CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.Activities.Presentation;</b><b>using System.Activities.Statements;</b><b>using System.Activities.Presentation.Toolbox;</b><b>using System.Activities.Core.Presentation;</b><b>using System.Activities.Presentation.Metadata;</b><b>using System.ComponentModel;</b><b>using HelloWorkflow.Activities;</b><b>using HelloWorkflow.Activities.Designers;</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>MainWindow Namespaces VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Imports System.Activities.Presentation</b><b>Imports System.Activities.Statements</b><b>Imports System.Activities.Presentation.Toolbox</b><b>Imports System.Activities.Core.Presentation</b><b>Imports System.Activities.Presentation.Metadata</b><b>Imports System.ComponentModel</b><b>Imports HelloWorkflow.Activities</b><b>Imports HelloWorkflow.Activities.Designers</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Add a field of type WorkflowDesigner <div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public partial class MainWindow : Window{<b>     WorkflowDesigner workflowDesigner = new WorkflowDesigner();</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Class MainWindow<b>    Private workflowDesigner As WorkflowDesigner = New WorkflowDesigner()</b></pre></td></tr></table></span></div><br /></li>
+          <li>Create a new function <b>RegisterMetadata</b> as shown.  This function enables the designer metadata store.<p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>RegisterMetadata method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void RegisterMetadata()</b><b>{</b><b>    DesignerMetadata metaData = new DesignerMetadata();</b><b>    metaData.Register();</b><b>    AttributeTableBuilder builder = new AttributeTableBuilder();</b><b>    MetadataStore.AddAttributeTable(builder.CreateTable());</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>RegisterMetadata method VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Public Sub RegisterMetadata()</b><b>    Dim metaData As DesignerMetadata = New DesignerMetadata()</b><b>    metaData.Register()</b><b>    Dim builder As AttributeTableBuilder = New AttributeTableBuilder()</b><b>    MetadataStore.AddAttributeTable(builder.CreateTable())</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td><b> </b>When you host the designer you can control the toolbox. You choose what controls will appear, the categories they appear in and even the names of the controls.  Add the CreateToolboxControl function as shown.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>CreateToolboxControl method CSharp)</i></p>
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>private ToolboxControl CreateToolboxControl()</b><b>{</b><b>    return new ToolboxControl()</b><b>    {</b><b>        Categories = </b><b>        {</b><b>            new ToolboxCategory("Hello Workflow")</b><b>            {</b><b>                Tools = </b><b>                {</b><b>                    new ToolboxItemWrapper(</b><b>                    "System.Activities.Statements.Assign",</b><b>                    "System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", </b><b>                    null,</b><b>                    "Assign"),</b><b>                    new ToolboxItemWrapper(</b><b>                    "System.Activities.Statements.Sequence",</b><b>                    "System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",</b><b>                    null,</b><b>                    "Sequence"),</b><b>                    new ToolboxItemWrapper(</b><b>                    "System.Activities.Statements.TryCatch",</b><b>                    "System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",</b><b>                    null,</b><b>                    "Try It"), // Can use a different name</b><b>                    new ToolboxItemWrapper(</b><b>                    "HelloWorkflow.Activities.PrePostSequence",</b><b>                    "HelloWorkflow.Activities",</b><b>                    null,</b><b>                    "PrePostSequence"),</b><b>                    new ToolboxItemWrapper(</b><b>                    "HelloWorkflow.Activities.DiagnosticTrace",</b><b>                    "HelloWorkflow.Activities",</b><b>                    null,</b><b>                    "Diagnostic Trace")</b><b>                }</b><b>            }</b><b>        }</b><b>    };</b><b>}</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>CreateToolboxControl method VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private Function CreateToolboxControl() As ToolboxControl</b><b>    'Create the ToolBoxControl</b><b>    Dim ctrl As ToolboxControl = New ToolboxControl()</b><b>    'Create a collection of category items</b><b>    Dim category As ToolboxCategory = New ToolboxCategory("Hello Workflow")</b><b>    'Creating toolboxItems</b><b>    category.Add(New ToolboxItemWrapper(</b><b>    "System.Activities.Statements.Assign",</b><b>    "System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",</b><b>    Nothing,</b><b>    "Assign"))</b><b>    category.Add(New ToolboxItemWrapper(</b><b>    "System.Activities.Statements.Sequence",</b><b>    "System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",</b><b>    Nothing,</b><b>    "Sequence"))</b><b>    category.Add(New ToolboxItemWrapper(</b><b>    "System.Activities.Statements.TryCatch",</b><b>    "System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",</b><b>    Nothing,</b><b>    "Try It")) ' Can use a different name</b><b>    category.Add(New ToolboxItemWrapper(</b><b>    "HelloWorkflow.Activities.PrePostSequence",</b><b>    "HelloWorkflow.Activities",</b><b>    Nothing,</b><b>    "PrePostSequence"))</b><b>    category.Add(New ToolboxItemWrapper(</b><b>    "HelloWorkflow.Activities.DiagnosticTrace",</b><b>    "HelloWorkflow.Activities",</b><b>    Nothing,</b><b>    "Diagnostic Trace"))</b><b>    'Adding the category to the ToolBox control.</b><b>    ctrl.Categories.Add(category)</b><b>    Return ctrl</b><b>End Function</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Your Designer window will display the XAML of the workflow as it built.  To do this you will need a function to handle the ModelChanged event.  Add the ShowWorkflowXAML function as shown.<p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>ShowWorkflowXAML method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void ShowWorkflowXAML(object sender, EventArgs e)</b><b>{</b><b>    workflowDesigner.Flush();</b><b>    textXAML.Text = workflowDesigner.Text;</b><b>}</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub ShowWorkflowXAML(ByVal sender As Object, ByVal e As EventArgs)</b><b>    workflowDesigner.Flush()</b><b>    textXAML.Text = workflowDesigner.Text</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Create the <b>AddDesigner</b> function as shown.  This function will add the designer to your window<p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>AddDesigner method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void AddDesigner()</b><b>{</b><b>    //Create an instance of WorkflowDesigner class</b><b>    this.workflowDesigner = new WorkflowDesigner();</b><b>    //Place the WorkflowDesigner in the middle column of the grid</b><b>    Grid.SetColumn(this.workflowDesigner.View, 1);</b><b>    // Show the XAML when the model changes</b><b>    workflowDesigner.ModelChanged += ShowWorkflowXAML;</b><b>    //Load a new Sequence as default.</b><b>    this.workflowDesigner.Load(new Sequence());</b><b>    //Add the WorkflowDesigner to the grid</b><b>    grid1.Children.Add(this.workflowDesigner.View);</b><b>    // Add the Property Inspector</b><b>    Grid.SetColumn(workflowDesigner.PropertyInspectorView, 2);</b><b>    grid1.Children.Add(workflowDesigner.PropertyInspectorView);</b><b>    // Add the toolbox</b><b>    ToolboxControl tc = CreateToolboxControl();</b><b>    Grid.SetColumn(tc, 0);</b><b>    grid1.Children.Add(tc);</b><b>    // Show the initial XAML</b><b>    ShowWorkflowXAML(null, null);</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>AddDesigner</i><i>method VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private Sub AddDesigner()</b><b>    'Create an instance of WorkflowDesigner class</b><b>    workflowDesigner = New WorkflowDesigner()</b><b>    'Place the WorkflowDesigner in the middle column of the grid</b><b>    Grid.SetColumn(workflowDesigner.View, 1)</b><b>    ' Setup the Model Changed event handler</b><b>    AddHandler workflowDesigner.ModelChanged, AddressOf ShowWorkflowXAML</b><b>    'Load a new Sequence as default.</b><b>    workflowDesigner.Load(New Sequence())</b><b>    'Add the WorkflowDesigner to the grid</b><b>    grid1.Children.Add(workflowDesigner.View)</b><b>    ' Add the Property Inspector</b><b>    Grid.SetColumn(workflowDesigner.PropertyInspectorView, 2)</b><b>    grid1.Children.Add(workflowDesigner.PropertyInspectorView)</b><b>    ' Add the toolbox</b><b>    Dim tc As ToolboxControl = CreateToolboxControl()</b><b>    Grid.SetColumn(tc, 0)</b><b>    grid1.Children.Add(tc)</b><b>    ' Show the initial XAML</b><b>    ShowWorkflowXAML(Nothing, Nothing)</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Modify the constructor to call the functions you added<p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>MainWindow method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public MainWindow()</b><b>{</b><b>    InitializeComponent();</b><b>    RegisterMetadata();</b><b>    AddDesigner();</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p><i>(Code Snippet</i> - <i>Introduction to WF</i>4<i>Lab</i> –<i>MainWindow method VB)</i></p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Public Sub New()</b><b>    InitializeComponent()</b><b>    RegisterMetadata()</b><b>    AddDesigner()</b><b>End Sub</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_c46bfb6e-1ec9-48e6-bea2-265a1e660877.html">Exercise 10: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Branching and Merging Visualization" />
+      <MSHelp:RLTitle Title="Exercise 2: Branching and Merging Visualization" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Branching and Merging Visualization</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Branching and Merging Visualization with Team Foundation Server 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Branching and Merging Visualization</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to visualize and track changesets while merging the changes that you made in the previous exercise.</p>
+        <ol>
+          <li>In <b>Source Control Explorer</b>, right-click on the <b>Production 1.0</b> branch and select <b>View History</b> from the context menu that appears.<p><img src="images\2ce39cb9-82f7-42b3-8611-7e2731493ad1.png" /></p><p><b>Figure 1</b><br /><i>Changeset history for Production 1.0 branch</i></p></li>
+          <li><b>Right-click</b> on the changeset that you just checked in and select <b>Track Changeset</b> from the context menu that appears.</li>
+          <li>In the <b>Select Branches</b> window, Production 1.0 will already be checked. <b>Check</b> the checkbox for <b>Iteration 2</b> and then select the <b>Visualize</b> button to see the current state of the changeset as it relates to the other branches.<p><img src="images\bc6364c0-0fe9-4ca5-a5bf-664fafd76d37.png" /></p><p><b>Figure 2</b><br /><i>Selecting branches to visualize</i></p></li>
+          <li>This visualization shows us that the changeset has been applied to Production 1.0 but not to Iteration 2. It also makes it clear that in order to merge our changes into Iteration 2 we will need to merge with the Main branch first.<p><img src="images\d2cbb725-9b4a-45fd-ae09-262fc8600b33.png" /></p><p><b>Figure 3</b><br /><i>Tracking Changeset visualization in Hierarchy Tracking mode</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Your changeset numbers will differ from those shown in the lab screenshots.</td></tr></table><p /></div></li>
+          <li>To perform the merge of this changeset and the Main branch, <b>drag and drop</b> the green <b>Production 1.0</b> node onto the <b>Main</b> node. This will load the Source Control Merge Wizard.<p><img src="images\9bc7ca02-a64c-4dce-a1a8-69291332a07a.png" /></p><p><b>Figure 4</b><br /><i>First screen of the Source Control Merge Wizard</i></p></li>
+          <li>Ensure that the source branch to merge ends with “Production 1.0” and the target branch ends with “Main”. Select the <b>Next</b> button to continue.</li>
+          <li>The next screen of the merge wizard specifies the version to merge. By default, you should see the changeset that you checked in already. Select the <b>Finish</b> button to perform the merge.</li>
+          <li>After the merge is complete, open the <b>Pending Changes</b> window and note that Template.Master change status for the Main code branch is now “merge, edit”. The merge process is complete, but we still need to check in the changes.</li>
+          <li>Add a <b>Comment</b> of “<b>Merging fast-tracked changes from Production to Main</b>”.<p><img src="images\a6b03318-1994-4f9f-90e7-77b94072dd6f.png" /></p><p><b>Figure 5</b><br /><i>Insert Caption</i></p></li>
+          <li>Click the <b>Check In</b> button to finalize the merge with the Main branch.</li>
+          <li>In the <b>Tracking Changeset</b> window, click on the <b>Rerun</b> button to generate an updated view. You will need to click the <b>Visualize</b> button again when the <b>Select Branches</b> window appears.<p><img src="images\23661463-7726-44fd-95e6-957e74b04de7.png" /></p><p><b>Figure 6</b><br /><i>Changeset tracking view showing that merge with Main is complete</i></p></li>
+          <li>Next, merge the changeset from the <b>Main</b> branch with the <b>Iteration 2</b> branch in the same manner as before by dragging and dropping to load the Source Control Merge Wizard.</li>
+          <li>Select <b>Next</b> followed by <b>Finish</b> to perform the merge process.</li>
+          <li>In the <b>Pending Changes</b> window, enter a <b>Comment</b> of “<b>Merged fast-tracked changes from Main to Iteration 2</b>”.</li>
+          <li>Select the <b>Check In</b> button to finalize the merge with the Iteration 2 branch.</li>
+          <li>In the <b>Tracking Changeset</b> window, click on the <b>Rerun</b> button to see the updated view. <p><img src="images\f6e7e75c-8b17-4f70-8935-590e5874a22a.png" /></p><p><b>Figure 7</b><br /><i>Tracking original changeset in Hierarchy Tracking mode</i></p></li>
+          <li>Another useful view is the Timeline Tracking view. Select the <b>Timeline Tracking</b> button to the left of the Hierarchy Tracking button to switch to this view. This shows the order in which the original changeset was merged with the other branches.<p><img src="images\f1f36d0c-7369-443b-bf41-680705ee73c1.png" /></p><p><b>Figure 8</b><br /><i>Tracking original changeset in Timeline Tracking mode</i></p></li>
+          <li>In the <b>Source Control Explorer</b>, navigate to and <b>right-click</b> on the <b>Template.Master</b> file from the <b>Iteration 2</b> branch, selecting <b>Annotate</b> from the context menu that appears.<p><img src="images\24a14552-7cb4-4a63-9521-7513a471cbda.png" /></p><p><b>Figure 9</b><br /><i>Location of Annotate option</i></p></li>
+          <li>Scroll to the bottom of the annotated <b>Template.Master</b> file and locate the HTML that you previously commented out.</li>
+          <li>In the annotation column on the left-hand side, mouse over the recent changeset (it should have today’s date on it). Note that the changeset path and comment refer to the Production branch where the change was originally made even though we annotated a file from the Iteration 2 branch.<p><img src="images\7201aed7-7625-4f3e-aa8a-815ba3531d3c.png" /></p><p><b>Figure 10</b><br /><i>Changeset information for Template.Master file</i></p></li>
+        </ol>
+        <br />
+        <p>To give feedback please write to <a href="docSet_mailto:VSKitFdbk@microsoft.com">VSKitFdbk@Microsoft.com</a></p>
+        <p>Copyright © 2010 by Microsoft Corporation. All rights reserved.</p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

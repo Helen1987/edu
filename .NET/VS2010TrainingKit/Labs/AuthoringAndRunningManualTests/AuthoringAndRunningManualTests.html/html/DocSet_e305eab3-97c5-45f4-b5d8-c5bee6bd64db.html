@@ -1,0 +1,119 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Running a Manual Test Plan" />
+      <MSHelp:RLTitle Title="Exercise 2: Running a Manual Test Plan" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Running a Manual Test Plan</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Authoring and Running Manual Tests using Microsoft Test Manager 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Running a Manual Test Plan</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to run the manual test plan we created in the first exercise.</p>
+        <ol>
+          <li>From the top menu, click the <b>Test</b> button to enter test mode.<p><img src="images\bc2b7351-eebf-4be0-9769-ce8b4275fe92.png" /></p><p><b>Figure 6</b><br /><i>Test button location</i></p></li>
+          <li>In the left pane, expand the tree to find the <b>End-to-End Tests</b> node and select it.</li>
+          <li>In the right pane, select the test titled “Confirm that receipt number appears after successful order” and click the <b>Run</b> button.<p><img src="images\00c7c4bb-d6c5-4f94-9ec4-c8403d775239.png" /></p><p><b>Figure 7</b><br /><i>Run button location</i></p></li>
+          <li>At this point, the Microsoft Test Runner is launched and provides the option to record the actions taken by the tester. This is a key feature as it enables “fast forwarding” for future test runs and records more details for reviewing tests later. Check the <b>Create action recording</b> box and click <b>Start Test</b>.<p><img src="images\f18501e1-333c-4de1-9f42-e1d9e3b73be5.png" /></p><p><b>Figure 8</b><br /><i>Running the manual test with action recording</i></p></li>
+          <li>Wait until the Test Runner has completed initialization and then launch <b>Internet Explorer</b> from <b>Windows Quick Launch</b> bar.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>There is a known bug that may result in the Internet Explorer process crashing on slower machines. This can be worked around by waiting an additional 15 seconds after initialization is complete before launching Internet Explorer.</td></tr></table><p /></div></li>
+          <li>Copy and paste the <a href="http://win-gs9gmujits8:8000/">http://WIN-GS9GMUJITS8:8000</a> address from the “New Test Case.txt” file into the address bar in Internet Explorer and press <b>Enter</b>. It will take a few moments for the site to load and run.</li>
+          <li>After the site has loaded, the first step of the test has been completed successfully. Click <b>Ctrl+Windows+Q </b>to indicate that the test has passed. Alternatively, you can select the <b>Pass</b> option from the test result dropdown next to the step itself. It’s not a requirement to pass or fail tests other than those that require validation (such as with “expected results”), but it does help when correlating tester actions with steps. Note that when you pass a test, it automatically sets the next step as active, so you don’t need to click back and forth between the runner and the browser.<p><img src="images\e2b2b1cb-93a0-4bdf-b7b1-b86bafd92475.png" /></p><p><b>Figure 9</b><br /><i>Manually passing a test step</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>To use the Ctrl+Windows+Q shortcut you may need to run the VM in full screen mode.</td></tr></table><p /></div></li>
+          <li>In Internet Explorer, click the <b>Model Airplanes</b> button and press <b>Ctrl+Windows+Q</b> if successful.</li>
+          <li>Click the <b>Northwind Trader</b> link and press <b>Ctrl+Windows+Q</b> if successful.</li>
+          <li>Click the <b>Add To Cart</b> button and press <b>Ctrl+Windows+Q</b> if successful.</li>
+          <li>Click the <b>Checkout</b> button and press <b>Ctrl+Windows+Q</b> if successful.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In the event that your action recording does not go according to plan, you can always reset and record again.</td></tr></table><p /></div><p><img src="images\c39d86bf-bbe7-433c-a5e3-ccb9d8631b5d.png" /></p><p><b>Figure 10</b><br /><i>Location of Reset button</i></p></li>
+          <li>Click in the “<b>First</b>” text box and press <b>Ctrl+V</b> to paste the first iteration’s <b>First</b> variable into the box. This action will bind the variable from the test with the text box in the website, as evidenced by the databound icon that is shown next to the variable. Future iterations of the test will be able to take advantage of this association. <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>There is a known issue that can sometimes prevent focus from automatically returning to the text boxes in the website after databinding with test data. For example, after filling in a text box and pressing Tab, focus will not be set in the next textbox as you would expect. This issue occurs when running the virtual machine on slower hardware. To work around this issue, simply click a second time in the textbox you want to set focus to.</td></tr></table><p /></div></li>
+          <li>Repeat the process of pasting the variables for “Last”, “Email”, “Address”, and so on. Skip the Address 2 text box. In the end, each of the variables should be databound.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>You will have to select values from dropdown boxes for Country and State even though they may already display a value.<b> </b></td></tr></table><p /></div><p><img src="images\e1123400-fb79-4e25-82ed-6287b4bc90f9.png" /></p><p><b>Figure 11</b><br /><i>Databound test variables</i></p></li>
+          <li>Press <b>Ctrl+Windows+Q</b> to indicate the order form step passed.</li>
+          <li>Click the <b>Review Order</b> button and press <b>Ctrl+Windows+Q</b> if successful.</li>
+          <li>Click the <b>Place Order</b> button and press <b>Ctrl+Windows+Q</b> if successful.</li>
+          <li>Confirm that the order page has a receipt number. Press <b>Ctrl+Windows+Q</b> to indicate that the step passed.<p><img src="images\5f8228d6-b757-4249-b311-9f26225a1a5b.png" /></p><p><b>Figure 12</b><br /><i>Order page showing receipt number</i></p></li>
+          <li>Close the Internet Explorer window as instructed and press <b>Ctrl+Windows+Q</b> if successful.</li>
+          <li>You are now at the end of the first test iteration. Click the <b>End iteration and move to next</b> link to move onto iteration 2.<p><img src="images\5d5d7a90-29cf-44aa-9399-498e66213f03.png" /></p><p><b>Figure 13</b><br /><i>Location of “End iteration and move to next” link</i></p></li>
+          <li>In this iteration, we will not create an action recording as it will overwrite the original one that we just created. Instead, we’re going to use the version that we just recorded to aid in the running of this iteration. Click the <b>Start Test</b> button to start iteration 2.</li>
+          <li>Step 1 should already be selected. Hold down the <b>Shift</b> key and click the “<b>Click Place Order</b>” step to select all steps leading to it, inclusively. <p><img src="images\10bcc007-a8c3-417e-86cb-bdf5872bdfcc.png" /></p><p><b>Figure 14</b><br /><i>Selecting all steps up to “Click Place Order”, inclusively</i></p></li>
+          <li>Click the <b>Play</b> button to automatically run the selected steps. Using the mouse or keyboard during test automation can interfere, so don’t use them again until the automation of the selected test steps is complete.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This automated process uses the data specified for the second test iteration of the test in order to complete the registration form.</td></tr></table><p /></div></li>
+          <li>After the Test Runner finishes running the steps that you selected, it will stop on the “Confirm order page has receipt #” test so that you can manually verify. Press <b>Ctrl+Windows+Q</b> to indicate that step passed.</li>
+          <li>You are now at the end of the second test iteration. Click the <b>End iteration and move to next</b> link to move onto iteration 3.</li>
+          <li>Follow the same process that you did for iteration 2.</li>
+          <li>Since we are on the last iteration, click the “<b>End iteration</b>” link shown after the last step.</li>
+          <li>Click the <b>Save and Close</b> button to save the test results.<p><img src="images\3bda2765-0753-4a09-8265-5a3c2677d0fb.png" /></p><p><b>Figure 15</b><br /><i>Location of “Save and Close” button</i></p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_463b7b14-3267-4ce9-896f-d44aa92ff63e.html">Exercise 3: Analyzing Manual Test Results</a>
+        </p>
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

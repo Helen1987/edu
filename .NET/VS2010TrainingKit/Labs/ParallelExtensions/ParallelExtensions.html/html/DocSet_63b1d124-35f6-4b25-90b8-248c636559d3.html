@@ -1,0 +1,193 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Create and Run Parallelized Tasks" />
+      <MSHelp:RLTitle Title="Exercise 2: Create and Run Parallelized Tasks" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Create and Run Parallelized Tasks</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Parallel Extensions: Building Multicore Applications with .NET</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Create and Run Parallelized Tasks</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>The Parallel Extensions library provides a <b>Task</b> class that can be used to execute work items in parallel, across multiple cores. Basically, you can think of a <b>Task</b> object as a lightweight unit of work that might be scheduled to run in parallel to other units, if the <b>TaskManager</b> decides it is necessary.</p>
+        <p>As <b>Task</b> objects are created you need to supply them with a delegate or lambda statement containing the logic to execute. Then the <b>TaskManager</b>, which is the real heart of the Parallel Extensions library, will schedule the <b>Task</b> to execute, possibly on a different thread running on a different core.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To verify that each step is correctly performed, it is recommended to build the solution at the end of each task. </td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <a name="_Toc210808278" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933629" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Natively Running Parallelized Tasks</b>
+        </p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>ParallelExtLab.sln</b> located under<b><i>Source\Ex02-CreateAndRunParallelizedTasks\begin</i>(choosing</b><b>the folder that matches the language of your preference)</b>. Optionally, you can continue working with the solution you created in the previous exercise.</li>
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex2Task1_NativeParallelTasks()</b> method.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call <b>    Ex2Task1_NativeParallelTasks();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex2Task1_NativeParallelTasks()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex2Task1_NativeParallelTasks method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task1_NativeParallelTasks CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex2Task1_NativeParallelTasks()</b><b>{</b><b>    Task task1 = Task.Factory.StartNew(delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[0]); });</b><b>    Task task2 = Task.Factory.StartNew(delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[1]); });</b><b>    Task task3 = Task.Factory.StartNew(delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[2]); });</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task1_NativeParallelTasks VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex2Task1_NativeParallelTasks()</b><b>    Dim task1 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(0)))</b><b>    Dim task2 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(1)))</b><b>    Dim task3 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(2)))</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that when run in parallel, some of the tasks might not complete execution until after the <b>Ex2Task1_NativeParallelTasks</b> method has exited and control has returned to <b>Main</b>. Because of this, the output time also does not reflect the total processing time as it is likely the tasks have not completed before returning to <b>Main</b>.<p><img src="images\ede24657-2c13-43f3-ae98-b2b4ff56ddbe.png" /></p><p><b>Figure 7</b><br /><i>Output from running several Tasks in parallel</i></p><br /></li>
+        </ol>
+        <a name="_Toc210808279" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933630" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Using the Wait() and WaitAll() Methods</b>
+        </p>
+        <p>The benefit of executing tasks in parallel is faster execution and the ability to leverage multi-core processors. However, you should also notice that the current implementation introduces the possibility the main application could exit before the thread processing the task finishes.  </p>
+        <p>You can handle this possible situation by invoking the <b>Wait()</b> method on the individual <b>Task</b> objects. This causes the main thread to wait until the indicated tasks are complete before continuing on to the next instruction.</p>
+        <ol>
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex2Task2_WaitHandling()</b>. This code will add wait handling to your example.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call <b>    Ex2Task2_WaitHandling();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex2Task2_WaitHandling()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex2Task2_WaitHandling() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task2_WaitHandling CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex2Task2_WaitHandling()</b><b>{</b><b>    Task task1 = Task.Factory.StartNew(delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[0]); });</b><b>    Task task2 = Task.Factory.StartNew(delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[1]); });</b><b>    Task task3 = Task.Factory.StartNew(delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[2]); });</b><b>    task1.Wait();</b><b>    task2.Wait();</b><b>    task3.Wait();</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task2_WaitHandling VB</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex2Task2_WaitHandling()</b><b>    Dim task1 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(0)))</b><b>    Dim task2 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(1)))</b><b>    Dim task3 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(2)))</b><b>    task1.Wait()</b><b>    task2.Wait()</b><b>    task3.Wait()</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that this time all three Tasks completed before the final time was reported, indicating the end of the main thread.<p><img src="images\6cf132b9-8851-4274-9f4f-3f9bf9a46c00.png" /></p><p><b>Figure 8</b><br /><i>Output from running tasks in parallel with individual Wait() conditions</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The main thread waited for the created <b>Task</b> objects to complete before continuing operation. This approach is much simpler and cleaner than using <b>ThreadPool.QueueUserWorkItem</b>, which involves the creation and management of manual reset events, possible with the addition of Interlocked operations as well.</td></tr></table><p /></div><br /></li>
+          <li> In addition to the <b>Wait()</b> method on the individual <b>Task</b> objects, the static <b>Task</b> class also offers a <b>WaitAll()</b> method allowing you to wait on a specified list of tasks with one call. To see this method in action, remove the individual calls to <b>Wait()</b> for task1, task2, and task3 and replace them with the following:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex2Task2_WaitHandlingWaitAll();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex2Task2_WaitHandlingWaitAll()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex2Tas2_WaitHandlingWaitAll() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task2_WaitHandlingWaitAll CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex2Task2_WaitHandlingWaitAll()</b><b>{</b><b>    Task task1 = Task.Factory.StartNew(delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[0]); });</b><b>    Task task2 = Task.Factory.StartNew (delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[1]); });</b><b>    Task task3 = Task.Factory.StartNew (delegate</b><b>        { PayrollServices.GetPayrollDeduction(employeeData[2]); });</b><b>    Task.WaitAll(task1, task2, task3);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task2_WaitHandlingWaitAll VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex2Task2_WaitHandlingWaitAll()</b><b>    Dim task1 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(0)))</b><b>    Dim task2 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(1)))</b><b>    Dim task3 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(2)))</b><b>    Task.WaitAll(task1, task2, task3)</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe the main application waits until all individual Tasks are completed before continuing.<p><img src="images\759234e4-89c5-4e23-b63c-2ce276e538ff.png" /></p><p><b>Figure 9</b><br /><i>Output from running tasks in parallel with the WaitAll() method</i></p></li>
+        </ol>
+        <a name="_Toc210808280" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933631" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Using the IsCompleted Property</b>
+        </p>
+        <p>There will be times when you want to check on the completion status of a <b>Task</b> before doing other work (for instance, you may have another task to run that is dependent on the first task completing first), but you may not want to utilize the <b>Wait()</b> method because <b>Wait()</b> blocks execution on the thread you’ve launched your <b>Task</b> from. For these situations, the <b>Task</b> class exposes an <b>IsCompleted</b> property. This enables you to check whether <b>Task</b> objects have completed their work before you continue with other processing.</p>
+        <ol>
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex2Task3_TaskIsCompleted()</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex2Task3_TaskIsCompleted();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex2Task3_TaskIsCompleted()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex2Task3_TaskIsCompleted() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task3_TaskIsCompleted CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex2Task3_TaskIsCompleted()</b><b>{</b><b>    Task task1 = Task.Factory.StartNew(delegate</b><b>    { PayrollServices.GetPayrollDeduction(employeeData[0]); });</b><b>    while (!task1.IsCompleted)</b><b>    {</b><b>        Thread.Sleep(1000);</b><b>        Console.WriteLine("Waiting on task 1");</b><b>    }</b><b>    Task task2 = Task.Factory.StartNew(delegate</b><b>    { PayrollServices.GetPayrollDeduction(employeeData[1]); });</b><b>    while (!task2.IsCompleted)</b><b>    {</b><b>        Thread.Sleep(1000);</b><b>        Console.WriteLine("Waiting on task 2");</b><b>    }</b><b>    Task task3 = Task.Factory.StartNew(delegate</b><b>    { PayrollServices.GetPayrollDeduction(employeeData[2]); });</b><b>    while (!task3.IsCompleted)</b><b>    {</b><b>        Thread.Sleep(1000);</b><b>        Console.WriteLine("Waiting on task 3");</b><b>    }</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task3_TaskIsCompleted VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex2Task3_TaskIsCompleted()</b><b>    Dim task1 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(0)))</b><b>    Do While Not task1.IsCompleted</b><b>        Thread.Sleep(1000)</b><b>        Console.WriteLine("Waiting on task 1")</b><b>    Loop</b><b>    Dim task2 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(1)))</b><b>    Do While Not task2.IsCompleted</b><b>        Thread.Sleep(1000)</b><b>        Console.WriteLine("Waiting on task 2")</b><b>    Loop</b><b>    Dim task3 As Task = Task.Factory.StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(2)))</b><b>    Do While Not task3.IsCompleted</b><b>        Thread.Sleep(1000)</b><b>        Console.WriteLine("Waiting on task 3")</b><b>    Loop</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Build and run the application.</li>
+          <li>You should observe that Tasks two and three do not start until the previous Task’s <b>IsCompleted</b> property is true.<p><img src="images\8cc3ed3d-8bb6-4298-aa99-21baf413eca1.png" /></p><p><b>Figure 10</b><br /><i>Output from running tasks in parallel and utilizing the IsCompleted property</i></p></li>
+        </ol>
+        <a name="_Toc210808281" href="#">
+          <span />
+        </a>
+        <a name="_Toc281933632" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Using the ContinueWith() Method</b>
+        </p>
+        <p>While the <b>IsCompleted</b> property is useful for polling a <b>Task</b> to see if it is finished in order to be able to fire off more work, the <b>Task</b> class offers an even more convenient option. Using the <b>ContinueWith()</b> method makes it easy to string tasks together to run in a specific order.</p>
+        <p>The functionality passed in as arguments to the <b>ContinueWith()</b> method will be executed once the <b>Task</b> object’s logic continues.</p>
+        <ol>
+          <li>Replace the current method calls from <b>Main()</b>, with a call to <b>Ex2Task4_ContinueWith()</b>.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){    ...    // Methods to call<b>    Ex2Task4_ContinueWith();</b>    ...}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main(ByVal args() As String)    ...    ' Methods to call<b>    Ex2Task4_ContinueWith()</b>    ... End Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Add the Ex2Task4_ContinueWith() method to <b>Program.cs </b>(C#) or<b> Module1.vb </b>(Visual Basic):<p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task4_ContinueWith CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static void Ex2Task4_ContinueWith()</b><b>{</b><b>    Task task3 = Task.Factory.StartNew(delegate</b><b>            { PayrollServices.GetPayrollDeduction(employeeData[0]); })</b><b>        .ContinueWith(delegate</b><b>            { PayrollServices.GetPayrollDeduction(employeeData[1]); })</b><b>        .ContinueWith(delegate</b><b>            { PayrollServices.GetPayrollDeduction(employeeData[2]); });</b><b>    task3.Wait();</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Intro to Parallel Extensions Lab - Ex2 Ex2Task4_ContinueWith VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub Ex2Task4_ContinueWith()</b><b>    Dim task3 As Task = Task.Factory _</b><b>                        .StartNew(Sub() PayrollServices.GetPayrollDeduction(employeeData(0))) _</b><b>                        .ContinueWith(Sub() PayrollServices.GetPayrollDeduction(employeeData(1))) _</b><b>                        .ContinueWith(Sub() PayrollServices.GetPayrollDeduction(employeeData(2)))</b><b>    task3.Wait()</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Here you created the first<b> Task </b>as normal, but you used the <b>ContinueWith()</b> method to have the runtime execute the subsequent calls in order.</td></tr></table><p /></div><br /></li>
+          <li> Build and run the application.</li>
+          <li>You should observe that the tasks execute in order – employee 1 first, followed by employee 2, and finally employee 3.<p><img src="images\d4a12eba-a78c-4014-b01b-54b459bcd886.png" /></p><p><b>Figure 11</b><br /><i>Output from running tasks in parallel and using ContinueWith to ensure their order and wait conditions</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_df26681b-887d-4ceb-9270-da6a045f00b8.html">Exercise 3: Use the Generic Task Class to Create and Run Tasks that Return a Value</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

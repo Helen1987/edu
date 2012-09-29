@@ -1,0 +1,150 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Overview" />
+      <MSHelp:RLTitle Title="Overview" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Overview</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Multitouch Gestures with MFC - Native</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Overview</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Windows 7 gives users the ability to manage applications with the touch of their fingers, without the need of a stylus. This new gesture capability allows multiple input events to occur at the same time from different pointing locations, and it enables complex scenarios, such as managing applications with ten fingers or with multiple simultaneous users. However, to pull this off, we have to adapt our application's user interface and behavior to support this new input model.</p>
+        <h1 class="heading">Objectives</h1>
+        <p>In this Hands-On Lab, you will learn how to manage gesture events, including:</p>
+        <ul>
+          <li>Understanding the implications of manipulating an object with gesture events </li>
+          <li>Checking for Multitouch hardware existence and readiness</li>
+          <li>Extracting information from the gesture Windows Message</li>
+        </ul>
+        <a name="_Toc168302999" href="#">
+          <span />
+        </a>
+        <h1 class="heading">System Requirements</h1>
+        <p>You must have the following items to complete this lab:</p>
+        <ul>
+          <li>Microsoft Visual Studio 2010</li>
+          <li>Windows 7</li>
+          <li>A multitouch hardware device </li>
+        </ul>
+        <p><b>Introduction</b></p>
+        <p>To create a Multitouch driven application you should design your application’s user interface with touch capabilities in mind. For example, the controls you use should be relatively large to support a finger rather than a mouse or stylus.  Beyond that you have 3 different approaches you can consider:</p>
+        <p>Rely upon touch capabilities already a part of existing Win32 controls. For example, Win32 controls already support some touch capabilities such as scrolling without any extra coding in your application. Go ahead and try to scroll the document you are reading using your fingers.</p>
+        <p>Read and handle low-level touch events and create your own sophisticated touch handling interface. This is the approach used by complex multiple sliders that users can operate simultaneously or by applications like “Piano” or MS Paint. For example, run MS Paint, select a drawing tool from the gallery and draw with four of your fingers (if the hardware permits): </p>
+        <p>
+          <img src="images\abed565a-37f3-4c61-bec2-733e172837de.png" />
+        </p>
+        <p>Use the new Multitouch gestures to get touch events to your applications to support custom actions like zoom, rotate, and translate without the need to read and manipulate raw touch events. This is the approach used in this Hands-On Lab.</p>
+        <a name="_GoBack" href="#">
+          <span />
+        </a>
+        <br />
+        <a name="_Toc212354933" href="#">
+          <span />
+        </a>
+        <h1 class="heading">About the Multitouch Gesture Demo</h1>
+        <p>The Multitouch Gesture demo presents a simple window containing a rectangle that can be modified using Multitouch gestures. Inside the <b><i>Sources\MFC_GestureDemoSource</i></b> folder, you can find a <b><i>Starter</i></b> folder that contains files you will need during this lab and a finished version of the lab which is located in the <b><i>Final</i></b> folder.</p>
+        <p>This application responds to Multitouch gesture input by interacting with a painted rectangle. The rectangle responds to the following gestures:</p>
+        <br />
+        <p><b>Translate</b></p>
+        <p>To translate the image,<b> </b>place one or two fingers in the application window and drag in the direction you want. Make sure to leave a little space between the two fingers so that the touch interface sees them as separate contact points.<img src="images\2ede4555-5e24-48a5-b4fb-087db554349c.png" /></p>
+        <br />
+        <p><b>Rotate</b></p>
+        <p>Touch the rectangle with two fingers and turn fingers in a circle<b>.</b></p>
+        <p>
+          <img src="images\d01c9e15-1dcc-4231-b50a-928f40bf82e4.png" />
+        </p>
+        <br />
+        <p><b>Zoom</b></p>
+        <p>Touch two fingers and move them farther apart or closer together.</p>
+        <p>
+          <img src="images\b76fa87b-46ac-4957-ab34-8958e7e1c793.png" />
+        </p>
+        <br />
+        <p><b>Two Finger Tap</b></p>
+        <p>Tap once with both fingers to toggle diagonal lines on or off within the red rectangle.</p>
+        <p>
+          <img src="images\a24831f2-71dd-47d5-88e0-ae75fdabb659.png" />
+        </p>
+        <br />
+        <p><b>Finger Roll</b></p>
+        <p>Press and hold one finger, then tap with the other and then remove the first one to change the color of the rectangle.</p>
+        <p>
+          <img src="images\01d78346-3ae4-4a55-93cf-b715365800c5.png" />
+        </p>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

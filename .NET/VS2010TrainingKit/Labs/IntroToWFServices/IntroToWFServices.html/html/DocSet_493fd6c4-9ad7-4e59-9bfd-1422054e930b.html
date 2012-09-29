@@ -1,0 +1,278 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Submit Application Service" />
+      <MSHelp:RLTitle Title="Exercise 1: Submit Application Service" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Submit Application Service</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow Services using .NET Framework 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Submit Application Service</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In the first exercise you will create a simple service that receives an Application from the smart client application and returns a response.</p>
+        <a name="_Toc244310970" href="#">
+          <span />
+        </a>
+        <a name="_Toc246389184" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002928" href="#">
+          <span />
+        </a>
+        <a name="_Toc228784826" href="#">
+          <span />
+        </a>
+        <a name="_Toc229399123" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 1 located under the <b>Source\Ex1\Begin</b> folder (choosing the folder that matches the language of your preference.) Use it as the starting point for this exercise.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\dd1ba9b7-8752-49f5-b064-67c8cc900dcd.png" /><b>What is in this solution?</b><br />This solution contains a web site created from the WCF Workflow Service template, and a data layer project you will be using in this lab. The Web.config file has some minor modifications to include an appSettings section, and connection string for the database.</td></tr></table><p /></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc246389185" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002929" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a new a Workflow Service</b>
+        </p>
+        <ol>
+          <li>Add a new Workflow Service. To do this, right-click on <b>HRApplicationServices</b>, and select <b>Add / New Item… (CTRL+SHIFT+A)</b>, in the <b>Workflow Templates</b> select the <b>WCF Workflow Service </b>template, name the service to <b>SubmitApplication.xamlx</b>, and then click <b>Add.</b><p><img src="images\35355f08-47be-44a0-8aaf-8208b08e6881.png" /></p><p><b>Figure 5</b><br /><i>Create a New Workflow Service in C#</i></p><br /><p><img src="images\10434a3b-d7f8-4551-900e-dd2ae4f6318c.png" /></p><p><b>Figure 6</b><br /><i>Create a New Workflow Service in Visual Basic</i></p><br /></li>
+        </ol>
+        <a name="_Toc246389186" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310971" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002930" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Exploring the Workflow Service</b>
+        </p>
+        <p>You probably have some questions about your service. What is the service contract? What binding does it use? What address is it hosted at? In this task, you will explore your service and how it interacts with the world.</p>
+        <p>
+          <img src="images\96cc27e3-93e6-4b6a-b495-20ba0ada0714.png" />
+        </p>
+        <p>
+          <b>Figure 7</b>
+          <br />
+          <i>The default Workflow Service</i>
+        </p>
+        <br />
+        <ol>
+          <li>Workflow Services have an implicit contract that is defined by the messaging activities contained in the service. <b>SubmitApplication.xamlx</b> already has a working contract that might look familiar if you have built a WCF service before. Look at <b>SubmitApplication.xamlx</b> in the workflow designer. Notice that it has a sequence with two activities, a request labeled <b>ReceiveRequest</b> and a response labeled <b>SendResponse</b>. The request determines the parameters to the service. To see the message content, click <b><i>View message</i></b>in the <b>ReceiveRequest</b> activity, next to the <b>Content</b> label.<p><img src="images\219262a9-6d42-4ddf-84ac-bf32e75048c2.png" /></p><p><b>Figure 8</b><br /><i>The message content – the parameters are implied by the data</i></p><br /></li>
+          <li>Click <b>OK </b>to dismiss the Content Definition dialog.</li>
+          <li>The content of the message is a variable named <b>data</b>. To see this variable; click the <b>Sequential Service</b> activity and then click the <b>Variables</b> button in the lower left of the design surface.<p><img src="images\f6cdaaba-5aa3-4cb4-bc5c-d05c55a70ab6.png" /></p><p><b>Figure 9</b><br /><i>Variables created by the Workflow Services template</i></p><br /></li>
+          <li>There are two variables. The first variable <b><i>handle</i></b> is used to correlate the request and response messages. The second variable <b><i>data</i></b> defines the message content that you expect to receive.</li>
+          <li>To see what the return value is, in the <b>SendResponse</b> activity click <b><i>View message</i></b>.<p><img src="images\a062cf6e-be57-4e8d-8e3f-92f264722205.png" /></p><p><b>Figure 10</b><br /><i>The response message will be the data converted to a string</i></p><br /></li>
+          <li>Click <b>OK </b>to dismiss the Content Definition dialog.</li>
+          <li>You now have a workflow service, but it does not have Metadata publishing enabled. To add this, you can use the new “tagless” syntax for WCF configuration in .NET 4. Open the <b>Web.config</b> file, and add the following section. Also notice that there is no &lt;service&gt; definition. The simplified configuration for WCF will supply a default binding (basicHttpBinding) address and contract as required.<p><i>(Code Snippet – Introduction to WF Services Lab – WCF serviceMetatdata XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;system.serviceModel&gt;</b><b> &lt;behaviors&gt;</b><b> &lt;serviceBehaviors&gt;</b><b> &lt;behavior&gt;</b><b> &lt;serviceMetadata httpGetEnabled="true"/&gt;</b><b> &lt;/behavior&gt;</b><b> &lt;/serviceBehaviors&gt;</b><b> &lt;/behaviors&gt;</b><b>&lt;/system.serviceModel&gt;</b></pre></td></tr></table></span></div><br /></li>
+          <li>You now have a working Workflow Service. To see it in action, right-click the <b>SubmitApplication.xamlx</b> file, and select <b>View in Browser </b>(CTRL+SHIFT+W). You should see a familiar site for WCF developers.<p><img src="images\b44ff988-5ed5-4913-8869-4bc83e39168f.png" /></p><p><b>Figure 11</b><br /><i>The service running in the browser</i></p><br /></li>
+        </ol>
+        <a name="_Toc246389188" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310973" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002931" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Creating Service Implementation Outline</b>
+        </p>
+        <p>Your service has three phases to it. It will receive, screen and notify. Throughout the lab, you will be implementing these phases. To begin with, you will add placeholders for each phase.</p>
+        <ol>
+          <li>Switch back to <b>SubmitApplication.xamlx</b> in the workflow designer.</li>
+          <li>Change the Display Name property of the outermost sequence from <b>Sequential Service</b> to<b> Application Service</b>. You can change it directly on the design surface or in the Properties window.<p><img src="images\d975d0f0-b127-45e6-bd03-9fd9b61a21b1.png" /></p><p><b>Figure 12</b><br /><i>Change the name of the service to Application Service</i></p><br /></li>
+          <li>The first placeholder will require a transaction because you will be updating a database as well as persisting your workflow to the persistence database. Drag a <b>TransactedReceiveScope</b> from the <b>Messaging</b> group in the Toolbox and drop it at the top of the Application Service sequence. Set the Display Name to <b>Receive Application</b>.</li>
+          <li>Drag the existing <b>ReceiveRequest</b> inside the Request area of the Receive Application activity. When the message is received it will create a transaction.<p><img src="images\6638daac-ef02-4241-b3b4-1dba97b4822e.png" /></p><p><b>Figure 13</b><br /><i>Drag the existing ReceiveRequest inside of the Request area of the Receive Application</i></p><br /></li>
+          <li>In the body area you want to put the work that will be done inside of the transaction. You will have more than one activity here so drop a <b>Sequence</b> from the <b>Control Flow</b> Toolbox group inside of the body and set the properties.<ol><li>Display Name: <b>Save and Respond</b></li></ol></li>
+          <li>Drag the <b>SendResponse</b> and drop it inside of the Save and Respond sequence.<p><img src="images\29b8306b-e2e6-4b83-937a-4bdbe81c67f8.png" /></p><p><b>Figure 14</b><br /><i>The Service with the TransactedReceiveScope containing the messaging activities</i></p><br /></li>
+          <li>Collapse the Receive Application activity (<img src="images\3d22150d-be9a-4339-9ffe-dc52f843dc7d.png" />).</li>
+          <li>The second phase of the service will be to screen the applicant. You will implement this later but for now drag a <b>Sequence</b> activity from the <b>Control Flow</b> group and drop it below the Receive Application shape and set the Display Name to <b>Screen Applicant </b>then collapse the sequence.</li>
+          <li>The third phase will be notifying the applicant via email and by sending a notification message to the smart client application. Drop another Sequence, set the Display Name to <b>Notify Applicant</b> and collapse the sequence.<p><img src="images\7c81dce3-fdd9-4793-9c33-1560d45194a4.png" /></p><p><b>Figure 15</b><br /><i>Collapsed view of the workflow service with three phases</i></p><br /></li>
+        </ol>
+        <a name="_Toc246389189" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310974" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002932" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Adding Custom Activities</b>
+        </p>
+        <p>Your service will accept a job application from the smart client app. In this task, you will make the modifications necessary to prepare the service to accept a job application.</p>
+        <ol>
+          <li>Add existing projects containing the solution's data contracts and custom activities. To do this, in Solution Explorer right-click the solution node, and select <b>Add / Existing Project</b>. In the Add Existing Project dialog, browse to <b>Source\Assets</b> folder of this lab (choosing the folder that matches the language of your preference) and select the following project(s):<ol><li><b>HRApplicationServices.Contracts</b></li><li><b>HRApplicationServices.Activities</b></li></ol></li>
+          <li>In the <b>HRApplicationServices</b> project, add references to the <b>HRApplicationServices.Contracts</b> and <b>HRApplicationService.Activities</b> projects. To do this in Solution Explorer, right-click the <b>HRApplicationServices</b> project and select Add Reference. In the Add Reference dialog, switch to the Projects tab, and select the projects. Click <b>OK</b> to add the references.</li>
+          <li>Your workflow is going to be long running. It will do some initial work and then wait for a human to respond. This means that you need to configure a persistence store. To add this, open the <b>Web.config</b> from the <b>HRApplicationServices</b> project and add the following settings.<ol><li>To the <b>&lt;connectionStrings&gt;</b> section add the following connection string which will use the WF4Persistence store you created in the setup for the lab.<p><i>(Code Snippet – Introduction to WF Services Lab – WF4 Persistence XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;connectionStrings&gt;<b> &lt;add name="WF4Persistence" </b><b> connectionString="Data Source=.\sqlexpress;</b><b> Database=WF4Persistence;</b><b> Integrated Security=True"/&gt;</b></pre></td></tr></table></span></div></li><br /><li>To the <b>&lt;behavior&gt;</b> section add the <b>sqlWorkflowInstanceStore</b> behavior right after the <b>serviceMetadata</b> behavior.<p><i>(Code Snippet – Introduction to WF Services Lab – WF4 sqlWorkflowInstanceStore XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;serviceMetadata httpGetEnabled="true"/&gt;<b>&lt;sqlWorkflowInstanceStore connectionStringName="WF4Persistence" /&gt;</b></pre></td></tr></table></span></div></li><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> When you deploy the website to AppFabric you can configure the persistence store within IIS manager. While working with the ASP.NET Development server you have to create the persistence stores and add the persistence behavior manually.</td></tr></table><p /></div><br /></ol></li>
+          <li>To make the custom activities available to your service you must build the solution. From the menu select <b>Build / Build Solution</b> (CTRL+SHIFT+B). Ensure that the build succeeded by inspecting the Output window. If you look at <b>SubmitApplication.xamlx</b> in the workflow designer, you should now see a <b>HRApplicationService.Activities</b> group in the toolbox.</li>
+        </ol>
+        <a name="_Toc246389191" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310976" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002933" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Receiving a Job Application</b>
+        </p>
+        <ol>
+          <li>Open <b>SubmitApplication.xamlx</b> and<b> </b>create<b> </b>variables to store the application request and response. To do this, follow these steps:<ol><li>Select the <b>Application Service</b> activity by clicking over the shape surface.</li><li>Click the <b>Variables</b> button located in lower left side of the workflow designer. A panel that displays the available variables for the <b>Application Service</b> activity appears.</li><li>Delete the <b>data</b> variable by selecting it and pressing the <b>DELETE</b> key.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>When you delete the <b>data</b> variable the workflow designer will show warning icons indicating that the workflow is invalid until you update the activities that used the <b>data</b> variable.</td></tr></table><p /></div><br /></li><li>Click <b><i>Create Variable</i></b>.<p><img src="images\0374a75a-a347-4325-875b-d47884d56cd6.png" /></p><p><b>Figure 16</b><br /><i>Adding a new variable</i></p><br /></li><li>Type <b>ApplicationRequest</b> in the Name box.</li><li>In the Variable type dropdown list select <b>Browse for Types</b>.</li><li>In the <b>Type Name</b> box of the dialog box, type the first few characters of the type you are looking for such as <b>SubmitJob</b>. As you type matching names will show up in the list. Click on the <b>SubmitJobApplicationRequest</b> type to select it.<p><img src="images\1ae2106e-b551-44ff-b10d-4d2c60f646b2.png" /></p><p><b>Figure 17</b><br /><i>Selecting the SubmitJobApplicationRequest type from the type picker box</i></p><br /></li><li>Click <b>OK</b> to finish.<p><img src="images\213151bd-21d1-4957-812d-0afbea601f8c.png" /></p><p><b>Figure 18</b><br /><i>Variables window</i></p><br /></li></ol></li>
+          <li>Repeat the previous process to add another variable named <b>ApplicationResponse</b> of type <b>SubmitJobApplicationResponse</b>.</li>
+          <li>You need to create a response object to store the response. Set the Default value of the <b>ApplicationResponse</b> variable to <b>New SubmitJobApplicationResponse()</b>. Remember that expressions must be written with Visual Basic regardless of the language of the project.</li>
+          <li>Now you can change the contract to receive a job application. To do this, expand the Receive Application sequence <img src="images\affd9f08-d108-4cf5-9957-9a8a0f3e5e1a.png" /> and select the <b>ReceiveRequest</b> activity in the designer and press <b>F4</b> to display the <b>Properties</b> Window. Set the following values:<ol><li>OperationName: <b>SubmitJobApplication</b></li><li>ServiceContractName: {http://contoso.com/hr/}IApplicationService</li><li>Content: Click the … button to display the content definition dialog and change the Message data to<b> ApplicationRequest</b>.</li><li>Check the <b>CanCreateInstance</b> checkbox. This will cause every incoming message received by the Receive Job Application activity to create a new workflow instance.<p><img src="images\3b2990af-a325-43d6-a349-8620e8ec55e8.png" /></p><p><b>Figure 19</b><br /><i>Properties of the ReceiveRequest activity</i></p><br /></li></ol></li>
+        </ol>
+        <a name="_Toc246389192" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310977" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002934" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 6 – Saving the Job Application</b>
+        </p>
+        <p>You need to store the job application data in the HR database. The provided <b>SaveJobApplication</b> custom activity does this using the ADO.NET Entity Framework. When the job application is saved the database will generate an Application ID that you will use as the primary key for the application.</p>
+        <ol>
+          <li>Drop a <b>SaveJobApplication</b> activity from the <b>HRApplicationServices.Activities</b> group inside the Save and Respond sequence above the <b>SendResponse</b> activity.<p><img src="images\511f48a6-98ff-41e6-b54c-c2b28ad76f80.png" /></p><p><b>Figure 20</b><br /><i>The SaveJobApplication activity</i></p><br /></li>
+          <li>Set the properties of the <b>SaveJobApplication</b> activity:<ol><li>AppRequest: <b>ApplicationRequest</b></li><li>Result: <b>ApplicationResponse</b></li></ol></li>
+        </ol>
+        <a name="_Toc246389193" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310978" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002935" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 7 – Configuring the Response</b>
+        </p>
+        <p>Though you have stored the application in the database, you are not finished processing it. You want to let the user of the client application know that you have received and are processing their job application. And you have to initialize the correlation handle that you will use to identify messages bound for this workflow instance using content based correlation.</p>
+        <ol>
+          <li>First, you need to create a correlation handle that will be used to correlate messages for this workflow instance. Select the <b>Application Service</b> scope, click the <b>Variables</b> button and just as you did before, add a new variable <b>ApplicationIDHandle</b> of type <b>CorrelationHandle</b> to the <b>Application Service </b>scope.</li>
+          <li>Next set the response data. In the <b>SendResponse</b> activity, click on <i>View message…</i> to display the content definition dialog. Change the <b>Message data</b> to use the variable <b>ApplicationResponse</b>.<p><img src="images\772ef176-5c6c-4a7c-adc1-33389e270fd3.png" /></p><p><b>Figure 21</b><br /><i>Set the message data of the response to ApplicationResponse</i></p><br /></li>
+          <li>Now you can define the <b>CorrelationInitializers</b>. The initializer will extract data from the outgoing message using an XPath expression. The extracted key will be used to identify the persisted workflow instance. With the <b>SendResponse</b> activity selected, in the Properties window click <img src="images\185b2959-9e0d-489d-9957-12d78165411b.png" /> beside <b>CorrelationIntializers</b> to display the Add Correlation Initializers dialog.</li>
+          <li>Click <i>Add initializer</i> and add <b>ApplicationIDHandle</b>.</li>
+          <li>With the <b>ApplicationIDHandle</b> initializer selected, in the XPath Queries window double-click the <b>ApplicationID : Int32</b> message content.<p><img src="images\b39b898c-d240-42ba-b590-d26b772fbf0c.png" /></p><p><b>Figure 22</b><br /><i>Double-click the ApplicationID : Int32 message content</i></p><br /></li>
+          <li>Click <b>OK</b> to dismiss the dialog.</li>
+          <li>The default namespace for types in your workflow service is tempuri.org. If you want to change the default namespace you will need to edit the XAMLX file using the XML editor. To do this, in Solution Explorer right-click on SubmitApplication.xamlx and select <b>View Code</b>.</li>
+          <li>Locate the Name= attribute and insert <b>p:</b> in front of the name as shown. This will cause the service to use the namespace of the operation contract as the default namespace for the WSDL types.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;WorkflowService  mc:Ignorable="sap"  ConfigurationName="SubmitApplication"  sap:VirtualizedContainerService.HintSize="252,435" <b> Name="p:SubmitApplication" </b></pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc246389194" href="#">
+          <span />
+        </a>
+        <a name="_Toc244310979" href="#">
+          <span />
+        </a>
+        <a name="_Toc282002936" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 8 – Adding the Client Application</b>
+        </p>
+        <ol>
+          <li>Add the existing <b>HRClient</b> project. To do this, in Solution Explorer right-click the solution node, and select <b>Add / Existing Project</b>. In the Add Existing Project dialog, browse to <b>Source\Assets</b> folder of this lab (choosing the folder that matches the language of your preference) and select the <b>HRClient</b> project.</li>
+          <li>Add a Service Reference to the <b>SubmitApplication.xamlx</b> service, to do this:<ol><li>Right-click on the <b>HRClient</b> project and select <b>Add Service Reference</b>.</li><li>In the <b>Add Service Reference</b> dialog click on the <b>Discover</b> button to discover services in the solution. Visual Studio will find the <b>SubmitApplication.xamlx</b> file. Double-click it to see the details of the service. This will launch the service in the ASP.NET Development server.</li><li>Set the namespace of the service to<b> SubmitApp</b>.<p><img src="images\80d1ab1c-2e9a-4ba6-b548-abe21d83ae77.png" /></p><p><b>Figure 23</b><br /><i>Configuring the service reference</i></p><br /></li><li>Click the <b>Advanced</b> button, check the <b>Generate asynchronous operations</b> checkbox and click <b>OK</b>.<p><img src="images\a04e4905-684d-49de-853b-29d8f5f34260.png" /></p><p><b>Figure 24</b><br /><i>Check the Generate asynchronous operations checkbox in the advanced settings</i></p><br /></li></ol></li>
+          <li>Click <b>OK</b> to save and dismiss the Add Service Reference dialog.</li>
+          <li>From the menu select <b>Build / Build Solution</b> (CTRL+SHIFT+B).</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_57b19f8c-2721-4e73-8477-16986508f4c8.html">Exercise 1: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

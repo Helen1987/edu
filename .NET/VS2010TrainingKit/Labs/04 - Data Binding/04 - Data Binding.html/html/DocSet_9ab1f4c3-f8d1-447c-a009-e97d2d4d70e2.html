@@ -1,0 +1,146 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Creating a User Interface and Binding Data to Controls" />
+      <MSHelp:RLTitle Title="Exercise 2: Creating a User Interface and Binding Data to Controls" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Creating a User Interface and Binding Data to Controls</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Silverlight Data Binding</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Creating a User Interface and Binding Data to Controls</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll build a user interface using standard Silverlight controls and bind an instance of the CustomerContainer class to the DataContext.  You'll then bind object properties to controls within the user interface visually using Visual Studio 2010 and the Properties window.</p>
+        <ol>
+          <li>Open <b>MainPage.xaml</b> and change the <b>DesignHeight</b> and <b>DesignWidth</b> attributes on the <b>UserControl</b> element to <b>500</b> in the XAML</li>
+          <li>Add <b>Height</b> and <b>Width</b> attributes to the <b>UserControl</b> element and give them a value of <b>500</b> to fix the size of the user interface.</li>
+          <li>Add 6 rows and 2 columns using the designer as shown next:<p><img src="images\8386de9c-b2ff-4287-aa18-224db6d4c2c9.png" /></p><p><b>Figure 3</b><br /><i>Grid Rows And Columns</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Click on the Grid control in the Visual Studio designer and then add rows and columns by clicking within the blue regions to the left and top of the interface.</td></tr></table><p /></div></li>
+          <li>Create the following customer information screen by dragging the appropriate controls from the ToolBox onto the Visual Studio designer:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You'll need 6 TextBlock controls, a ComboBox control, a ListBox control, 3 TextBox controls and a Button. Place the controls in the appropriate rows and columns of the Grid.</td></tr></table><p /></div><p><img src="images\74e6ce69-0ad3-4dc4-b3e1-4178ff287f3f.png" /></p><p><b>Figure 4</b><br /><i>Customer information screen </i></p></li>
+          <li>Give the <b>TextBlock</b> with the text <b>[Output TextBlock]</b> in the designer a name of <b>OutputTextBlock</b> and remove the value from the <b>Text</b> property.</li>
+          <li>Within the <b>MainPage.xaml.cs </b>constructor create a new instance of the <b>CustomerContainer</b> class and assign it to the LayoutRoot's <b>DataContext</b> property(the grid has a name of <b>LayoutRoot</b>):<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>LayoutRoot.DataContext=new CustomerContainer();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>LayoutRoot.DataContext=New CustomerContainer()</pre></td></tr></table></span></div></li>
+          <li>Switch back to <b>MainPage.xaml</b>, highlight the <b>ComboBox</b> control and view its properties in the <b>Properties</b> window</li>
+          <li>Click the <b>ItemsSource</b> property and try to visually bind it to the <b>CustomerContainer</b> object's <b>States</b> property. Notice that none of the custom properties appear in the data binding window (see Figure 5). This is due to the <b>DataContext</b> being assigned at runtime rather than at design-time. Design-time data is important when you'd like to see data in the designer while building your application.<p><img src="images\70aae619-2f6d-4dd4-a988-fcd59bd9ea15.png" /></p><p><b>Figure 5</b><br /><i>Data Binding Window</i></p></li>
+          <li>Remove the line of code you added into the <b>MainPage.xaml.cs</b> constructor. The next steps will demonstrate how to bind objects declaratively to provide a better design-time experience.</li>
+          <li>Add the following XML namespace prefix definition on the <b>UserControl</b> element in the XAML (use the XAML code editor):<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>xmlns:data="clr-namespace:DataBinding"</pre></td></tr></table></span></div></li>
+          <li>Add the following code immediately below the <b>UserControl</b> element (immediately above the existing <b>Grid):</b><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;UserControl.Resources&gt;    &lt;data:CustomerContainer x:Key="CustomerContainerObject" /&gt;&lt;/UserControl.Resources&gt;</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b>Note</b>:<b> </b>This will create a new instance of the CustomerContainer object at runtime and assign it to the CustomerContainerObject key.</td></tr></table><p /></div></li>
+          <li>Locate the <b>Grid </b>control named <b>LayoutRoot</b> in the XAML and add the following <b>DataContext </b>attribute to it:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>DataContext="{Binding Source={StaticResource CustomerContainerObject}}"</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This code binds the CustomerContainerObject key (which represents an instance of the CustomerContainer object) to the DataContext declaratively. This type of binding will execute in design-mode and at runtime.</td></tr></table><p /></div></li>
+          <li>Build the solution so that the following data binding steps work properly.</li>
+          <li>Bind the <b>ComboBox</b> control's <b>ItemsSource</b> property to the <b>CustomerContainer</b> object's <b>States</b> property using the <b>Properties</b> window as shown next:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The CustomerContainer object assigned to the DataContext is automatically detected as the Source.</td></tr></table><p /></div><p><img src="images\c5cb5137-ce8f-4993-bbaa-0a2cd351dd6c.png" /></p><p><b>Figure 6</b><br /><i>Data Binding Window</i></p></li>
+          <li>Change the <b>ComboBox</b> control's <b>DisplayMemberPath</b> property to a value of <b>Name</b> so that the <b>ComboBox</b> shows the <b>Name</b> property of the <b>State</b> class.</li>
+          <li>Run the solution and notice that once the Silverlight interface loads the <b>ComboBox</b> displays a list of states:<p><img src="images\07378a90-ca07-483e-ba7e-78ad7878c108.png" /></p><p><b>Figure 7</b><br /><i>The Silverlight User Interface</i></p></li>
+          <li>Bind the <b>ComboBox</b> control's <b>SelectedItem</b> to the <b>CurrentState</b> property:<p><img src="images\1f981585-c365-4d93-a088-f6fbd543c3bf.png" /></p><p><b>Figure 8</b><br /><i>ComboBox Binding</i></p></li>
+          <li>Bind the <b>ListBox</b> control's <b>ItemsSource</b> to <b>FilteredCustomers</b> and its <b>SelectedItem</b> property to <b>CurrentCustomer</b> using the same technique shown in the previous step.</li>
+          <li>Once the bindings are in place for the <b>ListBox</b> you'll see the text "<b>DataBinding.Customer"</b> appear multiple times in the designer as shown in the following figure since it doesn't know what Customer object property to bind to at this point:<p><img src="images\5a8e2cd8-72eb-4814-9573-6e583c29e2b7.png" /></p><p><b>Figure 9</b><br /><i>The ListBox at Design-Time</i></p></li>
+          <li>To fix the issue, add the following <b>ItemTemplate</b> within the <b>ListBox</b> control using the XAML editor (add this XAML between the <b>ListBox </b>control's begin and end tags):<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;ListBox.ItemTemplate&gt;    &lt;DataTemplate&gt;        &lt;GridWidth="350"&gt;            &lt;Grid.ColumnDefinitions&gt;                &lt;ColumnDefinitionWidth=".20*" /&gt;                &lt;ColumnDefinitionWidth=".30*" /&gt;                &lt;ColumnDefinitionWidth=".20*" /&gt;                &lt;ColumnDefinitionWidth=".30*" /&gt;            &lt;/Grid.ColumnDefinitions&gt;           &lt;Grid.RowDefinitions&gt;                &lt;RowDefinitionHeight="30" /&gt;            &lt;/Grid.RowDefinitions&gt;            &lt;ImageGrid.Column="0"Source="{BindingPath=ImageUrl}" /&gt;            &lt;TextBlockGrid.Column="1"Text="{BindingPath=Name}"              FontSize="12"Foreground="Navy" /&gt;&lt;TextBlockGrid.Column="2"Text="{BindingPath=City}"              FontSize="12"Foreground="Red" /&gt; &lt;TextBlockGrid.Column="3"Text="{BindingPath=State}"              FontSize="12"Foreground="Green" /&gt;        &lt;/Grid&gt;    &lt;/DataTemplate&gt;&lt;/ListBox.ItemTemplate&gt;</pre></td></tr></table></span></div></li>
+          <li>Bind the <b>Name TextBox</b> control's <b>Text</b> property to <b>CurrentCustomer.Name:</b><p><img src="images\ed777c64-e8c5-4be4-adce-7402b2dd22e9.png" /></p><p><b>Figure 10</b><br /><i>Bind the NameTextBox</i></p></li>
+          <li>Bind the <b>City</b> and <b>Birthday TextBox</b> controls to the associated properties on <b>CurrentCustomer</b> as shown in the previous step.</li>
+          <br />
+          <li>Double-click the <b>Button </b>control to create an event handler and add the following code within the event handler to write out a message to the <b>OutputTextBlock</b> control:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>var customers = LayoutRoot.DataContext as CustomerContainer;var name = customers.CurrentCustomer.Name;OutputTextBlock.Text = name + " updated!";</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Dim customers = CType(LayoutRoot.DataContext, CustomerContainer)Dim name = customers.CurrentCustomer.NameOutputTextBlock.Text = name + " updated!"</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This code accesses the LayoutRoot object's DataContext and casts it to a CustomerConatiner type so that you can access the CurrentCustomer object's Name property value.</td></tr></table><p /></div></li>
+          <li>Run the application and notice that all customers show in the <b>ListBox</b>. </li>
+          <li>Select a state from the <b>ComboBox</b> to filter the customers. Click on a customer within the <b>ListBox</b> and note that the appropriate values show in the <b>TextBox</b> controls.</li>
+          <li>The <b>Birthday TextBox</b> currently shows the date and time. To only show the date select the <b>TextBox</b> back in the Visual Studio designer and go to the <b>Text</b> property's data binding window. Click on the <b>Options</b> section and select the <b>{0:d}</b> format from the <b>String Format</b> drop-down as shown next:<p><img src="images\b50bbe80-2ff0-4544-91ad-9a0390b6183a.png" /></p><p><b>Figure 11</b><br /><i>String Format </i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The StringFormat property provides a way to apply a format code to data as it is bound to a control. Standard .NET format codes used to format dates, times, decimals, currencies, and more can be used.</td></tr></table><p /></div></li>
+          <li>Take a moment to examine the data binding syntax for the <b>Birthday TextBox</b> in the XAML editor and notice that a <b>StringFormat </b>property has been applied to the binding and that the <b>Mode</b> of the <b>TextBox</b> (and the other TextBox controls) is set to <b>TwoWay</b>. <b>TwoWay</b> bindings automatically push data from controls back to the bound property providing a powerful way to interact with data without having to know control names.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Text="{Binding Path=CurrentCustomer.Birthday, Mode=TwoWay,        StringFormat=\{0:d\}}"</pre></td></tr></table></span></div></li>
+          <li>Run the application again and notice that the <b>BirthdayTextBox</b> only shows the date as a result of applying the <b>d</b> format code.</li>
+          <li>To finish the application you need to show a gold star image if a customer's <b>IsGold</b> property is true. To accomplish this task drag an <b>Image</b> control onto the design surface and position it as shown by the highlighted control below:<p><img src="images\422873d0-afb7-489b-9ccf-97655c1be666.png" /></p><p><b>Figure 12</b><br /><i>Positioning the Image Control</i></p></li>
+          <li>Assign the <b>Image</b> control's <b>Source</b> property a value of <b>Images/GoldStar.png</b>.</li>
+          <li>The <b>Image</b> control should only show if a customer's <b>IsGold</b> property is true. To hide the Image control when <b>IsGold</b> is false you'll need to create a value converter to convert a Boolean value to a Visibility value.</li>
+          <li>Add a new folder named <b>Converters</b> into the <b>DataBinding</b> project.</li>
+          <li>Add a new class named <b>BoolToVisibilityConverter</b> into the <b>Converters </b>folder and import the <b>System.Windows.Data</b> namespace.</li>
+          <li>Implement the <b>IValueConverter</b> interface on the <b>BoolToVisibilityConverter</b> class and add the following code within the <b>Convert()</b> method:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>return ((bool)value == true) ? Visibility.Visible : Visibility.Collapsed;</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Return If(CBool(value) = True, Visibility.Visible, Visibility.Collapsed)</pre></td></tr></table></span></div></li>
+          <li>Go to <b>MainPage.xaml</b> and add the following XML namespace prefix on the <b>UserControl</b> element:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>xmlns:converters="clr-namespace:DataBinding.Converters"</pre></td></tr></table></span></div></li>
+          <li>Add the following within the <b>UserControl.Resources</b> element to register the converter and make it available to use within the XAML:<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" /&gt;</pre></td></tr></table></span></div></li>
+          <li>Add the following <b>Visibility</b> attribute on the <b>Image</b> control within the XAML to associate the converter with the <b>IsGold</b> property (ensure the attribute value doesn't wrap):<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Visibility="{Binding CurrentCustomer.IsGold,Converter={StaticResource   BoolToVisibilityConverter},FallbackValue=Collapsed}"</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> When the screen first loads CurrentCustomer will be null so the converter will never be called. To account for this the FallbackValue property is used to define that the default Visibility is Collapsed which will hide the image. FallbackValue is used whenever a binding can't be resolved.</td></tr></table><p /></div></li>
+          <li>Run the application and select the first customer in the <b>ListBox</b>. Notice that the gold star shows since the customer's <b>IsGold</b> property has a value of true. Select other customers and notice that the gold star disappears for some of them.</li>
+        </ol>
+        <a name="_Toc274815074" href="#">
+          <span />
+        </a>
+        <p>
+          <b>
+          </b>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eb6b57a5-e47c-46c6-a2c9-3161c4d6e0f1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62305/SubmitApplication.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SubmitApplication.wsdl" MetadataType="Wsdl" ID="10e1c478-3504-48f8-a553-8cfcb9b31821" SourceId="1" SourceUrl="http://localhost:62305/SubmitApplication.xamlx?wsdl=wsdl0" />
+    <MetadataFile FileName="SubmitApplication.disco" MetadataType="Disco" ID="87d61d7f-f20d-4f9c-8aca-09bf265b0dce" SourceId="1" SourceUrl="http://localhost:62305/SubmitApplication.xamlx?disco" />
+    <MetadataFile FileName="SubmitApplication.xsd" MetadataType="Schema" ID="9e23bd22-3025-4c20-bbce-43177e76573e" SourceId="1" SourceUrl="http://localhost:62305/SubmitApplication.xamlx?xsd=xsd1" />
+    <MetadataFile FileName="SubmitApplication1.xsd" MetadataType="Schema" ID="5f2436f3-e662-47b6-9776-fd07252316ed" SourceId="1" SourceUrl="http://localhost:62305/SubmitApplication.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="SubmitApplication1.wsdl" MetadataType="Wsdl" ID="a70895e1-d760-4ef7-8573-1b9f4c4f4b45" SourceId="1" SourceUrl="http://localhost:62305/SubmitApplication.xamlx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

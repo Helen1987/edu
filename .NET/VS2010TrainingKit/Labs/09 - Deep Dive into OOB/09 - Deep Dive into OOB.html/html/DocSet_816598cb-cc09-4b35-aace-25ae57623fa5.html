@@ -1,0 +1,130 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Working with the hard drive" />
+      <MSHelp:RLTitle Title="Exercise 3: Working with the hard drive" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Working with the hard drive</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Deep Dive into Out of Browser</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Working with the hard drive</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>When running in a trusted environment, you can access only files in user folders, specifically the MyDocuments, MyMusic, MyPictures, and MyVideos folders.  Although this makes sense from a security point of view, it’s limiting.  You want to enable the user to drag their data from any location.  As it stands right now, if you try to drop a file from a location other than stated above, Silverlight will throw a security error.  </p>
+        <p>In this section we’re going to cover how to import an Excel file from anywhere on the hard drive, how to create and delete directories, and how to create and modify files.  Before you begin it’s important to lay out exactly what needs to be done. </p>
+        <ul>
+          <li>Read the bytes of the dropped file</li>
+          <li>Create a temporary directory in My Documents</li>
+          <li>Create a temporary file with the byte contents of the dropped file</li>
+          <li>Open the temporary file in Excel</li>
+          <li>Read the data</li>
+          <li>Finally delete both the temporary file and directory</li>
+        </ul>
+        <ol>
+          <li>Create a new method, called CopyFileToTempDirectory.  This method will copy the dropped file to into a temporary directory in My Documents.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private bool CopyFileToTempDirectory(FileInfo fi, string tempDirectory, string fileName){        using (Stream stream = fi.OpenRead())        {                try                {                        byte[] buffer = new byte[Convert.ToInt32(stream.Length)];                        stream.Read(buffer, 0, Convert.ToInt32(stream.Length));                        stream.Close();                        // Create a temporary directory in My Documents                        Directory.CreateDirectory(tempDirectory);                        // Write a new file to the temp directory                        File.WriteAllBytes(string.Format("{0}\\{1}", tempDirectory, fileName), buffer);                        return true;                }                catch (Exception e)                {                        return false;                }        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Function CopyFileToTempDirectory(ByVal fi As FileInfo, ByVal tempDirectory As String, ByVal fileName As String) As Boolean        Using stream_Renamed As Stream = fi.OpenRead()                Try                        ' Copy file to My Documents. This ensures we can open it up in Excel                        Dim buffer(Convert.ToInt32(stream_Renamed.Length) - 1) As Byte                        stream_Renamed.Read(buffer, 0, Convert.ToInt32(stream_Renamed.Length))                        stream_Renamed.Close()                        ' Create a temporary directory in My Documents                        Directory.CreateDirectory(tempDirectory)                        ' Write a new file to the temp directory                        File.WriteAllBytes(String.Format("{0}\{1}", tempDirectory, fileName), buffer)                        Return True                        Catch e As Exception                                Return False                End Try        End UsingEnd Function</pre></td></tr></table></span></div></li>
+          <li>Back in the Drop event handler, call the newly created method, CopyFileToTempDirectory , and tell the Worksheet to open the temporary folder instead of the calling My Documents.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void ImportPanel_Drop(object sender, DragEventArgs e){        // ...        string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);        string tempDirectory = string.Format("{0}\\temp", myDocuments);        string tempFullPath = string.Format("{0}\\{1}", tempDirectory, fi.Name);        // Copy the file to a temp directory in My Documents        CopyFileToTempDirectory(fi, tempDirectory, fi.Name);        // Create the Excel object        dynamic excel = AutomationFactory.CreateObject("Excel.Application");        dynamic excelWorkBook = excel.Workbooks.Open(tempFullPath);         // ...}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub ImportPanel_Drop(ByVal sender As Object, ByVal e As DragEventArgs)        '...        Dim myDocuments As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)        Dim tempDirectory As String = String.Format("{0}\temp", myDocuments)        Dim tempFullPath As String = String.Format("{0}\{1}", tempDirectory, fi.Name)        ' Copy the file to a temp directory in My Documents        CopyFileToTempDirectory(fi, tempDirectory, fi.Name)        'Dim result = New ObservableCollection(Of YearValueData)()        Dim excel As Object        Try        ' Check to see if Excel is already running                excel = AutomationFactory.GetObject("Excel.Application")        Catch                excel = AutomationFactory.CreateObject("Excel.Application")        End Try        ' Open the excel document                Dim excelWorkBook As Object = excel.Workbooks.Open(tempFullPath)        '...End Sub</pre></td></tr></table></span></div></li>
+          <li>This screen shot shows the GasolinePrices.xls being dragged from C:\temp and the temporary directory created in My Document.<p><img src="images\3444fe96-d151-4c5a-abd1-ad614a8b71df.png" /></p><p><b>Figure 1</b><br /></p></li>
+          <li>Remove the temporary directory and file.  Create a new method to delete both the temporary directory and temporary file.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void CleanUpFileSystem(string tempDirectory, string tempFullPath){        File.Delete(tempFullPath);        // Remove temp directory        Directory.Delete(tempDirectory + "\\", true);}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub CleanUpFileSystem(ByVal tempDirectory As String, ByVal tempFullPath As String)        File.Delete(tempFullPath)        ' Remove temp directory        Directory.Delete(tempDirectory &amp; "\", True)End Sub</pre></td></tr></table></span></div></li>
+          <li>Finally add the call to this method in the Drop event handler. CleanUpFileSystem(tempDirectory, tempFullPath); The final Drop event handler looks like this:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>void ImportPanel_Drop(object sender, DragEventArgs e){        if (e.Data != null)        {        FileInfo[] files = e.Data.GetData(DataFormats.FileDrop) as FileInfo[];        if (AutomationFactory.IsAvailable)        {                // Get the first file                var fi = files[0];                string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);                string tempDirectory = string.Format("{0}\\temp", myDocuments);                string tempFullPath = string.Format("{0}\\{1}", tempDirectory, fi.Name);        // Copy the file to a temp directory in My Documents        CopyFileToTempDirectory(fi, tempDirectory, fi.Name);        // Create the Excel object        dynamic excel = AutomationFactory.CreateObject("Excel.Application");        // Open the excel document. Must be located in "My Documents"                   dynamic excelWorkBook = excel.Workbooks.Open(tempFullPath);         // Read the Worksheet        dynamic activeWorkSheet = excelWorkBook.ActiveSheet();        // Cells to Read        dynamic cell1, cell2;        // Iterate through Cells        for (int count = 3; count &lt; 30; count++)        {                cell1 = activeWorkSheet.Cells[count, 1];                cell2 = activeWorkSheet.Cells[count, 2];                Data.Add(new YearValueData(){                Year = cell1.Value,                Value = cell2.Value                });        }        // Title is a TextBlock in XAML, this sets the value        Title.Text = activeWorkSheet.Cells[1, 1].Value;        // Close the workbook        excelWorkBook.Close();        // Close the Excel process        excel.Quit();        CleanUpFileSystem(tempDirectory, tempFullPath);        // Populate the DataGrid        ExcelDataGrid.ItemsSource = this.Data;        // Create LineSeries        LineSeries lineSeries = new LineSeries();        lineSeries.ItemsSource = this.Data;        lineSeries.IndependentValueBinding = new Binding("Year");        lineSeries.DependentValueBinding = new Binding("Value");        this.Chart.Series.Add(lineSeries);        // Hide the ImportPanel        this.ImportPanel.Visibility = Visibility.Collapsed;        }        }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub ImportPanel_Drop(ByVal sender As Object, ByVal e As DragEventArgs)        If e.Data IsNot Nothing Then                Dim files() As FileInfo = TryCast(e.Data.GetData(DataFormats.FileDrop), FileInfo())        If files.Length &gt; 0 Then                If AutomationFactory.IsAvailable Then                        Dim fi = files(0)                                If fi.Name.ToLower().Contains(".xls") OrElse fi.Name.ToLower().Contains(".xlsx") Then                                        VisualStateManager.GoToState(Me, "Loading", True)                                        Dim myDocuments As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)                                        Dim tempDirectory As String = String.Format("{0}\temp", myDocuments)                                        Dim tempFullPath As String = String.Format("{0}\{1}", tempDirectory, fi.Name)                                        ' Copy the file to a temp directory in My Documents                                        CopyFileToTempDirectory(fi, tempDirectory, fi.Name)                                        'Dim result = New ObservableCollection(Of YearValueData)()                                        Dim excel As Object                                        Try                                        ' Check to see if Excel is already running                                        excel = AutomationFactory.GetObject("Excel.Application")                                        Catch                                                excel = AutomationFactory.CreateObject("Excel.Application")                                        End Try                                        ' Open the excel document                                        Dim excelWorkBook As Object = excel.Workbooks.Open(tempFullPath)                                        ' Read the Worksheet                                        Dim activeWorkSheet As Object = excelWorkBook.ActiveSheet()                                        ' Cells to Read                                        Dim cell1, cell2 As Object                                        Title.Text = activeWorkSheet.Cells(1, 1).Value                                        ' Iterate through Cells                                        For count As Integer = 3 To 29                                                cell1 = activeWorkSheet.Cells(count, 1)                                                cell2 = activeWorkSheet.Cells(count, 2)                                                Me.Data.Add(New YearValueData() With {.Year = cell1.Value, .Value = cell2.Value})                                        Next count                                        ' Close the workbook                                        excelWorkBook.Close()                                        ' Close the Excel process                                        excel.Quit()                                        ' Clean up temp file                                        CleanUpFileSystem(tempDirectory, tempFullPath)                                        ' Populate the DataGrid                                        ExcelDataGrid.ItemsSource = Me.Data                                        ' Create LineSeries                                        Dim lineSeries As New LineSeries()                                        lineSeries.ItemsSource = Me.Data                                        lineSeries.IndependentValueBinding = New Binding("Year")                                        lineSeries.DependentValueBinding = New Binding("Value")                                        Me.Chart.Series.Add(lineSeries)                                        VisualStateManager.GoToState(Me, "DetailsState", True)                                Else                                ' Display  error: "Hey this isn't an Excel file, please select valid excel file"                                End If                        End If                End If        End IfEnd Sub</pre></td></tr></table></span></div></li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

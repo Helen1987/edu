@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Video xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ContentFramework.Core.Models">
+  <Version>1.0</Version>
+  <Author>
+    <Name>RoJacobs</Name>
+  </Author>
+  <Id>IntroToWCFRoutingService</Id>
+  <Title>The New WCF Routing Service</Title>
+  <Description>
+    In this video we are going to look at one of the exciting new capabilities of WCF in .NET 4, the WCF Routing Service. As you will see in this episode, with the WCF  Routing Service you can now
+    bridge Protocols, do content based routing and provide server-side failover with backup lists.
+  </Description>
+  <Abstract>
+    In this video we are going to look at one of the exciting new capabilities of WCF in .NET 4, the WCF Routing Service. As you will see in this episode, with the WCF  Routing Service you can now
+    bridge Protocols, do content based routing and provide server-side failover with backup lists.
+  </Abstract>
+  <Url>
+    http://ecn.channel9.msdn.com/o9/ch9/7/9/6/6/2/5/104Episode40WCFRouting_2MB_ch9.wmv
+  </Url>
+  <CustomProperties>
+    <Property Name="PlayerUrl" Value="http://channel9.msdn.com/shows/10-4/10-4-Episode-40-The-New-WCF-Routing-Service/Player/" />
+  </CustomProperties>
+</Video>

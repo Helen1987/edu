@@ -1,0 +1,22 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="RowCountModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:m2="http://schemas.microsoft.com/ado/2008/11/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Product">
+        <Key>
+          <PropertyRef Name="ProductID" />
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        <Property Name="ProductNumber" Type="Edm.String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+        <Property Name="StandardCost" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" />
+        <Property Name="ListPrice" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" />
+        <Property Name="SellStartDate" Type="Edm.DateTime" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="AdoNetDataServices1510In1.RowCount" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:m2="http://schemas.microsoft.com/ado/2008/11/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="RowCountContext" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Products" EntityType="RowCountModel.Product" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

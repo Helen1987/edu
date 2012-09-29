@@ -1,0 +1,183 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Create Data Entity Classes and Implement INotifyPropertyChanged" />
+      <MSHelp:RLTitle Title="Exercise 1: Create Data Entity Classes and Implement INotifyPropertyChanged" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Create Data Entity Classes and Implement INotifyPropertyChanged</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Silverlight Data Binding</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Create Data Entity Classes and Implement INotifyPropertyChanged</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <a name="_Toc274815071" href="#">
+          <span />
+        </a>
+        <p>In this exercise you'll create data entity classes with properties that will be bound to Silverlight controls. Two of the classes you'll create will implement INotifyPropertyChanged which is a key interface used for data binding in Silverlight applications.</p>
+        <ol>
+          <li>Create a new <b>Silverlight Application</b> project named <b>DataBinding</b>  in Visual Studio 2010 (the project can be saved anywhere you'd like): <p><img src="images\cca52f43-45e3-4308-a14b-d3c226b5de70.png" /></p><p><b>Figure 2</b><br /><i>New Project Dialog</i></p></li>
+          <li>Right-click on the <b>ClientBin</b> folder in the <b>DataBinding.Web</b> project and <b>select Add  New Folder</b>. Name the folder <b>Images.</b></li>
+          <li>Copy the <b>blue.png </b>and <b>GoldStar.png</b> files from the lab's <b>Starting Point</b> folder into the <b>Images</b> folder using the <b>Add  Existing Item</b> option in Visual Studio.</li>
+          <li>Locate the <b>DataBinding</b> project in the Solution Explorer and add the following classes into it by right-clicking on the project and selecting<b> Add  Class</b>:<table style=""><tr valign="top"><th><p>Class Name</p></th></tr><tr valign="top"><td><p>Customer</p></td></tr><tr valign="top"><td><p>State</p></td></tr><tr valign="top"><td><p>CustomerContainer</p></td></tr></table></li>
+          <li>Add the following properties into the <b>State</b> class (add them as standard .NET properties):<b> </b><table style=""><tr valign="top"><th><p>Property</p></th><th><p>Type</p></th></tr><tr valign="top"><td><p>Name</p></td><td><p>String</p></td></tr><tr valign="top"><td><p>Abbreviation</p></td><td><p>String</p></td></tr></table></li>
+          <li>Open the <b>Customer</b> class and import the <b>System.ComponentModel</b> namespace.</li>
+          <li>Implement the <b>INotifyPropertyChanged</b> interface on the <b>Customer</b> class (if you need assistance with this step please refer to the Completed folder and view the Customer class in the lab solution):<table style=""><tr valign="top"><th><p>Language</p></th><th><p>Code</p></th></tr><tr valign="top"><td><p>C#</p></td><td><p>After adding the interface to the <b>Customer</b> class right-click it and select <b>Implement Interface  Implement Interface</b> from the menu.</p></td></tr><tr valign="top"><td><p>Visual Basic</p><br /></td><td><p>After adding the interface to the <b>Customer</b> class hit [Enter] to implement the interface.</p></td></tr></table></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> The INotifyPropertyChanged interface is a key part of the data binding infrastructure available in Silverlight. It contains a single event named PropertyChanged that is used to notify objects when a particular property value changes.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <li />
+          <br />
+          <li>Add the following <b>OnPropertyChanged</b> method into the <b>Customer</b> class to handle raising the <b>PropertyChanged event:</b><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected void OnPropertyChanged(string propName){   if (PropertyChanged != null)   {       PropertyChanged(this, new PropertyChangedEventArgs(propName));    }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Protected Overridable Sub OnPropertyChanged(ByVal propName As String)    RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propName))End Sub</pre></td></tr></table></span></div></li>
+          <li>Add a <b>Name</b> property and associated field into the <b>Customer</b> class that raises the <b>PropertyChanged</b> event in its set block as shown next:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>string _Name;public string Name{    get { return _Name; }    set    {      if (_Name != value)      {         _Name = value;         OnPropertyChanged("Name");      }    }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private _Name As StringPublic Property Name() As StringGet    Return _NameEnd GetSet(ByVal value As String)   If _Name IsNot value Then     _Name = value     OnPropertyChanged("Name")   End If End SetEnd Property</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td><b> </b> If you're using Visual Basic ensure that <b>IsNot</b> is used for comparing reference types and <b>&lt;&gt;</b> is used for comparing value types when creating the properties that follow.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <li>Using the same pattern shown in the previous step, add the following properties and associated fields into the <b>Customer</b> class.  Ensure that <b>OnPropertyChanged</b> is called in each <b>set</b> block and that the property name is passed as a parameter to the method:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> A code snippet file is available in the lab's Starting Point folder that can be used to simplify the process of creating properties that call OnPropertyChanged. Use the Code Snippet Manager to import the appropriate snippet file (C# or VB) if you'd like to use the snippet. Once imported, the shortcut for the snippet is mvvmInpc.</td></tr></table><p /></div><table style=""><tr valign="top"><th><p>Property</p></th><th><p>Type</p></th></tr><tr valign="top"><td><p>City</p></td><td><p>String</p></td></tr><tr valign="top"><td><p>State</p></td><td><p>String</p></td></tr><tr valign="top"><td><p>ImageUrl</p></td><td><p>String</p></td></tr><tr valign="top"><td><p>Birthday</p></td><td><p>DateTime</p></td></tr><tr valign="top"><td><p>IsGold</p></td><td><p>Boolean</p></td></tr></table></li>
+          <li>Open the <b>CustomerContainer</b> class and import the <b>System.ComponentModel</b>,<b> System.Linq</b> and <b>System.Collections.ObjectModel</b> namespaces.</li>
+          <li>Implement <b>INotifyPropertyChanged</b> on the <b>CustomerContainer</b> class and add an <b>OnPropertyChanged</b> method into it to raise the event.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Anytime INotifyPropertyChanged must be implemented on multiple classes it's often more efficient to create a base class that implements the interface and provides the OnPropertyChanged method.  Classes needing to implement the interface can then derive from the base class which provides better code-use and simplified maintenance. If time permits, create a base class that implements INotifyPropertyChanged and contains the OnPropertyChanged method and then derive Customer and CustomerContainer from it.</td></tr></table><p /></div></li>
+          <li>Add the following properties into the <b>CustomerContainer</b> class. Ensure that each property's <b>set</b> block makes a call to <b>OnPropertyChanged</b> and passes the appropriate property name as a parameter. Follow the pattern shown earlier with the <b>Name</b> property in the <b>Customer</b> class.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> A code snippet file is available in the Starting Point folder that can be used to simplify the process of creating properties that call OnPropertyChanged. Use the Code Snippet Manager to import the appropriate snippet file (C# or VB) if you'd like to use the snippet. Once imported, the shortcut for the snippet is mvvmInpc.</td></tr></table><p /></div><table style=""><tr valign="top"><th><p>Property</p></th><th><p>Type</p></th></tr><tr valign="top"><td><p>States</p></td><td><p>ObservableCollection of State</p></td></tr><tr valign="top"><td><p>Customers</p></td><td><p>ObservableCollection of Customer</p></td></tr><tr valign="top"><td><p>FilteredCustomers</p></td><td><p>ObservableCollection of Customer</p></td></tr><tr valign="top"><td><p>CurrentCustomer</p></td><td><p>Customer</p></td></tr><tr valign="top"><td><p>CurrentState</p></td><td><p>State</p></td></tr></table></li>
+          <li>Add the following method into the <b>CustomerContainer </b>class to filter <b>Customer</b> objects based upon a <b>State</b>:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void FilterCustomersByState(){     if (CurrentState != null)     {        if (CurrentState.Name != "View All")         {            var customers = Customers.Where(c =&gt; c.State== CurrentState.Name);            FilteredCustomers = new ObservableCollection&lt;Customer&gt;(customers);         }               else         {             FilteredCustomers = Customers;         }      }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub FilterCustomersByState()    If CurrentState IsNot Nothing ThenIf CurrentState.Name &lt;&gt; "View All" Then       Dim customers=Me.Customers.Where(Function(c) c.State=CurrentState.Name)                                          FilteredCustomers = New ObservableCollection(Of Customer)(customers)Else    FilteredCustomers = CustomersEnd If   End IfEnd Sub</pre></td></tr></table></span></div></li>
+          <li>Within the <b>set</b> block of the <b>CurrentState</b> property add a call to <b>FilterCustomersByState()</b>. It should look like the following code once completed:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>set{    if (_CurrentState != value)    {        _CurrentState = value;        OnPropertyChanged("CurrentState");        FilterCustomersByState();    }}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Set(ByVal value As State)    If _CurrentState IsNot value Then       _CurrentState = value OnPropertyChanged("CurrentState")       FilterCustomersByState()    End IfEnd Set</pre></td></tr></table></span></div></li>
+          <li>Add the following constant into the <b>CustomerContainer </b>class:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>const string IMAGE = "Images/blue.png";</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Const IMAGE As String = "Images/blue.png"</pre></td></tr></table></span></div></li>
+          <li>Add an empty constructor into <b>CustomerContainer</b> and add the following code into it to create <b>State </b>objects:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>States = new ObservableCollection&lt;State&gt;{   new State{Name="Arizona",Abbreviation="AZ"},   new State{Name="California",Abbreviation="CA"},   new State{Name="Nevada",Abbreviation="NV"},   new State{Name="View All"} };</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>States = New ObservableCollection (Of State)() From {         New State With {.Name="Arizona", .Abbreviation="AZ"},         New State With {.Name="California", .Abbreviation="CA"},         New State With {.Name="Nevada", .Abbreviation="NV"},         New State With {.Name="View All"}}</pre></td></tr></table></span></div></li>
+          <li>Add the following code into the constructor to create instances of the <b>Customer</b> class and assign them to the <b>Customers</b> property:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This code can be cut-and-paste from the CustomerContainer class in the lab solution available in the Completed folder.</td></tr></table><p /></div><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Customers = new ObservableCollection&lt;Customer&gt;{    new Customer{Name="John Doe",City="Phoenix", State="Arizona",IsGold=true,                 Birthday=new DateTime(1950,5,10),ImageUrl=IMAGE},    new Customer{Name="Jane Doe",City="Tempe", State="Arizona",                 Birthday=new DateTime(1970,4,13),ImageUrl=IMAGE},    new Customer{Name="Johnny Doe",City="San Diego",State="California",                 Birthday=new DateTime(1980,8,26),ImageUrl=IMAGE},    new Customer{Name="James Doe",City="Las Vegas",State="Nevada",IsGold=true,                  Birthday=new DateTime(1956,8,30),ImageUrl=IMAGE},    new Customer{Name="Gina Doe",City="Anaheim",State="California",                 Birthday=new DateTime(1984,2,28),ImageUrl=IMAGE}</pre></td></tr></table></span></div></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>Customers = New ObservableCollection(Of Customer)            From {           New Customer With {.Name = "John Doe", .City = "Phoenix", _            .State = "Arizona", .IsGold = True, _            .Birthday = New Date(1950, 5, 10), .ImageUrl = IMAGE},           New Customer With {.Name = "Jane Doe", .City = "Tempe", _             .State =  "Arizona", .Birthday = New Date(1970, 4, 13), _             .ImageUrl = IMAGE},           New Customer With {.Name = "Johnny Doe", .City = "San Diego", _             .State = "California", .Birthday = New Date(1980, 8, 26), _            .ImageUrl = IMAGE},           New Customer With {.Name = "James Doe", .City = "Las Vegas", _            .State = "Nevada", .IsGold = True, _            .Birthday = New Date(1956, 8, 30), .ImageUrl = IMAGE},           New Customer With {.Name = "Gina Doe", .City = "Anaheim", _            .State = "California", .Birthday = New Date(1984, 2, 28), _            .ImageUrl = IMAGE}}  FilteredCustomers = Customers</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Data is being added directly into the CustomerContainer class since the focus of this lab is on data binding. In a real-world application data would be retrieved from a Web Service or RESTful service. Additional labs in this series are available that cover retrieving data from distributed sources using WCF and WCF RIA Services.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <ol>
+          <li>Build the project and ensure that no compilation errors occur before continuing.</li>
+        </ol>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

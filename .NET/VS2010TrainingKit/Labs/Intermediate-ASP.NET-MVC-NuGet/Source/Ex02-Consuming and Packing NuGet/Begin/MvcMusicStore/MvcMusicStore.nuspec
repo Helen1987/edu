@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvcMusicStore</id>
+    <version>1.0</version>    
+    <description>Music Store ASP.NET MVC Application</description>
+    <authors>Microsoft</authors>
+    <language>en-US</language>
+  </metadata>
+</package>

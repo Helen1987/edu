@@ -1,0 +1,228 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Testing simple controller actions" />
+      <MSHelp:RLTitle Title="Exercise 1: Testing simple controller actions" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Testing simple controller actions</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Testing</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Testing simple controller actions</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to test your controllers by adding testing methods to verify the behavior of its method actions.</p>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141331" href="#">
+          <span />
+        </a>
+        <a name="_Toc223343086" href="#">
+          <span />
+        </a>
+        <a name="_Toc247341950" href="#">
+          <span />
+        </a>
+        <a name="_Toc259103753" href="#">
+          <span />
+        </a>
+        <a name="_Toc268709022" href="#">
+          <span />
+        </a>
+        <a name="_Toc269992843" href="#">
+          <span />
+        </a>
+        <a name="_Toc282180593" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a Testing Project </b>
+        </p>
+        <p>In this task you will create a testing project for your tests. </p>
+        <ol>
+          <li>Start Microsoft Visual Studio 2010 Professional from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010 </b>| <b>Microsoft Visual Studio 2010</b>. </li>
+          <li>In the <b>File</b> menu, choose Open<b> Project</b>. In the Open Project dialog, browse to Source\Ex01-Testing simple controller actions\Begin, select <b>MvcMusicStore.sln</b> and click <b>Open</b>.</li>
+          <li>In the <b>Solution Explorer</b> expand the <b>Controllers</b> folder and double-click the <b>StoreController.cs </b>class to open that file.</li>
+          <li>Right-click at any point of the <b>StoreController </b>class code and then select <b>Create Unit Tests</b>.<p><img src="images\712cb151-e8a6-4690-a485-cf7fa07987c7.png" /></p><p><b>Figure 1</b><br /><i>Creating Unit Tests</i></p><br /></li>
+          <li>A window appears with a tree to select the methods to test.  Uncheck <b>StoreController()</b> because you will not add any test to the class constructor, and verify that <b>Browse(System.String)</b>, <b>Details(System.Int32)</b> and <b>Index()</b> methods are selected. Verify that the option <b>Create a new Visual C# test project is selected </b>in the<b> Output project </b>select box. Finally, click <b>OK.</b><p><img src="images\73db55e5-d60d-4f75-9cee-8e14a4a4c2b0.png" /></p><p><b>Figure 2</b><br /><i>Selecting the tests to create</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>This process creates a project, adds a reference to the project to be tested and creates skeleton methods that you will complete to test your controller actions. </td></tr></table><p /></div><br /></li>
+          <li>In the New Test Project window change the project name to <b>MvcMusicStore.Tests</b> and click <b>Create.</b><p><img src="images\b8305a2a-7635-4c11-85c8-9e5db898a1cc.png" /></p><p><b>Figure 3</b><br /><i>Creating a New Test Project</i></p><br /></li>
+          <li>A new project is created.<p><img src="images\6c188389-5450-4a20-a3a8-7acc289eb180.png" /></p><p><b>Figure 4</b><br /><i>Solution Explorer with the new Test Project</i></p></li>
+        </ol>
+        <br />
+        <a name="_Toc269992845" href="#">
+          <span />
+        </a>
+        <a name="_Toc282180594" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Running the tests</b>
+        </p>
+        <p>In this task you will run the tests to verify the system’s behavior. These tests were marked as Inconclusive: an <b>Assert.Inconclusive</b> method is invocated, raising an error. This is a way to verify that your tests did not pass because they were not implemented.</p>
+        <ol>
+          <li>Build the Solution to verify everything is in order. To do this, In the <b>Build</b> Menu, select <b>Build Solution</b>. The Solution should build succesfully.<p><img src="images\bef4a83d-5289-4a81-a76a-5a5575d9615a.png" /></p><p><b>Figure 5</b><br /><i>Building the project</i></p><br /></li>
+          <li>The tests were created in a default ASP.NET environment. In order to test the controllers but without the need to run the web application, you must delete the following attributes before each of the 3 test methods.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[TestMethod()]<s>[HostType("ASP.NET")]</s><s>[AspNetDevelopmentServerHost("D:\\ Source\\Ex01-Testing simple controller actions\\Begin\\MvcMusicStore", "/")]</s><s>[UrlToTest("http://localhost:1045/")]</s></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> These attributes avoid you to configure these tests to run through ASP.NET. Unit tests typically run under the VSTest host process. ASP.NET unit tests must run under the ASP.NET host process. This is configured by the <b>HostType</b> attribute. Additionally, you should specify the path to the web application by the <b>AspNetDevelopmentServerHost</b> attribute. Finally, you have to indicate Visual Studio the URL to test by defining the <b>UrlToTest </b>attribute. <br />In your scenario, you will test your controller action’s methods and you don’t need to configure this.</td></tr></table><p /></div><br /><p>Tests should look like the following:</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod()]</b><b>public void IndexTest()</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>[TestMethod()]</b><b>public void DetailsTest()</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>[TestMethod()]</b><b>public void BrowseTest()</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Run the tests. To do this, in <b>Test</b> Menu select <b>Run</b>, and then <b>All Tests in Solution</b>.<p><img src="images\e64f1b72-5348-4f2b-ba7d-6c65f87caa3e.png" /></p><p><b>Figure 6</b><br /><i>Running the tests</i></p><br /></li>
+          <li>Verify that all tests fail in the <b>Test Results </b>window.<p><img src="images\28e0658a-85fc-48bc-9622-3c5acc1b4b60.png" /></p><p><b>Figure 7</b><br /><i>Tests Results</i></p><br /></li>
+        </ol>
+        <a name="_Toc269992846" href="#">
+          <span />
+        </a>
+        <a name="_Toc282180595" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Implementing the test for the Index action method</b>
+        </p>
+        <p>Now that the tests fail, you will start making them pass one by one. In this task you will implement the test for the Index action method of the Store Controller. The Index method provided in the Begin solution only returns this text: "Hello from Store.Index()", hence that is the text that your test method should verify. </p>
+        <ol>
+          <li>In the StoreControllerTest.cs file, replace the <b>IndexTest</b> method. Note that the <b>Assert.Inconclusive</b> method was removed with the real implementation for the test.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex1 IndexTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>/// &lt;summary&gt;</b><b>///A test for Index</b><b>///&lt;/summary&gt;</b><b>[TestMethod()]</b><b>public void IndexTest()</b><b>{</b><b>    StoreController target = new StoreController(); </b><b>    string expected = "Hello from Store.Index()";</b><b>    string actual;</b><b>    actual = target.Index();</b><b>    Assert.AreEqual(expected, actual);</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Error: Note format was corrupted. Title should be bold.The <b>Assert.AreEqual</b> is a method that verifies that two objects are equal. This overload in particular compares two strings.</td></tr></table><p /></div><br /></li>
+          <li>Run exclusively this test to verify the results. To do this, right-click inside the <b>IndexTest </b>method and then select <b>Run Tests</b>.<p><img src="images\5384f12f-dbcf-4aad-b966-6cdd5511fcaf.png" /></p><p><b>Figure 8</b><br /><i>Running tests in Current Context</i></p><br /></li>
+          <li>The <b>Test Result </b>window should show that the test passes.<p><img src="images\1204a765-e133-45d2-8a60-baae13d1343e.png" /></p><p><b>Figure 9</b><br /><i>Running test IndexTest</i></p></li>
+        </ol>
+        <a name="_Toc282180596" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Implementing the test for the Browse action method</b>
+        </p>
+        <p>In this task you will implement the test for the <b>Browse</b> action method of the Store Controller. The Browse method provided in the Begin solution returns a text concatenating the genre received as parameter. So, your method should verify that text is returned. </p>
+        <ol>
+          <li>In the StoreControllerTest.cs file, replace the <b>BrowseTest</b> method. Note that the <b>Assert.Inconclusive</b> method was removed with the real implementation for the test.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex1 BrowseTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>/// &lt;summary&gt;</b><b>///A test for Browse</b><b>///&lt;/summary&gt;</b><b> [TestMethod()]</b><b>public void BrowseTest()</b><b>{</b><b>    StoreController target = new StoreController(); </b><b>    string genre = "Disco";</b><b>    string expected = "Store.Browse, Genre = Disco";</b><b>    string actual;</b><b>    actual = target.Browse(genre);</b><b>    Assert.AreEqual(expected, actual);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Run exclusively this test to verify the results. To do this, right-click inside the <b>BrowseTest </b>method and then select <b>Run Tests</b>.</li>
+          <li>The <b>Test Result </b>window should show that the test passes.<p><img src="images\7f999a15-a11a-4b0a-bebe-04e79b2f8ce7.png" /></p><p><b>Figure 10</b><br /><i>Running test IndexTest</i></p><br /></li>
+        </ol>
+        <a name="_Toc282180597" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Implementing the test for the Details action method</b>
+        </p>
+        <p>In this task you will implement the test for the <b>Details</b> action method of the Store Controller. The Details method provided in the Begin solution returns a text concatenating the id received as a parameter. So, your method should verify that text is returned. </p>
+        <br />
+        <ol>
+          <li>In the StoreControllerTest.cs file, replace the <b>DetailsTest</b> method. Note that the <b>Assert.Inconclusive</b> method was removed with the real implementation for the test.<p>(Code Snippet – ASP.NET MVC 3.0 Testing – Ex1 DetailsTestMethod – CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>/// &lt;summary&gt;</b><b>///A test for Details</b><b>///&lt;/summary&gt;</b><b> [TestMethod()]</b><b>public void DetailsTest()</b><b>{</b><b>    StoreController target = new StoreController(); </b><b>    int id = 5;</b><b>    string expected = "Store.Details, ID = 5";</b><b>    string actual;</b><b>    actual = target.Details(id);</b><b>    Assert.AreEqual(expected, actual);</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Run exclusively this test to verify the results. To do this, right-click inside the <b>DetailsTest </b>method and then select <b>Run Tests</b>.</li>
+          <li>The <b>Test Result </b>window should show that the test passes.<p><img src="images\4d202cb7-7a0b-4f85-86c5-e10c95687c9e.png" /></p><p><b>Figure 11</b><br /><i>Running test IndexTest</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_2b6ec93b-eb1d-4d2a-9db2-a1b8a9a1e2c6.html">Exercise 2: Testing CRUD actions</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

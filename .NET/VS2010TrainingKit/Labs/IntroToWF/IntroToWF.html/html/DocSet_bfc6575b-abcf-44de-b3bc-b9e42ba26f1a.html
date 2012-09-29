@@ -1,0 +1,163 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 8: Error Handling" />
+      <MSHelp:RLTitle Title="Exercise 8: Error Handling" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 8: Error Handling</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 8: Error Handling</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>You may have noticed a potential bug in your simple application. What happens if you do not pass a UserName to the workflow? In this exercise, you will add some error handling capabilities to your workflow by using the Try/Catch, <b>Catch&lt;T&gt;</b> and <b>Throw</b> built-in activities.</p>
+        <a name="_Toc244412415" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935129" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 7. Alternatively, you can follow the following steps to begin with Exercise 8.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 8 located under the <b>Source\Ex8-ErrorHandling\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc243285463" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388974" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412416" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935130" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Writing a Test to Observe Error Behavior </b>
+        </p>
+        <p>Notice that if you pass an empty string ("") the application should function correctly. The only way to get a null name passed to the workflow is to create it without supplying the in argument for <b>UserName</b>.</p>
+        <ol>
+          <li>Create a test to observe what happens when you do not pass the name argument to the workflow. To do this, using Solution Explorer, open <b>SayHelloFixture.cs</b> (<b>C#</b>) or <b>SayHelloFixture.vb</b> (<b>Visual Basic</b>) located under the <b>HelloWorkflow.Tests</b> project and add the following test.<p><i>(Code Snippet</i>-<i>Introduction to WF</i>4<i>Lab</i>-<i>ShouldHandleNullUserName Test CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod]</b><b>public void ShouldHandleNullUserName()</b><b>{</b><b>    // Invoking with no arguments</b><b>    WorkflowInvoker.Invoke(new SayHello());</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet</i>-<i>Introduction to WF</i>4<i>Lab</i>-<i>ShouldHandleNullUserName Test VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestMethod()&gt;</b><b>Public Sub ShouldHandleNullUserName()</b><b>    ' Invoking with no arguments</b><b>    WorkflowInvoker.Invoke(New SayHello())</b><b>End Sub</b></pre></td></tr></table></span></div><br /></li>
+          <li>Now run the test. Press Ctrl+R, T or Right-click over test method name and select <b>Run Tests </b>(<img src="images\deebcda1-f64a-453c-b55d-0df261412f54.png" />).<p><img src="images\398506b1-0faa-49c9-86c0-71c4221c95ad.png" /></p><p><b>Figure 48</b><br /><i>Run the test</i></p><br /></li>
+          <li>The result is that the test fails with a NullReferenceException because you have an expression that uses UserName.Length in the If activity and UserName was null.<p><img src="images\dc5f287c-1c8d-495a-bf5a-e804381a9d47.png" /></p><p><b>Figure 49</b><br /><i>ShouldHandleNullUserName test failing</i></p><br /><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Test Result</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>HelloWorkflow.Tests.SayHelloFixture.ShouldHandleNullUserName threw exception: System.NullReferenceException: Object reference not set to an instance of an object.</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc243285464" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388975" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412417" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935131" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Adding the Try/Catch Activity to the Workflow</b>
+        </p>
+        <p>To handle the error, you could validate the name argument prior to using it or you could simply catch the exception and deal with it. In this task, you will be catching the exception.</p>
+        <ol>
+          <li>Open <b>SayHello.xaml</b> in the designer and drag a <b>TryCatch</b> activity from Toolbox and drop it at the top of the sequence.<p><img src="images\61425f3f-76be-42a9-8bfb-59f1b35576ee.png" /></p><p><b>Figure 50</b><br /><i>The TryCatch activity in the Toolbox</i></p><br /><p><img src="images\0380fa82-ef77-4282-a7b2-cdbd0bab52c0.png" /></p><p><b>Figure 51</b><br /><i>Adding a TryCatch activity</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\99e97f82-2640-4ecf-846c-80c4283de987.png" /><b>Try/Catch Activity</b><br />Workflows can use the <b>TryCatch</b> activity to handle exceptions that are raised during the execution of a workflow. These exceptions can be handled or they can be re-thrown using the <b>Throw</b> activity. Activities in the <b>Finally</b> section are executed when either the <b>Try</b> section or the Catches section completes.</td></tr></table><p /></div><br /></li>
+          <li>Now you need to move the <b>If</b> activity inside the <b>Try</b> block. <ol><li>Collapse the <b>If</b> activity (<img src="images\83efbe0b-9c64-4cd6-b8dc-0a6ea789441c.png" />) to make the diagram smaller </li><li>Drag-and-drop the <b>if</b> activity into the <b>Try</b> block. </li></ol></li>
+          <p>
+            <img src="images\282b740b-126d-4f9f-9c2b-5fd177cbdea3.png" />
+          </p>
+          <p>
+            <b>Figure 52</b>
+            <br />
+            <i>Moving the If activity</i>
+          </p>
+          <br />
+          <li>Now you need to catch a <b>NullReferenceException</b>. To do this, follow these steps:<ol><li>Click on <i>Add new catch</i>.</li><li>Select <b>System.NullReferenceExeption</b> from the combo box and press <b>Enter</b><p><img src="images\5f9921e8-8f64-4baa-abb0-f5a91c09f57a.png" /></p><p><b>Figure 53</b><br /><i>Selecting NullReferenceExeption</i></p></li><br /></ol></li>
+          <li>In the <b>Catch </b>section of the activity you need to decide how to handle the error. In this case, you are going to replace the exception with an <b>ArgumentNullException</b> and throw it. This lets the caller know that the exception was their fault for not supplying the <b>UserName</b> argument. Drag a <b>Throw</b> activity from the Toolbox and drop it into the <b>Catches </b>area.</li>
+          <li>Set the <b>Throw</b> activity expression. To do this, select the <b>Throw</b> activity and in the Properties windows type the following expression in the <b>Exception</b> box.<div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>New ArgumentNullException("UserName")</b></pre></td></tr></table></span></div><br /><p><img src="images\2eb32834-4036-4095-b5a1-c77d39730a57.png" /></p><p><b>Figure 54</b><br /><i>Adding a Throw activity</i></p><br /></li>
+          <li>Now you need to fix the <b>ShouldHandleNullUserName</b> test so that it expects this exception. To do this, open <b>SayHelloFixture.cs</b> and add an <b>ExpectedException</b> annotation to the test method as shown in the following code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[TestMethod]<b>[ExpectedException(typeof(ArgumentNullException))]</b>public void ShouldHandleNullUserName(){  // Invoking with no arguments  WorkflowInvoker.Invoke(new SayHello());}</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestMethod(), ExpectedException(GetType(ArgumentNullException))&gt;</b>Public Sub ShouldHandleNullUserName()        ' Invoking with no arguments        WorkflowInvoker.Invoke(New SayHello())End Sub</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_facb3e22-48c7-4f41-864e-a509951bf9c3.html">Exercise 8: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="PanelsControlsLab.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="566" d:DesignWidth="947" 
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+             xmlns:my="clr-namespace:PanelsControlsLab">
+	<UserControl.Resources>
+		<DataTemplate x:Key="ImageTemplate">
+			<StackPanel>
+				<Image Source="{Binding Image}" HorizontalAlignment="Left" Height="64" Width="64"/>
+			</StackPanel>
+		</DataTemplate>
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding Source={StaticResource Contacts}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+		
+		<TextBlock Height="Auto" Width="Auto" Grid.Row="0" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,8,0,0">Contact Details</TextBlock>
+        <sdk:DataGrid AutoGenerateColumns="False" Grid.Row="1" Height="Auto" 
+                      Width="Auto" HorizontalAlignment="Left" Margin="0,16,0,0" 
+                      x:Name="ContactsDataGrid" VerticalAlignment="Top" ItemsSource="{Binding Collection}">
+        	<sdk:DataGrid.Columns>
+        		<sdk:DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
+        		<sdk:DataGridTemplateColumn CellTemplate="{StaticResource ImageTemplate}" Header="Image"/>
+        		<sdk:DataGridTextColumn Binding="{Binding Address}" Header="Address"/>
+        		<sdk:DataGridTextColumn Binding="{Binding Email}" Header="Email"/>
+        		<sdk:DataGridTextColumn Binding="{Binding PhoneNumber}" Header="PhoneNumber"/>
+        		<sdk:DataGridTextColumn Binding="{Binding WebSite}" Header="WebSite"/>
+        	</sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+        <StackPanel HorizontalAlignment="Right" Margin="0,8,8,11" Orientation="Horizontal">
+        	<ToggleButton x:Name="AddContactButton" 
+							Content="Add new contact"  
+							Checked="AddContactButton_Checked" 
+							Unchecked="AddContactButton_Unchecked" 
+							Height="24" 
+							Margin="0,0,5,0" />
+        	<ToggleButton x:Name="EditContactButton" 
+							Content="Edit contact"  
+							Checked="AddContactButton_Checked" 
+							Unchecked="AddContactButton_Unchecked" 
+							Height="24" 
+							Margin="0,0,5,0" />
+        	<Button x:Name="HelpButton" Content="Help"/>
+        </StackPanel>
+        <my:EditContacts Grid.Row="1" HorizontalAlignment="Left" x:Name="AddContactPanel" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="0,15,0,0" Visibility="Collapsed" IsEnabled="True" />
+    </Grid>
+</UserControl>

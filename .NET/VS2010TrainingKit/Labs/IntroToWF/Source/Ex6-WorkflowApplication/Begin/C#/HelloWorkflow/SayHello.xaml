@@ -1,0 +1,15 @@
+﻿<Activity mc:Ignorable="sap" x:Class="SayHello" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UserName" Type="InArgument(x:String)" />
+    <x:Property Name="Greeting" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Assign sad:XamlDebuggerXmlReader.FileName="C:\VS2010TrainingKit\Labs\IntroToWF\Ex5-Testing\End\C#\HelloWorkflow\SayHello.xaml" sap:VirtualizedContainerService.HintSize="242,200">
+    <Assign.To>
+      <OutArgument x:TypeArguments="x:String">[Greeting]</OutArgument>
+    </Assign.To>
+    <Assign.Value>
+      <InArgument x:TypeArguments="x:String">["Hello " &amp; UserName &amp; " from Workflow 4"]</InArgument>
+    </Assign.Value>
+  </Assign>
+</Activity>

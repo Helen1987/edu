@@ -1,0 +1,175 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Creating a Collection of Business Entities and Inserting their Values into an Excel Worksheet" />
+      <MSHelp:RLTitle Title="Exercise 1: Creating a Collection of Business Entities and Inserting their Values into an Excel Worksheet" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Creating a Collection of Business Entities and Inserting their Values into an Excel Worksheet</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Visual Studio 2010: Office Programmability</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Creating a Collection of Business Entities and Inserting their Values into an Excel Worksheet</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Business entities are a commonly used pattern to carry data through an application or system.  Business entities might reflect a bank account, with a balance and account holder, or they might reflect a shopping cart with a number of items in it, each of those items being its own business entity.</p>
+        <p>In this exercise, you will learn how to create a collection of business entities and write the values from those entities to an Excel worksheet. Along the way, you will be introduced to new language features in C# 4.0 and Visual Basic 10 that greatly speed the creation of business entities.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td>To verify that each step is correctly performed, it is recommended to build the solution at the end of each task. </td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <a name="_Task_1_–" href="#">
+          <span />
+        </a>
+        <a name="_Toc182141331" href="#">
+          <span />
+        </a>
+        <a name="_Toc211249674" href="#">
+          <span />
+        </a>
+        <br />
+        <a name="_Toc281930407" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating a New Console Application and Reference the Microsoft Office Interop Assemblies</b>
+        </p>
+        <p>In this task, you will create a new console application and add in the assemblies needed to begin Office development.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>On the Microsoft Visual Studio Start Page, click the <b>New Project</b> icon.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><b> </b>This lab will be presented in both C# and Visual Basic. Feel free to use which ever language you are more comfortable with. Along the way new features of each language and Visual Studo 2010 will be pointed out.</td></tr></table><p /></div><br /></li>
+          <li>In either the C# or Visual Basic projects Templates list, select <b>Windows | Console Application</b>.</li>
+          <li>In the <b>Name</b> field, enter the name “OfficeApplication”.</li>
+          <li>In the upper right hand corner, ensure that version 4.0 of the .NET Framework is selected.</li>
+          <li>Accept the default location and Solution Name. Click the <b>OK</b> button. The solution will be created with a single console application project.</li>
+          <li>Right-click on the <b>OfficeApplication</b> project node and select <b>Add Reference…</b>.</li>
+          <li>Under the <b>.NET</b> tab in the <b>Add Reference</b> dialog box, select <b>Microsoft.Office.Interop.Excel</b>. Hold down the <b>CTRL</b> key and click <b>Microsoft.Office.Interop.Word. </b>Click the <b>OK</b> button.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Since the lab is targeted to Office 2007,<b> </b>make sure version 12.0.0.0 is selected when adding the references.</td></tr></table><p /></div><br /><p>When complete, the list of references for your console application should look like this:</p><p><img src="images\39a03ee5-941e-4c82-a2fe-ca8968c8c020.png" /></p><p><b>Figure 1</b><br /><i>References for Office development</i></p><br /></li>
+        </ol>
+        <a name="_Toc211249675" href="#">
+          <span />
+        </a>
+        <a name="_Toc281930408" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating a Collection of Business Entities</b>
+        </p>
+        <p>In this task, you will create a collection of business entities that will be pre-populated with data. Pre-populating simulates loading the entities with data from a separate source. We are shortcutting here to focus on things other than data access.</p>
+        <p>You will start by creating an individual entity.</p>
+        <ol>
+          <li>In the Solution Explorer, right click on the node for the <b>OfficeApplication</b> project and select <b>Add…</b> | <b>Class</b> from the menu.</li>
+          <li>The <b>Add New Item</b> dialog box appears with the Class template already selected. Change the name to <i>Account.cs</i> (for C#) <i>Account.vb</i> (for Visual Basic) and click the <b>Add</b> button.<ol><li>If you are doing the lab in C#, change the definition of the <b>Account</b> class to be <b>public</b>, as shown below:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public class Account</b>{}</pre></td></tr></table></span></div></li><br /></ol></li>
+          <li>Add public properties for <b>ID</b> (<b>integer</b>), <b>Balance</b> (<b>double</b>) and <b>AccountHolder</b> (<b>string</b>) to the <b>Account</b> as shown:<p><i>(Code Snippet – Office Programmability Lab - Ex1 Account properties CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public class Account{<b>    public int ID { get; set; }</b><b>    public double Balance { get; set; }</b><b>    public string AccountHolder { get; set; }</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Office Programmability Lab - Ex1 Account properties VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Public Class Account<b>    Property ID As Integer</b><b>    Property Balance As Double</b><b>    Property AccountHolder As String</b>End Class</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>  A new feature in Visual Basic is the ability to declare a property without declaring a separate field to store the value in. These automatically-implemented properties work the same as if the developer had declared a private field to hold the data and implemented simple “getters” and “setters.” They are called the same way a traditional property is called. If a more robust logic is required for property access, traditional properties that store data in private fields can still be created. Comparable Visual Basic code from VS 2008 would look like the following example:</td></tr></table><p /></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>' This is the old style using backing variables instead of' auto-implemented propertiesPublic Class Account    Private _id As Integer    Private _balance As Double    Private _accountHolder As String    Property ID() As Integer        Get            Return _id        End Get        Set(ByVal value As Integer)            _id = value        End Set    End Property    Property Balance() As Double        Get            Return _balance        End Get        Set(ByVal value As Double)            _balance = value        End Set    End Property    Property AccountHolder() As String        Get            Return _accountHolder        End Get        Set(ByVal value As String)            _accountHolder = value        End Set    End PropertyEnd Class</pre></td></tr></table></span></div><br /></li>
+          <li>The <b>Account</b> class represents your individual entity type. Normally an application would create some sort of collection of these entities and populate them with data from a data store of some sort. To keep this lab concise and focused you will populate your list by pushing values into the individual objects at creation. In the <i>Module1.vb</i> (VB) or <i>Program.cs</i> (C#) file, create a new method called <b>CreateAccountList</b> as shown in the following code:<p><i>(Code Snippet – Office Programmability Lab - Ex1 CreateAccountList VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Function CreateAccountList() As List(Of Account)</b><b>    Dim checkAccounts As New List(Of Account) From {</b><b>        New Account With {</b><b>            .ID = 1,</b><b>            .Balance = 285.93,</b><b>            .AccountHolder = "John Doe"</b><b>        },</b><b>        New Account With {</b><b>            .ID = 2,</b><b>            .Balance = 2349.23,</b><b>            .AccountHolder = "Richard Roe"</b><b>        },</b><b>        New Account With {</b><b>               .ID = 3,</b><b>               .Balance = -39.46,</b><b>            .AccountHolder = "I Dunoe"</b><b>        }</b><b>    }</b><b>    Return checkAccounts</b><b>End Function</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The code above highlights another new feature in Visual Basic: collection initializers. This enables developers to save large amounts of time by declaring the list and initializing the list’s contents directly at that point. There is no need to instantiate the list and then individually “new” up items and add them to the list.</td></tr></table><p /></div><br /><p><i>(Code Snippet – Office Programmability Lab - Ex1 CreateAccountList CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private static List&lt;Account&gt; CreateAccountList()</b><b>{</b><b>    var checkAccounts = new List&lt;Account&gt; {</b><b>        new Account{</b><b>            ID = 1,</b><b>            Balance = 285.93,</b><b>            AccountHolder = "John Doe"</b><b>        },</b><b>        new Account {</b><b>            ID = 2,</b><b>            Balance = 2349.23,</b><b>            AccountHolder = "Richard Roe"</b><b>        },</b><b>        new Account {</b><b>            ID = 3,</b><b>            Balance = -39.46,</b><b>            AccountHolder = "I Dunoe"</b><b>        }</b><b>    };</b><b>    return checkAccounts;</b><b>}</b></pre></td></tr></table></span></div><br /></li>
+          <li>Call the <b>CreateAccountList</b> method from the Main method in the <i>Module1.vb</i> (VB) or <i>Program.cs</i> (C#) file as show:<br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Sub Main()<b>    Dim checkAccounts = CreateAccountList()</b>End Sub</pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>static void Main(string[] args){<b>    var checkAccounts = CreateAccountList();</b>}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc211249676" href="#">
+          <span />
+        </a>
+        <a name="_Toc281930409" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Creating an Excel Workbook and Populate it with Data from the Business Entities</b>
+        </p>
+        <p>In this task, you will create a new Excel workbook. You will then loop through the collection of business objects and insert the data into the Excel workbook. Finally, you will format the worksheet. </p>
+        <ol>
+          <li>The first step is to import the Office namespaces with <b>Imports</b> (VB) or <b>using</b> (C#) statements. Enter the following code at the top of the <i>Module1.vb</i> (VB) or <i>Program.cs</i> (C#) file:<p><i>(Code Snippet – Office Programmability Lab - Ex1 Namespaces VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports Microsoft.Office.Interop</b><b>Imports System.Runtime.CompilerServices</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Office Programmability Lab - Ex1 Namespaces CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using Microsoft.Office.Interop;</b><b>using Excel = Microsoft.Office.Interop.Excel;</b><b>using Word = Microsoft.Office.Interop.Word;</b></pre></td></tr></table></span></div><br /></li>
+          <li>The code to insert the data into Excel is implemented as an <b>Extension</b> method.<p>The first parameter of this (and all) extension methods indicates the type that the method operates on (your list of accounts). The second argument, <b>DisplayFunc</b>, is a type of <b>delegate</b> called <b>Action</b>. <b>Action</b> delegates can take any number of arguments, but always return <b>void</b>.</p><p>This block of code creates a new Excel application with a  workbook, injects some header text into the workbook, calls a helper method to display the values of your <b>Account</b> objects, then sets each column to AutoFit mode to better display each column’s values.</p><p>Enter the following code in <i>Module1.vb</i> (vb) or <i>Program.cs</i> (C#) after the <b>Main</b> method:</p><p><i>(Code Snippet – Office Programmability Lab - Ex1 DisplayInExcel VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;Extension()&gt;</b><b>Sub DisplayInExcel(ByVal accounts As IEnumerable(Of Account), ByVal DisplayFunc As Action(Of Account, Excel.Range))</b><b>    With New Excel.Application</b><b>        .Workbooks.Add()</b><b>        .Visible = True</b><b>        .Range("A1").Value = "ID"</b><b>        .Range("B1").Value = "Balance"</b><b>        .Range("C1").Value = "Account Holder"</b><b>        .Range("A2").Select()</b><b>        For Each ac In accounts</b><b>            DisplayFunc(ac, .ActiveCell)</b><b>            .ActiveCell.Offset(1, 0).Select()</b><b>        Next</b><b></b><b>        .Columns(1).AutoFit()</b><b>        .Columns(2).AutoFit()</b><b>        .Columns(3).AutoFit()</b><b>    End With</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In C #, it is necessary to change the declaration of your <b>Program</b> class in <i>Program.cs</i> to be <b>static</b>.</td></tr></table><p /></div><br /><p><i>(Code Snippet – Office Programmability Lab - Ex1 DisplayInExcel CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>static void DisplayInExcel(this IEnumerable&lt;Account&gt; accounts, </b><b>                          Action&lt;Account, Excel.Range&gt; DisplayFunc)</b><b>{</b><b>    var x1 = new Excel.Application();</b>    //see the Note below<b>    x1.Workbooks.Add();</b><b>    x1.Visible = true;</b><b>    x1.get_Range("A1").Value2 = "ID";</b><b>    x1.get_Range("B1").Value2 = "Balance";</b><b>    x1.get_Range("C1").Value2 = "Account Holder";</b><b>    x1.get_Range("A2").Select();</b><b>    foreach (var ac in accounts)</b><b>    {</b><b>        DisplayFunc(ac, x1.ActiveCell);</b><b>        x1.ActiveCell.get_Offset(1, 0).Select();</b><b>    }</b><b>     ((Excel.Range)x1.Columns[1]).AutoFit();</b><b>     ((Excel.Range)x1.Columns[2]).AutoFit();</b><b>     ((Excel.Range)x1.Columns[3]).AutoFit();</b><b>}</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The statement <b>x1.Workbooks.Add();</b> reflects an important change in the .NET Framework 4.0 and C# 4.0: optional parameters. Previous versions of the Microsoft.Office.Interop.Excel.Workbook COM interop assembly required passing in a parameter. Besides, C#’s previous versions had no support for optional parameters, something Visual Basic developers have enjoyed for years. Earlier the statement would have appeared as <b>x1.Workbooks.Add(Missing.Value);</b> The new interop assemblies in the .NET Framework 4.0, coupled with C# 4.0’s new support for optional parameters lets you use a more concise, clearer syntax.</td></tr></table><p /></div><br /></li>
+          <li>The next step is to call your extension method from the <b>Main</b> method of your program.  Add the following code to the bottom of the <b>Main</b> method:<p>(Code Snippet – <i>Office Programmability Lab - Ex1 DisplayInExcel call VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>checkAccounts.DisplayInExcel(Sub(account, cell)</b><b>            cell.Value2 = account.ID</b><b>            cell.Offset(0, 1).Value2 = account.Balance</b><b>            cell.Offset(0, 2).Value2 = account.AccountHolder</b><b>            If account.Balance &lt; 0 Then</b><b>                cell.Interior.Color = RGB(255, 0, 0)</b><b>                cell.Offset(0, 1).Interior.Color = RGB(255, 0, 0)</b><b>                cell.Offset(0, 2).Interior.Color = RGB(255, 0, 0)</b><b>            End If</b><b>        End Sub)</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Here you see another new feature in Visual Basic; statement lambdas. A statement lambda is an anonymous block of code that is treated like a variable in that it can be passed as an argument to a method, as you are doing in this example. The syntax for a lambda is to “declare” a series of arguments, in this case <b>account</b> and <b>cell</b>, and then to supply the logic for that lambda. When using statement lambdas <b>function</b> or <b>sub</b> names are not required and argument types are inferred.</td></tr></table><p /></div><br /><p><i>(Code Snippet – Office Programmability Lab - Ex1 DisplayInExcel call CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>checkAccounts.DisplayInExcel((account, cell) =&gt;</b><b>        {</b><b>            cell.Value2 = account.ID;</b><b>            cell.get_Offset(0, 1).Value2 = account.Balance;</b><b>            cell.get_Offset(0, 2).Value2 = account.AccountHolder;</b><b>            if (account.Balance &lt; 0)</b><b>            {</b><b>                cell.Interior.Color = 255;</b><b>                cell.get_Offset(0, 1).Interior.Color = 255;</b><b>                cell.get_Offset(0, 2).Interior.Color = 255;</b><b>            }</b><b>        });</b></pre></td></tr></table></span></div><br /><p>The <b>DisplayInExcel</b> extension method takes one argument, an <b>Action</b><b>delegate</b> which in turn takes two arguments.  The <b>Action</b> delegate’s arguments are an instance of your <b>Account</b> object and an instance of a cell in an Excel worksheet. This extension method is in reality a unit of functionality that will be called for each <b>Account</b> object in your list by the <b>for each</b> loop in the body of the <b>DisplayInExcel</b> function.</p><p>The <b>DisplayInExcel</b> function contains the logic for creating and performing setup of the Excel workbook. The delegate you are providing contains the logic to take the individual values from the <b>Account</b> object and place them in the Excel worksheet.</p></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_110ef502-dbb2-4314-880b-e50517163a08.html">Exercise 1: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

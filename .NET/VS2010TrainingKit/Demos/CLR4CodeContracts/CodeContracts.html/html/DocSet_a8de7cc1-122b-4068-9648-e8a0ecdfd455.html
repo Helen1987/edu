@@ -1,0 +1,346 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:RLTitle Title="Step-by-Step Walkthrough" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Step-by-Step Walkthrough</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+	  Code Contracts Demo
+  </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Step-by-Step Walkthrough</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>This demo is composed of the following segments:</p>
+        <ol>
+          <li>Preconditions</li>
+          <li>Post Conditions</li>
+          <li>Object Invariants</li>
+        </ol>
+        <a name="_Toc281405172" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #1 – Preconditions</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Open Microsoft Visual Studio 2010 from <b>Start | All Programs</b>.</li>
+                <li>Open the <b>CodeContractsDemo.sln</b> solution located under the <b>Source</b> folder of this demo (and choosing the folder that matches the language of your preference.)</li>
+                <li>Open the Program.cs file by double-clicking it in <b>Solution Explorer</b>.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>First, notice that to use code contracts a reference to <b>System.Diagnostics.Contracts</b> is needed.</li>
+                <li>The scenario for this demo is a <b>GetPassword</b> function that returns the password for a particular user ID.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\55aeebc5-e1a9-4642-becf-59cc67b373ce.png" />
+              </p>
+              <p>
+                <img src="images\74c70153-d086-486a-bc77-f04125cd5456.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the <b>GetPassword</b> method.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Preconditions specify state when a method is invoked. The <b>Requires</b> method is simply a way to encode that a particular condition must be true upon entry to the method.</li>
+                <li>In this example, we are specifying that the userId parameter must be zero or greater.</li>
+                <li>It can only use data that is at least as visible as the method itself, so that callers might actually be able to satisfy the condition. They are generally used for specifying valid parameter values. The run-time behavior of failed preconditions is determined by the runtime analyzer.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\b3c462ab-74c5-45d5-b1b7-20a0af9fd94a.png" />
+              </p>
+              <p>
+                <img src="images\a919ff68-34cb-4798-b08b-8175ab000a3c.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the <b>Main</b> method and show the invocation to the <b>GetPassword</b> method.</li>
+                <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+                <li>Show the <b>Error List pane</b>, by clicking on the <b>Error List</b> tab located at the bottom left corner of Visual Studio.</li>
+                <li>Press <b>F5</b> to run the example.</li>
+                <li>Stop the execution of the application.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s try the example to see the Preconditions in action. Notice that the call to the <b>GetPassword</b> method is done by passing a negative number as a parameter. Therefore, violating the precondition.</li>
+                <li>When you build the solution, in the Error List pane, the violations to the condition detected at build time are shown as warnings.</li>
+                <li>We will ignore the warnings and run the solution to see what happens.</li>
+                <li>When a violation to a contract occurs, a ContractException exception is thrown, which specifies the condition that was not fulfilled.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\ff22a12b-25f8-47dd-b033-18b133d2d3fa.png" />
+              </p>
+              <p>
+                <img src="images\79c75a6f-bfd7-4a77-bef2-58d2987ec56e.png" />
+              </p>
+              <p>
+                <img src="images\87c3452d-8124-4b37-af4e-e1f7784cd093.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281405173" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #2 – Post Conditions</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the <b>GetPassword</b> method and show the post-condition.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now we will see post-conditions.</li>
+                <li>Postconditions are contracts for the state of a method when it terminates. The postcondition is checked just before exiting a method. The run-time behavior of failed postconditions is determined by the runtime analyzer.</li>
+                <li>In the example, we are requiring that the return value of the GetPassword method is not null , because later we are calling the GetLength method on this value.</li>
+                <li>Unlike preconditions, postconditions may reference members with less visibility. A client may not be able to understand or make use of some of the information expressed by a postcondition using private state, but this does not affect the client's ability to use the method correctly.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\ca8fce9e-5a7f-4764-9ad1-6812ec88c5be.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the Main method and show the invocation to the GetPassword method.</li>
+                <li>Change the parameter from -1 to 0.</li>
+                <li>Press <b>CTRL+ALT+B</b> to build the solution.</li>
+                <li>Show the Error List pane, by clicking on the Error List tab located at the bottom left corner of Visual Studio.</li>
+                <li>Press <b>F5</b> to run the example.</li>
+                <li>Stop the execution of the application.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>In the call to the <b>GetPassword</b> method we will change the UserId to zero. This value does not violate the precondition, but in the method, we have a branch that returns a null value when the user id is zero.</li>
+                <li>Let’s build the solution and look at the Error List pane. Notice that the number of violations has decreased, since it detected that the precondition is fulfilled.</li>
+                <li>What will happen when we run this?</li>
+                <li>A ContractException exception is thrown, because the post-condition is not fullfilled.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\db5189c3-9daf-460d-9759-8ad665295a91.png" />
+              </p>
+              <p>
+                <img src="images\9562e395-21ba-45de-94cb-ef23fe74cf48.png" />
+              </p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Scroll to the <b>Main</b> method and show the invocation to the <b>GetPassword</b> method.</li>
+                <li>Change the parameter from 0 to 2.</li>
+                <li>Press <b>F5</b> to run the example.</li>
+                <li>Press any key to finish the application execution.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Now we will use a parameter that meets both conditions, for example the User Id 2.</li>
+                <li>If we run the solution, we can see that the number eight is printed, which is the length of the returned password.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\e4c42b09-cefc-4424-b934-7b0d9bfc788e.png" />
+              </p>
+              <p>
+                <img src="images\43a2273c-48c2-4667-a28c-916efc5598c0.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="_Toc281405174" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Segment #3 – Object Invariants and configurable options</h3>
+        <table style="">
+          <tr valign="top">
+            <th>
+              <p>Action</p>
+            </th>
+            <th>
+              <p>Script</p>
+            </th>
+            <th>
+              <p>Screenshot</p>
+            </th>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>Write the following code to show an example of Object Invariants.</li>
+              </ol>
+              <div class="code">
+                <span codeLanguage="CSharp">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <th>C#</th>
+                      <th>
+                        <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                          <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <pre>[ContractInvariantMethod]protected void ObjectInvariant () {Contract.Invariant ( this.y &gt;= 0 );Contract.Invariant ( this.x &gt; this.y );...}</pre>
+                      </td>
+                    </tr>
+                  </table>
+                </span>
+              </div>
+            </td>
+            <td>
+              <ul>
+                <li>Let’s talk a little about object invariants.</li>
+                <li>Object invariants are conditions that should be true for each instance of a class whenever that object is visible to a client. They express the conditions under which the object is considered to be correct. </li>
+                <li>The invariant methods are identified by being marked with the <b>ContractInvariantMethodAttribute</b> attribute. The invariant methods must contain no code except for a sequence of calls to the Invariant method, each of which specifies an individual invariant. This is shown in the following code.</li>
+              </ul>
+            </td>
+            <td>
+              <br />
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <ol>
+                <li>In <b>Solution Explorer</b>, right-click the project name, and then click <b>Properties</b>.</li>
+                <li>Go to the <b>Code Contracts</b> tab and show the options.</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li>Finally, let’s see some configuration for Code Contracts. Installing the Code Contracts MSI enables the <b>Code Contracts</b> tab in project properties where you can set your preferences for Code Contracts use. For configurations where the runtime checking is not performed, the library methods are compiled away (via conditional compilation attributes on their definitions) so that your code pays no performance penalty at all for contracts that you do not want executed.</li>
+              </ul>
+            </td>
+            <td>
+              <p>
+                <img src="images\c2a95c39-9ff5-488d-bf17-bce716ec7380.png" />
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

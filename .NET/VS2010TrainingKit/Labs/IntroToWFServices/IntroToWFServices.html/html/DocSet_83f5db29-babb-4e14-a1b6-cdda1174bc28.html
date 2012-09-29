@@ -1,0 +1,124 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Verification" />
+      <MSHelp:RLTitle Title="Exercise 4: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow Services using .NET Framework 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>The Dashboard shows the activity for the services at a particular scope in the IIS tree. For example, if you click the server node at the top of the tree and then click the AppFabric Dashboard you will see activity for all the WCF and WF services on the computer. In this verification, you will look at the Dashboard at your application level.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> To follow this verification, it is required to follow the steps in Exercise 4. Opening the End solution will not be sufficient to follow the verification since there are some IIS configuration tweaks to perform.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>In <b>IIS Manager</b>, expand the <b>Default Web Site</b>, and select the <b>HRApplicationServices</b> application in the tree.</li>
+          <li>At the bottom of the IIS Manager window, click <b>Content View</b> to see the content of the website.</li>
+          <li>Right-click the <b>SubmitApplication.xamlx </b>file, and select <b>Browse</b>.</li>
+          <li>You should see a browser window, with the <b>Submit Application Service</b>. If there are any problems with the configuration for the website this page will not appear.</li>
+          <li>At the bottom of the IIS Manager window click <b>Features View</b>.</li>
+          <li>Double-click on the <b>AppFabric Dashboard</b> icon.<p><img src="images\f8ab5a83-66f4-454a-89df-446cc4e8264e.png" /></p><p><b>Figure 49</b><br /><i>Open the Dashboard</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\65725b11-851c-4e12-b090-6a32439e8178.png" /><b>What is on the Dashboard?</b><br /><b>Persisted WF Instances</b>: This section shows the number of workflow instances that are live or in flight. These are the instances that have persisted to the database but have not yet completed.<br /><b>WCF Call History</b>: This section shows the number of WCF calls the have been received. The heading shows counts of the calls that were completed or that encountered exceptions.<br /><b>WF Instance History</b>: This section shows the number of workflow instances that have been activated, have failed, or completed.</td></tr></table><p /></div><br /><p><img src="images\04f96b74-dd93-457a-b353-9b2458c7ea4f.png" /></p><p><b>Figure 50</b><br /><i>The Dashboard showing no activity for the HRApplicationService application</i></p><br /></li>
+          <li>Switch back to <b>Visual Studio 2010</b>.</li>
+          <li>Open the <b>App.config</b> file in the <b>HRClient</b> project. Unlike the Web.config which transformed when you deployed it, the <b>app.config</b> file must be manually edited. Change the endpoint address as shown in bold text below.<br /><p><i>(Code Snippet – Introduction to WF Services Lab – WF4 ClientConfig XML)</i></p><div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;client&gt;<b> &lt;endpoint </b><b> address="http://localhost/HRApplicationServices/SubmitApplication.xamlx"</b><b> binding="basicHttpBinding" </b><b> bindingConfiguration="BasicHttpBinding_IApplicationService"</b><b> contract="SubmitApp.IApplicationService" </b><b> name="BasicHttpBinding_IApplicationService" /&gt;</b>&lt;/client&gt;</pre></td></tr></table></span></div><br /></li>
+          <li>Right-click the <b>HRClient</b> project, point to <b>Debug</b> and click <b>Start new instance</b>.</li>
+          <li>In the <b>Contoso HR Tool</b>, set the <b>Education</b> to <b>Masters</b>, and click the <b>Submit</b> button. After a few moments you should see a confirmation message that the resume is being processed.</li>
+          <li>In IIS Manager, refresh the <b>AppFabric Dashboard</b>. You should see activity in each of the three sections.</li>
+          <li>Click <b>1</b> beside <b>Active</b> in the <b>Persisted WF Instances</b> section to see a list of the active persisted instances.<p><img src="images\8d9273f3-0424-47bb-b359-e614ff0a6813.png" /></p><p><b>Figure 51</b><br /><i>The SubmitApplication Workflow instance is active</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The host is configured by default to put active instances into the idle state after 60 seconds. If you do not have any instances in the Active state refresh the Dashboard and look for the instance in the Idle state.</td></tr></table><p /></div><br /></li>
+          <li>Click on the hyperlink on the word <b>Active</b> or <b>Idle</b> in the <b>Persisted WF Instances</b> pane. This will open a query page with Persisted WF Instances.</li>
+          <li>Click on the persisted instance. The <b>Details</b> pane at the bottom of the screen will show some information about the instance. In this example, you can see that the SubmitApplication Workflow has an active bookmark named <b>HumanScreeningCompleted</b>. That is the operation name of the bookmark created by the receive activity that it is currently waiting on.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The active bookmark is visible only for instances that were idle.</td></tr></table><p /></div><br /><p><img src="images\09a64dd1-8357-4527-93ac-611bd2b837a3.png" /></p><p><b>Figure 52</b><br /><i>Information about the persisted SubmitApplication workflow</i></p><br /></li>
+          <li>In the picture above you can see that there are a number of tracked events. To see these events, right-click the instance, and select the <b>View Tracked Events</b> action. This action will take you to the <b>Tracked Events</b> page populated with all the monitoring information that was collected for the instance, sorted with the newest data at the top.<p><img src="images\97bf7f88-6a44-41e7-b8df-cc7b0d4b61a9.png" /></p><p><b>Figure 53</b><br /><i>Monitoring collected Information for the instance in the Tracked Events feature</i></p><br /></li>
+          <li>The last activity to execute was the <b>Request Human Screening </b>activity. Click on this row and notice in the <b>Details</b> pane at the bottom of the screen you will see information about this event. Its state is <b>Closed</b>, indicating that the <b>Request Human Screening</b> activity has finished executing.</li>
+          <li>In <b>Windows Explorer</b>, go to <b>C:\Mailbox</b> and find the latest message. Open it and click the link to review the application.</li>
+          <li>In the review web page, click the <b>Hire</b> or <b>No hire</b> button. This will send a message to the SubmitApplication workflow using the HumanScreeningCompleted operation.</li>
+          <li>Return to <b>IIS Manager</b> (still on the <b>Tracked Events</b> page), and click <b>Refresh</b> button to refresh the data in the list (it may take up to a minute before the new events appear). You will now see that the remainder of the SubmitApplication workflow activities have executed.</li>
+          <li>Return to the <b>Dashboard</b> and refresh it. You should now see no active or idle instances in the <b>Persisted WF Instances</b> section. In the <b>WF Instance History</b> section you should see that the <b>SubmitApplication</b> workflow instance has been activated and completed.<p><img src="images\e9c27746-c14a-45fd-a334-330420a2c4a4.png" /></p><p><b>Figure 54</b><br /><i>The Dashboard showing the completed workflow</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_5da0fd17-dc64-410f-a826-1f235f4c33a3.html">Exercise 5: Troubleshooting</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

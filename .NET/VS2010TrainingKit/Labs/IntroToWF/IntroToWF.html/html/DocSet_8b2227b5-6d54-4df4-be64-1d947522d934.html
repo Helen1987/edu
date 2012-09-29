@@ -1,0 +1,289 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 5: Testing Workflows" />
+      <MSHelp:RLTitle Title="Exercise 5: Testing Workflows" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 5: Testing Workflows</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Workflow 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 5: Testing Workflows</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Up to this point, the application is not very interesting. It is only working in a console and does not receive any input arguments. Most applications that do meaningful work will have to deal with input and output arguments. Additionally, the application is not easily tested in its current form. </p>
+        <p>In this task, you will modify the SayHello activity to use arguments and prepare it to be useful in other non-console application environments by returning a greeting rather than writing directly to the Console with the WriteLine activity. You will be doing this using the "write the test first" approach. First, you will create a test that fails and then add the necessary code to make it pass.</p>
+        <p>The resulting application will be the equivalent of the following code.</p>
+        <div class="code">
+          <span codeLanguage="CSharp">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>C#</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>private static string SayHello(string name){    return "Hello " + name + " from Workflow 4";}</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre>Private Shared Function SayHello(ByVal name As String) As String    Return "Hello " &amp; name &amp; " from Workflow 4"End Function</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <a name="_Toc244412399" href="#">
+          <span />
+        </a>
+        <a name="_Toc243285447" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388961" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935110" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 0 – Opening the Solution</b>
+        </p>
+        <p>To begin this exercise you can use the solution you finished from Exercise 4. Alternatively, you can follow the following steps to begin with Exercise 5.</p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the starting solution for Exercise 5 located under the <b>Source\Ex5-Testing\Begin</b> folder and use it as the starting point for this exercise.</li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution.</li>
+        </ol>
+        <a name="_Toc244412400" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935111" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating the Unit Test Project</b>
+        </p>
+        <ol>
+          <li>To begin with, create a unit test for the workflow to verify the behavior. In <b>Solution Explorer</b>, right-click the <b>HelloWorkflow </b>solution and select <b>Add</b> / <b>New Project </b>and set the project options.<ol><li>Installed Templates: select either <b>Visual C#</b> or <b>Visual Basic</b> then select <b>Test</b> under the language</li><li>Template: <b>Test Project</b></li><li>Name: <b>HelloWorkflow.Tests</b></li></ol></li>
+          <p>
+            <img src="images\1346fb7b-aadd-480a-8a97-e9d0b63fce8c.png" />
+          </p>
+          <p>
+            <b>Figure 19</b>
+            <br />
+            <i>Adding a new Test Project to the solution (C#)</i>
+          </p>
+          <br />
+          <p>
+            <img src="images\2724bbcf-bdf1-4072-8833-e430913024c5.png" />
+          </p>
+          <p>
+            <b>Figure 20</b>
+            <br />
+            <i>Adding a new Test Project to the solution (Visual Basic)</i>
+          </p>
+          <li>
+            <div class="alert">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th align="left">
+                    <img class="note" src="../local/note.gif" />Note:</th>
+                </tr>
+                <tr>
+                  <td> The default target version of the .NET Framework in test projects is the .NET Framework 4. However, Visual Studio 2010 SP1 Beta adds basic support for unit tests that target the .NET Framework 3.5. For more information, see <a href="http://msdn.microsoft.com/library/gg442059.aspx">http://msdn.microsoft.com/library/gg442059.aspx</a></td>
+                </tr>
+              </table>
+              <p />
+            </div>
+            <br />
+          </li>
+          <li>Right-click the <b>HelloWorkflow.Tests</b> project and click <b>Add Reference</b>. Using the <b>Projects</b> tab, add a project reference to the <b>HelloWorkflow </b>project. Repeat these steps, using the <b>.NET</b> tab instead to add a reference to the <b>System.Activities</b> library.</li>
+          <li>Right-click <b>UnitTest1.cs </b>(<b>C#</b>) or <b>UnitTest1.vb</b> (<b>Visual Basic</b>), click <b>Rename</b> and change its name to <b>SayHelloFixture.cs </b>(<b>C#</b>) or <b>SayHelloFixture.vb </b>(<b>Visual Basic</b>)<b>. </b>When prompted to rename the <b>UnitTest1</b> class select <b>Yes</b>.</li>
+        </ol>
+        <a name="_Toc243285448" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388962" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412401" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935112" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating the Test</b>
+        </p>
+        <p>In this task you will create the test before you actually implement the behavior in the activity.</p>
+        <ol>
+          <li>Add the following namespace directive to the <b>SayHelloFixture.cs</b> (<b>C#</b>) file or <b>SayHelloFixture.vb</b> (<b>Visual Basic</b>):<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.Activities;</b><b>using HelloWorkflow;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System.Activities</b><b>Imports HelloWorkflow</b></pre></td></tr></table></span></div><br /></li>
+          <li>Create a test to make sure that the workflow properly greets you. To do this, open <b>SayHelloFixture.cs</b> (C#) or <b>SayHelloFixture.vb</b> (Visual Basic), locate the <b>TestMethod1</b> method and rename it to <b>ShouldReturnGreetingWithName</b>.</li>
+          <li>The SayHello activity does not accept any arguments yet, but you will write the code to invoke it as though it does. This will allow you to think about what the interface to your activity feels like when consuming it.  Do not worry if Visual Studio warns you about the UserName property not being defined yet. Replace the implementation as shown<p><i>(Code Snippet - Introduction to WF</i>4<i>Lab - ShouldReturnGreetingImpl CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[TestMethod]</b><b>public void ShouldReturnGreetingWithName()</b><b>{</b><b>    IDictionary&lt;string, object&gt; output;</b><b>    output = WorkflowInvoker.Invoke(</b><b>        new SayHello() </b><b>        { </b><b>            UserName = "Test" </b><b>        });</b><b>    Assert.AreEqual("Hello Test from Workflow 4", output["Greeting"]);</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - Introduction to WF</i>4<i>Lab - ShouldReturnGreetingImpl VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;TestMethod()&gt; Public Sub ShouldReturnGreetingWithName()</b><b>    Dim output = WorkflowInvoker.Invoke(</b><b>        New SayHello() With {.UserName = "Test"})</b><b>    Assert.AreEqual("Hello Test from Workflow 4", output("Greeting"))</b><b>End Sub</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\fef29656-ec41-4dfc-8609-0eabdeb62d22.png" /><b>How do I pass arguments to an activity?</b><br />You can create the activity and initialize the arguments (which are public properties) using object initialization or you can pass a Dictionary&lt;string, object&gt; (C#) or Dictionary(Of String, Object) (Visual Basic) of input parameters that map to the names of the input arguments of the activity.<br /><img src="images\475ae9bf-d09b-43e9-b6b7-a50022b198da.png" /><b>How do I get data from output?</b><br />The output variable is an IDictionary&lt;string, object&gt; (C#) or IDictionary(Of String, Object) (Visual Basic) that contains a map of output variables using the name of the variable as the key.</td></tr></table><p /></div></li>
+          <br />
+        </ol>
+        <a name="_Toc243285449" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388963" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412402" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935113" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Getting the Application to Compile</b>
+        </p>
+        <p>The interface to your Activity (in terms of input and output arguments) looks good but your application doesn’t compile. Your first goal is to get the app into a state where it will compile. </p>
+        <ol>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the application it should fail with a compile error<p><img src="images\9f3892dc-0055-42f2-8512-57afa00ba134.png" /></p><p><b>Figure 21</b><br /><i>UserName has not been defined yet (C#)</i></p><br /><p><img src="images\83c7cfe4-e651-4c06-81cc-b1620a53fec8.png" /></p><p><b>Figure 22</b><br /><i>UserName has not been defined yet (VB)</i></p><br /></li>
+          <li>Open <b>SayHello.xaml</b> in the designer</li>
+          <li>Open the arguments pane by clicking on <b>Arguments</b><p><img src="images\5976b71e-58a1-4519-a585-9e735ab8ef83.png" /></p><p><b>Figure 23</b><br /><i>Click on Arguments to open the arguments pane</i></p><br /></li>
+          <li>Add the <b>UserName</b> and <b>Greeting</b> arguments as shown<p><img src="images\036e0863-03a4-401b-89d0-18a43f278d81.png" /></p><p><b>Figure 24</b><br /><i>Declare the arguments to the activity</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td><img src="images\62bac3a2-6fdc-46d9-8f78-75bdc5bdf639.png" /><b>Arguments</b><br />In Windows Workflow Foundation (WF), arguments represent the flow of data into and out of an activity<b>. </b>An activity has a set of arguments and they make up the signature of the activity. Each argument has a specified direction: input, output, or input/output.</td></tr></table><p /></div><br /></li>
+          <li>Press <b>CTRL+SHIFT+B</b> to build the solution, it should now build without errors.</li>
+        </ol>
+        <a name="_Toc243285450" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388964" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412403" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935114" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 – Seeing the Test Fail </b>
+        </p>
+        <p>It is important to see your test fail because it is possible that you have a bug in your test that would cause it to always succeed. In this task, you will insure that your test does indeed fail.</p>
+        <ol>
+          <li>Press <b>CTRL+R,T</b> to run the unit tests in the current context. The test will run but it will fail, because the activity is not returning anything in the Greeting out argument.<p><img src="images\705843c1-e463-449c-aeef-417fc8ba993a.png" /></p><p><b>Figure 25</b><br /><i>ShouldReturnGreetingwithName test</i></p><br /></li>
+        </ol>
+        <a name="_Toc243285451" href="#">
+          <span />
+        </a>
+        <a name="_Toc243388965" href="#">
+          <span />
+        </a>
+        <a name="_Toc244412404" href="#">
+          <span />
+        </a>
+        <a name="_Toc281935115" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 5 – Making the Test Pass </b>
+        </p>
+        <p>Now that you know your test is working, you need to do the simplest possible thing you can to make the test pass.</p>
+        <ol>
+          <li>Writing text to the console with WriteLine isn’t going to make the test pass so delete the <b>WriteLine</b> activity by right-clicking on it and choosing <b>Delete</b> (<img src="images\ede60f91-6ab9-457d-9be3-9766130b496b.png" />).</li>
+          <li>You need to set the value of the <b>Greeting</b> out argument. To do this, drag an <b>Assign</b> activity from the <b>Primitives</b> group in the Toolbox and drop it onto the designer surface. <p><img src="images\fef06c5d-bc7f-4066-9bb5-9836dc69eb52.png" /></p><p><b>Figure 26</b><br /><i>Drag an Assign activity to the design surface</i></p><br /></li>
+          <li>Set the <b>To</b> property to <b>Greeting</b><p><img src="images\644117ac-b8cb-4c4f-9db5-5fd243d11ab6.png" /></p><p><b>Figure 27</b><br /><i>Type Greeting in the left box</i></p><br /></li>
+          <li>You could type the greeting expression into the design surface but since the expression is longer, use the properties window.  Click the button to the right of the Value property to open the expression editor<p><img src="images\6df03771-96f5-4f1f-96c0-5ed213715ed1.png" /></p><p><b>Figure 28</b><br /><i>Click the button to the right of the Value property</i></p><br /></li>
+          <li>In the expression editor, you can enter longer expressions, including expressions that use the VB line continuation character “_”.  Set the expression to <b>"Hello " &amp; UserName  _&amp; " from Workflow 4"</b><p><img src="images\23e2bf5b-2325-4a3c-a6d1-ffc36318b986.png" /></p><p><b>Figure 29</b><br /><i>The Assign activity that sets the Greeting argument</i></p><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>If you are a C# developer you may not be familiar with the line oriented nature of Visual Basic syntax.  If you want an expression to break across lines in Visual Basic you must use an underscore to continue the expression on the next line.</td></tr></table><p /></div><br /></li>
+          <li>Press <b>CTRL</b>+<b>SHIFT</b>+<b>B</b> to build the solution, it should compile without errors.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_f0fd87e8-69bd-4414-8d96-bf928ac533f6.html">Exercise 5: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

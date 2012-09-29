@@ -1,0 +1,579 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 4: Adding Client-Side Paging with Row Count" />
+      <MSHelp:RLTitle Title="Exercise 4: Adding Client-Side Paging with Row Count" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 4: Adding Client-Side Paging with Row Count</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ADO.NET Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 4: Adding Client-Side Paging with Row Count</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you will learn how to add client-side paging to a list of items.</p>
+        <p>The client-side differs from the <b>Server Driven Paging</b> on who is responsible for retrieving the items in a paginated fashion. On the client-side paging, it is the client application the one that controls the quantity of records retrieved from the server and how many should be skipped on each request, limiting the server responsibility only to the retrieval of the records requested on the client's queries. On the other hand, the server-side paging is done entirely by the server application, which limits the quantity of records returned on each request and providing the client with an URI for it to know how to continue retrieving the following pages.</p>
+        <a name="_Toc246284170" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302703" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307208" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921201" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Invoking the Count Method</b>
+        </p>
+        <p>In this task you will add a new method to the <b>ProductGateway</b> that will retrieve the count of products that matches the criteria entered by the user, using the now supported Count extension method.</p>
+        <ol>
+          <li>Open <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010 | Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the solution file <b>DataServicesRowCount.sln</b> located under the <b>Source\Ex04-RowCount\begin</b> folder of this lab<b> </b>(choosing the folder that matches the language of your preference.) The solution file contains the <b>UserInterface</b> and <b>WebSite</b> projects created in <a href="docSet_05dd0d97-f34f-4623-8def-ba8df2044669.html">Exercise 1</a> of the WCF Data Service Lab.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Alternatively, you may continue working with the solution obtained after completing the <a href="docSet_05dd0d97-f34f-4623-8def-ba8df2044669.html">Exercise 1</a> of the Lab.</td></tr></table><p /></div></li>
+          <br />
+          <li>Navigate to the <b>IProductGateway.cs (C#) or IProductGateway.vb (Visual Basic)</b> file located in the <b>UserInterface</b> project under the <b>Gateways</b> folder.<p><img src="images\dc491e50-e1cb-4bc0-b4dc-aa7f53cd0221.png" /></p><p><b>Figure 32</b><br /><i>IProductGateway.cs file (C#)</i></p></li>
+          <br />
+          <p>
+            <img src="images\d61ca782-e567-477e-b0a6-c5e1b50db436.png" />
+          </p>
+          <p>
+            <b>Figure 33</b>
+            <br />
+            <i>IProductGateway.vb file (Visual Basic)</i>
+          </p>
+          <br />
+          <li>Add a new method that will retrieve the count of products that matches the criteria entered by the user. To do this, add the following code to the <b>IProductGateway</b> interface.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>int GetProductsCount(string productName, ProductCategory category);</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Function GetProductsCount(ByVal productName As String, ByVal category As ProductCategory) As Integer</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Implement the new method on the <b>ProductGateway</b> class. To do this, open the <b>ProductGateway.cs (C#) or ProductGateway.vb (Visual Basic)</b> file and add the following code.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>In previous versions of WCF Data Services, the invocation to the <b>Count</b> method on a <b>DataServiceQuery</b> object would have caused a <b>NotSupportedException</b> being thrown. From version 1.5 <b>Count</b> and <b>LongCount</b> are implemented and mapped to the $count segment on the corresponding entity set.  It is worth to highlight that in this case, no entity set is retrieved from the database, just the count operation being addressed by the database engine.<br />In previous versions, client-side paging was achieved by retrieving the complete set, and invoking the <b>Count</b> method on the resulting enumeration. This was far more expensive as the whole set needed to be retrieved from the database in order to execute the Count operation directly to that enumeration, which in change, is less performant than the Count operation addressed by the database engine.</td></tr></table><p /></div><br /><p>(Code Snippet – <i>Data Services Lab - ProductGateway GetProductsCount method CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public int GetProductsCount(string productName, ProductCategory category)</b><b>{</b><b>    var query = (DataServiceQuery&lt;Product&gt;)</b><b>        (from p in this.context.CreateQuery&lt;Product&gt;("Product") </b><b>         where ((p.Name.IndexOf(productName) &gt; -1 || string.IsNullOrEmpty(productName)) &amp;&amp; </b><b>                 p.ProductCategory.ProductCategoryID == category.ProductCategoryID) </b><b>         select p);</b><b>    return query.Count();</b><b>}</b></pre></td></tr></table></span></div></li>
+          <br />
+          <p>(Code Snippet – <i>Data Services Lab - ProductGateway GetProductsCount method VB</i>)</p>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Public Function GetProductsCount(ByVal productName As String, ByVal category As ProductCategory) As Integer Implements IProductGateway.GetProductsCount</b><b>    Dim query = DirectCast(</b><b>        (From p In Me.context.CreateQuery(Of Product)("Product")</b><b>        Where ((p.Name.IndexOf(productName) &gt; -1 _</b><b>            OrElse String.IsNullOrEmpty(productName)) _</b><b>            AndAlso p.ProductCategory.ProductCategoryID = category.ProductCategoryID)</b><b>        Select p), DataServiceQuery(Of Product))</b><b>    Return query.Count()</b><b>End Function</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>You may notice that the <b>GetProductsCount</b> method is managing the query differently than the <b>GetProducts</b> method, using a LINQ query to retrieve the products set instead of creating the query URI directly. The queries can be done using both approaches, as LINQ queries will be transformed into an URI by the WCF Data Services framework.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+        </ol>
+        <a name="_Toc246284171" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302704" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307209" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921202" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Displaying the Product Count on the User Interface</b>
+        </p>
+        <p>In this task you will add a <b>TextBlock</b> to the product list window to display the product count using the method created in the previous task.</p>
+        <ol>
+          <li>Add a new <b>TextBlock</b> to the <b>ProductList</b> window to show the count of products that matches the filter criteria. To do this, open the <b>ProductList.xaml</b> file using <b>XML Editor</b>, and add the following highlighted code below the <b>&lt;ListView&gt;</b> control.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...            &lt;GridViewColumn Header="Weight"                               DisplayMemberBinding="{Binding Path=Weight}" /&gt;                &lt;/GridView&gt;            &lt;/ListView.View&gt;        &lt;/ListView&gt;<b>        &lt;TextBlock Name="TotalProductsCountLabel" Grid.Row="3" Margin="15,0,16,5" VerticalAlignment="Center" HorizontalAlignment="Left" /&gt;</b>        &lt;Button Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,120,10" x:Name="btnNewProduct" Click="BtnNewProduct_Click" VerticalAlignment="Bottom" d:LayoutOverrides="Height" Width="100" Content="New Product"/&gt;        &lt;Button HorizontalAlignment="Right" Margin="0,0,10,10" x:Name="btnDeleteProduct" Width="100" Grid.Row="3" Click="BtnDeleteProduct_Click" VerticalAlignment="Bottom" Content="Delete Product"/&gt;&lt;/Grid&gt;...</pre></td></tr></table></span></div></li>
+          <br />
+          <li>Add a new field to store the products count. To do this, open the <b>ProductList.xaml.cs (C#) or ProductList.xaml.cs (Visual Basic) </b>file, and add a new field inside the <b>ProductList</b> class as shown in the following code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private int productSetSize;</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private productSetSize As Integer</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Add a new method for retrieving the products count and showing it on the new <b>TextBlock</b>. To do this, add the following method to the <b>ProductList</b> class.<p>(Code Snippet – <i>Data Services Lab - ProductList RecalculateProductsSetSize method CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void RecalculateProductsSetSize()</b><b>{</b><b>    ProductGateway gateway = new ProductGateway();</b><b>    this.productSetSize = gateway.GetProductsCount(NameTextBox.Text, CategoryComboBox.SelectedItem as ProductCategory);</b><b>    this.TotalProductsCountLabel.Text = string.Format(CultureInfo.CurrentUICulture, "Total Products in Category: {0}", this.productSetSize);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - ProductList RecalculateProductsSetSize method VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub RecalculateProductsSetSize()</b><b>    Dim gateway As New ProductGateway()</b><b>    Me.productSetSize = gateway.GetProductsCount(NameTextBox.Text, TryCast(CategoryComboBox.SelectedItem, ProductCategory))</b><b>    Me.TotalProductsCountLabel.Text = String.Format(CultureInfo.CurrentUICulture, "Total Products in Category: {0}", Me.productSetSize)</b><b>End Sub</b></pre></td></tr></table></span></div></li>
+          <br />
+          <li>Add an invocation for the new method. To do this, add the following code to the existing <b>BtnSearch_Click, BtnDeleteProduct_Click</b> and <b>Window_Closed</b> methods.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void BtnSearch_Click(object sender, RoutedEventArgs e){<b>    this.RecalculateProductsSetSize();</b>    this.BindProducts();            }private void BtnDeleteProduct_Click(object sender, RoutedEventArgs e){    Product p = ProductsListView.SelectedItem as Product;    if (p != null)    {        ProductGateway gateway = new ProductGateway();        gateway.DeleteProduct(p);        this.BindProducts();<b>        this.RecalculateProductsSetSize();</b>    }}private void Window_Closed(object sender, EventArgs e){    this.BindProducts();<b>    this.RecalculateProductsSetSize();</b>}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)<b>    Me.RecalculateProductsSetSize()</b>    Me.BindProducts()End SubPrivate Sub BtnDeleteProduct_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)    Dim p As Product = TryCast(ProductsListView.SelectedItem, Product)    If p IsNot Nothing Then        Dim gateway As New ProductGateway()        gateway.DeleteProduct(p)        Me.BindProducts()<b>        Me.RecalculateProductsSetSize()</b>    End IfEnd SubPrivate Sub Window_Closed(ByVal sender As Object, ByVal e As EventArgs)    Me.BindProducts()<b>    Me.RecalculateProductsSetSize()</b>End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Verify that the products count is being shown on the UI. To do this, set the <b>UserInterface</b> as <b>StartUp Project</b>, and press F5 to run the application. Select a category on the <b>Product Category</b> combo box and click on <b>Search</b>. You should see something similar to the following.<p><b>Figure 34</b><br /><i>Application running with the products count label in place</i></p></li>
+        </ol>
+        <a name="_Toc246284172" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302705" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307210" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921203" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 - Adding Paging to Existing Product List Query</b>
+        </p>
+        <p>In this task you will modify the method that retrieves the product list to support pagination.</p>
+        <ol>
+          <li>Add <b>pageSize</b> and <b>number</b> arguments to the existing <b>GetProducts</b> method in the <b>IProductGateway</b> interface. To do this, navigate once again to the <b>IProductGateway.cs (C#) or IProductGateway.vb (Visual Basic)</b> file and replace the <b>GetProducts</b> method declaration with the following code.<p>(Code Snippet – <i>Data Services Lab - IProductGateway GetProducts method CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>IList&lt;Product&gt; GetProducts(string productName, ProductCategory category, int pageSize, int pageNumber);</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - IProductGateway GetProducts method VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Function GetProducts(ByVal productName As String, ByVal category As ProductCategory, ByVal pageSize As Int32Collection, ByVal pageNumber As Integer) As IList(Of Product)</b></pre></td></tr></table></span></div></li>
+          <br />
+          <li>Add <b>pageSize</b> and <b>pageNumber</b> arguments to the existing implementation of the <b>GetProducts</b> method in the <b>ProductGateway</b> class. To do this, replace the current method's signature with the following code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public IList&lt;Product&gt; GetProducts(string productName, ProductCategory category, int pageSize, int pageNumber)</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Public Function GetProducts(ByVal productName As String, ByVal category As ProductCategory, ByVal pageSize As Integer, ByVal pageNumber As Integer) As IList(Of Product) Implements IProductGateway.GetProducts</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Use page size and number arguments in the query. To do this, change the implementation of the <b>GetProducts</b> method in the <b>ProductGateway</b> class as follows.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public IList&lt;Product&gt; GetProducts(string productName, ProductCategory category, int pageSize, int pageNumber){    int categoryId = category.ProductCategoryID;<b>IEnumerable&lt;Product&gt; products = this.context.Execute&lt;Product&gt;(</b><b>        new Uri(this.context.BaseUri.ToString() +</b><b>            "/ProductCategory(" + categoryId + ")/Product?$filter=indexof(Name,'" + productName + "') gt -1 or '' eq '" + productName + "'&amp;$top=" + pageSize + "&amp;$skip=" + pageSize * pageNumber));</b>    List&lt;Product&gt; productsSet = new List&lt;Product&gt;();    foreach (Product p in products)    {        this.context.LoadProperty(p, "ProductCategory");        productsSet.Add(p);    }    return productsSet;}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Public Function GetProducts(ByVal productName As String, ByVal category As ProductCategory, ByVal pageSize As Integer, ByVal pageNumber As Integer) As IList(Of Product) Implements IProductGateway.GetProducts        Dim categoryId = category.ProductCategoryID<b>        Dim products = Me.context.Execute(Of Product)(</b><b>            New Uri(Me.context.BaseUri.ToString() &amp;</b><b>                    "/ProductCategory(" &amp; categoryId &amp;</b><b>                    ")/Product?$filter=indexof(Name,'" &amp; productName &amp; "') gt -1 or '' eq '" &amp; productName &amp; "'&amp;$top=" &amp; pageSize &amp; "&amp;$skip=" &amp; pageSize * pageNumber))</b>        Dim productsSet As New List(Of Product)()        For Each p In products            Me.context.LoadProperty(p, "ProductCategory")            productsSet.Add(p)        Next        Return productsSet    End Function</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> Paging is done by setting the <b>$top</b> and <b>$skip</b> query string options. When setting the <i>$top=n</i> option the number of entities returned is restricted to the first <i>n</i> rows, while with the <i>$skip=m</i> option will cause that the first <i>m</i> records should be skipped from the result set.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <a name="_Toc246284173" href="#">
+          <span />
+        </a>
+        <a name="_Toc246302706" href="#">
+          <span />
+        </a>
+        <a name="_Toc246307211" href="#">
+          <span />
+        </a>
+        <a name="_Toc281921204" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 4 - Updating the User Interface to Show the Paged ListView </b>
+        </p>
+        <p>In this task you will add the User Interface controls that will allow the user to navigate through the products list pages.</p>
+        <ol>
+          <li>Add a new row to the root <b>Grid</b> in <b>ProductList.xaml</b>.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;Grid x:Name="LayoutRoot"&gt;    &lt;Grid.RowDefinitions&gt;      &lt;RowDefinition Height="55"/&gt;      &lt;RowDefinition Height="90"/&gt;      &lt;RowDefinition Height="*"/&gt;      &lt;RowDefinition Height="35"/&gt;<b>      &lt;RowDefinition Height="35"/&gt;</b>    &lt;/Grid.RowDefinitions&gt;...</pre></td></tr></table></span></div><br /></li>
+          <li>Add the <b>Previous</b> and <b>Next</b> controls that will allow the user to navigate through the product list pages, and place it within the new row. To do this, open <b>ProductList.xaml</b> file with <b>XML Editor</b>, and add the following highlighted code below the <b>TextBlock</b> control.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>...&lt;TextBlock Name="TotalProductsCountLabel" Grid.Row="3" Margin="15,0,16,5" VerticalAlignment="Center" HorizontalAlignment="Left" /&gt;<b>&lt;StackPanel Orientation="Horizontal" Grid.Row="4" Height="23" Margin="0,0,16,5" HorizontalAlignment="Right"&gt;</b><b>    &lt;Button Name="PreviousPageButton" Width="75" Click="previousPageButton_Click"&gt;Previous&lt;/Button&gt;</b><b>    &lt;TextBlock Name="CurrentPageLabel" Width="90" Margin="15,0,15,0" VerticalAlignment="Center" Text="Current Page: 1" /&gt;</b><b>    &lt;Button Name="NextPageButton" Width="75" Click="nextPageButton_Click"&gt;Next&lt;/Button&gt;</b><b>&lt;/StackPanel&gt;</b>...</pre></td></tr></table></span></div></li>
+          <br />
+          <li>Add a new constant to fix the size of the pages on the <b>ProductList</b> class. To do this, add the following code to the <b>ProductList.xaml.cs (C#)</b> or <b>ProductList.xaml.vb (Visual Basic)</b> file.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private const int PageSize = 8;</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private Const PageSize As Integer = 8</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>The page size for this exercise was arbitrarily set and can be changed to verify different paging configurations. </td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <li>Add a new field to store the current page on the <b>ProductList</b> class. To do this, add the following code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private int currentPageNumber = 0;</b></pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre><b>Private currentPageNumber As Integer = 0</b></pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Add a new read-only property to calculate the total number of pages to the <b>ProductList</b> class. To do this, add the following code.</li>
+          <li>
+            <p>(Code Snippet – <i>Data Services Lab - ProductList TotalPages property CSharp</i>)</p>
+            <div class="code">
+              <span codeLanguage="CSharp">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th>C#</th>
+                    <th>
+                      <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                        <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <pre><b>private int TotalPages</b><b>{</b><b>    get</b><b>    {</b><b>        return (this.productSetSize / PageSize) + (this.productSetSize % PageSize &gt; 0 ? 1 : 0);</b><b>    }</b><b>}</b></pre>
+                    </td>
+                  </tr>
+                </table>
+              </span>
+            </div>
+            <br />
+            <p>(Code Snippet – <i>Data Services Lab - ProductList TotalPages property VB</i>)</p>
+            <div class="code">
+              <span codeLanguage="VisualBasicUsage">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th>Visual Basic</th>
+                    <th>
+                      <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                        <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <pre><b>Private ReadOnly Property TotalPages As Integer</b><b>    Get</b><b>        Return (Me.productSetSize / PageSize) + (If(Me.productSetSize Mod PageSize &gt; 0, 1, 0))</b><b>    End Get</b><b>End Property</b></pre>
+                    </td>
+                  </tr>
+                </table>
+              </span>
+            </div>
+          </li>
+          <br />
+          <li>Add the handler methods for the <b>Click</b> event of the new buttons. To do this, add the following code to the <b>ProductList</b> class.<p>(Code Snippet – <i>Data Services Lab - ProductList Navigation Buttons Handlers CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void previousPageButton_Click(object sender, RoutedEventArgs e)</b><b>{</b><b>    this.currentPageNumber -= 1;</b><b>    this.BindProducts();</b><b>}</b><b>private void nextPageButton_Click(object sender, RoutedEventArgs e)</b><b>{</b><b>    this.currentPageNumber += 1;</b><b>    this.BindProducts();</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - ProductList Navigation Buttons Handlers VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub previousPageButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)</b><b>    Me.currentPageNumber -= 1</b><b>    Me.BindProducts()</b><b>End Sub</b><b>Private Sub nextPageButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)</b><b>    Me.currentPageNumber += 1</b><b>    Me.BindProducts()</b><b>End Sub</b></pre></td></tr></table></span></div></li>
+          <br />
+          <li>Add the logic to handle whereas the navigation buttons are enabled or disabled depending on the current page. To do this, add the following method to the <b>ProductList</b> class.<p>(Code Snippet – <i>Data Services Lab - ProductList UpdateNavigationButtons method CSharp</i>)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>private void UpdateNavigationButtons()</b><b>{</b><b>    this.PreviousPageButton.IsEnabled = (this.currentPageNumber &gt; 0);</b><b></b><b>    this.CurrentPageLabel.Text = string.Format(CultureInfo.CurrentUICulture, "Current Page: {0}", this.currentPageNumber + 1);</b><b>    this.NextPageButton.IsEnabled = this.currentPageNumber &lt; (this.TotalPages - 1);</b><b>}</b></pre></td></tr></table></span></div><br /><p>(Code Snippet – <i>Data Services Lab - ProductList UpdateNavigationButtons method VB</i>)</p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Private Sub UpdateNavigationButtons()</b><b>    Me.PreviousPageButton.IsEnabled = (Me.currentPageNumber &gt; 0)</b><b></b><b>    Me.CurrentPageLabel.Text = String.Format(CultureInfo.CurrentUICulture, "Current Page: {0}", Me.currentPageNumber + 1)</b><b></b><b>    Me.NextPageButton.IsEnabled = Me.currentPageNumber &lt; (Me.TotalPages - 1)</b><b>End Sub</b></pre></td></tr></table></span></div></li>
+          <br />
+          <li>Update the <b>BindProducts</b> method in <b>ProductList</b> class to invoke the new <b>GetProducts</b>, and <b>UpdateNavigationButtons</b> methods. To do this, replace the current implementation of the <b>BindProducts</b> method with the following highlighted code.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void BindProducts(){    if (CategoryComboBox.SelectedIndex &gt; -1)    {        ProductGateway gateway = new ProductGateway();<b>        ProductsListView.ItemsSource = gateway.GetProducts(NameTextBox.Text, CategoryComboBox.SelectedItem as ProductCategory, PageSize, this.currentPageNumber);</b><b>        this.UpdateNavigationButtons();</b>    }}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Private Sub BindProducts()    If CategoryComboBox.SelectedIndex &gt; -1 Then        Dim gateway As New ProductGateway()<b>        ProductsListView.ItemsSource = gateway.GetProducts(NameTextBox.Text, TryCast(CategoryComboBox.SelectedItem, ProductCategory), PageSize, Me.currentPageNumber)</b><b>        Me.UpdateNavigationButtons()</b>    End IfEnd Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Set the initial state of the navigation buttons by invoking the <b>UpdateNavigationButtons</b> method on the <b>Window_Loaded</b> handler method as follows.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void Window_Loaded(object sender, RoutedEventArgs e){    this.BindCategories();<b>this.UpdateNavigationButtons();</b>}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Private Sub Window_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)    Me.BindCategories()<b>    Me.UpdateNavigationButtons()</b>End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Add the code to reset the current page field when a new search is done. To do this, add the following code to the <b>BtnSearch_Click </b>method.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void BtnSearch_Click(object sender, RoutedEventArgs e){<b>    this.currentPageNumber = 0;</b>    this.RecalculateProductsSetSize();    this.BindProducts();            }</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Private Sub BtnSearch_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)<b>    Me.currentPageNumber = 0</b>    Me.RecalculateProductsSetSize()    Me.BindProducts()End Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <li>Invoke the new <b>GetProducts</b> method in <b>ProductView</b> class. To do this, in <b>Solution Explore</b>r double-click the <b>ProductView.xaml.cs (C#) or ProductView.xaml.vb (Visual Basic)</b>, and add the following highlighted code to the <b>UpdateProduct</b> method.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>public void UpdateProduct(Product product){    ProductGateway gateway = new ProductGateway();<b>    this.Product = gateway.GetProducts(product.Name, product.ProductCategory,1,0)[0];</b>    this.FormCreateMode = false;    this.Title = "Edit " + product.Name;}</pre></td></tr></table></span></div></li>
+          <br />
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Public Sub UpdateProduct(ByVal product As Product)    Dim gateway As New ProductGateway()<b>    Me.Product = gateway.GetProducts(product.Name, product.ProductCategory, 1, 0)(0)</b>    Me.FormCreateMode = False    Me.Title = "Edit " &amp; product.NameEnd Sub</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td>On a real application, a new method would be created when querying for a single product. However, to keep the exercise code simple, the <b>GetProducts</b> method is invoked here with a page size equal to one, and a current page equal to zero (where 0 represents the first page number), and the first element of the returned set is being taken.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+        </ol>
+        <a name="_Toc236650905" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284174" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_f835b665-f895-4dab-ae1c-202756fb6830.html">Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

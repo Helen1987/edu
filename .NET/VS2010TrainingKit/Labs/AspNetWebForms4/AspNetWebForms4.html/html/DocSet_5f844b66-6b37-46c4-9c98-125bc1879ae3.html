@@ -1,0 +1,112 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Verification" />
+      <MSHelp:RLTitle Title="Exercise 2: Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ASP.NET Web Forms 4</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In order to verify that you have correctly performed all steps of exercise two, proceed as follows:</p>
+        <a name="_Toc244328461" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Verification 1</h3>
+        <p>In this verification you will see how <b>Static</b><b>ClientID</b>s are being targeted from CSS and JavaScript. You will see how styles are applied to the shopping cart, and how it is expanded and collapsed with fancy effects. All this, by leveraging the capability of referencing the rendered controls static id with client side code.</p>
+        <ol>
+          <li>Start a new instance of the <b>WebFormsSampleApp</b> project. To do this, in <b>Solution Explorer</b> right-click <b>WebFormsSampleApp</b> project, point to <b>Debug</b> and select <b>Start new instance</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> If the <b>Debugging Not Enabled</b> dialog appears, select <b>Modify the Web.config file to enable debugging</b>, and click <b>OK</b>.</td></tr></table><p /></div><br /><p><img src="images\fc357c99-30a6-47b7-a9ad-6902ee1943f6.png" /></p><p><b>Figure 13</b><br /><i>Viewing the Default page</i></p><br /></li>
+          <li>Inspect the page’s source code to check that the <b>asp:Panels</b> with static <b>ClientID</b> mode were indeed rendered with the same Id as the server control. To do this, right-click over the page on your browser, and select <b>View Source</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> A text editor should appear, showing the source code of the rendered <b>Default.aspx</b> page.</td></tr></table><p /></div><br /></li>
+          <li>Find in the page’s source code two <b>&lt;div&gt;</b> elements with Id <b>ShopCartCollapsed</b> and <b>ShopCartExpanded</b>. These <b>&lt;div&gt;</b> elements represent the shopping cart’s expanded and collapsed views.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>ASP.NET has rendered the <b>asp:Panel </b>server controls to <b>&lt;div&gt; </b>html elements, preserving the Id that uniquely identifies them.</td></tr></table><p /></div><br /><p><img src="images\d50d5bca-5eaf-48d7-b392-05b51341118b.png" /></p><p><b>Figure 14</b><br /><i>Viewing the rendered &lt;div&gt; elements with static ClientID</i></p><br /></li>
+          <li>Place several products into the shopping cart by clicking the plus (<img src="images\122e8d3b-b6dc-4e8c-aa70-62fdf388c8f6.png" />) symbol next to them. Notice how the collapsed view of the shopping cart is updated with information of the new products.<p><img src="images\51e85305-62fb-4b9e-8400-aea940f6051d.png" /></p><p><b>Figure 15</b><br /><i>Adding products to the shopping cart</i></p><br /></li>
+          <li>Expand and collapse the shopping cart. To do this, make a click over the green panel at the top-right of the page.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Expanding and collapsing the shopping cart can be done thanks that you know beforehand how these <b>&lt;div&gt;</b> elements are going to be called. In this case, apart from applying CSS styles directly using ID selectors, you are also referencing the <b>&lt;div&gt;</b> elements from JavaScript to expand and collapse them with animation.</td></tr></table><p /></div><br /><p><img src="images\6adfd9a8-b19a-4b7f-a111-4bf0c6957ba0.png" /></p><p><b>Figure 16</b><br /><i>Expanding and collapsing the shopping cart</i></p><br /></li>
+        </ol>
+        <a name="_Toc244328462" href="#">
+          <span />
+        </a>
+        <h3 class="subheading">Verification 2</h3>
+        <p>In this verification, you will see how <b>Predictable</b> and <b>Inherit</b><b>ClientID</b>s are being rendered, by inspecting the source from client side.</p>
+        <ol>
+          <li>Make sure that the shopping cart contains several products.</li>
+          <li>Inspect the default page’s source code to view how <b>Predictable</b><b>ClientID</b>s are being rendered. To do this, follow these steps:<ol><li>Find in the page’s source a <b>&lt;div&gt;</b> element with Id <b>ShopCartExpandedNonEmpty</b>.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This<b> </b>element represents the <b>asp:Panel</b> that contained the <b>ListView</b> with the <b>ClientIDSuffix</b> (set to <i>ProductId</i>) to be assigned in the child elements. While rendering the page, the <b>ListView</b> iterated over its items, and replaced their ids using the predictable pattern seen before.<br />Also notice that <b>ShopCartExpandedNonEmpty</b> was the panel in which was applied the <b>Inherit</b><b>ClientID</b> mode. The fact that the id of this <b>&lt;div&gt;</b> element preserved the original <b>asp:Panel</b> id, demonstrates that the control had inherited the <b>ClientIDMode</b> of the parent control which was <b>Static</b>.</td></tr></table><p /></div><br /></li><li>Inspect all the <b>ShoppingCartItem</b>s that were generated by the <b>ListView</b>, and view the <b>&lt;span&gt;</b> elements (formerly <b>asp:Labels</b>) that show <b>Quantity</b> and <b>TotalPrice</b> information of each product in the shopping cart.<p><img src="images\0bded624-7ab1-42bc-abe4-14356206d099.png" /></p><p><b>Figure 17</b><br /><i>Viewing the generated Predictable ClientIDs</i></p><br /></li></ol></li>
+        </ol>
+        <a name="_Toc244328463" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_f60b939e-3c69-4f30-b802-7308420b76d6.html">Exercise 3: Enabling Bi-Directional Routing Support</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

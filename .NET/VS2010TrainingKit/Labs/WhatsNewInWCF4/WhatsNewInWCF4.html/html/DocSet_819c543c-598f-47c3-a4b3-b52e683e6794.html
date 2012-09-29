@@ -1,0 +1,168 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Service without  Configuration" />
+      <MSHelp:RLTitle Title="Exercise 1: Service without  Configuration" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Service without  Configuration</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">What's New in WCF 4?</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Service without  Configuration</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In WCF 4 you can create a service without any configuration at all. In this exercise, you will create a working WCF service with no configuration.</p>
+        <a name="_Toc244159107" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317742" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957306" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Creating the Web Site </b>
+        </p>
+        <ol>
+          <li>Start <b>Microsoft Visual Studio 2010</b> from <b>Start | All Programs | Microsoft Visual Studio 2010</b>.</li>
+          <li>Create a new Empty ASP.NET Web Application.<table style=""><tr valign="top"><th><p>Setting</p></th><th><p>Value</p></th></tr><tr valign="top"><td><p>Language</p></td><td><p><b>Visual C# or Visual Basic</b></p></td></tr><tr valign="top"><td><p>Target Framework</p></td><td><p><b>.NET Framework 4</b></p></td></tr><tr valign="top"><td><p>Installed Templates</p></td><td><p><b>Web</b></p></td></tr><tr valign="top"><td><p>Template</p></td><td><p><b>ASP.NET Empty Web Application</b></p></td></tr><tr valign="top"><td><p>Name</p></td><td><p><b>WCF4Configuration</b></p></td></tr><tr valign="top"><td><p>Location</p></td><td><p><b>Source\Ex1-NoConfig\Begin</b></p></td></tr><tr valign="top"><td><p>Solution Name</p></td><td><p><b>WCF4Configuration</b></p></td></tr></table></li>
+          <br />
+          <p>
+            <img src="images\beeb4d03-eb21-459b-bc44-8fc42e5a2bd9.png" />
+          </p>
+          <p>
+            <b>Figure 1</b>
+            <br />
+            <i>Create a new Empty ASP.NET Web Application – C#</i>
+          </p>
+          <br />
+          <p>
+            <img src="images\b671aedd-af48-4636-9405-8ffa3254d6a9.png" />
+          </p>
+          <p>
+            <b>Figure 2</b>
+            <br />
+            <i>Create a new Empty ASP.NET Web Application – Visual Basic</i>
+          </p>
+          <br />
+        </ol>
+        <a name="_Toc244159108" href="#">
+          <span />
+        </a>
+        <a name="_Toc249317743" href="#">
+          <span />
+        </a>
+        <a name="_Toc280957307" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating the WCF Service</b>
+        </p>
+        <ol>
+          <li>Right-click the <b>WCF4Configuration</b> web site, point to <b>Add</b> and select <b>New</b><b>Item</b>.<table style=""><tr valign="top"><th><p>Setting</p></th><th><p>Value</p></th></tr><tr valign="top"><td><p>Language</p></td><td><p><b>Visual C# or Visual Basic</b></p></td></tr><tr valign="top"><td><p>Installed Templates</p></td><td><p><b>Web</b></p></td></tr><tr valign="top"><td><p>Template</p></td><td><p><b>WCF Service</b></p></td></tr><tr valign="top"><td><p>Name</p></td><td><p><b>EchoService.svc</b></p></td></tr></table></li>
+          <br />
+          <p>
+            <img src="images\be070e38-ff47-48d0-a6bc-1c8788ee712a.png" />
+          </p>
+          <p>
+            <b>Figure 3</b>
+            <br />
+            <i>Create a new service named EchoService.svc – C#</i>
+          </p>
+          <br />
+          <p>
+            <img src="images\8f589a4b-5508-4a49-9484-420c83ee3480.png" />
+          </p>
+          <p>
+            <b>Figure 4</b>
+            <br />
+            <i>Create a new service named EchoService.svc – Visual Basic</i>
+          </p>
+          <br />
+          <li>Open <b>IEchoService</b> and modify it as shown in the following code.<p><i>(Code Snippet - What is new in WCF4 Lab - IEchoService Interface CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[ServiceContract]</b><b>public interface IEchoService</b><b>{</b><b>    [OperationContract]</b><b>    string Echo(string message);</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab - IEchoService Interface VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;ServiceContract()&gt;</b><b>Public Interface IEchoService</b><b>    &lt;OperationContract()&gt;</b><b>    Function Echo(ByVal message As String) As String</b><b>End Interface</b></pre></td></tr></table></span></div><br /></li>
+          <li>Right-click <b>EchoService.svc</b> file, and select View Code.</li>
+          <li>Add the following namespace<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.Globalization;</b></pre></td></tr></table></span></div><br /><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System.Globalization</b></pre></td></tr></table></span></div><br /></li>
+          <li>Delete the <b>DoWork</b> method and modify <b>EchoService</b> to implement the Echo operation as shown.<p><i>(Code Snippet - What is new in WCF4 Lab - Echo method CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public string Echo(string message)</b><b>{</b><b>    if (string.IsNullOrEmpty(message))</b><b>        throw new ArgumentNullException("message");</b><b>    return string.Format(CultureInfo.InvariantCulture, "Echo: {0}", message);</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet - What is new in WCF4 Lab - Echo method VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Function Echo(ByVal message As String) As String Implements IEchoService.Echo</b><b>    If (String.IsNullOrEmpty(message)) Then</b><b>        Throw New ArgumentNullException("message")</b><b>    End If</b><b>    Return String.Format(CultureInfo.InvariantCulture, "Echo: {0}", message)</b><b>End Function</b></pre></td></tr></table></span></div><br /></li>
+          <li>Open Web.config and comment out the entire <b>&lt;system.serviceModel&gt;</b> section by selecting it and pressing <b>CTRL+K,CTRL+C</b></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_2a13d9a3-434d-44c3-9592-f700ca4df27f.html">Exercise 1: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

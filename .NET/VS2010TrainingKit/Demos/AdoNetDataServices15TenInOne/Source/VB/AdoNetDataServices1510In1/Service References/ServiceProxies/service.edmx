@@ -1,0 +1,33 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="AdoNetDataServices1510In1.RowCount" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityType Name="Product">
+        <Key>
+          <PropertyRef Name="ProductID" />
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        <Property Name="ProductNumber" Type="Edm.String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+        <Property Name="Color" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+        <Property Name="StandardCost" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" />
+        <Property Name="ListPrice" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" />
+        <Property Name="Size" Type="Edm.String" Nullable="true" MaxLength="5" Unicode="true" FixedLength="false" />
+        <Property Name="Weight" Type="Edm.Decimal" Nullable="true" Precision="8" Scale="2" />
+        <Property Name="ProductCategoryID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="ProductModelID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SellStartDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="SellEndDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="DiscontinuedDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ThumbNailPhoto" Type="Edm.Binary" Nullable="true" MaxLength="Max" FixedLength="false" />
+        <Property Name="ThumbnailPhotoFileName" Type="Edm.String" Nullable="true" MaxLength="50" Unicode="true" FixedLength="false" />
+        <Property Name="rowguid" Type="Edm.Guid" Nullable="false" />
+        <Property Name="ModifiedDate" Type="Edm.DateTime" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="AdoNetDataServices1510In1" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <EntityContainer Name="RowCountContext" p7:LazyLoadingEnabled="true" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntitySet Name="Products" EntityType="AdoNetDataServices1510In1.RowCount.Product" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

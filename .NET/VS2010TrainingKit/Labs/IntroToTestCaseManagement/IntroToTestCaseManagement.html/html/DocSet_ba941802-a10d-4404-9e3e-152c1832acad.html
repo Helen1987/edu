@@ -1,0 +1,105 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Selecting Builds to Test Against" />
+      <MSHelp:RLTitle Title="Exercise 3: Selecting Builds to Test Against" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Selecting Builds to Test Against</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to Test Case Management with Microsoft Test Manager 2010</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Selecting Builds to Test Against</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to use the Track activity to navigate and select the builds to test against.</p>
+        <ol>
+          <li>In Microsoft Test Manager, select the <b>Track</b> tab to open the track activity. By default, the <b>Queries</b> window is loaded.</li>
+          <li>Select the <b>Assign Build</b> link to view the available builds and associated work items.<p><img src="images\a2890dee-e8e9-4907-829f-5309cdf6a6f9.png" /></p><p><b>Figure 26</b><br /><i>Assigning builds for testing</i></p></li>
+          <li>In the <b>Available Builds</b> drop down, select the last build in the list (<b>Tailspin Toys – Iteration 2_20100318.4</b>).<p><img src="images\590a9482-9c38-42f7-82fc-e7bf7c105169.png" /></p><p><b>Figure 27</b><br /><i>Selecting a build</i></p></li>
+          <li>Look at the associated work items to see what work was done during the selected build. Note that a single work item to “Write regular expression for strong password” was completed.<p><img src="images\49108080-4e61-4d52-9bfb-0c94a33c2527.png" /></p><p><b>Figure 28</b><br /><i>Associated work items</i></p></li>
+          <li>Select the <b>Tailspin Toys – Iteration 2_20100318.5</b> build from the <b>Available Builds</b> drop down. There are three associated work items for this build, one of which is the same work item as before. <div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>The Track activity can be used to help determine when it will be worthwhile to perform a test pass. </td></tr></table><p /></div></li>
+          <li>Select the <b>Toys – Iteration 2_20100318.6</b> build from the <b>Available Builds</b> drop down and select the <b>Assign To Plan</b> button. This will help provide an indication to the testers that this build warrants doing a full test run. Future test runs will use the new build by default.<p><img src="images\d61cc9a8-07b2-4d98-87e9-bf38ebaf8c5a.png" /></p><p><b>Figure 29</b><br /><i>Assigning a new build to the test plan</i></p></li>
+          <li>When notified that some tests may need to be run again based on code changes, choose to <b>view the recommended tests</b>. <p><img src="images\e6c8eb2a-389c-4c7d-8c66-75cc0cb022fa.png" /></p><p><b>Figure 30</b><br /><i>Option to view recommended tests</i></p></li>
+          <li>These recommendations are made possible by a new feature called <b>Test Impact Analysis</b>, which is able to determine when code changes impact previously executed tests. For example, a test that was successfully executed against an earlier build may be recommended to be executed again if it is determined that (a), code has changed and (b), that it is in the code path exercised by that test.<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Test Impact Analysis can be configured to run in the background when the application being tested is written in managed code (.NET Framework 2.0 or higher).</td></tr></table><p /></div></li>
+          <li>Select all recommended tests that are impacted by this latest build and select the <b>Reset To Active</b> button. This resets the state of test cases within the test plan to the Active state.<p><img src="images\afdc7e44-b3f2-4b43-9008-5d5aaedf87bb.png" /></p><p><b>Figure 31</b><br /><i>Resetting test case state to active for recommended tests</i></p></li>
+          <li>Return to the <b>Test</b> activity window and select the <b>Run Tests</b> link.<p><img src="images\ab7d6dc5-c5db-412e-93fb-efb888fd89ff.png" /></p><p><b>Figure 32</b><br /><i>Return to Test activity</i></p></li>
+          <li>Select <b>test suite 7</b>. Note that the two test cases there were previously in the Passing state are now Active again.<p><img src="images\9a5bb080-9f9c-4ac0-aa2b-a76b7a28da3d.png" /></p><p><b>Figure 33</b><br /><i>Test cases were reset to Active state</i></p></li>
+          <li>Return to the <b>Track</b> activity window, select the <b>Recommended Tests</b> link, and select the <b>Related Work Items</b> button. Note that a number of work items that have been closed or resolved since build <b>Tailspin Toys – Iteration 2_20100318.3</b>, including a user story work item.<p><img src="images\b3c2b487-843c-440c-bc52-cec4718f7e6c.png" /></p><p><b>Figure 34</b><br /><i>Related Work Items</i></p></li>
+          <li>Return to the <b>Test</b> activity window and select <b>test suite 8</b>, which is associated with the impacted user story that we just looked at in the previous step.</li>
+          <li>Select the blocked test cases and then select the <b>Reset</b> button to unblock them. Their state goes from Blocked to Active.<p><img src="images\6ebc70e4-de95-4b21-8531-2c2fcc607077.png" /></p><p><b>Figure 35</b><br /><i>Location of Reset button</i></p></li>
+          <li>Select the <b>Verify Bugs</b> link. Although we will not do so in this lab, this is where testers could select previously reported bugs and re-run the tests. If the tests do not pass, the testers would re-assign the bugs back to the developers.<p><img src="images\2b166288-fd3a-48e3-8413-fa7242ab216f.png" /></p><p><b>Figure 36</b><br /><i>Verifying bugs</i></p></li>
+        </ol>
+        <br />
+        <p>To give feedback please write to <a href="docSet_mailto:VSKitFdbk@microsoft.com">VSKitFdbk@Microsoft.com</a></p>
+        <p>Copyright © 2010 by Microsoft Corporation. All rights reserved.</p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

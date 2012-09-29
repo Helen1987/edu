@@ -1,0 +1,61 @@
+﻿<Window x:Class="Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="600" Width="800" xmlns:my="clr-namespace:Southridge">
+    <Window.Resources>
+        <my:SouthridgeDataSet x:Key="SouthridgeDataSet" />
+        <CollectionViewSource x:Key="ListingsViewSource" Source="{Binding Path=Listings, Source={StaticResource SouthridgeDataSet}}" />
+        <CollectionViewSource x:Key="ViewingsViewSource" Source="{Binding Path=Viewings, Source={StaticResource SouthridgeDataSet}}" />
+        <my:BooleanToBrushConverter x:Key="BooleanToBrushConverter1" />
+        <CollectionViewSource x:Key="ListingsViewingsViewSource" Source="{Binding Path=FK_Viewings_Viewings, Source={StaticResource ListingsViewSource}}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource ListingsViewSource}">
+        <Grid DataContext="{StaticResource ListingsViewSource}" HorizontalAlignment="Left" Margin="9,30,0,0" Name="Grid1" VerticalAlignment="Top" Width="270">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="223" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="MLS:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="3,3,0,3" Name="MLSTextBox" Text="{Binding Path=MLS}" VerticalAlignment="Center" Width="217" />
+            <Label Content="Title:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="3,3,0,3" Name="TitleTextBox" Text="{Binding Path=Title}" VerticalAlignment="Center" Width="217" />
+            <Label Content="Price:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="3,3,0,3" Name="PriceTextBox" Text="{Binding Path=Price}" VerticalAlignment="Center" Width="217" />
+        </Grid>
+        <Image Height="150" HorizontalAlignment="Left" Margin="566,33,0,0" Name="Image1" Stretch="Fill" VerticalAlignment="Top" Width="200" Source="{Binding Path=PrimaryPhoto}" />
+        <Button Content="Forward" Height="23" HorizontalAlignment="Left" Margin="691,516,0,0" Name="forwardButton" VerticalAlignment="Top" Width="75" />
+        <Button Content="Back" Height="23" HorizontalAlignment="Left" Margin="610,516,0,0" Name="backButton" VerticalAlignment="Top" Width="75" />
+        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="200" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource ListingsViewingsViewSource}}" Margin="12,310,0,0" Name="ViewingsDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="754">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="ViewingIDColumn" Binding="{Binding Path=ViewingID}" Header="Viewing ID" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="MLSColumn" Binding="{Binding Path=MLS}" Header="MLS" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="BuyerNameColumn" Binding="{Binding Path=BuyerName}" Header="Buyer Name" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="BuyerPhoneColumn" Binding="{Binding Path=BuyerPhone}" Header="Buyer Phone" Width="SizeToHeader" />
+                <DataGridTemplateColumn x:Name="ViewingDateColumn" Header="Viewing Date" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Path=ViewingDate}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn x:Name="WasInterestedColumn" Binding="{Binding Path=WasInterested}" Header="Was Interested" Width="SizeToHeader" />
+                <DataGridTemplateColumn Header="Proceeding" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Rectangle Fill="{Binding Converter={StaticResource BooleanToBrushConverter1}, ConverterParameter=Proceeding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn x:Name="BuyerIsMortgageApprovedColumn" Binding="{Binding Path=BuyerIsMortgageApproved}" Header="Buyer Is Mortgage Approved" Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="BuyerMortgageLimitColumn" Binding="{Binding Path=BuyerMortgageLimit}" Header="Buyer Mortgage Limit" Width="SizeToHeader" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

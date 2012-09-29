@@ -1,0 +1,136 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Lab 4: Silverlight Data Binding" />
+      <MSHelp:RLTitle Title="Lab 4: Silverlight Data Binding" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Lab 4: Silverlight Data Binding</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Silverlight Data Binding</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Lab 4: Silverlight Data Binding</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Data binding is a key technology in Silverlight that allows data to be presented to end users and then processed. In this lab exercise you'll learn different data binding techniques that can be used to perform one way and two way bindings and see how data can be accessed directly without having to go through controls in the user interface.You'll also work with new binding properties available in Silverlight 4 and learn how to write a custom value converter. The application that you'll build in the lab exercises is shown next:</p>
+        <p>
+          <img src="images\337e38c5-d88a-4249-8ac1-3abbae867b4c.png" />
+        </p>
+        <p>
+          <b>Figure 1</b>
+          <br />
+          <i>The GUI application</i>
+        </p>
+        <a name="_Toc274815067" href="#">
+          <span />
+        </a>
+        <h4 class="subheading">You Will Benefit from this Lab if:</h4>
+        <ul>
+          <li>You need to bind data to a Silverlight user interface </li>
+          <li>You would like to learn how to visually bind data to controls in Visual Studio 2010</li>
+        </ul>
+        <a name="_Toc274815068" href="#">
+          <span />
+        </a>
+        <h4 class="subheading">You Will Learn:</h4>
+        <ul>
+          <li>How to use the INotifyPropertyChanged interface</li>
+          <li>The role of DataContext in Silverlight applications</li>
+          <li>How to bind data to controls using the Visual Studio 2010 designer</li>
+          <li>How to access data using two way bindings</li>
+          <li>How to use the StringFormat property</li>
+          <li>How to create and use a value converter</li>
+        </ul>
+        <br />
+        <a name="_Toc274815069" href="#">
+          <span />
+        </a>
+        <h4 class="subheading">Business Requirements for the Silverlight application include:</h4>
+        <ul>
+          <li>Create a new Silverlight project</li>
+          <li>Create data entity classes that implement INotifyPropertyChanged</li>
+          <li>Create a user interface capable of displaying and filtering customers</li>
+          <li>Bind data entity objects to Silverlight controls</li>
+          <li>Use the StringFormat property to control how data is output in the user interface</li>
+          <li>Create a value converter and use it within the user interface to show "gold" customers</li>
+        </ul>
+        <p>Estimated Time: 60 minutes</p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

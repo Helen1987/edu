@@ -1,0 +1,155 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Verification" />
+      <MSHelp:RLTitle Title="Verification" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Verification</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction to ADO.NET Data Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Verification</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>To verify that you have correctly performed all steps of the exercises, proceed as follows.</p>
+        <p>In this verification you will use a web page to consume the Data Service. You will query, insert, update and delete products via the ASP.NET Ajax Library Beta’s WCF Data Services API.</p>
+        <ol>
+          <li>To interact with the Data Service you need to start a new instance of the <b>WebSite</b> project. To do this, in <b>Solution Explorer</b> right-click the <b>WebSite</b> project, point to <b>Debug</b> and select <b>Start New Instance</b>. The following web page should appear:<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>  If the solution throws a <b>JScript</b> error when using Internet Explorer 8, omit the exception and turn on Internet Explorer 8 <b>Compatibility View</b> (<img src="images\f065b1b6-5cf3-4d7f-abf0-40d38a4be926.png" /> ).<br />If the dialog <b>Debugging Not Enabled</b> appears, select <b>Modify the Web.config file to enable debugging</b> and click <b>OK</b>.</td></tr></table><p /></div><br /><p><img src="images\ba909a71-3651-49e9-8ae5-635ef85985fe.png" /></p><p><b>Figure 17</b><br /><i>Starting a new instance of WebSite project</i></p><br /></li>
+          <li>Query for products corresponding to <b>Brakes</b> category. To do this, select <b>Brakes</b> value in the <b>Product Category</b> drop down and click <b>Search. </b>The following page should appear:<p><img src="images\0cd9040b-07e5-43ae-b8fb-bf67cc77a317.png" /></p><p><b>Figure 18</b><br /><i>Querying for products</i></p><br /></li>
+          <li>Insert a new product. To do this, click <b>New Product </b>and type the following data in the modal popup extender.<ol><li><b>Product Number:</b> ABS-9444</li><li><b>Color:</b> Black</li><li><b>Standard Cost:</b> 150</li><li><b>Size:</b> 2</li><li><b>Name:</b> ABS Brakes</li><li><b>Category:</b> Brakes</li><li><b>List Price:</b> 150</li><li><b>Weight: </b>320</li></ol></li>
+          <p>
+            <img src="images\f534aa3a-8969-46d5-8672-ca14867e0e40.png" />
+          </p>
+          <p>
+            <b>Figure 19</b>
+            <br />
+            <i>Inserting a new product</i>
+          </p>
+          <br />
+          <p>Click <b>Save</b> to call the data service and insert the product. Notice how the product list refreshes so you can see the new inserted product.</p>
+          <p>
+            <img src="images\595b8ae1-295a-4c66-96dc-b8fd4291a152.png" />
+          </p>
+          <p>
+            <b>Figure 20</b>
+            <br />
+            <i>Retrieving the inserted product</i>
+          </p>
+          <br />
+          <li>Update the recently inserted product. To do this, click the row of the <b>ABS Brakes</b> product you have inserted in the previous step and wait for the popup modal extender to display the selected information. Update the following fields:<ol><li><b>Product Number</b>: RIM-9444</li><li><b>Name</b>: Rim Brakes</li></ol></li>
+          <p>
+            <img src="images\90114415-6711-4a8b-8a94-9c7cc23988f6.png" />
+          </p>
+          <p>
+            <b>Figure 21</b>
+            <br />
+            <i>Updating a product</i>
+          </p>
+          <br />
+          <p>Click <b>Save</b> to call the data service and update the product. You should see that when the product list refreshes, the recently updated product is updated.</p>
+          <br />
+          <div class="alert">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th align="left">
+                  <img class="note" src="../local/note.gif" />Note:</th>
+              </tr>
+              <tr>
+                <td> If you try adding a second Product, you will receive an error. This is because the product item has a GUID identifier that will be duplicated (it’s set to 0 by default.) On the next exercise, you will add a service interceptor to add the rowguid value.</td>
+              </tr>
+            </table>
+            <p />
+          </div>
+          <br />
+          <p>
+            <img src="images\73536327-9dc4-487e-962c-c045742327a7.png" />
+          </p>
+          <p>
+            <b>Figure 22</b>
+            <br />
+            <i>Showing the updated product</i>
+          </p>
+          <br />
+          <li>Delete the inserted product. To do this, check the <b>Select</b> checkbox of the row to delete and click <b>Delete Product</b>. <p><img src="images\83855ebd-8494-41ac-81d1-233b52abac82.png" /></p><p><b>Figure 23</b><br /><i>Deleting the product</i></p><br /><p>After deleting the product list will be refreshed and the product will disappear.</p></li>
+        </ol>
+        <a name="_Toc236650894" href="#">
+          <span />
+        </a>
+        <a name="_Toc246284163" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step:</h1>
+        <p>
+          <a href="docSet_a0f158ab-7a9c-4854-bae0-2e2779ff2a36.html">Exercise 3: Extending Data Services with Service Operations and Interceptors</a>
+        </p>
+        <br />
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

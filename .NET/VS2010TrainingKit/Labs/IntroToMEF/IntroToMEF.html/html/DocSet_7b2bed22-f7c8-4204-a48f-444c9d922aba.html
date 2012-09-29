@@ -1,0 +1,313 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 2: Using Metadata and Lazy-Loading Modules" />
+      <MSHelp:RLTitle Title="Exercise 2: Using Metadata and Lazy-Loading Modules" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 2: Using Metadata and Lazy-Loading Modules</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Introduction To Managed Extensibility Framework</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 2: Using Metadata and Lazy-Loading Modules</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>During composition of a part, an import will trigger the instantiation of a part (or parts) that expose the necessary exports required for the original requested part. For some applications, delaying this instantiation and preventing the recursive composition down the graph, may be an important factor to consider, since the creation of a long and complex graph of objects can be expensive and unnecessary.</p>
+        <a name="_Toc209425738" href="#">
+          <span />
+        </a>
+        <p>This is the motivation for MEF to support what we call lazy exports including the Lazy generic type, this type allows delay the load process of the objects until the moment it is first called, minimizing the time required to initialize the application.</p>
+        <p>In this type of scenarios, associating information with the export becomes critical to inform the importer about the capabilities of a specific implementation of a common contract.</p>
+        <p>In this exercise, we will tackle both problems in a single scenario.</p>
+        <a name="_Toc281932546" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Attaching Metadata to an Export</b>
+        </p>
+        <p>In some cases, it is necessary to associate information with exports for a variety of reasons. Commonly you use metadata to explain about the capabilities of a specific implementation of a common contract. In this task, you will modify an existing Query implementation to expose some properties as metadata.</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the <b>ContosoAutomotive.sln</b> solution file. By default, this file is located in the folder <b><i>Source\Ex2\begin</i>(choosing the folder that matches the language of your preference.) </b>Optionally, you can continue working the solution you created in the previous exercise.</li>
+          <li>You will start adding metadata to the WoodgroveQuery implementation. To do this, open the <b>WoodgroveQuery.c</b>s (C#) or <b>WoodgroveQuery.vb</b> (Visual Basic) file under the <b>ContosoAutomotive.Woodgrove</b> project.</li>
+          <li>Since you will attach metadata by using attributes, you no longer required the initialization code. Remove the WoodgroveQuery constructor that initializes the Name, Description and ImagePath properties.</li>
+          <li>To attach metadata to an Export implementation, you decorate the class with the ExportMetadata attribute. In this case, you will attach the same information you removed from the constructor initialization. To do this, decorate the WoodgroveQuery class with the following attributes.<p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task1 Step5 -WoodgroveQueryMetadata CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[Export(typeof(ICarQuery))]<b>[ExportMetadata("Name", "Woodgrove Cycles")]</b><b>[ExportMetadata("Description", "Who doesn't love a Woodgrove? The fastest thing on two wheels!")]</b><b>[ExportMetadata("ImagePath", "Images/woodgrove.jpg")]</b>public class WoodgroveQuery : CarQueryBase{    // Removed code ...}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task1 Step5 - WoodgroveQueryMetadata VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;Export(GetType(ICarQuery))&gt;<b>&lt;ExportMetadata("Name", "Woodgrove Cycles")&gt;</b><b>&lt;ExportMetadata("Description", "Who doesn't love a Woodgrove? The fastest thing on two wheels!")&gt;</b><b>&lt;ExportMetadata("ImagePath", "Images/woodgrove.jpg")&gt;</b>Public Class WoodgroveQuery    Inherits CarQueryBase    ' Removed code...End Class</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> You decorate a class with the ExportMetada attribute to include metadata to it. This attribute receives two parameters defining the name and the value of the class’ metadata respectively.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc281932547" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Using a Custom Export Attribute</b>
+        </p>
+        <p>In order to attach metadata to an export in a more strongly typed fashion than using the ExportMetadata attribute, you can create your own attribute and decorate it with the Metadata attribute. In this task, you will create a custom metadata attribute and derive it from Export attribute, thus creating a custom Export attribute that also specifies metadata.</p>
+        <ol>
+          <li>Create a new QueryMetadata class that will serve to both define an export and attach metadata at the same time. To do this, right click on the <b>ContosoAutomotive.Extensions</b> project and select <b>Add</b> | <b>Class</b>. In the Add New Item dialog, name the class as <b>QueryMetadataAttribute</b> and click OK.<p><img src="images\1d9428f2-a5c6-4d63-90dc-bddfda79a964.png" /></p><p><b>Figure 1</b><br /><i>Adding QueryMetadataAttribute class (C#)</i></p><br /><p><img src="images\cb7ddbe2-9988-49ef-b388-2ec88d839ab2.png" /></p><p><b>Figure 2</b><br /><i>Adding QueryMetadataAttribute class (Visual Basic)</i></p><br /></li>
+          <li>Update the QueryMetadataAttribute class to use the MEF library. To do this, add the following statement at the top of the <b>QueryMetadataAttribute</b> class definition.<p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step2 - Namespaces CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>using System.ComponentModel.Composition;</b><b>using ContosoAutomotive.Common;</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step2 - Namespaces VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Imports System.ComponentModel.Composition</b><b>Imports ContosoAutomotive.Common</b></pre></td></tr></table></span></div><br /></li>
+          <li>Make the QueryMetadataAttribute class definition public and decorate it with the <b>MetadataAttribute </b>and <b>AttributeUsage</b> attributes. In addition, make the class inherits from the <b>ExportAttribute</b> class. To do this, replace the default class definition with the following code.<p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step3 - QueryMetadataAttribute CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[MetadataAttribute]</b><b>[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]</b><b>public class QueryMetadataAttribute : ExportAttribute</b><b>{</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step3 - QueryMetadataAttribute VB)</i></p></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>&lt;MetadataAttribute(), AttributeUsage(AttributeTargets.Class, AllowMultiple:=False)&gt;</b><b>Public Class QueryMetadataAttribute</b><b>    Inherits ExportAttribute</b><b>End Class</b></pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Both attributes, MetadataAttribute and AttributeUsage, are required to be included as decorators of the typed Metadata class.<br />MetadataAttribute defines that the class can be used to define typed metadata of another class.<br />AttributeUsage sets where the attribute can be placed. In this exercise, the attribute can decorate a class, and cannot be used more than one time on the same class. </td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <ol>
+          <li>Add the required metadata properties and setup the inherited constructor to export the ICarQuery interface explicitly. To do this, insert the following code inside the QueryMetadataAttribute class.<p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step4 - QueryMetadataImplementation CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>[MetadataAttribute][AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]public class QueryMetadataAttribute : ExportAttribute{<b>    public QueryMetadataAttribute()</b><b>        : base(typeof(ICarQuery))</b><b>    {</b><b>    }</b><b>    public string Name { get; set; }</b><b>    public string Description { get; set; }</b><b>    public string ImagePath { get; set; }</b>}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step4 - QueryMetadataImplementation VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;MetadataAttribute(), AttributeUsage(AttributeTargets.Class, AllowMultiple:=False)&gt;Public Class QueryMetadataAttribute    Inherits ExportAttribute<b>Public Sub New()</b><b>        MyBase.New(GetType(ICarQuery))</b><b>    End Sub</b><b>    Public Property Description As String</b><b>    Public Property ImagePath As String</b><b>    Public Property Name As String</b>End Class</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> Inheritance from ExportAttribute and calling the ExportAttribute class’ constructor passing the ICarQuery type automatically sets that the contract implemented by the class is the ICarQuery. This allows avoiding specifying it when you decorate the class as you did when you used the ExportAttribute directly.</td></tr></table><p /></div><br /></li>
+          <li>Now, you can attach metadata and export a contract using the <b>QueryMetadata</b> attribute in your classes removing both the Export decorating attribute and the initialization constructor. To do this, remove the constructor and replace the class definition in the <b>CohoQuery</b> class. <br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step5 - CohoQueryMetadata CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[QueryMetadata(Name = "Coho Auto",</b><b>    Description = "Nothing beats a good price on a Coho. We can't keep these things in stock.",</b><b>    ImagePath = "Images/coho.jpg")]</b>public class CohoQuery : CarQueryBase{    // Removed code...}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step5 - CohoQueryMetadata VB)</i></p></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>&lt;QueryMetadata(Name:="Coho Auto",</b><b>        Description:="Nothing beats a good price on a Coho. We can't keep these things in stock.",</b><b>        ImagePath:="Images/coho.jpg")&gt;</b>Public Class CohoQuery    Inherits CarQueryBase    // Removed code...End Class</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <ol>
+          <li>You will repeat the same process on the FabrikamQuery class. To do this, remove the constructor and replace the class definition in the <b>FabrikamQuery</b> class. <br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step6 - FabrikamQueryMetadata CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[QueryMetadata(Name = "Fabrikam Motor Company",</b><b>    Description = "Low Mileage, Low Price FMCs that have wonderful resell value.",</b><b>    ImagePath = "Images/fabrikam.jpg")]</b>public class FabrikamQuery: CarQueryBase{    // Removed code...}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step6 - FabrikamQueryMetadata VB)</i></p></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>&lt;QueryMetadata(Name:="Fabrikam Motor Company",</b><b>        Description:="Low Mileage, Low Price FMCs that have wonderful resell value.",</b><b>        ImagePath:="Images/fabrikam.jpg")&gt;</b>Public Class FabrikamQuery    Inherits CarQueryBase    // Removed code...End Class</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <ol>
+          <li>You will repeat the same process on the LitwareQuery class. To do this, remove the constructor and replace the class definition in the <b>LitwareQuery </b>class. <br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step7 - LitwareQueryMetadata CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[QueryMetadata(Name = "Litware Limousines",</b><b>    Description = "Grab a Litware. We can make an absolutely steal off these party favorites.",</b><b>    ImagePath = "Images/litware.jpg")]</b>public class LitwareQuery: CarQueryBase{    // Removed code...}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step7 - LitwareQueryMetadata VB)</i></p></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>&lt;QueryMetadata(Name:="Litware Limousines",</b><b>        Description:="Grab a Litware. We can make an absolutely steal off these party favorites.",</b><b>        ImagePath:="Images/litware.jpg")&gt;</b>Public Class LitwareQuery    Inherits CarQueryBase    // Removed code...End Class</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <ol>
+          <li>You will repeat the same process on the TailspinQuery class. To do this, remove the constructor and replace the class definition in the <b>TailspinQuery </b>class. <p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step8 - TailspinQueryMetadata CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[QueryMetadata(Name = "Tailspin Motorsport",</b><b>    Description = "Life in the fast lane. You can't live without the best: Tailspin.",</b><b>    ImagePath = "Images/tailspin.jpg")]</b>public class TailspinQuery: CarQueryBase{    // Removed code...}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step8 - TailspinQueryMetadata VB)</i></p></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>&lt;QueryMetadata(Name:="Tailspin Motorsport",</b><b>        Description:="Life in the fast lane. You can't live without the best: Tailspin.",</b><b>        ImagePath:="Images/tailspin.jpg")&gt;</b>Public Class TailspinQuery    Inherits CarQueryBase    // Removed code...End Class</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <ol>
+          <li>You will repeat the same process on the WingtipQuery class. To do this, remove the constructor and replace the class definition in the <b>WingtipQuery </b>class. <br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step9 - WingtipQueryMetadata CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[QueryMetadata(Name = "Wingtip Automobiles",</b><b>    Description = "Ah, the Wingtip. The joy of millionaires. But can we find a low mileage one?",</b><b>    ImagePath = "Images/wingtip.jpg")]</b>public class WingtipQuery: CarQueryBase{    // Removed code...}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task2 Step9 - WingtipQueryMetadata VB)</i></p></li>
+        </ol>
+        <div class="code">
+          <span codeLanguage="VisualBasicUsage">
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>Visual Basic</th>
+                <th>
+                  <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                    <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <pre><b>&lt;QueryMetadata(Name:="Wingtip Automobiles",</b><b>        Description:="Ah, the Wingtip. The joy of millionaires. But can we find a low mileage one?",</b><b>        ImagePath:="Images/wingtip.jpg")&gt;</b>Public Class WingtipQuery    Inherits CarQueryBase    // Removed code...End Class</pre>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+        <br />
+        <a name="_Toc209425740" href="#">
+          <span />
+        </a>
+        <a name="_Toc281932548" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Importing Metadata</b>
+        </p>
+        <p>In this task, you will modify the way import occurs to let importers access the metadata attached to the exports.</p>
+        <ol>
+          <li>To access metadata in a strongly typed fashion create a metadata view by defining an interface with matching read only properties (names and types). To do this, right click on the <b>ContosoAutomotive.Common</b> project and select <b>Add</b> | <b>New Item</b>. In the Add New Item dialog select Interface type and name it <b>IQueryMetadata</b>.<p><img src="images\cc7d2802-4fcf-4530-9394-066a455237f3.png" /></p><p><b>Figure 3</b><br /><i>Adding IQueryMetadata interface (C#)</i></p><br /><p><img src="images\3a5f005e-e562-403d-be3c-273204d92439.png" /></p><p><b>Figure 4</b><br /><i>Adding IQueryMetadata interface (Visual Basic)</i></p><br /></li>
+          <li>Make the interface public and add the desired metadata properties as read only. To do this, replace the default interface implementation with the following code.<p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task3 Step2 - IQueryMetadata CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>public interface IQueryMetadata</b><b>{</b><b>    string Name { get; }</b><b>    string Description { get; }</b><b>    string ImagePath { get; }</b><b>}</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task3 Step2 - IQueryMetadata VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>Public Interface IQueryMetadata</b><b>    ReadOnly Property Name As String</b><b>    ReadOnly Property Description As String</b><b>    ReadOnly Property ImagePath As String</b><b>End Interface</b></pre></td></tr></table></span></div><br /></li>
+          <li>Since you are no longer using the Name, Description and ImagePath properties you can remove them from the CarQueryBase class. To do this, open the <b>CarQueryBase.cs</b> (C#) or <b>CarQueryBase.vb</b> (Visual Basic) and remove the <b>Name</b>, <b>Description</b> and <b>ImagePath</b> properties and their associated member fields.</li>
+          <li>Modify the main application to retrieve the query information from metadata instead of retrieving it from the query instance. To do this, open the CashMaker class by right clicking on the <b>CashMaker.xaml</b> file under the <b>ContosoAutomotive</b> project and select <b>View Code</b> in the contextual menu.</li>
+          <li>Now you can start importing using the type System.Lazy&lt;T, TMetadata&gt; where T is the contract type and TMetadata is the interface you have created. To do this, replace the CarQueries field definition inside the CashMaker class with the following code.<p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task3 Step5 – CarQueries Property CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>[ImportMany(AllowRecomposition = true)]</b><b>public ObservableCollection&lt;Lazy&lt;ICarQuery, IQueryMetadata&gt;&gt; CarQueries { get; set; }</b></pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task3 Step5 – CarQueries Property VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><b>&lt;ImportMany(AllowRecomposition:=True)&gt;</b><b>Public Property CarQueries As ObservableCollection(Of Lazy(Of ICarQuery, IQueryMetadata))</b></pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> As it was explained, Lazy type allows delaying the object instantiation until it is used, specifically, the object will be created when the <b>Value</b> property of the Lazy object will be called.<br />You are declaring the Lazy type using the contract type and the metadata type. The last one is not required but you are defining it because you want to access the metadata information avoiding the object instantiation.</td></tr></table><p /></div><br /></li>
+          <li>Since you have modified the bound collection, you should adapt the SelectionChange event handler to deal with a Lazy Query object. To do this, replace the bolded lines of code below to use a proper approach to run queries.<p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task3 Step6 – CommandList Event CSharp)</i></p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private void commandList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e){    if (this.SearchEnabled)    {        this.DisableSearch();        var thread = new Thread(() =&gt;        {            if (e.AddedItems.Count &gt; 0)            {<b>                var lazyQuery = e.AddedItems[0] as Lazy&lt;ICarQuery, IQueryMetadata&gt;;</b><b>                if (lazyQuery != null)</b><b>                {</b><b>                    lazyQuery.Value.Run(this.cars, true);</b><b>                }</b>            }            this.EnableSearch();        });        thread.Start();        thread.Join();    }}</pre></td></tr></table></span></div><br /><p><i>(Code Snippet – Intro to MEF Lab - Ex2 Task3 Step6 – CommandList Event VB)</i></p><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Private Sub commandList_SelectionChanged(ByVal sender As System.Object, ByVal e As System.Windows.Controls.SelectionChangedEventArgs)    If (Me.SearchEnabled) Then        Me.DisableSearch()        Dim thread = New Thread(Sub()            If (e.AddedItems.Count &gt; 0) Then<b>                Dim lazyQuery = TryCast(e.AddedItems(0), Lazy(Of ICarQuery, IQueryMetadata))</b><b>                If (lazyQuery IsNot Nothing) Then</b><b>                    lazyQuery.Value.Run(Me.cars, True)</b><b>                End If</b>            End If            Me.EnableSearch()        End Sub)        thread.Start()        thread.Join()    End IfEnd Sub</pre></td></tr></table></span></div><br /></li>
+          <li>Modify the UI XAML code as well to adapt the UI to the new lazy model. To do this, right click on the <b>CashMaker.xaml</b> file and select <b>View Designer</b> in the contextual menu. For simplicity, expand on the XAML tab to show only the markup code.</li>
+          <li>Scroll down to the <b>&lt;DataTemplate&gt;</b> element with the <b>QueryItem</b> key and adapt the Path property of the Binding objects to retrieve the <b>Name</b>, <b>Description</b> and <b>ImagePath</b> from the <b>Metadata</b> property of the Lazy objects. To do this, replace the highlighted bolded lines of markup code as shown below.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;DataTemplate x:Key="QueryItem"&gt;    &lt;Border Style="{StaticResource RoundedBorder}" Width="350" Height="60" Margin="0" Padding="0"&gt;        &lt;Grid&gt;            &lt;Grid.ColumnDefinitions&gt;                &lt;ColumnDefinition Width="60" /&gt;                &lt;ColumnDefinition Width="*" /&gt;            &lt;/Grid.ColumnDefinitions&gt;            &lt;Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="45" Height="45" Source="{Binding Path=Metadata.ImagePath }"&gt;&lt;/Image&gt;            &lt;Grid Grid.Column="1"  Background="#E8ECED" &gt;                &lt;Grid&gt;                    &lt;Grid.RowDefinitions&gt;                        &lt;RowDefinition Height="*" /&gt;                        &lt;RowDefinition Height="2*" /&gt;                    &lt;/Grid.RowDefinitions&gt; &lt;TextBlock Grid.Row="0" Margin="5 5 5 0" FontWeight="Bold" Text="{Binding Path=Metadata.Name }" VerticalAlignment="Center" /&gt; &lt;TextBlock Grid.Row="1" Margin="5 0 5 5" Text="{Binding Path=Metadata.Description }" VerticalAlignment="Center" TextWrapping="Wrap"/&gt;                &lt;/Grid&gt;            &lt;/Grid&gt;        &lt;/Grid&gt;    &lt;/Border&gt;&lt;/DataTemplate&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The Lazy type expose a property called <b>Metadata</b>, which is the metadata type defined on the Lazy type declaration (in this case, IQueryMetadata). This property is used in the XAML above to access the metadata information of the different query items instead of use the object properties as it was implemented in the previous exercise.</td></tr></table><p /></div><br /></li>
+          <li>Scroll down to the <b>&lt;ContentControl&gt;</b> element at the bottom of the file and adapt the Path property of the Binding object to retrieve the <b>Results</b> object from the <b>Value</b> instance of the Lazy objects. To do this, replace the bolded lines of markup code as shown below.<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>&lt;ContentControl Width="700" Margin="1 1 5 1" VerticalAlignment="Top"&gt;    &lt;Border Padding="1 1 5 1" Style="{StaticResource RoundedBorderRight}" Grid.Row="0" &gt;        &lt;DataGrid Name="Results" ItemsSource="{Binding Path=Value.Results}" AutoGenerateColumns="True" ColumnWidth="*" BorderThickness="0" Width="667" Height="381" /&gt;    &lt;/Border&gt;&lt;/ContentControl&gt;</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> As it was explained for the Lazy’s Metadata property. The <b>Value</b> property matches the contract type on the lazy type definition (in this case, ICarQuery) and allows accessing the different object’s properties and methods.</td></tr></table><p /></div><br /></li>
+        </ol>
+        <a name="_Toc209425742" href="#">
+          <span />
+        </a>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_feb95f61-0372-4a3c-8c0e-0357af051f35.html">Exercise 2: Verification</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

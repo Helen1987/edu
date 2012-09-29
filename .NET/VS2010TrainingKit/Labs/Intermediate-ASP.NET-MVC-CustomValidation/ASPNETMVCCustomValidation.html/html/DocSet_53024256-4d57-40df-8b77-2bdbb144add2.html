@@ -1,0 +1,146 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Adding Custom Range Validation Using Validation Attributes" />
+      <MSHelp:RLTitle Title="Exercise 1: Adding Custom Range Validation Using Validation Attributes" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Adding Custom Range Validation Using Validation Attributes</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">ASP.NET MVC 3 Custom Validation</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Adding Custom Range Validation Using Validation Attributes</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise, you will learn how to create a custom validation by using MVC3 ValidationAttribute class at server side. For that purpose, you will include a range validation in the Store Manager example to validate that the price of an album belongs to a certain range.</p>
+        <a name="_Toc282145878" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Adding a validation attribute class</b>
+        </p>
+        <p>In this task, you will add a validation attribute class at server side. Each attribute to be validated should have a new class inherited from <b>ValidationAttribute</b>.</p>
+        <ol>
+          <li>Open the begin solution <b>MvcMusicStore.sln</b> at Source\Ex01-Server Side Custom Validation\Begin</li>
+          <li>Create a new folder <b>Validations</b> at project root, which will include all the custom rules.</li>
+          <li>Add a new C# class into the <b>Validations</b> folder and rename it to <b>PriceValidationAttribute.cs</b></li>
+          <li>Open <b>PriceValidationAttribute.cs</b>  and add a reference to the <b>System.ComponentModel.DataAnnotations </b>namespace:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Web;<b>using System.ComponentModel.DataAnnotations;</b></pre></td></tr></table></span></div><br /></li>
+          <li>Inherit the <b>PriceValidationAttribute</b> class from <b>ValidationAttribute</b>. Additionally, you have to add the <b>AttributeUsage</b> attribute specification, which in this case can be set to fields and properties:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Web;using System.ComponentModel.DataAnnotations;<b>[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]</b>public class PriceValidationAttribute : ValidationAttribute{}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>AttributeUsage determines how custom attribute class’s attributes can be applied.<br /><b>     [System.AttributeUsage(System.AttributeTargets.All, </b><br /><b>     AllowMultiple = false, Inherited = true)]</b><br /><br /><b>AttributeTargets:</b> This parameter specifies all the application elements on which it is <b>valid to apply an attribute</b>. It is possible to use <b>System.AttributeTargets.All</b>, or to specify each member (for example, Class, Property, Method or Field).<br /><br /><b>AllowMultiple: </b>If it is set to true, then the attribute can be applied more than once in the target<b> </b><br /><br /><b>Inherit: </b>If it is set to false, then the attribute is not inherited by derived attribute classes.<br /><br />You could read more about <b>AttributeUsage </b>in <a href="http://msdn.microsoft.com/en-us/library/tw5zxet9(v=VS.100).aspx">msdn</a>.</td></tr></table><p /></div><br /></li>
+          <li>Define the thresholds for the album price range. To do this, add the following code to the generated class:<p>(Code Snippet – ASP.NET MVC 3 Custom Validation – Ex1 Custom Range Validation Thresholds - CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.ComponentModel.DataAnnotations;namespace MvcMusicStore.Validations{     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]   public class PriceValidationAttribute : ValidationAttribute    {<b>        private decimal minPrice = 0.01M;</b><b>        private decimal maxPrice = 100.00M;</b>    }}</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> The values of<b> minPrice </b>and <b>maxPrice </b>are initialized here, but they could be retrieved from a database query or a Web Service call, making the application more maintainable.</td></tr></table><p /></div><br /></li>
+          <li>Implement a class initializer and the method <b>IsValid</b> from the base class. This step is required for custom validation at server side:<p>(Code Snippet – ASP.NET MVC 3 Custom Validation – Ex1 Custom Range Validation IsValid- CSharp)</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using System;using System.Collections.Generic;using System.Linq;using System.Web;using System.ComponentModel.DataAnnotations;[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]public class PriceValidationAttribute : ValidationAttribute{    private decimal minPrice = 0.01M;    private decimal maxPrice = 100.00M;<b>    public PriceValidationAttribute(): base("The price is not in a valid range")</b><b>    {</b><b>    }</b><b>    public override bool IsValid(object value)</b><b>    {</b><b>        decimal price = (decimal)value;</b><b>        if (price &lt; this.minPrice || price &gt; this.maxPrice)</b><b>            return false;</b><b>        return true;</b><b>    }</b>}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269992845" href="#">
+          <span />
+        </a>
+        <a name="_Toc282145879" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Creating the Custom Data Annotation</b>
+        </p>
+        <p>In this task, you will add a new data annotation tag to the <b>Album </b>class that<b> </b>will be automatically linked to the validation method just created:</p>
+        <ol>
+          <li>Open the <b>Album.cs</b> file at <b>MvcMusicStore\Models</b>.</li>
+          <li>Add <b>Validations</b> namespace into the <b>Album</b> class<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>using MvcMusicStore.Validations;</pre></td></tr></table></span></div><br /></li>
+          <li>Replace current data annotation with the <b>PriceValidation</b> attribute:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre><s>[Range(0.01, 100.00, ErrorMessage = "Price must be between 0.01 and 100.00")]</s><b>[PriceValidation]</b></pre></td></tr></table></span></div><br /><p>After the replacement, the <b>Album.cs</b> file should look like the following:</p><div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>namespace MvcMusicStore.Models{    [MetadataType(typeof(AlbumMetaData))]    public partial class Album    {        // Validation rules for the Album class        ...        [Required(ErrorMessage = "Price is required")]        [PriceValidation]        public object Price { get; set; }    }}</pre></td></tr></table></span></div><br /></li>
+        </ol>
+        <a name="_Toc269320718" href="#">
+          <span />
+        </a>
+        <a name="_Toc269481315" href="#">
+          <span />
+        </a>
+        <a name="_Toc269992847" href="#">
+          <span />
+        </a>
+        <a name="_Toc282145880" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Running the Application</b>
+        </p>
+        <p>In this task, you will test that the <b>StoreManager</b> Create View template validates the price using custom validation.</p>
+        <ol>
+          <li>Press <b>F5</b> to run the Application.</li>
+          <li>The project starts in the Home page. Browse <b>/StoreManager/Create</b> and click <b>Save </b>without filling the form to verify that you get the price range validation message:<p><img src="images\89311f7e-0eca-40a1-a6b1-d08d56342c58.png" /></p><p><b>Figure 1</b><br /><i>Validating an album price</i></p><br /></li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_e8c9161a-c544-4a6a-99b6-a29838b4994c.html">Exercise 2: Adding validation at client side</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

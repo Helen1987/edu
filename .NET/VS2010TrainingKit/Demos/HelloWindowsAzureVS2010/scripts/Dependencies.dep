@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DependencyCheckerConfiguration>
+  <title>Hello Windows Azure Demo</title>
+  <previews>
+    <preview name="Check demo dependencies"
+             description="Check required components">
+    </preview>
+  </previews>
+  <dependencies>
+    <os type="Vista" buildNumber="6000">
+      <dependency
+                    value=".\Scripts\Dependencies\Check\CheckVistaSp1.ps1"
+                    enabled="true"
+                    optional="false"
+                    title="Vista SP1"
+                    explanation="Vista Service Pack 1 is required."
+                    scriptName=""
+                    downloadUrl="http://www.microsoft.com/windows/windows-vista/quick-start/sp1.aspx" />
+    </os>
+    <os type="Vista;Server" buildNumber="6001;6002;7000;7001;7056;7057;7100;7600;7601;">
+
+      <dependency
+                    value=".\Scripts\Dependencies\Check\CheckVS2010.ps1"
+                    enabled="true"
+                    optional="false"
+                    title="Microsoft Visual Studio 2010"
+                    explanation="Install Microsoft Visual Studio 2010"
+                    scriptName=""
+                    downloadUrl="http://msdn.microsoft.com/vstudio/products/" />
+      <dependency
+                    value=".\Scripts\Dependencies\Check\CheckNET4.ps1"
+                    enabled="true"
+                    optional="false"
+                    title="Microsoft .NET Framework 4.0"
+                    explanation="Download and install the Microsoft .NET Framework 4.0."
+                    scriptName=""
+                    downloadUrl="http://www.microsoft.com/downloads/details.aspx?familyid=9CFB2D51-5FF4-4491-B0E5-B386F32C0992"/>
+      <dependency
+                    value=".\Scripts\Dependencies\Check\CheckWmiIis7.ps1"
+                    enabled="true"
+                    optional="false"
+                    title="Microsoft IIS 7.0"
+                    explanation="Enable the Internet Information Services 7 feature."
+                    scriptName="Scripts\Dependencies\Setup\install-iis.bat" />
+      <dependency
+                    value=".\Scripts\Dependencies\Check\CheckIis7AspNet.ps1"
+                    enabled="true"
+                    optional="false"
+                    title="IIS7 ASP.NET"
+                    explanation="Enable the ASP.NET role."
+                    scriptName="Scripts\Dependencies\Setup\install-iis7aspnet.bat" />
+      <dependency
+                    value=".\Scripts\Dependencies\Check\CheckWCFHTTPAct.ps1"
+                    enabled="true"
+                    optional="false"
+                    title="WCF HTTP Activation"
+                    explanation="Enable the WCF HTTP Activation feature."
+                    scriptName="Scripts\Dependencies\Setup\install-WCFHTTPAct.bat" />
+
+      <dependency
+                    value=".\Scripts\Dependencies\Check\CheckAzureTools13ForVS2010.ps1"
+                    enabled="true"
+                    optional="false"
+                    title="Windows Azure Tools for Microsoft Visual Studio 2010 1.3 or higher"
+                    explanation="Download and install the Windows Azure Tools (Installation includes the Windows Azure SDK)."
+                    scriptName=""
+                    downloadUrl="http://go.microsoft.com/fwlink/?LinkID=128752" />
+    </os>
+  </dependencies>
+</DependencyCheckerConfiguration>

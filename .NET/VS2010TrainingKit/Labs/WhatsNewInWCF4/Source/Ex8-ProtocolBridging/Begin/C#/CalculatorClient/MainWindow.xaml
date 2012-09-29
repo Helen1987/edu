@@ -1,0 +1,55 @@
+﻿<Window x:Class="CalculatorClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WCF Routing Calculator" Height="480" Width="525" Background="Azure" BorderBrush="Black">
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="CalcStyle">
+                <Setter Property="Control.FontSize" Value="22" />
+            </Style>
+            <Style x:Key="CalcLabelStyle" BasedOn="{StaticResource CalcStyle}">
+                <Setter Property="Control.HorizontalAlignment" Value="Right" />
+                <Setter Property="Control.VerticalAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="CalcValueStyle" BasedOn="{StaticResource CalcStyle}">
+                <Setter Property="Control.HorizontalAlignment" Value="Left" />
+                <Setter Property="Control.VerticalAlignment" Value="Center" />
+                <Setter Property="Control.Width" Value="380" />
+            </Style>            
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="Label" Width="100" />
+            <ColumnDefinition Name="Pad" Width="10" />
+            <ColumnDefinition Name="Values" Width="*" />            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="toolbarRow" Height="26" />
+            <RowDefinition Name="Number1" Height="50" />
+            <RowDefinition Name="Number2" Height="50" />
+            <RowDefinition Name="Command" Height="50" />
+            <RowDefinition Name="AddResult" Height="50" />
+            <RowDefinition Name="SubResult" Height="50" />
+            <RowDefinition Name="MultResult" Height="50" />
+            <RowDefinition Name="DivResult" Height="50" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource CalcLabelStyle}" Grid.Column="0" Grid.Row="1" Text="Value 1:" />
+        <TextBlock Style="{StaticResource CalcLabelStyle}" Grid.Column="0" Grid.Row="2" Text="Value 2:" />
+        <Button Style="{StaticResource CalcStyle}" Grid.Row="3" Grid.ColumnSpan="3" Name="btnInvokeService" Click="btnInvokeService_Click">Invoke Service</Button>
+        <TextBlock Style="{StaticResource CalcLabelStyle}" Grid.Column="0" Grid.Row="4" Text="Add:" />
+        <TextBlock Style="{StaticResource CalcValueStyle}" Grid.Column="2" Grid.Row="4" Name="labelAddResult" Text="0.00" />
+        <TextBlock Style="{StaticResource CalcLabelStyle}" Grid.Column="0" Grid.Row="5" Text="Subtract:" />
+        <TextBlock Style="{StaticResource CalcValueStyle}" Grid.Column="2" Grid.Row="5" Name="labelSubResult" Text="0.00" />
+        <TextBlock Style="{StaticResource CalcLabelStyle}" Grid.Column="0" Grid.Row="6" Text="Multiply:" />
+        <TextBlock Style="{StaticResource CalcValueStyle}" Grid.Column="2" Grid.Row="6" Name="labelMultResult" Text="0.00" />
+        <TextBlock Style="{StaticResource CalcLabelStyle}" Grid.Column="0" Grid.Row="7" Text="Divide:" />
+        <TextBlock Style="{StaticResource CalcValueStyle}" Grid.Column="2" Grid.Row="7" Name="labelDivResult" Text="0.00" />
+        <TextBox Style="{StaticResource CalcValueStyle}" Name="textValue1" Grid.Row="1" Grid.Column="2"  />
+        <TextBox Style="{StaticResource CalcValueStyle}" Name="textValue2" Grid.Row="2" Grid.Column="2" />
+        <ToolBar Grid.ColumnSpan="3" Height="26" HorizontalAlignment="Left" Name="toolBar1" VerticalAlignment="Top" >
+            <ComboBox Name="ComboBoxServiceConnection" Width="180" SelectedIndex="0">
+                <ComboBoxItem>Direct TCP Connection</ComboBoxItem>
+                <ComboBoxItem>Routed HTTP Connection</ComboBoxItem>
+            </ComboBox>
+        </ToolBar>
+    </Grid>
+</Window>

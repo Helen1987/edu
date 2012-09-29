@@ -1,0 +1,147 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Calling a Domain Service from a Silverlight Client" />
+      <MSHelp:RLTitle Title="Exercise 3: Calling a Domain Service from a Silverlight Client" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Calling a Domain Service from a Silverlight Client</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Using WCF RIA Services</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Calling a Domain Service from a Silverlight Client</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>In this exercise you'll add controls to a Silverlight user interface and add code to call the domain service created in the previous exercise. Throughout the exercise you'll see how data from a domain service can be accessed and bound to controls using a data context object and see how changes to objects are automatically tracked. You'll also send any changes made in the Silverlight client back to the domain service so that data is updated in the database properly.</p>
+        <ol>
+          <li>Handle the <b>ComboBox</b> control's <b>SelectionChanged</b> event by double-clicking on the control in the designer. </li>
+          <li>Add the following code above the <b>Home</b> class's constructor to create an instance of the <b>AdventureWorksLTDomainContext</b> class that will be used to call the domain service. You'll need to resolve the appropriate namespace.<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>AdventureWorksLTDomainContext _Context =   new AdventureWorksLTDomainContext();</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>Dim _Context as New AdventureWorksLTDomainContext()</pre></td></tr></table></span></div></li>
+          <li />
+          <li>Locate the <b>OnNavigatedTo</b> event handler and add the following code:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CustomersComboBox.ItemsSource = _Context.Customers;OrdersDataGrid.ItemsSource = _Context.SalesOrderHeaders;_Context.Load(_Context.GetCustomersQuery());</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CustomersComboBox.ItemsSource = _Context.CustomersOrdersDataGrid.ItemsSource = _Context.SalesOrderHeaders_Context.Load(_Context.GetCustomersQuery())</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> This code binds Customer objects to the ComboBox and SalesOrderHeader objects to the DataGrid. It then then calls the domain service's GetCustomers method to fill the Customers collection with data.</td></tr></table><p /></div></li>
+          <li />
+          <li>Add code in the <b>SelectionChanged</b> event handler to perform the following steps:<ol><li>Get the selected <b>CustomerID</b> from the <b>ComboBox</b></li><li>Clear any existing objects in the <b>SalesOrderHeaders</b> collection</li><li>Call the domain service's <b>GetOrdersByCustomerID </b>method using the _<b>Context</b> variable.</li></ol></li>
+          <div class="code">
+            <span codeLanguage="CSharp">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>C#</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>int custID = ((Customer)CustomersComboBox.SelectedItem).CustomerID;if (_Context.EntityContainer != null)     _Context.EntityContainer.GetEntitySet&lt;SalesOrderHeader&gt;().Clear();_Context.Load(_Context.GetOrdersByCustomerIDQuery(custID));</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <div class="code">
+            <span codeLanguage="VisualBasicUsage">
+              <table width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th>Visual Basic</th>
+                  <th>
+                    <span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0">
+                      <img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span>
+                  </th>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <pre>Dim custID As Integer = (CType(CustomersComboBox.SelectedItem, _Customer)).CustomerIDIf _Context.EntityContainer IsNot Nothing Then    _Context.EntityContainer.GetEntitySet(Of SalesOrderHeader)().Clear()End If_Context.Load(_Context.GetOrdersByCustomerIDQuery(custID))</pre>
+                  </td>
+                </tr>
+              </table>
+            </span>
+          </div>
+          <li />
+          <li>Run the project and test the Silverlight application in the browser.  As a customer is selected all of their orders should show in the <b>DataGrid</b> control.</li>
+          <li>Switch back to <b>Home.xaml</b> and drag a <b>DataForm</b> control from the ToolBox and place it under the <b>DataGrid</b>.</li>
+          <li>Add the following attributes on the <b>DataForm</b> tag by editing the XAML or by using the Properties window. <div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>XAML</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CurrentItem="{Binding Path=SelectedItem,ElementName=OrdersDataGrid}"AutoEdit="False" AutoCommit="false"</pre></td></tr></table></span></div><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> An example of using the Properties window to modify the CurrentItem property visually is shown next. Binding a XAML element such as CurrentItem to another XAML element's property is referred to as <i>element to element</i> binding.</td></tr></table><p /></div><p><img src="images\fa9a9fc6-37c2-4c9c-8ef3-c9db523368a1.png" /></p><p><b>Figure 8</b><br /><i>Current Item Property</i></p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td> In this exercise the DataForm will be used to show all properties of the SalesOrderHeader object.  In a real-life application you'd want to constrain the data shown by the DataForm control. </td></tr></table><p /></div></li>
+          <li />
+          <li>Add a <b>Button</b> below the <b>DataForm</b> and assign a value of <b>Save</b> to its <b>Content</b> property.</li>
+          <li>Double-click the <b>Button</b> control in the designer to handle the <b>Click</b> event.</li>
+          <li>Within the <b>Click</b> event handler add the following code to send any changes made back to WCF RIA Services:<div class="code"><span codeLanguage="CSharp"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C#</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>if (_Context.HasChanges){    _Context.SubmitChanges(so =&gt;        {            string errorMsg = (so.HasError) ? "failed" : "succeeded";            MessageBox.Show("Update " + errorMsg);        }, null);}else{    MessageBox.Show("No changes have been made!");}</pre></td></tr></table></span></div><div class="code"><span codeLanguage="VisualBasicUsage"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>Visual Basic</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>If _Context.HasChanges Then    _Context.SubmitChanges(Sub(so)        Dim errorMsg As String = If(so.HasError, "failed", _          "succeeded")        MessageBox.Show("Update " + errorMsg)    End Sub, Nothing)Else    MessageBox.Show("No changes have been made!")End If</pre></td></tr></table></span></div></li>
+          <li />
+          <li>Run the project and perform the following tasks in the Silverlight application:<ol><li>Select a customer and then click on an order in the <b>DataGrid</b></li><li>Select the edit icon in the <b>DataForm</b> (click the pencil icon in the upper-right hand corner of the control) to switch to edit mode</li><li>Change the value for the <b>Comment</b> field in the <b>DataForm</b> to any value you'd like and click the <b>OK</b> button</li><li>Click the <b>Save</b> button to commit the changes to the database using WCF RIA Services. You should see a success message.</li><li>Refresh the browser and navigate to the same customer order.  Ensure that the comment change you made was successful.</li></ol></li>
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to jopapa@microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

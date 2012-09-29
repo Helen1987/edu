@@ -1,0 +1,20 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+
+<h2>Index</h2>
+
+@MyHelpers.ShowTime()
+
+@{
+	var image = new WebImage(@"~\Content\Images\home-showcase.png");
+	image = image.AddImageWatermark(@"~\Content\Images\logo.png", horizontalAlign: "Left", verticalAlign: "Top");
+    var imagePath = @"Content/Images/newimage.png";
+    var saveImagePath = @"~\Content\Images\newimage.png";
+    image.Save(saveImagePath);
+}
+
+<img src="@imagePath" alt="image with watermark"/>

@@ -1,0 +1,155 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 1: Build a Multitouch Application" />
+      <MSHelp:RLTitle Title="Exercise 1: Build a Multitouch Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 1: Build a Multitouch Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Multitouch WMTouch with MFC - Native</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 1: Build a Multitouch Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <br />
+        <a name="_Toc243305607" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Prepare the Application</b>
+        </p>
+        <ol>
+          <li>Start Visual Studio 2010</li>
+          <li>Create a  new MFC application project and give it the name <b><i>ScratchPad</i></b>:<a name="_GoBack" href="#"><span /></a><p><img src="images\ffafdaa3-4d12-4927-bda7-af490295a8cd.png" /></p></li>
+          <li>In the Application Type, select Single Document. To keep the application simple, unselect the other options in the dialog similar to the screens-shown below:<p><img src="images\b1e43ca0-142d-4546-98b6-789054724ff1.png" /></p><br /><p><img src="images\4e2250b6-cb42-49a3-95db-cea0103113bf.png" /></p><br /><p><img src="images\17387aca-3bc4-463f-8b18-24c842be8f08.png" /></p><br /></li>
+          <li>Continue clicking Next until you finally hit Finish:<p><img src="images\2d212aab-5d7d-4442-9a23-a17db0b095b2.png" /></p><br /></li>
+        </ol>
+        <a name="_Toc243305608" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 2 – Add Touch Support to the application</b>
+        </p>
+        <p>The application that we are building requires touch-enabled hardware, so we need to make this check in the application.</p>
+        <ol>
+          <li>In Scratchpad.cpp, add the following check at the end of CScratchPadApp::InitInstance():<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BYTE digitizerStatus = (BYTE) GetSystemMetrics(SM_DIGITIZER);if ((digitizerStatus &amp; (0x80 + 0x40)) == 0) //Stack Ready + MultiTouch{  AfxMessageBox(L"No touch input is currently available.");  return FALSE;}BYTE nInputs = (BYTE) GetSystemMetrics(SM_MAXIMUMTOUCHES);CString str;str.Format(L"Touch input available with %d touch points.", nInputs);AfxMessageBox(str);return TRUE;</pre></td></tr></table></span></div></li>
+          <br />
+          <li>You can see that besides checking for touch availability and readiness we also find out the number of touch inputs that the hardware supports.</li>
+          <li>Compile and run.</li>
+          <li>Depending on the number of touch inputs you have on your machine, you should see output similar to this:<p><img src="images\e8a53605-1816-4870-beea-2b1b4b5966ba.png" /></p><br /></li>
+          <li>In order to register the application client view window to receive Touch messages, we need to call the MFC function CWnd::RegisterTouchWindow(). We’ll do so after the view has been created; i.e. in the OnCreate() event handler.</li>
+          <li>Switch to the Class View and Select the <i>CChildView</i> class.In the Properties page, go to the Message property sheet and navigate to WM_CREATE, then add the OnCreate() message handler from the drop down box: <p><img src="images\f6224edd-e4ce-4998-a6a3-b16405921408.png" /></p></li>
+          <li>Inside the CChildView::OnCreate() handler append the following code to register touch input for the view window:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>    if (!RegisterTouchWindow())    {        ASSERT(FALSE);    }</pre></td></tr></table></span></div><br /><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"><img class="note" src="../local/note.gif" />Note:</th></tr><tr><td>Calling CWnd::RegisterTouchWindow() registers (and unregisters) a window as touch capable, allowing it to receive low-level WM_TOUCH messages. </td></tr></table><p /></div><br /></li>
+          <li>Since we’ve registered the view to receive touch input, we must override the handler receiving each of the touch messages:  CWnd::OnTouchInput().</li>
+          <li>This handler receives a single input from Windows Touch and should return TRUE if the application processes this message; otherwise FALSE.</li>
+          <li>In <i>ChildView.h</i>, add this method declaration:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>// Overridesprotected:    virtual BOOL OnTouchInput(CPoint pt, int nInputNumber, int nInputsCount, PTOUCHINPUT pInput);</pre></td></tr></table></span></div></li>
+          <li>And in ChildView.cpp, provide the corresponding implementation:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BOOL CChildView::OnTouchInput(CPoint pt, int nInputNumber, int nInputsCount, PTOUCHINPUT pInput){         // TODO: Handle Tocuh input messages here    return FALSE;}</pre></td></tr></table></span></div></li>
+        </ol>
+        <a name="_Toc243305609" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 3 – Add the Stroke Source and Header Files to the Project, and Draw Lines with your Fingers</b>
+        </p>
+        <p>We would like to use our fingers as multiple input devices. We want to draw a line for each finger that touches the screen. To do that we are going to use two stroke collections. One collection holds the finished strokes (lines) and another collection holds the ongoing, currently painting lines. Each finger that touches the screen adds points to a stroke in the m_StrkColDrawing collection. When we raise the finger from the screen, we move the finger's stroke from the m_StrkColDrawing to the m_StrkColFinished collection. In addition we want strokes to have different colors if a user is using two or more fingers on a multitouch monitor.</p>
+        <ol>
+          <li>In the Starter folder you will find two files: Stroke.h and Stroke.cpp. Copy them to the project folder and use “Add Existing item…” to add them to the project.</li>
+          <li>Similarly, add StrokeCollection.h and StrokeCollection.cpp to the project.</li>
+          <li>Include "Stroke.h" and "StrokeCollection.h" at the end of <i>StdAfx.h</i> header file.<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>#include "Stroke.h"#include "StrokeCollection.h"</pre></td></tr></table></span></div></li>
+          <li>Add these private member variable definitions to <i>ChildView.h</i>:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private:    int m_iCurrColor;                    // The current stroke color    CStrokeCollection m_StrkColFinished; // The user finished entering strokes                                           // after user lifted his or her finger.    CStrokeCollection m_StrkColDrawing;  // The Strokes collection the user is                                         // currently drawing. </pre></td></tr></table></span></div><br /></li>
+          <li><b>Important:</b> we have to initialize the current color. We’ll do so in the CChildView constructor in ChildView.cpp:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CChildView::CChildView() : m_iCurrColor(0){}</pre></td></tr></table></span></div><br /></li>
+          <li>To draw the finished collection, we add the following call to the end of the CChildView::OnPaint() handler. It will draw all finished strokes.<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>m_StrkColFinished.Draw(&amp;dc);</pre></td></tr></table></span></div><br /></li>
+          <li>We need to process each Touch input message received, so we handle each of the events we’re interested in: <i>touch input down</i>, <i>move</i> and <i>up</i>.</li>
+          <li>In <i>CChildView.h</i>, declare the following methods, which we’ll use to handle different touch input events:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>protected:    // Handlers for different touch input events    BOOL OnTouchInputDown(CPoint pt, PTOUCHINPUT pInput);    BOOL OnTouchInputMove(CPoint pt, PTOUCHINPUT pInput);    BOOL OnTouchInputUp(CPoint pt, PTOUCHINPUT pInput);</pre></td></tr></table></span></div><br /></li>
+          <li>In <i>CChildView.cpp</i>, add the implementation of each of the touch input handlers:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BOOL CChildView::OnTouchInputDown(CPoint pt, PTOUCHINPUT pInput){    // Create new stroke and add point to it.COLORREF strokeColor = GetTouchColor((pInput-&gt;dwFlags &amp; TOUCHEVENTF_PRIMARY) != 0);CStroke* pStrkNew = new CStroke(pInput-&gt;dwID, strokeColor);pStrkNew-&gt;Add(pt);    // Add new stroke to the collection of strokes in drawing.    m_StrkColDrawing.Add(pStrkNew);return TRUE;}BOOL CChildView::OnTouchInputMove(CPoint pt, PTOUCHINPUT pInput){    // Find the stroke in the collection of the strokes in drawing.    int strokeIndex = m_StrkColDrawing.FindStrokeById(pInput-&gt;dwID);if (strokeIndex &gt;= 0){CStroke* pStrk =  m_StrkColDrawing[strokeIndex];        // Add contact point to the stroke        pStrk-&gt;Add(pt);        // Draw the last stroke    pStrk-&gt;Draw(GetDC());}return TRUE;}BOOL CChildView::OnTouchInputUp(CPoint pt, PTOUCHINPUT pInput){    // Find the stroke in the collection of the strokes in drawing.    int strokeIndex = m_StrkColDrawing.FindStrokeById(pInput-&gt;dwID);if (strokeIndex &gt;= 0){CStroke* pStrkCopy = m_StrkColDrawing[strokeIndex];    // Remove this stroke from the collection of strokes in drawing.m_StrkColDrawing.RemoveAt(strokeIndex);// Add this stroke to the collection of finished strokes.    m_StrkColFinished.Add(pStrkCopy);}return TRUE;}</pre></td></tr></table></span></div><br /></li>
+          <li>In <i>CChildView.cpp</i>, modify the implementation of CChildView::OnTouchInput() to call each of the touch input handlers as needed:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>BOOL CChildView::OnTouchInput(CPoint pt, int nInputNumber, int nInputsCount, PTOUCHINPUT pInput){     if ((pInput-&gt;dwFlags &amp; TOUCHEVENTF_DOWN) == TOUCHEVENTF_DOWN) // Touch Down event{return OnTouchInputDown(pt, pInput);}else if ((pInput-&gt;dwFlags &amp; TOUCHEVENTF_MOVE) == TOUCHEVENTF_MOVE) // Touch Move event{return OnTouchInputMove(pt, pInput);}else if ((pInput-&gt;dwFlags &amp; TOUCHEVENTF_UP) == TOUCHEVENTF_UP) // Touch Move event{return OnTouchInputUp(pt, pInput);}    return FALSE;}</pre></td></tr></table></span></div><br /></li>
+          <li>Note that the method GetTouchColor() is called but is not yet implemented. This method is responsible for changing the color of the pen when a user moves more than one finger on the app window. Add this method’s declaration in CChildView.h:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>private:    COLORREF GetTouchColor(bool bPrimaryContact);</pre></td></tr></table></span></div><br /></li>
+          <li>And here’s the implementation in CChildView.cpp:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>COLORREF CChildView::GetTouchColor(bool bPrimaryContact){    static COLORREF c_arrColor[] =  // Secondary colors array    {        RGB(255, 0, 0),             // Red        RGB(0, 255, 0),             // Green        RGB(0, 0, 255),             // Blue        RGB(0, 255, 255),           // Cyan        RGB(255, 0, 255),           // Magenta        RGB(255, 255, 0)            // Yellow    };    COLORREF color;    if (bPrimaryContact)    {        // The primary contact is drawn in black.        color = RGB(0,0,0);         // Black    }    else    {        // Take current secondary color.        color = c_arrColor[m_iCurrColor];        // Move to the next color in the array.        m_iCurrColor = (m_iCurrColor + 1) % (sizeof(c_arrColor)/sizeof(c_arrColor[0]));    }    return color;}</pre></td></tr></table></span></div><br /></li>
+          <li>Finally, since we’ve dynamically created a number of strokes, we need to make sure each of those is destroyed before the application exits, so we include the following in the CChildView‘s destructor:<div class="code"><span codeLanguage="ManagedCPlusPlus"><table width="100%" cellspacing="0" cellpadding="0"><tr><th>C++</th><th><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"><img class="copyCodeImage" name="ccImage" align="absmiddle" src="../local/copycode.gif" />Copy Code
+                  </span></th></tr><tr><td colspan="2"><pre>CChildView::~CChildView(){    for (int i = 0; i &lt; m_StrkColDrawing.GetCount(); ++i)    {        delete m_StrkColDrawing[i];    }    for (int i = 0; i &lt; m_StrkColFinished.GetCount(); ++i)    {        delete m_StrkColFinished[i];    }}</pre></td></tr></table></span></div><br /></li>
+          <li>You’re now done with coding, so you can start experimenting with the application you’ve just implemented.</li>
+          <li>Build and run the application. It should look like this:<p><img src="images\907b207f-ce53-4b2c-a3d7-a85433e5ad33.png" /></p><br /></li>
+        </ol>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

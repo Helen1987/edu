@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab idMso="TabHome">
+        <group id="grpQuickExport" autoScale="true">
+          <menu id="btnQuickExport" size="large" itemSize="large" label="Quick Export" imageMso="PageMenu" >
+            <button id="btnRibbonXPS" label="XPS" getEnabled="GetEnable" getImage="GetButtonImage" onAction="ExportDocument" />
+            <button id="btnRibbonPDF" label="PDF" getEnabled="GetEnable" getImage="GetButtonImage" onAction="ExportDocument" />
+          </menu>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+  <backstage>
+    <tab id="tabExport" label="Export" insertAfterMso="TabInfo">
+      <firstColumn>
+        <group id="grpExportXPS" label="Export as XPS" helperText="Exports the current document as XPS.">
+          <primaryItem>
+            <button id="btnBackStageXPS" label="To XPS" getImage="GetButtonImage" getEnabled="GetEnable" onAction="ExportDocument"/>
+          </primaryItem>
+          <topItems>
+            <checkBox id="chkEnableXPS" label="Allow XPS Export" getPressed="IsEnableChecked" onAction="EnableChecked" />
+            <editBox id="txtXPSPath" label="Export Path" sizeString="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" getEnabled="GetEnable" getText="GetExportPath"  onChange="SetExportPath"/>
+          </topItems>
+        </group>
+        <group id="grpExportPDF" label="Export as PDF" helperText="Exports the current document as PDF.">
+          <primaryItem>
+            <button id="btnBackStagePDF" label="To PDF" getImage="GetButtonImage" getEnabled="GetEnable" onAction="ExportDocument"/>
+          </primaryItem>
+          <topItems>
+            <checkBox id="chkEnablePDF" label="Allow PDF Export" getPressed="IsEnableChecked" onAction="EnableChecked" />
+            <editBox id="txtPDFPath" label="Export Path" sizeString="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" getEnabled="GetEnable" getText="GetExportPath"  onChange="SetExportPath" />
+          </topItems>
+        </group>
+      </firstColumn>
+    </tab>
+  </backstage>
+</customUI>
+

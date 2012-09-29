@@ -1,0 +1,118 @@
+<html dir="ltr" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="save" content="history" />
+    <xml>
+      <MSHelp:TOCTitle Title="Exercise 3: Removing the PIA Dependence from the Application" />
+      <MSHelp:RLTitle Title="Exercise 3: Removing the PIA Dependence from the Application" />
+      <MSHelp:Attr Name="DocSet" Value="docSet" />
+      <MSHelp:Attr Name="TopicType" Value="kbOrient" />
+      <MSHelp:Attr Name="Locale" Value="kbEnglish" />
+      <MSHelp:Attr Name="AssetId" Value="{GUID}" />
+    </xml>
+    <title>Exercise 3: Removing the PIA Dependence from the Application</title>
+    <link rel="stylesheet" type="text/css" href="../local/Classic.css" />
+    <script src="../local/EventUtilities.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/SplitScreen.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/Dropdown.js" type="text/javascript" language="jscript"> </script>
+    <script src="../local/script.js" type="text/javascript" language="jscript"> </script>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" alt="DropDown image" src="../local/drpdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" alt="DropDownHover image" src="../local/drpdown_orange.gif" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" alt="Collapse image" src="../local/collapse_all.gif" />
+    <img id="expandImage" style="display:none; height:0; width:0;" alt="Expand image" src="../local/expand_all.gif" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" alt="CollapseAll image" src="../local/collall.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" alt="ExpandAll image" src="../local/expall.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" alt="Copy image" src="../local/copycode.gif" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" alt="CopyHover image" src="../local/copycodeHighlight.gif" />
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">Visual Studio 2010: Office Programmability</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Exercise 3: Removing the PIA Dependence from the Application</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td />
+        </tr>
+      </table>
+      <table width="100%" id="bottomTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" tabindex="0" style="cursor:default;display:none;">
+              <img id="toggleAllImage" class="toggleAll" alt="CollapseAll image" src="../local/collall.gif" />
+              <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label>
+              <label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span id="languageFilterToolTip" onmouseover="languageFilterImage.src=dropDownHoverImage.src;" onmouseout="languageFilterImage.src=dropDownImage.src;" tabindex="0" style="cursor:default;">
+              <img id="languageFilterImage" alt="DropDown image" src="../local/drpdown.gif" />
+              <label id="showAllLabel" for="languageFilterImage" style="display: none;">Language Filter: All</label>
+              <label id="multipleLabel" for="languageFilterImage" style="display: none;">Language Filter: Multiple</label>
+              <label id="vbLabel" for="languageFilterImage" style="display: none;">Language Filter: Visual Basic</label>
+              <label id="csLabel" for="languageFilterImage" style="display: none;">Language Filter: C#</label>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div id="languageSpan">
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="vbUsageCheckbox" />
+        <label class="languageFilter" for="vbUsageCheckbox">Visual Basic Usage</label>
+        <br />
+        <input type="checkbox" name="languageFilter" onclick="SetLanguage(this)" id="csCheckbox" />
+        <label class="languageFilter" for="csCheckbox">C#</label>
+        <br />
+      </div>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <p>Office programmability relies on types from the Office Primary Interop Assembly (PIA) to be able to interface with the various applications in the office suite. In the past, this has dramatically impacted deployment of customized Office applications for a number of reasons. First, different versions of Office use different versions of the PIA, creating complexity for managing the assemblies. Secondly, IT personnel had to figure out deployment strategies to ensure required PIA resources were available across their support base.  Additionally, deploying the PIA with an application resulted in a larger installation than necessary due to the extra, unused features.</p>
+        <div class="alert">
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <th align="left">
+                <img class="note" src="../local/note.gif" />Note:</th>
+            </tr>
+            <tr>
+              <td> Primary Interop Assemblies (PIAs) are a critical part of any .NET framework application needing to interface with COM components. A regular Interop Assembly is used for describing the COM types, allowing managed code to bind to the COM types at compile time. Interop Assemblies also help the CLR understand how those COM types should be marshaled at run time. The Primary Interop Assembly differs from regular Interop Assemblies in that it is the “official” holder of all type descriptions and is signed by the vendor to ensure its validity.</td>
+            </tr>
+          </table>
+          <p />
+        </div>
+        <br />
+        <p>Development in Visual Studio 2010 eases these burdens by removing this PIA dependence from applications. When the dependency is removed, the compiler will import whatever types are needed by your application from the PIA directly into your application; you simply deploy your application knowing that all the PIA classes you need are included with your application’s assemblies.</p>
+        <a name="_Toc281930415" href="#">
+          <span />
+        </a>
+        <p>
+          <b>Task 1 – Checking that PIA dependencies are removed by default</b>
+        </p>
+        <p>In Visual Studio 2010 PIA dependencies are removed by default, to verify this:</p>
+        <ol>
+          <li>Open Microsoft Visual Studio 2010 from <b>Start</b> | <b>All Programs</b> | <b>Microsoft Visual Studio 2010</b> | <b>Microsoft Visual Studio 2010</b>.</li>
+          <li>Open the <b>OfficeApplication.sln</b> solution file.  By default, this file is located in the folder: <b>%TrainingKitInstallFolder%<i>\Labs\Dev10Office\Source\RemovingPIA\Begin\</i></b> and choose the language of your preference. Optionally, you can continue working the solution you created in the previous exercise.</li>
+          <li>Expand the project’s <b>References</b>.<ol><li>In Visual Basic, you should select the <b>OfficeApplication</b> project node and click the <b>Show All Files</b> button in the Solution Explorer in order to see the References node.</li></ol></li>
+          <li>Right-Click on <b>Microsoft.Office.Interop.Excel</b> in your project’s references, and choose <b>Properties</b>.</li>
+          <li>Notice that the value of <b>Embed Interop Types</b> is set to <b>True</b>.</li>
+          <li>Right-click on <b>Microsoft.Office.Interop.Word</b> in your project’s references, and choose <b>Properties</b>.</li>
+          <li>Notice that the value of <b>Embed Interop Types</b> is set to <b>True</b>.</li>
+        </ol>
+        <h1 class="heading">Next Step</h1>
+        <p>
+          <a href="docSet_dfce7ba9-3875-4861-b82e-3617d87ff6e0.html">Summary</a>
+        </p>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img src="../local/footer.gif" alt="Footer image" width="100%" height="3px" />
+        </div>To give feedback please write to VSKitFdbk@Microsoft.com<p />Copyright © 2011 by Microsoft Corporation. All rights reserved.</div>
+    </div>
+  </body>
+</html>

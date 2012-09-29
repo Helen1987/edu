@@ -1,0 +1,16 @@
+﻿@model MvcMusicStore.ViewModels.StoreBrowseViewModel
+
+@{
+    ViewBag.Title = "Browse Albums";
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+
+@{
+    var grid = new WebGrid(Model.Albums, defaultSort: "Name", rowsPerPage: 10);
+}
+
+@grid.GetHtml(columns: grid.Columns(
+      grid.Column("Title"),
+          grid.Column("Genre")
+))
+

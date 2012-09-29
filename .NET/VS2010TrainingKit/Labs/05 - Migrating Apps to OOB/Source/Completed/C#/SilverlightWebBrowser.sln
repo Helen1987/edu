@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightWebBrowser", "SilverlightWebBrowser\SilverlightWebBrowser.csproj", "{862A4F1B-F61E-4D73-B0BB-0FC9B308F765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightWebBrowser.Web", "SilverlightWebBrowser.Web\SilverlightWebBrowser.Web.csproj", "{A7D082F9-588D-412A-8BAD-FF0C8F1096ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightWebBrowser.Data", "SilverlightWebBrowser.Data\SilverlightWebBrowser.Data.csproj", "{8772931E-1F88-4F5A-B56F-368B7B4AF138}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{862A4F1B-F61E-4D73-B0BB-0FC9B308F765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862A4F1B-F61E-4D73-B0BB-0FC9B308F765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862A4F1B-F61E-4D73-B0BB-0FC9B308F765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862A4F1B-F61E-4D73-B0BB-0FC9B308F765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D082F9-588D-412A-8BAD-FF0C8F1096ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D082F9-588D-412A-8BAD-FF0C8F1096ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D082F9-588D-412A-8BAD-FF0C8F1096ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D082F9-588D-412A-8BAD-FF0C8F1096ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8772931E-1F88-4F5A-B56F-368B7B4AF138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8772931E-1F88-4F5A-B56F-368B7B4AF138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8772931E-1F88-4F5A-B56F-368B7B4AF138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8772931E-1F88-4F5A-B56F-368B7B4AF138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

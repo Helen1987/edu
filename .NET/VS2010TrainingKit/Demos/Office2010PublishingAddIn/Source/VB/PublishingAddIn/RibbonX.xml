@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab id="tabPublishing" label="Publishing" insertAfterMso="TabDeveloper">
+        <group id="grpExport" label="Export" autoScale="true">
+          <button id="btnRibbonXPS" label="To XPS" size="large" getImage="GetButtonImage" onAction="ExportDocument" />
+          <button id="btnRibbonPDF" label="To PDF" size="large" getImage="GetButtonImage" onAction="ExportDocument" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+  <backstage>
+    <tab id="tabPublish" label="Publishing" insertAfterMso="TabInfo">
+      <firstColumn>
+        <group id="grpExportXPS" label="Export as XPS" helperText="Creates a new XPS file with the same name as the document.">
+          <primaryItem>
+            <button id="btnBackStageXPS" label="To XPS" getImage="GetButtonImage" onAction="ExportDocument" />
+          </primaryItem>
+          <topItems>
+            <checkBox id="chkXPSDocProps" label="Export Document Properties" onAction="Checked" />
+            <checkBox id="chkXPSDocStructure" label="Export Document Structure Tags" onAction="Checked" getPressed="IsChecked" />
+          </topItems>
+        </group>
+        <group id="grpExportPDF" label="Export as PDF" helperText="Creates a new PDF file with the same name as the document.">
+          <primaryItem>
+            <button id="btnBackStagePDF" label="To PDF" getImage="GetButtonImage" onAction="ExportDocument" />
+          </primaryItem>
+          <topItems>
+            <checkBox id="chkPDFDocProps" label="Export Document Properties" onAction="Checked" />
+            <checkBox id="chkPDFDocStructure" label="Export Document Structure Tags" onAction="Checked" getPressed="IsChecked" />
+          </topItems>
+        </group>
+      </firstColumn>
+    </tab>
+  </backstage>
+</customUI>
