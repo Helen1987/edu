@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Переменные</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		// Возвращает сумму элементов массива (или объекта, подобного массиву) a.
+		// Все элементы массива должны быть числовыми, при этом значения null
+		// и undefined игнорируются.
+		function sum(a) {
+			if ((a instanceof Array) || // если это массив
+				(a && typeof a == "object" && "length" in a)) { // или объект, подобный массиву
+				var total = 0;
+				for(var i = 0; i < a.length; i++) {
+				var element = a[i];
+				if (!element) continue; // игнорировать значения null и undefined
+				if (typeof element == "number") total += element;
+				else throw new Error("sum(): все элементы должны быть числами");
+			}
+			return total;
+			}
+			else throw new Error("sum(): аргумент должен быть массивом");
+		}		
+	</script>
+</body>
+</html>

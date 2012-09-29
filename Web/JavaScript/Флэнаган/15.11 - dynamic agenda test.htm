@@ -1,0 +1,26 @@
+<script src="TOC.js"></script> <!-- Загрузка функции maketoc() -->
+<style>
+#toc {/* Следующие стили применяются к контейнерному элементу с оглавлением */
+	background: #ddd; /* фон светло-серого цвета */
+	border: solid black 1px; /* простейшая рамка */
+	margin: 10px; padding: 10px; /* отступы */
+}
+.TOCEntry { font-family: sans-serif; } /* Пункты выводить шрифтом sans-serif */
+.TOCEntry a { text-decoration: none; } /* Ссылки не подчеркивать */
+.TOCLevel1 { font-size: 16pt; font-weight: bold; } /* Пункты первого уровня */
+/* крупным жирным шрифтом */
+.TOCLevel2 { font-size: 12pt; margin-left: .5in; } /* Пункты второго уровня с отступом */
+.TOCLevel3 { font-size: 12pt; margin-left: 1in; } /* Пункты третьего уровня */
+/* с отступом */
+.TOCBackLink { display: block; } /* Обратные ссылки в той же строке */
+.TOCSectNum:after { content: ":"; } /* Добавлять двоеточие после номера раздела */
+</style>
+<body>
+	<div id="toc"><h1>Оглавление</h1></div> <!-- здесь находится оглавление -->
+	<h1>Заголовок 1</h1>
+		<h2>Заголовок 1.2</h2>
+	<h1>Заголовок 2</h1>
+		<h2>Заголовок 2.2</h2>
+	<h1>Заголовок 3</h1>
+		<h2>Заголовок 3.2</h2>
+</body>

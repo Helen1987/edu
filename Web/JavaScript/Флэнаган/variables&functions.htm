@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Переменные</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		alert(f(4)); // Показывает 16. Функция f() может быть вызвана до того,
+			     // как она определена.
+		var f = 0; // Эта инструкция переписывает содержимое свойства f.
+		function f(x) { // Эта "инструкция" определяет функцию f до того,
+			return x*x; // как будут выполнены приведенные ранее строки.
+		}
+		alert(f); // Показывает 0. Функция f() перекрыта переменной f.
+	</script>
+</body>
+</html>

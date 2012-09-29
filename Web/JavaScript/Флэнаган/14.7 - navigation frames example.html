@@ -1,0 +1,72 @@
+	<!-- Этот файл реализует панель навигации, предназначенную для фрейма
+	в нижней части окна. Включите ее в набор фреймов следующим образом:
+	<frameset rows="*,75">
+		<frame src="about:blank" name="main">
+		<frame src="navigation.html">
+	</frameset>
+	Программный код из этого файла управляет содержимым фрейма с именем "main" 
+	-->
+	<script type="text/javascript">
+		// Эта функция вызывается щелчком на кнопке Назад в панели навигации
+		function back() {
+		// Для начала следует очистить поле ввода URLадреса в форме
+		document.navbar.url.value = "";
+		// Затем с помощью объекта History главного фрейма нужно вернуться
+		// назад, если этому не противоречит политика общего происхождения
+		try { parent.main.history.back( ); }
+		catch(e) {
+			alert("Вызов History.back() заблокирован " +
+			"политикой общего происхождения: " + e.message);
+		}
+		// Отобразить URL-адрес документа, к которому был выполнен переход,
+		// если это получилось. Вызов updateURL() откладывается,
+		// чтобы свойство location.href успело обновиться.
+		setTimeout(updateURL, 1000);
+		}
+		// Эта функция вызывается щелчком на кнопке Вперед в панели навигации.
+		function forward() {
+			document.navbar.url.value = "";
+			try { parent.main.history.forward(); }
+			catch(e) {
+				alert("Вызов History.forward() заблокирован " +
+				"политикой общего происхождения: "+e.message);
+			}
+			setTimeout(updateURL, 1000);
+		}
+		// Следующая частная функция вызывается функциями back() и forward()
+		// для обновления текстового поля URLадреса в форме. Обычно политика общего
+		// происхождения запрещает изменение свойства location в главном фрейме.
+		function updateURL() {
+			try { document.navbar.url.value = parent.main.location.href; }
+			catch(e) {
+				document.navbar.url.value = "<Политика общего происхождения " +
+				"блокирует доступ к URL>";
+			}
+		}
+		// Вспомогательная функция: если URL не начинается с префикса "http://", добавить его.
+		function fixup(url) {
+			if (url.substring(0,7) != "http://") url = "http://" + url;
+			return url;
+		}
+		// Эта функция вызывается щелчком на кнопке Перейти в панели навигации,
+		// а также при подтверждении пользователем формы
+		function go() {
+			// И загружает документ с заданным URL-адресом в главный фрейм.
+			parent.main.location = fixup(document.navbar.url.value);
+		}
+		// Открывает новое окно и отображает в нем URL-адрес, заданный пользователем
+		function displayInNewWindow() {
+			// Открыть обычное неименованное полноценное окно, для чего достаточно
+			// определить аргумент URL. После того как окно будет открыто,
+			// панель навигации потеряет контроль над ним.
+			window.open(fixup(document.navbar.url.value));
+		}
+	</script>
+<!—- Далее следует форма с обработчиками событий,которые вызывают определенные ранее функции -->
+<form name="navbar" onsubmit="go(); return false;">
+<input type="button" value="Назад" onclick="back();">
+<input type="button" value="Вперед" onclick="forward();">
+URL: <input type="text" name="url" size="50">
+<input type="button" value="Перейти" onclick="go();">
+<input type="button" value="Новое окно" onclick="displayInNewWindow();">
+</form>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Переменные</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		// Скопировать length элементов из массива from в массив to.
+		// Копирование начинается с элемента from_start в массиве from
+		// и выполняется в элементы, начиная с to_start в массиве to.
+		// Запомнить порядок следования аргументов такой функции довольно сложно.
+		function arraycopy(/* array */ from, /* index */ from_start,
+			/* array */ to, /* index */ to_start,
+			/* integer */ length)
+		{
+			// здесь находится реализация функции
+		}
+		// Эта версия функции чуть менее эффективная, но не требует
+		// запоминать порядок следования аргументов, а аргументы from_start
+		// и to_start по умолчанию принимают значение 0.
+		function easycopy(args) {
+			arraycopy(args.from,
+				args.from_start || 0, // Обратите внимание, как назначаются
+						     // значения по умолчанию
+				args.to,
+				args.to_start || 0,
+				args.length);
+		}
+		// Далее следует пример вызова функции easycopy():
+		var a = [1,2,3,4];
+		var b = new Array(4);
+		easycopy({from: a, to: b, length: 4});		
+	</script>
+</body>
+</html>

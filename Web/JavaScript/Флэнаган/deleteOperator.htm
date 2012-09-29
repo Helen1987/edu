@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Переменные</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		var my = new Object(); // Создаем объект по имени "my"
+		my.hire = new Date(); // my.hire ссылается на объект Date
+		my.fire = my.hire; // my.fire ссылается на тот же объект
+		delete my.hire; // свойство hire удалено; возвращает true
+		document.write(my.fire); // Но my.fire продолжает ссылаться на объект Date
+	</script>
+</body>
+</html>

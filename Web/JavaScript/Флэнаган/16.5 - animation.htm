@@ -1,0 +1,14 @@
+<! Это анимируемый элемент div >
+<div id="urgent"><h1>Внимание!</h1>Вебсервер атакован!</div>
+<script>
+	var e = document.getElementById("urgent"); // Получаем объект Element
+	e.style.border = "solid black 5px"; // Рамка
+	e.style.padding = "50px"; // И отступ
+	var colors = ["white", "yellow", "orange", "red"] // Перебираемые цвета
+	var nextColor = 0; // Текущая позиция перебора
+	// Вызывать следующую функцию с интервалом 500 миллисекунд
+	// для изменения цвета рамки.
+	setInterval(function() {
+		e.style.borderColor=colors[nextColor++%colors.length];
+	}, 500);
+</script>

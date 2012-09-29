@@ -1,0 +1,16 @@
+#debug_log { /* Стили оформления контейнера с отладочными сообщениями */
+	background-color: #aaa; /* серый фон */
+	border: solid black 2px; /* черная рамка */
+	overflow: auto; /* полосы прокрутки */
+	width: 75%; /* ограничить ширину элемента */
+	height: 300px; /* ограничить размер по вертикали */
+}
+#debug_log:before { /* Заголовок области вывода сообщений */
+	content: "Отладочные сообщения ";
+	display: block;
+	text-align: center;
+	font: bold 18pt sans-serif ;
+}
+.debug_message { /* Отделять сообщения тонкой горизонтальной линией */
+	border-bottom: solid black 1px;
+}

@@ -1,0 +1,20 @@
+<head>
+	<script src="Log.js"></script> <!-- подключить log() -->
+	<link rel="stylesheet" type="text/css" href="log.css"><!--подключить стили -->
+</head>
+<body>
+	<script>
+		function makeRectangle(x, y, w, h) { // Это отлаживаемая функция
+			log.debug("начало makeRectangle"); // Вывод сообщения
+			var r = {x:x, y:y, size: { w:w, h:h }};
+			log.debug("Новый прямоугольник", r); // Вывод объекта
+			log.debug("конец makeRectangle"); // Вывод другого сообщения
+			return r;
+		}
+	</script>
+	<!-- этой кнопкой вызывается отлаживаемая функция -->
+	<button onclick="makeRectangle(1,2,3,4);">Создать прямоугольник</button>
+	<!-- Это место для вывода сообщений -->
+	<!-- Вывод сообщений разрешается созданием элемента <div> в документе -->
+	<div id="debug_log" class="log"></div>
+</body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Переменные</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		/// Здесь определяются несколько простых функций
+		function add(x,y) { return x + y; }
+		function subtract(x,y) { return x - y; }
+		function multiply(x,y) { return x * y; }
+		function divide(x,y) { return x / y; }
+		// Эта функция принимает одну из вышеприведенных функций
+		// в качестве аргумента и вызывает ее для двух операндов
+		function operate(operator, operand1, operand2)
+		{
+			return operator(operand1, operand2);
+		}
+		// Вот так можно вызвать эту функцию для вычисления значения выражения (2+3) + (4*5):
+		var i = operate(add, operate(add, 2, 3), operate(multiply, 4, 5));
+		// Ради примера, мы реализуем эти функции снова, на этот раз с помощью
+		// функциональных литералов внутри литерала объекта.
+		var operators = {
+			add: function(x,y) { return x+y; },
+			subtract: function(x,y) { return xy; },
+			multiply: function(x,y) { return x*y; },
+			divide: function(x,y) { return x/y; },
+			pow: Math.pow // Для предопределенных функций это тоже работает
+		};
+		// Эта функция принимает имя оператора, отыскивает оператор в объекте,
+		// а затем вызывает его для переданных операндов. Обратите внимание
+		// на синтаксис вызова функции оператора.
+		function operate2(op_name, operand1, operand2)
+		{
+			if (typeof operators[op_name] == "function")
+				return operators[op_name](operand1, operand2);
+			else throw "неизвестный оператор";
+		}
+		// Вот так мы можем вызвать эту функцию для вычисления значения
+		// ("hello" + " " + "world"):
+		var j = operate2("add", "hello", operate2("add", " ", "world"))
+		// Используем предопределенную функцию Math.pow():
+		var k = operate2("pow", 10, 2)		
+	</script>
+</body>
+</html>

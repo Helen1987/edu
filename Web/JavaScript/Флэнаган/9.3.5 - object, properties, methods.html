@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>ѕеременные</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		// Ќачнем с конструктора.
+		function Circle(radius) {
+			// r Ц свойство экземпл€ра, оно определ€етс€
+			// и инициализируетс€ конструктором.
+			this.r = radius;
+		}
+		// Circle.PI Ц свойство класса, т. е. свойство функции-конструктора.
+		Circle.PI = 3.14159;
+		// ћетод экземпл€ра, который рассчитывает площадь круга.
+		Circle.prototype.area = function( ) { return Circle.PI * this.r * this.r; }
+		// ћетод класса Ц принимает два объекта Circle и возвращает объект с большим радиусом.
+		Circle.max = function(a,b) {
+			if (a.r > b.r) return a;
+			else return b;
+		}
+		// ѕримеры использовани€ каждого из этих полей:
+		var c = new Circle(1.0); // —оздание экземпл€ра класса Circle
+		c.r = 2.2; // ”становка свойства экземпл€ра r
+		var a = c.area(); // ¬ызов метода экземпл€ра area()
+		var x = Math.exp(Circle.PI); // ќбращение к свойству PI класса дл€ выполнени€ расчетов
+		var d = new Circle(1.2); // —оздание другого экземпл€ра класса Circle
+		var bigger = Circle.max(c,d); // ¬ызов метода класса max()
+	</script>
+</body>
+</html>

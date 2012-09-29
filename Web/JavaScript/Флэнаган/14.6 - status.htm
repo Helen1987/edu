@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Пример 14.6</title>    
+</head>
+<body> 
+    <script type="text/javascript" language="javascript">
+     var WastedTime = {
+         start: new Date(), // Запомнить время начала
+         displayElapsedTime: function() {
+             var now = new Date(); // Получить текущее время
+             // Подсчитать число прошедших минут
+             var elapsed = Math.round((now - WastedTime.start) / 60000);
+             // И попробовать отобразить их в строке состояния
+             window.defaultStatus = "Прошло " + elapsed + " минут.";
+         }
+     }
+     // Обновлять строку состояния раз в минуту
+     setInterval(WastedTime.displayElapsedTime, 60000);
+    </script>  
+</body>
+</html>

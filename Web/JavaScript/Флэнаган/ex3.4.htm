@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Пример 3.4</title>
+</head>
+<body>
+ <script type="text/javascript" language="javascript">
+     // Определить, как сравниваются строки, по ссылке или по значению,
+     // довольно просто. Здесь сравниваются совершенно разные строки, содержащие
+     // одинаковые последовательности символов. Если сравнение выполняется
+     // по значению, они должны интерпретироваться как эквивалентные, если же они
+     // сравниваются по ссылке, результат должен быть противоположным:
+     debugger
+     var s1 = "hello";
+     var s2 = "hell" + "o";
+     if (s1 == s2) document.write("Строки сравниваются по значению");
+ </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Пример 3.1</title>
+</head>
+<body>	
+	<script type="text/javascript">
+	    	var url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+		var text = "Посетите мою домашнюю страницу http://www.isp.com/~david";
+		var result = text.match(url);
+		if (result != null) {
+			var fullurl = result[0]; // Содержит "http://www.isp.com/~david"
+			var protocol = result[1]; // Содержит "http"
+			var host = result[2]; // Содержит "www.isp.com"
+			var path = result[3]; // Содержит "~david"
+		}
+	</script>
+</body>
+</html>
