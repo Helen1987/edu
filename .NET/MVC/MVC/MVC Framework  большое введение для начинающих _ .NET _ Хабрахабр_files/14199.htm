@@ -1,0 +1,45 @@
+var y5_sLinkHead = 'http://an.yandex.ru/count/4wLsbEgiJU840000Zh_mgR04XPTt0vwULWAMf2bWaP6uFm2i0fED2Nm3';
+var y5_iDirectCounter = 0;
+var y5_iDirectAdsCounter = 0;
+
+function yandex_direct_print() {
+ if (window.y5_isTransform)
+  y5_getYandexDirect();
+}
+
+function y5_getYandexDirect() {
+ var aAds = [  ['<div class="ad-link"><a href="http://an.yandex.ru/count/4wLsb8sKhdy40000Zh_mgR04XPTt0vK2cm5kGoi1YAxQTmU9fPV-5fW5dfvM0fsgLqe2dANlxjQMf2bWaPf1ag3fc0cAhqKn1f6uFm2i0fED2Pa6Ywl6Tof2Z93Y1A2Gn0b-2W00" target="_blank">Развивайся и богатей</a></div><div>Узнай о системе бизнеса.Обучение и поддержка.Измени свою жизнь сейчас.</div> <span class="url">shevshov.myplan4you.com</span>','=mb7YtvK2cm5kGucbb_uMc0MSfU_krff1ag3fc0cTgbTA0fa6e9342K5z1000'],
+  ['<div class="ad-link"><a href="http://an.yandex.ru/count/4wLsb5kZg4a40000Zh_mgR04XPTt0vK2cm5kGoi1CeYf6TG6YQDzBmUO1PwULWAThc-U0fobx-xMbgGfO96QGPAjBBO8YgtRZGMHk3y0h0AJZGcP1ekaM28bGeoGSGAWa742Vme0" target="_blank">Пробуешь побороть кризис???</a></div><div>Делай то что делают тысячи людей.Начни работать на себя.</div> <span class="url">aricov64.intway-europe.co<wbr>m</span>','=yGWJZ9K2cm5kGpA9etql1vW5dANlxjQQGPAjBBO8dQvldWAP1g2GSG91VWG0'],
+  ['<div class="ad-link"><a href="http://an.yandex.ru/count/4wLsbFnwdE040000Zh_mgR04XPTt0vK2cm5kGoi1CuYhXZW7YQo3kW-O1PwULWATbbuIdANlxjQMf2bWaPf1ageRF0cAgylm1P6uFm2i0fED2Pa6Yw9eXYX2Z91n0g2GSG9-2W00" target="_blank">Работа в интернете !</a></div><div>Получи работу в интернете. Простые инструменты. Поддержка,обучение.</div> <span class="url">consultancy.intway.info</span>','=DYcPaPK2cm5kGpE9h8Ew3vW5dANlxjQQGPAg6pm9dPPU4fa6e91n0a5z1000'] ];
+ var aLinkHow = ['<a target="_blank" href="http://an.yandex.ru/count/4wLsb8MZT1040000Zh_mgR04XPTt0vK2cmHhK2i1D8YkheG5dfvM0fQaAM2Hca6Ife9s2OgYwXW6aRW_0Am2auq9YwTZeob2V0S0">Дать объявление</a>','=bkbfffK2cmHhK3IQGPAcWdO9GNy1'];
+ var aLinkAll = [];
+ var sLinkDirectText = '<em>Я</em>ндекс.Директ';
+ var sLinkDirectUrl = 'http://direct.yandex.ru/?partner';
+ var aDomainList = ['www.habrahabr.ru','habrahabr.ru'];
+
+ y5_iDirectCounter++;
+ y5_showYandexDirect(aAds, sLinkDirectText, sLinkDirectUrl, aLinkHow, aLinkAll, aDomainList);
+}
+
+
+function y5_defAdFormat() {
+ var aFormats = ['direct', 'market', 'media', 'compatibility', 'banner_market'];
+ var sAdFormat = (window.yandex_ad_format) ? y5_checkEntry(yandex_ad_format.toString(), aFormats) : aFormats[0];
+ switch (sAdFormat) {
+  case aFormats[0]:
+   y5_getYandexDirect();
+   break;
+  case aFormats[1]:
+   y5_getYandexMarket();
+   break;
+  case aFormats[2]:
+   y5_getMediaBanner();
+   break;
+  case aFormats[4]:
+   y5_getBannerMarket();
+   break;
+  case aFormats[3]:
+   break;
+ }
+}
+y5_defAdFormat();

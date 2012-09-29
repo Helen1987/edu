@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ArrayOfContact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Contact id="1" lastName="Lennon" firstName="John" company="The Beatles" />
+  <Contact id="2" lastName="McCartney" firstName="Paul" company="The Beatles" />
+  <Contact id="3" lastName="Harrison" firstName="George" company="The Beatles" />
+  <Contact id="4" lastName="Starr" firstName="Ringo" company="The Beatles" />
+</ArrayOfContact>
