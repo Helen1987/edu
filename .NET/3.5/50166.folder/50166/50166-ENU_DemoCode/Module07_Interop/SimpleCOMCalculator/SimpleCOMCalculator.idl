@@ -1,0 +1,38 @@
+// SimpleCOMCalculator.idl : IDL source for SimpleCOMCalculator
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (SimpleCOMCalculator.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(4C9C3C33-F779-4E5F-A542-3B154F4DAF73),
+	dual,
+	nonextensible,
+	helpstring("ICalculator Interface"),
+	pointer_default(unique)
+]
+interface ICalculator : IDispatch{
+	[id(1), helpstring("method Add")] HRESULT Add([in] LONG first, [in] LONG second, [out,retval] LONG* result);
+	[propget, id(2), helpstring("property LastResult")] HRESULT LastResult([out, retval] LONG* pVal);
+};
+[
+	uuid(67755B32-6C53-4942-930A-F0A482992A3D),
+	version(1.0),
+	helpstring("SimpleCOMCalculator 1.0 Type Library")
+]
+library SimpleCOMCalculatorLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(B027EADC-1995-4392-8D00-A25BB53B78A6),
+		helpstring("Calculator Class")
+	]
+	coclass Calculator
+	{
+		[default] interface ICalculator;
+	};
+};

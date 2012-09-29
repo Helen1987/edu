@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?PlaybackEngine version="1.0"?>
+<Properties language="en">
+  <property name="MeetingState_Buffering">
+    <!-- _locID_text='MeetingState_Buffering' _locComment='' -->
+    모임이 버퍼링 중입니다.
+  </property>
+  <property name="MeetingState_Stopped">
+    <!-- _locID_text='MeetingState_Stopped' _locComment='' -->
+    모임이 중지되었습니다.
+  </property>
+  <property name="MeetingState_Playing">
+    <!-- _locID_text='MeetingState_Playing' _locComment='' -->
+    모임이 재생 중입니다. 
+  </property>
+  <property name="MeetingState_Paused">
+    <!-- _locID_text='MeetingState_Paused' _locComment='' -->
+    모임이 일시 중지되었습니다. 
+  </property>
+  <property name="StartPage_WelcomeText">
+    <!--  _locID_text='StartPage_WelcomeText' _locComment='' -->
+    Live Meeting을 시작합니다.
+  </property>
+  <property name="StartPage_CloseWindowText">
+    <!--  _locID_text='StartPage_CloseWindowText' _locComment='' -->
+    이제 이 창을 안전하게 닫을 수 있습니다.
+  </property>
+  <property name="StartPage_PopupBlockerPrompt">
+    <!--  _locID_text='StartPage_PopupBlockerPrompt' _locComment='' -->
+    메뉴 또는 도구 모음에서 팝업 차단기를 해제하십시오.
+  </property>
+  
+  <property name="IndexTab_Content">
+    <!--  _locID_text='IndexTab_Content' _locComment='' -->
+    콘텐츠
+  </property>
+  <property name="IndexTab_Speaker">
+    <!--  _locID_text='IndexTab_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    발표자
+  </property>
+  <property name="MainMenu_View">
+    <!--  _locID_text='MainMenu_View' _locComment='' -->
+    보기 선택
+  </property>
+  <property name="ViewMenu_Speaker">
+    <!--  _locID_text='ViewMenu_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    현재 발표자
+  </property>
+  <property name="ViewMenu_Panorama">
+    <!--  _locID_text='ViewMenu_Panorama' _locComment='' -->
+    비디오 파노라마
+  </property>
+  <property name="ViewMenu_Notes">
+    <!--  _locID_text='ViewMenu_Notes' _locComment='' -->
+    메모
+  </property>
+  <property name="ViewMenu_Index">
+    <!--  _locID_text='ViewMenu_Index' _locComment='' -->
+    인덱스
+  </property>
+  <property name="ViewMenu_QA">
+    <!--  _locID_text='ViewMenu_QA' _locComment='' -->
+    질문과 답변
+  </property>
+  <property name="ViewMenu_Speaker_Description">
+    <!--  _locID_text='ViewMenu_Speaker_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    모임의 현재 발표자 보기
+  </property>
+  <property name="ViewMenu_Panorama_Description">
+    <!--  _locID_text='ViewMenu_Panorama_Description' _locComment='' -->
+    모임의 RoundTable 비디오 보기
+  </property>
+  <property name="ViewMenu_Notes_Description">
+    <!--  _locID_text='ViewMenu_Notes_Description' _locComment='' -->
+    모임의 공유 메모 보기
+  </property>
+  <property name="ViewMenu_Index_Description">
+    <!--  _locID_text='ViewMenu_Index_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    콘텐츠 또는 발표자를 선택하여 모임 재생
+  </property>
+  <property name="ViewMenu_QA_Description">
+    <!--  _locID_text='ViewMenu_QA_Description' _locComment='' -->
+    모임의 질문과 답변 보기
+  </property>
+  <property name="ControlButton_Play">
+    <!--  _locID_text='ControlButton_Play' _locComment='' -->
+    재생
+  </property>
+  <property name="ControlButton_Pause">
+    <!--  _locID_text='ControlButton_Pause' _locComment='' -->
+    일시 중지
+  </property>
+  <property name="ControlButton_Stop">
+    <!--  _locID_text='ControlButton_Stop' _locComment='' -->
+    중지
+  </property>
+  <property name="ControlButton_Next">
+    <!--  _locID_text='ControlButton_Next' _locComment='' -->
+    다음
+  </property>
+  <property name="ControlButton_Prev">
+    <!--  _locID_text='ControlButton_Prev' _locComment='' -->
+    이전
+  </property>
+  <property name="ControlButton_Mute">
+    <!--  _locID_text='ControlButton_Mute' _locComment='' -->
+    음소거
+  </property>
+  <property name="ControlButton_Unmute">
+    <!--  _locID_text='ControlButton_Unmute' _locComment='' -->
+    음소거 해제
+  </property>
+  <property name="ControlButton_Volume">
+    <!--  _locID_text='ControlButton_Volume' _locComment='' -->
+    볼륨
+  </property>
+  <property name="PaneTitle_QA">
+    <!--  _locID_text='PaneTitle_QA' _locComment='' -->
+    질문 및 답변
+  </property>
+  <property name="PaneTitle_Notes">
+    <!--  _locID_text='PaneTitle_Notes' _locComment='' -->
+    메모
+  </property>
+  <property name="QaPrompt_Question">
+    <!--  _locID_text='QaPrompt_Question' _locComment='' -->
+    질문:
+  </property>
+  <property name="QaPrompt_Answer">
+    <!--  _locID_text='QaPrompt_Answer' _locComment='' -->
+    답변:
+  </property>
+  <property name="QaPrompt_NoData">
+    <!--  _locID_text='QaPrompt_NoData' _locComment='' -->
+    질문과 답변 데이터가 없습니다.
+  </property>
+  <property name="NotesPrompt_NoData">
+    <!--  _locID_text='NotesPrompt_NoData' _locComment='' -->
+    메모 데이터가 없습니다.
+  </property>
+
+  <property name="PollPrompt_Question">
+    <!--  _locID_text='PollPrompt_Question' _locComment='' -->
+    설문 질문
+  </property>
+  <property name="PollPrompt_Choices">
+    <!--  _locID_text='PollPrompt_Choices' _locComment='' -->
+    설문 선택 사항:
+  </property>
+  <property name="PollPrompt_Results">
+    <!--  _locID_text='PollPrompt_Results' _locComment='' -->
+    결과:
+  </property>
+  <property name="PollPrompt_PollsOpen">
+    <!--  _locID_text='PollPrompt_PollsOpen' _locComment='' -->
+    설문이 시작되었습니다.
+  </property>
+  <property name="PollPrompt_PollsClosed">
+    <!--  _locID_text='PollPrompt_PollsClosed' _locComment='' -->
+    설문이 종료되었습니다.
+  </property>
+  <property name="PollPrompt_ResultsShown">
+    <!--  _locID_text='PollPrompt_ResultsShown' _locComment='' -->
+    결과를 표시합니다.
+  </property>
+  <property name="PollPrompt_ResultsHidden">
+    <!--  _locID_text='PollPrompt_ResultsHidden' _locComment='' -->
+    결과를 숨깁니다.
+  </property>
+
+  <property name="BizCard_Name">
+    <!--  _locID_text='BizCard_Name' _locComment='' -->
+    &lt;알 수 없는 이름&gt;
+  </property>
+  <property name="BizCard_Company">
+    <!--  _locID_text='BizCard_Company' _locComment='' -->
+    &lt;알 수 없는 회사&gt;
+  </property>
+  <property name="BizCard_Title">
+    <!--  _locID_text='BizCard_Title' _locComment='' -->
+    &lt;알 수 없는 직함&gt;
+  </property>
+  <property name="BizCard_Email">
+    <!--  _locID_text='BizCard_Email' _locComment='' -->
+    &lt;알 수 없는 전자 메일&gt;
+  </property>
+  <property name="BizCard_Phone">
+    <!--  _locID_text='BizCard_Phone' _locComment='' -->
+    &lt;알 수 없는 전화&gt;
+  </property>
+
+  <property name="WebSlide_UriTooltip">
+    <!-- _locID_text='WebSlide_UriTooltip' _locComment='' -->
+    웹 페이지를 표시하려면 클릭
+  </property>
+  <property name="WebSlide_WarningText">
+    <!-- _locID_text='WebSlide_WarningText' _locComment='' -->
+    이 모임 중 참가자는 아래의 웹 페이지 그림을 보았습니다. 해당 URL을 클릭하여 새 브라우저 창에서 해당 사이트를 시작할 수 있습니다. 녹음/녹화는 계속 현재 창에서 재생됩니다.
+
+경고: 해당 URL을 완전히 신뢰하지 않는 경우 클릭하지 마십시오. Microsoft는 다음 웹 사이트의 콘텐츠, 정보 또는 보안에 대해 책임지지 않습니다.
+  </property>
+  <property name="WebSlide_UnavailableUrl">
+    <!-- _locID_text='WebSlide_UnavailableUrl' _locComment='' -->
+    &lt;사용할 수 없는 URL&gt;
+  </property>
+
+  <property name="AsSlide_StaticContentText">
+    <!-- _locID_text='AsSlide_StaticContentText' _locContent=''-->
+    현재 공유된 항목이 없습니다.
+  </property>
+  
+  <property name="SpeakerIndex_SelectAll">
+    <!--  _locID_text='SpeakerIndex_SelectAll' _locComment='' -->
+    모두 선택
+  </property>
+  <property name="SpeakerIndex_DeselectAll">
+    <!--  _locID_text='SpeakerIndex_DeselectAll' _locComment='' -->
+    모두 선택 취소
+  </property>
+
+  <property name="SpeakerIndex_UnknownSpeakerName">
+    <!--  _locID_text='SpeakerIndex_UnknownSpeakerName' _locComment='' -->
+    알 수 없는 발표자
+  </property>
+
+  <property name="Download_DefaultSubject">
+    <!-- _locID_text='Download_DefaultSubject' _locComment='' -->
+    &lt;제목 없음&gt;
+  </property>
+  <property name="Download_DownloadingPrompt">
+    <!-- _locID_text='Download_DownloadingPrompt' _locComment='' -->
+    다운로드하는 중...
+  </property>
+  <property name="Download_StartTimePrompt">
+    <!-- _locID_text='Download_StartTimePrompt' _locComment='' -->
+    모임 시작 시간:
+  </property>
+  <property name="Download_StopTimePrompt">
+    <!-- _locID_text='Download_StopTimePrompt' _locComment='' -->
+    모임 중지 시간:
+  </property>
+  <property name="Download_DurationPrompt">
+    <!-- _locID_text='Download_DurationPrompt' _locComment='' -->
+    녹음/녹화된 기간:
+  </property>
+  <property name="Download_StartTimeDefaultString">
+    <!-- _locID_text='Download_StartTimeDefaultString' _locComment='' -->
+    해당 없음
+  </property>
+  <property name="Download_StopTimeDefaultString">
+    <!-- _locID_text='Download_StopTimeDefaultString' _locComment='' -->
+    해당 없음
+  </property>
+  <property name="Download_DurationDefaultString">
+    <!-- _locID_text='Download_DurationDefaultString' _locComment='' -->
+    해당 없음
+  </property>
+  <property name="Download_ContinueButtonText">
+    <!-- _locID_text='Download_ContinueButtonText' _locComment='' -->
+    계속
+  </property>
+  <property name="Download_CloseButtonText">
+    <!-- _locID_text='Download_CloseButtonText' _locComment='' -->
+    닫기
+  </property>
+  <property name="Download_ContinueButtonTooltip">
+    <!-- _locID_text='Download_ContinueButtonTooltip' _locComment='' -->
+    모임 재생을 계속하려면 클릭
+  </property>
+  <property name="Download_CloseButtonTooltip">
+    <!-- _locID_text='Download_CloseButtonTooltip' _locComment='' -->
+    재생 창을 닫으려면 클릭
+  </property>
+  
+  <property name="Download_BrowserNameCheckResult">
+    <!-- _locID_text='Download_BrowserNameCheckResult' _locComment='' -->
+    웹 브라우저에서 Live Meeting 녹음/녹화 재생 기능이 지원되지 않습니다. 계속하면 재생 기능이 잘못 작동할 수 있습니다.
+  </property>
+  <property name="Download_BrowserVersionCheckResult">
+    <!-- _locID_text='Download_BrowserVersionCheckResult' _locComment='' -->
+    웹 브라우저 버전에서 Live Meeting 녹음/녹화 재생 기능이 지원되지 않습니다. 계속하면 재생 기능이 잘못 작동할 수 있습니다.
+  </property>
+  <property name="Download_CookieCheckResult">
+    <!-- _locID_text='Download_CookieCheckResult' _locComment='' -->
+    웹 브라우저에서 쿠키를 읽고 쓸 수 있도록 구성되지 않았습니다.
+  </property>
+  <property name="Download_WmvCheckResult">
+    <!-- _locID_text='Download_WmvCheckResult' _locComment='' -->
+    웹 브라우저에서 Windows Media 오디오/비디오 파일을 재생할 수 있도록 구성되지 않았습니다. 
+  </property>
+  <property name="Download_ImageCheckResult">
+    <!-- _locID_text='Download_ImageCheckResult' _locComment='' -->
+    웹 브라우저에서 그림을 표시할 수 있도록 구성되지 않았습니다.
+  </property>
+  <property name="Download_FlashCheckResult">
+    <!-- _locID_text='Download_FlashCheckResult' _locComment='' -->
+    웹 브라우저에서 Flash 파일을 재생할 수 있도록 구성되지 않았습니다.
+  </property>
+  <property name="Download_AnimationCheckResult">
+    <!-- _locID_text='Download_AnimationCheckResult' _locComment='' -->
+    웹 브라우저에서 Microsoft Office PowerPoint 프레젠테이션을 표시할 수 있도록 구성되지 않았습니다. 
+  </property>
+  <property name="Download_AnnotationCheckResult">
+    <!-- _locID_text='Download_AnnotationCheckResult' _locComment='' -->
+    웹 브라우저에서 VML 또는 SVG 파일을 표시할 수 있도록 구성되지 않았습니다.
+  </property>
+  <property name="Download_CheckResultEndingSentence">
+    <!-- _locID_text='Download_CheckResultEndingSentence' _locComment='' -->
+    기능이 활성화되어 사용할 수 있는 상태에 있는지 확인하십시오.
+  </property>
+
+  <property name="ErrorPane_ButtonText">
+    <!-- _locID_text='ErrorPane_ButtonText' _locComment='' -->
+    닫기
+  </property>
+  <property name="ErrorPane_ButtonTooltip">
+    <!-- _locID_text='ErrorPane_ButtonTooltip' _locComment='' -->
+    창 닫기
+  </property>
+
+  <property name="WmvError_AudioErrorPrefix">
+    <!-- _locID_text='WmvError_AudioErrorPrefix' _locComment=''-->
+    오디오 오류
+  </property>
+  <property name="WmvError_PlayerNotAvailable">
+  <!-- _locID_text='WmvError_PlayerNotAvailable' _locComment='A/V means audio/video'-->
+    미디어 플레이어가 설치되어 있지 않거나 설치된 미디어 플레이어가 비활성화되어 있어 이 오디오/비디오를 재생할 수 없습니다. 미디어 플레이어를 설치하거나, 미디어 플레이어가 이미 설치되어 있는 경우 ActiveX를 활성화해 보십시오.
+  </property>
+  <property name="WmvError_GetMediaUriFailed">
+    <!-- _locID_text='WmvError_GetMediaUriFailed' _locComment=''-->
+    URL을 찾을 수 없어 오디오/비디오 파일을 재생할 수 없습니다.
+  </property>
+  <property name="WmvError_PublishMediaError">
+    <!-- _locID_text='WmvError_PublishMediaError' _locComment=''-->
+    게시 작업에 오류가 발생하여 오디오/비디오 파일을 재생할 수 없습니다.
+  </property>
+  <property name="WmvError_CodecRequired">
+    <!-- _locID_text='WmvError_CodecRequired' _locComment=''-->
+    이 파일을 재생하려면 코덱이 필요합니다. Windows Media 스트림 서버에서 사용 가능한 경우 코덱이 자동으로 다운로드됩니다. 코덱이 다운로드되면 브라우저 창을 닫은 다음 녹음/녹화된 모임을 다시 열어 오디오/비디오를 듣거나 보십시오. 코덱이 다운로드되지 않으면 이 녹음/녹화의 오디오/비디오를 듣거나 볼 수 없습니다.
+  </property>
+  <property name="WmvError_PlayFailed">
+    <!-- _locID_text='WmvError_PlayFailed' _locComment=''-->
+    파일을 재생하려고 하는 동안 미디어 플레이어에 오류가 발생했습니다. 이 오류는 파일이 손상되었거나 미디어 플레이어에서 파일에 연결할 수 없어 발생할 수 있습니다.
+  </property>
+  <property name="WmvError_Msa1CodecRequired_InfoText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_InfoText' _locComment=''-->
+    화면 코덱(MSA1)이 필요하므로 녹음/녹화의 응용 프로그램 공유 부분을 볼 수 없습니다.  
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadFormatText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadFormatText' _locComment=''-->
+    화면 코덱을 얻으려면 %1을(를) 다운로드하십시오. 
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadArgText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadArgText' _locComment=''-->
+    Microsoft 응용 프로그램 화면 디코더 1(MSA1)
+  </property>
+  
+  <property name="WmvInfo_MediaNotReady">
+    <!-- _locID_text='WmvInfo_MediaNotReady' _locComment=''-->
+    이 녹음/녹화에 대한 비디오가 진행 중이므로 아직 볼 수 없습니다. [녹음/녹화 관리자]에서 녹음/녹화 목록 및 진행 상태를 확인할 수 있습니다.
+  </property>
+  <property name="MmcInfo_InteractionEnabled">
+    <!-- _locID_text='MmcInfo_InteractionEnabled' _locComment=''-->
+    비디오/Flash 시작, 중지 및 일시 중지 작업을 제어할 수 있도록 도구 모음 또는 상황에 맞는 메뉴가 활성화되어 있습니다. 
+  </property>
+
+  <property name="ErrorHandling_DataPathNotProvided">
+    <!-- _locID_text='ErrorHandling_DataPathNotProvided' _locComment='' -->
+    녹음/녹화를 재생할 수 없습니다. 녹음/녹화된 모임의 URL이 변경되었기 때문일 수 있습니다.
+  </property>
+  <property name="ErrorHandling_BadMeetingData">
+    <!-- _locID_text='ErrorHandling_BadMeetingData' _locComment='' -->
+    녹음/녹화를 재생할 수 없습니다. 녹음/녹화를 재생하는 데 필요한 데이터가 변경되었거나 녹음/녹화 또는 다운로드하는 동안 오류가 발생했기 때문일 수 있습니다.
+  </property>
+  <property name="ErrorHandling_HttpRequestNotSupported">
+    <!-- _locID_text='ErrorHandling_HttpRequestNotSupported' _locComment='' -->
+    녹음/녹화를 재생할 수 없습니다. 녹음/녹화를 재생하는 데 사용하는 XML 파서가 웹 브라우저와 호환되지 않기 때문일 수 있습니다. Windows Internet Explorer와 같은 다른 브라우저를 설치해 보십시오.
+  </property>
+
+  <property name="ConfirmPane_OkButtonText">
+    <!-- _locID_text='ConfirmPane_OkButtonText' _locComment='' -->
+    비디오 중지
+  </property>
+  <property name="ConfirmPane_CancelButtonText">
+    <!-- _locID_text='ConfirmPane_CancelButtonText' _locComment='' -->
+    취소
+  </property>
+  <property name="ConfirmPane_PromptText">
+    <!-- _locID_text='ConfirmPane_PromptText' _locComment='' -->
+    네트워크 대역폭이 이 녹음/녹화의 고품질 비디오를 재생하기에 충분하지 않습니다. 비디오를 중지하여 전반적인 재생 품질을 높일 수 있습니다.
+  </property>
+  <property name="ConfirmPane_CheckBoxText">
+    <!-- _locID_text='ConfirmPane_CheckBoxText' _locComment='' -->
+    이 메시지를 다시 표시 안 함
+  </property>
+  <property name="BWQCIF">
+    <!-- _locID_text='BWQCIF' _locComment='' -->
+    발표자 비디오
+  </property>
+  <property name="BWPano">
+    <!-- _locID_text='BWPano' _locComment='' -->
+    비디오 파노라마
+  </property>
+  <property name="Window_UnloadPrompt">
+    <!-- _locID_text='Window_UnloadPrompt' _locComment='' -->
+    계속하면 창이 닫힙니다.
+  </property>
+   <property name="WebSlide_UnavailableUrlWarningText">
+    <!-- _locID_text='WebSlide_UnavailableUrlWarningText' _locComment='' -->
+     브라우저에서 URL %1을(를) 찾을 수 없습니다.
+   </property>
+
+  <property name="ConfirmPane_OkButtonTooltip">
+   <!-- _locID_text='ConfirmPane_OkButtonTooltip' _locComment='' -->
+    비디오를 중지하려면 클릭
+  </property>
+  <property name="ConfirmPane_CancelButtonTooltip">
+    <!-- _locID_text='ConfirmPane_CancelButtonTooltip' _locComment='' -->
+    작업을 수행하지 않고 이 창을 닫으려면 클릭 
+  </property>
+  <property name="StartPage_CodecMissingMsg">
+	<!-- _locID_text='StartPage_CodecMissingMsg' _locComment='' -->
+	  일부 오디오/비디오 코덱이 재생에서 누락되었으므로 같은 IE 창에서 모임 재생을 다시 시작할 수 없으며 현재 문서가 닫힙니다. 모임 재생을 다시 방문하려면 모든 IE 창을 닫고 모임 재생을 다시 시작하는 것이 가장 좋습니다.
+  </property>
+
+</Properties>

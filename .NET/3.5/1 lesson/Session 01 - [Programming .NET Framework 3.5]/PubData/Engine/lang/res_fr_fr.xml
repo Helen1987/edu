@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?PlaybackEngine version="1.0"?>
+<Properties language="en">
+  <property name="MeetingState_Buffering">
+    <!-- _locID_text='MeetingState_Buffering' _locComment='' -->
+    La réunion est mise en mémoire tampon...
+  </property>
+  <property name="MeetingState_Stopped">
+    <!-- _locID_text='MeetingState_Stopped' _locComment='' -->
+    La réunion est arrêtée.
+  </property>
+  <property name="MeetingState_Playing">
+    <!-- _locID_text='MeetingState_Playing' _locComment='' -->
+    La réunion est en cours de lecture. 
+  </property>
+  <property name="MeetingState_Paused">
+    <!-- _locID_text='MeetingState_Paused' _locComment='' -->
+    La réunion est en pause. 
+  </property>
+  <property name="StartPage_WelcomeText">
+    <!--  _locID_text='StartPage_WelcomeText' _locComment='' -->
+    Bienvenue dans Live Meeting
+  </property>
+  <property name="StartPage_CloseWindowText">
+    <!--  _locID_text='StartPage_CloseWindowText' _locComment='' -->
+    Vous pouvez maintenant fermer cette fenêtre en toute sécurité
+  </property>
+  <property name="StartPage_PopupBlockerPrompt">
+    <!--  _locID_text='StartPage_PopupBlockerPrompt' _locComment='' -->
+    Autorisez l'affichage des fenêtres pop-up dans le menu ou la barre d'outils
+  </property>
+  
+  <property name="IndexTab_Content">
+    <!--  _locID_text='IndexTab_Content' _locComment='' -->
+    Contenu
+  </property>
+  <property name="IndexTab_Speaker">
+    <!--  _locID_text='IndexTab_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Intervenant
+  </property>
+  <property name="MainMenu_View">
+    <!--  _locID_text='MainMenu_View' _locComment='' -->
+    Sélectionner des affichages
+  </property>
+  <property name="ViewMenu_Speaker">
+    <!--  _locID_text='ViewMenu_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Intervenant actuel
+  </property>
+  <property name="ViewMenu_Panorama">
+    <!--  _locID_text='ViewMenu_Panorama' _locComment='' -->
+    Panorama vidéo
+  </property>
+  <property name="ViewMenu_Notes">
+    <!--  _locID_text='ViewMenu_Notes' _locComment='' -->
+    Commentaires
+  </property>
+  <property name="ViewMenu_Index">
+    <!--  _locID_text='ViewMenu_Index' _locComment='' -->
+    Index
+  </property>
+  <property name="ViewMenu_QA">
+    <!--  _locID_text='ViewMenu_QA' _locComment='' -->
+    Questions et réponses
+  </property>
+  <property name="ViewMenu_Speaker_Description">
+    <!--  _locID_text='ViewMenu_Speaker_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Afficher l'intervenant actuel dans la réunion
+  </property>
+  <property name="ViewMenu_Panorama_Description">
+    <!--  _locID_text='ViewMenu_Panorama_Description' _locComment='' -->
+    Afficher la vidéo RoundTable de la réunion
+  </property>
+  <property name="ViewMenu_Notes_Description">
+    <!--  _locID_text='ViewMenu_Notes_Description' _locComment='' -->
+    Afficher les commentaires partagés de la réunion
+  </property>
+  <property name="ViewMenu_Index_Description">
+    <!--  _locID_text='ViewMenu_Index_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Lire la réunion en sélectionnant du contenu ou un intervenant
+  </property>
+  <property name="ViewMenu_QA_Description">
+    <!--  _locID_text='ViewMenu_QA_Description' _locComment='' -->
+    Afficher les questions et réponses de la réunion
+  </property>
+  <property name="ControlButton_Play">
+    <!--  _locID_text='ControlButton_Play' _locComment='' -->
+    Lire
+  </property>
+  <property name="ControlButton_Pause">
+    <!--  _locID_text='ControlButton_Pause' _locComment='' -->
+    Suspendre
+  </property>
+  <property name="ControlButton_Stop">
+    <!--  _locID_text='ControlButton_Stop' _locComment='' -->
+    Arrêter
+  </property>
+  <property name="ControlButton_Next">
+    <!--  _locID_text='ControlButton_Next' _locComment='' -->
+    Suivant
+  </property>
+  <property name="ControlButton_Prev">
+    <!--  _locID_text='ControlButton_Prev' _locComment='' -->
+    Précédent
+  </property>
+  <property name="ControlButton_Mute">
+    <!--  _locID_text='ControlButton_Mute' _locComment='' -->
+    Désactiver le son
+  </property>
+  <property name="ControlButton_Unmute">
+    <!--  _locID_text='ControlButton_Unmute' _locComment='' -->
+    Activer le son
+  </property>
+  <property name="ControlButton_Volume">
+    <!--  _locID_text='ControlButton_Volume' _locComment='' -->
+    Volume
+  </property>
+  <property name="PaneTitle_QA">
+    <!--  _locID_text='PaneTitle_QA' _locComment='' -->
+    Questions et réponses
+  </property>
+  <property name="PaneTitle_Notes">
+    <!--  _locID_text='PaneTitle_Notes' _locComment='' -->
+    Commentaires
+  </property>
+  <property name="QaPrompt_Question">
+    <!--  _locID_text='QaPrompt_Question' _locComment='' -->
+    Q :
+  </property>
+  <property name="QaPrompt_Answer">
+    <!--  _locID_text='QaPrompt_Answer' _locComment='' -->
+    R :
+  </property>
+  <property name="QaPrompt_NoData">
+    <!--  _locID_text='QaPrompt_NoData' _locComment='' -->
+    Aucune donnée de questions/réponses
+  </property>
+  <property name="NotesPrompt_NoData">
+    <!--  _locID_text='NotesPrompt_NoData' _locComment='' -->
+    Aucune donnée de commentaires
+  </property>
+
+  <property name="PollPrompt_Question">
+    <!--  _locID_text='PollPrompt_Question' _locComment='' -->
+    Question du sondage
+  </property>
+  <property name="PollPrompt_Choices">
+    <!--  _locID_text='PollPrompt_Choices' _locComment='' -->
+    Choix du sondage :
+  </property>
+  <property name="PollPrompt_Results">
+    <!--  _locID_text='PollPrompt_Results' _locComment='' -->
+    Résultats :
+  </property>
+  <property name="PollPrompt_PollsOpen">
+    <!--  _locID_text='PollPrompt_PollsOpen' _locComment='' -->
+    Les sondages sont OUVERTS.
+  </property>
+  <property name="PollPrompt_PollsClosed">
+    <!--  _locID_text='PollPrompt_PollsClosed' _locComment='' -->
+    Les sondages sont FERMÉS.
+  </property>
+  <property name="PollPrompt_ResultsShown">
+    <!--  _locID_text='PollPrompt_ResultsShown' _locComment='' -->
+    Les résultats sont AFFICHÉS.
+  </property>
+  <property name="PollPrompt_ResultsHidden">
+    <!--  _locID_text='PollPrompt_ResultsHidden' _locComment='' -->
+    Les résultats sont MASQUÉS.
+  </property>
+
+  <property name="BizCard_Name">
+    <!--  _locID_text='BizCard_Name' _locComment='' -->
+    &lt;Nom inconnu&gt;
+  </property>
+  <property name="BizCard_Company">
+    <!--  _locID_text='BizCard_Company' _locComment='' -->
+    &lt;Société inconnue&gt;
+  </property>
+  <property name="BizCard_Title">
+    <!--  _locID_text='BizCard_Title' _locComment='' -->
+    &lt;Fonction inconnue&gt;
+  </property>
+  <property name="BizCard_Email">
+    <!--  _locID_text='BizCard_Email' _locComment='' -->
+    &lt;Adresse de messagerie inconnue&gt;
+  </property>
+  <property name="BizCard_Phone">
+    <!--  _locID_text='BizCard_Phone' _locComment='' -->
+    &lt;Téléphone inconnu&gt;
+  </property>
+
+  <property name="WebSlide_UriTooltip">
+    <!-- _locID_text='WebSlide_UriTooltip' _locComment='' -->
+    Cliquez pour afficher quand même la page Web
+  </property>
+  <property name="WebSlide_WarningText">
+    <!-- _locID_text='WebSlide_WarningText' _locComment='' -->
+    Pendant cette réunion, les participants ont visionné l'image de page Web ci-dessous. Vous pouvez cliquer sur son URL correspondante pour lancer le site dans une nouvelle fenêtre de navigateur. La lecture de l'enregistrement se poursuivra dans la fenêtre active.
+
+Avertissement : si vous n'avez pas une totale confiance en l'URL, ne cliquez pas dessus. Microsoft n'est pas responsable du contenu, des informations ou de la sécurité du site Web suivant :
+  </property>
+  <property name="WebSlide_UnavailableUrl">
+    <!-- _locID_text='WebSlide_UnavailableUrl' _locComment='' -->
+    &lt;URL non disponible&gt;
+  </property>
+
+  <property name="AsSlide_StaticContentText">
+    <!-- _locID_text='AsSlide_StaticContentText' _locContent=''-->
+    Rien n'est partagé actuellement
+  </property>
+  
+  <property name="SpeakerIndex_SelectAll">
+    <!--  _locID_text='SpeakerIndex_SelectAll' _locComment='' -->
+    Sélectionner tout
+  </property>
+  <property name="SpeakerIndex_DeselectAll">
+    <!--  _locID_text='SpeakerIndex_DeselectAll' _locComment='' -->
+    Désélectionner tout
+  </property>
+
+  <property name="SpeakerIndex_UnknownSpeakerName">
+    <!--  _locID_text='SpeakerIndex_UnknownSpeakerName' _locComment='' -->
+    Intervenant inconnu
+  </property>
+
+  <property name="Download_DefaultSubject">
+    <!-- _locID_text='Download_DefaultSubject' _locComment='' -->
+    &lt;Aucun objet&gt;
+  </property>
+  <property name="Download_DownloadingPrompt">
+    <!-- _locID_text='Download_DownloadingPrompt' _locComment='' -->
+    Téléchargement en cours...
+  </property>
+  <property name="Download_StartTimePrompt">
+    <!-- _locID_text='Download_StartTimePrompt' _locComment='' -->
+    Heure de début de la réunion :
+  </property>
+  <property name="Download_StopTimePrompt">
+    <!-- _locID_text='Download_StopTimePrompt' _locComment='' -->
+    Heure d'arrêt de la réunion :
+  </property>
+  <property name="Download_DurationPrompt">
+    <!-- _locID_text='Download_DurationPrompt' _locComment='' -->
+    Durée de l'enregistrement:
+  </property>
+  <property name="Download_StartTimeDefaultString">
+    <!-- _locID_text='Download_StartTimeDefaultString' _locComment='' -->
+    N/A
+  </property>
+  <property name="Download_StopTimeDefaultString">
+    <!-- _locID_text='Download_StopTimeDefaultString' _locComment='' -->
+    N/A
+  </property>
+  <property name="Download_DurationDefaultString">
+    <!-- _locID_text='Download_DurationDefaultString' _locComment='' -->
+    N/A
+  </property>
+  <property name="Download_ContinueButtonText">
+    <!-- _locID_text='Download_ContinueButtonText' _locComment='' -->
+    Continuer
+  </property>
+  <property name="Download_CloseButtonText">
+    <!-- _locID_text='Download_CloseButtonText' _locComment='' -->
+    Fermer
+  </property>
+  <property name="Download_ContinueButtonTooltip">
+    <!-- _locID_text='Download_ContinueButtonTooltip' _locComment='' -->
+    Cliquez pour continuer la lecture de la réunion
+  </property>
+  <property name="Download_CloseButtonTooltip">
+    <!-- _locID_text='Download_CloseButtonTooltip' _locComment='' -->
+    Cliquez pour fermer la fenêtre de lecture
+  </property>
+  
+  <property name="Download_BrowserNameCheckResult">
+    <!-- _locID_text='Download_BrowserNameCheckResult' _locComment='' -->
+    Votre navigateur Web ne prend pas en charge la lecture des enregistrements Live Meeting. Si vous continuez, la lecture risque d'être instable.
+  </property>
+  <property name="Download_BrowserVersionCheckResult">
+    <!-- _locID_text='Download_BrowserVersionCheckResult' _locComment='' -->
+    Votre navigateur Web ne prend pas en charge la lecture des enregistrements Live Meeting. Si vous continuez, la lecture risque d'être instable.
+  </property>
+  <property name="Download_CookieCheckResult">
+    <!-- _locID_text='Download_CookieCheckResult' _locComment='' -->
+    Votre navigateur Web n'est pas configuré pour lire/écrire les cookies.
+  </property>
+  <property name="Download_WmvCheckResult">
+    <!-- _locID_text='Download_WmvCheckResult' _locComment='' -->
+    Votre navigateur Web n'est pas configuré pour lire les fichiers audio/vidéo Windows Media. 
+  </property>
+  <property name="Download_ImageCheckResult">
+    <!-- _locID_text='Download_ImageCheckResult' _locComment='' -->
+    Votre navigateur Web n'est pas configuré pour afficher les images.
+  </property>
+  <property name="Download_FlashCheckResult">
+    <!-- _locID_text='Download_FlashCheckResult' _locComment='' -->
+    Votre navigateur Web n'est pas configuré pour lire les fichiers Flash.
+  </property>
+  <property name="Download_AnimationCheckResult">
+    <!-- _locID_text='Download_AnimationCheckResult' _locComment='' -->
+    Votre navigateur Web n'est pas configurer pour afficher les présentations Microsoft Office PowerPoint. 
+  </property>
+  <property name="Download_AnnotationCheckResult">
+    <!-- _locID_text='Download_AnnotationCheckResult' _locComment='' -->
+    Votre navigateur Web n'est pas configuré pour afficher les fichiers VML ou SVG.
+  </property>
+  <property name="Download_CheckResultEndingSentence">
+    <!-- _locID_text='Download_CheckResultEndingSentence' _locComment='' -->
+    Assurez-vous que les composants sont activés et disponibles.
+  </property>
+
+  <property name="ErrorPane_ButtonText">
+    <!-- _locID_text='ErrorPane_ButtonText' _locComment='' -->
+    Fermer
+  </property>
+  <property name="ErrorPane_ButtonTooltip">
+    <!-- _locID_text='ErrorPane_ButtonTooltip' _locComment='' -->
+    Fermer la fenêtre
+  </property>
+
+  <property name="WmvError_AudioErrorPrefix">
+    <!-- _locID_text='WmvError_AudioErrorPrefix' _locComment=''-->
+    Erreur audio
+  </property>
+  <property name="WmvError_PlayerNotAvailable">
+  <!-- _locID_text='WmvError_PlayerNotAvailable' _locComment='A/V means audio/video'-->
+    Impossible de lire ces données audio/vidéo, car aucun lecteur multimédia n'est installé ou car le lecteur multimédia installé est désactivé. Installez un lecteur multimédia ou, si un tel lecteur est déjà installé, essayez d'activer ActiveX.
+  </property>
+  <property name="WmvError_GetMediaUriFailed">
+    <!-- _locID_text='WmvError_GetMediaUriFailed' _locComment=''-->
+    Impossible de lire le fichier audio/vidéo, car l'URL est introuvable.
+  </property>
+  <property name="WmvError_PublishMediaError">
+    <!-- _locID_text='WmvError_PublishMediaError' _locComment=''-->
+    Impossible de lire le fichier audio/vidéo, car un problème est survenu lors de la publication.
+  </property>
+  <property name="WmvError_CodecRequired">
+    <!-- _locID_text='WmvError_CodecRequired' _locComment=''-->
+    Un codec est nécessaire pour lire ce fichier. Il sera téléchargé automatiquement s'il est disponible sur le serveur de flux Windows Media. Si le téléchargement du codec aboutit, fermez la fenêtre du navigateur, puis ouvrez à nouveau la réunion enregistrée pour écouter/visionner les données audio/vidéo. Si le téléchargement du codec échoue, vous ne pouvez pas écouter/visionner les données audio/vidéo contenues dans cet enregistrement.
+  </property>
+  <property name="WmvError_PlayFailed">
+    <!-- _locID_text='WmvError_PlayFailed' _locComment=''-->
+    Une erreur s'est produite dans le lecteur multimédia lors de la tentative de lecture du fichier. Il se peut que le fichier soit endommagé ou que le lecteur multimédia soit incapable de s'y connecter.
+  </property>
+  <property name="WmvError_Msa1CodecRequired_InfoText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_InfoText' _locComment=''-->
+    Vous ne serez pas en mesure de voir la partie de partage d'application de l'enregistrement, car un codec d'écran (MSA1) est requis.  
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadFormatText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadFormatText' _locComment=''-->
+    Pour obtenir le codec d'écran, téléchargez %1. 
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadArgText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadArgText' _locComment=''-->
+    Décodeur d'écran d'applications Microsoft 1 (MSA1)
+  </property>
+  
+  <property name="WmvInfo_MediaNotReady">
+    <!-- _locID_text='WmvInfo_MediaNotReady' _locComment=''-->
+    La vidéo de cet enregistrement est toujours en cours de traitement et ne peut pas être visionnée. Vous trouverez la liste des enregistrements et de leur état de traitement dans le Gestionnaire d'enregistrement.
+  </property>
+  <property name="MmcInfo_InteractionEnabled">
+    <!-- _locID_text='MmcInfo_InteractionEnabled' _locComment=''-->
+    Une barre d'outils ou un menu contextuel s'active pour vous permettre de démarrer, d'arrêter et de suspendre les données vidéo/flash. 
+  </property>
+
+  <property name="ErrorHandling_DataPathNotProvided">
+    <!-- _locID_text='ErrorHandling_DataPathNotProvided' _locComment='' -->
+    Impossible de lire l'enregistrement. Cela peut être dû à une modification de l'URL de la réunion enregistrée.
+  </property>
+  <property name="ErrorHandling_BadMeetingData">
+    <!-- _locID_text='ErrorHandling_BadMeetingData' _locComment='' -->
+    Impossible de lire l'enregistrement. Il se peut que les données nécessaires à la lecture de l'enregistrement aient été modifiées ou qu'une erreur se soit produite pendant l'enregistrement ou le téléchargement.
+  </property>
+  <property name="ErrorHandling_HttpRequestNotSupported">
+    <!-- _locID_text='ErrorHandling_HttpRequestNotSupported' _locComment='' -->
+    Impossible de lire l'enregistrement. Il se peut que l'analyseur XML utilisé pour la lecture de l'enregistrement ne soit pas compatible avec votre navigateur Web. Vous pouvez tenter d'installer un autre navigateur, tel que Windows Internet Explorer.
+  </property>
+
+  <property name="ConfirmPane_OkButtonText">
+    <!-- _locID_text='ConfirmPane_OkButtonText' _locComment='' -->
+    Arrêter la vidéo
+  </property>
+  <property name="ConfirmPane_CancelButtonText">
+    <!-- _locID_text='ConfirmPane_CancelButtonText' _locComment='' -->
+    Annuler
+  </property>
+  <property name="ConfirmPane_PromptText">
+    <!-- _locID_text='ConfirmPane_PromptText' _locComment='' -->
+    La bande passante réseau n'est pas suffisante pour lire la vidéo de haute qualité contenue dans cet enregistrement. Vous pouvez arrêter la vidéo afin d'améliorer la qualité de lecture générale.
+  </property>
+  <property name="ConfirmPane_CheckBoxText">
+    <!-- _locID_text='ConfirmPane_CheckBoxText' _locComment='' -->
+    Ne plus afficher ce message.
+  </property>
+  <property name="BWQCIF">
+    <!-- _locID_text='BWQCIF' _locComment='' -->
+    Vidéo de l'intervenant
+  </property>
+  <property name="BWPano">
+    <!-- _locID_text='BWPano' _locComment='' -->
+    Vidéo panoramique
+  </property>
+  <property name="Window_UnloadPrompt">
+    <!-- _locID_text='Window_UnloadPrompt' _locComment='' -->
+    Si vous continuez, cette fenêtre va se refermer.
+  </property>
+   <property name="WebSlide_UnavailableUrlWarningText">
+    <!-- _locID_text='WebSlide_UnavailableUrlWarningText' _locComment='' -->
+     Le navigateur ne parvient pas à trouver l'URL suivante : %1
+   </property>
+
+  <property name="ConfirmPane_OkButtonTooltip">
+   <!-- _locID_text='ConfirmPane_OkButtonTooltip' _locComment='' -->
+    Cliquez pour arrêter la vidéo
+  </property>
+  <property name="ConfirmPane_CancelButtonTooltip">
+    <!-- _locID_text='ConfirmPane_CancelButtonTooltip' _locComment='' -->
+    Cliquez pour fermer ce volet sans rien faire 
+  </property>
+  <property name="StartPage_CodecMissingMsg">
+	<!-- _locID_text='StartPage_CodecMissingMsg' _locComment='' -->
+	  Un codec audio/vidéo de la lecture étant manquant, nous ne pouvons pas prendre en charge le redémarrage de la lecture de la réunion dans la même fenêtre Internet Explorer et le document actuel sera fermé. Il est vivement recommandé de fermer toutes les fenêtres Internet Explorer et de relancer la lecture de la réunion, si vous voulez la revisionner.
+  </property>
+
+</Properties>

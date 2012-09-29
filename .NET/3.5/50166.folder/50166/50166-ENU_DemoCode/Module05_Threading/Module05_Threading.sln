@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APM", "APM\APM.csproj", "{D10417F7-B27A-4382-A3ED-97D21FDF0B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BGWork", "BGWork\BGWork.csproj", "{B09F1576-3CC0-40C0-B620-5875A2736AB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadAndThreadPool", "ThreadAndThreadPool\ThreadAndThreadPool.csproj", "{227579C4-B766-499D-861D-932CF7D35457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synchronization", "Synchronization\Synchronization.csproj", "{FAB430EF-331F-4664-A92B-9662C38BC6A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D10417F7-B27A-4382-A3ED-97D21FDF0B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10417F7-B27A-4382-A3ED-97D21FDF0B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10417F7-B27A-4382-A3ED-97D21FDF0B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10417F7-B27A-4382-A3ED-97D21FDF0B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B09F1576-3CC0-40C0-B620-5875A2736AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B09F1576-3CC0-40C0-B620-5875A2736AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B09F1576-3CC0-40C0-B620-5875A2736AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B09F1576-3CC0-40C0-B620-5875A2736AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{227579C4-B766-499D-861D-932CF7D35457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{227579C4-B766-499D-861D-932CF7D35457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{227579C4-B766-499D-861D-932CF7D35457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{227579C4-B766-499D-861D-932CF7D35457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB430EF-331F-4664-A92B-9662C38BC6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB430EF-331F-4664-A92B-9662C38BC6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB430EF-331F-4664-A92B-9662C38BC6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB430EF-331F-4664-A92B-9662C38BC6A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

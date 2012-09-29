@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+        <title>Microsoft Live Meeting 2007 Playback</title>
+        <link rel="Stylesheet" type="text/css" href="default.css" />
+
+        <script type="text/javascript">
+            var g_isIE = false;
+            if( navigator.appName == "Microsoft Internet Explorer" )
+            {
+                g_isIE = true;
+            }
+        
+            var g_lmEngineRoot = "";
+            var g_imageEnabled = false;
+
+            function OnLoad()
+            {
+                g_lmEngineRoot = GetEngineRoot();
+
+                if( IsWebUrl( g_lmEngineRoot ) )
+                {
+                    var preloadAnimation = document.getElementById( "PreloadAnimation" );
+                    preloadAnimation.style.visibility = "visible";
+                }
+                
+                // When we load the page from favorites and the page is local page, 
+                // IE can't use the relative path for css link. 
+                // we reload the css file with full path to resolve this problem. 
+                // The css file should be loaded before js file loaded as design. 
+                //
+                if( g_isIE )
+                {
+                    document.createStyleSheet( g_lmEngineRoot + "default.css" );
+                    var checkIESettingArea = document.getElementById("CheckIESettingArea");
+                    if( checkIESettingArea != null )
+                    {
+                        // When the first element adding failed (the WMV activeX control disabled), 
+                        // the rest object can't be created also. 
+                        // 
+                        // Resolve it by adding a empty div as the first child 
+                        // to make the first element can be created always. 
+                        //
+                    	checkIESettingArea.innerHTML = 
+                            "<div/>" + 
+                            "<object id='WMV_CHECK' classid='CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6' tabIndex='-1'><span>WMV</span></object>" +
+                            "<object id='MSOANIM_CHECK' classid='CLSID:A4639D2F-774E-11D3-A490-00C04F6843FB' tabIndex='-1'><span>MSOANIM</span></object>" +
+                            "<object id='MSOTIME_CHECK' classid='CLSID:A4639D29-774E-11D3-A490-00C04F6843FB' tabIndex='-1'><span>MSOTIME</span></object>" +
+                            "<object id='FLASH_CHECK' type='application/x-shockwave-flash' width=0 height=0 tabIndex='-1'><param name='movie' value='blank.swf'/><span>FLASH</span></object>";
+                    }
+                }
+
+                // The same reason as css file. 
+                // Load js file dynamically to resolve the IE refresh problem. 
+                //
+                var oScript = document.createElement( "script" );
+                oScript.src = g_lmEngineRoot + "playback.js";
+                document.body.appendChild( oScript );
+            }
+
+
+             function IsWebUrl( uri )
+            {
+                uri += "";
+                var reg = new RegExp( "^https?://", "i" );
+                var matchResult = uri.match( reg );
+                return matchResult != null;
+            }      
+            function IsSafari()
+            {
+               var userAgent = navigator.userAgent;
+               if( userAgent.indexOf("Safari") == -1 )
+               {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                 }
+            }
+
+            var UriUtils = new Object();
+
+	//the definition of name of key pair must be lower case.
+	//because it is the handle for special characters, so no upper case in name.
+	UriUtils.decodeReplaceTable = 
+	{
+		"%23":"#",
+		"%3b":";",
+		"%26":"&"
+	};
+	UriUtils.encodeReplaceTable = 
+	{
+		"#":"%23",
+		";":"%3b",
+		"&":"%26"
+	}
+
+	UriUtils.ReplaceSpecialCharacters = function( str, replaceTable )
+	{
+	    if( str == null )
+	    {
+	        return "";
+	    }
+	    var _replaceMatchString = "";
+	    
+	    for ( var s in replaceTable )
+	    {
+	        _replaceMatchString += s+"|";
+	    }
+	    //remove the last "|"
+	    if( _replaceMatchString.length > 0)
+	    {
+	        _replaceMatchString = _replaceMatchString.substr(0, _replaceMatchString.length -1);
+	    }
+	    if( _replaceMatchString.length >0 )
+	    {
+	        var reg = new RegExp( _replaceMatchString, "gi" );
+	        var replacedStr  = str.replace( reg, function( $0 ){ return replaceTable[ $0.toLowerCase() ]; } );    
+	        return replacedStr;
+	    }
+	    else
+	    {
+	        return str;
+	    }
+	}
+
+	UriUtils.EncodeUri = function( uri )
+	{
+	       if( uri == null )
+	       {
+	            return null;
+	        }
+
+		uri = encodeURI( uri );
+		uri = UriUtils.ReplaceSpecialCharacters( uri, UriUtils.encodeReplaceTable );
+		return uri;
+	}
+
+	//the parameter must be encoded uri, otherwise an exception will be thrown.      
+	UriUtils.DecodeUri = function( uri )
+	{
+	    if( uri == null )
+	    {
+	        return null;
+	    }
+	    
+	    uri = UriUtils.ReplaceSpecialCharacters( uri, UriUtils.decodeReplaceTable );
+	    try
+	    {
+	        uri = decodeURI( uri );
+	    }catch(e)
+	    {
+	        throw e;
+	    }
+	    return uri;
+	}
+
+	function GetEngineRoot()
+	{
+	    var re = new RegExp( "^(.*/)[^/]+\\.[^/\\.]+([?#].*)?$", "i" );
+
+	    var href = window.location.href;
+	    var matchResult = href.match( re );
+	    
+	    if( matchResult == null )
+	    {
+	        throw { name:"input", message:"The input URL is not accepted by LM Playback. "};
+	    }
+           
+	    var root = matchResult[1];
+	    try{
+	        if( IsSafari() )
+	        {
+	            //window.localtion.href is un-encoded url in Safari local,
+	            //we need to encode it here.
+	            root = UriUtils.EncodeUri( root );
+	        }
+
+	        //If root is web url, encode it.
+	        if( IsWebUrl( root ) )
+	        {
+	            root = UriUtils.DecodeUri( root );
+	            root = UriUtils.EncodeUri( root );
+	        }
+	    }catch(e)
+	    {
+	        root = matchResult[1];    
+	    }
+	    return root;                
+	}
+                        
+            function OnCheckImageReadyStateChange()
+            {
+                if( g_isIE )
+                {
+                    var oImage = document.getElementById( "IMAGE_CHECK" );
+                    
+                    if( oImage.readyState == "complete" )
+                    {
+                        g_imageEnabled = true;
+                    }    
+                }
+            }
+            
+            function OnCheckImageLoad()
+            {
+                if( !g_isIE )
+                {
+                    g_imageEnabled = true;
+                }
+            }
+        </script>
+    </head>
+    
+    <body onload="OnLoad();" style="overflow:hidden">
+        <noscript>
+            <!--
+            This message need localized but their is no js support 
+            so that we can't select different text with js. 
+            It may be a problem. 
+            -->
+            <table cellspacing="0" cellpadding="0" border="0" style="width:100%; height:100%; background-color:#607796" >
+                <tr style="height:25%">
+                    <td colspan="3">
+                        <table cellspacing="0" cellpadding="0" border="0" style="width:100%; height:100%;">
+                            <tr style="height:78px">
+                                <td>&nbsp;</td>
+                                <td style="width:356px"><img src="img/brand-arc.jpg" galleryImg="false"/></td>
+                            </tr>
+                            <tr><td colspan="2">&nbsp;</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:25%"></td>
+                    <td>
+                        <table cellspacing="0" cellpadding="0" border="0" style="width:100%; height:100%;">
+                            <tr><td style="color:#ffffff; font-size:11pt">If the Information Bar appeared at the top of the window, click the bar, click Allow Blocked Content, and then click Yes.</td></tr>
+                            <tr style="height:22px"><td>&nbsp;</td></tr>
+                            <tr><td style="color:#ffffff; font-size:8pt">If there is no bar above, your Web browser is not configured to run JavaScripts or the browser does not support JavaScript in Web pages.</td></tr>
+                            <tr style="height:12px"><td>&nbsp;</td></tr>
+                            <tr><td style="color:#ffffff; font-size:8pt">To continue, change the JavaScript options or use a browser that supports JavaScript.</td></tr>
+                            <tr style="height:100%"><td>&nbsp;</td></tr>
+                        </table>
+                    </td>
+                    <td style="width:25%"></td>
+                </tr>
+            </table>
+        </noscript>
+        
+        <script type="text/javascript">
+        <!--
+            // the overflow of body is set as no for noscript mode
+            // re-enable the auto scrolling after script is available
+            document.body.style.overflow = "auto";
+        //-->
+        </script>
+
+
+        <div id="CheckingArea" style="position:absolute;width:0;height:0;">
+            <div id="CheckIESettingArea">
+            </div>
+            <!-- If this page load from Favorites of IE, the src should be full path, 
+            however, we use popup window for this page so it will never be loaded from Favorites -->
+            <img id="IMAGE_CHECK" src="blank.jpg" alt="" galleryimg="false" style="position:absolute; visibility:hidden" onreadystatechange="OnCheckImageReadyStateChange();" onload="OnCheckImageLoad();"/>
+            <div id="DivContainerForWmpUsingOverlays" style="width:1;height:1;">
+            </div>
+        </div>
+
+        <div id="BorderFrame" style="position:absolute;overflow:hidden;">
+	        <div id="MainFrame">
+	            <div id="BrandArea">
+	                <img id="LMLogo" src="img/header-lmlogo.gif" alt="Microsoft Live Meeting" galleryimg="false"/>
+	            </div>
+	            <div id="WorkArea">
+	                <div id="PreloadAnimationArea">
+	                    <img id="PreloadAnimation" src="img/download-animation.gif" alt="Download Animation" style="visibility:hidden" galleryimg="false"/>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+    </body>
+</html>
+

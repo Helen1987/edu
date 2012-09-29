@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?PlaybackEngine version="1.0"?>
+<Properties language="en">
+  <property name="MeetingState_Buffering">
+    <!-- _locID_text='MeetingState_Buffering' _locComment='' -->
+    Die Besprechung wird zwischengespeichert...
+  </property>
+  <property name="MeetingState_Stopped">
+    <!-- _locID_text='MeetingState_Stopped' _locComment='' -->
+    Die Besprechung wurde beendet.
+  </property>
+  <property name="MeetingState_Playing">
+    <!-- _locID_text='MeetingState_Playing' _locComment='' -->
+    Die Besprechung wird wiedergegeben. 
+  </property>
+  <property name="MeetingState_Paused">
+    <!-- _locID_text='MeetingState_Paused' _locComment='' -->
+    Die Besprechung wurde angehalten. 
+  </property>
+  <property name="StartPage_WelcomeText">
+    <!--  _locID_text='StartPage_WelcomeText' _locComment='' -->
+    Willkommen
+  </property>
+  <property name="StartPage_CloseWindowText">
+    <!--  _locID_text='StartPage_CloseWindowText' _locComment='' -->
+    Sie können dieses Fenster jetzt einfach schließen.
+  </property>
+  <property name="StartPage_PopupBlockerPrompt">
+    <!--  _locID_text='StartPage_PopupBlockerPrompt' _locComment='' -->
+    Deaktivieren Sie im Menü oder auf der Funktionsleiste den Popupblocker.
+  </property>
+  
+  <property name="IndexTab_Content">
+    <!--  _locID_text='IndexTab_Content' _locComment='' -->
+    Inhalt
+  </property>
+  <property name="IndexTab_Speaker">
+    <!--  _locID_text='IndexTab_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Sprecher
+  </property>
+  <property name="MainMenu_View">
+    <!--  _locID_text='MainMenu_View' _locComment='' -->
+    Ansichten auswählen
+  </property>
+  <property name="ViewMenu_Speaker">
+    <!--  _locID_text='ViewMenu_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Gegenwärtiger Sprecher
+  </property>
+  <property name="ViewMenu_Panorama">
+    <!--  _locID_text='ViewMenu_Panorama' _locComment='' -->
+    Videopanorama
+  </property>
+  <property name="ViewMenu_Notes">
+    <!--  _locID_text='ViewMenu_Notes' _locComment='' -->
+    Notizen
+  </property>
+  <property name="ViewMenu_Index">
+    <!--  _locID_text='ViewMenu_Index' _locComment='' -->
+    Index
+  </property>
+  <property name="ViewMenu_QA">
+    <!--  _locID_text='ViewMenu_QA' _locComment='' -->
+    F &amp; A
+  </property>
+  <property name="ViewMenu_Speaker_Description">
+    <!--  _locID_text='ViewMenu_Speaker_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Gegenwärtigen Sprecher in der Besprechung anzeigen
+  </property>
+  <property name="ViewMenu_Panorama_Description">
+    <!--  _locID_text='ViewMenu_Panorama_Description' _locComment='' -->
+    RoundTable-Video der Besprechung anzeigen
+  </property>
+  <property name="ViewMenu_Notes_Description">
+    <!--  _locID_text='ViewMenu_Notes_Description' _locComment='' -->
+    Freigegebene Notizen der Besprechung anzeigen
+  </property>
+  <property name="ViewMenu_Index_Description">
+    <!--  _locID_text='ViewMenu_Index_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    Besprechung durch Auswahl von Inhalten oder eines Sprechers wiedergeben
+  </property>
+  <property name="ViewMenu_QA_Description">
+    <!--  _locID_text='ViewMenu_QA_Description' _locComment='' -->
+    Fragen und Antworten der Besprechung anzeigen
+  </property>
+  <property name="ControlButton_Play">
+    <!--  _locID_text='ControlButton_Play' _locComment='' -->
+    Wiedergabe
+  </property>
+  <property name="ControlButton_Pause">
+    <!--  _locID_text='ControlButton_Pause' _locComment='' -->
+    Pause
+  </property>
+  <property name="ControlButton_Stop">
+    <!--  _locID_text='ControlButton_Stop' _locComment='' -->
+    Stopp
+  </property>
+  <property name="ControlButton_Next">
+    <!--  _locID_text='ControlButton_Next' _locComment='' -->
+    Weiter
+  </property>
+  <property name="ControlButton_Prev">
+    <!--  _locID_text='ControlButton_Prev' _locComment='' -->
+    Zurück
+  </property>
+  <property name="ControlButton_Mute">
+    <!--  _locID_text='ControlButton_Mute' _locComment='' -->
+    Stummschalten
+  </property>
+  <property name="ControlButton_Unmute">
+    <!--  _locID_text='ControlButton_Unmute' _locComment='' -->
+    Stummschaltung aufheben
+  </property>
+  <property name="ControlButton_Volume">
+    <!--  _locID_text='ControlButton_Volume' _locComment='' -->
+    Lautstärke
+  </property>
+  <property name="PaneTitle_QA">
+    <!--  _locID_text='PaneTitle_QA' _locComment='' -->
+    F&amp;A
+  </property>
+  <property name="PaneTitle_Notes">
+    <!--  _locID_text='PaneTitle_Notes' _locComment='' -->
+    Notizen
+  </property>
+  <property name="QaPrompt_Question">
+    <!--  _locID_text='QaPrompt_Question' _locComment='' -->
+    F:
+  </property>
+  <property name="QaPrompt_Answer">
+    <!--  _locID_text='QaPrompt_Answer' _locComment='' -->
+    A:
+  </property>
+  <property name="QaPrompt_NoData">
+    <!--  _locID_text='QaPrompt_NoData' _locComment='' -->
+    Keine FA-Daten
+  </property>
+  <property name="NotesPrompt_NoData">
+    <!--  _locID_text='NotesPrompt_NoData' _locComment='' -->
+    Keine Daten zu Notizen
+  </property>
+
+  <property name="PollPrompt_Question">
+    <!--  _locID_text='PollPrompt_Question' _locComment='' -->
+    Abstimmungsfrage
+  </property>
+  <property name="PollPrompt_Choices">
+    <!--  _locID_text='PollPrompt_Choices' _locComment='' -->
+    Möglichkeiten:
+  </property>
+  <property name="PollPrompt_Results">
+    <!--  _locID_text='PollPrompt_Results' _locComment='' -->
+    Ergebnisse:
+  </property>
+  <property name="PollPrompt_PollsOpen">
+    <!--  _locID_text='PollPrompt_PollsOpen' _locComment='' -->
+    Abstimmung GESTARTET
+  </property>
+  <property name="PollPrompt_PollsClosed">
+    <!--  _locID_text='PollPrompt_PollsClosed' _locComment='' -->
+    Abstimmung BEENDET
+  </property>
+  <property name="PollPrompt_ResultsShown">
+    <!--  _locID_text='PollPrompt_ResultsShown' _locComment='' -->
+    Ergebnisse ANGEZEIGT
+  </property>
+  <property name="PollPrompt_ResultsHidden">
+    <!--  _locID_text='PollPrompt_ResultsHidden' _locComment='' -->
+    Ergebnisse AUSGEBLENDET
+  </property>
+
+  <property name="BizCard_Name">
+    <!--  _locID_text='BizCard_Name' _locComment='' -->
+    &lt;Unbekannter Name&gt;
+  </property>
+  <property name="BizCard_Company">
+    <!--  _locID_text='BizCard_Company' _locComment='' -->
+    &lt;Unbekanntes Unternehmen&gt;
+  </property>
+  <property name="BizCard_Title">
+    <!--  _locID_text='BizCard_Title' _locComment='' -->
+    &lt;Unbekannter Titel&gt;
+  </property>
+  <property name="BizCard_Email">
+    <!--  _locID_text='BizCard_Email' _locComment='' -->
+    &lt;Unbekannte E-Mail&gt;
+  </property>
+  <property name="BizCard_Phone">
+    <!--  _locID_text='BizCard_Phone' _locComment='' -->
+    &lt;Unbekanntes Telefon&gt;
+  </property>
+
+  <property name="WebSlide_UriTooltip">
+    <!-- _locID_text='WebSlide_UriTooltip' _locComment='' -->
+    Klicken Sie hier, um die Webseite trotzdem anzuzeigen.
+  </property>
+  <property name="WebSlide_WarningText">
+    <!-- _locID_text='WebSlide_WarningText' _locComment='' -->
+    Während der Besprechung wurde den Teilnehmern das folgende Webseitenbild angezeigt. Sie können auf die zugehörige URL klicken, um die Website in einem neuen Browserfenster zu starten. Die Aufzeichnung wird weiterhin in diesem Fenster wiedergegeben.
+
+Warnung: Klicken Sie nur auf die URL, wenn Sie Ihnen vertrauenswürdig erscheint. Microsoft ist für den Inhalt, die Informationen und die Sicherheit der folgenden Website weder verantwortlich noch haftbar:
+  </property>
+  <property name="WebSlide_UnavailableUrl">
+    <!-- _locID_text='WebSlide_UnavailableUrl' _locComment='' -->
+    &lt;Nicht verfügbare URL&gt;
+  </property>
+
+  <property name="AsSlide_StaticContentText">
+    <!-- _locID_text='AsSlide_StaticContentText' _locContent=''-->
+    Derzeit ist nichts freigegeben.
+  </property>
+  
+  <property name="SpeakerIndex_SelectAll">
+    <!--  _locID_text='SpeakerIndex_SelectAll' _locComment='' -->
+    Alle auswählen
+  </property>
+  <property name="SpeakerIndex_DeselectAll">
+    <!--  _locID_text='SpeakerIndex_DeselectAll' _locComment='' -->
+    Auswahl aufheben
+  </property>
+
+  <property name="SpeakerIndex_UnknownSpeakerName">
+    <!--  _locID_text='SpeakerIndex_UnknownSpeakerName' _locComment='' -->
+    Unbekannter Sprecher
+  </property>
+
+  <property name="Download_DefaultSubject">
+    <!-- _locID_text='Download_DefaultSubject' _locComment='' -->
+    &lt;Kein Betreff&gt;
+  </property>
+  <property name="Download_DownloadingPrompt">
+    <!-- _locID_text='Download_DownloadingPrompt' _locComment='' -->
+    Download wird ausgeführt....
+  </property>
+  <property name="Download_StartTimePrompt">
+    <!-- _locID_text='Download_StartTimePrompt' _locComment='' -->
+    Besprechungsbeginn:
+  </property>
+  <property name="Download_StopTimePrompt">
+    <!-- _locID_text='Download_StopTimePrompt' _locComment='' -->
+    Besprechungsende:
+  </property>
+  <property name="Download_DurationPrompt">
+    <!-- _locID_text='Download_DurationPrompt' _locComment='' -->
+    Aufzeichnungsdauer:
+  </property>
+  <property name="Download_StartTimeDefaultString">
+    <!-- _locID_text='Download_StartTimeDefaultString' _locComment='' -->
+    -
+  </property>
+  <property name="Download_StopTimeDefaultString">
+    <!-- _locID_text='Download_StopTimeDefaultString' _locComment='' -->
+    -
+  </property>
+  <property name="Download_DurationDefaultString">
+    <!-- _locID_text='Download_DurationDefaultString' _locComment='' -->
+    -
+  </property>
+  <property name="Download_ContinueButtonText">
+    <!-- _locID_text='Download_ContinueButtonText' _locComment='' -->
+    Weiter
+  </property>
+  <property name="Download_CloseButtonText">
+    <!-- _locID_text='Download_CloseButtonText' _locComment='' -->
+    Schließen
+  </property>
+  <property name="Download_ContinueButtonTooltip">
+    <!-- _locID_text='Download_ContinueButtonTooltip' _locComment='' -->
+    Klicken Sie hier, um die Besprechungswiedergabe fortzusetzen.
+  </property>
+  <property name="Download_CloseButtonTooltip">
+    <!-- _locID_text='Download_CloseButtonTooltip' _locComment='' -->
+    Klicken Sie hier, um das Wiedergabefenster zu schließen.
+  </property>
+  
+  <property name="Download_BrowserNameCheckResult">
+    <!-- _locID_text='Download_BrowserNameCheckResult' _locComment='' -->
+    Der Webbrowser unterstützt keine Wiedergabe von Live Meeting-Aufzeichnungen. Wenn Sie fortfahren, wird die Wiedergabe möglicherweise nicht ordnungsgemäß ausgeführt.
+  </property>
+  <property name="Download_BrowserVersionCheckResult">
+    <!-- _locID_text='Download_BrowserVersionCheckResult' _locComment='' -->
+    Die Version des Webbrowsers unterstützt keine Wiedergabe von Live Meeting-Aufzeichnungen. Wenn Sie fortfahren, wird die Wiedergabe möglicherweise nicht ordnungsgemäß ausgeführt.
+  </property>
+  <property name="Download_CookieCheckResult">
+    <!-- _locID_text='Download_CookieCheckResult' _locComment='' -->
+    Der Webbrowser ist nicht zum Lesen/Schreiben von Cookies konfiguriert.
+  </property>
+  <property name="Download_WmvCheckResult">
+    <!-- _locID_text='Download_WmvCheckResult' _locComment='' -->
+    Der Browser ist nicht für die Wiedergabe von Windows Media-Audiodateien oder -Videodateien konfiguriert. 
+  </property>
+  <property name="Download_ImageCheckResult">
+    <!-- _locID_text='Download_ImageCheckResult' _locComment='' -->
+    Der Webbrowser ist nicht zum Anzeigen von Bildern konfiguriert.
+  </property>
+  <property name="Download_FlashCheckResult">
+    <!-- _locID_text='Download_FlashCheckResult' _locComment='' -->
+    Der Webbrowser ist nicht für die Wiedergabe von Flash-Dateien konfiguriert.
+  </property>
+  <property name="Download_AnimationCheckResult">
+    <!-- _locID_text='Download_AnimationCheckResult' _locComment='' -->
+    Der Webbrowser ist nicht für die Anzeige von Microsoft Office PowerPoint-Präsentationen konfiguriert. 
+  </property>
+  <property name="Download_AnnotationCheckResult">
+    <!-- _locID_text='Download_AnnotationCheckResult' _locComment='' -->
+    Der Browser ist nicht für die Wiedergabe von VML- oder SVG-Dateien konfiguriert.
+  </property>
+  <property name="Download_CheckResultEndingSentence">
+    <!-- _locID_text='Download_CheckResultEndingSentence' _locComment='' -->
+    Stellen Sie sicher, dass die Features aktiviert und verfügbar sind.
+  </property>
+
+  <property name="ErrorPane_ButtonText">
+    <!-- _locID_text='ErrorPane_ButtonText' _locComment='' -->
+    Schließen
+  </property>
+  <property name="ErrorPane_ButtonTooltip">
+    <!-- _locID_text='ErrorPane_ButtonTooltip' _locComment='' -->
+    Fenster schließen
+  </property>
+
+  <property name="WmvError_AudioErrorPrefix">
+    <!-- _locID_text='WmvError_AudioErrorPrefix' _locComment=''-->
+    Audiofehler
+  </property>
+  <property name="WmvError_PlayerNotAvailable">
+  <!-- _locID_text='WmvError_PlayerNotAvailable' _locComment='A/V means audio/video'-->
+    Diese Audio- oder Videodatei kann nicht wiedergegeben werden. Entweder ist kein geeigneter Player installiert, oder der installierte Player ist deaktiviert. Installieren Sie einen Player, oder aktivieren Sie ActiveX, falls bereits ein Player installiert ist.
+  </property>
+  <property name="WmvError_GetMediaUriFailed">
+    <!-- _locID_text='WmvError_GetMediaUriFailed' _locComment=''-->
+    Die Audio- oder Videodatei kann nicht wiedergegeben werden, weil die URL nicht gefunden wurde.
+  </property>
+  <property name="WmvError_PublishMediaError">
+    <!-- _locID_text='WmvError_PublishMediaError' _locComment=''-->
+    Die Audio- oder Videodatei kann nicht wiedergegeben werden, weil beim Veröffentlichen ein Problem aufgetreten ist.
+  </property>
+  <property name="WmvError_CodecRequired">
+    <!-- _locID_text='WmvError_CodecRequired' _locComment=''-->
+    Für die Wiedergabe dieser Datei ist ein Codec erforderlich. Er wird automatisch heruntergeladen, wenn er auf dem Windows Media-Streamserver verfügbar ist. Wenn der Codec erfolgreich heruntergeladen wurde, schließen Sie das Browserfenster, und öffnen Sie dann die aufgezeichnete Besprechung erneut, um die Audio- oder Videodatei wiederzugeben. Wenn der Codec nicht heruntergeladen werden kann, können Sie die Audio- oder Videodateien in dieser Aufzeichnung nicht hören bzw. sehen.
+  </property>
+  <property name="WmvError_PlayFailed">
+    <!-- _locID_text='WmvError_PlayFailed' _locComment=''-->
+    Fehler im Media Player bei der Wiedergabe der Datei.  Möglicherweise ist die Datei beschädigt, oder der Media Player konnte keine Verbindung mit der Datei herstellen.
+  </property>
+  <property name="WmvError_Msa1CodecRequired_InfoText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_InfoText' _locComment=''-->
+    Sie können die Anwendungsfreigabe, die Teil der Aufzeichnung ist, nicht anzeigen, da ein Bildschirmcodec (MSA1) erforderlich ist.  
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadFormatText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadFormatText' _locComment=''-->
+    Laden Sie %1 herunter, um den Bildschirmcodec zu erhalten. 
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadArgText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadArgText' _locComment=''-->
+    Microsoft-Bildschirmdecoder für Anwendungen 1 (MSA1)
+  </property>
+  
+  <property name="WmvInfo_MediaNotReady">
+    <!-- _locID_text='WmvInfo_MediaNotReady' _locComment=''-->
+    Die Videodatei für diese Aufzeichnung kann nicht angezeigt werden, da die Verarbeitung noch nicht abgeschlossen ist. Im Aufzeichnungs-Manager finden Sie eine Liste der Aufzeichnungen sowie den Verarbeitungsstatus.
+  </property>
+  <property name="MmcInfo_InteractionEnabled">
+    <!-- _locID_text='MmcInfo_InteractionEnabled' _locComment=''-->
+    Eine Symbolleiste oder ein Kontextmenü wird aktiviert, mit der bzw. dem Sie die Video- oder Flashdatei starten, beenden und anhalten können. 
+  </property>
+
+  <property name="ErrorHandling_DataPathNotProvided">
+    <!-- _locID_text='ErrorHandling_DataPathNotProvided' _locComment='' -->
+    Die Aufzeichnung kann nicht wiedergegeben werden.  Möglicherweise wurde die URL der aufgezeichneten Besprechung geändert.
+  </property>
+  <property name="ErrorHandling_BadMeetingData">
+    <!-- _locID_text='ErrorHandling_BadMeetingData' _locComment='' -->
+    Die Aufzeichnung kann nicht wiedergegeben werden. Möglicherweise wurden die für die Wiedergabe der Aufzeichnung erforderlichen Daten geändert, oder während des Aufzeichnens oder Herunterladens ist ein Fehler aufgetreten.
+  </property>
+  <property name="ErrorHandling_HttpRequestNotSupported">
+    <!-- _locID_text='ErrorHandling_HttpRequestNotSupported' _locComment='' -->
+    Die Aufzeichnung kann nicht wiedergegeben werden. Möglicherweise ist der für die Wiedergabe der Aufzeichnung verwendete XML-Parser nicht mit dem Webbrowser kompatibel. Sie können einen anderen Browser, z. B. Windows Internet Explorer, installieren.
+  </property>
+
+  <property name="ConfirmPane_OkButtonText">
+    <!-- _locID_text='ConfirmPane_OkButtonText' _locComment='' -->
+    Video anhalten
+  </property>
+  <property name="ConfirmPane_CancelButtonText">
+    <!-- _locID_text='ConfirmPane_CancelButtonText' _locComment='' -->
+    Abbrechen
+  </property>
+  <property name="ConfirmPane_PromptText">
+    <!-- _locID_text='ConfirmPane_PromptText' _locComment='' -->
+    Die Netzwerkbandbreite reicht nicht für die Wiedergabe von Video hoher Qualität in dieser Aufzeichnung aus. Sie können das Video anhalten, um die Gesamtqualität der Wiedergabe zu verbessern.
+  </property>
+  <property name="ConfirmPane_CheckBoxText">
+    <!-- _locID_text='ConfirmPane_CheckBoxText' _locComment='' -->
+    Diese Meldung nicht mehr anzeigen.
+  </property>
+  <property name="BWQCIF">
+    <!-- _locID_text='BWQCIF' _locComment='' -->
+    Sprechervideo
+  </property>
+  <property name="BWPano">
+    <!-- _locID_text='BWPano' _locComment='' -->
+    Panoramavideo
+  </property>
+  <property name="Window_UnloadPrompt">
+    <!-- _locID_text='Window_UnloadPrompt' _locComment='' -->
+    Wenn Sie fortfahren, wird das Fenster geschlossen.
+  </property>
+   <property name="WebSlide_UnavailableUrlWarningText">
+    <!-- _locID_text='WebSlide_UnavailableUrlWarningText' _locComment='' -->
+     Folgende URL wird nicht gefunden: %1
+   </property>
+
+  <property name="ConfirmPane_OkButtonTooltip">
+   <!-- _locID_text='ConfirmPane_OkButtonTooltip' _locComment='' -->
+    Klicken Sie hier, um das Video zu beenden.
+  </property>
+  <property name="ConfirmPane_CancelButtonTooltip">
+    <!-- _locID_text='ConfirmPane_CancelButtonTooltip' _locComment='' -->
+    Klicken Sie hier, um diesen Bereich lediglich zu schließen. 
+  </property>
+  <property name="StartPage_CodecMissingMsg">
+	<!-- _locID_text='StartPage_CodecMissingMsg' _locComment='' -->
+	  Es fehlt ein bestimmter Audio- oder Videocodec für die Wiedergabe. Die Besprechung kann daher nicht in demselben Internet Explorer-Fenster wiedergegeben werden, und das aktuelle Dokument wird geschlossen. Wir empfehlen Ihnen unbedingt, sämtliche Internet Explorer-Fenster zu schließen und die Wiedergabe der Besprechung neu zu starten, wenn Sie sie erneut aufrufen möchten.
+  </property>
+
+</Properties>

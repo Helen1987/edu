@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?PlaybackEngine version="1.0"?>
+<Properties language="en">
+  <property name="MeetingState_Buffering">
+    <!-- _locID_text='MeetingState_Buffering' _locComment='' -->
+    ミーティングをバッファに保存しています...
+  </property>
+  <property name="MeetingState_Stopped">
+    <!-- _locID_text='MeetingState_Stopped' _locComment='' -->
+    ミーティングは停止されました。
+  </property>
+  <property name="MeetingState_Playing">
+    <!-- _locID_text='MeetingState_Playing' _locComment='' -->
+    ミーティングは再生中です。 
+  </property>
+  <property name="MeetingState_Paused">
+    <!-- _locID_text='MeetingState_Paused' _locComment='' -->
+    ミーティングは一時停止されました。 
+  </property>
+  <property name="StartPage_WelcomeText">
+    <!--  _locID_text='StartPage_WelcomeText' _locComment='' -->
+    Live Meeting へようこそ
+  </property>
+  <property name="StartPage_CloseWindowText">
+    <!--  _locID_text='StartPage_CloseWindowText' _locComment='' -->
+    このウィンドウを閉じてもかまいません
+  </property>
+  <property name="StartPage_PopupBlockerPrompt">
+    <!--  _locID_text='StartPage_PopupBlockerPrompt' _locComment='' -->
+    メニューまたはツール バーで、ポップアップ ブロック機能を無効にしてください
+  </property>
+  
+  <property name="IndexTab_Content">
+    <!--  _locID_text='IndexTab_Content' _locComment='' -->
+    コンテンツ
+  </property>
+  <property name="IndexTab_Speaker">
+    <!--  _locID_text='IndexTab_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    発表者
+  </property>
+  <property name="MainMenu_View">
+    <!--  _locID_text='MainMenu_View' _locComment='' -->
+    ビューの選択
+  </property>
+  <property name="ViewMenu_Speaker">
+    <!--  _locID_text='ViewMenu_Speaker' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    現在の発表者
+  </property>
+  <property name="ViewMenu_Panorama">
+    <!--  _locID_text='ViewMenu_Panorama' _locComment='' -->
+    ビデオ パノラマ
+  </property>
+  <property name="ViewMenu_Notes">
+    <!--  _locID_text='ViewMenu_Notes' _locComment='' -->
+    メモ
+  </property>
+  <property name="ViewMenu_Index">
+    <!--  _locID_text='ViewMenu_Index' _locComment='' -->
+    インデックス
+  </property>
+  <property name="ViewMenu_QA">
+    <!--  _locID_text='ViewMenu_QA' _locComment='' -->
+    質問と回答
+  </property>
+  <property name="ViewMenu_Speaker_Description">
+    <!--  _locID_text='ViewMenu_Speaker_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    ミーティングの現在の発表者を表示
+  </property>
+  <property name="ViewMenu_Panorama_Description">
+    <!--  _locID_text='ViewMenu_Panorama_Description' _locComment='' -->
+    ミーティングの RoundTable ビデオを表示
+  </property>
+  <property name="ViewMenu_Notes_Description">
+    <!--  _locID_text='ViewMenu_Notes_Description' _locComment='' -->
+    ミーティングの共有のメモを表示
+  </property>
+  <property name="ViewMenu_Index_Description">
+    <!--  _locID_text='ViewMenu_Index_Description' _locComment='Speaker here means a presenter instead of a voice device. ' -->
+    コンテンツまたは発表者を選択してミーティングを再生
+  </property>
+  <property name="ViewMenu_QA_Description">
+    <!--  _locID_text='ViewMenu_QA_Description' _locComment='' -->
+    ミーティングの質問と回答を表示
+  </property>
+  <property name="ControlButton_Play">
+    <!--  _locID_text='ControlButton_Play' _locComment='' -->
+    再生
+  </property>
+  <property name="ControlButton_Pause">
+    <!--  _locID_text='ControlButton_Pause' _locComment='' -->
+    一時停止
+  </property>
+  <property name="ControlButton_Stop">
+    <!--  _locID_text='ControlButton_Stop' _locComment='' -->
+    停止
+  </property>
+  <property name="ControlButton_Next">
+    <!--  _locID_text='ControlButton_Next' _locComment='' -->
+    次へ
+  </property>
+  <property name="ControlButton_Prev">
+    <!--  _locID_text='ControlButton_Prev' _locComment='' -->
+    前へ
+  </property>
+  <property name="ControlButton_Mute">
+    <!--  _locID_text='ControlButton_Mute' _locComment='' -->
+    ミュート
+  </property>
+  <property name="ControlButton_Unmute">
+    <!--  _locID_text='ControlButton_Unmute' _locComment='' -->
+    ミュート解除
+  </property>
+  <property name="ControlButton_Volume">
+    <!--  _locID_text='ControlButton_Volume' _locComment='' -->
+    ボリューム
+  </property>
+  <property name="PaneTitle_QA">
+    <!--  _locID_text='PaneTitle_QA' _locComment='' -->
+    質問と回答
+  </property>
+  <property name="PaneTitle_Notes">
+    <!--  _locID_text='PaneTitle_Notes' _locComment='' -->
+    メモ
+  </property>
+  <property name="QaPrompt_Question">
+    <!--  _locID_text='QaPrompt_Question' _locComment='' -->
+    質問:
+  </property>
+  <property name="QaPrompt_Answer">
+    <!--  _locID_text='QaPrompt_Answer' _locComment='' -->
+    回答:
+  </property>
+  <property name="QaPrompt_NoData">
+    <!--  _locID_text='QaPrompt_NoData' _locComment='' -->
+    質問と回答のデータがありません
+  </property>
+  <property name="NotesPrompt_NoData">
+    <!--  _locID_text='NotesPrompt_NoData' _locComment='' -->
+    メモのデータがありません
+  </property>
+
+  <property name="PollPrompt_Question">
+    <!--  _locID_text='PollPrompt_Question' _locComment='' -->
+    投票の質問
+  </property>
+  <property name="PollPrompt_Choices">
+    <!--  _locID_text='PollPrompt_Choices' _locComment='' -->
+    投票の選択肢:
+  </property>
+  <property name="PollPrompt_Results">
+    <!--  _locID_text='PollPrompt_Results' _locComment='' -->
+    結果:
+  </property>
+  <property name="PollPrompt_PollsOpen">
+    <!--  _locID_text='PollPrompt_PollsOpen' _locComment='' -->
+    投票を受付中
+  </property>
+  <property name="PollPrompt_PollsClosed">
+    <!--  _locID_text='PollPrompt_PollsClosed' _locComment='' -->
+    投票は締め切りました
+  </property>
+  <property name="PollPrompt_ResultsShown">
+    <!--  _locID_text='PollPrompt_ResultsShown' _locComment='' -->
+    結果の表示
+  </property>
+  <property name="PollPrompt_ResultsHidden">
+    <!--  _locID_text='PollPrompt_ResultsHidden' _locComment='' -->
+    結果の非表示
+  </property>
+
+  <property name="BizCard_Name">
+    <!--  _locID_text='BizCard_Name' _locComment='' -->
+    &lt;不明な名前&gt;
+  </property>
+  <property name="BizCard_Company">
+    <!--  _locID_text='BizCard_Company' _locComment='' -->
+    &lt;不明な会社名&gt;
+  </property>
+  <property name="BizCard_Title">
+    <!--  _locID_text='BizCard_Title' _locComment='' -->
+    &lt;不明なタイトル&gt;
+  </property>
+  <property name="BizCard_Email">
+    <!--  _locID_text='BizCard_Email' _locComment='' -->
+    &lt;不明な電子メール&gt;
+  </property>
+  <property name="BizCard_Phone">
+    <!--  _locID_text='BizCard_Phone' _locComment='' -->
+    &lt;不明な電話番号&gt;
+  </property>
+
+  <property name="WebSlide_UriTooltip">
+    <!-- _locID_text='WebSlide_UriTooltip' _locComment='' -->
+    クリックして Web ページを表示
+  </property>
+  <property name="WebSlide_WarningText">
+    <!-- _locID_text='WebSlide_WarningText' _locComment='' -->
+    このミーティング中、参加者には以下の Web ページの画像が表示されます。この画像に対応する URL をクリックし、サイトを新しいブラウザ ウィンドウに表示できます。レコーディングは現在のウィンドウにそのまま表示されます。
+
+警告: URL を完全に信用しない限りクリックしないでください。次の Web サイトのコンテンツ、情報、またはセキュリティに関して、マイクロソフトは責任を負いません。
+  </property>
+  <property name="WebSlide_UnavailableUrl">
+    <!-- _locID_text='WebSlide_UnavailableUrl' _locComment='' -->
+    &lt;使用できない URL&gt;
+  </property>
+
+  <property name="AsSlide_StaticContentText">
+    <!-- _locID_text='AsSlide_StaticContentText' _locContent=''-->
+    現在共有されているものはありません
+  </property>
+  
+  <property name="SpeakerIndex_SelectAll">
+    <!--  _locID_text='SpeakerIndex_SelectAll' _locComment='' -->
+    すべて選択
+  </property>
+  <property name="SpeakerIndex_DeselectAll">
+    <!--  _locID_text='SpeakerIndex_DeselectAll' _locComment='' -->
+    すべて選択解除
+  </property>
+
+  <property name="SpeakerIndex_UnknownSpeakerName">
+    <!--  _locID_text='SpeakerIndex_UnknownSpeakerName' _locComment='' -->
+    発表者不明
+  </property>
+
+  <property name="Download_DefaultSubject">
+    <!-- _locID_text='Download_DefaultSubject' _locComment='' -->
+    &lt;件名なし&gt;
+  </property>
+  <property name="Download_DownloadingPrompt">
+    <!-- _locID_text='Download_DownloadingPrompt' _locComment='' -->
+    ダウンロード中...
+  </property>
+  <property name="Download_StartTimePrompt">
+    <!-- _locID_text='Download_StartTimePrompt' _locComment='' -->
+    ミーティングの開始時間 :
+  </property>
+  <property name="Download_StopTimePrompt">
+    <!-- _locID_text='Download_StopTimePrompt' _locComment='' -->
+    ミーティングの終了時間 :
+  </property>
+  <property name="Download_DurationPrompt">
+    <!-- _locID_text='Download_DurationPrompt' _locComment='' -->
+    レコーディングの継続時間:
+  </property>
+  <property name="Download_StartTimeDefaultString">
+    <!-- _locID_text='Download_StartTimeDefaultString' _locComment='' -->
+    該当なし
+  </property>
+  <property name="Download_StopTimeDefaultString">
+    <!-- _locID_text='Download_StopTimeDefaultString' _locComment='' -->
+    該当なし
+  </property>
+  <property name="Download_DurationDefaultString">
+    <!-- _locID_text='Download_DurationDefaultString' _locComment='' -->
+    該当なし
+  </property>
+  <property name="Download_ContinueButtonText">
+    <!-- _locID_text='Download_ContinueButtonText' _locComment='' -->
+    続行
+  </property>
+  <property name="Download_CloseButtonText">
+    <!-- _locID_text='Download_CloseButtonText' _locComment='' -->
+    閉じる
+  </property>
+  <property name="Download_ContinueButtonTooltip">
+    <!-- _locID_text='Download_ContinueButtonTooltip' _locComment='' -->
+    クリックしてミーティングの再生を続行
+  </property>
+  <property name="Download_CloseButtonTooltip">
+    <!-- _locID_text='Download_CloseButtonTooltip' _locComment='' -->
+    クリックして再生ウィンドウを閉じる
+  </property>
+  
+  <property name="Download_BrowserNameCheckResult">
+    <!-- _locID_text='Download_BrowserNameCheckResult' _locComment='' -->
+    ご利用の Web ブラウザでは、Live Meeting レコーディングの再生がサポートされていません。続行すると、再生が乱れる可能性があります。
+  </property>
+  <property name="Download_BrowserVersionCheckResult">
+    <!-- _locID_text='Download_BrowserVersionCheckResult' _locComment='' -->
+    ご利用の Web ブラウザのバージョンでは、Live Meeting レコーディングの再生がサポートされていません。続行すると、再生が乱れる可能性があります。
+  </property>
+  <property name="Download_CookieCheckResult">
+    <!-- _locID_text='Download_CookieCheckResult' _locComment='' -->
+    ご利用の Web ブラウザは、Cookie の読み取り/書き込みを行うように構成されていません。
+  </property>
+  <property name="Download_WmvCheckResult">
+    <!-- _locID_text='Download_WmvCheckResult' _locComment='' -->
+    ご利用の Web ブラウザは、Windows Media オーディオ/ビデオ ファイルが再生できるように構成されていません。 
+  </property>
+  <property name="Download_ImageCheckResult">
+    <!-- _locID_text='Download_ImageCheckResult' _locComment='' -->
+    ご利用の Web ブラウザは、画像を表示するように構成されていません。
+  </property>
+  <property name="Download_FlashCheckResult">
+    <!-- _locID_text='Download_FlashCheckResult' _locComment='' -->
+    ご利用の Web ブラウザは、Flash ファイルを再生するように構成されていません。
+  </property>
+  <property name="Download_AnimationCheckResult">
+    <!-- _locID_text='Download_AnimationCheckResult' _locComment='' -->
+    ご利用の Web ブラウザは、Microsoft Office PowerPoint プレゼンテーションを表示するように構成されていません。 
+  </property>
+  <property name="Download_AnnotationCheckResult">
+    <!-- _locID_text='Download_AnnotationCheckResult' _locComment='' -->
+    ご利用の Web ブラウザは、VML または SVG ファイルを表示するように構成されていません。
+  </property>
+  <property name="Download_CheckResultEndingSentence">
+    <!-- _locID_text='Download_CheckResultEndingSentence' _locComment='' -->
+    機能が有効になっていて、使用可能であることを確認してください。
+  </property>
+
+  <property name="ErrorPane_ButtonText">
+    <!-- _locID_text='ErrorPane_ButtonText' _locComment='' -->
+    閉じる
+  </property>
+  <property name="ErrorPane_ButtonTooltip">
+    <!-- _locID_text='ErrorPane_ButtonTooltip' _locComment='' -->
+    ウィンドウを閉じます
+  </property>
+
+  <property name="WmvError_AudioErrorPrefix">
+    <!-- _locID_text='WmvError_AudioErrorPrefix' _locComment=''-->
+    オーディオ エラー
+  </property>
+  <property name="WmvError_PlayerNotAvailable">
+  <!-- _locID_text='WmvError_PlayerNotAvailable' _locComment='A/V means audio/video'-->
+    Media Player がインストールされていないか、インストールされていても無効になっているため、このオーディオ/ビデオを再生できません。Media Player をインストールするか、Media Player が既にインストールされている場合は ActiveX を有効にしてみてください。
+  </property>
+  <property name="WmvError_GetMediaUriFailed">
+    <!-- _locID_text='WmvError_GetMediaUriFailed' _locComment=''-->
+    URL が見つからないため、オーディオ/ビデオ ファイルを再生できません。
+  </property>
+  <property name="WmvError_PublishMediaError">
+    <!-- _locID_text='WmvError_PublishMediaError' _locComment=''-->
+    発行に関する問題があるため、オーディオ/ビデオ ファイルを再生できません。
+  </property>
+  <property name="WmvError_CodecRequired">
+    <!-- _locID_text='WmvError_CodecRequired' _locComment=''-->
+    このファイルを再生するにはコーデックが必要です。Windows Media ストリーム サーバーでコーデックを利用できる場合は、自動的にダウンロードされます。コーデックのダウンロードが正常に終了したら、一度ブラウザ ウィンドウを閉じて、記録したミーティングを再度開くと、オーディオ/ビデオが再生されます。コーデックのダウンロードに失敗した場合、このレコーディングのオーディオ/ビデオを再生することはできません。
+  </property>
+  <property name="WmvError_PlayFailed">
+    <!-- _locID_text='WmvError_PlayFailed' _locComment=''-->
+    Media Player でファイルを再生する際にエラーが発生しました。ファイルが壊れているか、Media Player がファイルに接続できなかった可能性があります。
+  </property>
+  <property name="WmvError_Msa1CodecRequired_InfoText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_InfoText' _locComment=''-->
+    画面コーデック (MSA1) が必要であるため、アプリケーション共有部分のレコーディングを再生できません。  
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadFormatText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadFormatText' _locComment=''-->
+    画面コーデックを入手するには、%1 をダウンロードします。 
+  </property>
+  <property name="WmvError_Msa1CodecRequired_DownloadArgText">
+    <!-- _locID_text='WmvError_Msa1CodecRequired_DownloadArgText' _locComment=''-->
+    Microsoft アプリケーション スクリーン デコーダー 1 (MSA1)
+  </property>
+  
+  <property name="WmvInfo_MediaNotReady">
+    <!-- _locID_text='WmvInfo_MediaNotReady' _locComment=''-->
+    このレコーディングのビデオはまだ処理中であるため、表示できません。レコーディングの一覧と処理状況は、レコーディング マネージャで確認できます。
+  </property>
+  <property name="MmcInfo_InteractionEnabled">
+    <!-- _locID_text='MmcInfo_InteractionEnabled' _locComment=''-->
+    有効になっているツール バーまたはショートカット メニューから、ビデオ/Flash の開始、停止、一時停止を実行できます。 
+  </property>
+
+  <property name="ErrorHandling_DataPathNotProvided">
+    <!-- _locID_text='ErrorHandling_DataPathNotProvided' _locComment='' -->
+    レコーディングを再生できません。レコーディングしたミーティングの URL が変更されている可能性があります。
+  </property>
+  <property name="ErrorHandling_BadMeetingData">
+    <!-- _locID_text='ErrorHandling_BadMeetingData' _locComment='' -->
+    レコーディングを再生できません。レコーディングの再生に必要なデータが変更されているか、レコーディング中またはダウンロード中にエラーが発生した可能性があります。
+  </property>
+  <property name="ErrorHandling_HttpRequestNotSupported">
+    <!-- _locID_text='ErrorHandling_HttpRequestNotSupported' _locComment='' -->
+    レコーディングを再生できません。レコーディングの再生に使用された XML パーサーと使用中の Web ブラウザに互換性がない可能性があります。Windows Internet Explorer など、別のブラウザをインストールしてみてください。
+  </property>
+
+  <property name="ConfirmPane_OkButtonText">
+    <!-- _locID_text='ConfirmPane_OkButtonText' _locComment='' -->
+    ビデオの停止
+  </property>
+  <property name="ConfirmPane_CancelButtonText">
+    <!-- _locID_text='ConfirmPane_CancelButtonText' _locComment='' -->
+    キャンセル
+  </property>
+  <property name="ConfirmPane_PromptText">
+    <!-- _locID_text='ConfirmPane_PromptText' _locComment='' -->
+    このレコーディングの高品質ビデオを再生するだけの十分なネットワーク帯域幅がありません。このビデオを停止することによって、全体的な再生品質を改善することができます。
+  </property>
+  <property name="ConfirmPane_CheckBoxText">
+    <!-- _locID_text='ConfirmPane_CheckBoxText' _locComment='' -->
+    今後、このメッセージを表示しない。
+  </property>
+  <property name="BWQCIF">
+    <!-- _locID_text='BWQCIF' _locComment='' -->
+    発表者のビデオ
+  </property>
+  <property name="BWPano">
+    <!-- _locID_text='BWPano' _locComment='' -->
+    パノラマ ビデオ
+  </property>
+  <property name="Window_UnloadPrompt">
+    <!-- _locID_text='Window_UnloadPrompt' _locComment='' -->
+    続行するには、ウィンドウを閉じてください。
+  </property>
+   <property name="WebSlide_UnavailableUrlWarningText">
+    <!-- _locID_text='WebSlide_UnavailableUrlWarningText' _locComment='' -->
+     ブラウザで次の URL が見つかりません: %1
+   </property>
+
+  <property name="ConfirmPane_OkButtonTooltip">
+   <!-- _locID_text='ConfirmPane_OkButtonTooltip' _locComment='' -->
+    クリックしてビデオを停止
+  </property>
+  <property name="ConfirmPane_CancelButtonTooltip">
+    <!-- _locID_text='ConfirmPane_CancelButtonTooltip' _locComment='' -->
+    クリックして何もせずにこのウィンドウを閉じる 
+  </property>
+  <property name="StartPage_CodecMissingMsg">
+	<!-- _locID_text='StartPage_CodecMissingMsg' _locComment='' -->
+	  録音/録画に含まれる一部のオーディオ/ビデオ コーデックが失われているため、ミーティングの再生を同じ IE ウィンドウ上で再開することができません。現在のドキュメントは閉じられます。ミーティングに再度参加する場合、すべての IE ウィンドウを閉じてから、ミーティングの再生を再開することを強くお勧めします。
+  </property>
+
+</Properties>

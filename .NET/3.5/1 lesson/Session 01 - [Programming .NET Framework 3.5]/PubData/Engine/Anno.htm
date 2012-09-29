@@ -1,0 +1,55 @@
+<html>
+<head>
+<STYLE>
+v\:* { behavior: url(#default#VML); }
+v\:textpath{v-text-align:left} 
+body{
+    margin-left:0;
+    margin-right:0;
+    margin-top:0;
+    margin-bottom:0
+    }
+</STYLE>
+</head>
+<body style='overflow:hidden' oncontextmenu='javascript:return false;'>
+<div id="annoArea" style="position:absolute;width:1;height:1;overflow:hidden;"></div>
+<!-- The div used to calculate the size of the text annotation -->
+<div style="width:0;height:0;overflow:hidden;position:absolute">
+    <div style="width:200000;height:10;position:relative;">
+        <div id="textInfo" style="position:absolute;overflow:hidden;" nowrap></div>
+    </div>
+</div>
+<script type="text/javascript">
+<!--
+var annoAreaObj = document.getElementById( "annoArea" );
+
+if ( navigator.appName == "Microsoft Internet Explorer" )
+{
+    document.writeln( 
+        "<?xml:namespace prefix = v ns = \"urn:schemas-microsoft-com:vml\" />"
+        );
+    annoAreaObj.innerHTML = 
+        "<div id=\"htmlElementGroup\" style=\"background-color:blue;position:absolute;left:0;top:0;width:0;height:0\"></div>"
+        +
+        "<v:group id=\"G\" style=\"position:absolute;left:0pt;top:0pt;width:100pt;height:100pt\" coordsize=\"100,100\"></group>"; 
+}
+else if ( navigator.userAgent.match( /Firefox/ ) )
+{
+    annoAreaObj.innerHTML = 
+    	"<div id=\"htmlElementGroup\" style=\"z-index:200;background-color:blue;position:absolute;left:0;top:0;width:0;height:0\"></div>" 
+    	+
+        "<object id=\"_Anno\" style=\"z-index:100;overflow:hidden;position:absolute;\" data=\"anno.svg\" width=\"100%\" height=\"100%\" type=\"image/svg+xml\" \" />";
+
+}
+else
+{
+    annoAreaObj.innerHTML = 
+        "<div id=\"htmlElementGroup\" style=\"background-color:blue;position:absolute;left:0;top:0;width:0;height:0\"></div>"
+        +
+        "<div id=\"_Anno\" style=\"position:absolute;left:0pt;top:0pt;width:1pt;height:1pt\"></div>";
+}
+//-->
+</script>
+</body>
+</html>
+

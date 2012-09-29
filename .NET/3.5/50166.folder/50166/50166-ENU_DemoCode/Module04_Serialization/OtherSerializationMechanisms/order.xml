@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PurchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Amount>617.25</Amount>
+  <CustomerName>Kate</CustomerName>
+  <OrderedItems>
+    <Item name="Chair">
+      <Price>50</Price>
+      <Discount>10</Discount>
+    </Item>
+    <Item name="Cushion">
+      <Price>3</Price>
+      <Discount>25</Discount>
+    </Item>
+    <Item name="Sofa">
+      <Price>600</Price>
+      <Discount>5</Discount>
+    </Item>
+  </OrderedItems>
+</PurchaseOrder>

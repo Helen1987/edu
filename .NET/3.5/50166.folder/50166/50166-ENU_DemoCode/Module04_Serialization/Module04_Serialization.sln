@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationTypes", "SerializationTypes\SerializationTypes.csproj", "{DA8A27C7-6ADD-4387-BAFD-6367781ED964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtherSerializationMechanisms", "OtherSerializationMechanisms\OtherSerializationMechanisms.csproj", "{35933C45-8D84-4560-A090-C705159A62E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlConfigurationFramework", "XmlConfigurationFramework\XmlConfigurationFramework.csproj", "{7BCCECF8-6FE5-4F7A-8DFC-2B26203CDE3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA8A27C7-6ADD-4387-BAFD-6367781ED964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8A27C7-6ADD-4387-BAFD-6367781ED964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8A27C7-6ADD-4387-BAFD-6367781ED964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8A27C7-6ADD-4387-BAFD-6367781ED964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35933C45-8D84-4560-A090-C705159A62E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35933C45-8D84-4560-A090-C705159A62E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35933C45-8D84-4560-A090-C705159A62E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35933C45-8D84-4560-A090-C705159A62E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCCECF8-6FE5-4F7A-8DFC-2B26203CDE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCCECF8-6FE5-4F7A-8DFC-2B26203CDE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCCECF8-6FE5-4F7A-8DFC-2B26203CDE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCCECF8-6FE5-4F7A-8DFC-2B26203CDE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

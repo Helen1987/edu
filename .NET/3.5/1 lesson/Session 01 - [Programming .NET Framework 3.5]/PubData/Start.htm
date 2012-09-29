@@ -1,0 +1,200 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Microsoft Live Meeting 2007 Playback Shortcut</title>
+        <style type="text/css">
+        body
+        {
+            font-family: Tahoma;
+            overflow: hidden;
+            background-color: #ffffff;
+            
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        </style>    
+    </head>
+    <body>
+        <noscript>
+            <!--
+            This message need localized but their is no js support 
+            so that we can't select different text with js. 
+            It may be a problem. 
+            -->
+            <table cellspacing="0" cellpadding="0" border="0" style="width:100%; height:100%; background-color:#607796" >
+                <tr style="height:25%">
+                    <td colspan="3">
+                        <table cellspacing="0" cellpadding="0" border="0" style="width:100%; height:100%;">
+                            <tr style="height:78px">
+                                <td>&nbsp;</td>
+                                <td style="width:356px"><img src="engine/img/brand-arc.jpg" galleryImg="false"/></td>
+                            </tr>
+                            <tr><td colspan="2">&nbsp;</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:25%"></td>
+                    <td>
+                        <table cellspacing="0" cellpadding="0" border="0" style="width:100%; height:100%;">
+                            <tr><td style="color:#ffffff; font-size:11pt">If the Information Bar appeared at the top of the window, click the bar, click Allow Blocked Content, and then click Yes.</td></tr>
+                            <tr style="height:22px"><td>&nbsp;</td></tr>
+                            <tr><td style="color:#ffffff; font-size:8pt">If there is no bar above, your Web browser is not configured to run JavaScripts or the browser does not support JavaScript in Web pages.</td></tr>
+                            <tr style="height:12px"><td>&nbsp;</td></tr>
+                            <tr><td style="color:#ffffff; font-size:8pt">To continue, change the JavaScript options or use a browser that supports JavaScript.</td></tr>
+                            <tr style="height:100%"><td>&nbsp;</td></tr>
+                        </table>
+                    </td>
+                    <td style="width:25%"></td>
+                </tr>
+            </table>
+        </noscript>
+        
+        <script type="text/javascript">
+
+             function IsWebUrl( uri )
+            {
+                uri += "";
+                var reg = new RegExp( "^https?://", "i" );
+                var matchResult = uri.match( reg );
+                return matchResult != null;
+            }      
+            function IsSafari()
+            {
+               var userAgent = navigator.userAgent;
+               if( userAgent.indexOf("Safari") == -1 )
+               {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                 }
+            }
+
+            var UriUtils = new Object();
+
+	//the definition of name of key pair must be lower case.
+	//because it is the handle for special characters, so no upper case in name.
+	UriUtils.decodeReplaceTable = 
+	{
+		"%23":"#",
+		"%3b":";",
+		"%26":"&"
+	};
+	UriUtils.encodeReplaceTable = 
+	{
+		"#":"%23",
+		";":"%3b",
+		"&":"%26"
+	}
+	
+	UriUtils.ReplaceSpecialCharacters = function( str, replaceTable )
+	{
+	    if( str == null )
+	    {
+	        return "";
+	    }
+	    var _replaceMatchString = "";
+	    
+	    for ( var s in replaceTable )
+	    {
+	        _replaceMatchString += s+"|";
+	    }
+	    //remove the last "|"
+	    if( _replaceMatchString.length > 0)
+	    {
+	        _replaceMatchString = _replaceMatchString.substr(0, _replaceMatchString.length -1);
+	    }
+	    if( _replaceMatchString.length >0 )
+	    {
+	        var reg = new RegExp( _replaceMatchString, "gi" );
+	        var replacedStr  = str.replace( reg, function( $0 ){ return replaceTable[ $0.toLowerCase() ]; } );    
+	        return replacedStr;
+	    }
+	    else
+	    {
+	        return str;
+	    }
+	}
+
+	UriUtils.EncodeUri = function( uri )
+	{
+	       if( uri == null )
+	       {
+	            return null;
+	        }
+
+		uri = encodeURI( uri );
+		uri = UriUtils.ReplaceSpecialCharacters( uri, UriUtils.encodeReplaceTable );
+		return uri;
+	}
+
+	//the parameter must be encoded uri, otherwise an exception will be thrown.      
+	UriUtils.DecodeUri = function( uri )
+	{
+	    if( uri == null )
+	    {
+	        return null;
+	    }
+	    
+	    uri = UriUtils.ReplaceSpecialCharacters( uri, UriUtils.decodeReplaceTable );
+	    try
+	    {
+	        uri = decodeURI( uri );
+	    }catch(e)
+	    {
+	        throw e;
+	    }
+	    return uri;
+	}
+
+	function GetPageRoot()
+	{
+	    var re = new RegExp( "^(.*/)[^/]+\\.[^/\\.]+([?#].*)?$", "i" );
+
+	    var href = window.location.href;
+	    var matchResult = href.match( re );
+	    
+	    if( matchResult == null )
+	    {
+	        alert( "The location is not a valid URL. " );
+	        return "";
+	    }
+           
+	    var root = matchResult[1];
+	    try{
+	        if( IsSafari() )
+	        {
+	            //window.localtion.href is un-encoded url in Safari local,
+	            //we need to encode it here.
+	            root = UriUtils.EncodeUri( root );
+	        }
+
+	        //If root is web url, encode it.
+	        if( IsWebUrl( root ) )
+	        {
+	            root = UriUtils.DecodeUri( root );
+	            root = UriUtils.EncodeUri( root );
+	        }
+	    }catch(e)
+	    {
+	        root = matchResult[1];    
+	    }
+	    return root;                
+	}
+
+        var htmlRelativePath = "Engine/Default.htm";
+
+	var pageRoot = GetPageRoot();
+        var pageUri = pageRoot + htmlRelativePath;
+	var dataRoot = encodeURIComponent( pageRoot );
+
+	var uri = pageUri + "?" + dataRoot;
+        window.open( uri, "_self" );
+        </script>
+    </body>
+</html>

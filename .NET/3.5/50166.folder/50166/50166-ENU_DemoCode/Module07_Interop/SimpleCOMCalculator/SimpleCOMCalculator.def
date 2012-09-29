@@ -1,0 +1,10 @@
+; SimpleCOMCalculator.def : Declares the module parameters.
+
+LIBRARY      "SimpleCOMCalculator.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE
+	DllInstall		PRIVATE

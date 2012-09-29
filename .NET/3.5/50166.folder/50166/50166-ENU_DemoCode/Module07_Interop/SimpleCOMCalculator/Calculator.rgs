@@ -1,0 +1,26 @@
+HKCR
+{
+	SimpleCOMCalculator.Calculator.1 = s 'Calculator Class'
+	{
+		CLSID = s '{B027EADC-1995-4392-8D00-A25BB53B78A6}'
+	}
+	SimpleCOMCalculator.Calculator = s 'Calculator Class'
+	{
+		CLSID = s '{B027EADC-1995-4392-8D00-A25BB53B78A6}'
+		CurVer = s 'SimpleCOMCalculator.Calculator.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B027EADC-1995-4392-8D00-A25BB53B78A6} = s 'Calculator Class'
+		{
+			ProgID = s 'SimpleCOMCalculator.Calculator.1'
+			VersionIndependentProgID = s 'SimpleCOMCalculator.Calculator'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{67755B32-6C53-4942-930A-F0A482992A3D}'
+		}
+	}
+}

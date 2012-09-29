@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamsAndDecorators", "StreamsAndDecorators\StreamsAndDecorators.csproj", "{FECD7B64-18DB-40DC-BCFD-3B3D28346796}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystemMetadataExplorer", "FileSystemMetadataExplorer\FileSystemMetadataExplorer.csproj", "{71A8F19A-B617-411C-A743-1D3C5B4AD766}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECD7B64-18DB-40DC-BCFD-3B3D28346796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECD7B64-18DB-40DC-BCFD-3B3D28346796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECD7B64-18DB-40DC-BCFD-3B3D28346796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECD7B64-18DB-40DC-BCFD-3B3D28346796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71A8F19A-B617-411C-A743-1D3C5B4AD766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A8F19A-B617-411C-A743-1D3C5B4AD766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A8F19A-B617-411C-A743-1D3C5B4AD766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A8F19A-B617-411C-A743-1D3C5B4AD766}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

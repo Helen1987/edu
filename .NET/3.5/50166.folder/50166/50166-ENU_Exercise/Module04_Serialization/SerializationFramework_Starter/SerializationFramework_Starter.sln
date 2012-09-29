@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationFramework", "SerializationFramework.csproj", "{AF369925-742D-4EDE-A4CC-2F77152EBBE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF369925-742D-4EDE-A4CC-2F77152EBBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF369925-742D-4EDE-A4CC-2F77152EBBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF369925-742D-4EDE-A4CC-2F77152EBBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF369925-742D-4EDE-A4CC-2F77152EBBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
