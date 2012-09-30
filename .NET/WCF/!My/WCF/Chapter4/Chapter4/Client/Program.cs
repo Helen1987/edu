@@ -26,6 +26,20 @@ namespace Client
 				Trace.WriteLine("2. SessionId is " + sessionId);
 			}
 
+			using (var proxy = new MySingletonContractClient())
+			{
+				proxy.MyMethod();
+				var sessionId = proxy.InnerChannel.SessionId;
+				Trace.WriteLine("3. SessionId is " + sessionId);
+			}
+
+			using (var proxy = new MyOtherSingletonContractClient())
+			{
+				proxy.MyOtherMethod();
+				var sessionId = proxy.InnerChannel.SessionId;
+				Trace.WriteLine("4. SessionId is " + sessionId);
+			}
+
 			Console.ReadLine();
 		}
 	}

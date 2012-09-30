@@ -48,11 +48,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\MyService.cs" />
     <Compile Include="Proxy\MySessionService.cs" />
+    <Compile Include="Proxy\MySingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Proxy\output.config" />
     <None Include="Proxy\output2.config" />
+    <None Include="Proxy\output3.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
