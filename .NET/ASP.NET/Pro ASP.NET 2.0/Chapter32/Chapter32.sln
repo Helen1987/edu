@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\WebServices1\", "WebServices1\", "{DAEC1B65-7D93-4F6B-9999-A1A507239968}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/WebServices1"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Code\Pro ASP.NET 2.0\Chapter32\WebServices1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebServices1\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebServices1"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Code\Pro ASP.NET 2.0\Chapter32\WebServices1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebServices1\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1775"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\WebClient\", "Clients\WebClient\", "{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/WebClient"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Code\Pro ASP.NET 2.0\Chapter32\Clients\WebClient\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebClient\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebClient"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Code\Pro ASP.NET 2.0\Chapter32\Clients\WebClient\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebClient\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2883"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsClient", "Clients\WindowsClient\WindowsClient.csproj", "{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAEC1B65-7D93-4F6B-9999-A1A507239968}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{DAEC1B65-7D93-4F6B-9999-A1A507239968}.Debug|Any CPU.Build.0 = Debug|.NET
+		{DAEC1B65-7D93-4F6B-9999-A1A507239968}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{DAEC1B65-7D93-4F6B-9999-A1A507239968}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{DAEC1B65-7D93-4F6B-9999-A1A507239968}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{DAEC1B65-7D93-4F6B-9999-A1A507239968}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{DAEC1B65-7D93-4F6B-9999-A1A507239968}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}.Debug|Any CPU.Build.0 = Debug|.NET
+		{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{7E8ED613-B2A1-4E0A-9CE6-517CB16CF2F7}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EDD070BB-CC6C-4228-B7B1-2E3122619F7D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

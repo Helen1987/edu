@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteTemplate.master.cs" Inherits="SiteTemplate_master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+
+    <title> Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <table width="100%">
+    <tr ><td bgcolor="black" style="font-weight: bold; font-size: 20px; color: white; font-family: Verdana">
+    <img align="left" src="headerleft.jpg" /><img align="right" src="headerright.jpg" />
+    <br />
+    <asp:ContentPlaceHolder id="TitleContent" runat="server">
+        </asp:ContentPlaceHolder>
+    
+      
+        </td></tr></table>
+            <br />
+        <br />
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+            <br />
+        <em>Copyright © 2005.</em>
+    </div>
+    </form>
+</body>
+</html>

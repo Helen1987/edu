@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DefaultContent.master.cs" Inherits="DefaultContent_master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <img src="apress.JPG" />
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+          This is default content.<br />
+        </asp:contentplaceholder>
+        <em>This is a simple footer.</em></div>
+    </form>
+</body>
+</html>

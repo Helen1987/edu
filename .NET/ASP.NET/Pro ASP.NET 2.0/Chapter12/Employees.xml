@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Employees">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="EmployeeID" type="xs:int" minOccurs="0" />
+                <xs:element name="TitleOfCourtesy" type="xs:string" minOccurs="0" />
+                <xs:element name="LastName" type="xs:string" minOccurs="0" />
+                <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Employees>
+    <EmployeeID>1</EmployeeID>
+    <TitleOfCourtesy>Mrs.</TitleOfCourtesy>
+    <LastName>Davolio</LastName>
+    <FirstName>Nancy</FirstName>
+  </Employees>
+  <Employees>
+    <EmployeeID>2</EmployeeID>
+    <TitleOfCourtesy>Dr.</TitleOfCourtesy>
+    <LastName>Fuller</LastName>
+    <FirstName>Andrew</FirstName>
+  </Employees>
+  <Employees>
+    <EmployeeID>3</EmployeeID>
+    <TitleOfCourtesy>Ms.</TitleOfCourtesy>
+    <LastName>Leverling</LastName>
+    <FirstName>Janets</FirstName>
+  </Employees>
+  <Employees>
+    <EmployeeID>4</EmployeeID>
+    <TitleOfCourtesy>Mrs.</TitleOfCourtesy>
+    <LastName>Peacock</LastName>
+    <FirstName>Margaret</FirstName>
+  </Employees>
+  <Employees>
+    <EmployeeID>5</EmployeeID>
+    <TitleOfCourtesy>Mr.</TitleOfCourtesy>
+    <LastName>Buchanan</LastName>
+    <FirstName>Steven</FirstName>
+  </Employees>
+</NewDataSet>

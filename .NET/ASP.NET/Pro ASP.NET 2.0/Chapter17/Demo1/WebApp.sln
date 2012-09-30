@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\WebApp\", "WebApp\", "{61ACA8AD-0E19-4FF1-9D41-F90200117D4A}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Enabled = "true"
+		Debug.AspNetCompiler.VirtualPath = "/WebApp"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Work\Ch16\Demo1\WebApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebApp\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Enabled = "true"
+		Release.AspNetCompiler.VirtualPath = "/WebApp"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Work\Ch16\Demo1\WebApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebApp\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50955"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61ACA8AD-0E19-4FF1-9D41-F90200117D4A}.Debug|.NET.ActiveCfg = Debug|.NET
+		{61ACA8AD-0E19-4FF1-9D41-F90200117D4A}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

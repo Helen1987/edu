@@ -1,0 +1,30 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class SqlDataSourceParameters : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+		
+		string itemList = "";
+		foreach (DictionaryEntry item in Cache)
+		{
+			itemList += item.Key.ToString() + " ";
+		}
+		Response.Write(itemList);
+    }
+
+
+	protected void lstCities_DataBinding(object sender, EventArgs e)
+	{
+	
+	}
+}

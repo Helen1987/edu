@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Advertisements>
+  <Ad>
+    <ImageUrl>hdr_logo.gif</ImageUrl>
+    <NavigateUrl>http://www.apress.com</NavigateUrl>
+    <AlternateText>Apress - The Authors Press</AlternateText>
+    <Impressions>20</Impressions>
+    <Keyword>books</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>javaOne.gif</ImageUrl>
+    <NavigateUrl>http://www.sun.com</NavigateUrl>
+    <AlternateText>Java from Sun</AlternateText>
+    <Impressions>20</Impressions>
+    <Keyword>Java</Keyword>
+  </Ad>
+  <!-- More ads can go here. -->
+</Advertisements>

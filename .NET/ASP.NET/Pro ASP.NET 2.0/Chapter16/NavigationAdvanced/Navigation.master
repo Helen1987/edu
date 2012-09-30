@@ -1,0 +1,36 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Navigation.master.cs" Inherits="Navigation" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        &nbsp;<table>
+    <tr>
+    <td style="width: 226px; vertical-align: top;">
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+        </asp:SiteMapPath>
+        <br />
+        <br />
+        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+        </asp:TreeView>
+        <!--<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+        </asp:Menu>-->
+    </td>
+    <td style="vertical-align: top;">
+        &nbsp;<br />
+        <br />
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder></td>
+    </tr>     
+        </table>
+    </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server"  />
+    </form>
+</body>
+</html>

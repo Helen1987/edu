@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NestedMasterSecondLevel.master.cs" Inherits="NestedMasterSecondLevel_master" MasterPageFile="~/NestedMasterRoot.master"%>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="RootContent" Runat="Server">
+
+        <table width="100%" bgcolor="#ccff00">
+        <tr>
+        <td colspan="2">
+        <h2>The Second Level</h2>
+        </td>
+        <tr>
+        <td width="200px"></td>
+        <td bgcolor="white"><asp:contentplaceholder id="NestedContent" runat="server">
+        </asp:contentplaceholder></td>
+        </tr>
+        </table>
+
+</asp:Content>

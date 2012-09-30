@@ -1,0 +1,23 @@
+USE master
+
+GO
+
+IF EXISTS(SELECT * FROM sysdatabases WHERE name='MyLoginDb')
+   DROP DATABASE MyLoginDb
+
+GO
+
+CREATE DATABASE MyLoginDb
+
+GO
+
+USE MyLoginDb
+
+GO
+
+CREATE TABLE MyUsers
+(
+  UserName VARCHAR(80) NOT NULL PRIMARY KEY,
+  UserPassword VARCHAR(80) NOT NULL,
+  UserEmail VARCHAR(250) NOT NULL
+)

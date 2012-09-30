@@ -1,0 +1,26 @@
+body
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: small;
+}
+
+.heading1
+{
+	font-weight: bold;
+	font-size: large;
+	color: limegreen;
+}
+.heading2
+{
+	font-weight: bold;
+	font-size: medium;
+	font-style: italic;
+	color: darkkhaki;
+}
+.blockText
+{
+	padding: 10px;
+	background-color: lightyellow;
+	border-style: solid;
+	border-width: thin;
+}

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\HealthMonitoringExample\", "HealthMonitoringExample\", "{3A08CBD6-BE39-4936-93C5-99095AF442F0}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Enabled = "true"
+		Debug.AspNetCompiler.VirtualPath = "/HealthMonitoringExample"
+		Debug.AspNetCompiler.PhysicalPath = "HealthMonitoringExample\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\HealthMonitoringExample\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Enabled = "true"
+		Release.AspNetCompiler.VirtualPath = "/HealthMonitoringExample"
+		Release.AspNetCompiler.PhysicalPath = "HealthMonitoringExample\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\HealthMonitoringExample\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "29958"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A08CBD6-BE39-4936-93C5-99095AF442F0}.Debug|.NET.ActiveCfg = Debug|.NET
+		{3A08CBD6-BE39-4936-93C5-99095AF442F0}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

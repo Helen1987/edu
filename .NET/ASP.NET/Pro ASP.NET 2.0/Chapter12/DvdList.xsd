@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DvdList" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DvdList" >
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="DVD" type="DVDType">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:complexType name="DVDType">
+		<xs:sequence>
+			<xs:element name="Title" type="xs:string" />
+			<xs:element name="Director" type="xs:string"  />
+			<xs:element name="Price" type="xs:decimal"  />
+			<xs:element name="Starring" type="StarringType" />
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:integer" />
+		<xs:attribute name="Category" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="StarringType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Star" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

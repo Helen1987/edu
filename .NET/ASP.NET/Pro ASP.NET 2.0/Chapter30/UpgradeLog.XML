@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Chapter30">
+</Property><Property Name="Solution File" Value="D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter30\Chapter30.sln">
+</Property><Property Name="Date" Value="21 июля 2010 г.">
+</Property><Property Name="Time" Value="22:58">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Chapter30.sln" Description="File successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter30\Backup\Chapter30.sln">
+</Event><Event ErrorLevel="0" Project="GDI+CustomControls" Source="GDI+CustomControls\GDI+CustomControls.csproj" Description="Project file successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter30\Backup\GDI+CustomControls\GDI+CustomControls.csproj">
+</Event><Event ErrorLevel="0" Project="GDI+CustomControls" Source="GDI+CustomControls\GDI+CustomControls.csproj.user" Description="Project user file successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter30\Backup\GDI+CustomControls\GDI+CustomControls.csproj.user">
+</Event><Event ErrorLevel="0" Project="GDI+CustomControls" Source="GDI+CustomControls\GradientLabel.cs" Description="File successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter30\Backup\GDI+CustomControls\GradientLabel.cs">
+</Event><Event ErrorLevel="0" Project="GDI+CustomControls" Source="GDI+CustomControls\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter30\Backup\GDI+CustomControls\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GDI+CustomControls" Source="GDI+CustomControls\GDI+CustomControls.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GDI+CustomControls" Source="GDI+CustomControls\GDI+CustomControls.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Chapter30.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Chapter30.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GDI+CustomControls" Source="GDI+CustomControls\GDI+CustomControls.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

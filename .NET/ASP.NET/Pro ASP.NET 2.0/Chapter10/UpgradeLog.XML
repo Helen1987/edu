@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Chapter10">
+</Property><Property Name="Solution File" Value="D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter10\Chapter10.sln">
+</Property><Property Name="Date" Value="21 июля 2010 г.">
+</Property><Property Name="Time" Value="23:00">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Chapter10.sln" Description="File successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter10\Backup\Chapter10.sln">
+</Event><Event ErrorLevel="0" Project="DatabaseComponent" Source="DatabaseComponent\DatabaseComponent.csproj" Description="Project file successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter10\Backup\DatabaseComponent\DatabaseComponent.csproj">
+</Event><Event ErrorLevel="0" Project="DatabaseComponent" Source="DatabaseComponent\DatabaseComponent.csproj.user" Description="Project user file successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter10\Backup\DatabaseComponent\DatabaseComponent.csproj.user">
+</Event><Event ErrorLevel="0" Project="DatabaseComponent" Source="DatabaseComponent\AssemblyInfo.cs" Description="File successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter10\Backup\DatabaseComponent\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="DatabaseComponent" Source="DatabaseComponent\EmployeeDB.cs" Description="File successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter10\Backup\DatabaseComponent\EmployeeDB.cs">
+</Event><Event ErrorLevel="0" Project="DatabaseComponent" Source="DatabaseComponent\EmployeeDetails.cs" Description="File successfully backed up as D:\Documents\Программирование\ASP.NET\+Microsoft ASP.NET 2.0 с примерами на C# 2005 для профессионалов. Си Шарп Мэтью Мак-Дональд, Марио Шпушта\Pro ASP.NET 2.0\Chapter10\Backup\DatabaseComponent\EmployeeDetails.cs">
+</Event><Event ErrorLevel="0" Project="DatabaseComponent" Source="DatabaseComponent\DatabaseComponent.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="DatabaseComponent" Source="DatabaseComponent\DatabaseComponent.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Chapter10.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Chapter10.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="DatabaseComponent" Source="DatabaseComponent\DatabaseComponent.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

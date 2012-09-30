@@ -1,0 +1,16 @@
+.MyLoginTextBoxStyle
+{
+    cursor: crosshair;
+    background-color: yellow;
+    text-align: center;
+    border-left-color: black;
+    border-bottom-color: black;
+    border-top-style: dotted;
+    border-top-color: black;
+    border-right-style: dotted;
+    border-left-style: dotted;
+    border-right-color: black;
+    border-bottom-style: dotted;
+    font-family: Verdana;
+    vertical-align: middle;
+}

@@ -1,0 +1,6 @@
+This is for admins only. If you want
+ASP.NET to protect this resource
+you have to add the ".txt" filename
+extension to be handled by the
+aspnet_isapi.dll extension as described
+in chapter 22.

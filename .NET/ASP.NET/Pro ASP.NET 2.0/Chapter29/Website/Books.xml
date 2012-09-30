@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Books>
+	<Book Title="Expert C# Business Objects" isbn="1590593448" Publisher="Apress"></Book>
+	<Book Title="C# and the .NET Platform" isbn="1590590554" Publisher="Apress"></Book>
+	<Book Title="Beginning XSLT" isbn="1590592603" Publisher="Apress"></Book>
+	<Book Title="SQL Server Security Distilled" isbn="1590592190" Publisher="Apress"></Book>
+</Books>

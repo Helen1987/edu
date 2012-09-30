@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Products>
+  <Category title="DVD">
+	  <Product title="Matrix" />
+	  <Product title="The Gladiator" />
+  </Category>
+  <Category title="Books">
+	  <Product title="Fast Track to ASP.NET" />
+	  <Product title="ASP.NET Website Programming" />
+	  <Product title="Beginning C#" />
+  </Category>
+</Products>

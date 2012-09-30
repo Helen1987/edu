@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--Created: 7/21/2004 2:56:28 PM-->
+<DvdList>
+   <DVD ID="A" Category="Science Fiction">
+      <Title>The Matrix</Title>
+      <Director>Larry Wachowski</Director>
+      <Price>18.74</Price>
+      <Starring>
+         <Star>Keanu Reeves</Star>
+         <Star>Laurence Fishburne</Star>
+      </Starring>
+   </DVD>
+   <DVD ID="2" Category="Drama">
+      <Title>Forrest Gump</Title>
+      <Director>Robert Zemeckis</Director>
+      <Starring>
+         <Star>Tom Hanks</Star>
+         <Star>Robin Wright</Star>
+      </Starring>
+   </DVD>
+   <DVD ID="3" Category="Horror">
+      <Title>The Others</Title>
+      <ExtraInfo>This isn't valid!</ExtraInfo>
+      <Director>Alejandro Amenábar</Director>
+      <Price>22.49</Price>
+      <Starring>
+         <Star>Nicole Kidman</Star>
+         <Star>Christopher Eccleston</Star>
+      </Starring>
+   </DVD>
+   <DVD ID="4" Category="Mystery">
+      <Title>Mulholland Drive</Title>
+      <Director>David Lynch</Director>
+      <Price>25.74</Price>
+      <Starring>
+         <Star>Laura Harring</Star>
+      </Starring>
+   </DVD>
+   <DVD ID="5" Category="Science Fiction">
+      <Title>A.I. Artificial Intelligence</Title>
+      <Director>Steven Spielberg</Director>
+      <Price>23.99</Price>
+      <Starring>
+         <Star>Haley Joel Osment</Star>
+         <Star>Jude Law</Star>
+      </Starring>
+   </DVD>
+</DvdList>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Home" description="Root" url="~/default.aspx">
+        
+    <siteMapNode title="Other Examples" description="Non-navigation controls" 
+      url="~/NavigationDataList.aspx">
+      <siteMapNode title="NonHierarchical" description="Navigation with a list control" 
+        url="~/NavigationNonHierarchicalControls.aspx" />
+      <siteMapNode title="DummyPage" description="A fake page"
+        url="~/Dummy.aspx" />
+    </siteMapNode>
+
+    <siteMapNode title="Mapping" description="Virtual pages"
+                 url="~/Mapping.aspx"
+                 >
+      <siteMapNode title="Training" description="Training classes" 
+        url="~/Training.aspx" />
+      <siteMapNode title="Software" description="Consulting services" 
+        url="~/Software.aspx" />
+      
+      </siteMapNode>
+    
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptionUtility", "EncryptionUtility\EncryptionUtility.csproj", "{D4B6ED50-6283-45D0-9EAE-580840F4A78E}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "e:\...\Encryption\", "Encryption\", "{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/Encryption"
+		Debug.AspNetCompiler.PhysicalPath = "..\Encryption\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Encryption\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Encryption"
+		Release.AspNetCompiler.PhysicalPath = "..\Encryption\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Encryption\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1053"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "e:\...\EncryptioSamples\", "EncryptioSamples\", "{52DBA226-9244-4DD7-9A6D-786FA50DC192}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/EncryptioSamples"
+		Debug.AspNetCompiler.PhysicalPath = "..\EncryptioSamples\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\EncryptioSamples\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/EncryptioSamples"
+		Release.AspNetCompiler.PhysicalPath = "..\EncryptioSamples\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\EncryptioSamples\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2005"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4B6ED50-6283-45D0-9EAE-580840F4A78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B6ED50-6283-45D0-9EAE-580840F4A78E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D4B6ED50-6283-45D0-9EAE-580840F4A78E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D4B6ED50-6283-45D0-9EAE-580840F4A78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B6ED50-6283-45D0-9EAE-580840F4A78E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D4B6ED50-6283-45D0-9EAE-580840F4A78E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Debug|Any CPU.Build.0 = Debug|.NET
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Release|Any CPU.Build.0 = Debug|.NET
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{5B18FD68-7EE1-4229-BBE7-46267CFD4E33}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Debug|Any CPU.Build.0 = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Release|Any CPU.Build.0 = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{52DBA226-9244-4DD7-9A6D-786FA50DC192}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

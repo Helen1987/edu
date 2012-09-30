@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.apress.com/ProASP.NET/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.apress.com/ProASP.NET/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Northwind Employees</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.apress.com/ProASP.NET/">
+      <s:element name="GetEmployeesCount">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeesCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEmployeesCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployees">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesByCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesByCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesByCityResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesCountError">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeesCountErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEmployeesCountErrorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEmployeesCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesCount" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesByCitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesByCity" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesByCitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesByCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesCountErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesCountError" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesCountErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesCountErrorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Employees_x0020_ServiceSoap">
+    <wsdl:operation name="GetEmployeesCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the total number of employees.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeesCountSoapIn" />
+      <wsdl:output message="tns:GetEmployeesCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the full list of employees.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeesSoapIn" />
+      <wsdl:output message="tns:GetEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesByCity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the full list of employees by city.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeesByCitySoapIn" />
+      <wsdl:output message="tns:GetEmployeesByCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesCountError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Causes an error and returns a SOAP exception.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeesCountErrorSoapIn" />
+      <wsdl:output message="tns:GetEmployeesCountErrorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Employees_x0020_ServiceSoap" type="tns:Employees_x0020_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeesCount">
+      <soap:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployeesCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesByCity">
+      <soap:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployeesByCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesCountError">
+      <soap:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployeesCountError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Employees_x0020_ServiceSoap12" type="tns:Employees_x0020_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeesCount">
+      <soap12:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployeesCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap12:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesByCity">
+      <soap12:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployeesByCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesCountError">
+      <soap12:operation soapAction="http://www.apress.com/ProASP.NET/GetEmployeesCountError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Employees_x0020_Service">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Northwind Employees</wsdl:documentation>
+    <wsdl:port name="Employees_x0020_ServiceSoap" binding="tns:Employees_x0020_ServiceSoap">
+      <soap:address location="http://localhost/WebServices1/EmployeesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Employees_x0020_ServiceSoap12" binding="tns:Employees_x0020_ServiceSoap12">
+      <soap12:address location="http://localhost/WebServices1/EmployeesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

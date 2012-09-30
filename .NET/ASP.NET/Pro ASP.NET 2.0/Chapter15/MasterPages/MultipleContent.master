@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MultipleContent.master.cs" Inherits="MultipleContent_master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <img src="apress.JPG" />
+        <asp:contentplaceholder id="MainContent" runat="server">
+        </asp:contentplaceholder>
+        <em>
+            <div style="border-right: 1px solid; padding-right: 15px; border-top: 1px solid;
+                padding-left: 15px; font-size: small; padding-bottom: 15px; margin: 15px; border-left: 1px solid;
+                width: 417px; padding-top: 15px; border-bottom: 1px solid; font-family: Verdana;
+                height: 43px; background-color: #ffffcc">
+                <strong style="padding-right: 5px; padding-left: 5px; padding-bottom: 5px; margin: 5px;
+                    padding-top: 5px">
+                    OTHER LINKS<br />
+                </strong>
+                <asp:contentplaceholder id="OtherLinksContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </em>
+    </div><em>This is a simple footer.</em>
+    </form>
+</body>
+</html>
+

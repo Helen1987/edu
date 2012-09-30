@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DocumentSchema" targetNamespace="uri:AspNetPro20/Chapter16/Demo1" elementFormDefault="qualified" xmlns="uri:AspNetPro20/Chapter16/Demo1" xmlns:mstns="uri:AspNetPro20/Chapter16/Demo1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="MyPersonType">
+        <xs:complexType mixed="true">
+            <xs:all>
+                <xs:element name="Firstname" type="xs:string" />
+                <xs:element name="Lastname" type="xs:string" />
+                <xs:element name="Age" type="xs:int" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
