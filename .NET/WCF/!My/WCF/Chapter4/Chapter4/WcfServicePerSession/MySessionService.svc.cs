@@ -21,7 +21,8 @@ namespace WcfServicePerSession
 		public void MyMethod()
 		{
 			counter++;
-			Trace.WriteLine("Counter = " + counter);
+			var sessionId = OperationContext.Current.SessionId;
+			Trace.WriteLine(string.Format("Counter = {0}, SessionId = {1}", counter, sessionId));
 		}
 
 		// only if service implement IDisposable interface
