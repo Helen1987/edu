@@ -11,13 +11,13 @@ using System.Web.UI.HtmlControls;
 
 public partial class DynamicHeader : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		Page.Header.Title = "Dynamically Titled Page";
 		
 		// Not supported in beta2.
 		//Page.Header.Metadata.Add("Keywords", ".NET, C#, ASP.NET");
 		//Page.Header.Metadata.Add("Description", "A great website to learn .NET");
 
-    }
+	}
 }

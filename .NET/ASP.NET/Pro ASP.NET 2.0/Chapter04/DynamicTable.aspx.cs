@@ -11,7 +11,7 @@ using System.Web.UI.HtmlControls;
 
 public partial class DynamicTable : System.Web.UI.Page
 {
-   	protected void Page_Load(object sender, System.EventArgs e)
+	protected void Page_Load(object sender, System.EventArgs e)
 	{
 		// Create a new HtmlTable object.
 		HtmlTable table1 = new HtmlTable();

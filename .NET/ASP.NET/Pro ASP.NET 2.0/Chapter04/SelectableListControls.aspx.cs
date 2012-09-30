@@ -11,8 +11,8 @@ using System.Web.UI.HtmlControls;
 
 public partial class SelectableListControls : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		if (!Page.IsPostBack)
 		{
 			for (int i = 3; i <= 5; i++)
@@ -23,7 +23,7 @@ public partial class SelectableListControls : System.Web.UI.Page
 				RadiobuttonList1.Items.Add("Option " + i.ToString());
 			}
 		}
-    }
+	}
 
 	protected void Button1_Click(object sender, System.EventArgs e)
 	{

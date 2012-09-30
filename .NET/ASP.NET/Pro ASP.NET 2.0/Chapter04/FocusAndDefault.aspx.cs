@@ -10,11 +10,11 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
 public partial class FocusAndDefault : System.Web.UI.Page
-{   
-    protected void Page_Load(object sender, EventArgs e)
-    {
+{
+	protected void Page_Load(object sender, EventArgs e)
+	{
 
-    }
+	}
 	protected void cmdSubmit_Click(object sender, EventArgs e)
 	{
 		Label1.Text = "Clicked Submit.";

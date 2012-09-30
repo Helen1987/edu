@@ -11,14 +11,14 @@ using System.Web.UI.HtmlControls;
 
 public partial class ImageTest : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 
-    }
+	}
 	protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
 	{
 		lblResult.Text = "You clicked at (" + e.X.ToString() +
-	     ", " + e.Y.ToString() + "). ";
+		 ", " + e.Y.ToString() + "). ";
 
 		if ((e.Y < 100) && (e.Y > 20) && (e.X > 20) && (e.X < 275))
 		{

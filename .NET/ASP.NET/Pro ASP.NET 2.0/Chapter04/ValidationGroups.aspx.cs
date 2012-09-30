@@ -11,10 +11,10 @@ using System.Web.UI.HtmlControls;
 
 public partial class ValidationGroups : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		
-    }
+	}
 	protected void cmdValidateAll_Click(object sender, EventArgs e)
 	{
 		Label1.Text = "Valid: " + Page.IsValid.ToString();

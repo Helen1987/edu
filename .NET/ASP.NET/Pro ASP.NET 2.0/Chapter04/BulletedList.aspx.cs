@@ -11,8 +11,8 @@ using System.Web.UI.HtmlControls;
 
 public partial class BulletedList : System.Web.UI.Page
 {   
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		if (!Page.IsPostBack)
 		{
 			foreach (string style in
@@ -21,7 +21,7 @@ public partial class BulletedList : System.Web.UI.Page
 				BulletedList1.Items.Add(style);
 			}
 		}
-    }
+	}
 	protected void BulletedList1_Click(object sender, BulletedListEventArgs e)
 	{
 		string styleName = BulletedList1.Items[e.Index].Text;

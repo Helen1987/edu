@@ -11,8 +11,8 @@ using System.Web.UI.HtmlControls;
 
 public partial class DynamicButton : System.Web.UI.Page
 {
-    private void Page_Load(object sender, EventArgs e)
-    {
+	private void Page_Load(object sender, EventArgs e)
+	{
 		// Create a new button object.
 		Button newButton = new Button();
 
@@ -25,7 +25,7 @@ public partial class DynamicButton : System.Web.UI.Page
 
 		// Add the putton to a placeholder.
 		PlaceHolder1.Controls.Add(newButton);
-    }
+	}
 
 	protected void Button_Click(object sender, System.EventArgs e)
 	{

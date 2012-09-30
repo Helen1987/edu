@@ -11,10 +11,10 @@ using System.Web.UI.HtmlControls;
 
 public partial class SimpleViewState : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		Label1.Text = "Hello World!";
-    }
+	}
 	protected void Button1_Click(object sender, EventArgs e)
 	{
 		string viewStateString = "/wEPDwUKLTE2MjY5MTY1NQ9kFgICAw9kFgICAQ8PFgIeBFRleHQFDEhlbGxvIFdvcmxkIWRkZPsbiNOyNAufEt7OvNIbVYcGWHqf";

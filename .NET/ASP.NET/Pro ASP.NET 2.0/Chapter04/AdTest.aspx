@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    			<asp:AdRotator id="AdRotator1" runat="server" Target="_blank" AdvertisementFile="ads.xml" OnAdCreated="AdRotator1_AdCreated"></asp:AdRotator>
+            <asp:AdRotator id="AdRotator1" runat="server" Target="_blank" AdvertisementFile="ads.xml" OnAdCreated="AdRotator1_AdCreated"></asp:AdRotator>
         <br />
         <br />
-			<asp:HyperLink id="lnkBanner" runat="server">HyperLink</asp:HyperLink>
+            <asp:HyperLink id="lnkBanner" runat="server">HyperLink</asp:HyperLink>
     </div>
     </form>
 </body>
