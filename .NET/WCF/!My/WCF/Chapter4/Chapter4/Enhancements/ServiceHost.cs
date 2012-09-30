@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Diagnostics;
 using System.ServiceModel.Channels;
+using System.ServiceModel.Dispatcher;
 
 namespace Enhancements
 {
@@ -33,6 +34,61 @@ namespace Enhancements
 				return (T)SingletonInstance;
 			}
 		}
+
+		#region Throttle
+
+		public void SetThrottle(int maxCalls, int maxSessions, int maxInstances)
+		{
+			var throttle = new ServiceThrottlingBehavior();
+			throttle.MaxConcurrentCalls = maxCalls;
+			throttle.MaxConcurrentSessions = maxSessions;
+			throttle.MaxConcurrentInstances = maxInstances;
+			SetThrottle(throttle);
+		}
+
+		public void SetThrottle(ServiceThrottlingBehavior serviceThrottle, bool overrideConfig = false)
+		{
+			if (State == CommunicationState.Opened)
+			{
+				throw new InvalidOperationException("Host is already opened");
+			}
+			var throttle = Description.Behaviors.Find<ServiceThrottlingBehavior>();
+			if (throttle != null && overrideConfig == false)
+			{
+				return;
+			}
+			if (throttle != null) // ovverideCinfig == true, удалить конфигурацию
+			{
+				Description.Behaviors.Remove(throttle);
+			}
+			if (throttle == null)
+			{
+				Description.Behaviors.Add(serviceThrottle);
+			}
+		}
+
+		public ServiceThrottlingBehavior ThrottleBehavior
+		{
+			get
+			{
+				return Description.Behaviors.Find<ServiceThrottlingBehavior>();
+			}
+		}
+
+		public ServiceThrottle Throttle
+		{
+			get
+			{
+				if (State != CommunicationState.Opened)
+				{
+					throw new InvalidOperationException("Host is not opened");
+				}
+				var dispatcher = OperationContext.Current.Host.ChannelDispatchers[0] as ChannelDispatcher;
+				return dispatcher.ServiceThrottle;
+			}
+		}
+
+		#endregion
 
 		private static Uri[] Convert(string[] baseAddresses)
 		{
