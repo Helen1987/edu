@@ -11,11 +11,11 @@ using System.Web.UI.HtmlControls;
 
 public partial class ViewStateChunking : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		Random rnd = new Random();
 		byte[] buffer = new byte[1050];
 		rnd.NextBytes(buffer);
 		ViewState["Data"] = buffer;
-    }
+	}
 }
