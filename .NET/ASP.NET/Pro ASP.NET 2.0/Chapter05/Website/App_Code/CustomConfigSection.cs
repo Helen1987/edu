@@ -13,7 +13,7 @@ using System.Web.Configuration;
 public class OrderService : ConfigurationSection 
 {
 	[ConfigurationProperty("available",
-    IsRequired = false)]
+	IsRequired = false)]
 	public bool Available
 	{
 		get { return (bool)base["available"]; }
@@ -21,7 +21,7 @@ public class OrderService : ConfigurationSection
 	}
 
 	[ConfigurationProperty("pollTimeout",
-    IsRequired = true)]
+	IsRequired = true)]
 	public TimeSpan PollTimeout
 	{
 		get { return (TimeSpan)base["pollTimeout"]; }

@@ -11,9 +11,9 @@ using System.Web.UI.HtmlControls;
 using System.Web.Configuration;
 
 public partial class ReadWriteConfiguration_aspx : System.Web.UI.Page
-{   
-    protected void Page_Load(object sender, EventArgs e)
-    {
+{
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		foreach (ConnectionStringSettings connection in
 			WebConfigurationManager.ConnectionStrings)
 		{
@@ -28,6 +28,6 @@ public partial class ReadWriteConfiguration_aspx : System.Web.UI.Page
 		foreach (AssemblyInfo assm in compSection.Assemblies)
 		{
 			Response.Write(assm.Assembly + "<br /");
-		}		
-    }
+		}
+	}
 }

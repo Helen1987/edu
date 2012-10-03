@@ -1,8 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\Website\", "Website\", "{9DD04D86-95D8-4447-B8E0-1AC9E09EC5B9}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{9DD04D86-95D8-4447-B8E0-1AC9E09EC5B9}"
 	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{F9316413-95FB-4B5E-9A70-FC3FA724DBB7}|SherlockLib.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Website"
 		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Code\Pro ASP.NET 2.0\Chapter05\Website\"
