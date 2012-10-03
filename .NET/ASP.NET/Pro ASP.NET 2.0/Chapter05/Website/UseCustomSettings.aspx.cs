@@ -12,12 +12,12 @@ using System.Text;
 
 public partial class UseCustomSettings_aspx : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		StringBuilder builder = new StringBuilder();
 		Configuration config =
 			System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(
-		   	   Request.ApplicationPath  );
+			   Request.ApplicationPath  );
 
 		OrderService custSection = (OrderService)config.GetSection("orderService");
 
@@ -26,5 +26,5 @@ public partial class UseCustomSettings_aspx : System.Web.UI.Page
 		  "<br /><b>Available:</b> " + custSection.Available.ToString() +
 		  "<br /><b>Timeout:</b> " + custSection.PollTimeout.ToString() + "<br /><br />";
 
-    }
+	}
 }

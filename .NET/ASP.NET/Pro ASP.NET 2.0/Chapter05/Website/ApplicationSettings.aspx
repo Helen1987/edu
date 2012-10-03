@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    			<p>
-				<asp:Label id="lblSiteName" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label></p>
-			<p>
-				<asp:Label id="lblWelcome" runat="server" Font-Names="Tahoma"></asp:Label></p>
+                <p>
+                <asp:Label id="lblSiteName" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label></p>
+            <p>
+                <asp:Label id="lblWelcome" runat="server" Font-Names="Tahoma"></asp:Label></p>
 
     </div>
     </form>
