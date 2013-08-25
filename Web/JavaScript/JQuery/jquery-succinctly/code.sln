@@ -1,9 +1,10 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45BAC773-F236-42D2-B97A-7B53E0114D71}"
 	ProjectSection(SolutionItems) = preProject
 		color.html = color.html
+		domready.html = domready.html
 		grok-text.html = grok-text.html
 		HTMLPage5.htm = HTMLPage5.htm
 		sample1.html = sample1.html
@@ -29,7 +30,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		sample27.html = sample27.html
 		sample28.html = sample28.html
 		sample29.html = sample29.html
-		sample3.html = sample3.html
 		sample30.html = sample30.html
 		sample31.html = sample31.html
 		sample32.html = sample32.html
