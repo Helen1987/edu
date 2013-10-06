@@ -1,0 +1,22 @@
+<html lang='en'>
+<head>
+  <title>Hello, Knockout.js</title>
+  <meta charset='utf-8' />
+  <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+  <h1>Hello, Knockout.js</h1>
+  <p><span data-bind="text:firstName"></span>'s Shopping Cart</p>
+
+  <script type='text/javascript' src='knockout-2.1.0.js'></script>
+    <script type='text/javascript'>
+        var personViewModel = {
+            firstName: "John",
+            lastName: "Smith"
+        };
+        ko.applyBindings(personViewModel);
+        personViewModel.firstName = "Ryan";
+  </script>
+
+</body>
+</html>

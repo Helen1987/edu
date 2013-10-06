@@ -1,0 +1,99 @@
+<html lang='en'>
+<head>
+  <title>Hello, Knockout.js</title>
+  <meta charset='utf-8' />
+  <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+  <h1>Hello, Knockout.js</h1>
+  <p><span data-bind="text:fullName"></span>'s Shopping Cart</p>
+  
+  <button data-bind="click:checkout">Checkout</button>
+  <button data-bind='click:addProduct'>Add Beer</button>
+    <button data-bind='click:debugItems'>Debug</button>
+
+  <table>
+    <thead><tr>
+      <th>Item number</th>
+        <th>Product</th>
+      <th>Price</th>
+        <th>Tags</th>
+        <th>Action</th>
+    </tr></thead>
+    <tbody data-bind='foreach: shoppingCart'>
+      <tr>
+          <td data-bind='text: $index'></td>
+        <td data-bind='text: name'></td>
+        <td data-bind='text: price'></td>
+        <td>
+            <ul data-bind="foreach: tags">
+                <li>
+                    <span data-bind="text: $parent.name"></span> - <span data-bind="text: $data"></span>
+                </li>
+            </ul>
+        </td>
+          
+          <td>
+            <button data-bind='click: $root.removeProduct'>Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <script type='text/javascript' src='knockout-2.1.0.js'></script>
+    <script type='text/javascript'>
+        function Product(name, price, tags) {
+            this.name = ko.observable(name);
+            this.price = ko.observable(price);
+
+            tags = typeof (tags) !== "undefined" ? tags : [];
+            this.tags = ko.observableArray(tags);
+        }
+
+        function PersonViewModel()
+        {
+            var self = this;
+
+            this.firstName = ko.observable("John");
+            this.lastName = ko.observable("Smith");
+            this.checkout = function () {
+                alert("Trying to checkout");
+            };
+            this.fullName = ko.computed(function(){
+                return this.firstName() + " " + this.lastName();
+            }, this);
+
+            this.shoppingCart = ko.observableArray([
+                new Product("Beer", 10.99),
+                new Product("Brats", 7.99),
+                new Product("Buns", 1.49, ["Baked goods", "Hot dogs"])
+            ]);
+
+            this.addProduct = function () {
+                this.shoppingCart.push(new Product("More beer", 10.99));
+            };
+
+            this.removeProduct = function (product) {
+                self.shoppingCart.destroy(product);
+                alert(self.shoppingCart().length);
+                alert(product._destroy);
+            };
+
+            this.debugItems = function () {
+                var message = "";
+                var nativeArray = self.shoppingCart();
+                for (var i = 0; i < nativeArray.length; i++) {
+                    message += nativeArray[i].name() + "\n"; // don't forget that you make a function call when accessing observable properties
+                }
+                alert(message);
+            }
+            ;
+        };
+
+        var vm = new PersonViewModel();
+        ko.applyBindings(vm);
+  </script>
+
+</body>
+</html>

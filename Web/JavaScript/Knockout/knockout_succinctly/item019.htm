@@ -1,0 +1,53 @@
+<html lang='en'>
+<head>
+  <title>Interactive Bindings</title>
+  <meta charset='utf-8' />
+  <link rel='stylesheet' href='../style.css' />
+</head>
+<body>
+  <h1>Interactive Bindings</h1>
+
+  <form action="#" method="post">
+    <p>First name: <input data-bind='value: firstName' /></p>
+    <p>Last name: <input data-bind='value: lastName' /></p>
+
+   <p><button data-bind='click: saveUserData'>Submit</button></p>
+   
+   <p>
+      <button data-bind='click: displayName'>
+        Display Name
+      </button>
+      <button data-bind='click: setName'>
+        Set Name
+      </button>
+    </p>
+
+   
+  </form>
+
+  <script type='text/javascript' src='knockout-2.1.0.js'></script>
+  <script type='text/javascript'>
+      function PersonViewModel() {
+          var self = this;
+          this.firstName = ko.observable("John");
+          this.lastName = ko.observable("Smith");
+
+          this.saveUserData = function (model, event) {
+              alert(model.firstName() + " is trying to checkout!");
+              if (event.ctrlKey) {
+                  alert("He was holding down the Control key for some reason.");
+              }
+          };
+          
+         this.displayName = function() {
+        	alert(this.firstName());
+      	};
+      	this.setName = function() {
+        	this.firstName("Bob");
+      	};
+      }
+
+      ko.applyBindings(new PersonViewModel());
+  </script>
+</body>
+</html>

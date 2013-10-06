@@ -1,0 +1,32 @@
+<html lang='en'>
+<head>
+  <title>Hello, Knockout.js</title>
+  <meta charset='utf-8' />
+  <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+  <h1>Hello, Knockout.js</h1>
+  <p><span data-bind="text:fullName"></span>'s Shopping Cart</p>
+  <button data-bind="click:checkout">Checkout</button>  
+  <script type='text/javascript' src='knockout-2.1.0.js'></script>
+    <script type='text/javascript'>
+        function PersonViewModel()
+        {
+            this.firstName = ko.observable("John");
+            this.lastName = ko.observable("Smith");
+            this.checkout = function () {
+                alert("Trying to checkout");
+            };
+            this.fullName = ko.computed(function(){
+                return this.firstName() + " " + this.lastName();
+            }, this);
+        };
+        var vm = new PersonViewModel();
+        ko.applyBindings(vm);
+        // uncomment to check making a change
+        // notice that changing firstName automatically updates the computed fullName
+        // vm.firstName("Mary");
+  </script>
+
+</body>
+</html>
