@@ -10,16 +10,23 @@ namespace Cipher
     public class CipherHelper
     {
 		public static string Xor(string value1, string value2, out string hexValue) {
-			var array1 = new BitArray(ConvertFromHexString(value1).ToArray<byte>());
-			var array2 = new BitArray(ConvertFromHexString(value2).ToArray<byte>());
-			return ConvertBitArrayToASCIIString(array1.Xor(array2), out hexValue);
+			var array1 = ConvertFromHexString(value1).ToArray<byte>();
+			var array2 = ConvertFromHexString(value2).ToArray<byte>();
+			return ConvertBitArrayToASCIIString(CipherHelper.Xor(array1, array2), out hexValue);
 		}
 
-		public static string ConvertBitArrayToASCIIString(BitArray array, out string hexValue){
-			byte[] b = new byte[array.Count / 8];
-			array.CopyTo(b, 0);
-			hexValue = GetHexValue(b);
-			return GetASCIIString(b);
+		public static byte[] Xor(byte[] value1, byte[] value2) {
+			var array1 = new BitArray(value1);
+			var array2 = new BitArray(value2);
+			var result = array1.Xor(array2);
+			byte[] b = new byte[result.Count / 8];
+			result.CopyTo(b, 0);
+			return b;
+		}
+
+		public static string ConvertBitArrayToASCIIString(byte[] array, out string hexValue){
+			hexValue = GetHexValue(array);
+			return GetASCIIString(array);
 		}
 
 		public static byte[] GetASCIIValues(string value) {
