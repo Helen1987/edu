@@ -23,6 +23,7 @@ namespace Cipher
 
 			var currentIV = new byte[blockSize];
 			var currentPlainText = new byte[blockSize];
+			var currentCipherText = new byte[blockSize];
 
 			// first 16 byte of ciphertext is IV
 			currentIV = _cipherBytes.Take<byte>(blockSize).ToArray<byte>();
@@ -37,26 +38,28 @@ namespace Cipher
 				aesAlg.Padding = PaddingMode.None;
 
 				// could pass any value as IV. it should be ignored in ECB mode
-				using (ICryptoTransform decryptor = aesAlg.CreateDecryptor(key, currentIV))
+				using (ICryptoTransform encryptor = aesAlg.CreateEncryptor(key, key))
 				{
-					using (MemoryStream memStream = new MemoryStream(_cipherBytes))
+					using (MemoryStream memStream = new MemoryStream())
 					{
-						using (CryptoStream cryptoStream = new CryptoStream(memStream, decryptor, CryptoStreamMode.Read))
+						using (CryptoStream cryptoStream = new CryptoStream(memStream, encryptor, CryptoStreamMode.Write))
 						{
-							using (var srDecrypt = new BinaryReader(cryptoStream))
+							using (var srEncrypt = new BinaryWriter(cryptoStream))
 							{
 								byte[] blockToXor = new byte[blockSize];
-								for (var i = 0; i < _cipherBytes.Length / blockSize; ++i)
+								for (var i = 0; i <= _cipherBytes.Length / blockSize; ++i)
 								{
-									// get decrypt message
-									blockToXor = srDecrypt.ReadBytes(blockSize);
+									// encrypt current IV
+									srEncrypt.Write(currentIV);
+									srEncrypt.Flush();
+									currentCipherText = _cipherBytes.Skip<byte>(blockSize * i).Take<byte>(blockSize).ToArray<byte>();
+									blockToXor = memStream.ToArray().Skip<byte>(blockSize * i).Take<byte>(currentCipherText.Length).ToArray<byte>();
 
-									// XOR first 16 bytes of ciphetText and first 16-bytes of decrypted message
-									currentPlainText = CipherHelper.Xor(currentIV, blockToXor);
+									// XOR first 16 bytes of ciphetText and 16-bytes of encrypted IV
+									currentPlainText = CipherHelper.Xor(currentCipherText, blockToXor);
 
 									currentPlainText.CopyTo(_messageBytes, blockSize * i);
 
-									// assign new currentCipherText value
 									currentIV = IncreaseIV(currentIV);
 								}
 							}
@@ -70,7 +73,10 @@ namespace Cipher
 		private static byte[] IncreaseIV(byte[] oldIV)
 		{
 			var oldValue = new BigInteger(oldIV);
-			var newValue = oldValue + 1;
+			byte[] oneArray = new byte[blockSize];
+			oneArray[blockSize - 1] = 1;
+			var one = new BigInteger(oneArray);
+			var newValue = oldValue + one;
 			return newValue.ToByteArray();
 		}
 	}
