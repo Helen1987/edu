@@ -25,7 +25,8 @@ namespace BlockCipher
 
 		private void btnDecrypt_Click(object sender, EventArgs e)
 		{
-			txtMessage.Text = CBC.DecryptMessage(txtCipherHex.Text, txtKey.Text);
+			txtMessage.Text = AESModeCBC.DecryptMessage(txtCipherHex.Text, 
+				CipherHelper.ConvertFromHexString(txtKey.Text).ToArray<byte>());
 		}
 	}
 }
