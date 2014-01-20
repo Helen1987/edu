@@ -28,5 +28,11 @@ namespace BlockCipher
 			txtMessage.Text = AESModeCBC.DecryptMessage(txtCipherHex.Text, 
 				CipherHelper.ConvertFromHexString(txtKey.Text).ToArray<byte>());
 		}
+
+		private void buttonCRTDecypt_Click(object sender, EventArgs e)
+		{
+			textCTRText.Text = AESModeCRT.DecryptMessage(textCTRCipher.Text,
+				CipherHelper.ConvertFromHexString(textCTRKey.Text).ToArray<byte>());
+		}
 	}
 }

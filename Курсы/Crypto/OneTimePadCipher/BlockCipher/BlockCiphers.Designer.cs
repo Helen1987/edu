@@ -34,12 +34,20 @@
 			this.labelKey = new System.Windows.Forms.Label();
 			this.txtKey = new System.Windows.Forms.TextBox();
 			this.btnDecrypt = new System.Windows.Forms.Button();
-			this.txtCipherText = new System.Windows.Forms.TextBox();
-			this.labelCipherText = new System.Windows.Forms.Label();
 			this.lblMessage = new System.Windows.Forms.Label();
 			this.btnEncrypt = new System.Windows.Forms.Button();
 			this.txtMessage = new System.Windows.Forms.TextBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.textCTRCipher = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.textCTRKey = new System.Windows.Forms.TextBox();
+			this.buttonCTRDecypt = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.buttonCTREncrypt = new System.Windows.Forms.Button();
+			this.textCTRText = new System.Windows.Forms.TextBox();
 			this.groupBoxXor.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBoxXor
@@ -49,21 +57,19 @@
 			this.groupBoxXor.Controls.Add(this.labelKey);
 			this.groupBoxXor.Controls.Add(this.txtKey);
 			this.groupBoxXor.Controls.Add(this.btnDecrypt);
-			this.groupBoxXor.Controls.Add(this.txtCipherText);
-			this.groupBoxXor.Controls.Add(this.labelCipherText);
 			this.groupBoxXor.Controls.Add(this.lblMessage);
 			this.groupBoxXor.Controls.Add(this.btnEncrypt);
 			this.groupBoxXor.Controls.Add(this.txtMessage);
 			this.groupBoxXor.Location = new System.Drawing.Point(25, 24);
 			this.groupBoxXor.Name = "groupBoxXor";
-			this.groupBoxXor.Size = new System.Drawing.Size(610, 530);
+			this.groupBoxXor.Size = new System.Drawing.Size(610, 351);
 			this.groupBoxXor.TabIndex = 13;
 			this.groupBoxXor.TabStop = false;
-			this.groupBoxXor.Text = "XOR operations";
+			this.groupBoxXor.Text = "CBC";
 			// 
 			// txtCipherHex
 			// 
-			this.txtCipherHex.Location = new System.Drawing.Point(125, 324);
+			this.txtCipherHex.Location = new System.Drawing.Point(125, 226);
 			this.txtCipherHex.Multiline = true;
 			this.txtCipherHex.Name = "txtCipherHex";
 			this.txtCipherHex.Size = new System.Drawing.Size(458, 73);
@@ -72,7 +78,7 @@
 			// labelCipherHEX
 			// 
 			this.labelCipherHEX.AutoSize = true;
-			this.labelCipherHEX.Location = new System.Drawing.Point(21, 327);
+			this.labelCipherHEX.Location = new System.Drawing.Point(21, 229);
 			this.labelCipherHEX.Name = "labelCipherHEX";
 			this.labelCipherHEX.Size = new System.Drawing.Size(91, 13);
 			this.labelCipherHEX.TabIndex = 14;
@@ -97,30 +103,13 @@
 			// 
 			// btnDecrypt
 			// 
-			this.btnDecrypt.Location = new System.Drawing.Point(338, 501);
+			this.btnDecrypt.Location = new System.Drawing.Point(382, 318);
 			this.btnDecrypt.Name = "btnDecrypt";
 			this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
 			this.btnDecrypt.TabIndex = 11;
 			this.btnDecrypt.Text = "Decrypt";
 			this.btnDecrypt.UseVisualStyleBackColor = true;
 			this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
-			// 
-			// txtCipherText
-			// 
-			this.txtCipherText.Location = new System.Drawing.Point(125, 231);
-			this.txtCipherText.Multiline = true;
-			this.txtCipherText.Name = "txtCipherText";
-			this.txtCipherText.Size = new System.Drawing.Size(458, 73);
-			this.txtCipherText.TabIndex = 10;
-			// 
-			// labelCipherText
-			// 
-			this.labelCipherText.AutoSize = true;
-			this.labelCipherText.Location = new System.Drawing.Point(21, 234);
-			this.labelCipherText.Name = "labelCipherText";
-			this.labelCipherText.Size = new System.Drawing.Size(86, 13);
-			this.labelCipherText.TabIndex = 9;
-			this.labelCipherText.Text = "Cipher text (text):";
 			// 
 			// lblMessage
 			// 
@@ -133,7 +122,7 @@
 			// 
 			// btnEncrypt
 			// 
-			this.btnEncrypt.Location = new System.Drawing.Point(195, 501);
+			this.btnEncrypt.Location = new System.Drawing.Point(239, 318);
 			this.btnEncrypt.Name = "btnEncrypt";
 			this.btnEncrypt.Size = new System.Drawing.Size(75, 23);
 			this.btnEncrypt.TabIndex = 7;
@@ -149,16 +138,106 @@
 			this.txtMessage.Size = new System.Drawing.Size(458, 73);
 			this.txtMessage.TabIndex = 6;
 			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.textCTRCipher);
+			this.groupBox1.Controls.Add(this.label1);
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.textCTRKey);
+			this.groupBox1.Controls.Add(this.buttonCTRDecypt);
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.buttonCTREncrypt);
+			this.groupBox1.Controls.Add(this.textCTRText);
+			this.groupBox1.Location = new System.Drawing.Point(25, 399);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(610, 351);
+			this.groupBox1.TabIndex = 16;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "CTR";
+			// 
+			// textCTRCipher
+			// 
+			this.textCTRCipher.Location = new System.Drawing.Point(125, 226);
+			this.textCTRCipher.Multiline = true;
+			this.textCTRCipher.Name = "textCTRCipher";
+			this.textCTRCipher.Size = new System.Drawing.Size(458, 73);
+			this.textCTRCipher.TabIndex = 15;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(21, 229);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(91, 13);
+			this.label1.TabIndex = 14;
+			this.label1.Text = "Cipher text (HEX):";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(21, 134);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(88, 13);
+			this.label2.TabIndex = 13;
+			this.label2.Text = "Key value (HEX):";
+			// 
+			// textCTRKey
+			// 
+			this.textCTRKey.Location = new System.Drawing.Point(125, 131);
+			this.textCTRKey.Multiline = true;
+			this.textCTRKey.Name = "textCTRKey";
+			this.textCTRKey.Size = new System.Drawing.Size(458, 73);
+			this.textCTRKey.TabIndex = 12;
+			// 
+			// buttonCTRDecypt
+			// 
+			this.buttonCTRDecypt.Location = new System.Drawing.Point(382, 318);
+			this.buttonCTRDecypt.Name = "buttonCTRDecypt";
+			this.buttonCTRDecypt.Size = new System.Drawing.Size(75, 23);
+			this.buttonCTRDecypt.TabIndex = 11;
+			this.buttonCTRDecypt.Text = "Decrypt";
+			this.buttonCTRDecypt.UseVisualStyleBackColor = true;
+			this.buttonCTRDecypt.Click += new System.EventHandler(this.buttonCRTDecypt_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(6, 39);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(113, 13);
+			this.label3.TabIndex = 8;
+			this.label3.Text = "Message value (HEX):";
+			// 
+			// buttonCTREncrypt
+			// 
+			this.buttonCTREncrypt.Location = new System.Drawing.Point(239, 318);
+			this.buttonCTREncrypt.Name = "buttonCTREncrypt";
+			this.buttonCTREncrypt.Size = new System.Drawing.Size(75, 23);
+			this.buttonCTREncrypt.TabIndex = 7;
+			this.buttonCTREncrypt.Text = "Encrypt";
+			this.buttonCTREncrypt.UseVisualStyleBackColor = true;
+			// 
+			// textCTRText
+			// 
+			this.textCTRText.Location = new System.Drawing.Point(125, 36);
+			this.textCTRText.Multiline = true;
+			this.textCTRText.Name = "textCTRText";
+			this.textCTRText.Size = new System.Drawing.Size(458, 73);
+			this.textCTRText.TabIndex = 6;
+			// 
 			// BlockCiphers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(794, 585);
+			this.ClientSize = new System.Drawing.Size(794, 755);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.groupBoxXor);
 			this.Name = "BlockCiphers";
 			this.Text = "Block Ciphers";
 			this.groupBoxXor.ResumeLayout(false);
 			this.groupBoxXor.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -171,11 +250,18 @@
 		private System.Windows.Forms.Label labelKey;
 		private System.Windows.Forms.TextBox txtKey;
 		private System.Windows.Forms.Button btnDecrypt;
-		private System.Windows.Forms.TextBox txtCipherText;
-		private System.Windows.Forms.Label labelCipherText;
 		private System.Windows.Forms.Label lblMessage;
 		private System.Windows.Forms.Button btnEncrypt;
 		private System.Windows.Forms.TextBox txtMessage;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.TextBox textCTRCipher;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox textCTRKey;
+		private System.Windows.Forms.Button buttonCTRDecypt;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Button buttonCTREncrypt;
+		private System.Windows.Forms.TextBox textCTRText;
 	}
 }
 

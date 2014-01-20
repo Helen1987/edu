@@ -12,6 +12,7 @@ namespace Cipher
 	{
 		private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 		private const int blockSize = 16;
+		private const int keySize = 128;
 		private static byte[] _cipherBytes;
 		private static byte[] _messageBytes;
 
@@ -31,8 +32,8 @@ namespace Cipher
 			using (var aesAlg = Aes.Create())
 			{
 				aesAlg.Mode = CipherMode.ECB;
-				aesAlg.KeySize = 128;
-				aesAlg.BlockSize = 128;
+				aesAlg.KeySize = keySize;
+				aesAlg.BlockSize = keySize;
 
 				using (ICryptoTransform encryptor = aesAlg.CreateEncryptor())
 				{
@@ -83,8 +84,8 @@ namespace Cipher
 			using (var aesAlg = Aes.Create())
 			{
 				aesAlg.Mode = CipherMode.ECB;
-				aesAlg.KeySize = 128;
-				aesAlg.BlockSize = 128;
+				aesAlg.KeySize = keySize;
+				aesAlg.BlockSize = keySize;
 				aesAlg.Padding = PaddingMode.None;
 
 				// could pass any value as IV. it should be ignored in ECB mode
@@ -118,7 +119,7 @@ namespace Cipher
 			}
 
 			// we have padding
-			if (_messageBytes[_messageBytes.Length - 1] > 0 && _messageBytes[_messageBytes.Length - 1] <= 16) {
+			if (_messageBytes[_messageBytes.Length - 1] > 0 && _messageBytes[_messageBytes.Length - 1] <= blockSize) {
 				Console.WriteLine("We have padding " + _messageBytes[_messageBytes.Length - 1]);
 				_messageBytes = _messageBytes.Take<byte>(_messageBytes.Length - _messageBytes[_messageBytes.Length - 1]).ToArray<byte>();
 			}
