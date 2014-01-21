@@ -1,4 +1,4 @@
-﻿namespace BlockCipher
+﻿namespace BlockCiphers
 {
 	partial class BlockCiphers
 	{

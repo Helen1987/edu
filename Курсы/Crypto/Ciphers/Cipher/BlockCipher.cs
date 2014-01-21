@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Cipher
 {
-	public class CBC
+	public class AESBlockCipher
 	{
-		private const int blockSize = 16;
+		private const int blockSize = 16, keySize = 128;
 
 		public static string EncryptMessage(string message){
 			// generate random 16-byte IV
@@ -28,7 +28,8 @@ namespace Cipher
 			using (var aesAlg = Aes.Create())
 			{
 				aesAlg.Mode = CipherMode.CBC;
-				aesAlg.KeySize = 128;
+				aesAlg.KeySize = keySize;
+				
 				using (ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV)) {
 					using (MemoryStream memStream = new MemoryStream())
 					{
@@ -45,32 +46,36 @@ namespace Cipher
 			return CipherHelper.GetHexValue(cipherBytes);
 		}
 
-		public static string DecryptMessage(string message, string key)
+		public static string DecryptMessage(string message, byte[] key, CipherMode mode)
 		{
-			var textBytes = new byte[message.Length-blockSize];
-			// CBC encryption
 			var cipherBytes = CipherHelper.ConvertFromHexString(message).ToArray<byte>();
-			var keyBytes = CipherHelper.ConvertFromHexString(key).ToArray<byte>();
+			// first 16 bytes of cipher text is IV
+			var IV = cipherBytes.Take<byte>(blockSize).ToArray<byte>();
+			cipherBytes = cipherBytes.Skip<byte>(blockSize).ToArray<byte>();
+
+			var textBytes = new byte[cipherBytes.Length];
 
 			using (var aesAlg = Aes.Create())
 			{
-				aesAlg.Mode = CipherMode.CBC;
-				aesAlg.KeySize = 128;
+				aesAlg.Mode = mode;
+				aesAlg.KeySize = keySize;
 				aesAlg.Padding = PaddingMode.PKCS7;
-				aesAlg.Key = keyBytes;
-				using (ICryptoTransform decryptor = aesAlg.CreateDecryptor())
+				using(ICryptoTransform decryptor = aesAlg.CreateDecryptor(key, IV))
 				{
-					using (MemoryStream memStream = new MemoryStream(cipherBytes))
+					using(MemoryStream memStream = new MemoryStream(cipherBytes))
 					{
-						using (CryptoStream cryptoStream = new CryptoStream(memStream, decryptor, CryptoStreamMode.Read))
+						using(CryptoStream cryptoStream = new CryptoStream(memStream, decryptor, CryptoStreamMode.Read))
 						{
-							cryptoStream.Read(textBytes, 0, textBytes.Length);
+							using (var reader = new BinaryReader(cryptoStream))
+							{
+								textBytes = reader.ReadBytes(cipherBytes.Length);
+							}
 						}
 					}
 				}
 			}
 
-			return CipherHelper.GetASCIIString(cipherBytes);
+			return CipherHelper.GetASCIIString(textBytes);
 		}
 	}
 }

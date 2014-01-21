@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="AESModeCBC.cs" />
     <Compile Include="AESModeCRT.cs" />
-    <Compile Include="CBC.cs" />
+    <Compile Include="BlockCipher.cs" />
     <Compile Include="OneTimePadCipher.cs" />
     <Compile Include="Xor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
