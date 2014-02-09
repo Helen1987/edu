@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashedStreamVideo", "Hashed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaddingAttack", "PaddingAttack\PaddingAttack.csproj", "{66C21BD9-94B9-4E94-B2C0-6E624263ACAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLog", "DigitalLog\DigitalLog.csproj", "{B558E89C-EA33-4C07-B378-D7F5F02D56E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{66C21BD9-94B9-4E94-B2C0-6E624263ACAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66C21BD9-94B9-4E94-B2C0-6E624263ACAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66C21BD9-94B9-4E94-B2C0-6E624263ACAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B558E89C-EA33-4C07-B378-D7F5F02D56E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B558E89C-EA33-4C07-B378-D7F5F02D56E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B558E89C-EA33-4C07-B378-D7F5F02D56E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B558E89C-EA33-4C07-B378-D7F5F02D56E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
