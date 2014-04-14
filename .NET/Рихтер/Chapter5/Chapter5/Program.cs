@@ -22,6 +22,10 @@ namespace Chapter5
 			Console.WriteLine("Struct Improve Unexpected Behavior");
 			StructImproveUnexpectedBehavior.Run();
 
+			// DYNAMIC
+			Console.WriteLine("Dynamic Demo");
+			DynamicDemo.Run();
+
 			Console.ReadKey();
 		}
 	}

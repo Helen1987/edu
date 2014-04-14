@@ -50,6 +50,7 @@
     <Compile Include="Data\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\DynamicDemo.cs" />
     <Compile Include="Tests\StructBoxingBehavior.cs" />
     <Compile Include="Tests\StructImproveUnexpectedBehavior.cs" />
     <Compile Include="Tests\StructUnexpectedBehavior.cs" />
