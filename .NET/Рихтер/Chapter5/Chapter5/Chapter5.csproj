@@ -43,9 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoxingUnboxing.cs" />
+    <Compile Include="Data\IChangeBoxedPoint.cs" />
+    <Compile Include="Data\InterfacePoint.cs" />
+    <Compile Include="Data\SimplePoint.cs" />
+    <Compile Include="Tests\BoxingUnboxing.cs" />
+    <Compile Include="Data\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\StructBoxingBehavior.cs" />
+    <Compile Include="Tests\StructImproveUnexpectedBehavior.cs" />
+    <Compile Include="Tests\StructUnexpectedBehavior.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
