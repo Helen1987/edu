@@ -30,9 +30,8 @@
    
    <div data-bind='visible: annoyMe'>
       <div data-bind="foreach: items">
-        <input data-bind='checked: $root.annoyTimes, checkedValue: $data'
-               type='checkbox' />
-		<span data-bind="text: time"></span>
+        <input data-bind='checked: $parent.annoyTimes, checkedValue: $data' type='checkbox' />
+		<input type="text" data-bind="value: time" />
       </div>
     </div>
 
@@ -44,15 +43,17 @@
       function PersonViewModel() {
           var self = this;
 		  this.items = ko.observableArray([
-			ko.observable({id: '1',time: 'morning'}),
-			ko.observable({id: '2',time: 'afternoon'}),
-			ko.observable({id: '3',time: 'evening'})
+			{id: '1',time: 'morning'},
+			{id: '2',time: 'afternoon'},
+			{id: '3',time: 'evening'}
 		  ]);
           this.firstName = ko.observable("John");
           this.lastName = ko.observable("Smith");
 		  this.details = ko.observable(false);
 		  this.annoyMe = ko.observable(true);
-		  this.annoyTimes = ko.observableArray([]);	
+		  this.annoyTimes = ko.observableArray([
+			self.items()[0]
+		  ]);	
 		  	
           this.saveUserData = function (model, event) {
               alert(model.firstName() + " is trying to checkout!");
