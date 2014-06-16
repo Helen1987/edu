@@ -12,5 +12,6 @@ namespace WebApi.Models.Posts
         void Create(Post newPost);
         Post Update(Post post);
         void Delete(int id);
+        IQueryable<Post> Search(int year, int month, int day);
     }
 }

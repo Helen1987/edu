@@ -34,5 +34,12 @@ namespace WebApi.Models.Posts
         {
 
         }
+
+        public IQueryable<Post> Search(int year, int month, int day) {
+            return new[] {
+                new Post { Year = 2007 },
+                new Post { Year = 2008 }
+            }.AsQueryable<Post>();
+        }
     }
 }

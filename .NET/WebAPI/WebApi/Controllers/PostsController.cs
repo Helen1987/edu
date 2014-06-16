@@ -55,9 +55,15 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
+        public IQueryable<Post> GetArchive(int year, int month = 0, int day = 0)
+        {
+            return _repository.Search(year, month, year);
+        } 
+
+        /*[HttpGet]
         public string Category(int id)
         {
             return "test" + id.ToString();
-        }
+        }*/
     }
 }
