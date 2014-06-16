@@ -11,5 +11,6 @@ namespace WebApi.Models.Posts
         Post GetById(int id);
         void Create(Post newPost);
         Post Update(Post post);
+        void Delete(int id);
     }
 }

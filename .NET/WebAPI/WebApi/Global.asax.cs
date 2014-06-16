@@ -17,7 +17,7 @@ namespace WebApi
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
+            UnityConfig.RegisterComponents(); 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -14,7 +14,7 @@ namespace WebApi
                 routeTemplate: "api/{controller}/{action}/{id}"
             );
 
-            config.Routes.MapHttpRoute(
+            /*config.Routes.MapHttpRoute(
                 name: "PostByDate",
                 routeTemplate: "api/Posts/{year}/{month}/{day}",
                 defaults: new
@@ -28,7 +28,7 @@ namespace WebApi
                     month = @"\d{0,2}",
                     day = @"\d{0,2}"
                 }
-            );
+            );*/
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

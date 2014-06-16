@@ -12,17 +12,46 @@ namespace WebApi.Controllers
     {
         private readonly IPostRepository _repository;
 
-        public PostsController(IPostRepository repository) {
+        public PostsController(IPostRepository repository)
+        {
             _repository = repository;
         }
 
-        public IQueryable<Post> Get() {
+        public IQueryable<Post> Get()
+        {
             return _repository.GetAll();
         }
 
-        public IQueryable<Post> Get(int year, int month = 0, int day = 0) 
+        public Post Get(int year) 
         {
-            return (new [] { new Post() { Year = year}}).AsQueryable<Post>();
+            return _repository.GetById(year);
+        }
+
+        public HttpResponseMessage Post(Post post)
+        {
+            _repository.Create(post);
+            var response = Request.CreateResponse(HttpStatusCode.Created);
+            //response.StatusCode = HttpStatusCode.Created;
+            string uri = Url.Link("DefaultApi", new { Year = post.Year });
+            response.Headers.Location = new Uri(uri);
+            return response;
+        }
+
+        public HttpResponseMessage Put(int year, Post post)
+        { 
+            //post.Id = id;
+            _repository.Update(post);
+            var response = Request.CreateResponse(HttpStatusCode.OK, post);
+            string uri = Url.Link("DefaultApi", new { year = post.Year });
+            response.Headers.Location = new Uri(uri);
+            return response;
+        }
+
+        public HttpResponseMessage Delete(int id)
+        {
+            _repository.Delete(id);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.NoContent); 
+            return response;
         }
 
         [HttpGet]
