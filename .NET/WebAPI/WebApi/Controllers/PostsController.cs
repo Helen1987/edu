@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApi.App_Start.Providers;
 using WebApi.Models.Posts;
 
 namespace WebApi.Controllers
@@ -17,12 +18,12 @@ namespace WebApi.Controllers
             _repository = repository;
         }
 
-        public IQueryable<Post> Get()
+        /*public IQueryable<Post> Get()
         {
             return _repository.GetAll();
-        }
+        }*/
 
-        public Post Get(int year) 
+        public Post Get([System.Web.Http.ValueProviders.ValueProvider(typeof(HeaderValueFactory))] int year) 
         {
             return _repository.GetById(year);
         }
