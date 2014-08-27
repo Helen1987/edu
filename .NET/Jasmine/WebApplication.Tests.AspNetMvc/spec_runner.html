@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Jasmine Spec Runner</title>
+
+    <link rel="shortcut icon" type="image/png" href="Content/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="Content/jasmine/jasmine.css">
+    <script src="Scripts/jasmine/jasmine.js"></script>
+    <script src="Scripts/jasmine/jasmine-html.js"></script>
+    <script src="Scripts/jasmine.console_reporter.js"></script>
+    <script src="Scripts/jasmine.teamcity_reporter.js"></script>
+
+    <script src="Scripts/dependencies/application.js"></script>
+    <script src="Scripts/tests/application-specs.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            var jasmineEnv = jasmine.getEnv();
+            jasmineEnv.updateInterval = 1000;
+
+            var htmlReporter = new jasmine.HtmlReporter();
+            var consoleReporter = new jasmine.ConsoleReporter();
+            var teamCityReporter = new jasmine.TeamcityReporter();
+
+            jasmineEnv.addReporter(htmlReporter);
+            jasmineEnv.addReporter(consoleReporter);
+            jasmineEnv.addReporter(teamCityReporter);
+
+            jasmineEnv.specFilter = function (spec) {
+                return htmlReporter.specFilter(spec);
+            };
+
+            var currentWindowOnload = window.onload;
+
+            window.onload = function () {
+                if (currentWindowOnload) {
+                    currentWindowOnload();
+                }
+                execJasmine();
+            };
+
+            function execJasmine() {
+                jasmineEnv.execute();
+            }
+
+        })();
+    </script>
+
+</head>
+
+<body>
+</body>
+</html>
