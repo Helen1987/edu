@@ -1,0 +1,25 @@
+{
+  "name": "restaurant",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Helen1987/edu",
+  "authors": [
+    "Helen1987 <kleit@tut.by>"
+  ],
+  "description": "menu app",
+  "main": "main.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/js",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
