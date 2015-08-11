@@ -13,69 +13,8 @@ app.use(bodyParser.json());
 //connect to mongodb:
 mongoose.connect('mongodb://localhost:27017/restaurant');
 
-//create a Schema for our food:
-var FoodSchema = new Schema({
-    name: {
-        type: String,
-        index: {
-            unique: true
-        }
-    },
-    description: String,
-    price: String
-});
-
-
-// Use the schema to register a model with MongoDb
-mongoose.model('Food', FoodSchema);
-var food = mongoose.model('Food');
-
-//POST verb
-app.post('/food', function (req, res) {
-    food.create(req.body, function (err, food) {
-        if (err) {
-            res.send(401, err);
-            return;
-        }
-        res.send(req.body);
-    });
-});
-
-//GET verb
-app.get('/food', function (req, res) {
-    food.find(function (err, data) {
-        if (err) {
-            res.send(err);
-        }
-        res.json(data);
-    });
-});
-
-//GET/id
-app.get('/food/:id', function (req, res) {
-    food.findOne({
-        _id: req.params.id
-    }, function (error, response) {
-        if (error) {
-            res.send(error);
-        } else {
-            res.send(response);
-        }
-    });
-});
-
-//GET by name
-app.get('/foodname/:name', function (req, res) {
-    food.findOne({
-        name: req.params.name
-    }, function (error, response) {
-        if (error || !response) {
-            res.send("not on the menu");
-        } else {
-            res.send(response);
-        }
-    });
-});
+require('./app/routes.food.js')(app);
+app.use(express.static(__dirname + '/public'));
 
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'));
