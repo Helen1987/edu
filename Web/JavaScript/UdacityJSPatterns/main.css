@@ -1,0 +1,10 @@
+#catlist {
+    width: 200px;
+    display: inline-block;
+}
+
+#catimg {
+    display: inline-block;
+    width: 640px;
+    height: 450px;
+}
