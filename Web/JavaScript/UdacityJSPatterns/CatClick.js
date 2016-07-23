@@ -11,46 +11,66 @@ var data = {
 var octupus = {
     init: function() {
         data.selectedCat = data.catsArray[0];
-        view.init();
-        view.renderList(data.catsArray);
-        view.renderSelectedCat(data.selectedCat);
+        listView.init();
+        catView.init();
+    },
+    getCatsArray: function() {
+        return data.catsArray;
+    },
+    getSelectedCat: function(){
+        return data.selectedCat;
     },
     updateSelectedCat: function(cat) {
         data.selectedCat = cat;
-        view.renderSelectedCat(data.selectedCat);
     },
     increaseCount: function () {
         data.selectedCat.count++;
-        view.renderSelectedCat(data.selectedCat);
     }
 };
 
-var img = document.getElementById('currentimg'),
-    idSpan = document.getElementById('id'),
-    countSpan = document.getElementById('count');
-
-var view = {
+var listView = {
     init: function(arrayOfCats) {
-        img.addEventListener('click', octupus.increaseCount);
+        this.list = document.getElementById('catlist');
+
+        this.render();
     },
-    renderList: function(arrayOfCats) {
-        var list = document.getElementById('catlist'),
-            bindListToCat = function(elem, cat) {
+    render: function() {
+        this.list.innerHTML = '';
+
+        var arrayOfCats = octupus.getCatsArray();
+        var bindListToCat = function(elem, cat) {
                 elem.addEventListener('click', function() {
                     octupus.updateSelectedCat(cat);
+                    catView.render();
                 });
             };
         for (var i = 0; i < arrayOfCats.length; ++i) {
             var elem = document.createElement('li');
             elem.innerText = arrayOfCats[i].header;
-            list.appendChild(elem);
+            this.list.appendChild(elem);
             bindListToCat(elem, arrayOfCats[i]);
         }
     },
-    renderSelectedCat: function(catInfo) {
-        img.src = catInfo.url;
-        idSpan.innerText = catInfo.header;
-        countSpan.innerText = catInfo.count;
+
+};
+
+var catView = {
+    init: function() {
+        this.img = document.getElementById('currentimg');
+        this.idSpan = document.getElementById('id');
+        this.countSpan = document.getElementById('count');
+
+        this.img.addEventListener('click', function() {
+            octupus.increaseCount();
+            catView.render();
+        });
+        this.render();
+    },
+    render: function() {
+        var catInfo = octupus.getSelectedCat();
+        this.img.src = catInfo.url;
+        this.idSpan.innerText = catInfo.header;
+        this.countSpan.innerText = catInfo.count;
     }
 };
 
