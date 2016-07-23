@@ -9,8 +9,29 @@
 
             </ul>
             <div id="catimg">
-                <label><span id="id"></span> was clicked <span id="count"></label>
+                <label><span id="id"></span> was clicked <span id="count"></span></label>
                 <img id="currentimg" src="" />
+            </div>
+            <div id="admin">
+                <button id="adminMode">Admin</button>
+                <div id="admin-content">
+                    <ul>
+                        <li>
+                            <label for="admin-name">Name:</label>
+                            <input id="admin-name" type="text" />
+                        </li>
+                        <li>
+                            <label for="admin-url">Url:</label>
+                            <input id="admin-url" type="text" />
+                        </li>
+                        <li>
+                            <label for="admin-clicks">Clicks:</label>
+                            <input id="admin-clicks" type="text" />
+                        </li>
+                    </ul>
+                    <button id="save">Save</button>
+                    <button id="cancel">Cancel</button>
+                </div>
             </div>
         </div>
         <script src="CatClick.js" type="text/javascript"></script>

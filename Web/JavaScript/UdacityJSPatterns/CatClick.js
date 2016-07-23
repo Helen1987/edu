@@ -9,10 +9,12 @@ var data = {
 };
 
 var octupus = {
+    adminMode: false,
     init: function() {
         data.selectedCat = data.catsArray[0];
         listView.init();
         catView.init();
+        adminView.init();
     },
     getCatsArray: function() {
         return data.catsArray;
@@ -25,6 +27,14 @@ var octupus = {
     },
     increaseCount: function () {
         data.selectedCat.count++;
+    },
+    updateCurrentCat: function(name, url, clicks) {
+        data.selectedCat.header = name;
+        data.selectedCat.url = url;
+        data.selectedCat.count = clicks;
+    },
+    toogleAdminMode: function() {
+        this.adminMode = !this.adminMode;
     }
 };
 
@@ -42,6 +52,7 @@ var listView = {
                 elem.addEventListener('click', function() {
                     octupus.updateSelectedCat(cat);
                     catView.render();
+                    adminView.render();
                 });
             };
         for (var i = 0; i < arrayOfCats.length; ++i) {
@@ -50,8 +61,7 @@ var listView = {
             this.list.appendChild(elem);
             bindListToCat(elem, arrayOfCats[i]);
         }
-    },
-
+    }
 };
 
 var catView = {
@@ -63,6 +73,7 @@ var catView = {
         this.img.addEventListener('click', function() {
             octupus.increaseCount();
             catView.render();
+            adminView.render();
         });
         this.render();
     },
@@ -71,6 +82,45 @@ var catView = {
         this.img.src = catInfo.url;
         this.idSpan.innerText = catInfo.header;
         this.countSpan.innerText = catInfo.count;
+    }
+};
+
+var adminView = {
+    init: function() {
+        this.admin = document.getElementById("adminMode");
+        this.adminArea = document.getElementById("admin-content");
+        this.name = document.getElementById("admin-name");
+        this.url = document.getElementById("admin-url");
+        this.clicks = document.getElementById("admin-clicks");
+        this.save = document.getElementById("save");
+        this.cancel = document.getElementById("cancel");
+
+        this.save.addEventListener('click', function() {
+            octupus.updateCurrentCat(adminView.name.value, adminView.url.value, adminView.clicks.value);
+            catView.render();
+        });
+        this.admin.addEventListener('click', function() {
+            octupus.toogleAdminMode();
+            adminView.render();
+        });
+        this.cancel.addEventListener('click', function() {
+            octupus.toogleAdminMode();
+            adminView.render();
+        });
+
+        this.render();
+    },
+    render: function() {
+        if (octupus.adminMode) {
+            var catInfo = octupus.getSelectedCat();
+            this.name.value = catInfo.header;
+            this.url.value = catInfo.url;
+            this.clicks.value = catInfo.count;
+            this.adminArea.style.display = "block";
+        }
+        else {
+            this.adminArea.style.display = "none";
+        }
     }
 };
 
